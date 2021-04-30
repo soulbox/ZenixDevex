@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30523.141
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zenix.Common", "Zenix.Common\Zenix.Common.csproj", "{05E270D0-A3A6-4EF6-85DA-E40B29C45E4B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zenix.BLL", "Zenix.BLL\Zenix.BLL.csproj", "{7FDDD018-D229-4BDB-A165-1DECA6F47973}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zenix.DAL", "Zenix.DAL\Zenix.DAL.csproj", "{7D3B935B-DAD2-4605-8607-C523D86D01C9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zenix.Model", "Zenix.Model\Zenix.Model.csproj", "{C35081E4-7811-4254-8E49-8A46DA730688}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zenix.WinUI", "Zenix.UI\Zenix.WinUI.csproj", "{B83FE0F3-1395-4721-8121-1E7F9568DD47}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zenix.Data", "Zenix.Data\Zenix.Data.csproj", "{35345010-C1F7-423C-A17F-EEA5EE21D9D4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{05E270D0-A3A6-4EF6-85DA-E40B29C45E4B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05E270D0-A3A6-4EF6-85DA-E40B29C45E4B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05E270D0-A3A6-4EF6-85DA-E40B29C45E4B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05E270D0-A3A6-4EF6-85DA-E40B29C45E4B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7FDDD018-D229-4BDB-A165-1DECA6F47973}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7FDDD018-D229-4BDB-A165-1DECA6F47973}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7FDDD018-D229-4BDB-A165-1DECA6F47973}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7FDDD018-D229-4BDB-A165-1DECA6F47973}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7D3B935B-DAD2-4605-8607-C523D86D01C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D3B935B-DAD2-4605-8607-C523D86D01C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D3B935B-DAD2-4605-8607-C523D86D01C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D3B935B-DAD2-4605-8607-C523D86D01C9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C35081E4-7811-4254-8E49-8A46DA730688}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C35081E4-7811-4254-8E49-8A46DA730688}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C35081E4-7811-4254-8E49-8A46DA730688}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C35081E4-7811-4254-8E49-8A46DA730688}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B83FE0F3-1395-4721-8121-1E7F9568DD47}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B83FE0F3-1395-4721-8121-1E7F9568DD47}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B83FE0F3-1395-4721-8121-1E7F9568DD47}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B83FE0F3-1395-4721-8121-1E7F9568DD47}.Release|Any CPU.Build.0 = Release|Any CPU
+		{35345010-C1F7-423C-A17F-EEA5EE21D9D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35345010-C1F7-423C-A17F-EEA5EE21D9D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35345010-C1F7-423C-A17F-EEA5EE21D9D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35345010-C1F7-423C-A17F-EEA5EE21D9D4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E1DFC4E5-710C-484B-918F-EF3C5890CC06}
+	EndGlobalSection
+EndGlobal

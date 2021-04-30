@@ -1,0 +1,698 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B83FE0F3-1395-4721-8121-1E7F9568DD47}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Zenix.WinUI</RootNamespace>
+    <AssemblyName>Zenix.WinUI</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Data.Desktop.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Data.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v20.1.Core, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraBars.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraVerticalGrid.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Forms\BaseForms\BaseEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\BaseForms\BaseEditForm.Designer.cs">
+      <DependentUpon>BaseEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\BaseForms\BaseListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\BaseForms\BaseListForm.Designer.cs">
+      <DependentUpon>BaseListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FiltreFormu\FiltreEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FiltreFormu\FiltreEditForm.Designer.cs">
+      <DependentUpon>FiltreEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FiltreFormu\FiltreListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FiltreFormu\FiltreListForm.Designer.cs">
+      <DependentUpon>FiltreListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\KullanıcıForms\KullanıcıEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\KullanıcıForms\KullanıcıEditForm.Designer.cs">
+      <DependentUpon>KullanıcıEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\KullanıcıForms\KullanıcıListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\KullanıcıForms\KullanıcıListForm.Designer.cs">
+      <DependentUpon>KullanıcıListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\KullanıcıForms\RolEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\KullanıcıForms\RolEditForm.Designer.cs">
+      <DependentUpon>RolEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\KullanıcıForms\RolListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\KullanıcıForms\RolListForm.Designer.cs">
+      <DependentUpon>RolListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\KullanıcıForms\RolYetkiKartlariListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\KullanıcıForms\RolYetkiKartlariListForm.Designer.cs">
+      <DependentUpon>RolYetkiKartlariListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\KullanıcıForms\ŞifreDeğiştirEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\KullanıcıForms\ŞifreDeğiştirEditForm.Designer.cs">
+      <DependentUpon>ŞifreDeğiştirEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\KullanıcıForms\ŞifremiUnuttumEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\KullanıcıForms\ŞifremiUnuttumEditForm.Designer.cs">
+      <DependentUpon>ŞifremiUnuttumEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Functions\FileFunctions.cs" />
+    <Compile Include="Functions\FilterFunctions.cs" />
+    <Compile Include="Functions\GeneralFunctions.cs" />
+    <Compile Include="Functions\GlobalUtil.cs" />
+    <Compile Include="Functions\SelectFunctions.cs" />
+    <Compile Include="Functions\SelectRowFunctions.cs" />
+    <Compile Include="Functions\TablePrintingFunctions.cs" />
+    <Compile Include="Interfaces\IStatusBarAciklama.cs" />
+    <Compile Include="Interfaces\IStatusBarKisayol.cs" />
+    <Compile Include="MainForm\AnaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm\AnaForm.Designer.cs">
+      <DependentUpon>AnaForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm\RaporOnizleme.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm\RaporOnizleme.Designer.cs">
+      <DependentUpon>RaporOnizleme.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm\Splash.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm\Splash.Designer.cs">
+      <DependentUpon>Splash.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm\TabloDokumParametreleri.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm\TabloDokumParametreleri.designer.cs">
+      <DependentUpon>TabloDokumParametreleri.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm\Tester.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm\Tester.Designer.cs">
+      <DependentUpon>Tester.cs</DependentUpon>
+    </Compile>
+    <Compile Include="myUserControls\Controls\myButtonEdit.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="myUserControls\Controls\myCalcEdit.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="myUserControls\Controls\myCheckedComboBoxEdit.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="myUserControls\Controls\myCheckEdit.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="myUserControls\Controls\myComboBoxEdit.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="myUserControls\Controls\myDataLayoutControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="myUserControls\Controls\myDateEdit.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="myUserControls\Controls\myEposta.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="myUserControls\Controls\myFilterControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="myUserControls\Controls\myGLNText.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="myUserControls\Controls\myIBAN.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="myUserControls\Controls\myIPText.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="myUserControls\Controls\myKartSKT.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="myUserControls\Controls\myKodText.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="myUserControls\Controls\myKrediKartNo.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="myUserControls\Controls\myMemoEdit.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="myUserControls\Controls\mySimpleButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="myUserControls\Controls\mySNTextEdit.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="myUserControls\Controls\mySpinEdit.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="myUserControls\Controls\myTC.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="myUserControls\Controls\myTelNo.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="myUserControls\Controls\myTextEdit.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="myUserControls\Controls\myToogleSwitch.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="myUserControls\Controls\myUrunGTIN.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="myUserControls\Grid\myBandedGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="myUserControls\Grid\myGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="myUserControls\Navigator\InsUpdNavigator.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="myUserControls\Navigator\InsUpdNavigator.Designer.cs">
+      <DependentUpon>InsUpdNavigator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="myUserControls\Navigator\LongNavigator.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="myUserControls\Navigator\LongNavigator.Designer.cs">
+      <DependentUpon>LongNavigator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="myUserControls\Navigator\SmallNavigator.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="myUserControls\Navigator\SmallNavigator.Designer.cs">
+      <DependentUpon>SmallNavigator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="myUserControls\UserControl\Base\BaseTablo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="myUserControls\UserControl\Base\BaseTablo.Designer.cs">
+      <DependentUpon>BaseTablo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="myUserControls\UserControl\GenelEditTable\RolYetkileriTable.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="myUserControls\UserControl\GenelEditTable\RolYetkileriTable.Designer.cs">
+      <DependentUpon>RolYetkileriTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Show\Interfaces\IBaseFormShow.cs" />
+    <Compile Include="Show\ShowEditForms.cs" />
+    <Compile Include="Show\ShowListForms.cs" />
+    <Compile Include="Show\ShowRibbonForms.cs" />
+    <EmbeddedResource Include="Forms\BaseForms\BaseEditForm.resx">
+      <DependentUpon>BaseEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\BaseForms\BaseListForm.resx">
+      <DependentUpon>BaseListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FiltreFormu\FiltreEditForm.resx">
+      <DependentUpon>FiltreEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FiltreFormu\FiltreListForm.resx">
+      <DependentUpon>FiltreListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\KullanıcıForms\KullanıcıEditForm.resx">
+      <DependentUpon>KullanıcıEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\KullanıcıForms\KullanıcıListForm.resx">
+      <DependentUpon>KullanıcıListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\KullanıcıForms\RolEditForm.resx">
+      <DependentUpon>RolEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\KullanıcıForms\RolListForm.resx">
+      <DependentUpon>RolListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\KullanıcıForms\RolYetkiKartlariListForm.resx">
+      <DependentUpon>RolYetkiKartlariListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\KullanıcıForms\ŞifreDeğiştirEditForm.resx">
+      <DependentUpon>ŞifreDeğiştirEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\KullanıcıForms\ŞifremiUnuttumEditForm.resx">
+      <DependentUpon>ŞifremiUnuttumEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm\AnaForm.resx">
+      <DependentUpon>AnaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm\RaporOnizleme.resx">
+      <DependentUpon>RaporOnizleme.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm\Splash.resx">
+      <DependentUpon>Splash.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm\TabloDokumParametreleri.resx">
+      <DependentUpon>TabloDokumParametreleri.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm\Tester.resx">
+      <DependentUpon>Tester.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="myUserControls\Navigator\InsUpdNavigator.resx">
+      <DependentUpon>InsUpdNavigator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="myUserControls\Navigator\LongNavigator.resx">
+      <DependentUpon>LongNavigator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="myUserControls\Navigator\SmallNavigator.resx">
+      <DependentUpon>SmallNavigator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="myUserControls\UserControl\Base\BaseTablo.resx">
+      <DependentUpon>BaseTablo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="myUserControls\UserControl\GenelEditTable\RolYetkileriTable.resx">
+      <DependentUpon>RolYetkileriTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Logs\kasa.config" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="tr\json resources\dx-analytics-core.tr.json" />
+    <None Include="tr\json resources\dx-dashboard.tr.json" />
+    <None Include="tr\json resources\dx-reporting.tr.json" />
+    <None Include="tr\json resources\dx-rich.tr.json" />
+    <None Include="tr\json resources\dx-spreadsheet.tr.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Logs\Dosya Sistemi.txt" />
+    <Content Include="Logs\kasa.txt" />
+    <Content Include="Logs\Müşteri Kartları.txt" />
+    <Content Include="Resources\abacus_16px.png" />
+    <Content Include="Resources\abacus_32px.png" />
+    <Content Include="Resources\addfile_16x16.png" />
+    <Content Include="Resources\addfile_32x32.png" />
+    <Content Include="Resources\apply_16x16.png" />
+    <Content Include="Resources\apply_16x161.png" />
+    <Content Include="Resources\apply_32x32.png" />
+    <Content Include="Resources\apply_32x321.png" />
+    <Content Include="Resources\assigntome_16x16.png" />
+    <Content Include="Resources\assigntome_32x32.png" />
+    <Content Include="Resources\back.jpg" />
+    <Content Include="Resources\backround.jpg" />
+    <Content Include="Resources\bo_department.svg" />
+    <Content Include="Resources\breakable_32px.png" />
+    <Content Include="Resources\card_16x16.png" />
+    <Content Include="Resources\card_32x32.png" />
+    <Content Include="Resources\car_insurance_16px.png" />
+    <Content Include="Resources\car_insurance_32px.png" />
+    <Content Include="Resources\chat_settings_16px.png" />
+    <Content Include="Resources\chat_settings_32px.png" />
+    <Content Include="Resources\checkbox_16x16.png" />
+    <Content Include="Resources\checkbox_32x32.png" />
+    <Content Include="Resources\close_16x16.png" />
+    <Content Include="Resources\close_32x32.png" />
+    <Content Include="Resources\collaboration_16px.png" />
+    <Content Include="Resources\collaboration_32px.png" />
+    <Content Include="Resources\combo_chart_16px.png" />
+    <Content Include="Resources\combo_chart_32px.png" />
+    <Content Include="Resources\contact_us_16px.png" />
+    <Content Include="Resources\contact_us_32px.png" />
+    <Content Include="Resources\contact_us_40px.png" />
+    <Content Include="Resources\costanalysis_16x16.png" />
+    <Content Include="Resources\costanalysis_32x32.png" />
+    <Content Include="Resources\crossdatasourcefiltering _16x16.png" />
+    <Content Include="Resources\crossdatasourcefiltering_32x32.png" />
+    <Content Include="Resources\customers_16x16.png" />
+    <Content Include="Resources\customers_32x32.png" />
+    <Content Include="Resources\day_camera_16px.png" />
+    <Content Include="Resources\day_camera_32px.png" />
+    <Content Include="Resources\deletelist16.png" />
+    <Content Include="Resources\deletelist2_16x16.png" />
+    <Content Include="Resources\deletelist_16x16.png" />
+    <Content Include="Resources\deletelist_32x32.png" />
+    <Content Include="Resources\deployment_16px.png" />
+    <Content Include="Resources\deployment_32px.png" />
+    <Content Include="Resources\deployment_32px2.png" />
+    <Content Include="Resources\documentmap_16x16.png" />
+    <Content Include="Resources\documentmap_32x32.png" />
+    <Content Include="Resources\editcontact_16x16.png" />
+    <Content Include="Resources\editcontact_32x32.png" />
+    <Content Include="Resources\edit_16x16.png" />
+    <Content Include="Resources\edit_32x32.png" />
+    <Content Include="Resources\exporttodocx_16x16.png" />
+    <Content Include="Resources\exporttodocx_32x32.png" />
+    <Content Include="Resources\exporttodocx_32x321.png" />
+    <Content Include="Resources\exporttopdf_32x32.png" />
+    <Content Include="Resources\exporttotxt_16x16.png" />
+    <Content Include="Resources\exporttotxt_32x32.png" />
+    <Content Include="Resources\exporttoxlsx_16x16.png" />
+    <Content Include="Resources\exporttoxlsx_32x32.png" />
+    <Content Include="Resources\exporttoxls_16x16.png" />
+    <Content Include="Resources\exporttoxls_32x32.png" />
+    <Content Include="Resources\export_16x16.png" />
+    <Content Include="Resources\export_32x32.png" />
+    <Content Include="Resources\feed_paper_16px.png" />
+    <Content Include="Resources\feed_paper_32px.png" />
+    <Content Include="Resources\fullstackedsplinearea_32x32.png" />
+    <Content Include="Resources\Grand Master Key_16px.png" />
+    <Content Include="Resources\Grand Master Key_32px.png" />
+    <Content Include="Resources\groupfieldcollection_16x16.png" />
+    <Content Include="Resources\groupfieldcollection_32x32.png" />
+    <Content Include="Resources\guarantee_16px.png" />
+    <Content Include="Resources\guarantee_32px.png" />
+    <Content Include="Resources\hiclipart.com.png" />
+    <Content Include="Resources\highlightactiveelements_16x16.png" />
+    <Content Include="Resources\highlightactiveelements_32x32.png" />
+    <Content Include="Resources\info_16px.png" />
+    <Content Include="Resources\insertrangefilter_16x16.png" />
+    <Content Include="Resources\insertrangefilter_32x32.png" />
+    <Content Include="Resources\Insurance Agent_16px.png" />
+    <Content Include="Resources\Insurance Agent_32px.png" />
+    <Content Include="Resources\layers_16px.png" />
+    <Content Include="Resources\layers_32px.png" />
+    <Content Include="Resources\light_on_16px.png" />
+    <Content Include="Resources\manufacturing_16px.png" />
+    <Content Include="Resources\manufacturing_32px.png" />
+    <Content Include="Resources\mastercard_credit_card_40px.png" />
+    <Content Include="Resources\Monarch_16px.png" />
+    <Content Include="Resources\Monarch_32px.png" />
+    <Content Include="Resources\newitem_16x16.png" />
+    <Content Include="Resources\newitem_16x161.png" />
+    <Content Include="Resources\newitem_32x32.png" />
+    <Content Include="Resources\Person Female Skin Type 1 2_16px.png" />
+    <Content Include="Resources\polisoftx16.png" />
+    <Content Include="Resources\polisoftx32.png" />
+    <Content Include="Resources\preview_16x16.png" />
+    <Content Include="Resources\preview_32x32.png" />
+    <Content Include="Resources\printpreview_16x16.png" />
+    <Content Include="Resources\printpreview_32x32.png" />
+    <Content Include="Resources\print_16x16.png" />
+    <Content Include="Resources\print_32x32.png" />
+    <Content Include="Resources\processor_16px.png" />
+    <Content Include="Resources\processor_32px.png" />
+    <Content Include="Resources\projectfile_16x16.png" />
+    <Content Include="Resources\projectfile_32x32.png" />
+    <Content Include="Resources\refresh_16x16.png" />
+    <Content Include="Resources\refresh_32x32.png" />
+    <Content Include="Resources\reset_16x16.png" />
+    <Content Include="Resources\reset_32x32.png" />
+    <Content Include="Resources\saveall_16x16.png" />
+    <Content Include="Resources\saveall_16x161.png" />
+    <Content Include="Resources\saveall_32x32.png" />
+    <Content Include="Resources\saveall_32x321.png" />
+    <Content Include="Resources\save_16x16.png" />
+    <Content Include="Resources\save_32x32.png" />
+    <Content Include="Resources\show_password_16px.png" />
+    <Content Include="Resources\show_password_32px.png" />
+    <Content Include="Resources\skyscrapers_16px.png" />
+    <Content Include="Resources\skyscrapers_32px.png" />
+    <Content Include="Resources\smsşablon16.png" />
+    <Content Include="Resources\smsşablon32.png" />
+    <Content Include="Resources\Splash.gif" />
+    <Content Include="Resources\suggestion_16x16.png" />
+    <Content Include="Resources\suggestion_32x32.png" />
+    <Content Include="Resources\task_16x16.png" />
+    <Content Include="Resources\task_32x32.png" />
+    <Content Include="Resources\topic_moved_16px.png" />
+    <Content Include="Resources\topic_moved_32px.png" />
+    <Content Include="Resources\travelator_32px.png" />
+    <Content Include="Resources\treatment_16px.png" />
+    <Content Include="Resources\treatment_32px.png" />
+    <Content Include="Resources\usergroup_16x16.png" />
+    <Content Include="Resources\usergroup_16x161.png" />
+    <Content Include="Resources\usergroup_16x162.png" />
+    <Content Include="Resources\usergroup_32x32.png" />
+    <Content Include="Resources\usergroup_32x321.png" />
+    <Content Include="Resources\usergroup_32x322.png" />
+    <None Include="Resources\user_16x16.png" />
+    <None Include="Resources\user_32x32.png" />
+    <Content Include="Resources\version_16x16.png" />
+    <Content Include="Resources\version_32x32.png" />
+    <Content Include="Resources\weekend_16x16.png" />
+    <Content Include="Resources\weekend_32x32.png" />
+    <Content Include="Resources\work_16px.png" />
+    <Content Include="Resources\work_32px.png" />
+    <Content Include="Resources\xls_16px.png" />
+    <Content Include="Resources\xls_32px.png" />
+    <Content Include="tr\DevExpress.Blazor.resources.dll" />
+    <Content Include="tr\DevExpress.Charts.Designer.v20.1.resources.dll" />
+    <Content Include="tr\DevExpress.Dashboard.v20.1.Core.resources.dll" />
+    <Content Include="tr\DevExpress.Dashboard.v20.1.Web.resources.dll" />
+    <Content Include="tr\DevExpress.Dashboard.v20.1.Win.resources.dll" />
+    <Content Include="tr\DevExpress.Data.v20.1.resources.dll" />
+    <Content Include="tr\DevExpress.DataAccess.v20.1.resources.dll" />
+    <Content Include="tr\DevExpress.DataAccess.v20.1.UI.resources.dll" />
+    <Content Include="tr\DevExpress.Diagram.v20.1.Core.resources.dll" />
+    <Content Include="tr\DevExpress.Dialogs.v20.1.Core.resources.dll" />
+    <Content Include="tr\DevExpress.ExpressApp.AuditTrail.v20.1.resources.dll" />
+    <Content Include="tr\DevExpress.ExpressApp.Chart.v20.1.resources.dll" />
+    <Content Include="tr\DevExpress.ExpressApp.CloneObject.v20.1.resources.dll" />
+    <Content Include="tr\DevExpress.ExpressApp.Dashboards.v20.1.resources.dll" />
+    <Content Include="tr\DevExpress.ExpressApp.Dashboards.Web.v20.1.resources.dll" />
+    <Content Include="tr\DevExpress.ExpressApp.Dashboards.Win.v20.1.resources.dll" />
+    <Content Include="tr\DevExpress.ExpressApp.FileAttachment.Web.v20.1.resources.dll" />
+    <Content Include="tr\DevExpress.ExpressApp.FileAttachment.Win.v20.1.resources.dll" />
+    <Content Include="tr\DevExpress.ExpressApp.HtmlPropertyEditor.Win.v20.1.resources.dll" />
+    <Content Include="tr\DevExpress.ExpressApp.Kpi.v20.1.resources.dll" />
+    <Content Include="tr\DevExpress.ExpressApp.Maps.Mobile.v20.1.resources.dll" />
+    <Content Include="tr\DevExpress.ExpressApp.Maps.Web.v20.1.resources.dll" />
+    <Content Include="tr\DevExpress.ExpressApp.Mobile.v20.1.resources.dll" />
+    <Content Include="tr\DevExpress.ExpressApp.Notifications.v20.1.resources.dll" />
+    <Content Include="tr\DevExpress.ExpressApp.Notifications.Web.v20.1.resources.dll" />
+    <Content Include="tr\DevExpress.ExpressApp.Objects.v20.1.resources.dll" />
+    <Content Include="tr\DevExpress.ExpressApp.Office.Web.v20.1.resources.dll" />
+    <Content Include="tr\DevExpress.ExpressApp.Office.Win.v20.1.resources.dll" />
+    <Content Include="tr\DevExpress.ExpressApp.PivotChart.v20.1.resources.dll" />
+    <Content Include="tr\DevExpress.ExpressApp.PivotChart.Web.v20.1.resources.dll" />
+    <Content Include="tr\DevExpress.ExpressApp.PivotChart.Win.v20.1.resources.dll" />
+    <Content Include="tr\DevExpress.ExpressApp.PivotGrid.v20.1.resources.dll" />
+    <Content Include="tr\DevExpress.ExpressApp.PivotGrid.Web.v20.1.resources.dll" />
+    <Content Include="tr\DevExpress.ExpressApp.Reports.v20.1.resources.dll" />
+    <Content Include="tr\DevExpress.ExpressApp.Reports.Web.v20.1.resources.dll" />
+    <Content Include="tr\DevExpress.ExpressApp.Reports.Win.v20.1.resources.dll" />
+    <Content Include="tr\DevExpress.ExpressApp.ReportsV2.v20.1.resources.dll" />
+    <Content Include="tr\DevExpress.ExpressApp.ReportsV2.Web.v20.1.resources.dll" />
+    <Content Include="tr\DevExpress.ExpressApp.ReportsV2.Win.v20.1.resources.dll" />
+    <Content Include="tr\DevExpress.ExpressApp.Scheduler.v20.1.resources.dll" />
+    <Content Include="tr\DevExpress.ExpressApp.Scheduler.Web.v20.1.resources.dll" />
+    <Content Include="tr\DevExpress.ExpressApp.Scheduler.Win.v20.1.resources.dll" />
+    <Content Include="tr\DevExpress.ExpressApp.ScriptRecorder.v20.1.resources.dll" />
+    <Content Include="tr\DevExpress.ExpressApp.ScriptRecorder.Win.v20.1.resources.dll" />
+    <Content Include="tr\DevExpress.ExpressApp.Security.v20.1.resources.dll" />
+    <Content Include="tr\DevExpress.ExpressApp.Security.Xpo.v20.1.resources.dll" />
+    <Content Include="tr\DevExpress.ExpressApp.StateMachine.v20.1.resources.dll" />
+    <Content Include="tr\DevExpress.ExpressApp.v20.1.resources.dll" />
+    <Content Include="tr\DevExpress.ExpressApp.Validation.v20.1.resources.dll" />
+    <Content Include="tr\DevExpress.ExpressApp.Validation.Win.v20.1.resources.dll" />
+    <Content Include="tr\DevExpress.ExpressApp.ViewVariantsModule.v20.1.resources.dll" />
+    <Content Include="tr\DevExpress.ExpressApp.Web.v20.1.resources.dll" />
+    <Content Include="tr\DevExpress.ExpressApp.Win.v20.1.resources.dll" />
+    <Content Include="tr\DevExpress.ExpressApp.Workflow.v20.1.resources.dll" />
+    <Content Include="tr\DevExpress.ExpressApp.Workflow.Win.v20.1.resources.dll" />
+    <Content Include="tr\DevExpress.Map.v20.1.Core.resources.dll" />
+    <Content Include="tr\DevExpress.Mvvm.v20.1.DataModel.resources.dll" />
+    <Content Include="tr\DevExpress.Office.v20.1.Core.resources.dll" />
+    <Content Include="tr\DevExpress.Pdf.v20.1.Core.resources.dll" />
+    <Content Include="tr\DevExpress.Persistent.Base.v20.1.resources.dll" />
+    <Content Include="tr\DevExpress.PivotGrid.v20.1.Core.resources.dll" />
+    <Content Include="tr\DevExpress.Printing.v20.1.Core.resources.dll" />
+    <Content Include="tr\DevExpress.ReportServer.v20.1.Localization.resources.dll" />
+    <Content Include="tr\DevExpress.RichEdit.v20.1.Core.resources.dll" />
+    <Content Include="tr\DevExpress.Snap.v20.1.Core.resources.dll" />
+    <Content Include="tr\DevExpress.Snap.v20.1.Extensions.resources.dll" />
+    <Content Include="tr\DevExpress.Snap.v20.1.resources.dll" />
+    <Content Include="tr\DevExpress.Sparkline.v20.1.Core.resources.dll" />
+    <Content Include="tr\DevExpress.Spreadsheet.v20.1.Core.resources.dll" />
+    <Content Include="tr\DevExpress.Utils.v20.1.resources.dll" />
+    <Content Include="tr\DevExpress.Utils.v20.1.UI.resources.dll" />
+    <Content Include="tr\DevExpress.Web.ASPxDiagram.v20.1.resources.dll" />
+    <Content Include="tr\DevExpress.Web.ASPxGantt.v20.1.resources.dll" />
+    <Content Include="tr\DevExpress.Web.ASPxHtmlEditor.v20.1.resources.dll" />
+    <Content Include="tr\DevExpress.Web.ASPxRichEdit.v20.1.resources.dll" />
+    <Content Include="tr\DevExpress.Web.ASPxScheduler.v20.1.resources.dll" />
+    <Content Include="tr\DevExpress.Web.ASPxSpellChecker.v20.1.resources.dll" />
+    <Content Include="tr\DevExpress.Web.ASPxSpreadsheet.v20.1.resources.dll" />
+    <Content Include="tr\DevExpress.Web.ASPxTreeList.v20.1.resources.dll" />
+    <Content Include="tr\DevExpress.Web.Resources.v20.1.resources.dll" />
+    <Content Include="tr\DevExpress.Web.v20.1.resources.dll" />
+    <Content Include="tr\DevExpress.Xpf.Charts.v20.1.resources.dll" />
+    <Content Include="tr\DevExpress.Xpf.Controls.v20.1.resources.dll" />
+    <Content Include="tr\DevExpress.Xpf.Core.v20.1.resources.dll" />
+    <Content Include="tr\DevExpress.Xpf.Docking.v20.1.resources.dll" />
+    <Content Include="tr\DevExpress.Xpf.DocumentViewer.v20.1.Core.resources.dll" />
+    <Content Include="tr\DevExpress.Xpf.Gantt.v20.1.resources.dll" />
+    <Content Include="tr\DevExpress.Xpf.Gauges.v20.1.resources.dll" />
+    <Content Include="tr\DevExpress.Xpf.Grid.v20.1.Core.resources.dll" />
+    <Content Include="tr\DevExpress.Xpf.LayoutControl.v20.1.resources.dll" />
+    <Content Include="tr\DevExpress.Xpf.NavBar.v20.1.resources.dll" />
+    <Content Include="tr\DevExpress.Xpf.PdfViewer.v20.1.resources.dll" />
+    <Content Include="tr\DevExpress.Xpf.Printing.v20.1.resources.dll" />
+    <Content Include="tr\DevExpress.Xpf.PropertyGrid.v20.1.resources.dll" />
+    <Content Include="tr\DevExpress.Xpf.ReportDesigner.v20.1.resources.dll" />
+    <Content Include="tr\DevExpress.Xpf.Ribbon.v20.1.resources.dll" />
+    <Content Include="tr\DevExpress.Xpf.RichEdit.v20.1.resources.dll" />
+    <Content Include="tr\DevExpress.Xpf.Scheduler.v20.1.resources.dll" />
+    <Content Include="tr\DevExpress.Xpf.Scheduling.v20.1.resources.dll" />
+    <Content Include="tr\DevExpress.Xpf.SpellChecker.v20.1.resources.dll" />
+    <Content Include="tr\DevExpress.Xpf.Spreadsheet.v20.1.resources.dll" />
+    <Content Include="tr\DevExpress.Xpo.v20.1.resources.dll" />
+    <Content Include="tr\DevExpress.XtraBars.v20.1.resources.dll" />
+    <Content Include="tr\DevExpress.XtraCharts.v20.1.resources.dll" />
+    <Content Include="tr\DevExpress.XtraCharts.v20.1.Wizard.resources.dll" />
+    <Content Include="tr\DevExpress.XtraEditors.v20.1.resources.dll" />
+    <Content Include="tr\DevExpress.XtraGantt.v20.1.resources.dll" />
+    <Content Include="tr\DevExpress.XtraGauges.v20.1.Core.resources.dll" />
+    <Content Include="tr\DevExpress.XtraGauges.v20.1.Presets.resources.dll" />
+    <Content Include="tr\DevExpress.XtraGrid.v20.1.resources.dll" />
+    <Content Include="tr\DevExpress.XtraLayout.v20.1.resources.dll" />
+    <Content Include="tr\DevExpress.XtraNavBar.v20.1.resources.dll" />
+    <Content Include="tr\DevExpress.XtraPdfViewer.v20.1.resources.dll" />
+    <Content Include="tr\DevExpress.XtraPivotGrid.v20.1.resources.dll" />
+    <Content Include="tr\DevExpress.XtraPrinting.v20.1.resources.dll" />
+    <Content Include="tr\DevExpress.XtraReports.v20.1.Extensions.resources.dll" />
+    <Content Include="tr\DevExpress.XtraReports.v20.1.resources.dll" />
+    <Content Include="tr\DevExpress.XtraReports.v20.1.Web.resources.dll" />
+    <Content Include="tr\DevExpress.XtraRichEdit.v20.1.resources.dll" />
+    <Content Include="tr\DevExpress.XtraScheduler.v20.1.Core.resources.dll" />
+    <Content Include="tr\DevExpress.XtraScheduler.v20.1.Extensions.resources.dll" />
+    <Content Include="tr\DevExpress.XtraScheduler.v20.1.Reporting.resources.dll" />
+    <Content Include="tr\DevExpress.XtraScheduler.v20.1.resources.dll" />
+    <Content Include="tr\DevExpress.XtraSpellChecker.v20.1.resources.dll" />
+    <Content Include="tr\DevExpress.XtraSpreadsheet.v20.1.resources.dll" />
+    <Content Include="tr\DevExpress.XtraTreeList.v20.1.resources.dll" />
+    <Content Include="tr\DevExpress.XtraVerticalGrid.v20.1.resources.dll" />
+    <Content Include="tr\DevExpress.XtraWizard.v20.1.resources.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Zenix.BLL\Zenix.BLL.csproj">
+      <Project>{7fddd018-d229-4bdb-a165-1deca6f47973}</Project>
+      <Name>Zenix.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Zenix.Common\Zenix.Common.csproj">
+      <Project>{05E270D0-A3A6-4EF6-85DA-E40B29C45E4B}</Project>
+      <Name>Zenix.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Zenix.Data\Zenix.Data.csproj">
+      <Project>{35345010-C1F7-423C-A17F-EEA5EE21D9D4}</Project>
+      <Name>Zenix.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Zenix.Model\Zenix.Model.csproj">
+      <Project>{C35081E4-7811-4254-8E49-8A46DA730688}</Project>
+      <Name>Zenix.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+</Project>
