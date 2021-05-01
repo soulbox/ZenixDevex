@@ -110,6 +110,18 @@
     <Compile Include="Forms\FiltreFormu\FiltreListForm.Designer.cs">
       <DependentUpon>FiltreListForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FirmaFormu\FirmaEditFormu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FirmaFormu\FirmaEditFormu.Designer.cs">
+      <DependentUpon>FirmaEditFormu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FirmaFormu\FirmaListFormu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FirmaFormu\FirmaListFormu.Designer.cs">
+      <DependentUpon>FirmaListFormu.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\KullanıcıForms\KullanıcıEditForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -151,6 +163,18 @@
     </Compile>
     <Compile Include="Forms\KullanıcıForms\ŞifremiUnuttumEditForm.Designer.cs">
       <DependentUpon>ŞifremiUnuttumEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ÜlkeFormu\ÜlkeEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ÜlkeFormu\ÜlkeEditForm.Designer.cs">
+      <DependentUpon>ÜlkeEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ÜlkeFormu\ÜlkeListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ÜlkeFormu\ÜlkeListForm.Designer.cs">
+      <DependentUpon>ÜlkeListForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Functions\FileFunctions.cs" />
     <Compile Include="Functions\FilterFunctions.cs" />
@@ -323,6 +347,12 @@
     <EmbeddedResource Include="Forms\FiltreFormu\FiltreListForm.resx">
       <DependentUpon>FiltreListForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FirmaFormu\FirmaEditFormu.resx">
+      <DependentUpon>FirmaEditFormu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FirmaFormu\FirmaListFormu.resx">
+      <DependentUpon>FirmaListFormu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\KullanıcıForms\KullanıcıEditForm.resx">
       <DependentUpon>KullanıcıEditForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -343,6 +373,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\KullanıcıForms\ŞifremiUnuttumEditForm.resx">
       <DependentUpon>ŞifremiUnuttumEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ÜlkeFormu\ÜlkeEditForm.resx">
+      <DependentUpon>ÜlkeEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ÜlkeFormu\ÜlkeListForm.resx">
+      <DependentUpon>ÜlkeListForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm\AnaForm.resx">
       <DependentUpon>AnaForm.cs</DependentUpon>
@@ -422,153 +458,217 @@
     <Content Include="Logs\Dosya Sistemi.txt" />
     <Content Include="Logs\kasa.txt" />
     <Content Include="Logs\Müşteri Kartları.txt" />
-    <Content Include="Resources\abacus_16px.png" />
-    <Content Include="Resources\abacus_32px.png" />
-    <Content Include="Resources\addfile_16x16.png" />
-    <Content Include="Resources\addfile_32x32.png" />
-    <Content Include="Resources\apply_16x16.png" />
-    <Content Include="Resources\apply_16x161.png" />
-    <Content Include="Resources\apply_32x32.png" />
-    <Content Include="Resources\apply_32x321.png" />
-    <Content Include="Resources\assigntome_16x16.png" />
-    <Content Include="Resources\assigntome_32x32.png" />
-    <Content Include="Resources\back.jpg" />
-    <Content Include="Resources\backround.jpg" />
+    <None Include="Resources\abacus_16px.png" />
+    <None Include="Resources\abacus_32px.png" />
+    <None Include="Resources\addfile_16x16.png" />
+    <None Include="Resources\addfile_32x32.png" />
+    <None Include="Resources\apply_16x16.png" />
+    <None Include="Resources\apply_16x161.png" />
+    <None Include="Resources\apply_32x32.png" />
+    <None Include="Resources\apply_32x321.png" />
+    <None Include="Resources\assigntome_16x16.png" />
+    <None Include="Resources\assigntome_32x32.png" />
+    <None Include="Resources\back.jpg" />
+    <None Include="Resources\backround.jpg" />
+    <None Include="Resources\barcode.png" />
+    <None Include="Resources\boperson_16x16.png" />
+    <None Include="Resources\boperson_32x32.png" />
     <Content Include="Resources\bo_department.svg" />
-    <Content Include="Resources\breakable_32px.png" />
-    <Content Include="Resources\card_16x16.png" />
-    <Content Include="Resources\card_32x32.png" />
-    <Content Include="Resources\car_insurance_16px.png" />
-    <Content Include="Resources\car_insurance_32px.png" />
-    <Content Include="Resources\chat_settings_16px.png" />
-    <Content Include="Resources\chat_settings_32px.png" />
-    <Content Include="Resources\checkbox_16x16.png" />
-    <Content Include="Resources\checkbox_32x32.png" />
-    <Content Include="Resources\close_16x16.png" />
-    <Content Include="Resources\close_32x32.png" />
-    <Content Include="Resources\collaboration_16px.png" />
-    <Content Include="Resources\collaboration_32px.png" />
-    <Content Include="Resources\combo_chart_16px.png" />
-    <Content Include="Resources\combo_chart_32px.png" />
-    <Content Include="Resources\contact_us_16px.png" />
-    <Content Include="Resources\contact_us_32px.png" />
-    <Content Include="Resources\contact_us_40px.png" />
-    <Content Include="Resources\costanalysis_16x16.png" />
-    <Content Include="Resources\costanalysis_32x32.png" />
-    <Content Include="Resources\crossdatasourcefiltering _16x16.png" />
-    <Content Include="Resources\crossdatasourcefiltering_32x32.png" />
-    <Content Include="Resources\customers_16x16.png" />
-    <Content Include="Resources\customers_32x32.png" />
-    <Content Include="Resources\day_camera_16px.png" />
-    <Content Include="Resources\day_camera_32px.png" />
-    <Content Include="Resources\deletelist16.png" />
-    <Content Include="Resources\deletelist2_16x16.png" />
-    <Content Include="Resources\deletelist_16x16.png" />
-    <Content Include="Resources\deletelist_32x32.png" />
-    <Content Include="Resources\deployment_16px.png" />
-    <Content Include="Resources\deployment_32px.png" />
-    <Content Include="Resources\deployment_32px2.png" />
-    <Content Include="Resources\documentmap_16x16.png" />
-    <Content Include="Resources\documentmap_32x32.png" />
-    <Content Include="Resources\editcontact_16x16.png" />
-    <Content Include="Resources\editcontact_32x32.png" />
-    <Content Include="Resources\edit_16x16.png" />
-    <Content Include="Resources\edit_32x32.png" />
-    <Content Include="Resources\exporttodocx_16x16.png" />
-    <Content Include="Resources\exporttodocx_32x32.png" />
-    <Content Include="Resources\exporttodocx_32x321.png" />
-    <Content Include="Resources\exporttopdf_32x32.png" />
-    <Content Include="Resources\exporttotxt_16x16.png" />
-    <Content Include="Resources\exporttotxt_32x32.png" />
-    <Content Include="Resources\exporttoxlsx_16x16.png" />
-    <Content Include="Resources\exporttoxlsx_32x32.png" />
-    <Content Include="Resources\exporttoxls_16x16.png" />
-    <Content Include="Resources\exporttoxls_32x32.png" />
-    <Content Include="Resources\export_16x16.png" />
-    <Content Include="Resources\export_32x32.png" />
-    <Content Include="Resources\feed_paper_16px.png" />
-    <Content Include="Resources\feed_paper_32px.png" />
-    <Content Include="Resources\fullstackedsplinearea_32x32.png" />
-    <Content Include="Resources\Grand Master Key_16px.png" />
-    <Content Include="Resources\Grand Master Key_32px.png" />
-    <Content Include="Resources\groupfieldcollection_16x16.png" />
-    <Content Include="Resources\groupfieldcollection_32x32.png" />
-    <Content Include="Resources\guarantee_16px.png" />
-    <Content Include="Resources\guarantee_32px.png" />
-    <Content Include="Resources\hiclipart.com.png" />
-    <Content Include="Resources\highlightactiveelements_16x16.png" />
-    <Content Include="Resources\highlightactiveelements_32x32.png" />
-    <Content Include="Resources\info_16px.png" />
-    <Content Include="Resources\insertrangefilter_16x16.png" />
-    <Content Include="Resources\insertrangefilter_32x32.png" />
-    <Content Include="Resources\Insurance Agent_16px.png" />
-    <Content Include="Resources\Insurance Agent_32px.png" />
-    <Content Include="Resources\layers_16px.png" />
-    <Content Include="Resources\layers_32px.png" />
-    <Content Include="Resources\light_on_16px.png" />
-    <Content Include="Resources\manufacturing_16px.png" />
-    <Content Include="Resources\manufacturing_32px.png" />
-    <Content Include="Resources\mastercard_credit_card_40px.png" />
-    <Content Include="Resources\Monarch_16px.png" />
-    <Content Include="Resources\Monarch_32px.png" />
-    <Content Include="Resources\newitem_16x16.png" />
-    <Content Include="Resources\newitem_16x161.png" />
-    <Content Include="Resources\newitem_32x32.png" />
-    <Content Include="Resources\Person Female Skin Type 1 2_16px.png" />
-    <Content Include="Resources\polisoftx16.png" />
-    <Content Include="Resources\polisoftx32.png" />
-    <Content Include="Resources\preview_16x16.png" />
-    <Content Include="Resources\preview_32x32.png" />
+    <None Include="Resources\breakable_32px.png" />
+    <None Include="Resources\broom_20px.png" />
+    <None Include="Resources\broom_20px1.png" />
+    <None Include="Resources\broom_20px11.png" />
+    <None Include="Resources\broom_32px.png" />
+    <None Include="Resources\btnClose.Image.png" />
+    <None Include="Resources\btnCloseAll.Iconimage.png" />
+    <None Include="Resources\btnDurum.Iconimage.png" />
+    <None Include="Resources\btnİnkjet.Iconimage.png" />
+    <None Include="Resources\btnMax.Image.png" />
+    <None Include="Resources\btnMin.Image.png" />
+    <None Include="Resources\btnPTSBildir.Iconimage.png" />
+    <None Include="Resources\btnRun.Iconimage.png" />
+    <None Include="Resources\btnSelectJob.Iconimage.png" />
+    <None Include="Resources\btnÜretimBildir.Iconimage.png" />
+    <None Include="Resources\car_insurance_16px.png" />
+    <None Include="Resources\car_insurance_32px.png" />
+    <None Include="Resources\card_16x16.png" />
+    <None Include="Resources\card_32x32.png" />
+    <None Include="Resources\chat_settings_16px.png" />
+    <None Include="Resources\chat_settings_32px.png" />
+    <None Include="Resources\checkbox_16x16.png" />
+    <None Include="Resources\checkbox_32x32.png" />
+    <None Include="Resources\ClientEtiketPush.png" />
+    <None Include="Resources\ClientStop.png" />
+    <None Include="Resources\ClientXML.png" />
+    <None Include="Resources\close_16x16.png" />
+    <None Include="Resources\close_32x32.png" />
+    <None Include="Resources\collaboration_16px.png" />
+    <None Include="Resources\collaboration_32px.png" />
+    <None Include="Resources\combo_chart_16px.png" />
+    <None Include="Resources\combo_chart_32px.png" />
+    <None Include="Resources\contact_us_16px.png" />
+    <None Include="Resources\contact_us_32px.png" />
+    <None Include="Resources\contact_us_40px.png" />
+    <None Include="Resources\contentarrangeinrows_16x16.png" />
+    <None Include="Resources\contentarrangeinrows_16x161.png" />
+    <None Include="Resources\convert_32x32.png" />
+    <None Include="Resources\costanalysis_16x16.png" />
+    <None Include="Resources\costanalysis_32x32.png" />
+    <None Include="Resources\crossdatasourcefiltering _16x16.png" />
+    <None Include="Resources\crossdatasourcefiltering_32x32.png" />
+    <None Include="Resources\customers_16x16.png" />
+    <None Include="Resources\customer_16x16.png" />
+    <None Include="Resources\customer_32x32.png" />
+    <None Include="Resources\customers_32x32.png" />
+    <None Include="Resources\customizegrid_16x16.png" />
+    <None Include="Resources\customizegrid_32x32.png" />
+    <None Include="Resources\day_camera_16px.png" />
+    <None Include="Resources\day_camera_32px.png" />
+    <None Include="Resources\deletelist_16x16.png" />
+    <None Include="Resources\deletelist_32x32.png" />
+    <None Include="Resources\deletelist2_16x16.png" />
+    <None Include="Resources\deletelist16.png" />
+    <None Include="Resources\deployment_16px.png" />
+    <None Include="Resources\deployment_32px.png" />
+    <None Include="Resources\deployment_32px2.png" />
+    <None Include="Resources\development_skill_16px.png" />
+    <None Include="Resources\development_skill_32px.png" />
+    <None Include="Resources\documentmap_16x16.png" />
+    <None Include="Resources\documentmap_32x32.png" />
+    <None Include="Resources\editcontact_16x16.png" />
+    <None Include="Resources\edit_16x16.png" />
+    <None Include="Resources\edit_32x32.png" />
+    <None Include="Resources\editcontact_32x32.png" />
+    <None Include="Resources\Ekran Alıntısı.JPG" />
+    <None Include="Resources\exporttodocx_16x16.png" />
+    <None Include="Resources\exporttodocx_32x32.png" />
+    <None Include="Resources\exporttodocx_32x321.png" />
+    <None Include="Resources\exporttopdf_32x32.png" />
+    <None Include="Resources\exporttotxt_16x16.png" />
+    <None Include="Resources\exporttotxt_32x32.png" />
+    <None Include="Resources\exporttoxlsx_16x16.png" />
+    <None Include="Resources\exporttoxls_16x16.png" />
+    <None Include="Resources\export_16x16.png" />
+    <None Include="Resources\export_32x32.png" />
+    <None Include="Resources\exporttoxls_32x32.png" />
+    <None Include="Resources\exporttoxlsx_32x32.png" />
+    <None Include="Resources\feed_paper_16px.png" />
+    <None Include="Resources\feed_paper_32px.png" />
+    <None Include="Resources\fullstackedsplinearea_32x32.png" />
+    <None Include="Resources\Grand Master Key_16px.png" />
+    <None Include="Resources\Grand Master Key_32px.png" />
+    <None Include="Resources\groupfieldcollection_16x16.png" />
+    <None Include="Resources\groupfieldcollection_32x32.png" />
+    <None Include="Resources\guarantee_16px.png" />
+    <None Include="Resources\guarantee_32px.png" />
+    <None Include="Resources\handle_with_care_16px.png" />
+    <None Include="Resources\handle_with_care_32px.png" />
+    <None Include="Resources\handshake_16px.png" />
+    <None Include="Resources\handshake_32px.png" />
+    <None Include="Resources\hiclipart.com.png" />
+    <None Include="Resources\highlightactiveelements_16x16.png" />
+    <None Include="Resources\highlightactiveelements_32x32.png" />
+    <None Include="Resources\info_16px.png" />
+    <None Include="Resources\input_16px.png" />
+    <None Include="Resources\input_32px.png" />
+    <None Include="Resources\insertrangefilter_16x16.png" />
+    <None Include="Resources\insertrangefilter_32x32.png" />
+    <None Include="Resources\Insurance Agent_16px.png" />
+    <None Include="Resources\Insurance Agent_32px.png" />
+    <None Include="Resources\layers_16px.png" />
+    <None Include="Resources\layers_32px.png" />
+    <None Include="Resources\light_on_16px.png" />
+    <None Include="Resources\manufacturing_16px.png" />
+    <None Include="Resources\manufacturing_32px.png" />
+    <None Include="Resources\mastercard_credit_card_40px.png" />
+    <None Include="Resources\menu.png" />
+    <None Include="Resources\Monarch_16px.png" />
+    <None Include="Resources\Monarch_32px.png" />
+    <None Include="Resources\newitem_16x16.png" />
+    <None Include="Resources\newitem_16x161.png" />
+    <None Include="Resources\newitem_32x32.png" />
+    <None Include="Resources\paneloff_16x16.png" />
+    <None Include="Resources\paneloff_16x161.png" />
+    <None Include="Resources\Person Female Skin Type 1 2_16px.png" />
+    <None Include="Resources\polisoftx16.png" />
+    <None Include="Resources\polisoftx32.png" />
+    <None Include="Resources\preview_16x16.png" />
+    <None Include="Resources\preview_32x32.png" />
+    <None Include="Resources\countries_32x.png" />
+    <None Include="Resources\countries_16x.png" />
+    <None Include="Resources\countries_32x1.png" />
     <Content Include="Resources\printpreview_16x16.png" />
-    <Content Include="Resources\printpreview_32x32.png" />
-    <Content Include="Resources\print_16x16.png" />
-    <Content Include="Resources\print_32x32.png" />
-    <Content Include="Resources\processor_16px.png" />
-    <Content Include="Resources\processor_32px.png" />
-    <Content Include="Resources\projectfile_16x16.png" />
-    <Content Include="Resources\projectfile_32x32.png" />
-    <Content Include="Resources\refresh_16x16.png" />
-    <Content Include="Resources\refresh_32x32.png" />
-    <Content Include="Resources\reset_16x16.png" />
-    <Content Include="Resources\reset_32x32.png" />
-    <Content Include="Resources\saveall_16x16.png" />
-    <Content Include="Resources\saveall_16x161.png" />
-    <Content Include="Resources\saveall_32x32.png" />
-    <Content Include="Resources\saveall_32x321.png" />
-    <Content Include="Resources\save_16x16.png" />
-    <Content Include="Resources\save_32x32.png" />
-    <Content Include="Resources\show_password_16px.png" />
-    <Content Include="Resources\show_password_32px.png" />
-    <Content Include="Resources\skyscrapers_16px.png" />
-    <Content Include="Resources\skyscrapers_32px.png" />
-    <Content Include="Resources\smsşablon16.png" />
-    <Content Include="Resources\smsşablon32.png" />
-    <Content Include="Resources\Splash.gif" />
-    <Content Include="Resources\suggestion_16x16.png" />
-    <Content Include="Resources\suggestion_32x32.png" />
-    <Content Include="Resources\task_16x16.png" />
-    <Content Include="Resources\task_32x32.png" />
-    <Content Include="Resources\topic_moved_16px.png" />
-    <Content Include="Resources\topic_moved_32px.png" />
-    <Content Include="Resources\travelator_32px.png" />
-    <Content Include="Resources\treatment_16px.png" />
-    <Content Include="Resources\treatment_32px.png" />
-    <Content Include="Resources\usergroup_16x16.png" />
-    <Content Include="Resources\usergroup_16x161.png" />
-    <Content Include="Resources\usergroup_16x162.png" />
-    <Content Include="Resources\usergroup_32x32.png" />
-    <Content Include="Resources\usergroup_32x321.png" />
-    <Content Include="Resources\usergroup_32x322.png" />
+    <None Include="Resources\print_16x16.png" />
+    <None Include="Resources\print_32x32.png" />
+    <None Include="Resources\printpreview_32x32.png" />
+    <None Include="Resources\processor_16px.png" />
+    <None Include="Resources\processor_32px.png" />
+    <None Include="Resources\projectfile_16x16.png" />
+    <None Include="Resources\projectfile_32x32.png" />
+    <None Include="Resources\refresh_16x16.png" />
+    <None Include="Resources\refresh_32x32.png" />
+    <None Include="Resources\refresh_barcode_16px.png" />
+    <None Include="Resources\refresh_barcode_32px.png" />
+    <None Include="Resources\reset_16x16.png" />
+    <None Include="Resources\reset_32x32.png" />
+    <None Include="Resources\Roll of Tickets_16px.png" />
+    <None Include="Resources\Roll of Tickets_16px1.png" />
+    <None Include="Resources\Roll of Tickets_32px.png" />
+    <None Include="Resources\Roll of Tickets_32px1.png" />
+    <None Include="Resources\saveall_16x16.png" />
+    <None Include="Resources\saveall_16x161.png" />
+    <None Include="Resources\saveall_32x32.png" />
+    <None Include="Resources\save_16x16.png" />
+    <None Include="Resources\save_32x32.png" />
+    <None Include="Resources\saveall_32x321.png" />
+    <None Include="Resources\schedule_16px.png" />
+    <None Include="Resources\Set.png" />
+    <None Include="Resources\show_password_16px.png" />
+    <None Include="Resources\show_password_32px.png" />
+    <None Include="Resources\skyscrapers_16px.png" />
+    <None Include="Resources\skyscrapers_32px.png" />
+    <None Include="Resources\smsşablon16.png" />
+    <None Include="Resources\smsşablon32.png" />
+    <None Include="Resources\Splash.gif" />
+    <None Include="Resources\statistics_16px.png" />
+    <None Include="Resources\statistics_32px.png" />
+    <None Include="Resources\suggestion_16x16.png" />
+    <None Include="Resources\suggestion_32x32.png" />
+    <None Include="Resources\switch_host_16px.png" />
+    <None Include="Resources\switch_host_32px.png" />
+    <None Include="Resources\task_16x16.png" />
+    <None Include="Resources\task_32x32.png" />
+    <None Include="Resources\tax_16px.png" />
+    <None Include="Resources\tax_32px.png" />
+    <None Include="Resources\topic_moved_16px.png" />
+    <None Include="Resources\topic_moved_32px.png" />
+    <None Include="Resources\toplefthorizontaloutside_32x32.png" />
+    <None Include="Resources\travelator_32px.png" />
+    <None Include="Resources\treatment_16px.png" />
+    <None Include="Resources\treatment_32px.png" />
+    <None Include="Resources\trolley_16px.png" />
+    <None Include="Resources\trolley_32px.png" />
+    <None Include="Resources\usergroup_16x16.png" />
+    <None Include="Resources\usergroup_16x161.png" />
+    <None Include="Resources\usergroup_16x162.png" />
+    <None Include="Resources\usergroup_32x32.png" />
+    <None Include="Resources\usergroup_32x321.png" />
     <None Include="Resources\user_16x16.png" />
     <None Include="Resources\user_32x32.png" />
-    <Content Include="Resources\version_16x16.png" />
-    <Content Include="Resources\version_32x32.png" />
-    <Content Include="Resources\weekend_16x16.png" />
-    <Content Include="Resources\weekend_32x32.png" />
-    <Content Include="Resources\work_16px.png" />
-    <Content Include="Resources\work_32px.png" />
-    <Content Include="Resources\xls_16px.png" />
-    <Content Include="Resources\xls_32px.png" />
+    <None Include="Resources\usergroup_32x322.png" />
+    <None Include="Resources\version_16x16.png" />
+    <None Include="Resources\version_32x32.png" />
+    <None Include="Resources\warehouse_16px.png" />
+    <None Include="Resources\warehouse_32px.png" />
+    <None Include="Resources\weekend_16x16.png" />
+    <None Include="Resources\weekend_32x32.png" />
+    <None Include="Resources\work_16px.png" />
+    <None Include="Resources\work_32px.png" />
+    <None Include="Resources\xbox_menu_16px.png" />
+    <None Include="Resources\xls_16px.png" />
+    <None Include="Resources\xls_32px.png" />
+    <None Include="Resources\xml_file_16px.png" />
+    <None Include="Resources\xml_file_32px.png" />
     <Content Include="tr\DevExpress.Blazor.resources.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

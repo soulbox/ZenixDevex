@@ -117,36 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="btnŞifreler.ImageOptions.LargeImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAABNZJREFUWEft
-        VWlTW1UYxg8u4+hHHZ3xH/hBZzrjMn5B/UBhxLZaVrtoqSwD41ZGGhygG5YlLTSQsi9ZCC1toZSQskm2
-        khRJpAESSKBsaSAkEBKSEqAhr/ecXG4Tk6atRUZnfGaemTP3ed/nee89Jych/wrQ6NV7j9OrEneSKBOH
-        Z+RVvl1U32LpHVDDThJlouwQYppd1Ve6zTPmFdhJokyU/f8AjxxgeHIeWNd7gdUihJEpo4+2HXrQAcb0
-        ZjiWWwGJtCLMY7mVoNUvbpuOGHSAjj4V1bzFTtnQtumIQQeQ3tH5GfSpxrdNRww6AGIZT0A1l1/q8NG2
-        Q3/sAIiaaSNmIA3xWfQnGiAYJ+/pYWJmAhOtA9UE41MPMG2ygUYthd87z4L0UgLImlNB2ZmDidbo2UBX
-        HlFzC9cG8vDmUw2gVnXBraspMCqvAMv8MBiXHCC4PQPM1hFMQf8MGC0OrGlkZbhWreoJ6LVFaoD0wrLX
-        sy+wLCdLOLa/Mp9ZauezEl0qMdO94bSBZWUNTrKVkHxBBj+zdJB1eRYzg1gnF8vgDOcPWLavwbrTCndE
-        DDefleTKL2XaA3lnEZm0X2tfw/+IgdBbv++Q9PLhOZtZ5wYCepMdjtLF8EvjFBTetAZkJm8K1xjMDtQC
-        VtPYJvLoYX15gLR9PABCnhM1xF5UCGhW1wMnNnKuuyDpvARyrhgCBnsT1SSfl8L6hgv3ujZWQdF+3CZu
-        iC8hIx4NHM6N42mkDLvbjV8cg9utg/S6UZ+gzLpBOESrxMxhq0A+sQbNyvtYS6/VAO+3cbIbwO3eBLWk
-        yC7ifsVBGWScP0TceLauv2aF7KOQSLx9fruFCk+j8+H9j/fAe6GRmFmn6bhu7YEb66g2qUiKn3lDe7tq
-        RdQQX0fG+ULMjTs7LCrwC0eHKoUhp8IL2pfgo92xVDhi2N4DIB8YBPHYKlWXwpCB7f466fIQw8ICYojY
-        XDLWg67KiHcljYet7k3Pvnlj2rgC35cpKONs3qhPuDdzGsaouu8uKmBmwU66PATKQFkdNWHvkPHk3nOi
-        BHo133N8vWC2OiGttJ8yzmszwQef7PML//DTLwjNTNWllvTDos1ziL0xq77hEHKi+X5nQVgX+pKIEztg
-        nJT6fDd0GI/SJYTpMmX+TVa93wAJ2RxKLxAsw7fnJEQvaUJi/q54TdwQ1y9ghL9IxvpCyAx9RcSJUd7T
-        dvqMzmxVA417lwpATC3kQ+TXmZhpxNpbo3EnoPyGhuz2QD/avopesK0i8mUyLjCamqJe6GVHdaglxctb
-        P0V0EBMKxZDbavIJCkRUg2qtDs+HRB7IS8jefxN5kzHBoajY9byQE1OuFNBM6ApGUGrNcKRQAmdaFgIG
-        I55qMcIRYrsGxxdxD7qSFe0ZCyJONBN5kvZPju6qiD3EnhkMup51dJloZ5chmfh9/1g9BCeuzRF7bcE8
-        cXUOfqpSQQqh6fRWfPEYtF1ovw09tRGfkXZ/D601n78qYscwJI0Hl/SaNteqwwKykXmgN6ngh9I+zHNN
-        QyBXz4OT0GbVrS4J7+AS8QWL0ZkibZ4dHRVhbxL7eFrIidLLr6UsElerbWao2YWI1uiZkB0928vZf0pY
-        F/EG2fbPQFAV/lZnZXh4V/XuKES0Rs9I+b+EkJA/AQEbAeEjxe3cAAAAAElFTkSuQmCC
-</value>
-  </data>
   <metadata name="xtraTabbedMdiManager.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="AnaForm.IconOptions.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABABAAMDAQAAEABABoBgAABgEAACAgEAABAAQA6AIAAG4HAAAQEBAAAQAEACgBAABWCgAAMDAAAAEA

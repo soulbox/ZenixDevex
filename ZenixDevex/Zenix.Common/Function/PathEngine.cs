@@ -9,7 +9,7 @@ namespace Zenix.Common.Function
 {
     public  class PathEngine
     {
-        const string ConfigFolder = "MüşteriTakip";
+        const string ConfigFolder = "ZenixSolution";
 
         public static string ConfigPath { get; private  set; }
         static PathEngine()

@@ -60,5 +60,7 @@ namespace Zenix.Common.Function
 
             return default(T);
         }
+
+
     }
 }

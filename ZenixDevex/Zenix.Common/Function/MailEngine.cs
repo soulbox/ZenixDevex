@@ -15,8 +15,8 @@ namespace Zenix.Common.Function
 {
     public static class MailEngine
     {
-        const string mymail = "Zenixservice@gmail.com";
-        const string mypass = "Kdr63792958!";
+        const string mymail = "zenixsolutioninfo@gmail.com";
+        const string mypass = "63792958";
         const string myhost = "smtp.gmail.com";
         const int myport = 587;
 
@@ -50,7 +50,7 @@ tr:nth-child(even) {
 <table>
 	<tr>
 		<th>Bilgiler</th>
-		<th>Veriler</th>
+		<th>Veriler</th>		
 	</tr>
 	<tr>
 		<td style='text-align: right;'>Yetki Türü :</td>
@@ -87,7 +87,8 @@ tr:nth-child(even) {
                     Body = mailbody
                     .Replace("{Rol}", rol)
                     .Replace("{KullanıcıAdı}", kullanıcıAdı)
-                    .Replace("{Şifre}", secureŞifre.ConvertToUnsecureString()),
+                    .Replace("{Şifre}", secureŞifre.ConvertToUnsecureString())
+
                 };
                 try
                 {

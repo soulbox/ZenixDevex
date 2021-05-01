@@ -13,6 +13,10 @@ namespace Zenix.Common.Enums
         Rol = 3,
         [Description("Yetki Kartı")]
         Yetki = 4,
-       
+        [Description("Firma Kartı")]
+        Firma = 5,
+        [Description("Ülke Kartı")]
+        Ülke = 6,
+
     }
 }

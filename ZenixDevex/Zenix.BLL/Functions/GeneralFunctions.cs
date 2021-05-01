@@ -7,6 +7,7 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using Zenix.BLL.Interfaces;
 using Zenix.DAL.Base;
 using Zenix.DAL.Interfaces;
 using Zenix.Data.Context;
@@ -26,13 +27,16 @@ namespace Zenix.BLL.Functions
             //return ConfigurationManager.ConnectionStrings[name].ConnectionString;
         }
 
+        public static T ToBll<T>(this IBaseBLL inter) where T : IBaseBLL 
+            => (T)inter;
+
         public static string GetConnectionString()
         {
             return GetConnectionString(server);
         }
         private static TContext CreateContext<TContext>() where TContext : DbContext
         {
-            
+
             return (TContext)Activator.CreateInstance(typeof(TContext), GetConnectionString());
 
         }

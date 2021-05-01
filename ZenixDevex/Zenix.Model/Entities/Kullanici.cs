@@ -10,13 +10,13 @@ using System.Text;
 using System.Threading.Tasks;
 namespace Zenix.Model.Entities
 {
-  public  class Kullanici : BaseEntityDurum
+    public class Kullanici : BaseEntityDurum
     {
-        [Index(name: "IX_Kod", IsUnique = true),Kod("Kullanıcı Adı","txtKullanıcıAdı"),ZorunluAlan("Kullanıcı Adı", "txtKullanıcıAdı")]
+        [Index(name: "IX_Kod", IsUnique = true), Kod("Kullanıcı Adı", "txtKullanıcıAdı"), ZorunluAlan("Kullanıcı Adı", "txtKullanıcıAdı")]
         public override string Kod { get; set; }
 
-        [Required,StringLength(30), ZorunluAlan("Adı", "txtAdı")]
-        public string  Adı { get; set; }
+        [Required, StringLength(30), ZorunluAlan("Adı", "txtAdı")]
+        public string Adı { get; set; }
         [Required, StringLength(30), ZorunluAlan("Soyadı", "txtSoyadı")]
         public string Soyadı { get; set; }
 
@@ -24,7 +24,7 @@ namespace Zenix.Model.Entities
         public string Email { get; set; }
 
 
-        [Required, StringLength(32)] 
+        [Required, StringLength(32)]
         public string Şifre { get; set; }
 
         [StringLength(500)]
@@ -33,10 +33,7 @@ namespace Zenix.Model.Entities
         public long? RolId { get; set; }
         public Rol Rol { get; set; }
 
-        //public bool TümYetki { get; set; }
-        //public bool KartBilgileri { get; set; }
-        //public bool HesapBilgileri { get; set; }
-        //public bool EkDosyalar { get; set; }
 
     }
+
 }

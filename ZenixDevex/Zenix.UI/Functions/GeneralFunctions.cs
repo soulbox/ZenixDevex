@@ -25,6 +25,7 @@ using Zenix.WinUI.myUserControls.Grid;
 using DevExpress.XtraGrid.Columns;
 using System.Linq.Expressions;
 using Zenix.WinUI.MainForm;
+using DevExpress.XtraEditors;
 
 namespace Zenix.WinUI.Functions
 {
@@ -36,6 +37,11 @@ namespace Zenix.WinUI.Functions
             Msg.KayıtSecmemeUyariMesajı();
 
             return -1;
+        }
+
+        public static void ToData<T>(this ComboBoxEdit combo ) where T:Enum
+        {
+            combo.Properties.Items.AddRange(EnumFunction.GetEnumDescriptionList<T>());
         }
         public static T GetRow<T>(this GridView tablo, bool mesajver = false)
         {

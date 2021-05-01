@@ -61,9 +61,11 @@
     <Compile Include="Functions\GeneralFunctions.cs" />
     <Compile Include="Functions\ValidationFunctions.cs" />
     <Compile Include="General\FiltreBll.cs" />
+    <Compile Include="General\FirmaBll.cs" />
     <Compile Include="General\KullanıcıBll.cs" />
     <Compile Include="General\RolBll.cs" />
     <Compile Include="General\RolYetkileriBll.cs" />
+    <Compile Include="General\ÜlkeBll.cs" />
     <Compile Include="Interfaces\IBaseBLL.cs" />
     <Compile Include="Interfaces\IBaseCommonBLL.cs" />
     <Compile Include="Interfaces\IBaseGenelBll.cs" />

@@ -13,7 +13,7 @@ namespace Zenix.BLL.Base
 {
     public class BaseGenelBLL<TEntity> : BaseBLL<TEntity, ZenixContext> where TEntity : BaseEntity
     {
-        public  readonly KartTuru KartTuru;
+        public readonly KartTuru KartTuru;
 
         public BaseGenelBLL(KartTuru kartTuru) { KartTuru = kartTuru; }
         public BaseGenelBLL(Control ctrl, KartTuru kartTuru) : base(ctrl) { KartTuru = kartTuru; }
@@ -24,7 +24,11 @@ namespace Zenix.BLL.Base
 
         public virtual BaseEntity Single(Expression<Func<TEntity, bool>> filter)
         {
-            return  BaseSingle(filter, x => x);
+            return BaseSingle(filter, x => x);
+        }
+        public virtual IEnumerable<BaseEntity> List()
+        {
+            return List(null);
         }
         public virtual IEnumerable<BaseEntity> List(Expression<Func<TEntity, bool>> filter)
         {

@@ -5,7 +5,7 @@ using Zenix.WinUI.myUserControls.Controls;
 using Zenix.WinUI.Show;
 using Zenix.WinUI.Forms.KullanıcıForms;
 using Zenix.Model.DTO;
-
+using Zenix.WinUI.Forms.ÜlkeFormu;
 
 namespace Zenix.WinUI.Functions
 {
@@ -31,7 +31,7 @@ namespace Zenix.WinUI.Functions
         {
             switch (btnedit.Name)
             {
-               
+
                 case "txtRol":
                     {
                         var entity = (Rol)ShowListForms<RolListForm>.ShowDialogListForm(KartTuru.Rol, btnedit.Id);
@@ -41,18 +41,27 @@ namespace Zenix.WinUI.Functions
                             btnedit.EditValue = entity.RolAdi;
                         }
                     }
-                    break;                
+                    break;
                 case "txtKullanıcı":
                     {
-                        var entity = (KullanıcıL   )ShowListForms<KullanıcıListForm >.ShowDialogListForm(KartTuru.Kullanıcı , btnedit.Id);
+                        var entity = (KullanıcıL)ShowListForms<KullanıcıListForm>.ShowDialogListForm(KartTuru.Kullanıcı, btnedit.Id);
                         if (entity != null)
                         {
                             btnedit.Id = entity.Id;
-                            btnedit.EditValue = $"{entity.Adı} {entity.Soyadı }" ;
+                            btnedit.EditValue = $"{entity.Adı} {entity.Soyadı }";
                         }
                     }
                     break;
-
+                case "txtÜlke":
+                    {
+                        var entity = (Ülke)ShowListForms<ÜlkeListForm>.ShowDialogListForm(KartTuru.Ülke, btnedit.Id);
+                        if (entity != null)
+                        {
+                            btnedit.Id = entity.Id;
+                            btnedit.EditValue = entity.Adı;
+                        }
+                    }
+                    break;
             }
         }
 

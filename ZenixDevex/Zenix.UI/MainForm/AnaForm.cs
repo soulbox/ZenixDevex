@@ -18,6 +18,8 @@ using Zenix.Model.DTO;
 
 using System.Threading;
 using Zenix.UI;
+using Zenix.WinUI.Forms.FirmaFormu;
+using Zenix.WinUI.Forms.ÜlkeFormu;
 
 namespace Zenix.WinUI.MainForm
 {
@@ -48,7 +50,7 @@ namespace Zenix.WinUI.MainForm
             //baruserinfo.Caption = $"Hoşgeldin:{ Kullanıcı?.Adı.ToUpper()} {Kullanıcı?.Soyadı.ToUpper()}";
             barVers.Caption = $"Versiyon :{Program.DeplayVersion()}";
             lblDatasource.Caption = $"Database :{ZenixContext.ConBuilder.DataSource}";
-
+            baruserinfo.Caption = Kullanıcı.Adı.Equals("admin") ? "HOŞGELDİN Admin" : $"HOŞGELDİN {Kullanıcı.Adı.ToUpper()} {Kullanıcı.Soyadı.ToUpper()}";
             disableitemsisexcludemachine = new BarItem[]
             {
                 //btnRolKartları,
@@ -78,12 +80,17 @@ namespace Zenix.WinUI.MainForm
                     case BarButtonItem btn:
                         btn.ItemClick += (obj, e) =>
                         {
-                             if (e.Item == btnRolKartları)
+                            if (e.Item == btnRolKartları)
                                 ShowListForms<RolListForm>.ShowListForm(KartTuru.Rol);
                             else if (e.Item == btnKullanıcı)
-                                ShowListForms<KullanıcıListForm>.ShowListForm(KartTuru.Kullanıcı);                           
+                                ShowListForms<KullanıcıListForm>.ShowListForm(KartTuru.Kullanıcı);
                             else if (e.Item == btnŞifreDeğiştir)
                                 ShowEditForms<ŞifreDeğiştirEditForm>.ShowDialogEditForm(IslemTuru.EntityUpdate);
+                            else if (e.Item == btnFirma)
+                                ShowListForms<FirmaListFormu>.ShowListForm(KartTuru.Firma);
+                            else if (e.Item == btnÜlkeler)
+                                ShowListForms<ÜlkeListForm>.ShowListForm(KartTuru.Ülke);
+
 
 
 

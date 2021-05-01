@@ -26,21 +26,21 @@ namespace Zenix.Data.ServerMigration
         }
         protected override void Seed(ZenixContext context)
         {
-            SeedKullanıcı(context );
+            SeedKullanıcı(context);
 
         }
 
         void SeedKullanıcı(ZenixContext db)
         {
             void Rol()
-            {            
+            {
                 db.Rol.AddOrUpdate(x => x.Id, new Rol
                 {
                     Id = 1,
                     Kod = "Rol-0001",
                     RolAdi = "Yönetici",
                     Açıklama = "Sistem Tarafından Oluşturuldu",
-                    Durum = true,   
+                    Durum = true,
                 });
             }
             void RolYetki()
@@ -83,7 +83,7 @@ namespace Zenix.Data.ServerMigration
                 Soyadı = "admin",
                 Açıklama = "admin",
                 Email = "kadir2008@hotmail.com",
-                RolId = 1
+                RolId = 1,
             });
         }
 

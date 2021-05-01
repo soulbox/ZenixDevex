@@ -31,6 +31,9 @@ namespace Zenix.Data.Context
         public DbSet<Kullanici> Kullanici { get; set; }    
         public DbSet<Rol> Rol { get; set; }
         public DbSet<RolYetkileri> RolYetkileri { get; set; }
+        public DbSet<Firma> Firma { get; set; }
+        public DbSet<Ülke> Ülke { get; set; }
+
 
 
 
@@ -74,7 +77,8 @@ namespace Zenix.Data.Context
 
         static List<SqlConnectionStringBuilder> datasources = datasources ?? new List<SqlConnectionStringBuilder>()
         {
-            HWIDEngine.isExcludeMachine ?LocalPC:  Sunucu,
+            //HWIDEngine.isExcludeMachine ?LocalPC:  Sunucu,
+            Sunucu,
             LocalPC//server          
         };
         static SqlConnectionStringBuilder FirstOrDefaultConnections()
