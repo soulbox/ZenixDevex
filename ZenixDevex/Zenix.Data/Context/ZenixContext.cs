@@ -77,7 +77,7 @@ namespace Zenix.Data.Context
 
         static List<SqlConnectionStringBuilder> datasources = datasources ?? new List<SqlConnectionStringBuilder>()
         {
-            //HWIDEngine.isExcludeMachine ?LocalPC:  Sunucu,
+            HWIDEngine.isExcludeMachine ?LocalPC:  Sunucu,
             Sunucu,
             LocalPC//server          
         };

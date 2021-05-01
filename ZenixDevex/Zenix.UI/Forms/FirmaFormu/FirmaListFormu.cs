@@ -13,6 +13,7 @@ using System.Linq;
 using Zenix.Common.Function;
 using DevExpress.XtraGrid.Views.Grid;
 using Zenix.WinUI.MainForm;
+using Zenix.WinUI.Forms.ÜrünlerFormu;
 
 namespace Zenix.WinUI.Forms.FirmaFormu
 {
@@ -34,19 +35,24 @@ namespace Zenix.WinUI.Forms.FirmaFormu
             this.Navigator = longNavigator.controlNavigator;
             Text = "Firma Kartları ";
             Tablo.ViewCaption = Text;
-            //if (IsMdiChild)
-            //    ShowItems = new BarItem[] { btnBagliKayitlar };
+            ShowHideButtons(IsMdiChild, btnBağlıKayıtları);
+            btnBağlıKayıtları.Caption = "Ürünleri";
+
 
         }
         protected override void Listele()
         {
-            Tablo.GridControl.DataSource = ((FirmaBll)Bll).List(FilterFunctions.Filter<Firma>(AktifKayitlariGoster));          
-
+            Tablo.GridControl.DataSource = ((FirmaBll)Bll).List(FilterFunctions.Filter<Firma>(AktifKayitlariGoster));
 
         }
 
-     
+        protected override void BağlıKayıtlarAc()
+        {
+            var entity = Tablo.GetRow<Firma>();
+            if (entity == null) return;
+            ShowListForms<ÜrünListForm>.ShowListForm(Common.Enums.KartTuru.Ürün, entity.Id, entity.FirmaAdi);
+        }
 
-      
+
     }
 }

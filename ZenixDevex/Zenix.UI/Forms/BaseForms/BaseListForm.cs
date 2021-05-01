@@ -71,7 +71,10 @@ namespace Zenix.WinUI.Forms.BaseForms
             tablo.RowFocus("Id", id);
 
         }
-
+        protected void ShowHideButtons(bool visible,params BarItem[] prm) 
+        {
+            prm?.Where(x => x != null).ToList().ForEach(x => x.Visibility = visible ? BarItemVisibility.Always : BarItemVisibility.Never);
+        }
         void EventLoad()
         {
             //Button Events
@@ -125,14 +128,14 @@ namespace Zenix.WinUI.Forms.BaseForms
                         else
                             tablo.HideCustomization();
                     }
-                    else if (e.Item == btnHesapBilgileri)
+                    else if (e.Item == btnÜrünler)
                         HesapBilgileriAc();
                     else if (e.Item == btnCariBilgiler)
                         CariBilgileriAc();
                     else if (e.Item == btnSigortaları)
                         SigortalarıAç();
-                    else if (e.Item == btnKrediKartları)
-                        KrediKartlarıAc();
+                    else if (e.Item == btnBağlıKayıtları)
+                        BağlıKayıtlarAc();
                     else if (e.Item == btnEkDosyalar)
                         EkDosyalarAc();
                     else if (e.Item == btnDosyaGrub)
@@ -321,7 +324,7 @@ namespace Zenix.WinUI.Forms.BaseForms
         protected virtual void Listele() { }
         protected virtual void HesapBilgileriAc() { }
         protected virtual void CariBilgileriAc() { }
-        protected virtual void KrediKartlarıAc() { }
+        protected virtual void BağlıKayıtlarAc() { }
         protected virtual void EkDosyalarAc() { }
         protected virtual void DosyaGrubAc() { }
         protected virtual void Degiskenleridoldur() { }

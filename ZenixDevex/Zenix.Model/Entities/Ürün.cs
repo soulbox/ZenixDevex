@@ -14,10 +14,11 @@ namespace Zenix.Model.Entities
 {
     public class Ürün : BaseEntityDurum
     {
-        [Index(name: "IX_Kod", IsUnique = true)]
+        [Index(name: "IX_Kod", IsUnique = false)]
         public override string Kod { get; set; }
         [Required, StringLength(30), ZorunluAlan("Adı", "txtAdı")]
         public string Adı { get; set; }
+        [Required, StringLength(14), ZorunluAlan("Adı", "txtGTIN")]
         public string GTIN { get; set; }
         public Firma Firma { get; set; }
         public long FirmaId { get; set; }

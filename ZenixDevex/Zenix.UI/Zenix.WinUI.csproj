@@ -176,6 +176,18 @@
     <Compile Include="Forms\ÜlkeFormu\ÜlkeListForm.Designer.cs">
       <DependentUpon>ÜlkeListForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\ÜrünlerFormu\ÜrünEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ÜrünlerFormu\ÜrünEditForm.Designer.cs">
+      <DependentUpon>ÜrünEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ÜrünlerFormu\ÜrünListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ÜrünlerFormu\ÜrünListForm.Designer.cs">
+      <DependentUpon>ÜrünListForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Functions\FileFunctions.cs" />
     <Compile Include="Functions\FilterFunctions.cs" />
     <Compile Include="Functions\GeneralFunctions.cs" />
@@ -379,6 +391,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ÜlkeFormu\ÜlkeListForm.resx">
       <DependentUpon>ÜlkeListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ÜrünlerFormu\ÜrünEditForm.resx">
+      <DependentUpon>ÜrünEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ÜrünlerFormu\ÜrünListForm.resx">
+      <DependentUpon>ÜrünListForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm\AnaForm.resx">
       <DependentUpon>AnaForm.cs</DependentUpon>
@@ -597,6 +615,8 @@
     <None Include="Resources\countries_32x.png" />
     <None Include="Resources\countries_16x.png" />
     <None Include="Resources\countries_32x1.png" />
+    <None Include="Resources\documentmap_32x321.png" />
+    <None Include="Resources\documentmap_16x161.png" />
     <Content Include="Resources\printpreview_16x16.png" />
     <None Include="Resources\print_16x16.png" />
     <None Include="Resources\print_32x32.png" />

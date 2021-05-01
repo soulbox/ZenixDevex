@@ -853,9 +853,29 @@ namespace Zenix.WinUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap documentmap_16x161 {
+            get {
+                object obj = ResourceManager.GetObject("documentmap_16x161", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap documentmap_32x32 {
             get {
                 object obj = ResourceManager.GetObject("documentmap_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap documentmap_32x321 {
+            get {
+                object obj = ResourceManager.GetObject("documentmap_32x321", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

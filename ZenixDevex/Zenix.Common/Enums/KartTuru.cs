@@ -17,6 +17,8 @@ namespace Zenix.Common.Enums
         Firma = 5,
         [Description("Ülke Kartı")]
         Ülke = 6,
+        [Description("Ürün Kartı")]
+        Ürün = 7,
 
     }
 }

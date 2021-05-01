@@ -57,6 +57,7 @@
     <Compile Include="DTO\FirmalarDTO.cs" />
     <Compile Include="DTO\KullanıcıDTO.cs" />
     <Compile Include="DTO\RolYetkileriDTO.cs" />
+    <Compile Include="DTO\ÜrünDTO.cs" />
     <Compile Include="Entities\Base\BaseEntity.cs" />
     <Compile Include="Entities\Base\BaseEntityDurum.cs" />
     <Compile Include="Entities\Base\BaseEntityHaraket.cs" />

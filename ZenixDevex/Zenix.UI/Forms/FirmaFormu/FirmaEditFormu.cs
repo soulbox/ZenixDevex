@@ -39,7 +39,7 @@ namespace Zenix.WinUI.Forms.FirmaFormu
             txtKod.Text = entity.Kod;
             tglDurum.IsOn = entity.Durum;
             txtFirmaAdi.Text = entity.FirmaAdi;
-            cmbFirmatipi.Text = entity.FirmaTipi .ToName();
+            cmbFirmatipi.Text = entity.FirmaTipi.ToName();
             txtAdress.Text = entity.Adres;
             txtVergiNo.Text = entity.VergiNo;
             txtVergiDairesi.Text = entity.VergiDairesi;
@@ -59,7 +59,9 @@ namespace Zenix.WinUI.Forms.FirmaFormu
                 VergiDairesi = txtVergiDairesi.Text,
                 FirmaTipi = cmbFirmatipi.Text.GetEnum<FirmaTipi>(),
                 VergiNo = txtVergiNo.Text.GetNumbers(),
-                Tarih = ((Firma)OldEntity).Tarih
+                Tarih = ((Firma)OldEntity).Tarih,
+                ÜlkeId = txtÜlke.Id.ConvertTo<long>(),
+
             };
             ButtonEnableDurumu();
         }
@@ -70,7 +72,7 @@ namespace Zenix.WinUI.Forms.FirmaFormu
             {
                 if (sender == txtÜlke)
                     sec.Seç(txtÜlke);
-              
+
             }
         }
     }
