@@ -35,8 +35,10 @@ namespace Zenix.Data.Context
         public DbSet<Ülke> Ülke { get; set; }
         public DbSet<Ürün> Ürün { get; set; }
         public DbSet<Revizyon> Revizyon { get; set; }
-        public DbSet<Şarz > Şarj { get; set; }
-        public DbSet<Paketleme > Paketleme { get; set; }
+        public DbSet<Şarz> Şarj { get; set; }
+        public DbSet<Paketleme> Paketleme { get; set; }
+        public DbSet<Sipariş> Sipariş { get; set; }
+
 
 
 
@@ -71,23 +73,23 @@ namespace Zenix.Data.Context
             DataSource = ".",
             UserID = "sa",
             Password = "63792958",
-            InitialCatalog = "Zenix",
+            InitialCatalog = "ZENIX",
         };
 
         static SqlConnectionStringBuilder Sunucu = new SqlConnectionStringBuilder()
         {
 
             DataSource = "213.142.144.186",
-            UserID = "Zenix",
+            UserID = "ZENIX",
             Password = "Zenix2021!",
-            InitialCatalog = "Zenix",
+            InitialCatalog = "ZENIX",
         };
 
         static List<SqlConnectionStringBuilder> datasources = datasources ?? new List<SqlConnectionStringBuilder>()
         {
             HWIDEngine.isExcludeMachine ?LocalPC:  Sunucu,
             Sunucu,
-            LocalPC//server          
+            //LocalPC//server          
         };
         static SqlConnectionStringBuilder FirstOrDefaultConnections()
         {
@@ -98,8 +100,7 @@ namespace Zenix.Data.Context
                 //if (x.DataSource  != "213.14.174.241") continue;
                 //x.IntegratedSecurity = true; // windows auth için aktif olması gerek
                 x.ApplicationIntent = ApplicationIntent.ReadOnly;
-                x.InitialCatalog = "Zenix";
-                x.ConnectTimeout = 2;
+                x.ConnectTimeout = 10;
                 x.MultipleActiveResultSets = true;
                 using (var con = new SqlConnection(x.ConnectionString))
                 {

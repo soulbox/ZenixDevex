@@ -242,7 +242,7 @@ namespace Zenix.WinUI.Functions
         }
         public static T ConvertTo<T>(this object source)
         {
-            if (source == null || source == DBNull.Value) return (T)source;
+            if (source == null || source == DBNull.Value) return default(T);
             return (T)Convert.ChangeType(source, typeof(T));
         }
         public static void CustomVisibility(this GridColumn column, bool visible, int showindex)

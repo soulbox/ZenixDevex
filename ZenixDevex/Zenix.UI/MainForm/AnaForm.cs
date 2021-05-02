@@ -20,6 +20,7 @@ using System.Threading;
 using Zenix.UI;
 using Zenix.WinUI.Forms.FirmaFormu;
 using Zenix.WinUI.Forms.ÜlkeFormu;
+using Zenix.WinUI.Forms.SiparişFormu;
 
 namespace Zenix.WinUI.MainForm
 {
@@ -90,7 +91,8 @@ namespace Zenix.WinUI.MainForm
                                 ShowListForms<FirmaListFormu>.ShowListForm(KartTuru.Firma);
                             else if (e.Item == btnÜlkeler)
                                 ShowListForms<ÜlkeListForm>.ShowListForm(KartTuru.Ülke);
-
+                            else if (e.Item == btnSipariş)
+                                ShowListForms<SiparişListForm>.ShowListForm(KartTuru.Sipariş);
 
 
 

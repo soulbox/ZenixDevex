@@ -67,6 +67,7 @@
     <Compile Include="General\RevizyonBll.cs" />
     <Compile Include="General\RolBll.cs" />
     <Compile Include="General\RolYetkileriBll.cs" />
+    <Compile Include="General\SiparişBll.cs" />
     <Compile Include="General\ÜlkeBll.cs" />
     <Compile Include="General\ÜrünBll.cs" />
     <Compile Include="General\ŞarzBll.cs" />

@@ -1693,6 +1693,26 @@ namespace Zenix.WinUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap salesanalysis_16x16 {
+            get {
+                object obj = ResourceManager.GetObject("salesanalysis_16x16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap salesanalysis_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("salesanalysis_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap save_16x16 {
             get {
                 object obj = ResourceManager.GetObject("save_16x16", resourceCulture);

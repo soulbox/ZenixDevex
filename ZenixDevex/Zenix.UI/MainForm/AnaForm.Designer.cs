@@ -52,19 +52,22 @@
             this.btnTümKrediKartları = new DevExpress.XtraBars.BarButtonItem();
             this.btnFirma = new DevExpress.XtraBars.BarButtonItem();
             this.btnÜlkeler = new DevExpress.XtraBars.BarButtonItem();
-            this.ribbonMüş = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.ribbonKullanıcı = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPage5 = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage3 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage4 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonMüş = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.ribbonKullanıcı = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.xtraTabbedMdiManager = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             this.imgBackGround = new DevExpress.XtraEditors.PictureEdit();
+            this.btnSipariş = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgBackGround.Properties)).BeginInit();
@@ -96,9 +99,10 @@
             this.btnSmsŞablon,
             this.btnTümKrediKartları,
             this.btnFirma,
-            this.btnÜlkeler});
+            this.btnÜlkeler,
+            this.btnSipariş});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 36;
+            this.ribbon.MaxItemId = 37;
             this.ribbon.Name = "ribbon";
             this.ribbon.OptionsAnimation.PageCategoryShowAnimation = DevExpress.Utils.DefaultBoolean.True;
             this.ribbon.OptionsPageCategories.ShowCaptions = false;
@@ -106,6 +110,7 @@
             this.ribbon.PageAnimationLength = 100;
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
+            this.ribbonPage5,
             this.ribbonPage2,
             this.ribbonPage3,
             this.ribbonPage4,
@@ -295,22 +300,6 @@
             this.btnÜlkeler.ImageOptions.LargeImage = global::Zenix.WinUI.Properties.Resources.countries_32x1;
             this.btnÜlkeler.Name = "btnÜlkeler";
             // 
-            // ribbonMüş
-            // 
-            this.ribbonMüş.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonKullanıcı});
-            this.ribbonMüş.ImageOptions.Image = global::Zenix.WinUI.Properties.Resources.newitem_16x161;
-            this.ribbonMüş.Name = "ribbonMüş";
-            this.ribbonMüş.Text = "Kullanıcı Ayarları";
-            // 
-            // ribbonKullanıcı
-            // 
-            this.ribbonKullanıcı.ItemLinks.Add(this.btnRolKartları);
-            this.ribbonKullanıcı.ItemLinks.Add(this.btnKullanıcı);
-            this.ribbonKullanıcı.ItemLinks.Add(this.btnŞifreDeğiştir);
-            this.ribbonKullanıcı.Name = "ribbonKullanıcı";
-            this.ribbonKullanıcı.Text = "Kullanıcı Ayarları";
-            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -323,6 +312,18 @@
             this.ribbonPageGroup1.ItemLinks.Add(this.btnFirma);
             this.ribbonPageGroup1.ItemLinks.Add(this.btnÜlkeler);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
+            // 
+            // ribbonPage5
+            // 
+            this.ribbonPage5.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.ribbonPageGroup5});
+            this.ribbonPage5.Name = "ribbonPage5";
+            this.ribbonPage5.Text = "Sipariş";
+            // 
+            // ribbonPageGroup5
+            // 
+            this.ribbonPageGroup5.ItemLinks.Add(this.btnSipariş);
+            this.ribbonPageGroup5.Name = "ribbonPageGroup5";
             // 
             // ribbonPage2
             // 
@@ -360,6 +361,22 @@
             this.ribbonPageGroup4.Name = "ribbonPageGroup4";
             this.ribbonPageGroup4.Text = "ribbonPageGroup4";
             // 
+            // ribbonMüş
+            // 
+            this.ribbonMüş.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.ribbonKullanıcı});
+            this.ribbonMüş.ImageOptions.Image = global::Zenix.WinUI.Properties.Resources.newitem_16x161;
+            this.ribbonMüş.Name = "ribbonMüş";
+            this.ribbonMüş.Text = "Kullanıcı Ayarları";
+            // 
+            // ribbonKullanıcı
+            // 
+            this.ribbonKullanıcı.ItemLinks.Add(this.btnRolKartları);
+            this.ribbonKullanıcı.ItemLinks.Add(this.btnKullanıcı);
+            this.ribbonKullanıcı.ItemLinks.Add(this.btnŞifreDeğiştir);
+            this.ribbonKullanıcı.Name = "ribbonKullanıcı";
+            this.ribbonKullanıcı.Text = "Kullanıcı Ayarları";
+            // 
             // ribbonStatusBar
             // 
             this.ribbonStatusBar.ItemLinks.Add(this.barVers);
@@ -384,6 +401,14 @@
             this.imgBackGround.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
             this.imgBackGround.Size = new System.Drawing.Size(1020, 479);
             this.imgBackGround.TabIndex = 7;
+            // 
+            // btnSipariş
+            // 
+            this.btnSipariş.Caption = "Sipariş";
+            this.btnSipariş.Id = 36;
+            this.btnSipariş.ImageOptions.Image = global::Zenix.WinUI.Properties.Resources.salesanalysis_16x16;
+            this.btnSipariş.ImageOptions.LargeImage = global::Zenix.WinUI.Properties.Resources.salesanalysis_32x32;
+            this.btnSipariş.Name = "btnSipariş";
             // 
             // AnaForm
             // 
@@ -447,5 +472,8 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup4;
         private DevExpress.XtraBars.BarButtonItem btnFirma;
         private DevExpress.XtraBars.BarButtonItem btnÜlkeler;
+        private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage5;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup5;
+        private DevExpress.XtraBars.BarButtonItem btnSipariş;
     }
 }

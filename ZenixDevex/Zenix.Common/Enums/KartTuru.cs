@@ -25,6 +25,8 @@ namespace Zenix.Common.Enums
         Şarj = 9,
         [Description("Paket Kartı")]
         Paketleme = 10,
+        [Description("Sipariş Kartı")]
+        Sipariş = 11,
 
     }
 }

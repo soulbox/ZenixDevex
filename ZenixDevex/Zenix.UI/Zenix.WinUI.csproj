@@ -188,6 +188,18 @@
     <Compile Include="Forms\RevizyonFormu\ReziyonListForm.Designer.cs">
       <DependentUpon>ReziyonListForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\SiparişFormu\SiparişEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SiparişFormu\SiparişEditForm.Designer.cs">
+      <DependentUpon>SiparişEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SiparişFormu\SiparişListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SiparişFormu\SiparişListForm.Designer.cs">
+      <DependentUpon>SiparişListForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\ÜlkeFormu\ÜlkeEditForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -433,6 +445,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\RevizyonFormu\ReziyonListForm.resx">
       <DependentUpon>ReziyonListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SiparişFormu\SiparişEditForm.resx">
+      <DependentUpon>SiparişEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SiparişFormu\SiparişListForm.resx">
+      <DependentUpon>SiparişListForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ÜlkeFormu\ÜlkeEditForm.resx">
       <DependentUpon>ÜlkeEditForm.cs</DependentUpon>
@@ -747,6 +765,8 @@
     <None Include="Resources\xls_32px.png" />
     <None Include="Resources\xml_file_16px.png" />
     <None Include="Resources\xml_file_32px.png" />
+    <None Include="Resources\salesanalysis_32x32.png" />
+    <None Include="Resources\salesanalysis_16x16.png" />
     <Content Include="tr\DevExpress.Blazor.resources.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
