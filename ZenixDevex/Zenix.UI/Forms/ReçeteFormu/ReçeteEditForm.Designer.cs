@@ -112,7 +112,7 @@
             this.myDataLayoutControl1.OptionsFocus.EnableAutoTabOrder = false;
             this.myDataLayoutControl1.Root = this.layoutControlGroup1;
             this.myDataLayoutControl1.Size = new System.Drawing.Size(918, 537);
-            this.myDataLayoutControl1.TabIndex = 3;
+            this.myDataLayoutControl1.TabIndex = 0;
             this.myDataLayoutControl1.Text = "myDataLayoutControl1";
             // 
             // reçeteMalzemeleriTable
@@ -120,7 +120,7 @@
             this.reçeteMalzemeleriTable.Location = new System.Drawing.Point(369, 12);
             this.reçeteMalzemeleriTable.Name = "reçeteMalzemeleriTable";
             this.reçeteMalzemeleriTable.Size = new System.Drawing.Size(546, 522);
-            this.reçeteMalzemeleriTable.TabIndex = 5;
+            this.reçeteMalzemeleriTable.TabIndex = 1;
             // 
             // myDataLayoutControl2
             // 
@@ -136,7 +136,7 @@
             this.myDataLayoutControl2.OptionsFocus.EnableAutoTabOrder = false;
             this.myDataLayoutControl2.Root = this.layoutControlGroup2;
             this.myDataLayoutControl2.Size = new System.Drawing.Size(362, 522);
-            this.myDataLayoutControl2.TabIndex = 4;
+            this.myDataLayoutControl2.TabIndex = 0;
             this.myDataLayoutControl2.Text = "myDataLayoutControl2";
             // 
             // txtKod
@@ -154,7 +154,7 @@
             this.txtKod.Size = new System.Drawing.Size(114, 20);
             this.txtKod.StatusBarAciklama = "Kod Giriniz";
             this.txtKod.StyleController = this.myDataLayoutControl2;
-            this.txtKod.TabIndex = 3;
+            this.txtKod.TabIndex = 6;
             // 
             // txtÜrün
             // 
@@ -168,11 +168,11 @@
             new DevExpress.XtraEditors.Controls.EditorButton()});
             this.txtÜrün.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.txtÜrün.Size = new System.Drawing.Size(166, 20);
-            this.txtÜrün.StatusBarAciklama = null;
+            this.txtÜrün.StatusBarAciklama = "Ürün Seçiniz";
             this.txtÜrün.StatusBarKisayol = "F4 :";
             this.txtÜrün.StatusBarKisayolAciklama = "Seç";
             this.txtÜrün.StyleController = this.myDataLayoutControl2;
-            this.txtÜrün.TabIndex = 9;
+            this.txtÜrün.TabIndex = 1;
             // 
             // txtRevizyon
             // 
@@ -186,11 +186,11 @@
             new DevExpress.XtraEditors.Controls.EditorButton()});
             this.txtRevizyon.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.txtRevizyon.Size = new System.Drawing.Size(114, 20);
-            this.txtRevizyon.StatusBarAciklama = null;
+            this.txtRevizyon.StatusBarAciklama = "Revizyon Seçiniz";
             this.txtRevizyon.StatusBarKisayol = "F4 :";
             this.txtRevizyon.StatusBarKisayolAciklama = "Seç";
             this.txtRevizyon.StyleController = this.myDataLayoutControl2;
-            this.txtRevizyon.TabIndex = 10;
+            this.txtRevizyon.TabIndex = 2;
             // 
             // txtAFaz
             // 
@@ -203,7 +203,7 @@
             this.txtAFaz.Size = new System.Drawing.Size(256, 44);
             this.txtAFaz.StatusBarAciklama = "Açıklama Giriniz.";
             this.txtAFaz.StyleController = this.myDataLayoutControl2;
-            this.txtAFaz.TabIndex = 7;
+            this.txtAFaz.TabIndex = 3;
             // 
             // txtBFaz
             // 
@@ -216,7 +216,7 @@
             this.txtBFaz.Size = new System.Drawing.Size(256, 44);
             this.txtBFaz.StatusBarAciklama = "Açıklama Giriniz.";
             this.txtBFaz.StyleController = this.myDataLayoutControl2;
-            this.txtBFaz.TabIndex = 8;
+            this.txtBFaz.TabIndex = 4;
             // 
             // txtCFaz
             // 
@@ -229,7 +229,7 @@
             this.txtCFaz.Size = new System.Drawing.Size(256, 44);
             this.txtCFaz.StatusBarAciklama = "Açıklama Giriniz.";
             this.txtCFaz.StyleController = this.myDataLayoutControl2;
-            this.txtCFaz.TabIndex = 1;
+            this.txtCFaz.TabIndex = 5;
             // 
             // txtFirma
             // 
@@ -243,11 +243,11 @@
             new DevExpress.XtraEditors.Controls.EditorButton()});
             this.txtFirma.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.txtFirma.Size = new System.Drawing.Size(166, 20);
-            this.txtFirma.StatusBarAciklama = null;
+            this.txtFirma.StatusBarAciklama = "Firma Seçiniz";
             this.txtFirma.StatusBarKisayol = "F4 :";
             this.txtFirma.StatusBarKisayolAciklama = "Seç";
             this.txtFirma.StyleController = this.myDataLayoutControl2;
-            this.txtFirma.TabIndex = 9;
+            this.txtFirma.TabIndex = 0;
             // 
             // layoutControlGroup2
             // 

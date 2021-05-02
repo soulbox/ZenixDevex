@@ -31,6 +31,10 @@ namespace Zenix.Common.Enums
         Malzeme = 12,
         [Description("Reçete Kartı")]
         Reçete = 13,
+        [Description("Kazan Kartı")]
+        Kazan = 14,
+        [Description("İşemri Kartı")]
+        İşemri = 15,
 
     }
 }

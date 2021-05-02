@@ -41,6 +41,11 @@ namespace Zenix.Data.Context
         public DbSet<Malzeme> Malzeme { get; set; }
         public DbSet<Reçete> Reçete { get; set; }
         public DbSet<ReçeteMalzemeler> ReçeteMalzemeler { get; set; }
+        public DbSet<Kazan> Kazan { get; set; }
+        public DbSet<İşemri> İşemri { get; set; }
+
+
+
 
 
 

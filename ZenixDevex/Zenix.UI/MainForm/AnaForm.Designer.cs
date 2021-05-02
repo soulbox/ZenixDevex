@@ -55,6 +55,7 @@
             this.btnSipariş = new DevExpress.XtraBars.BarButtonItem();
             this.btnMalzemeler = new DevExpress.XtraBars.BarButtonItem();
             this.btnReçete = new DevExpress.XtraBars.BarButtonItem();
+            this.btnKazan = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonYönetim = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -63,6 +64,7 @@
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.xtraTabbedMdiManager = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             this.imgBackGround = new DevExpress.XtraEditors.PictureEdit();
+            this.btnİşemri = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgBackGround.Properties)).BeginInit();
@@ -97,9 +99,11 @@
             this.btnÜlkeler,
             this.btnSipariş,
             this.btnMalzemeler,
-            this.btnReçete});
+            this.btnReçete,
+            this.btnKazan,
+            this.btnİşemri});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 39;
+            this.ribbon.MaxItemId = 41;
             this.ribbon.Name = "ribbon";
             this.ribbon.OptionsAnimation.PageCategoryShowAnimation = DevExpress.Utils.DefaultBoolean.True;
             this.ribbon.OptionsPageCategories.ShowCaptions = false;
@@ -317,6 +321,14 @@
             this.btnReçete.ImageOptions.LargeImage = global::Zenix.WinUI.Properties.Resources.syringe_32px;
             this.btnReçete.Name = "btnReçete";
             // 
+            // btnKazan
+            // 
+            this.btnKazan.Caption = "Kazan Kartları";
+            this.btnKazan.Id = 39;
+            this.btnKazan.ImageOptions.Image = global::Zenix.WinUI.Properties.Resources.whisky_still_16px;
+            this.btnKazan.ImageOptions.LargeImage = global::Zenix.WinUI.Properties.Resources.whisky_still_32px;
+            this.btnKazan.Name = "btnKazan";
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -327,6 +339,7 @@
             // 
             // ribbonYönetim
             // 
+            this.ribbonYönetim.ItemLinks.Add(this.btnİşemri);
             this.ribbonYönetim.ItemLinks.Add(this.btnFirma);
             this.ribbonYönetim.ItemLinks.Add(this.btnSipariş);
             this.ribbonYönetim.ItemLinks.Add(this.btnMalzemeler);
@@ -338,6 +351,7 @@
             // 
             this.ribbonPageGroup1.Alignment = DevExpress.XtraBars.Ribbon.RibbonPageGroupAlignment.Far;
             this.ribbonPageGroup1.ItemLinks.Add(this.btnÜlkeler);
+            this.ribbonPageGroup1.ItemLinks.Add(this.btnKazan);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
             // 
             // ribbonMüş
@@ -380,6 +394,14 @@
             this.imgBackGround.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
             this.imgBackGround.Size = new System.Drawing.Size(1020, 479);
             this.imgBackGround.TabIndex = 7;
+            // 
+            // btnİşemri
+            // 
+            this.btnİşemri.Caption = "İşemri Kartları";
+            this.btnİşemri.Id = 40;
+            this.btnİşemri.ImageOptions.DisabledImage = global::Zenix.WinUI.Properties.Resources.work_16px;
+            this.btnİşemri.ImageOptions.LargeImage = global::Zenix.WinUI.Properties.Resources.work_32px;
+            this.btnİşemri.Name = "btnİşemri";
             // 
             // AnaForm
             // 
@@ -441,5 +463,7 @@
         private DevExpress.XtraBars.BarButtonItem btnMalzemeler;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
         private DevExpress.XtraBars.BarButtonItem btnReçete;
+        private DevExpress.XtraBars.BarButtonItem btnKazan;
+        private DevExpress.XtraBars.BarButtonItem btnİşemri;
     }
 }

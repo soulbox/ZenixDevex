@@ -14,7 +14,7 @@ using Zenix.Model.DTO;
 
 namespace Zenix.BLL.General
 {
-    public class ReçeteBll : BaseGenelBLL<Reçete>, IBaseGenelBll, IBaseCommonBLL
+    public class ReçeteBll : BaseGenelBLL<Reçete>,  IBaseCommonBLL
     {
         public ReçeteBll() : base(KartTuru.Reçete) { }
 

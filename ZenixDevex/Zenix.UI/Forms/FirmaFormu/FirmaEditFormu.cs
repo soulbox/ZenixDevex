@@ -36,31 +36,31 @@ namespace Zenix.WinUI.Forms.FirmaFormu
         protected override void NesneyiKontrollereBagla()
         {
             var entity = (FirmalarL)OldEntity;
-            txtKod.Text = entity.Kod;
-            tglDurum.IsOn = entity.Durum;
-            txtFirmaAdi.Text = entity.FirmaAdi;
-            cmbFirmatipi.Text = entity.FirmaTipi.ToName();
-            txtAdress.Text = entity.Adres;
-            txtVergiNo.Text = entity.VergiNo;
+            txtKod.Text          = entity.Kod;
+            tglDurum.IsOn        = entity.Durum;
+            txtFirmaAdi.Text     = entity.FirmaAdi;
+            cmbFirmatipi.Text    = entity.FirmaTipi.ToName();
+            txtAdress.Text       = entity.Adres;
+            txtVergiNo.Text      = entity.VergiNo;
             txtVergiDairesi.Text = entity.VergiDairesi;
-            txtÜlke.Text = entity.ÜlkeAdı;
-            txtÜlke.Id = entity.ÜlkeId;
+            txtÜlke.Text         = entity.ÜlkeAdı;
+            txtÜlke.Id           = entity.ÜlkeId;
         }
         protected override void GuncelNesneOluştur()
         {
 
             CurrentEntity = new Firma
             {
-                Id = Id,
-                Kod = txtKod.Text,
-                Durum = tglDurum.IsOn,
-                FirmaAdi = txtFirmaAdi.Text,
-                Adres = txtAdress.Text,
+                Id           = Id,
+                Kod          = txtKod.Text,
+                Durum        = tglDurum.IsOn,
+                FirmaAdi     = txtFirmaAdi.Text,
+                Adres        = txtAdress.Text,
                 VergiDairesi = txtVergiDairesi.Text,
-                FirmaTipi = cmbFirmatipi.Text.GetEnum<FirmaTipi>(),
-                VergiNo = txtVergiNo.Text.GetNumbers(),
-                Tarih = ((Firma)OldEntity).Tarih,
-                ÜlkeId = txtÜlke.Id.ConvertTo<long>(),
+                FirmaTipi    = cmbFirmatipi.Text.GetEnum<FirmaTipi>(),
+                VergiNo      = txtVergiNo.Text.GetNumbers(),
+                Tarih        = ((Firma)OldEntity).Tarih,
+                ÜlkeId       = txtÜlke.Id.ConvertTo<long>(),
 
             };
             ButtonEnableDurumu();

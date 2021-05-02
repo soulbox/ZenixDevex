@@ -34,19 +34,19 @@
             DevExpress.XtraLayout.RowDefinition rowDefinition2 = new DevExpress.XtraLayout.RowDefinition();
             DevExpress.XtraLayout.RowDefinition rowDefinition3 = new DevExpress.XtraLayout.RowDefinition();
             this.txtKod = new Zenix.WinUI.myUserControls.Controls.myKodText();
+            this.myDataLayoutControl = new Zenix.WinUI.myUserControls.Controls.myDataLayoutControl();
             this.txtAdı = new Zenix.WinUI.myUserControls.Controls.myTextEdit();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.myDataLayoutControl = new Zenix.WinUI.myUserControls.Controls.myDataLayoutControl();
+            this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtKod.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtAdı.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.myDataLayoutControl)).BeginInit();
             this.myDataLayoutControl.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtAdı.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbonControl
@@ -79,6 +79,19 @@
             this.txtKod.StatusBarAciklama = "Kod Giriniz";
             this.txtKod.StyleController = this.myDataLayoutControl;
             this.txtKod.TabIndex = 2;
+            // 
+            // myDataLayoutControl
+            // 
+            this.myDataLayoutControl.Controls.Add(this.txtAdı);
+            this.myDataLayoutControl.Controls.Add(this.txtKod);
+            this.myDataLayoutControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.myDataLayoutControl.Location = new System.Drawing.Point(0, 109);
+            this.myDataLayoutControl.Name = "myDataLayoutControl";
+            this.myDataLayoutControl.OptionsFocus.EnableAutoTabOrder = false;
+            this.myDataLayoutControl.Root = this.Root;
+            this.myDataLayoutControl.Size = new System.Drawing.Size(424, 150);
+            this.myDataLayoutControl.TabIndex = 2;
+            this.myDataLayoutControl.Text = "myDataLayoutControl1";
             // 
             // txtAdı
             // 
@@ -120,8 +133,19 @@
             rowDefinition1,
             rowDefinition2,
             rowDefinition3});
-            this.Root.Size = new System.Drawing.Size(424, 174);
+            this.Root.Size = new System.Drawing.Size(424, 150);
             this.Root.TextVisible = false;
+            // 
+            // layoutControlItem1
+            // 
+            this.layoutControlItem1.AppearanceItemCaption.ForeColor = System.Drawing.Color.Maroon;
+            this.layoutControlItem1.AppearanceItemCaption.Options.UseForeColor = true;
+            this.layoutControlItem1.Control = this.txtKod;
+            this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem1.Name = "layoutControlItem1";
+            this.layoutControlItem1.Size = new System.Drawing.Size(200, 24);
+            this.layoutControlItem1.Text = "Kod";
+            this.layoutControlItem1.TextSize = new System.Drawing.Size(18, 13);
             // 
             // layoutControlItem3
             // 
@@ -136,49 +160,25 @@
             this.layoutControlItem3.Text = "Adı";
             this.layoutControlItem3.TextSize = new System.Drawing.Size(18, 13);
             // 
-            // layoutControlItem1
-            // 
-            this.layoutControlItem1.AppearanceItemCaption.ForeColor = System.Drawing.Color.Maroon;
-            this.layoutControlItem1.AppearanceItemCaption.Options.UseForeColor = true;
-            this.layoutControlItem1.Control = this.txtKod;
-            this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(200, 24);
-            this.layoutControlItem1.Text = "Kod";
-            this.layoutControlItem1.TextSize = new System.Drawing.Size(18, 13);
-            // 
-            // myDataLayoutControl
-            // 
-            this.myDataLayoutControl.Controls.Add(this.txtAdı);
-            this.myDataLayoutControl.Controls.Add(this.txtKod);
-            this.myDataLayoutControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.myDataLayoutControl.Location = new System.Drawing.Point(0, 109);
-            this.myDataLayoutControl.Name = "myDataLayoutControl";
-            this.myDataLayoutControl.OptionsFocus.EnableAutoTabOrder = false;
-            this.myDataLayoutControl.Root = this.Root;
-            this.myDataLayoutControl.Size = new System.Drawing.Size(424, 174);
-            this.myDataLayoutControl.TabIndex = 2;
-            this.myDataLayoutControl.Text = "myDataLayoutControl1";
-            // 
-            // ÜleEditForm
+            // ÜlkeEditForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(424, 283);
             this.Controls.Add(this.myDataLayoutControl);
             this.IconOptions.ShowIcon = false;
-            this.Name = "ÜleEditForm";
+            this.Name = "ÜlkeEditForm";
             this.Text = "ÜleEditForm";
             this.Controls.SetChildIndex(this.ribbonControl, 0);
             this.Controls.SetChildIndex(this.myDataLayoutControl, 0);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtKod.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtAdı.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.myDataLayoutControl)).EndInit();
             this.myDataLayoutControl.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.txtAdı.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

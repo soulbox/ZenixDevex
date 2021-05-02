@@ -54,9 +54,9 @@
             this.labelCopyright.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.labelCopyright.Location = new System.Drawing.Point(24, 287);
             this.labelCopyright.Name = "labelCopyright";
-            this.labelCopyright.Size = new System.Drawing.Size(121, 13);
+            this.labelCopyright.Size = new System.Drawing.Size(197, 13);
             this.labelCopyright.TabIndex = 6;
-            this.labelCopyright.Text = "Copyright © Kadir Aygün";
+            this.labelCopyright.Text = "Copyright © Erkan Ceylan && Kadir Aygün";
             // 
             // labelStatus
             // 
@@ -75,9 +75,9 @@
             this.lblVers.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.lblVers.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.lblVers.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.lblVers.Location = new System.Drawing.Point(217, 287);
+            this.lblVers.Location = new System.Drawing.Point(238, 287);
             this.lblVers.Name = "lblVers";
-            this.lblVers.Size = new System.Drawing.Size(229, 13);
+            this.lblVers.Size = new System.Drawing.Size(208, 13);
             this.lblVers.TabIndex = 10;
             this.lblVers.Text = "Version:1.0.0.15";
             // 

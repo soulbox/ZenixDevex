@@ -23,6 +23,8 @@ using Zenix.WinUI.Forms.ÜlkeFormu;
 using Zenix.WinUI.Forms.SiparişFormu;
 using Zenix.WinUI.Forms.MalzemeFormu;
 using Zenix.WinUI.Forms.ReçeteFormu;
+using Zenix.WinUI.Forms.KazanFormu;
+using Zenix.WinUI.Forms.İşemriFormu;
 
 namespace Zenix.WinUI.MainForm
 {
@@ -99,6 +101,10 @@ namespace Zenix.WinUI.MainForm
                                 ShowListForms<MalzemeListForm>.ShowListForm(KartTuru.Malzeme);
                             else if (e.Item == btnReçete)
                                 ShowListForms<ReçeteListForm>.ShowListForm(KartTuru.Reçete);
+                            else if (e.Item == btnKazan)
+                                ShowListForms<KazanListForm>.ShowListForm(KartTuru.Kazan);
+                            else if (e.Item == btnİşemri)
+                                ShowListForms<İşemriListForm>.ShowListForm(KartTuru.İşemri);
 
                         };
                         break;

@@ -126,6 +126,18 @@
     <Compile Include="Forms\FirmaFormu\FirmaListFormu.Designer.cs">
       <DependentUpon>FirmaListFormu.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\KazanFormu\KazanEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\KazanFormu\KazanEditForm.Designer.cs">
+      <DependentUpon>KazanEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\KazanFormu\KazanListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\KazanFormu\KazanListForm.Designer.cs">
+      <DependentUpon>KazanListForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\KullanıcıForms\KullanıcıEditForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -257,6 +269,18 @@
     </Compile>
     <Compile Include="Forms\ÜrünlerFormu\ÜrünListForm.Designer.cs">
       <DependentUpon>ÜrünListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\İşemriFormu\İşemriEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\İşemriFormu\İşemriEditForm.Designer.cs">
+      <DependentUpon>İşemriEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\İşemriFormu\İşemriListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\İşemriFormu\İşemriListForm.Designer.cs">
+      <DependentUpon>İşemriListForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\ŞarzFormu\ŞarzEditForm.cs">
       <SubType>Form</SubType>
@@ -453,6 +477,12 @@
     <EmbeddedResource Include="Forms\FirmaFormu\FirmaListFormu.resx">
       <DependentUpon>FirmaListFormu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\KazanFormu\KazanEditForm.resx">
+      <DependentUpon>KazanEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\KazanFormu\KazanListForm.resx">
+      <DependentUpon>KazanListForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\KullanıcıForms\KullanıcıEditForm.resx">
       <DependentUpon>KullanıcıEditForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -518,6 +548,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ÜrünlerFormu\ÜrünListForm.resx">
       <DependentUpon>ÜrünListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\İşemriFormu\İşemriEditForm.resx">
+      <DependentUpon>İşemriEditForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ŞarzFormu\ŞarzEditForm.resx">
       <DependentUpon>ŞarzEditForm.cs</DependentUpon>
@@ -829,6 +862,8 @@
     <None Include="Resources\salesanalysis_16x16.png" />
     <None Include="Resources\syringe_16px.png" />
     <None Include="Resources\syringe_32px.png" />
+    <None Include="Resources\whisky_still_16px.png" />
+    <None Include="Resources\whisky_still_32px.png" />
     <Content Include="tr\DevExpress.Blazor.resources.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

@@ -13,7 +13,7 @@ namespace Zenix.Model.Entities
 {
     public class Reçete : BaseEntity
     {
-        [Index(name: "IX_Kod", IsUnique = true)]
+        [Index(name: "IX_Kod", IsUnique = false)]
         public override string Kod { get; set; }
         public Revizyon Revizyon { get; set; }
         [ZorunluAlan("Revizyon","txtRevizyon")]
