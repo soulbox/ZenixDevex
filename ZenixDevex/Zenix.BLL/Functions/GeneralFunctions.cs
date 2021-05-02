@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Configuration;
 using System.Data.Entity;
 using System.Linq;
@@ -27,7 +28,7 @@ namespace Zenix.BLL.Functions
             //return ConfigurationManager.ConnectionStrings[name].ConnectionString;
         }
 
-        public static T ToBll<T>(this IBaseBLL inter) where T : IBaseBLL 
+        public static T ToBll<T>(this IBaseBLL inter) where T : IBaseBLL
             => (T)inter;
 
         public static string GetConnectionString()
@@ -52,9 +53,18 @@ namespace Zenix.BLL.Functions
         public static IList<string> GetChangedFields<T>(this T oldEntity, T currentEntity)
         {
             IList<string> alanlar = new List<string>();
+            IList<string> Discard = new List<string>();
+
+            currentEntity.GetType().GetPropertiyAttributeFromType<NotMappedAttribute>()
+               .Select(x => x.PropertyInfo.Name).ToList().ForEach(x => Discard.Add(x));
+            currentEntity.GetType().GetPropertiyAttributeFromType<DatabaseGeneratedAttribute>()
+                .Where(x => ((DatabaseGeneratedAttribute)x.Attribute).DatabaseGeneratedOption == DatabaseGeneratedOption.Computed)
+                .Select(x => x.PropertyInfo.Name)
+                .ToList().ForEach(x => Discard.Add(x));
 
             currentEntity.GetType().GetProperties()
-                .Where(x => x.PropertyType.Namespace != "System.Collections.Generic")//collection tipindeki propertiler dışındakilerde işlem yapılıcak
+                .Where(x => !Discard.Contains(x.Name))
+                .Where(x => x.PropertyType.Namespace != "System.Collections.Generic" | !x.PropertyType.IsClass | !x.CanWrite)//collection tipindeki propertiler dışındakilerde işlem yapılıcak
                 .ToList()
                 .ForEach(prop =>
                 {

@@ -503,6 +503,26 @@ namespace Zenix.WinUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap code_fork_16px {
+            get {
+                object obj = ResourceManager.GetObject("code_fork_16px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap code_fork_32px {
+            get {
+                object obj = ResourceManager.GetObject("code_fork_32px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap collaboration_16px {
             get {
                 object obj = ResourceManager.GetObject("collaboration_16px", resourceCulture);
@@ -1306,6 +1326,26 @@ namespace Zenix.WinUI.Properties {
         public static System.Drawing.Bitmap light_on_16px {
             get {
                 object obj = ResourceManager.GetObject("light_on_16px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap Load_Cargo_16px {
+            get {
+                object obj = ResourceManager.GetObject("Load_Cargo_16px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap Load_Cargo_32px {
+            get {
+                object obj = ResourceManager.GetObject("Load_Cargo_32px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

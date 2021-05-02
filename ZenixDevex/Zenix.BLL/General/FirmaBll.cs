@@ -19,6 +19,24 @@ namespace Zenix.BLL.General
 
         public FirmaBll(Control ctrl) : base(ctrl, KartTuru.Firma) { }
 
+        public override BaseEntity Single(Expression<Func<Firma, bool>> filter)
+        {
+            return BaseSingle(filter, x => new FirmalarL
+            {
+                Id = x.Id,
+                Durum = x.Durum,
+                Kod = x.Kod,
+                FirmaAdi = x.FirmaAdi,
+                Adres = x.Adres,
+                Tarih = x.Tarih,
+                VergiDairesi = x.VergiDairesi,
+                VergiNo = x.VergiNo,
+                FirmaTipi = x.FirmaTipi,
+                ÜlkeAdı = x.Ülke.Adı,
+                ÜlkeId = x.ÜlkeId,
+
+            });
+        }
         public override IEnumerable<BaseEntity> List(Expression<Func<Firma, bool>> filter)
         {
             return BaseList(filter, x => new FirmalarL

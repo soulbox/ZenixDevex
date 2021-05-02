@@ -164,6 +164,30 @@
     <Compile Include="Forms\KullanıcıForms\ŞifremiUnuttumEditForm.Designer.cs">
       <DependentUpon>ŞifremiUnuttumEditForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\PaketlemeFormu\PaketlemeEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PaketlemeFormu\PaketlemeEditForm.Designer.cs">
+      <DependentUpon>PaketlemeEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PaketlemeFormu\PaketlemeListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PaketlemeFormu\PaketlemeListForm.Designer.cs">
+      <DependentUpon>PaketlemeListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\RevizyonFormu\RevizyonEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RevizyonFormu\RevizyonEditForm.Designer.cs">
+      <DependentUpon>RevizyonEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\RevizyonFormu\ReziyonListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RevizyonFormu\ReziyonListForm.Designer.cs">
+      <DependentUpon>ReziyonListForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\ÜlkeFormu\ÜlkeEditForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -187,6 +211,18 @@
     </Compile>
     <Compile Include="Forms\ÜrünlerFormu\ÜrünListForm.Designer.cs">
       <DependentUpon>ÜrünListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ŞarzFormu\ŞarzEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ŞarzFormu\ŞarzEditForm.Designer.cs">
+      <DependentUpon>ŞarzEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ŞarzFormu\ŞarzListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ŞarzFormu\ŞarzListForm.Designer.cs">
+      <DependentUpon>ŞarzListForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Functions\FileFunctions.cs" />
     <Compile Include="Functions\FilterFunctions.cs" />
@@ -386,6 +422,18 @@
     <EmbeddedResource Include="Forms\KullanıcıForms\ŞifremiUnuttumEditForm.resx">
       <DependentUpon>ŞifremiUnuttumEditForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PaketlemeFormu\PaketlemeEditForm.resx">
+      <DependentUpon>PaketlemeEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PaketlemeFormu\PaketlemeListForm.resx">
+      <DependentUpon>PaketlemeListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RevizyonFormu\RevizyonEditForm.resx">
+      <DependentUpon>RevizyonEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RevizyonFormu\ReziyonListForm.resx">
+      <DependentUpon>ReziyonListForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\ÜlkeFormu\ÜlkeEditForm.resx">
       <DependentUpon>ÜlkeEditForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -397,6 +445,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ÜrünlerFormu\ÜrünListForm.resx">
       <DependentUpon>ÜrünListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ŞarzFormu\ŞarzEditForm.resx">
+      <DependentUpon>ŞarzEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ŞarzFormu\ŞarzListForm.resx">
+      <DependentUpon>ŞarzListForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm\AnaForm.resx">
       <DependentUpon>AnaForm.cs</DependentUpon>
@@ -617,6 +671,10 @@
     <None Include="Resources\countries_32x1.png" />
     <None Include="Resources\documentmap_32x321.png" />
     <None Include="Resources\documentmap_16x161.png" />
+    <None Include="Resources\code_fork_16px.png" />
+    <None Include="Resources\code_fork_32px.png" />
+    <None Include="Resources\Load Cargo_16px.png" />
+    <None Include="Resources\Load Cargo_32px.png" />
     <Content Include="Resources\printpreview_16x16.png" />
     <None Include="Resources\print_16x16.png" />
     <None Include="Resources\print_32x32.png" />

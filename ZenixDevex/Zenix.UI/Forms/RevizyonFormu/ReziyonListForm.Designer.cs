@@ -1,6 +1,6 @@
-﻿namespace Zenix.WinUI.Forms.FirmaFormu
+﻿namespace Zenix.WinUI.Forms.RevizyonFormu
 {
-    partial class FirmaListFormu
+    partial class ReziyonListForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,22 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FirmaListFormu));
-            this.longNavigator = new Zenix.WinUI.myUserControls.Navigator.LongNavigator();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReziyonListForm));
             this.Grid = new Zenix.WinUI.myUserControls.Grid.myGridControl();
             this.Tablo = new Zenix.WinUI.myUserControls.Grid.myGridview();
             this.colId = new Zenix.WinUI.myUserControls.Grid.MyGridColumn();
             this.colKod = new Zenix.WinUI.myUserControls.Grid.MyGridColumn();
-            this.colFirmaAdi = new Zenix.WinUI.myUserControls.Grid.MyGridColumn();
-            this.colTarih = new Zenix.WinUI.myUserControls.Grid.MyGridColumn();
-            this.colAdress = new Zenix.WinUI.myUserControls.Grid.MyGridColumn();
-            this.colVergiDairesi = new Zenix.WinUI.myUserControls.Grid.MyGridColumn();
-            this.colVergiNo = new Zenix.WinUI.myUserControls.Grid.MyGridColumn();
-            this.colMTipi = new Zenix.WinUI.myUserControls.Grid.MyGridColumn();
-            this.colÜlke = new Zenix.WinUI.myUserControls.Grid.MyGridColumn();
+            this.colRevTarih = new Zenix.WinUI.myUserControls.Grid.MyGridColumn();
+            this.colRevKodu = new Zenix.WinUI.myUserControls.Grid.MyGridColumn();
+            this.colAçıklama = new Zenix.WinUI.myUserControls.Grid.MyGridColumn();
+            this.longNavigator = new Zenix.WinUI.myUserControls.Navigator.LongNavigator();
+            this.repositoryItemDateEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Grid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Tablo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1.CalendarTimeProperties)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbonControl
@@ -56,21 +55,12 @@
             this.ribbonControl.SearchEditItem.EditWidth = 150;
             this.ribbonControl.SearchEditItem.Id = -5000;
             this.ribbonControl.SearchEditItem.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
-            this.ribbonControl.Size = new System.Drawing.Size(961, 109);
             this.ribbonControl.Toolbar.ShowCustomizeItem = false;
             // 
             // btnGonder
             // 
             this.btnGonder.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnGonder.ImageOptions.Image")));
             this.btnGonder.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnGonder.ImageOptions.LargeImage")));
-            // 
-            // longNavigator
-            // 
-            this.longNavigator.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.longNavigator.Location = new System.Drawing.Point(0, 496);
-            this.longNavigator.Name = "longNavigator";
-            this.longNavigator.Size = new System.Drawing.Size(961, 24);
-            this.longNavigator.TabIndex = 2;
             // 
             // Grid
             // 
@@ -79,8 +69,10 @@
             this.Grid.MainView = this.Tablo;
             this.Grid.MenuManager = this.ribbonControl;
             this.Grid.Name = "Grid";
-            this.Grid.Size = new System.Drawing.Size(961, 387);
-            this.Grid.TabIndex = 3;
+            this.Grid.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.repositoryItemDateEdit1});
+            this.Grid.Size = new System.Drawing.Size(952, 357);
+            this.Grid.TabIndex = 7;
             this.Grid.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.Tablo});
             // 
@@ -99,13 +91,9 @@
             this.Tablo.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colId,
             this.colKod,
-            this.colFirmaAdi,
-            this.colTarih,
-            this.colAdress,
-            this.colVergiDairesi,
-            this.colVergiNo,
-            this.colMTipi,
-            this.colÜlke});
+            this.colRevTarih,
+            this.colRevKodu,
+            this.colAçıklama});
             this.Tablo.GridControl = this.Grid;
             this.Tablo.Name = "Tablo";
             this.Tablo.OptionsFind.AlwaysVisible = true;
@@ -155,113 +143,84 @@
             this.colKod.VisibleIndex = 0;
             this.colKod.Width = 108;
             // 
-            // colFirmaAdi
+            // colRevTarih
             // 
-            this.colFirmaAdi.Caption = "Firma Adı";
-            this.colFirmaAdi.FieldName = "FirmaAdi";
-            this.colFirmaAdi.Name = "colFirmaAdi";
-            this.colFirmaAdi.OptionsColumn.AllowEdit = false;
-            this.colFirmaAdi.StatusBarAciklama = null;
-            this.colFirmaAdi.StatusBarKisayol = null;
-            this.colFirmaAdi.StatusBarKisayolAciklama = null;
-            this.colFirmaAdi.Visible = true;
-            this.colFirmaAdi.VisibleIndex = 1;
-            this.colFirmaAdi.Width = 267;
+            this.colRevTarih.AppearanceCell.Options.UseTextOptions = true;
+            this.colRevTarih.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colRevTarih.Caption = "Revizyon Tarihi";
+            this.colRevTarih.ColumnEdit = this.repositoryItemDateEdit1;
+            this.colRevTarih.FieldName = "RevizyonTarihi";
+            this.colRevTarih.Name = "colRevTarih";
+            this.colRevTarih.OptionsColumn.AllowEdit = false;
+            this.colRevTarih.StatusBarAciklama = null;
+            this.colRevTarih.StatusBarKisayol = null;
+            this.colRevTarih.StatusBarKisayolAciklama = null;
+            this.colRevTarih.Visible = true;
+            this.colRevTarih.VisibleIndex = 1;
+            this.colRevTarih.Width = 200;
             // 
-            // colTarih
+            // colRevKodu
             // 
-            this.colTarih.Caption = "Kayıt Tarihi";
-            this.colTarih.FieldName = "Tarih";
-            this.colTarih.Name = "colTarih";
-            this.colTarih.OptionsColumn.AllowEdit = false;
-            this.colTarih.StatusBarAciklama = null;
-            this.colTarih.StatusBarKisayol = null;
-            this.colTarih.StatusBarKisayolAciklama = null;
-            this.colTarih.Visible = true;
-            this.colTarih.VisibleIndex = 7;
-            this.colTarih.Width = 103;
+            this.colRevKodu.Caption = "Revizyon Kodu";
+            this.colRevKodu.FieldName = "RevKodu";
+            this.colRevKodu.Name = "colRevKodu";
+            this.colRevKodu.OptionsColumn.AllowEdit = false;
+            this.colRevKodu.StatusBarAciklama = null;
+            this.colRevKodu.StatusBarKisayol = null;
+            this.colRevKodu.StatusBarKisayolAciklama = null;
+            this.colRevKodu.Visible = true;
+            this.colRevKodu.VisibleIndex = 2;
+            this.colRevKodu.Width = 200;
             // 
-            // colAdress
+            // colAçıklama
             // 
-            this.colAdress.Caption = "Adres";
-            this.colAdress.FieldName = "Adres";
-            this.colAdress.Name = "colAdress";
-            this.colAdress.OptionsColumn.AllowEdit = false;
-            this.colAdress.StatusBarAciklama = null;
-            this.colAdress.StatusBarKisayol = null;
-            this.colAdress.StatusBarKisayolAciklama = null;
-            this.colAdress.Visible = true;
-            this.colAdress.VisibleIndex = 3;
-            this.colAdress.Width = 609;
+            this.colAçıklama.Caption = "Açıklama";
+            this.colAçıklama.FieldName = "Açıklama";
+            this.colAçıklama.Name = "colAçıklama";
+            this.colAçıklama.OptionsColumn.AllowEdit = false;
+            this.colAçıklama.StatusBarAciklama = null;
+            this.colAçıklama.StatusBarKisayol = null;
+            this.colAçıklama.StatusBarKisayolAciklama = null;
+            this.colAçıklama.Visible = true;
+            this.colAçıklama.VisibleIndex = 3;
+            this.colAçıklama.Width = 200;
             // 
-            // colVergiDairesi
+            // longNavigator
             // 
-            this.colVergiDairesi.Caption = "Vergi Dairesi";
-            this.colVergiDairesi.FieldName = "VergiDairesi";
-            this.colVergiDairesi.Name = "colVergiDairesi";
-            this.colVergiDairesi.OptionsColumn.AllowEdit = false;
-            this.colVergiDairesi.StatusBarAciklama = null;
-            this.colVergiDairesi.StatusBarKisayol = null;
-            this.colVergiDairesi.StatusBarKisayolAciklama = null;
-            this.colVergiDairesi.Visible = true;
-            this.colVergiDairesi.VisibleIndex = 4;
-            this.colVergiDairesi.Width = 169;
+            this.longNavigator.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.longNavigator.Location = new System.Drawing.Point(0, 466);
+            this.longNavigator.Name = "longNavigator";
+            this.longNavigator.Size = new System.Drawing.Size(952, 24);
+            this.longNavigator.TabIndex = 6;
             // 
-            // colVergiNo
+            // repositoryItemDateEdit1
             // 
-            this.colVergiNo.Caption = "Vergi No";
-            this.colVergiNo.FieldName = "VergiNo";
-            this.colVergiNo.Name = "colVergiNo";
-            this.colVergiNo.OptionsColumn.AllowEdit = false;
-            this.colVergiNo.StatusBarAciklama = null;
-            this.colVergiNo.StatusBarKisayol = null;
-            this.colVergiNo.StatusBarKisayolAciklama = null;
-            this.colVergiNo.Visible = true;
-            this.colVergiNo.VisibleIndex = 5;
-            this.colVergiNo.Width = 118;
+            this.repositoryItemDateEdit1.AutoHeight = false;
+            this.repositoryItemDateEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemDateEdit1.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemDateEdit1.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.DateTimeAdvancingCaret;
+            this.repositoryItemDateEdit1.Name = "repositoryItemDateEdit1";
             // 
-            // colMTipi
-            // 
-            this.colMTipi.Caption = "Firma Tipi";
-            this.colMTipi.FieldName = "FirmaTipi";
-            this.colMTipi.Name = "colMTipi";
-            this.colMTipi.OptionsColumn.AllowEdit = false;
-            this.colMTipi.StatusBarAciklama = null;
-            this.colMTipi.StatusBarKisayol = null;
-            this.colMTipi.StatusBarKisayolAciklama = null;
-            this.colMTipi.Visible = true;
-            this.colMTipi.VisibleIndex = 6;
-            this.colMTipi.Width = 93;
-            // 
-            // colÜlke
-            // 
-            this.colÜlke.Caption = "Ülke";
-            this.colÜlke.FieldName = "ÜlkeAdı";
-            this.colÜlke.Name = "colÜlke";
-            this.colÜlke.OptionsColumn.AllowEdit = false;
-            this.colÜlke.StatusBarAciklama = null;
-            this.colÜlke.StatusBarKisayol = null;
-            this.colÜlke.StatusBarKisayolAciklama = null;
-            this.colÜlke.Visible = true;
-            this.colÜlke.VisibleIndex = 2;
-            this.colÜlke.Width = 100;
-            // 
-            // FirmaListFormu
+            // ReziyonListForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(961, 544);
+            this.ClientSize = new System.Drawing.Size(952, 514);
             this.Controls.Add(this.Grid);
             this.Controls.Add(this.longNavigator);
             this.IconOptions.ShowIcon = false;
-            this.Name = "FirmaListFormu";
-            this.Text = "Firmalar";
+            this.Name = "ReziyonListForm";
+            this.Text = "ReziyonListForm";
             this.Controls.SetChildIndex(this.ribbonControl, 0);
             this.Controls.SetChildIndex(this.longNavigator, 0);
             this.Controls.SetChildIndex(this.Grid, 0);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Grid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Tablo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -269,17 +228,14 @@
 
         #endregion
 
-        private myUserControls.Navigator.LongNavigator longNavigator;
         private myUserControls.Grid.myGridControl Grid;
         private myUserControls.Grid.myGridview Tablo;
         private myUserControls.Grid.MyGridColumn colId;
         private myUserControls.Grid.MyGridColumn colKod;
-        protected myUserControls.Grid.MyGridColumn colFirmaAdi;
-        protected myUserControls.Grid.MyGridColumn colTarih;
-        protected myUserControls.Grid.MyGridColumn colAdress;
-        protected myUserControls.Grid.MyGridColumn colVergiDairesi;
-        protected myUserControls.Grid.MyGridColumn colVergiNo;
-        private myUserControls.Grid.MyGridColumn colMTipi;
-        private myUserControls.Grid.MyGridColumn colÜlke;
+        protected myUserControls.Grid.MyGridColumn colRevTarih;
+        protected myUserControls.Grid.MyGridColumn colRevKodu;
+        private myUserControls.Grid.MyGridColumn colAçıklama;
+        private myUserControls.Navigator.LongNavigator longNavigator;
+        private DevExpress.XtraEditors.Repository.RepositoryItemDateEdit repositoryItemDateEdit1;
     }
 }

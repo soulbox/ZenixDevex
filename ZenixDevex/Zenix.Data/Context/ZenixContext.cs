@@ -21,18 +21,26 @@ namespace Zenix.Data.Context
             Configuration.LazyLoadingEnabled = false;
             Configuration.AutoDetectChangesEnabled = false;
             Configuration.ProxyCreationEnabled = false;
-    //Database.SetInitializer(new MigrateDatabaseToLatestVersion<StoreContext, ContextInitializer>());
-    //this.Database.Initialize(new MigrateDatabaseToLatestVersion<ZenixContext,>)
-    
+            //Database.SetInitializer(new MigrateDatabaseToLatestVersion<StoreContext, ContextInitializer>());
+            //this.Database.Initialize(new MigrateDatabaseToLatestVersion<ZenixContext,>)
+
 
         }
 
-        public DbSet<Filtre> Filtre { get; set; }      
-        public DbSet<Kullanici> Kullanici { get; set; }    
+        public DbSet<Filtre> Filtre { get; set; }
+        public DbSet<Kullanici> Kullanici { get; set; }
         public DbSet<Rol> Rol { get; set; }
         public DbSet<RolYetkileri> RolYetkileri { get; set; }
         public DbSet<Firma> Firma { get; set; }
         public DbSet<Ülke> Ülke { get; set; }
+        public DbSet<Ürün> Ürün { get; set; }
+        public DbSet<Revizyon> Revizyon { get; set; }
+        public DbSet<Şarz > Şarj { get; set; }
+        public DbSet<Paketleme > Paketleme { get; set; }
+
+
+
+
 
 
 
@@ -49,7 +57,7 @@ namespace Zenix.Data.Context
                 .WithRequired()
                 .WillCascadeOnDelete(true); //rolün rolyetkilerini kademeli olarak sil
 
-          
+
 
         }
 

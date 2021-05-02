@@ -10,22 +10,20 @@ using Zenix.Common.Enums;
 using Zenix.Model.Attributes;
 using Zenix.Model.Entities.Base;
 
-
 namespace Zenix.Model.Entities
 {
-    public class Revizyon : BaseEntityDurum
+    public class Şarz : BaseEntityDurum
     {
         [Index(name: "IX_Kod", IsUnique = false)]
         public override string Kod { get; set; }
         public Ürün Ürün { get; set; }
         public long ÜrünId { get; set; }
-        public DateTime RevizyonTarihi { get; set; }= DateTime.Now;
+        public DateTime Tarih { get; set; } = DateTime.Now;
         public string Açıklama { get; set; }
         [NotMapped]
-        int GetRevNo { get => Convert.ToInt32(Regex.Match(Kod, @"\d+").Value); }
+        int GetNo { get => Convert.ToInt32(Regex.Match(Kod, @"\d+").Value); }
         [NotMapped]
-        public string RevKodu { get => $"{RevizyonTarihi:ddMMyyyy}-{GetRevNo:00}"; }
-
+        public string ŞarzKodu { get => $"{Tarih:ddMMyyyy}-{GetNo:00}"; }
 
     }
 }

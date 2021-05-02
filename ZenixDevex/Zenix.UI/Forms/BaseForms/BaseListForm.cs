@@ -71,7 +71,7 @@ namespace Zenix.WinUI.Forms.BaseForms
             tablo.RowFocus("Id", id);
 
         }
-        protected void ShowHideButtons(bool visible,params BarItem[] prm) 
+        protected void ShowHideButtons(bool visible, params BarItem[] prm)
         {
             prm?.Where(x => x != null).ToList().ForEach(x => x.Visibility = visible ? BarItemVisibility.Always : BarItemVisibility.Never);
         }
@@ -104,7 +104,7 @@ namespace Zenix.WinUI.Forms.BaseForms
                         tablo.TabloDisariAktar(DosyaTuru.TXT, e.Item.Caption, Text);
                     else if (e.Item == btnYeni)
                     {
-                        if (!KartTuru.YetkiKontrolu(YetkiTuru.Ekleyebilir)) return;                     
+                        if (!KartTuru.YetkiKontrolu(YetkiTuru.Ekleyebilir)) return;
                         ShowEditForm(-1);
                     }
                     else if (e.Item == btnDüzelt)
@@ -128,10 +128,10 @@ namespace Zenix.WinUI.Forms.BaseForms
                         else
                             tablo.HideCustomization();
                     }
-                    else if (e.Item == btnÜrünler)
-                        HesapBilgileriAc();
-                    else if (e.Item == btnCariBilgiler)
-                        CariBilgileriAc();
+                    else if (e.Item == btnŞarz)
+                        ŞarjAc();
+                    else if (e.Item == btnPaketleme)
+                        PaketlemeAc();
                     else if (e.Item == btnSigortaları)
                         SigortalarıAç();
                     else if (e.Item == btnBağlıKayıtları)
@@ -142,7 +142,7 @@ namespace Zenix.WinUI.Forms.BaseForms
                         DosyaGrubAc();
                     else if (e.Item == btnPolisoftExcel)
                         PolisoftExcelimport();
-                    else if (e.Item == btnSmsGönder )
+                    else if (e.Item == btnSmsGönder)
                         SmsGönder();
                     else if (e.Item == btnYazdır)
                         Yazdir();
@@ -188,7 +188,7 @@ namespace Zenix.WinUI.Forms.BaseForms
             //tablo.colum
             tablo.FilterEditorCreated += (sender, e) =>
             {
-                if (!Common.Enums. KartTuru.Filtre .YetkiKontrolu(YetkiTuru.Değiştirebilir )) return; 
+                if (!Common.Enums.KartTuru.Filtre.YetkiKontrolu(YetkiTuru.Değiştirebilir)) return;
 
                 e.ShowFilterEditor = false;
                 new ShowEditForms<FiltreEditForm>().ShowDialogEditForm(KartTuru.Filtre, FiltreId, KartTuru, tablo.GridControl);
@@ -313,7 +313,7 @@ namespace Zenix.WinUI.Forms.BaseForms
         {
             if (!IsMdiChild)
             {
-            
+
                 SelectEntity();
             }
             else
@@ -322,8 +322,8 @@ namespace Zenix.WinUI.Forms.BaseForms
         protected virtual void SutunGizleGoster() { }
 
         protected virtual void Listele() { }
-        protected virtual void HesapBilgileriAc() { }
-        protected virtual void CariBilgileriAc() { }
+        protected virtual void ŞarjAc() { }
+        protected virtual void PaketlemeAc() { }
         protected virtual void BağlıKayıtlarAc() { }
         protected virtual void EkDosyalarAc() { }
         protected virtual void DosyaGrubAc() { }
@@ -350,7 +350,7 @@ namespace Zenix.WinUI.Forms.BaseForms
             Cursor.Current = Cursors.WaitCursor;
             Listele();
             Cursor.Current = DefaultCursor;
-      
+
         }
 
         private void ButtonGizleGoster()
@@ -365,7 +365,7 @@ namespace Zenix.WinUI.Forms.BaseForms
             ShowItems?.ForEach(x => x.Visibility = BarItemVisibility.Always);
             HideItems?.ForEach(x => x.Visibility = BarItemVisibility.Never);
 
-          
+
 
         }
         void SablonKaydet()

@@ -39,7 +39,7 @@ namespace Zenix.WinUI.Forms.ÜlkeFormu
         }
         protected override void Listele()
         {
-            Tablo.GridControl.DataSource = Bll.ToBll<ÜlkeBll>().List();
+            Tablo.GridControl.DataSource = Bll.ToBll<ÜlkeBll>().List(null );
         }
     }
 }

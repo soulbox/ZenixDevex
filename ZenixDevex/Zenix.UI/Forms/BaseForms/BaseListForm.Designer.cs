@@ -118,11 +118,11 @@
             this.barCikisAciklama = new DevExpress.XtraBars.BarStaticItem();
             this.btnAktifPasifKartlar = new DevExpress.XtraBars.BarButtonItem();
             this.barDelete = new DevExpress.XtraBars.BarStaticItem();
-            this.btnÜrünler = new DevExpress.XtraBars.BarButtonItem();
+            this.btnŞarz = new DevExpress.XtraBars.BarButtonItem();
             this.btnBağlıKayıtları = new DevExpress.XtraBars.BarButtonItem();
             this.btnEkDosyalar = new DevExpress.XtraBars.BarButtonItem();
             this.btnPolisoftExcel = new DevExpress.XtraBars.BarButtonItem();
-            this.btnCariBilgiler = new DevExpress.XtraBars.BarButtonItem();
+            this.btnPaketleme = new DevExpress.XtraBars.BarButtonItem();
             this.btnDosyaGrub = new DevExpress.XtraBars.BarButtonItem();
             this.btnSigortaları = new DevExpress.XtraBars.BarButtonItem();
             this.btnSmsGönder = new DevExpress.XtraBars.BarButtonItem();
@@ -181,11 +181,11 @@
             this.btnWord,
             this.btnTxtDosyası,
             this.barDelete,
-            this.btnÜrünler,
+            this.btnŞarz,
             this.btnBağlıKayıtları,
             this.btnEkDosyalar,
             this.btnPolisoftExcel,
-            this.btnCariBilgiler,
+            this.btnPaketleme,
             this.btnDosyaGrub,
             this.btnSigortaları,
             this.btnSmsGönder});
@@ -652,14 +652,14 @@
             this.barDelete.ItemAppearance.Normal.Options.UseForeColor = true;
             this.barDelete.Name = "barDelete";
             // 
-            // btnÜrünler
+            // btnŞarz
             // 
-            this.btnÜrünler.Caption = "Ürünleri";
-            this.btnÜrünler.Id = 55;
-            this.btnÜrünler.ImageOptions.Image = global::Zenix.WinUI.Properties.Resources.newitem_16x16;
-            this.btnÜrünler.ImageOptions.LargeImage = global::Zenix.WinUI.Properties.Resources.newitem_32x32;
-            this.btnÜrünler.Name = "btnÜrünler";
-            this.btnÜrünler.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            this.btnŞarz.Caption = "Şarz Kartları";
+            this.btnŞarz.Id = 55;
+            this.btnŞarz.ImageOptions.Image = global::Zenix.WinUI.Properties.Resources.Load_Cargo_16px;
+            this.btnŞarz.ImageOptions.LargeImage = global::Zenix.WinUI.Properties.Resources.Load_Cargo_32px;
+            this.btnŞarz.Name = "btnŞarz";
+            this.btnŞarz.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             // 
             // btnBağlıKayıtları
             // 
@@ -688,14 +688,14 @@
             this.btnPolisoftExcel.Name = "btnPolisoftExcel";
             this.btnPolisoftExcel.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             // 
-            // btnCariBilgiler
+            // btnPaketleme
             // 
-            this.btnCariBilgiler.Caption = "Cari Bilgiler";
-            this.btnCariBilgiler.Id = 59;
-            this.btnCariBilgiler.ImageOptions.Image = global::Zenix.WinUI.Properties.Resources.contact_us_16px;
-            this.btnCariBilgiler.ImageOptions.LargeImage = global::Zenix.WinUI.Properties.Resources.contact_us_32px;
-            this.btnCariBilgiler.Name = "btnCariBilgiler";
-            this.btnCariBilgiler.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            this.btnPaketleme.Caption = "Paketleme Kartları";
+            this.btnPaketleme.Id = 59;
+            this.btnPaketleme.ImageOptions.Image = global::Zenix.WinUI.Properties.Resources.handle_with_care_16px;
+            this.btnPaketleme.ImageOptions.LargeImage = global::Zenix.WinUI.Properties.Resources.handle_with_care_32px;
+            this.btnPaketleme.Name = "btnPaketleme";
+            this.btnPaketleme.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             // 
             // btnDosyaGrub
             // 
@@ -741,8 +741,8 @@
             this.ribbonPageGroup1.ItemLinks.Add(this.btnFiltrele);
             this.ribbonPageGroup1.ItemLinks.Add(this.btnKolonlar);
             this.ribbonPageGroup1.ItemLinks.Add(this.btnBağlıKayıtları);
-            this.ribbonPageGroup1.ItemLinks.Add(this.btnÜrünler);
-            this.ribbonPageGroup1.ItemLinks.Add(this.btnCariBilgiler);
+            this.ribbonPageGroup1.ItemLinks.Add(this.btnŞarz);
+            this.ribbonPageGroup1.ItemLinks.Add(this.btnPaketleme);
             this.ribbonPageGroup1.ItemLinks.Add(this.btnSigortaları);
             this.ribbonPageGroup1.ItemLinks.Add(this.btnDosyaGrub);
             this.ribbonPageGroup1.ItemLinks.Add(this.btnEkDosyalar);
@@ -849,10 +849,10 @@
         protected DevExpress.XtraBars.BarStaticItem barYazdirAciklama;
         protected DevExpress.XtraBars.BarStaticItem barGonder;
         protected DevExpress.XtraBars.BarStaticItem barGonderAciklama;
-        protected DevExpress.XtraBars.BarButtonItem btnÜrünler;
+        protected DevExpress.XtraBars.BarButtonItem btnŞarz;
         protected DevExpress.XtraBars.BarButtonItem btnBağlıKayıtları;
         protected DevExpress.XtraBars.BarButtonItem btnEkDosyalar;
-        protected DevExpress.XtraBars.BarButtonItem btnCariBilgiler;
+        protected DevExpress.XtraBars.BarButtonItem btnPaketleme;
         protected DevExpress.XtraBars.BarButtonItem btnYeni;
         protected DevExpress.XtraBars.BarButtonItem btnSil;
         protected DevExpress.XtraBars.BarButtonItem btnDüzelt;

@@ -26,10 +26,7 @@ namespace Zenix.BLL.Base
         {
             return BaseSingle(filter, x => x);
         }
-        public virtual IEnumerable<BaseEntity> List()
-        {
-            return List(null);
-        }
+
         public virtual IEnumerable<BaseEntity> List(Expression<Func<TEntity, bool>> filter)
         {
             return BaseList(filter, x => x).OrderBy(x => x.Kod).ToList();

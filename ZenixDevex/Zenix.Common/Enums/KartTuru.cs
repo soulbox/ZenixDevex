@@ -19,6 +19,12 @@ namespace Zenix.Common.Enums
         Ülke = 6,
         [Description("Ürün Kartı")]
         Ürün = 7,
+        [Description("Revizyon Kartı")]
+        Revizyon = 8,
+        [Description("Şarj Kartı")]
+        Şarj = 9,
+        [Description("Paket Kartı")]
+        Paketleme = 10,
 
     }
 }

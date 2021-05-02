@@ -6,6 +6,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Zenix.Common.Enums;
 using Zenix.Model.Entities.Base;
 
 namespace Zenix.Model.Entities
@@ -22,10 +23,11 @@ namespace Zenix.Model.Entities
         public int Stand { get; set; }
         [Column(Order = 7)]//, Range(1, 900)]
         public int Koli { get; set; }
-        public string Açıklama { get; set; }
         public Ürün Ürün { get; set; }
-        public long  ÜrünId { get; set; }
+        public long ÜrünId { get; set; }
 
+        public BirimTipi BirimTipi { get; set; }
+        public string Açıklama { get; set; }
 
         //[DatabaseGenerated(DatabaseGeneratedOption.Computed)]
         //public int PalettekiUrun { get => PalettekiKoli * KolidekiShrink * ShrinktekiUrun; }

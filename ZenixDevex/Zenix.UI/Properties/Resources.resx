@@ -757,4 +757,16 @@
   <data name="documentmap_16x161" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\documentmap_16x161.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="code_fork_16px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\code_fork_16px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="code_fork_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\code_fork_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Load_Cargo_16px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Load Cargo_16px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Load_Cargo_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Load Cargo_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>
