@@ -26,6 +26,7 @@ using DevExpress.XtraGrid.Columns;
 using System.Linq.Expressions;
 using Zenix.WinUI.MainForm;
 using DevExpress.XtraEditors;
+using DevExpress.XtraEditors.Repository;
 
 namespace Zenix.WinUI.Functions
 {
@@ -42,6 +43,10 @@ namespace Zenix.WinUI.Functions
         public static void ToData<T>(this ComboBoxEdit combo ) where T:Enum
         {
             combo.Properties.Items.AddRange(EnumFunction.GetEnumDescriptionList<T>());
+        }
+        public static void ToData<T>(this RepositoryItemComboBox combo) where T : Enum
+        {
+            combo.Items.AddRange(EnumFunction.GetEnumDescriptionList<T>());
         }
         public static T GetRow<T>(this GridView tablo, bool mesajver = false)
         {

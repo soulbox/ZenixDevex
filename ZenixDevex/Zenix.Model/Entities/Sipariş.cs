@@ -23,7 +23,7 @@ namespace Zenix.Model.Entities
         public long KullanıcıId { get; set; }
         public int Miktar { get; set; }
         public BirimTipi BirimTipi { get; set; }
-        public DateTime Tarih { get; set; }
+        public DateTime Tarih { get; set; } = DateTime.Now;
         public string Açıklama { get; set; }
 
 

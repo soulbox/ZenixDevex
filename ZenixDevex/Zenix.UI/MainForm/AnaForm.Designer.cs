@@ -52,22 +52,17 @@
             this.btnTümKrediKartları = new DevExpress.XtraBars.BarButtonItem();
             this.btnFirma = new DevExpress.XtraBars.BarButtonItem();
             this.btnÜlkeler = new DevExpress.XtraBars.BarButtonItem();
+            this.btnSipariş = new DevExpress.XtraBars.BarButtonItem();
+            this.btnMalzemeler = new DevExpress.XtraBars.BarButtonItem();
+            this.btnReçete = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.ribbonYönetim = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPage5 = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPage3 = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPage4 = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonMüş = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonKullanıcı = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.xtraTabbedMdiManager = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             this.imgBackGround = new DevExpress.XtraEditors.PictureEdit();
-            this.btnSipariş = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgBackGround.Properties)).BeginInit();
@@ -100,9 +95,11 @@
             this.btnTümKrediKartları,
             this.btnFirma,
             this.btnÜlkeler,
-            this.btnSipariş});
+            this.btnSipariş,
+            this.btnMalzemeler,
+            this.btnReçete});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 37;
+            this.ribbon.MaxItemId = 39;
             this.ribbon.Name = "ribbon";
             this.ribbon.OptionsAnimation.PageCategoryShowAnimation = DevExpress.Utils.DefaultBoolean.True;
             this.ribbon.OptionsPageCategories.ShowCaptions = false;
@@ -110,10 +107,6 @@
             this.ribbon.PageAnimationLength = 100;
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
-            this.ribbonPage5,
-            this.ribbonPage2,
-            this.ribbonPage3,
-            this.ribbonPage4,
             this.ribbonMüş});
             this.ribbon.QuickToolbarItemLinks.Add(this.baruserinfo);
             this.ribbon.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.False;
@@ -300,66 +293,52 @@
             this.btnÜlkeler.ImageOptions.LargeImage = global::Zenix.WinUI.Properties.Resources.countries_32x1;
             this.btnÜlkeler.Name = "btnÜlkeler";
             // 
+            // btnSipariş
+            // 
+            this.btnSipariş.Caption = "Sipariş Kartları";
+            this.btnSipariş.Id = 36;
+            this.btnSipariş.ImageOptions.Image = global::Zenix.WinUI.Properties.Resources.salesanalysis_16x16;
+            this.btnSipariş.ImageOptions.LargeImage = global::Zenix.WinUI.Properties.Resources.salesanalysis_32x32;
+            this.btnSipariş.Name = "btnSipariş";
+            // 
+            // btnMalzemeler
+            // 
+            this.btnMalzemeler.Caption = "Malzeme Kartları";
+            this.btnMalzemeler.Id = 37;
+            this.btnMalzemeler.ImageOptions.Image = global::Zenix.WinUI.Properties.Resources.commodity_16px;
+            this.btnMalzemeler.ImageOptions.LargeImage = global::Zenix.WinUI.Properties.Resources.commodity_32px;
+            this.btnMalzemeler.Name = "btnMalzemeler";
+            // 
+            // btnReçete
+            // 
+            this.btnReçete.Caption = "Reçete Kartları";
+            this.btnReçete.Id = 38;
+            this.btnReçete.ImageOptions.Image = global::Zenix.WinUI.Properties.Resources.syringe_16px;
+            this.btnReçete.ImageOptions.LargeImage = global::Zenix.WinUI.Properties.Resources.syringe_32px;
+            this.btnReçete.Name = "btnReçete";
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.ribbonYönetim,
             this.ribbonPageGroup1});
             this.ribbonPage1.Name = "ribbonPage1";
-            this.ribbonPage1.Text = "İşemri";
+            this.ribbonPage1.Text = "Yönetim";
+            // 
+            // ribbonYönetim
+            // 
+            this.ribbonYönetim.ItemLinks.Add(this.btnFirma);
+            this.ribbonYönetim.ItemLinks.Add(this.btnSipariş);
+            this.ribbonYönetim.ItemLinks.Add(this.btnMalzemeler);
+            this.ribbonYönetim.ItemLinks.Add(this.btnReçete);
+            this.ribbonYönetim.Name = "ribbonYönetim";
+            this.ribbonYönetim.Text = "Yönetim";
             // 
             // ribbonPageGroup1
             // 
-            this.ribbonPageGroup1.ItemLinks.Add(this.btnFirma);
+            this.ribbonPageGroup1.Alignment = DevExpress.XtraBars.Ribbon.RibbonPageGroupAlignment.Far;
             this.ribbonPageGroup1.ItemLinks.Add(this.btnÜlkeler);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
-            // 
-            // ribbonPage5
-            // 
-            this.ribbonPage5.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroup5});
-            this.ribbonPage5.Name = "ribbonPage5";
-            this.ribbonPage5.Text = "Sipariş";
-            // 
-            // ribbonPageGroup5
-            // 
-            this.ribbonPageGroup5.ItemLinks.Add(this.btnSipariş);
-            this.ribbonPageGroup5.Name = "ribbonPageGroup5";
-            // 
-            // ribbonPage2
-            // 
-            this.ribbonPage2.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroup2});
-            this.ribbonPage2.Name = "ribbonPage2";
-            this.ribbonPage2.Text = "Malzemeler";
-            // 
-            // ribbonPageGroup2
-            // 
-            this.ribbonPageGroup2.Name = "ribbonPageGroup2";
-            this.ribbonPageGroup2.Text = "ribbonPageGroup2";
-            // 
-            // ribbonPage3
-            // 
-            this.ribbonPage3.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroup3});
-            this.ribbonPage3.Name = "ribbonPage3";
-            this.ribbonPage3.Text = "Stok";
-            // 
-            // ribbonPageGroup3
-            // 
-            this.ribbonPageGroup3.Name = "ribbonPageGroup3";
-            this.ribbonPageGroup3.Text = "ribbonPageGroup3";
-            // 
-            // ribbonPage4
-            // 
-            this.ribbonPage4.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroup4});
-            this.ribbonPage4.Name = "ribbonPage4";
-            this.ribbonPage4.Text = "Reçete";
-            // 
-            // ribbonPageGroup4
-            // 
-            this.ribbonPageGroup4.Name = "ribbonPageGroup4";
-            this.ribbonPageGroup4.Text = "ribbonPageGroup4";
             // 
             // ribbonMüş
             // 
@@ -401,14 +380,6 @@
             this.imgBackGround.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
             this.imgBackGround.Size = new System.Drawing.Size(1020, 479);
             this.imgBackGround.TabIndex = 7;
-            // 
-            // btnSipariş
-            // 
-            this.btnSipariş.Caption = "Sipariş";
-            this.btnSipariş.Id = 36;
-            this.btnSipariş.ImageOptions.Image = global::Zenix.WinUI.Properties.Resources.salesanalysis_16x16;
-            this.btnSipariş.ImageOptions.LargeImage = global::Zenix.WinUI.Properties.Resources.salesanalysis_32x32;
-            this.btnSipariş.Name = "btnSipariş";
             // 
             // AnaForm
             // 
@@ -463,17 +434,12 @@
         private DevExpress.XtraBars.BarButtonItem btnSmsŞablon;
         private DevExpress.XtraBars.BarButtonItem btnTümKrediKartları;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage1;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
-        private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage2;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
-        private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage3;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup3;
-        private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage4;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup4;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonYönetim;
         private DevExpress.XtraBars.BarButtonItem btnFirma;
         private DevExpress.XtraBars.BarButtonItem btnÜlkeler;
-        private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage5;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup5;
         private DevExpress.XtraBars.BarButtonItem btnSipariş;
+        private DevExpress.XtraBars.BarButtonItem btnMalzemeler;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
+        private DevExpress.XtraBars.BarButtonItem btnReçete;
     }
 }

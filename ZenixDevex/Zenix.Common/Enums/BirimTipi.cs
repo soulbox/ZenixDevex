@@ -6,7 +6,7 @@ namespace Zenix.Common.Enums
     {
         [Description("yok")]
         yok=0,
-        [Description("Kilogram")]
+        [Description("kg")]
         kg=1,
         [Description("mL")]
         mL=2,
@@ -22,5 +22,9 @@ namespace Zenix.Common.Enums
         Koli=7,
         [Description("Kutu")]
         Kutu=8,
+        [Description("cm")]
+        cm = 9,
+        [Description("mm")]
+        mm = 10,
     }
 }

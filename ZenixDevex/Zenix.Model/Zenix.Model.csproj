@@ -57,6 +57,8 @@
     <Compile Include="DTO\FirmalarDTO.cs" />
     <Compile Include="DTO\KullanıcıDTO.cs" />
     <Compile Include="DTO\RevizyonDTO.cs" />
+    <Compile Include="DTO\ReçeteDTO.cs" />
+    <Compile Include="DTO\ReçeteMalzemeleriDTO.cs" />
     <Compile Include="DTO\RolYetkileriDTO.cs" />
     <Compile Include="DTO\SiparişDTO.cs" />
     <Compile Include="DTO\ÜrünDTO.cs" />

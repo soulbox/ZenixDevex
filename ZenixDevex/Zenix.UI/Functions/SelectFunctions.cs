@@ -8,6 +8,7 @@ using Zenix.Model.DTO;
 using Zenix.WinUI.Forms.ÜlkeFormu;
 using Zenix.WinUI.Forms.FirmaFormu;
 using Zenix.WinUI.Forms.ÜrünlerFormu;
+using Zenix.WinUI.Forms.RevizyonFormu;
 
 namespace Zenix.WinUI.Functions
 {
@@ -69,6 +70,7 @@ namespace Zenix.WinUI.Functions
                         var entity = (FirmalarL)ShowListForms<FirmaListFormu>.ShowDialogListForm(KartTuru.Firma, btnedit.Id);
                         if (entity != null)
                         {
+                            btnedit.Tag = entity;
                             btnedit.Id = entity.Id;
                             btnedit.EditValue = entity.FirmaAdi;
                         }
@@ -76,11 +78,23 @@ namespace Zenix.WinUI.Functions
                     break;
                 case "txtÜrün":
                     {
+
                         var entity = (Ürün)ShowListForms<ÜrünListForm>.ShowDialogListForm(KartTuru.Ürün, btnedit.Id, prmedit.Id, prmedit.Text);
                         if (entity != null)
                         {
+                            btnedit.Tag = entity;
                             btnedit.Id = entity.Id;
                             btnedit.EditValue = entity.Adı;
+                        }
+                    }
+                    break;
+                case "txtRevizyon":
+                    {
+                        var entity = (Revizyon)ShowListForms<ReziyonListForm>.ShowDialogListForm(KartTuru.Revizyon, btnedit.Id, prmedit.Tag);
+                        if (entity != null)
+                        {
+                            btnedit.Id = entity.Id;
+                            btnedit.EditValue = entity.RevKodu;
                         }
                     }
                     break;

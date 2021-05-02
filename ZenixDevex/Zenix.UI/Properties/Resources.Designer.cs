@@ -563,6 +563,26 @@ namespace Zenix.WinUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap commodity_16px {
+            get {
+                object obj = ResourceManager.GetObject("commodity_16px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap commodity_32px {
+            get {
+                object obj = ResourceManager.GetObject("commodity_32px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap contact_us_16px {
             get {
                 object obj = ResourceManager.GetObject("contact_us_16px", resourceCulture);
@@ -1916,6 +1936,26 @@ namespace Zenix.WinUI.Properties {
         public static System.Drawing.Bitmap switch_host_32px {
             get {
                 object obj = ResourceManager.GetObject("switch_host_32px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap syringe_16px {
+            get {
+                object obj = ResourceManager.GetObject("syringe_16px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap syringe_32px {
+            get {
+                object obj = ResourceManager.GetObject("syringe_32px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

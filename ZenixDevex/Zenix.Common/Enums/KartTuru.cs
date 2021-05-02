@@ -8,7 +8,7 @@ namespace Zenix.Common.Enums
         [Description("Filitre Kartı")]
         Filtre = 1,
         [Description("Kullanıcı Kartı")]
-        Kullanıcı = 2,     
+        Kullanıcı = 2,
         [Description("Rol Kartı")]
         Rol = 3,
         [Description("Yetki Kartı")]
@@ -27,6 +27,10 @@ namespace Zenix.Common.Enums
         Paketleme = 10,
         [Description("Sipariş Kartı")]
         Sipariş = 11,
+        [Description("Malzeme Kartı")]
+        Malzeme = 12,
+        [Description("Reçete Kartı")]
+        Reçete = 13,
 
     }
 }

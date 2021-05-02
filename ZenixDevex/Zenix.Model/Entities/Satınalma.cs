@@ -19,7 +19,7 @@ namespace Zenix.Model.Entities
         public long FirmaId { get; set; }
         public long KullanıcıId { get; set; }
         public Kullanici Kullanıcı { get; set; }
-        public DateTime KayıtTarihi { get; set; }
+        public DateTime KayıtTarihi { get; set; } = DateTime.Now;
         public bool Teslimat { get; set; }
         public bool Onay { get; set; }
 

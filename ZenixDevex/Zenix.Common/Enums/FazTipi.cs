@@ -3,8 +3,10 @@
 
 namespace Zenix.Common.Enums
 {
-   public  enum FazTipi
+    public enum FazTipi
     {
+        [Description("Yok")]
+        Yok,
         [Description("A Fazı")]
         AFazı,
         [Description("B Fazı")]
@@ -13,9 +15,5 @@ namespace Zenix.Common.Enums
         CFazı,
         [Description("D Fazı")]
         DFazı,
-        [Description("Diğerleri")]
-        Diğerleri,
-
-
     }
 }

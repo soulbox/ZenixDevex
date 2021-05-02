@@ -14,14 +14,17 @@ using Zenix.Common.Enums;
 using Zenix.Model.Entities;
 using Zenix.Common.Messages;
 using Zenix.Common.Function;
+using Zenix.BLL.General;
 
-namespace Zenix.WinUI.Forms.KullanıcıForms
+namespace Zenix.WinUI.Forms.ReçeteFormu
 {
-    public partial class RolYetkiKartlariListForm : BaseListForm
+    public partial class ReçeteMalzemeleriListForm : BaseListForm
     {
-        public RolYetkiKartlariListForm()
+        public ReçeteMalzemeleriListForm()
         {
             InitializeComponent();
+            Bll = new MalzemeBll();
+
             ShowHideButtons(false,
             btnYeni,
             btnSil,
@@ -35,26 +38,19 @@ namespace Zenix.WinUI.Forms.KullanıcıForms
             barDuzeltAciklama,
             barKolonlar,
             barKolonlarAciklama);
-
         }
         protected override void Degiskenleridoldur()
         {
             this.tablo = Tablo;
-            this.KartTuru = KartTuru.Yetki;
+            this.KartTuru = KartTuru.Reçete;
             //this.FormShow = new ShowEditForms<RolEditForm>();
             this.Navigator = longNavigator.controlNavigator;
             //Tablo.ViewCaption = Text;
 
         }
         protected override void Listele()
-        {
-            var liste = Enum.GetValues(typeof(KartTuru)).Cast<KartTuru>().ToList().Select(x => new RolYetki
-            {
-                KartTuru = x,
-            }).Where(x => !ListeDışıBırakılıcakKayıtlar.Contains((long)x.KartTuru)).OrderBy(x => x.KartTuru.ToName())
-                .ToList();
-
-
+        {         
+            var liste = ((MalzemeBll)Bll).MalzemeAdListesi(x => !ListeDışıBırakılıcakKayıtlar.Contains(x.Id)).ToList();
             Tablo.GridControl.DataSource = liste;
             if (!isMultiSelect) return;
             if (liste.Any())
@@ -63,5 +59,6 @@ namespace Zenix.WinUI.Forms.KullanıcıForms
                 Msg.UyariMesajı("İşlem Yapılabilecek Kart Bulunamadı");
 
         }
+
     }
 }

@@ -82,6 +82,7 @@ namespace Zenix.WinUI.myUserControls.UserControl.GenelEditTable
         {
             var buton = insUpdNavigator.Navigator.Buttons;
             buton.DoClick(buton.EndEdit);
+            base.CheckEdit_CheckedChanged(sender, e);
         }
         protected internal override bool HatalıGiriş()
         {
