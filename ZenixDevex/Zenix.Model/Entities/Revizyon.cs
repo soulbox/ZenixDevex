@@ -17,8 +17,8 @@ namespace Zenix.Model.Entities
     {
         [Index(name: "IX_Kod", IsUnique = false)]
         public override string Kod { get; set; }
-        public Ürün Ürün { get; set; }
-        public long ÜrünId { get; set; }
+        public Markalar Markalar { get; set; }
+        public long MarkalarId { get; set; }
         public DateTime RevizyonTarihi { get; set; }= DateTime.Now;
         public string Açıklama { get; set; }
         [NotMapped]

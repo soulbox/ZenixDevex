@@ -9,24 +9,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel;
-
 namespace Zenix.Model.Entities
 {
-    public class Sipariş : BaseEntityDurum
+    public class Markalar : BaseEntityDurum
     {
-        [Index(name: "IX_Kod", IsUnique = true)]
+        [Index(name: "IX_Kod", IsUnique = false)]
         public override string Kod { get; set; }
-        public Ürün Ürün { get; set; }
-        [Required(),ZorunluAlan("Ürün","txtÜrün")]
+        public string Adı { get; set; }
+
+        [Required, StringLength(14), ZorunluAlan("Adı", "txtGTIN")]
+        public string GTIN { get; set; }
+        [ZorunluAlan("Firma", "txtFirma")]
+        public Firma Firma { get; set; }
+        public long FirmaId { get; set; }
         public long ÜrünId { get; set; }
-        public Kullanici Kullanıcı { get; set; }        
-        public long KullanıcıId { get; set; }
-        public int Miktar { get; set; }
-        public BirimTipi BirimTipi { get; set; }
-        public DateTime Tarih { get; set; } = DateTime.Now;
+        public Ürün Ürün { get; set; }
         public string Açıklama { get; set; }
-
-
-
     }
 }

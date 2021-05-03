@@ -35,8 +35,8 @@ namespace Zenix.WinUI.Forms.FirmaFormu
             this.Navigator = longNavigator.controlNavigator;
             Text = "Firma Kartları ";
             Tablo.ViewCaption = Text;
-            ShowHideButtons(IsMdiChild, btnBağlıKayıtları);
-            btnBağlıKayıtları.Caption = "Ürünleri";
+            //ShowHideButtons(IsMdiChild, btnBağlıKayıtları);
+            //btnBağlıKayıtları.Caption = "Ürünleri";
 
 
         }
@@ -46,12 +46,12 @@ namespace Zenix.WinUI.Forms.FirmaFormu
 
         }
 
-        protected override void BağlıKayıtlarAc()
-        {
-            var entity = Tablo.GetRow<Firma>();
-            if (entity == null) return;
-            ShowListForms<ÜrünListForm>.ShowListForm(Common.Enums.KartTuru.Ürün, entity.Id, entity.FirmaAdi);
-        }
+        //protected override void BağlıKayıtlarAc()
+        //{
+        //    var entity = Tablo.GetRow<Firma>();
+        //    if (entity == null) return;
+        //    ShowListForms<ÜrünListForm>.ShowListForm(Common.Enums.KartTuru.Ürün, entity.Id, entity.FirmaAdi);
+        //}
 
 
     }

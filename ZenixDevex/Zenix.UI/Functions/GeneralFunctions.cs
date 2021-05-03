@@ -39,7 +39,7 @@ namespace Zenix.WinUI.Functions
 
             return -1;
         }
-
+        public static long GetId(this myButtonEdit btn) => btn.Id.ConvertTo<long>();
         public static void ToData<T>(this ComboBoxEdit combo ) where T:Enum
         {
             combo.Properties.Items.AddRange(EnumFunction.GetEnumDescriptionList<T>());

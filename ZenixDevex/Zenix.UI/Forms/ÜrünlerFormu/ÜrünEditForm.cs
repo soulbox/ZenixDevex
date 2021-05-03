@@ -19,13 +19,10 @@ namespace Zenix.WinUI.Forms.ÜrünlerFormu
 {
     public partial class ÜrünEditForm : BaseEditForm
     {
-        long firmaId;
-        string firmaAdi;
+
         public ÜrünEditForm(params object[] prm)
         {
             InitializeComponent();
-            firmaId = (long)prm[0];
-            firmaAdi = prm[1].ToString();
 
             this.DataLayoutControl = myDataLayoutControl;
             this.Bll = new ÜrünBll(myDataLayoutControl);
@@ -37,22 +34,20 @@ namespace Zenix.WinUI.Forms.ÜrünlerFormu
         {
             //if (isirsaliye && BaseIslemTuru == IslemTuru.EntityInsert)
             //    LayoutGizle(layFirma, layGTIN, layBarcodeSize, laygecikme);
-            OldEntity = BaseIslemTuru == IslemTuru.EntityInsert ? new ÜrünL() { FirmaId = firmaId, FirmaAdı = firmaAdi } : ((ÜrünBll)Bll).Single(FilterFunctions.Filter<Ürün>(Id));
+            OldEntity = BaseIslemTuru == IslemTuru.EntityInsert ? new Ürün ()  : ((ÜrünBll)Bll).Single(FilterFunctions.Filter<Ürün>(Id));
 
             NesneyiKontrollereBagla();
             if (BaseIslemTuru != IslemTuru.EntityInsert) return;
             Id = BaseIslemTuru.IdOlustur(OldEntity);
-            txtKod.Text = ((ÜrünBll)Bll).YeniKodVer(x => x.FirmaId == firmaId);
+            txtKod.Text = ((ÜrünBll)Bll).YeniKodVer();
             txtAdı.Focus();
         }
         protected override void NesneyiKontrollereBagla()
         {
-            var entity = (ÜrünL)OldEntity;
+            var entity = (Ürün)OldEntity;
             txtKod.Text = entity.Kod;
-            tglDurum.IsOn = entity.Durum;
-            txtGTIN.Text = entity.GTIN;
+            tglDurum.IsOn = entity.Durum;        
             txtAdı.Text = entity.Adı;
-            txtMarka.Text = entity.Marka;
         }
         protected override void GuncelNesneOluştur()
         {
@@ -61,24 +56,21 @@ namespace Zenix.WinUI.Forms.ÜrünlerFormu
                 Id = Id,
                 Kod = txtKod.Text,
                 Durum = tglDurum.IsOn,
-                GTIN = txtGTIN.Text,
                 Adı = txtAdı.Text,
-                Marka = txtMarka.Text,
-                FirmaId = firmaId
 
             };
             ButtonEnableDurumu();
 
         }
 
-        protected override bool EntityInsert()
-        {
-            return ((ÜrünBll)Bll).Insert(CurrentEntity, x => x.Kod == CurrentEntity.Kod && x.FirmaId == firmaId);
-        }
-        protected override bool EntityUpdate()
-        {
-            return ((ÜrünBll)Bll).Update(OldEntity, CurrentEntity, x => x.Kod == CurrentEntity.Kod && x.FirmaId == firmaId);
+        //protected override bool EntityInsert()
+        //{
+        //    return ((ÜrünBll)Bll).Insert(CurrentEntity, x => x.Kod == CurrentEntity.Kod && x.FirmaId == firmaId);
+        //}
+        //protected override bool EntityUpdate()
+        //{
+        //    return ((ÜrünBll)Bll).Update(OldEntity, CurrentEntity, x => x.Kod == CurrentEntity.Kod && x.FirmaId == firmaId);
 
-        }
+        //}
     }
 }

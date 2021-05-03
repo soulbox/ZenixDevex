@@ -14,26 +14,12 @@ using Zenix.Model.Entities.Base;
 
 namespace Zenix.BLL.General
 {
-    public class ÜrünBll : BaseGenelBLL<Ürün>, IBaseCommonBLL
+    public class ÜrünBll : BaseGenelBLL<Ürün>, IBaseGenelBll, IBaseCommonBLL
     {
         public ÜrünBll() : base(KartTuru.Ürün) { }
 
         public ÜrünBll(Control ctrl) : base(ctrl, KartTuru.Ürün) { }
-        public override BaseEntity Single(Expression<Func<Ürün, bool>> filter)
-        {
-            return BaseSingle(filter, x => new ÜrünL
-            {
-                Id = x.Id,
-                Durum = x.Durum,
-                Kod = x.Kod,
-                Adı = x.Adı,
-                FirmaAdı = x.Firma.FirmaAdi,
-                FirmaId = x.FirmaId,
-                GTIN = x.GTIN,
-                Marka = x.Marka
 
-            });
-        }
 
     }
 }

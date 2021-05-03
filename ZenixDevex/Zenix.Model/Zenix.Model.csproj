@@ -56,18 +56,19 @@
     <Compile Include="Attributes\ZorunluAlan.cs" />
     <Compile Include="DTO\FirmalarDTO.cs" />
     <Compile Include="DTO\KullanıcıDTO.cs" />
+    <Compile Include="DTO\MarkalarDTO.cs" />
     <Compile Include="DTO\RevizyonDTO.cs" />
     <Compile Include="DTO\ReçeteDTO.cs" />
     <Compile Include="DTO\ReçeteMalzemeleriDTO.cs" />
     <Compile Include="DTO\RolYetkileriDTO.cs" />
     <Compile Include="DTO\SiparişDTO.cs" />
-    <Compile Include="DTO\ÜrünDTO.cs" />
     <Compile Include="DTO\İşemriDTO.cs" />
     <Compile Include="Entities\Base\BaseEntity.cs" />
     <Compile Include="Entities\Base\BaseEntityDurum.cs" />
     <Compile Include="Entities\Base\BaseEntityHaraket.cs" />
     <Compile Include="Entities\Base\Interfaces\IBaseEntity.cs" />
     <Compile Include="Entities\Base\Interfaces\IBaseHaraketEntity.cs" />
+    <Compile Include="Entities\Markalar.cs" />
     <Compile Include="Entities\DokumParametreleri.cs" />
     <Compile Include="Entities\Filtre.cs" />
     <Compile Include="Entities\Firma.cs" />
@@ -86,7 +87,7 @@
     <Compile Include="Entities\Ülke.cs" />
     <Compile Include="Entities\Ürün.cs" />
     <Compile Include="Entities\İşemri.cs" />
-    <Compile Include="Entities\Şarz.cs" />
+    <Compile Include="Entities\Şarj.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Entities\Sipariş.cs" />
   </ItemGroup>

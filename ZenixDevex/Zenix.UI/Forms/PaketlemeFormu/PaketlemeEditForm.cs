@@ -20,10 +20,10 @@ namespace Zenix.WinUI.Forms.PaketlemeFormu
 {
     public partial class PaketlemeEditForm : BaseEditForm
     {
-        readonly Ürün ürün;
+        readonly MarkalarS marka;
         public PaketlemeEditForm(params object[] prm)
         {
-            ürün = (Ürün)prm[0];
+            marka = (MarkalarS)prm[0];
             InitializeComponent();
             this.DataLayoutControl = myDataLayoutControl;
             this.Bll = new PaketlemeBll(myDataLayoutControl);
@@ -43,7 +43,7 @@ namespace Zenix.WinUI.Forms.PaketlemeFormu
             NesneyiKontrollereBagla();
             if (BaseIslemTuru != IslemTuru.EntityInsert) return;
             Id = BaseIslemTuru.IdOlustur(OldEntity);
-            txtKod.Text = ((PaketlemeBll)Bll).YeniKodVer(x => x.ÜrünId == ürün.Id);
+            txtKod.Text = ((PaketlemeBll)Bll).YeniKodVer(x => x.MarkalarId  == marka.Id);
             cmbAyartipi.Focus();
         }
         protected override void NesneyiKontrollereBagla()
@@ -69,7 +69,7 @@ namespace Zenix.WinUI.Forms.PaketlemeFormu
                 Kod = txtKod.Text,
                 Durum = tglDurum.IsOn,
                 Açıklama = txtAçıklama.Text,
-                ÜrünId = ürün.Id,
+                MarkalarId=marka.Id,
                 AyarTipi = cmbAyartipi.Text.GetEnum<AyarTipi>(),
                 BirimTipi = cmbBirim.Text.GetEnum<BirimTipi>(),
                 Koli = txtKoli.EditValue.ConvertTo<int>(),
@@ -82,11 +82,11 @@ namespace Zenix.WinUI.Forms.PaketlemeFormu
 
         protected override bool EntityInsert()
         {
-            return ((PaketlemeBll)Bll).Insert(CurrentEntity, x => x.Kod == CurrentEntity.Kod && x.ÜrünId == ürün.Id);
+            return ((PaketlemeBll)Bll).Insert(CurrentEntity, x => x.Kod == CurrentEntity.Kod && x.MarkalarId == marka.Id);
         }
         protected override bool EntityUpdate()
         {
-            return ((PaketlemeBll)Bll).Update(OldEntity, CurrentEntity, x => x.Kod == CurrentEntity.Kod && x.ÜrünId == ürün.Id);
+            return ((PaketlemeBll)Bll).Update(OldEntity, CurrentEntity, x => x.Kod == CurrentEntity.Kod && x.MarkalarId == marka.Id);
 
         }
     }

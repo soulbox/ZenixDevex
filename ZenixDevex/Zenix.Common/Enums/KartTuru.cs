@@ -35,6 +35,8 @@ namespace Zenix.Common.Enums
         Kazan = 14,
         [Description("İşemri Kartı")]
         İşemri = 15,
+        [Description("Marka Kartı")]
+        Markalar = 16,
 
     }
 }

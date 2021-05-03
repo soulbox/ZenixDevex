@@ -12,12 +12,12 @@ using Zenix.Model.Entities.Base;
 
 namespace Zenix.Model.Entities
 {
-    public class Şarz : BaseEntityDurum
+    public class Şarj : BaseEntityDurum
     {
         [Index(name: "IX_Kod", IsUnique = false)]
         public override string Kod { get; set; }
-        public Ürün Ürün { get; set; }
-        public long ÜrünId { get; set; }
+        public Markalar Markalar { get; set; }
+        public long MarkalarId { get; set; }
         public DateTime Tarih { get; set; } = DateTime.Now;
         public string Açıklama { get; set; }
         [NotMapped]

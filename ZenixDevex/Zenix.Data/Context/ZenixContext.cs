@@ -6,6 +6,7 @@ using System.Linq;
 using System.Net.Http.Headers;
 using System.Net.NetworkInformation;
 using System.Security.Cryptography.X509Certificates;
+using System.Windows.Forms;
 using Zenix.Common.Function;
 using Zenix.Data.ServerMigration;
 using Zenix.Model.Entities;
@@ -35,13 +36,15 @@ namespace Zenix.Data.Context
         public DbSet<Ülke> Ülke { get; set; }
         public DbSet<Ürün> Ürün { get; set; }
         public DbSet<Revizyon> Revizyon { get; set; }
-        public DbSet<Şarz> Şarj { get; set; }
+        public DbSet<Şarj> Şarj { get; set; }
         public DbSet<Paketleme> Paketleme { get; set; }
         public DbSet<Sipariş> Sipariş { get; set; }
         public DbSet<Malzeme> Malzeme { get; set; }
         public DbSet<Reçete> Reçete { get; set; }
         public DbSet<ReçeteMalzemeler> ReçeteMalzemeler { get; set; }
         public DbSet<Kazan> Kazan { get; set; }
+        public DbSet<Markalar> Markalar { get; set; }
+
         public DbSet<İşemri> İşemri { get; set; }
 
 
@@ -98,7 +101,7 @@ namespace Zenix.Data.Context
 
         static List<SqlConnectionStringBuilder> datasources = datasources ?? new List<SqlConnectionStringBuilder>()
         {
-            HWIDEngine.isExcludeMachine ?LocalPC:  Sunucu,
+            //HWIDEngine.isExcludeMachine ?LocalPC:  Sunucu,
             Sunucu,
             //LocalPC//server          
         };
@@ -106,7 +109,7 @@ namespace Zenix.Data.Context
         {
             //return SimpaşGlobalIP;
 
-            foreach (var x in datasources.Where(x => x != null).ToList())
+            foreach (SqlConnectionStringBuilder x in datasources.Where(x => x != null).ToList())
             {
                 //if (x.DataSource  != "213.14.174.241") continue;
                 //x.IntegratedSecurity = true; // windows auth için aktif olması gerek
@@ -125,7 +128,11 @@ namespace Zenix.Data.Context
                     }
                     catch (System.Exception ex)
                     {
-
+                        if (x == Sunucu)
+                        {
+                            MessageBox.Show($"Sunucuya Bağlanılamadı!\r\n{ex}");
+                            System.Environment.Exit(0);
+                        }
                     }
                 }
 

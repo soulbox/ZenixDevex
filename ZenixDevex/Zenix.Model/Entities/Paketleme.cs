@@ -23,8 +23,8 @@ namespace Zenix.Model.Entities
         public int Stand { get; set; }
         [Column(Order = 7)]//, Range(1, 900)]
         public int Koli { get; set; }
-        public Ürün Ürün { get; set; }
-        public long ÜrünId { get; set; }
+        public Markalar Markalar { get; set; }
+        public long MarkalarId { get; set; }
 
         public BirimTipi BirimTipi { get; set; }
         public string Açıklama { get; set; }

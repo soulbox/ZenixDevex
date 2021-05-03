@@ -15,9 +15,9 @@ namespace Zenix.Model.Entities
     {
         [Index(name: "IX_Kod", IsUnique = false)]
         public override string Kod { get; set; }
-        public Revizyon Revizyon { get; set; }
+        public Markalar Markalar { get; set; }
         [ZorunluAlan("Revizyon","txtRevizyon")]
-        public long RevizyonId { get; set; }
+        public long MarkalarId { get; set; }
         public string AFazıHazırlanış { get; set; }
         public string BFazıHazırlanış { get; set; }
         public string CFazıHazırlanış { get; set; }

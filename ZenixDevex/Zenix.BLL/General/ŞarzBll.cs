@@ -12,7 +12,7 @@ using Zenix.Model.Entities;
 using Zenix.Model.Entities.Base;
 namespace Zenix.BLL.General
 {
- public    class ŞarzBll : BaseGenelBLL<Şarz>, IBaseCommonBLL
+ public    class ŞarzBll : BaseGenelBLL<Şarj>, IBaseCommonBLL
     {
         public ŞarzBll() : base(KartTuru.Şarj) { }
 

@@ -1,6 +1,6 @@
-﻿namespace Zenix.WinUI.Forms.ÜrünlerFormu
+﻿namespace Zenix.WinUI.Forms.MarkalarFormu
 {
-    partial class ÜrünListForm
+    partial class MarkalarListForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,12 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ÜrünListForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MarkalarListForm));
             this.Grid = new Zenix.WinUI.myUserControls.Grid.myGridControl();
             this.Tablo = new Zenix.WinUI.myUserControls.Grid.myGridview();
             this.colId = new Zenix.WinUI.myUserControls.Grid.MyGridColumn();
             this.colKod = new Zenix.WinUI.myUserControls.Grid.MyGridColumn();
-            this.colAdı = new Zenix.WinUI.myUserControls.Grid.MyGridColumn();
+            this.colmarkaadı = new Zenix.WinUI.myUserControls.Grid.MyGridColumn();
+            this.colÜrünAdı = new Zenix.WinUI.myUserControls.Grid.MyGridColumn();
+            this.colFirma = new Zenix.WinUI.myUserControls.Grid.MyGridColumn();
+            this.colGTN = new Zenix.WinUI.myUserControls.Grid.MyGridColumn();
+            this.colAçıklama = new Zenix.WinUI.myUserControls.Grid.MyGridColumn();
+            this.colMTipi = new Zenix.WinUI.myUserControls.Grid.MyGridColumn();
             this.longNavigator = new Zenix.WinUI.myUserControls.Navigator.LongNavigator();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Grid)).BeginInit();
@@ -84,8 +89,14 @@
             this.Tablo.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colId,
             this.colKod,
-            this.colAdı});
+            this.colmarkaadı,
+            this.colÜrünAdı,
+            this.colFirma,
+            this.colMTipi,
+            this.colGTN,
+            this.colAçıklama});
             this.Tablo.GridControl = this.Grid;
+            this.Tablo.GroupCount = 1;
             this.Tablo.Name = "Tablo";
             this.Tablo.OptionsFind.AlwaysVisible = true;
             this.Tablo.OptionsFind.FindDelay = 100;
@@ -104,6 +115,8 @@
             this.Tablo.OptionsView.ShowAutoFilterRow = true;
             this.Tablo.OptionsView.ShowGroupPanel = false;
             this.Tablo.OptionsView.ShowViewCaption = true;
+            this.Tablo.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colmarkaadı, DevExpress.Data.ColumnSortOrder.Ascending)});
             this.Tablo.StatusBarAciklama = null;
             this.Tablo.StatusBarKisayol = null;
             this.Tablo.StatusBarKisayolAciklama = null;
@@ -134,18 +147,83 @@
             this.colKod.VisibleIndex = 0;
             this.colKod.Width = 108;
             // 
-            // colAdı
+            // colmarkaadı
             // 
-            this.colAdı.Caption = "Ürün Adı";
-            this.colAdı.FieldName = "Adı";
-            this.colAdı.Name = "colAdı";
-            this.colAdı.OptionsColumn.AllowEdit = false;
-            this.colAdı.StatusBarAciklama = null;
-            this.colAdı.StatusBarKisayol = null;
-            this.colAdı.StatusBarKisayolAciklama = null;
-            this.colAdı.Visible = true;
-            this.colAdı.VisibleIndex = 1;
-            this.colAdı.Width = 344;
+            this.colmarkaadı.Caption = "Marka Adı";
+            this.colmarkaadı.FieldName = "Adı";
+            this.colmarkaadı.Name = "colmarkaadı";
+            this.colmarkaadı.OptionsColumn.AllowEdit = false;
+            this.colmarkaadı.StatusBarAciklama = null;
+            this.colmarkaadı.StatusBarKisayol = null;
+            this.colmarkaadı.StatusBarKisayolAciklama = null;
+            this.colmarkaadı.Visible = true;
+            this.colmarkaadı.VisibleIndex = 1;
+            this.colmarkaadı.Width = 267;
+            // 
+            // colÜrünAdı
+            // 
+            this.colÜrünAdı.Caption = "Ürün";
+            this.colÜrünAdı.FieldName = "ÜrünAdı";
+            this.colÜrünAdı.Name = "colÜrünAdı";
+            this.colÜrünAdı.OptionsColumn.AllowEdit = false;
+            this.colÜrünAdı.StatusBarAciklama = null;
+            this.colÜrünAdı.StatusBarKisayol = null;
+            this.colÜrünAdı.StatusBarKisayolAciklama = null;
+            this.colÜrünAdı.Visible = true;
+            this.colÜrünAdı.VisibleIndex = 1;
+            this.colÜrünAdı.Width = 260;
+            // 
+            // colFirma
+            // 
+            this.colFirma.Caption = "Firma";
+            this.colFirma.FieldName = "FirmaAdı";
+            this.colFirma.Name = "colFirma";
+            this.colFirma.OptionsColumn.AllowEdit = false;
+            this.colFirma.StatusBarAciklama = null;
+            this.colFirma.StatusBarKisayol = null;
+            this.colFirma.StatusBarKisayolAciklama = null;
+            this.colFirma.Visible = true;
+            this.colFirma.VisibleIndex = 2;
+            this.colFirma.Width = 260;
+            // 
+            // colGTN
+            // 
+            this.colGTN.Caption = "GTIN(barcode)";
+            this.colGTN.FieldName = "GTIN";
+            this.colGTN.Name = "colGTN";
+            this.colGTN.OptionsColumn.AllowEdit = false;
+            this.colGTN.StatusBarAciklama = null;
+            this.colGTN.StatusBarKisayol = null;
+            this.colGTN.StatusBarKisayolAciklama = null;
+            this.colGTN.Visible = true;
+            this.colGTN.VisibleIndex = 4;
+            this.colGTN.Width = 150;
+            // 
+            // colAçıklama
+            // 
+            this.colAçıklama.Caption = "Açıklama";
+            this.colAçıklama.FieldName = "Açıklama";
+            this.colAçıklama.Name = "colAçıklama";
+            this.colAçıklama.OptionsColumn.AllowEdit = false;
+            this.colAçıklama.StatusBarAciklama = null;
+            this.colAçıklama.StatusBarKisayol = null;
+            this.colAçıklama.StatusBarKisayolAciklama = null;
+            this.colAçıklama.Visible = true;
+            this.colAçıklama.VisibleIndex = 5;
+            this.colAçıklama.Width = 260;
+            // 
+            // colMTipi
+            // 
+            this.colMTipi.Caption = "Firma Tipi";
+            this.colMTipi.FieldName = "FirmaTipi";
+            this.colMTipi.Name = "colMTipi";
+            this.colMTipi.OptionsColumn.AllowEdit = false;
+            this.colMTipi.StatusBarAciklama = null;
+            this.colMTipi.StatusBarKisayol = null;
+            this.colMTipi.StatusBarKisayolAciklama = null;
+            this.colMTipi.Visible = true;
+            this.colMTipi.VisibleIndex = 3;
+            this.colMTipi.Width = 150;
             // 
             // longNavigator
             // 
@@ -155,7 +233,7 @@
             this.longNavigator.Size = new System.Drawing.Size(952, 24);
             this.longNavigator.TabIndex = 4;
             // 
-            // ÜrünListForm
+            // MarkalarListForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -163,8 +241,8 @@
             this.Controls.Add(this.Grid);
             this.Controls.Add(this.longNavigator);
             this.IconOptions.ShowIcon = false;
-            this.Name = "ÜrünListForm";
-            this.Text = "ÜrünListForm";
+            this.Name = "MarkalarListForm";
+            this.Text = "MarkalarListForm";
             this.Controls.SetChildIndex(this.ribbonControl, 0);
             this.Controls.SetChildIndex(this.longNavigator, 0);
             this.Controls.SetChildIndex(this.Grid, 0);
@@ -182,7 +260,12 @@
         private myUserControls.Grid.myGridview Tablo;
         private myUserControls.Grid.MyGridColumn colId;
         private myUserControls.Grid.MyGridColumn colKod;
-        protected myUserControls.Grid.MyGridColumn colAdı;
+        protected myUserControls.Grid.MyGridColumn colmarkaadı;
+        protected myUserControls.Grid.MyGridColumn colÜrünAdı;
+        protected myUserControls.Grid.MyGridColumn colFirma;
+        protected myUserControls.Grid.MyGridColumn colGTN;
+        protected myUserControls.Grid.MyGridColumn colAçıklama;
+        private myUserControls.Grid.MyGridColumn colMTipi;
         private myUserControls.Navigator.LongNavigator longNavigator;
     }
 }

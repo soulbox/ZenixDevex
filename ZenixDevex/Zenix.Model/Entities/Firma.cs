@@ -1,13 +1,14 @@
-﻿using System;
+﻿using Zenix.Model.Attributes;
+using Zenix.Model.Entities.Base;
+using Zenix.Common.Enums;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Zenix.Common.Enums;
-using Zenix.Model.Attributes;
-using Zenix.Model.Entities.Base;
+using System.ComponentModel;
 
 namespace Zenix.Model.Entities
 {

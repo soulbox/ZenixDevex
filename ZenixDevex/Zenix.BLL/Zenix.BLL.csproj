@@ -65,6 +65,7 @@
     <Compile Include="General\KazanBll.cs" />
     <Compile Include="General\KullanıcıBll.cs" />
     <Compile Include="General\MalzemeBll.cs" />
+    <Compile Include="General\MarkalarBll.cs" />
     <Compile Include="General\PaketlemeBll.cs" />
     <Compile Include="General\RevizyonBll.cs" />
     <Compile Include="General\ReçeteBll.cs" />

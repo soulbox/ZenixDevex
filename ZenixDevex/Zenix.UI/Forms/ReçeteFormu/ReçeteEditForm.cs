@@ -49,10 +49,14 @@ namespace Zenix.WinUI.Forms.ReçeteFormu
             txtÜrün.Id = entity.ÜrünId;
             txtRevizyon.Text = entity.RevKodu;
             txtRevizyon.Id = entity.RevizyonId;
+
             txtAFaz.Text = entity.AFazıHazırlanış;
             txtBFaz.Text = entity.BFazıHazırlanış;
             txtCFaz.Text = entity.CFazıHazırlanış;
-
+            if (BaseIslemTuru == Common.Enums.IslemTuru.EntityUpdate)
+            {
+                //txtÜrün.Tag =
+            }
 
         }
         protected override void GuncelNesneOluştur()

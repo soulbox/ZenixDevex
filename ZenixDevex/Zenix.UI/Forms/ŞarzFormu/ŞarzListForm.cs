@@ -19,11 +19,11 @@ namespace Zenix.WinUI.Forms.ŞarzFormu
 {
     public partial class ŞarzListForm : BaseListForm
     {
-        readonly Ürün ürün;
+        readonly MarkalarS marka;
 
         public ŞarzListForm(params object[] prm)
         {
-            ürün = (Ürün)prm[0];
+            marka = (MarkalarS)prm[0];
             InitializeComponent();
             Bll = new ŞarzBll();
 
@@ -35,7 +35,9 @@ namespace Zenix.WinUI.Forms.ŞarzFormu
             this.KartTuru = Common.Enums.KartTuru.Şarj;
             this.Navigator = longNavigator.controlNavigator;
             //this.FormShow = new ShowEditForms<ÜrünEditForm>();
-            this.Text = $"[{ürün.Adı }] Ürününün Şarzları";
+           
+            this.Text = $"[{marka.Adı}-{marka.ÜrünAdı}] Şarjları";
+
             Tablo.ViewCaption = Text;
 
             //if (IsMdiChild)
@@ -46,13 +48,13 @@ namespace Zenix.WinUI.Forms.ŞarzFormu
         protected override void Listele()
         {
 
-            var liste = ((ŞarzBll)Bll).List(x => x.Durum == AktifKayitlariGoster && x.ÜrünId == ürün.Id);
+            var liste = ((ŞarzBll)Bll).List(x => x.Durum == AktifKayitlariGoster && x.MarkalarId == marka.Id);
             Tablo.GridControl.DataSource = liste;
 
         }
         protected override void ShowEditForm(long id)
         {
-            var result = new ShowEditForms<ŞarzEditForm >().ShowDialogEditForm(Common.Enums.KartTuru.Şarj, id, ürün);
+            var result = new ShowEditForms<ŞarzEditForm >().ShowDialogEditForm(Common.Enums.KartTuru.Şarj, id, marka);
             ShowEditFormDefault(result);
         }
 

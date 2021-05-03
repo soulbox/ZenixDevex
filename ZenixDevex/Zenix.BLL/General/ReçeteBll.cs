@@ -14,7 +14,7 @@ using Zenix.Model.DTO;
 
 namespace Zenix.BLL.General
 {
-    public class ReçeteBll : BaseGenelBLL<Reçete>,  IBaseCommonBLL
+    public class ReçeteBll : BaseGenelBLL<Reçete>, IBaseCommonBLL
     {
         public ReçeteBll() : base(KartTuru.Reçete) { }
 
@@ -29,12 +29,12 @@ namespace Zenix.BLL.General
                 BFazıHazırlanış = x.BFazıHazırlanış,
                 CFazıHazırlanış = x.CFazıHazırlanış,
                 RevizyonId = x.RevizyonId,
-                ÜrünAdı = x.Revizyon.Ürün.Adı,
+                ÜrünAdı = x.Revizyon.Markalar.Ürün.Adı,
                 RevizyonKod = x.Revizyon.Kod,
                 RevizyonTarihi = x.Revizyon.RevizyonTarihi,
-                ÜrünId = x.Revizyon.ÜrünId,
-                FirmaAdı = x.Revizyon.Ürün.Firma.FirmaAdi,
-                FirmaId = x.Revizyon.Ürün.FirmaId,
+                ÜrünId = x.Revizyon.Markalar.ÜrünId ,
+                FirmaAdı = x.Revizyon.Markalar.Firma.FirmaAdi,
+                FirmaId = x.Revizyon.Markalar.FirmaId,
 
             });
         }
@@ -47,8 +47,8 @@ namespace Zenix.BLL.General
                 AFazıHazırlanış = x.AFazıHazırlanış,
                 BFazıHazırlanış = x.BFazıHazırlanış,
                 CFazıHazırlanış = x.CFazıHazırlanış,
-                FirmaAdı = x.Revizyon.Ürün.Firma.FirmaAdi,
-                ÜrünAdı = x.Revizyon.Ürün.Adı,
+                FirmaAdı = x.Revizyon.Markalar.Firma.FirmaAdi,
+                ÜrünAdı = x.Revizyon.Markalar.Adı,
                 RevizyonKod = x.Revizyon.Kod,
                 RevizyonTarihi = x.Revizyon.RevizyonTarihi,
                 MalzemeMiktarı = x.ReçeteMalzemeler.Count

@@ -15,6 +15,8 @@ namespace Zenix.WinUI.Forms.İşemriFormu
         public İşemriEditForm()
         {
             InitializeComponent();
+            System.Windows.Forms.MessageBox.Show("Yapımda");
+            return;
             this.DataLayoutControl = myDataLayoutControl;
             this.Bll = new İşemriBll(myDataLayoutControl);
             this.KartTuru = KartTuru.İşemri;

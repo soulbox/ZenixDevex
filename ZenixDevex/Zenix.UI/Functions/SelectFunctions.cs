@@ -9,6 +9,10 @@ using Zenix.WinUI.Forms.ÜlkeFormu;
 using Zenix.WinUI.Forms.FirmaFormu;
 using Zenix.WinUI.Forms.ÜrünlerFormu;
 using Zenix.WinUI.Forms.RevizyonFormu;
+using Zenix.BLL.General;
+using Zenix.BLL.Base;
+using Zenix.Model.Entities.Base;
+using Zenix.BLL.Interfaces;
 
 namespace Zenix.WinUI.Functions
 {
@@ -32,6 +36,13 @@ namespace Zenix.WinUI.Functions
         }
         private void SecimYap()
         {
+            A GetSingle<T, A>(long? id)
+                where T : BaseGenelBLL<A>
+                where A : BaseEntity
+            {
+                using (var item = (T)Activator.CreateInstance(typeof(T)))          
+                return (A)item.Single(x=>x.Id==id);
+            }
             switch (btnedit.Name)
             {
 
@@ -79,7 +90,7 @@ namespace Zenix.WinUI.Functions
                 case "txtÜrün":
                     {
 
-                        var entity = (Ürün)ShowListForms<ÜrünListForm>.ShowDialogListForm(KartTuru.Ürün, btnedit.Id, prmedit.Id, prmedit.Text);
+                        var entity = (Ürün)ShowListForms<ÜrünListForm>.ShowDialogListForm(KartTuru.Ürün, btnedit.Id);
                         if (entity != null)
                         {
                             btnedit.Tag = entity;
@@ -90,7 +101,11 @@ namespace Zenix.WinUI.Functions
                     break;
                 case "txtRevizyon":
                     {
-                        var entity = (Revizyon)ShowListForms<ReziyonListForm>.ShowDialogListForm(KartTuru.Revizyon, btnedit.Id, prmedit.Tag);
+                        
+                        var ürün = prmedit.Tag;
+                        if (prmedit.Tag == null)
+                            ürün = GetSingle<ÜrünBll, Ürün>(prmedit.Id);
+                        var entity = (Revizyon)ShowListForms<ReziyonListForm>.ShowDialogListForm(KartTuru.Revizyon, btnedit.Id, ürün);
                         if (entity != null)
                         {
                             btnedit.Id = entity.Id;

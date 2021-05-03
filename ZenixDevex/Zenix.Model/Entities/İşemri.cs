@@ -23,7 +23,7 @@ namespace Zenix.Model.Entities
         public Kullanici Kullanici { get; set; }
         public int ŞarzMiktarı { get; set; }
         public long ŞarjId { get; set; }
-        public Şarz Şarj { get; set; }
+        public Şarj Şarj { get; set; }
         public long KazanId { get; set; }
         public Kazan Kazan { get; set; }
 
