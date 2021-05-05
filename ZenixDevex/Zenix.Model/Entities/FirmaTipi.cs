@@ -13,7 +13,7 @@ using Zenix.Model.Entities.Base.Interfaces;
 
 namespace Zenix.Model.Entities
 {
-    public class FirmaTipi : BaseEntityDurum, IBaseSimpleModel
+    public class FirmaTipi : BaseEntityDurum
     {
         [Index(name: "IX_Kod", IsUnique = true)]
         public override string Kod { get; set; }

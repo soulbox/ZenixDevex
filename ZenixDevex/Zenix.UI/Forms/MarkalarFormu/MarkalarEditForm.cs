@@ -28,14 +28,14 @@ namespace Zenix.WinUI.Forms.MarkalarFormu
             if (BaseIslemTuru != Common.Enums.IslemTuru.EntityInsert) return;
             Id = BaseIslemTuru.IdOlustur(OldEntity);
             txtKod.Text = ((MarkalarBll)Bll).YeniKodVer();
-            txtAdı.Focus();
+            txtMarkaAdı.Focus();
         }
         protected override void NesneyiKontrollereBagla()
         {
             var entity = (Markalar)OldEntity;
             txtKod.Text = entity.Kod;
             tglDurum.IsOn = entity.Durum;
-            txtAdı.Text = entity.Adı;
+            txtMarkaAdı.Text = entity.MarkaAdı;
         }
         protected override void GuncelNesneOluştur()
         {
@@ -45,7 +45,7 @@ namespace Zenix.WinUI.Forms.MarkalarFormu
                 Id = Id,
                 Kod = txtKod.Text,
                 Durum = tglDurum.IsOn,
-                Adı = txtAdı.Text,      
+                MarkaAdı = txtMarkaAdı.Text,      
 
             };
             ButtonEnableDurumu();

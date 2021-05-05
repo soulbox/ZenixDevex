@@ -13,7 +13,7 @@ using Zenix.Model.Entities.Base.Interfaces;
 
 namespace Zenix.Model.Entities
 {
-    public class AmbalajMaddeTipi : BaseEntityDurum, IBaseSimpleModel
+    public class AmbalajMaddeTipi : BaseEntityDurum
     {
         [Index(name: "IX_Kod", IsUnique = true)]
         public override string Kod { get; set; }

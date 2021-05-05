@@ -40,6 +40,7 @@
             DevExpress.XtraLayout.RowDefinition rowDefinition7 = new DevExpress.XtraLayout.RowDefinition();
             DevExpress.XtraLayout.RowDefinition rowDefinition8 = new DevExpress.XtraLayout.RowDefinition();
             this.myDataLayoutControl = new Zenix.WinUI.myUserControls.Controls.myDataLayoutControl();
+            this.txtFirmaTipi = new Zenix.WinUI.myUserControls.Controls.myButtonEdit();
             this.txtÜlke = new Zenix.WinUI.myUserControls.Controls.myButtonEdit();
             this.txtAdress = new Zenix.WinUI.myUserControls.Controls.myMemoEdit();
             this.txtVergiNo = new Zenix.WinUI.myUserControls.Controls.mySNTextEdit();
@@ -55,11 +56,11 @@
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.txtFirmaTipi = new Zenix.WinUI.myUserControls.Controls.myButtonEdit();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.myDataLayoutControl)).BeginInit();
             this.myDataLayoutControl.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtFirmaTipi.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtÜlke.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtAdress.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtVergiNo.Properties)).BeginInit();
@@ -75,7 +76,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtFirmaTipi.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             this.SuspendLayout();
             // 
@@ -110,6 +110,25 @@
             this.myDataLayoutControl.Size = new System.Drawing.Size(387, 248);
             this.myDataLayoutControl.TabIndex = 0;
             this.myDataLayoutControl.Text = "myDataLayoutControl1";
+            // 
+            // txtFirmaTipi
+            // 
+            this.txtFirmaTipi.EnterMoveNextControl = true;
+            this.txtFirmaTipi.Id = null;
+            this.txtFirmaTipi.Location = new System.Drawing.Point(74, 60);
+            this.txtFirmaTipi.MenuManager = this.ribbonControl;
+            this.txtFirmaTipi.Name = "txtFirmaTipi";
+            this.txtFirmaTipi.Properties.AppearanceFocused.BackColor = System.Drawing.Color.LightCyan;
+            this.txtFirmaTipi.Properties.AppearanceFocused.Options.UseBackColor = true;
+            this.txtFirmaTipi.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton()});
+            this.txtFirmaTipi.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
+            this.txtFirmaTipi.Size = new System.Drawing.Size(134, 20);
+            this.txtFirmaTipi.StatusBarAciklama = "Firma Tipi Seçiniz";
+            this.txtFirmaTipi.StatusBarKisayol = "F4 :";
+            this.txtFirmaTipi.StatusBarKisayolAciklama = "Seç";
+            this.txtFirmaTipi.StyleController = this.myDataLayoutControl;
+            this.txtFirmaTipi.TabIndex = 1;
             // 
             // txtÜlke
             // 
@@ -369,25 +388,6 @@
             this.layoutControlItem5.Text = "Ülke";
             this.layoutControlItem5.TextSize = new System.Drawing.Size(59, 13);
             // 
-            // txtFirmaTipi
-            // 
-            this.txtFirmaTipi.EnterMoveNextControl = true;
-            this.txtFirmaTipi.Id = null;
-            this.txtFirmaTipi.Location = new System.Drawing.Point(74, 60);
-            this.txtFirmaTipi.MenuManager = this.ribbonControl;
-            this.txtFirmaTipi.Name = "txtFirmaTipi";
-            this.txtFirmaTipi.Properties.AppearanceFocused.BackColor = System.Drawing.Color.LightCyan;
-            this.txtFirmaTipi.Properties.AppearanceFocused.Options.UseBackColor = true;
-            this.txtFirmaTipi.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton()});
-            this.txtFirmaTipi.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.txtFirmaTipi.Size = new System.Drawing.Size(134, 20);
-            this.txtFirmaTipi.StatusBarAciklama = "Firma Tipi Seçiniz";
-            this.txtFirmaTipi.StatusBarKisayol = "F4 :";
-            this.txtFirmaTipi.StatusBarKisayolAciklama = "Seç";
-            this.txtFirmaTipi.StyleController = this.myDataLayoutControl;
-            this.txtFirmaTipi.TabIndex = 8;
-            // 
             // layoutControlItem4
             // 
             this.layoutControlItem4.AppearanceItemCaption.ForeColor = System.Drawing.Color.Maroon;
@@ -415,6 +415,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.myDataLayoutControl)).EndInit();
             this.myDataLayoutControl.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.txtFirmaTipi.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtÜlke.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtAdress.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtVergiNo.Properties)).EndInit();
@@ -430,7 +431,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtFirmaTipi.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

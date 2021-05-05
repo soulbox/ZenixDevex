@@ -60,6 +60,7 @@
             this.btnAmbalajTipi = new DevExpress.XtraBars.BarButtonItem();
             this.btnAmbalajMaddeTipi = new DevExpress.XtraBars.BarButtonItem();
             this.btnMarkalar = new DevExpress.XtraBars.BarButtonItem();
+            this.btnÜrün = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonYönetim = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -109,9 +110,10 @@
             this.btnİşemri,
             this.btnAmbalajTipi,
             this.btnAmbalajMaddeTipi,
-            this.btnMarkalar});
+            this.btnMarkalar,
+            this.btnÜrün});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 44;
+            this.ribbon.MaxItemId = 45;
             this.ribbon.Name = "ribbon";
             this.ribbon.OptionsAnimation.PageCategoryShowAnimation = DevExpress.Utils.DefaultBoolean.True;
             this.ribbon.OptionsPageCategories.ShowCaptions = false;
@@ -367,8 +369,16 @@
             this.btnMarkalar.Caption = "Marka Kartları";
             this.btnMarkalar.Id = 43;
             this.btnMarkalar.ImageOptions.Image = global::Zenix.WinUI.Properties.Resources.icons8_gg_16px;
-            this.btnMarkalar.ImageOptions.LargeImage = global::Zenix.WinUI.Properties.Resources.icons8_gg_32px_3;
+            this.btnMarkalar.ImageOptions.LargeImage = global::Zenix.WinUI.Properties.Resources.gg_32px_3;
             this.btnMarkalar.Name = "btnMarkalar";
+            // 
+            // btnÜrün
+            // 
+            this.btnÜrün.Caption = "Ürün Kartları";
+            this.btnÜrün.Id = 44;
+            this.btnÜrün.ImageOptions.Image = global::Zenix.WinUI.Properties.Resources.handle_with_care_16px;
+            this.btnÜrün.ImageOptions.LargeImage = global::Zenix.WinUI.Properties.Resources.handle_with_care_32px;
+            this.btnÜrün.Name = "btnÜrün";
             // 
             // ribbonPage1
             // 
@@ -385,6 +395,7 @@
             this.ribbonYönetim.ItemLinks.Add(this.btnSipariş);
             this.ribbonYönetim.ItemLinks.Add(this.btnMamüller);
             this.ribbonYönetim.ItemLinks.Add(this.btnReçete);
+            this.ribbonYönetim.ItemLinks.Add(this.btnÜrün);
             this.ribbonYönetim.Name = "ribbonYönetim";
             this.ribbonYönetim.Text = "Yönetim";
             // 
@@ -521,5 +532,6 @@
         private DevExpress.XtraBars.BarButtonItem btnMarkalar;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage2;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup riibontanımlamalar;
+        private DevExpress.XtraBars.BarButtonItem btnÜrün;
     }
 }

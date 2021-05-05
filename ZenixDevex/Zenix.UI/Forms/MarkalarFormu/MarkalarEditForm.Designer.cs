@@ -35,7 +35,7 @@
             DevExpress.XtraLayout.RowDefinition rowDefinition2 = new DevExpress.XtraLayout.RowDefinition();
             DevExpress.XtraLayout.RowDefinition rowDefinition3 = new DevExpress.XtraLayout.RowDefinition();
             this.myDataLayoutControl = new Zenix.WinUI.myUserControls.Controls.myDataLayoutControl();
-            this.txtAdı = new Zenix.WinUI.myUserControls.Controls.myTextEdit();
+            this.txtMarkaAdı = new Zenix.WinUI.myUserControls.Controls.myTextEdit();
             this.tglDurum = new Zenix.WinUI.myUserControls.Controls.myToogleSwitch();
             this.txtKod = new Zenix.WinUI.myUserControls.Controls.myKodText();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
@@ -45,7 +45,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.myDataLayoutControl)).BeginInit();
             this.myDataLayoutControl.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtAdı.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtMarkaAdı.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tglDurum.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtKod.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
@@ -69,7 +69,7 @@
             // 
             // myDataLayoutControl
             // 
-            this.myDataLayoutControl.Controls.Add(this.txtAdı);
+            this.myDataLayoutControl.Controls.Add(this.txtMarkaAdı);
             this.myDataLayoutControl.Controls.Add(this.tglDurum);
             this.myDataLayoutControl.Controls.Add(this.txtKod);
             this.myDataLayoutControl.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -81,19 +81,19 @@
             this.myDataLayoutControl.TabIndex = 2;
             this.myDataLayoutControl.Text = "myDataLayoutControl1";
             // 
-            // txtAdı
+            // txtMarkaAdı
             // 
-            this.txtAdı.EnterMoveNextControl = true;
-            this.txtAdı.Location = new System.Drawing.Point(62, 36);
-            this.txtAdı.MenuManager = this.ribbonControl;
-            this.txtAdı.Name = "txtAdı";
-            this.txtAdı.Properties.AppearanceFocused.BackColor = System.Drawing.Color.LightCyan;
-            this.txtAdı.Properties.AppearanceFocused.Options.UseBackColor = true;
-            this.txtAdı.Properties.MaxLength = 50;
-            this.txtAdı.Size = new System.Drawing.Size(210, 20);
-            this.txtAdı.StatusBarAciklama = "Marka Adı Giriniz";
-            this.txtAdı.StyleController = this.myDataLayoutControl;
-            this.txtAdı.TabIndex = 0;
+            this.txtMarkaAdı.EnterMoveNextControl = true;
+            this.txtMarkaAdı.Location = new System.Drawing.Point(62, 36);
+            this.txtMarkaAdı.MenuManager = this.ribbonControl;
+            this.txtMarkaAdı.Name = "txtMarkaAdı";
+            this.txtMarkaAdı.Properties.AppearanceFocused.BackColor = System.Drawing.Color.LightCyan;
+            this.txtMarkaAdı.Properties.AppearanceFocused.Options.UseBackColor = true;
+            this.txtMarkaAdı.Properties.MaxLength = 50;
+            this.txtMarkaAdı.Size = new System.Drawing.Size(210, 20);
+            this.txtMarkaAdı.StatusBarAciklama = "Marka Adı Giriniz";
+            this.txtMarkaAdı.StyleController = this.myDataLayoutControl;
+            this.txtMarkaAdı.TabIndex = 0;
             // 
             // tglDurum
             // 
@@ -191,7 +191,7 @@
             // 
             this.layoutControlItem3.AppearanceItemCaption.ForeColor = System.Drawing.Color.Maroon;
             this.layoutControlItem3.AppearanceItemCaption.Options.UseForeColor = true;
-            this.layoutControlItem3.Control = this.txtAdı;
+            this.layoutControlItem3.Control = this.txtMarkaAdı;
             this.layoutControlItem3.Location = new System.Drawing.Point(0, 24);
             this.layoutControlItem3.Name = "layoutControlItem3";
             this.layoutControlItem3.OptionsTableLayoutItem.ColumnSpan = 2;
@@ -214,7 +214,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.myDataLayoutControl)).EndInit();
             this.myDataLayoutControl.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.txtAdı.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtMarkaAdı.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tglDurum.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtKod.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
@@ -229,7 +229,7 @@
         #endregion
 
         private myUserControls.Controls.myDataLayoutControl myDataLayoutControl;
-        private myUserControls.Controls.myTextEdit txtAdı;
+        private myUserControls.Controls.myTextEdit txtMarkaAdı;
         private myUserControls.Controls.myToogleSwitch tglDurum;
         private myUserControls.Controls.myKodText txtKod;
         private DevExpress.XtraLayout.LayoutControlGroup Root;

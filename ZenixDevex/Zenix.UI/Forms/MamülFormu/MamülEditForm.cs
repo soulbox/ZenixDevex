@@ -37,7 +37,7 @@ namespace Zenix.WinUI.Forms.MamülFormu
             if (BaseIslemTuru != Common.Enums.IslemTuru.EntityInsert) return;
             Id = BaseIslemTuru.IdOlustur(OldEntity);
             txtKod.Text = ((MamülBll)Bll).YeniKodVer();
-            txtAdı.Focus();
+            txtMamülAdı.Focus();
         }
         protected override void NesneyiKontrollereBagla()
         {
@@ -50,7 +50,7 @@ namespace Zenix.WinUI.Forms.MamülFormu
             cmbTeknikBirim.Text    = entity.BirimAuEbY      .ToName();
             cmbMalzemeTipi.Text    = entity.MalzemeTipi     .ToName();
             cmbSarfTipi.Text       = entity.SarfTipi        .ToName();
-            txtAdı.Text            = entity.Adı                 ;
+            txtMamülAdı.Text            = entity.MamülAdı                 ;
             txtAmbalajMaddesi.Text = entity.AmbalajMaddeAdı     ;
             txtAmbalajMaddesi.Id   = entity.AmbalajMaddeTipiId  ;
             txtAmbalajTipi.Text    = entity.AmbalajTipiAdı      ;
@@ -70,8 +70,9 @@ namespace Zenix.WinUI.Forms.MamülFormu
         }
         protected override void GuncelNesneOluştur()
         {
-
-            CurrentEntity = new MamülL
+            var malzemetipi = cmbMalzemeTipi.Text.GetEnum<MalzemeTipi>();
+            var sarftipi = malzemetipi == MalzemeTipi.Ürün ? SarfTipi.Yok : cmbSarfTipi.Text.GetEnum<SarfTipi>();
+            CurrentEntity = new Mamül
             {
                 Id = Id,
                 Kod = txtKod.Text,
@@ -81,8 +82,8 @@ namespace Zenix.WinUI.Forms.MamülFormu
                 MalzemeBirimi      =cmbMalzemeBirim.Text   .GetEnum<BirimTipi>()   ,
                 BirimAuEbY         =cmbTeknikBirim.Text    .GetEnum<BirimTipi>()   ,
                 MalzemeTipi        =cmbMalzemeTipi.Text    .GetEnum<MalzemeTipi>() ,
-                SarfTipi           =cmbSarfTipi.Text       .GetEnum<SarfTipi>()    ,
-                Adı                = txtAdı.Text                                ,               
+                SarfTipi           =sarftipi,
+                MamülAdı           =txtMamülAdı.Text                                 ,               
                 AmbalajMaddeTipiId =txtAmbalajMaddesi       .GetId()            ,
                 AmbalajTipiId      =txtAmbalajTipi          .GetId()            ,
                 Alan               =txtAlan.EditValue       .ConvertTo<float>() ,
@@ -91,8 +92,7 @@ namespace Zenix.WinUI.Forms.MamülFormu
                 En                 =txtEn.EditValue         .ConvertTo<float>() ,
                 Uzunluk            =txtUzunluk.EditValue    .ConvertTo<float>() ,
                 Yükseklik          =txtYükseklik.EditValue  .ConvertTo<float>() ,
-                AğızÖlçüsü         =txtAğızölçüsü.EditValue  .ConvertTo<float>() ,
-                
+                AğızÖlçüsü         =txtAğızölçüsü.EditValue  .ConvertTo<float>() ,                
                 Hacim              =txtHacim.EditValue      .ConvertTo<int>()   ,
                 
             };

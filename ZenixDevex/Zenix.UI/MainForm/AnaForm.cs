@@ -27,6 +27,7 @@ using Zenix.WinUI.Forms.İşemriFormu;
 using Zenix.WinUI.Forms.MamülFormu;
 using Zenix.WinUI.Forms.AmbalajTipiFormu;
 using Zenix.WinUI.Forms.MarkalarFormu;
+using Zenix.WinUI.Forms.ÜrünlerFormu;
 
 namespace Zenix.WinUI.MainForm
 {
@@ -113,6 +114,8 @@ namespace Zenix.WinUI.MainForm
                                 ShowListForms<AmbalajTipiListForm>.ShowListForm(KartTuru.AmbalajTipi);
                             else if (e.Item == btnMarkalar)
                                 ShowListForms<MarkalarListForm>.ShowListForm(KartTuru.Markalar);
+                            else if (e.Item == btnÜrün)
+                                ShowListForms<ÜrünListForm>.ShowListForm(KartTuru.Ürün);
 
                         };
                         break;

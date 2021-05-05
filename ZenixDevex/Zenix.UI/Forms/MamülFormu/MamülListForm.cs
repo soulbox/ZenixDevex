@@ -13,7 +13,6 @@ using System.Linq;
 using Zenix.Common.Function;
 using DevExpress.XtraGrid.Views.Grid;
 using Zenix.WinUI.MainForm;
-using Zenix.WinUI.Forms.ÜrünlerFormu;
 
 namespace Zenix.WinUI.Forms.MamülFormu
 {
@@ -32,7 +31,7 @@ namespace Zenix.WinUI.Forms.MamülFormu
             this.KartTuru = Common.Enums.KartTuru.FirmaTipi;
             this.FormShow = new ShowEditForms<MamülEditForm>();
             this.Navigator = longNavigator.controlNavigator;
-            Text = "Firma Tipi Kartları ";
+            Text = "Mamül Kartları ";
             Tablo.ViewCaption = Text;
 
         }

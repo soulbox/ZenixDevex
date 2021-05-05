@@ -46,34 +46,35 @@
             DevExpress.XtraLayout.RowDefinition rowDefinition11 = new DevExpress.XtraLayout.RowDefinition();
             DevExpress.XtraLayout.RowDefinition rowDefinition12 = new DevExpress.XtraLayout.RowDefinition();
             this.myDataLayoutControl = new Zenix.WinUI.myUserControls.Controls.myDataLayoutControl();
+            this.txtBoy = new Zenix.WinUI.myUserControls.Controls.mySpinEdit();
+            this.cmbAğırlıkBirim = new Zenix.WinUI.myUserControls.Controls.myComboBoxEdit();
+            this.cmbAlanBirim = new Zenix.WinUI.myUserControls.Controls.myComboBoxEdit();
+            this.txtAğırlık = new Zenix.WinUI.myUserControls.Controls.mySpinEdit();
+            this.cmbTeknikBirim = new Zenix.WinUI.myUserControls.Controls.myComboBoxEdit();
+            this.txtAlan = new Zenix.WinUI.myUserControls.Controls.mySpinEdit();
+            this.txtYükseklik = new Zenix.WinUI.myUserControls.Controls.mySpinEdit();
+            this.txtEn = new Zenix.WinUI.myUserControls.Controls.mySpinEdit();
+            this.txtUzunluk = new Zenix.WinUI.myUserControls.Controls.mySpinEdit();
+            this.cmbMalzemeTipi = new Zenix.WinUI.myUserControls.Controls.myComboBoxEdit();
+            this.cmbSarfTipi = new Zenix.WinUI.myUserControls.Controls.myComboBoxEdit();
+            this.txtAğızölçüsü = new Zenix.WinUI.myUserControls.Controls.mySpinEdit();
+            this.txtAmbalajMaddesi = new Zenix.WinUI.myUserControls.Controls.myButtonEdit();
+            this.txtAmbalajTipi = new Zenix.WinUI.myUserControls.Controls.myButtonEdit();
+            this.txtHacim = new Zenix.WinUI.myUserControls.Controls.mySpinEdit();
             this.cmbMalzemeBirim = new Zenix.WinUI.myUserControls.Controls.myComboBoxEdit();
-            this.txtAdı = new Zenix.WinUI.myUserControls.Controls.myTextEdit();
+            this.txtMamülAdı = new Zenix.WinUI.myUserControls.Controls.myTextEdit();
             this.tglDurum = new Zenix.WinUI.myUserControls.Controls.myToogleSwitch();
             this.txtKod = new Zenix.WinUI.myUserControls.Controls.myKodText();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.txtHacim = new Zenix.WinUI.myUserControls.Controls.mySpinEdit();
-            this.txtAmbalajTipi = new Zenix.WinUI.myUserControls.Controls.myButtonEdit();
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.txtAmbalajMaddesi = new Zenix.WinUI.myUserControls.Controls.myButtonEdit();
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.txtAğızölçüsü = new Zenix.WinUI.myUserControls.Controls.mySpinEdit();
             this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.cmbSarfTipi = new Zenix.WinUI.myUserControls.Controls.myComboBoxEdit();
-            this.cmbMalzemeTipi = new Zenix.WinUI.myUserControls.Controls.myComboBoxEdit();
-            this.txtUzunluk = new Zenix.WinUI.myUserControls.Controls.mySpinEdit();
             this.layoutControlItem11 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.txtEn = new Zenix.WinUI.myUserControls.Controls.mySpinEdit();
-            this.txtYükseklik = new Zenix.WinUI.myUserControls.Controls.mySpinEdit();
-            this.txtAlan = new Zenix.WinUI.myUserControls.Controls.mySpinEdit();
-            this.cmbTeknikBirim = new Zenix.WinUI.myUserControls.Controls.myComboBoxEdit();
             this.layoutControlItem15 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.txtAğırlık = new Zenix.WinUI.myUserControls.Controls.mySpinEdit();
             this.layoutControlItem17 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.cmbAlanBirim = new Zenix.WinUI.myUserControls.Controls.myComboBoxEdit();
-            this.cmbAğırlıkBirim = new Zenix.WinUI.myUserControls.Controls.myComboBoxEdit();
             this.layoutControlItem18 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem19 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem14 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -81,42 +82,42 @@
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem12 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
             this.lay = new DevExpress.XtraLayout.LayoutControlItem();
-            this.txtBoy = new Zenix.WinUI.myUserControls.Controls.mySpinEdit();
+            this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem13 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem12 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.myDataLayoutControl)).BeginInit();
             this.myDataLayoutControl.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtBoy.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbAğırlıkBirim.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbAlanBirim.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtAğırlık.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbTeknikBirim.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtAlan.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtYükseklik.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtEn.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtUzunluk.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbMalzemeTipi.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbSarfTipi.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtAğızölçüsü.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtAmbalajMaddesi.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtAmbalajTipi.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtHacim.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbMalzemeBirim.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtAdı.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtMamülAdı.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tglDurum.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtKod.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtHacim.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtAmbalajTipi.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtAmbalajMaddesi.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtAğızölçüsü.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmbSarfTipi.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmbMalzemeTipi.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtUzunluk.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtEn.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtYükseklik.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtAlan.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmbTeknikBirim.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem15)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtAğırlık.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem17)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmbAlanBirim.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmbAğırlıkBirim.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem18)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem19)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem14)).BeginInit();
@@ -124,11 +125,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lay)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtBoy.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbonControl
@@ -162,7 +162,7 @@
             this.myDataLayoutControl.Controls.Add(this.txtAmbalajTipi);
             this.myDataLayoutControl.Controls.Add(this.txtHacim);
             this.myDataLayoutControl.Controls.Add(this.cmbMalzemeBirim);
-            this.myDataLayoutControl.Controls.Add(this.txtAdı);
+            this.myDataLayoutControl.Controls.Add(this.txtMamülAdı);
             this.myDataLayoutControl.Controls.Add(this.tglDurum);
             this.myDataLayoutControl.Controls.Add(this.txtKod);
             this.myDataLayoutControl.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -173,6 +173,310 @@
             this.myDataLayoutControl.Size = new System.Drawing.Size(522, 301);
             this.myDataLayoutControl.TabIndex = 0;
             this.myDataLayoutControl.Text = "myDataLayoutControl1";
+            // 
+            // txtBoy
+            // 
+            this.txtBoy.EditValue = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.txtBoy.EnterMoveNextControl = true;
+            this.txtBoy.Location = new System.Drawing.Point(239, 204);
+            this.txtBoy.MenuManager = this.ribbonControl;
+            this.txtBoy.Name = "txtBoy";
+            this.txtBoy.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
+            this.txtBoy.Properties.AppearanceFocused.BackColor = System.Drawing.Color.LightCyan;
+            this.txtBoy.Properties.AppearanceFocused.Options.UseBackColor = true;
+            this.txtBoy.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.txtBoy.Properties.Mask.EditMask = "d";
+            this.txtBoy.Size = new System.Drawing.Size(69, 20);
+            this.txtBoy.StatusBarAciklama = "Boy Girin";
+            this.txtBoy.StyleController = this.myDataLayoutControl;
+            this.txtBoy.TabIndex = 10;
+            // 
+            // cmbAğırlıkBirim
+            // 
+            this.cmbAğırlıkBirim.EnterMoveNextControl = true;
+            this.cmbAğırlıkBirim.Location = new System.Drawing.Point(239, 252);
+            this.cmbAğırlıkBirim.MenuManager = this.ribbonControl;
+            this.cmbAğırlıkBirim.Name = "cmbAğırlıkBirim";
+            this.cmbAğırlıkBirim.Properties.AppearanceFocused.BackColor = System.Drawing.Color.LightCyan;
+            this.cmbAğırlıkBirim.Properties.AppearanceFocused.Options.UseBackColor = true;
+            this.cmbAğırlıkBirim.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cmbAğırlıkBirim.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
+            this.cmbAğırlıkBirim.Size = new System.Drawing.Size(69, 20);
+            this.cmbAğırlıkBirim.StatusBarAciklama = null;
+            this.cmbAğırlıkBirim.StatusBarKisayol = "F4 :";
+            this.cmbAğırlıkBirim.StatusBarKisayolAciklama = "Seç";
+            this.cmbAğırlıkBirim.StyleController = this.myDataLayoutControl;
+            this.cmbAğırlıkBirim.TabIndex = 16;
+            // 
+            // cmbAlanBirim
+            // 
+            this.cmbAlanBirim.EnterMoveNextControl = true;
+            this.cmbAlanBirim.Location = new System.Drawing.Point(239, 228);
+            this.cmbAlanBirim.MenuManager = this.ribbonControl;
+            this.cmbAlanBirim.Name = "cmbAlanBirim";
+            this.cmbAlanBirim.Properties.AppearanceFocused.BackColor = System.Drawing.Color.LightCyan;
+            this.cmbAlanBirim.Properties.AppearanceFocused.Options.UseBackColor = true;
+            this.cmbAlanBirim.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cmbAlanBirim.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
+            this.cmbAlanBirim.Size = new System.Drawing.Size(69, 20);
+            this.cmbAlanBirim.StatusBarAciklama = "Alan Birimini Seçin";
+            this.cmbAlanBirim.StatusBarKisayol = "F4 :";
+            this.cmbAlanBirim.StatusBarKisayolAciklama = "Seç";
+            this.cmbAlanBirim.StyleController = this.myDataLayoutControl;
+            this.cmbAlanBirim.TabIndex = 14;
+            // 
+            // txtAğırlık
+            // 
+            this.txtAğırlık.EditValue = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.txtAğırlık.EnterMoveNextControl = true;
+            this.txtAğırlık.Location = new System.Drawing.Point(95, 252);
+            this.txtAğırlık.MenuManager = this.ribbonControl;
+            this.txtAğırlık.Name = "txtAğırlık";
+            this.txtAğırlık.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
+            this.txtAğırlık.Properties.AppearanceFocused.BackColor = System.Drawing.Color.LightCyan;
+            this.txtAğırlık.Properties.AppearanceFocused.Options.UseBackColor = true;
+            this.txtAğırlık.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.txtAğırlık.Properties.Mask.EditMask = "d";
+            this.txtAğırlık.Size = new System.Drawing.Size(113, 20);
+            this.txtAğırlık.StatusBarAciklama = "Ağırlık Girini";
+            this.txtAğırlık.StyleController = this.myDataLayoutControl;
+            this.txtAğırlık.TabIndex = 15;
+            // 
+            // cmbTeknikBirim
+            // 
+            this.cmbTeknikBirim.EnterMoveNextControl = true;
+            this.cmbTeknikBirim.Location = new System.Drawing.Point(339, 204);
+            this.cmbTeknikBirim.MenuManager = this.ribbonControl;
+            this.cmbTeknikBirim.Name = "cmbTeknikBirim";
+            this.cmbTeknikBirim.Properties.AppearanceFocused.BackColor = System.Drawing.Color.LightCyan;
+            this.cmbTeknikBirim.Properties.AppearanceFocused.Options.UseBackColor = true;
+            this.cmbTeknikBirim.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cmbTeknikBirim.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
+            this.cmbTeknikBirim.Size = new System.Drawing.Size(69, 20);
+            this.cmbTeknikBirim.StatusBarAciklama = "Teknik özelliklerin Birimini Seçin";
+            this.cmbTeknikBirim.StatusBarKisayol = "F4 :";
+            this.cmbTeknikBirim.StatusBarKisayolAciklama = "Seç";
+            this.cmbTeknikBirim.StyleController = this.myDataLayoutControl;
+            this.cmbTeknikBirim.TabIndex = 12;
+            // 
+            // txtAlan
+            // 
+            this.txtAlan.EditValue = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.txtAlan.EnterMoveNextControl = true;
+            this.txtAlan.Location = new System.Drawing.Point(95, 228);
+            this.txtAlan.MenuManager = this.ribbonControl;
+            this.txtAlan.Name = "txtAlan";
+            this.txtAlan.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
+            this.txtAlan.Properties.AppearanceFocused.BackColor = System.Drawing.Color.LightCyan;
+            this.txtAlan.Properties.AppearanceFocused.Options.UseBackColor = true;
+            this.txtAlan.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.txtAlan.Properties.Mask.EditMask = "d";
+            this.txtAlan.Size = new System.Drawing.Size(113, 20);
+            this.txtAlan.StatusBarAciklama = "Alan Girin";
+            this.txtAlan.StyleController = this.myDataLayoutControl;
+            this.txtAlan.TabIndex = 13;
+            // 
+            // txtYükseklik
+            // 
+            this.txtYükseklik.EditValue = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.txtYükseklik.EnterMoveNextControl = true;
+            this.txtYükseklik.Location = new System.Drawing.Point(359, 180);
+            this.txtYükseklik.MenuManager = this.ribbonControl;
+            this.txtYükseklik.Name = "txtYükseklik";
+            this.txtYükseklik.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
+            this.txtYükseklik.Properties.AppearanceFocused.BackColor = System.Drawing.Color.LightCyan;
+            this.txtYükseklik.Properties.AppearanceFocused.Options.UseBackColor = true;
+            this.txtYükseklik.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.txtYükseklik.Properties.Mask.EditMask = "d";
+            this.txtYükseklik.Size = new System.Drawing.Size(49, 20);
+            this.txtYükseklik.StatusBarAciklama = "Yükseklik Girin";
+            this.txtYükseklik.StyleController = this.myDataLayoutControl;
+            this.txtYükseklik.TabIndex = 11;
+            // 
+            // txtEn
+            // 
+            this.txtEn.EditValue = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.txtEn.EnterMoveNextControl = true;
+            this.txtEn.Location = new System.Drawing.Point(239, 180);
+            this.txtEn.MenuManager = this.ribbonControl;
+            this.txtEn.Name = "txtEn";
+            this.txtEn.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
+            this.txtEn.Properties.AppearanceFocused.BackColor = System.Drawing.Color.LightCyan;
+            this.txtEn.Properties.AppearanceFocused.Options.UseBackColor = true;
+            this.txtEn.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.txtEn.Properties.Mask.EditMask = "d";
+            this.txtEn.Size = new System.Drawing.Size(69, 20);
+            this.txtEn.StatusBarAciklama = "En Girin ";
+            this.txtEn.StyleController = this.myDataLayoutControl;
+            this.txtEn.TabIndex = 9;
+            // 
+            // txtUzunluk
+            // 
+            this.txtUzunluk.EditValue = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.txtUzunluk.EnterMoveNextControl = true;
+            this.txtUzunluk.Location = new System.Drawing.Point(95, 204);
+            this.txtUzunluk.MenuManager = this.ribbonControl;
+            this.txtUzunluk.Name = "txtUzunluk";
+            this.txtUzunluk.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
+            this.txtUzunluk.Properties.AppearanceFocused.BackColor = System.Drawing.Color.LightCyan;
+            this.txtUzunluk.Properties.AppearanceFocused.Options.UseBackColor = true;
+            this.txtUzunluk.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.txtUzunluk.Properties.Mask.EditMask = "d";
+            this.txtUzunluk.Size = new System.Drawing.Size(113, 20);
+            this.txtUzunluk.StatusBarAciklama = "Uzunluk Girin";
+            this.txtUzunluk.StyleController = this.myDataLayoutControl;
+            this.txtUzunluk.TabIndex = 8;
+            // 
+            // cmbMalzemeTipi
+            // 
+            this.cmbMalzemeTipi.EnterMoveNextControl = true;
+            this.cmbMalzemeTipi.Location = new System.Drawing.Point(95, 60);
+            this.cmbMalzemeTipi.MenuManager = this.ribbonControl;
+            this.cmbMalzemeTipi.Name = "cmbMalzemeTipi";
+            this.cmbMalzemeTipi.Properties.AppearanceFocused.BackColor = System.Drawing.Color.LightCyan;
+            this.cmbMalzemeTipi.Properties.AppearanceFocused.Options.UseBackColor = true;
+            this.cmbMalzemeTipi.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cmbMalzemeTipi.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
+            this.cmbMalzemeTipi.Size = new System.Drawing.Size(113, 20);
+            this.cmbMalzemeTipi.StatusBarAciklama = "Malzeme Tipini Seçiniz";
+            this.cmbMalzemeTipi.StatusBarKisayol = "F4 :";
+            this.cmbMalzemeTipi.StatusBarKisayolAciklama = "Seç";
+            this.cmbMalzemeTipi.StyleController = this.myDataLayoutControl;
+            this.cmbMalzemeTipi.TabIndex = 1;
+            // 
+            // cmbSarfTipi
+            // 
+            this.cmbSarfTipi.EnterMoveNextControl = true;
+            this.cmbSarfTipi.Location = new System.Drawing.Point(95, 108);
+            this.cmbSarfTipi.MenuManager = this.ribbonControl;
+            this.cmbSarfTipi.Name = "cmbSarfTipi";
+            this.cmbSarfTipi.Properties.AppearanceFocused.BackColor = System.Drawing.Color.LightCyan;
+            this.cmbSarfTipi.Properties.AppearanceFocused.Options.UseBackColor = true;
+            this.cmbSarfTipi.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cmbSarfTipi.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
+            this.cmbSarfTipi.Size = new System.Drawing.Size(113, 20);
+            this.cmbSarfTipi.StatusBarAciklama = "Sarf Tipini Seçiniz";
+            this.cmbSarfTipi.StatusBarKisayol = "F4 :";
+            this.cmbSarfTipi.StatusBarKisayolAciklama = "Seç";
+            this.cmbSarfTipi.StyleController = this.myDataLayoutControl;
+            this.cmbSarfTipi.TabIndex = 4;
+            // 
+            // txtAğızölçüsü
+            // 
+            this.txtAğızölçüsü.EditValue = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.txtAğızölçüsü.EnterMoveNextControl = true;
+            this.txtAğızölçüsü.Location = new System.Drawing.Point(95, 180);
+            this.txtAğızölçüsü.MenuManager = this.ribbonControl;
+            this.txtAğızölçüsü.Name = "txtAğızölçüsü";
+            this.txtAğızölçüsü.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
+            this.txtAğızölçüsü.Properties.AppearanceFocused.BackColor = System.Drawing.Color.LightCyan;
+            this.txtAğızölçüsü.Properties.AppearanceFocused.Options.UseBackColor = true;
+            this.txtAğızölçüsü.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.txtAğızölçüsü.Properties.Mask.EditMask = "d";
+            this.txtAğızölçüsü.Size = new System.Drawing.Size(113, 20);
+            this.txtAğızölçüsü.StatusBarAciklama = "Ağız Ölçüsünü Girin";
+            this.txtAğızölçüsü.StyleController = this.myDataLayoutControl;
+            this.txtAğızölçüsü.TabIndex = 7;
+            // 
+            // txtAmbalajMaddesi
+            // 
+            this.txtAmbalajMaddesi.EnterMoveNextControl = true;
+            this.txtAmbalajMaddesi.Id = null;
+            this.txtAmbalajMaddesi.Location = new System.Drawing.Point(95, 156);
+            this.txtAmbalajMaddesi.MenuManager = this.ribbonControl;
+            this.txtAmbalajMaddesi.Name = "txtAmbalajMaddesi";
+            this.txtAmbalajMaddesi.Properties.AppearanceFocused.BackColor = System.Drawing.Color.LightCyan;
+            this.txtAmbalajMaddesi.Properties.AppearanceFocused.Options.UseBackColor = true;
+            this.txtAmbalajMaddesi.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton()});
+            this.txtAmbalajMaddesi.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
+            this.txtAmbalajMaddesi.Size = new System.Drawing.Size(113, 20);
+            this.txtAmbalajMaddesi.StatusBarAciklama = "Ambalaj Maddesini Seçiniz";
+            this.txtAmbalajMaddesi.StatusBarKisayol = "F4 :";
+            this.txtAmbalajMaddesi.StatusBarKisayolAciklama = "Seç";
+            this.txtAmbalajMaddesi.StyleController = this.myDataLayoutControl;
+            this.txtAmbalajMaddesi.TabIndex = 6;
+            // 
+            // txtAmbalajTipi
+            // 
+            this.txtAmbalajTipi.EnterMoveNextControl = true;
+            this.txtAmbalajTipi.Id = null;
+            this.txtAmbalajTipi.Location = new System.Drawing.Point(95, 132);
+            this.txtAmbalajTipi.MenuManager = this.ribbonControl;
+            this.txtAmbalajTipi.Name = "txtAmbalajTipi";
+            this.txtAmbalajTipi.Properties.AppearanceFocused.BackColor = System.Drawing.Color.LightCyan;
+            this.txtAmbalajTipi.Properties.AppearanceFocused.Options.UseBackColor = true;
+            this.txtAmbalajTipi.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton()});
+            this.txtAmbalajTipi.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
+            this.txtAmbalajTipi.Size = new System.Drawing.Size(113, 20);
+            this.txtAmbalajTipi.StatusBarAciklama = "Ambalaj Tipi Seçiniz";
+            this.txtAmbalajTipi.StatusBarKisayol = "F4 :";
+            this.txtAmbalajTipi.StatusBarKisayolAciklama = "Seç";
+            this.txtAmbalajTipi.StyleController = this.myDataLayoutControl;
+            this.txtAmbalajTipi.TabIndex = 5;
+            // 
+            // txtHacim
+            // 
+            this.txtHacim.EditValue = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.txtHacim.EnterMoveNextControl = true;
+            this.txtHacim.Location = new System.Drawing.Point(95, 84);
+            this.txtHacim.MenuManager = this.ribbonControl;
+            this.txtHacim.Name = "txtHacim";
+            this.txtHacim.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
+            this.txtHacim.Properties.AppearanceFocused.BackColor = System.Drawing.Color.LightCyan;
+            this.txtHacim.Properties.AppearanceFocused.Options.UseBackColor = true;
+            this.txtHacim.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.txtHacim.Properties.Mask.EditMask = "d";
+            this.txtHacim.Size = new System.Drawing.Size(113, 20);
+            this.txtHacim.StatusBarAciklama = "Hacmini Giriniz";
+            this.txtHacim.StyleController = this.myDataLayoutControl;
+            this.txtHacim.TabIndex = 2;
             // 
             // cmbMalzemeBirim
             // 
@@ -192,19 +496,19 @@
             this.cmbMalzemeBirim.StyleController = this.myDataLayoutControl;
             this.cmbMalzemeBirim.TabIndex = 3;
             // 
-            // txtAdı
+            // txtMamülAdı
             // 
-            this.txtAdı.EnterMoveNextControl = true;
-            this.txtAdı.Location = new System.Drawing.Point(95, 36);
-            this.txtAdı.MenuManager = this.ribbonControl;
-            this.txtAdı.Name = "txtAdı";
-            this.txtAdı.Properties.AppearanceFocused.BackColor = System.Drawing.Color.LightCyan;
-            this.txtAdı.Properties.AppearanceFocused.Options.UseBackColor = true;
-            this.txtAdı.Properties.MaxLength = 50;
-            this.txtAdı.Size = new System.Drawing.Size(313, 20);
-            this.txtAdı.StatusBarAciklama = "Malzeme yada Ürün Adını Giriniz";
-            this.txtAdı.StyleController = this.myDataLayoutControl;
-            this.txtAdı.TabIndex = 0;
+            this.txtMamülAdı.EnterMoveNextControl = true;
+            this.txtMamülAdı.Location = new System.Drawing.Point(95, 36);
+            this.txtMamülAdı.MenuManager = this.ribbonControl;
+            this.txtMamülAdı.Name = "txtMamülAdı";
+            this.txtMamülAdı.Properties.AppearanceFocused.BackColor = System.Drawing.Color.LightCyan;
+            this.txtMamülAdı.Properties.AppearanceFocused.Options.UseBackColor = true;
+            this.txtMamülAdı.Properties.MaxLength = 75;
+            this.txtMamülAdı.Size = new System.Drawing.Size(325, 20);
+            this.txtMamülAdı.StatusBarAciklama = "Malzeme yada Ürün Adını Giriniz";
+            this.txtMamülAdı.StyleController = this.myDataLayoutControl;
+            this.txtMamülAdı.TabIndex = 0;
             // 
             // tglDurum
             // 
@@ -351,55 +655,14 @@
             // 
             this.layoutControlItem3.AppearanceItemCaption.ForeColor = System.Drawing.Color.Maroon;
             this.layoutControlItem3.AppearanceItemCaption.Options.UseForeColor = true;
-            this.layoutControlItem3.Control = this.txtAdı;
+            this.layoutControlItem3.Control = this.txtMamülAdı;
             this.layoutControlItem3.Location = new System.Drawing.Point(0, 24);
             this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.OptionsTableLayoutItem.ColumnSpan = 3;
+            this.layoutControlItem3.OptionsTableLayoutItem.ColumnSpan = 4;
             this.layoutControlItem3.OptionsTableLayoutItem.RowIndex = 1;
-            this.layoutControlItem3.Size = new System.Drawing.Size(400, 24);
+            this.layoutControlItem3.Size = new System.Drawing.Size(412, 24);
             this.layoutControlItem3.Text = "Adı";
             this.layoutControlItem3.TextSize = new System.Drawing.Size(80, 13);
-            // 
-            // txtHacim
-            // 
-            this.txtHacim.EditValue = new decimal(new int[] {
-            0,
-            0,
-            0,
-            0});
-            this.txtHacim.EnterMoveNextControl = true;
-            this.txtHacim.Location = new System.Drawing.Point(95, 84);
-            this.txtHacim.MenuManager = this.ribbonControl;
-            this.txtHacim.Name = "txtHacim";
-            this.txtHacim.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
-            this.txtHacim.Properties.AppearanceFocused.BackColor = System.Drawing.Color.LightCyan;
-            this.txtHacim.Properties.AppearanceFocused.Options.UseBackColor = true;
-            this.txtHacim.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.txtHacim.Properties.Mask.EditMask = "d";
-            this.txtHacim.Size = new System.Drawing.Size(113, 20);
-            this.txtHacim.StatusBarAciklama = "Hacmini Giriniz";
-            this.txtHacim.StyleController = this.myDataLayoutControl;
-            this.txtHacim.TabIndex = 2;
-            // 
-            // txtAmbalajTipi
-            // 
-            this.txtAmbalajTipi.EnterMoveNextControl = true;
-            this.txtAmbalajTipi.Id = null;
-            this.txtAmbalajTipi.Location = new System.Drawing.Point(95, 132);
-            this.txtAmbalajTipi.MenuManager = this.ribbonControl;
-            this.txtAmbalajTipi.Name = "txtAmbalajTipi";
-            this.txtAmbalajTipi.Properties.AppearanceFocused.BackColor = System.Drawing.Color.LightCyan;
-            this.txtAmbalajTipi.Properties.AppearanceFocused.Options.UseBackColor = true;
-            this.txtAmbalajTipi.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton()});
-            this.txtAmbalajTipi.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.txtAmbalajTipi.Size = new System.Drawing.Size(113, 20);
-            this.txtAmbalajTipi.StatusBarAciklama = "Ambalaj Tipi Seçiniz";
-            this.txtAmbalajTipi.StatusBarKisayol = "F4 :";
-            this.txtAmbalajTipi.StatusBarKisayolAciklama = "Seç";
-            this.txtAmbalajTipi.StyleController = this.myDataLayoutControl;
-            this.txtAmbalajTipi.TabIndex = 5;
             // 
             // layoutControlItem7
             // 
@@ -413,25 +676,6 @@
             this.layoutControlItem7.Text = "Ambalaj Tipi";
             this.layoutControlItem7.TextSize = new System.Drawing.Size(80, 13);
             // 
-            // txtAmbalajMaddesi
-            // 
-            this.txtAmbalajMaddesi.EnterMoveNextControl = true;
-            this.txtAmbalajMaddesi.Id = null;
-            this.txtAmbalajMaddesi.Location = new System.Drawing.Point(95, 156);
-            this.txtAmbalajMaddesi.MenuManager = this.ribbonControl;
-            this.txtAmbalajMaddesi.Name = "txtAmbalajMaddesi";
-            this.txtAmbalajMaddesi.Properties.AppearanceFocused.BackColor = System.Drawing.Color.LightCyan;
-            this.txtAmbalajMaddesi.Properties.AppearanceFocused.Options.UseBackColor = true;
-            this.txtAmbalajMaddesi.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton()});
-            this.txtAmbalajMaddesi.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.txtAmbalajMaddesi.Size = new System.Drawing.Size(113, 20);
-            this.txtAmbalajMaddesi.StatusBarAciklama = "Ambalaj Maddesini Seçiniz";
-            this.txtAmbalajMaddesi.StatusBarKisayol = "F4 :";
-            this.txtAmbalajMaddesi.StatusBarKisayolAciklama = "Seç";
-            this.txtAmbalajMaddesi.StyleController = this.myDataLayoutControl;
-            this.txtAmbalajMaddesi.TabIndex = 6;
-            // 
             // layoutControlItem8
             // 
             this.layoutControlItem8.AppearanceItemCaption.ForeColor = System.Drawing.Color.Maroon;
@@ -443,28 +687,6 @@
             this.layoutControlItem8.Size = new System.Drawing.Size(200, 24);
             this.layoutControlItem8.Text = "Ambalaj Maddesi";
             this.layoutControlItem8.TextSize = new System.Drawing.Size(80, 13);
-            // 
-            // txtAğızölçüsü
-            // 
-            this.txtAğızölçüsü.EditValue = new decimal(new int[] {
-            0,
-            0,
-            0,
-            0});
-            this.txtAğızölçüsü.EnterMoveNextControl = true;
-            this.txtAğızölçüsü.Location = new System.Drawing.Point(95, 180);
-            this.txtAğızölçüsü.MenuManager = this.ribbonControl;
-            this.txtAğızölçüsü.Name = "txtAğızölçüsü";
-            this.txtAğızölçüsü.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
-            this.txtAğızölçüsü.Properties.AppearanceFocused.BackColor = System.Drawing.Color.LightCyan;
-            this.txtAğızölçüsü.Properties.AppearanceFocused.Options.UseBackColor = true;
-            this.txtAğızölçüsü.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.txtAğızölçüsü.Properties.Mask.EditMask = "d";
-            this.txtAğızölçüsü.Size = new System.Drawing.Size(113, 20);
-            this.txtAğızölçüsü.StatusBarAciklama = "Ağız Ölçüsünü Girin";
-            this.txtAğızölçüsü.StyleController = this.myDataLayoutControl;
-            this.txtAğızölçüsü.TabIndex = 7;
             // 
             // layoutControlItem9
             // 
@@ -478,64 +700,6 @@
             this.layoutControlItem9.Text = "Ağız Ölçüsü";
             this.layoutControlItem9.TextSize = new System.Drawing.Size(80, 13);
             // 
-            // cmbSarfTipi
-            // 
-            this.cmbSarfTipi.EnterMoveNextControl = true;
-            this.cmbSarfTipi.Location = new System.Drawing.Point(95, 108);
-            this.cmbSarfTipi.MenuManager = this.ribbonControl;
-            this.cmbSarfTipi.Name = "cmbSarfTipi";
-            this.cmbSarfTipi.Properties.AppearanceFocused.BackColor = System.Drawing.Color.LightCyan;
-            this.cmbSarfTipi.Properties.AppearanceFocused.Options.UseBackColor = true;
-            this.cmbSarfTipi.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cmbSarfTipi.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.cmbSarfTipi.Size = new System.Drawing.Size(113, 20);
-            this.cmbSarfTipi.StatusBarAciklama = "Sarf Tipini Seçiniz";
-            this.cmbSarfTipi.StatusBarKisayol = "F4 :";
-            this.cmbSarfTipi.StatusBarKisayolAciklama = "Seç";
-            this.cmbSarfTipi.StyleController = this.myDataLayoutControl;
-            this.cmbSarfTipi.TabIndex = 4;
-            // 
-            // cmbMalzemeTipi
-            // 
-            this.cmbMalzemeTipi.EnterMoveNextControl = true;
-            this.cmbMalzemeTipi.Location = new System.Drawing.Point(95, 60);
-            this.cmbMalzemeTipi.MenuManager = this.ribbonControl;
-            this.cmbMalzemeTipi.Name = "cmbMalzemeTipi";
-            this.cmbMalzemeTipi.Properties.AppearanceFocused.BackColor = System.Drawing.Color.LightCyan;
-            this.cmbMalzemeTipi.Properties.AppearanceFocused.Options.UseBackColor = true;
-            this.cmbMalzemeTipi.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cmbMalzemeTipi.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.cmbMalzemeTipi.Size = new System.Drawing.Size(113, 20);
-            this.cmbMalzemeTipi.StatusBarAciklama = "Malzeme Tipini Seçiniz";
-            this.cmbMalzemeTipi.StatusBarKisayol = "F4 :";
-            this.cmbMalzemeTipi.StatusBarKisayolAciklama = "Seç";
-            this.cmbMalzemeTipi.StyleController = this.myDataLayoutControl;
-            this.cmbMalzemeTipi.TabIndex = 1;
-            // 
-            // txtUzunluk
-            // 
-            this.txtUzunluk.EditValue = new decimal(new int[] {
-            0,
-            0,
-            0,
-            0});
-            this.txtUzunluk.EnterMoveNextControl = true;
-            this.txtUzunluk.Location = new System.Drawing.Point(95, 204);
-            this.txtUzunluk.MenuManager = this.ribbonControl;
-            this.txtUzunluk.Name = "txtUzunluk";
-            this.txtUzunluk.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
-            this.txtUzunluk.Properties.AppearanceFocused.BackColor = System.Drawing.Color.LightCyan;
-            this.txtUzunluk.Properties.AppearanceFocused.Options.UseBackColor = true;
-            this.txtUzunluk.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.txtUzunluk.Properties.Mask.EditMask = "d";
-            this.txtUzunluk.Size = new System.Drawing.Size(113, 20);
-            this.txtUzunluk.StatusBarAciklama = "Uzunluk Girin";
-            this.txtUzunluk.StyleController = this.myDataLayoutControl;
-            this.txtUzunluk.TabIndex = 8;
-            // 
             // layoutControlItem11
             // 
             this.layoutControlItem11.AppearanceItemCaption.ForeColor = System.Drawing.Color.Maroon;
@@ -547,90 +711,6 @@
             this.layoutControlItem11.Size = new System.Drawing.Size(200, 24);
             this.layoutControlItem11.Text = "Uzunluk";
             this.layoutControlItem11.TextSize = new System.Drawing.Size(80, 13);
-            // 
-            // txtEn
-            // 
-            this.txtEn.EditValue = new decimal(new int[] {
-            0,
-            0,
-            0,
-            0});
-            this.txtEn.EnterMoveNextControl = true;
-            this.txtEn.Location = new System.Drawing.Point(239, 180);
-            this.txtEn.MenuManager = this.ribbonControl;
-            this.txtEn.Name = "txtEn";
-            this.txtEn.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
-            this.txtEn.Properties.AppearanceFocused.BackColor = System.Drawing.Color.LightCyan;
-            this.txtEn.Properties.AppearanceFocused.Options.UseBackColor = true;
-            this.txtEn.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.txtEn.Properties.Mask.EditMask = "d";
-            this.txtEn.Size = new System.Drawing.Size(69, 20);
-            this.txtEn.StatusBarAciklama = "En Girin ";
-            this.txtEn.StyleController = this.myDataLayoutControl;
-            this.txtEn.TabIndex = 9;
-            // 
-            // txtYükseklik
-            // 
-            this.txtYükseklik.EditValue = new decimal(new int[] {
-            0,
-            0,
-            0,
-            0});
-            this.txtYükseklik.EnterMoveNextControl = true;
-            this.txtYükseklik.Location = new System.Drawing.Point(359, 180);
-            this.txtYükseklik.MenuManager = this.ribbonControl;
-            this.txtYükseklik.Name = "txtYükseklik";
-            this.txtYükseklik.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
-            this.txtYükseklik.Properties.AppearanceFocused.BackColor = System.Drawing.Color.LightCyan;
-            this.txtYükseklik.Properties.AppearanceFocused.Options.UseBackColor = true;
-            this.txtYükseklik.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.txtYükseklik.Properties.Mask.EditMask = "d";
-            this.txtYükseklik.Size = new System.Drawing.Size(49, 20);
-            this.txtYükseklik.StatusBarAciklama = "Yükseklik Girin";
-            this.txtYükseklik.StyleController = this.myDataLayoutControl;
-            this.txtYükseklik.TabIndex = 11;
-            // 
-            // txtAlan
-            // 
-            this.txtAlan.EditValue = new decimal(new int[] {
-            0,
-            0,
-            0,
-            0});
-            this.txtAlan.EnterMoveNextControl = true;
-            this.txtAlan.Location = new System.Drawing.Point(95, 228);
-            this.txtAlan.MenuManager = this.ribbonControl;
-            this.txtAlan.Name = "txtAlan";
-            this.txtAlan.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
-            this.txtAlan.Properties.AppearanceFocused.BackColor = System.Drawing.Color.LightCyan;
-            this.txtAlan.Properties.AppearanceFocused.Options.UseBackColor = true;
-            this.txtAlan.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.txtAlan.Properties.Mask.EditMask = "d";
-            this.txtAlan.Size = new System.Drawing.Size(113, 20);
-            this.txtAlan.StatusBarAciklama = "Alan Girin";
-            this.txtAlan.StyleController = this.myDataLayoutControl;
-            this.txtAlan.TabIndex = 13;
-            // 
-            // cmbTeknikBirim
-            // 
-            this.cmbTeknikBirim.EnterMoveNextControl = true;
-            this.cmbTeknikBirim.Location = new System.Drawing.Point(339, 204);
-            this.cmbTeknikBirim.MenuManager = this.ribbonControl;
-            this.cmbTeknikBirim.Name = "cmbTeknikBirim";
-            this.cmbTeknikBirim.Properties.AppearanceFocused.BackColor = System.Drawing.Color.LightCyan;
-            this.cmbTeknikBirim.Properties.AppearanceFocused.Options.UseBackColor = true;
-            this.cmbTeknikBirim.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cmbTeknikBirim.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.cmbTeknikBirim.Size = new System.Drawing.Size(69, 20);
-            this.cmbTeknikBirim.StatusBarAciklama = "Teknik özelliklerin Birimini Seçin";
-            this.cmbTeknikBirim.StatusBarKisayol = "F4 :";
-            this.cmbTeknikBirim.StatusBarKisayolAciklama = "Seç";
-            this.cmbTeknikBirim.StyleController = this.myDataLayoutControl;
-            this.cmbTeknikBirim.TabIndex = 12;
             // 
             // layoutControlItem15
             // 
@@ -644,28 +724,6 @@
             this.layoutControlItem15.Text = "Alan";
             this.layoutControlItem15.TextSize = new System.Drawing.Size(80, 13);
             // 
-            // txtAğırlık
-            // 
-            this.txtAğırlık.EditValue = new decimal(new int[] {
-            0,
-            0,
-            0,
-            0});
-            this.txtAğırlık.EnterMoveNextControl = true;
-            this.txtAğırlık.Location = new System.Drawing.Point(95, 252);
-            this.txtAğırlık.MenuManager = this.ribbonControl;
-            this.txtAğırlık.Name = "txtAğırlık";
-            this.txtAğırlık.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
-            this.txtAğırlık.Properties.AppearanceFocused.BackColor = System.Drawing.Color.LightCyan;
-            this.txtAğırlık.Properties.AppearanceFocused.Options.UseBackColor = true;
-            this.txtAğırlık.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.txtAğırlık.Properties.Mask.EditMask = "d";
-            this.txtAğırlık.Size = new System.Drawing.Size(113, 20);
-            this.txtAğırlık.StatusBarAciklama = "Ağırlık Girini";
-            this.txtAğırlık.StyleController = this.myDataLayoutControl;
-            this.txtAğırlık.TabIndex = 15;
-            // 
             // layoutControlItem17
             // 
             this.layoutControlItem17.AppearanceItemCaption.ForeColor = System.Drawing.Color.Maroon;
@@ -677,42 +735,6 @@
             this.layoutControlItem17.Size = new System.Drawing.Size(200, 24);
             this.layoutControlItem17.Text = "Ağırlık";
             this.layoutControlItem17.TextSize = new System.Drawing.Size(80, 13);
-            // 
-            // cmbAlanBirim
-            // 
-            this.cmbAlanBirim.EnterMoveNextControl = true;
-            this.cmbAlanBirim.Location = new System.Drawing.Point(239, 228);
-            this.cmbAlanBirim.MenuManager = this.ribbonControl;
-            this.cmbAlanBirim.Name = "cmbAlanBirim";
-            this.cmbAlanBirim.Properties.AppearanceFocused.BackColor = System.Drawing.Color.LightCyan;
-            this.cmbAlanBirim.Properties.AppearanceFocused.Options.UseBackColor = true;
-            this.cmbAlanBirim.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cmbAlanBirim.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.cmbAlanBirim.Size = new System.Drawing.Size(69, 20);
-            this.cmbAlanBirim.StatusBarAciklama = "Alan Birimini Seçin";
-            this.cmbAlanBirim.StatusBarKisayol = "F4 :";
-            this.cmbAlanBirim.StatusBarKisayolAciklama = "Seç";
-            this.cmbAlanBirim.StyleController = this.myDataLayoutControl;
-            this.cmbAlanBirim.TabIndex = 14;
-            // 
-            // cmbAğırlıkBirim
-            // 
-            this.cmbAğırlıkBirim.EnterMoveNextControl = true;
-            this.cmbAğırlıkBirim.Location = new System.Drawing.Point(239, 252);
-            this.cmbAğırlıkBirim.MenuManager = this.ribbonControl;
-            this.cmbAğırlıkBirim.Name = "cmbAğırlıkBirim";
-            this.cmbAğırlıkBirim.Properties.AppearanceFocused.BackColor = System.Drawing.Color.LightCyan;
-            this.cmbAğırlıkBirim.Properties.AppearanceFocused.Options.UseBackColor = true;
-            this.cmbAğırlıkBirim.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cmbAğırlıkBirim.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.cmbAğırlıkBirim.Size = new System.Drawing.Size(69, 20);
-            this.cmbAğırlıkBirim.StatusBarAciklama = null;
-            this.cmbAğırlıkBirim.StatusBarKisayol = "F4 :";
-            this.cmbAğırlıkBirim.StatusBarKisayolAciklama = "Seç";
-            this.cmbAğırlıkBirim.StyleController = this.myDataLayoutControl;
-            this.cmbAğırlıkBirim.TabIndex = 16;
             // 
             // layoutControlItem18
             // 
@@ -813,33 +835,6 @@
             this.layoutControlItem6.Text = "Malzeme Tipi";
             this.layoutControlItem6.TextSize = new System.Drawing.Size(80, 13);
             // 
-            // layoutControlItem12
-            // 
-            this.layoutControlItem12.AppearanceItemCaption.ForeColor = System.Drawing.Color.Maroon;
-            this.layoutControlItem12.AppearanceItemCaption.Options.UseForeColor = true;
-            this.layoutControlItem12.Control = this.txtEn;
-            this.layoutControlItem12.Location = new System.Drawing.Point(200, 168);
-            this.layoutControlItem12.Name = "layoutControlItem12";
-            this.layoutControlItem12.OptionsTableLayoutItem.ColumnIndex = 1;
-            this.layoutControlItem12.OptionsTableLayoutItem.RowIndex = 7;
-            this.layoutControlItem12.Size = new System.Drawing.Size(100, 24);
-            this.layoutControlItem12.Text = "En";
-            this.layoutControlItem12.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
-            this.layoutControlItem12.TextSize = new System.Drawing.Size(12, 13);
-            this.layoutControlItem12.TextToControlDistance = 15;
-            // 
-            // layoutControlItem10
-            // 
-            this.layoutControlItem10.AppearanceItemCaption.ForeColor = System.Drawing.Color.Maroon;
-            this.layoutControlItem10.AppearanceItemCaption.Options.UseForeColor = true;
-            this.layoutControlItem10.Control = this.cmbSarfTipi;
-            this.layoutControlItem10.Location = new System.Drawing.Point(0, 96);
-            this.layoutControlItem10.Name = "layoutControlItem10";
-            this.layoutControlItem10.OptionsTableLayoutItem.RowIndex = 4;
-            this.layoutControlItem10.Size = new System.Drawing.Size(200, 24);
-            this.layoutControlItem10.Text = "Sarf Tipi";
-            this.layoutControlItem10.TextSize = new System.Drawing.Size(80, 13);
-            // 
             // lay
             // 
             this.lay.AppearanceItemCaption.ForeColor = System.Drawing.Color.Maroon;
@@ -855,27 +850,17 @@
             this.lay.TextSize = new System.Drawing.Size(12, 13);
             this.lay.TextToControlDistance = 15;
             // 
-            // txtBoy
+            // layoutControlItem10
             // 
-            this.txtBoy.EditValue = new decimal(new int[] {
-            0,
-            0,
-            0,
-            0});
-            this.txtBoy.EnterMoveNextControl = true;
-            this.txtBoy.Location = new System.Drawing.Point(239, 204);
-            this.txtBoy.MenuManager = this.ribbonControl;
-            this.txtBoy.Name = "txtBoy";
-            this.txtBoy.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
-            this.txtBoy.Properties.AppearanceFocused.BackColor = System.Drawing.Color.LightCyan;
-            this.txtBoy.Properties.AppearanceFocused.Options.UseBackColor = true;
-            this.txtBoy.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.txtBoy.Properties.Mask.EditMask = "d";
-            this.txtBoy.Size = new System.Drawing.Size(69, 20);
-            this.txtBoy.StatusBarAciklama = "Boy Girin";
-            this.txtBoy.StyleController = this.myDataLayoutControl;
-            this.txtBoy.TabIndex = 10;
+            this.layoutControlItem10.AppearanceItemCaption.ForeColor = System.Drawing.Color.Maroon;
+            this.layoutControlItem10.AppearanceItemCaption.Options.UseForeColor = true;
+            this.layoutControlItem10.Control = this.cmbSarfTipi;
+            this.layoutControlItem10.Location = new System.Drawing.Point(0, 96);
+            this.layoutControlItem10.Name = "layoutControlItem10";
+            this.layoutControlItem10.OptionsTableLayoutItem.RowIndex = 4;
+            this.layoutControlItem10.Size = new System.Drawing.Size(200, 24);
+            this.layoutControlItem10.Text = "Sarf Tipi";
+            this.layoutControlItem10.TextSize = new System.Drawing.Size(80, 13);
             // 
             // layoutControlItem13
             // 
@@ -892,6 +877,21 @@
             this.layoutControlItem13.TextSize = new System.Drawing.Size(18, 13);
             this.layoutControlItem13.TextToControlDistance = 9;
             // 
+            // layoutControlItem12
+            // 
+            this.layoutControlItem12.AppearanceItemCaption.ForeColor = System.Drawing.Color.Maroon;
+            this.layoutControlItem12.AppearanceItemCaption.Options.UseForeColor = true;
+            this.layoutControlItem12.Control = this.txtEn;
+            this.layoutControlItem12.Location = new System.Drawing.Point(200, 168);
+            this.layoutControlItem12.Name = "layoutControlItem12";
+            this.layoutControlItem12.OptionsTableLayoutItem.ColumnIndex = 1;
+            this.layoutControlItem12.OptionsTableLayoutItem.RowIndex = 7;
+            this.layoutControlItem12.Size = new System.Drawing.Size(100, 24);
+            this.layoutControlItem12.Text = "En";
+            this.layoutControlItem12.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
+            this.layoutControlItem12.TextSize = new System.Drawing.Size(12, 13);
+            this.layoutControlItem12.TextToControlDistance = 15;
+            // 
             // MamülEditForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -906,34 +906,35 @@
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.myDataLayoutControl)).EndInit();
             this.myDataLayoutControl.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.txtBoy.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbAğırlıkBirim.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbAlanBirim.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtAğırlık.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbTeknikBirim.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtAlan.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtYükseklik.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtEn.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtUzunluk.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbMalzemeTipi.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbSarfTipi.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtAğızölçüsü.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtAmbalajMaddesi.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtAmbalajTipi.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtHacim.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbMalzemeBirim.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtAdı.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtMamülAdı.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tglDurum.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtKod.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtHacim.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtAmbalajTipi.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtAmbalajMaddesi.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtAğızölçüsü.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmbSarfTipi.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmbMalzemeTipi.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtUzunluk.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtEn.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtYükseklik.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtAlan.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmbTeknikBirim.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem15)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtAğırlık.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem17)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmbAlanBirim.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmbAğırlıkBirim.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem18)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem19)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem14)).EndInit();
@@ -941,11 +942,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lay)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtBoy.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -960,7 +960,7 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
         private myUserControls.Controls.myComboBoxEdit cmbMalzemeBirim;
-        private myUserControls.Controls.myTextEdit txtAdı;
+        private myUserControls.Controls.myTextEdit txtMamülAdı;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
         private myUserControls.Controls.myComboBoxEdit cmbAğırlıkBirim;
         private myUserControls.Controls.myComboBoxEdit cmbAlanBirim;

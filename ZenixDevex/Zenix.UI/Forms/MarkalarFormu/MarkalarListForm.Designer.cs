@@ -147,7 +147,7 @@
             // colAdı
             // 
             this.colAdı.Caption = "Adı";
-            this.colAdı.FieldName = "Adı";
+            this.colAdı.FieldName = "MarkaAdı";
             this.colAdı.Name = "colAdı";
             this.colAdı.OptionsColumn.AllowEdit = false;
             this.colAdı.StatusBarAciklama = null;

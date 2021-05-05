@@ -1143,6 +1143,16 @@ namespace Zenix.WinUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap gg_32px_3 {
+            get {
+                object obj = ResourceManager.GetObject("gg_32px_3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap Grand_Master_Key_16px {
             get {
                 object obj = ResourceManager.GetObject("Grand_Master_Key_16px", resourceCulture);
@@ -1276,16 +1286,6 @@ namespace Zenix.WinUI.Properties {
         public static System.Drawing.Bitmap icons8_gg_16px {
             get {
                 object obj = ResourceManager.GetObject("icons8_gg_16px", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap icons8_gg_32px_3 {
-            get {
-                object obj = ResourceManager.GetObject("icons8_gg_32px_3", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

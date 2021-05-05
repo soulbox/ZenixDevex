@@ -12,7 +12,11 @@ using System.ComponentModel;
 
 namespace Zenix.Model.Entities
 {
-    public class Firma : BaseEntityDurum
+   public  interface IFirma
+    {        
+        string FirmaAdi { get; set; }
+    }
+    public class Firma : BaseEntityDurum,IFirma
     {
         [Index(name: "IX_Kod")] //, IsUnique = true)]
         public override string Kod { get; set; }

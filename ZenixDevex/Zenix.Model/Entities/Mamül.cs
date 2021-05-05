@@ -15,26 +15,45 @@ using Zenix.Model.Entities.Base;
 namespace Zenix.Model.Entities
 {
 
-  
+
+
+    public interface IMamül : IBaseMamül
+    {
+        string MamülAdı { get; set; }
+        SarfTipi SarfTipi { get; set; }
+        BirimTipi MalzemeBirimi { get; set; }
+        MalzemeTipi MalzemeTipi { get; set; }
+        int Hacim { get; set; }
+        long AmbalajTipiId { get; set; }
+        long AmbalajMaddeTipiId { get; set; }
+    }
     public interface IBaseMamül
     {
-       
-        string BirimAlan { get; }
-        [NotMapped]
+        float AğızÖlçüsü { get; set; }
+        float Uzunluk { get; set; }
+        float En { get; set; }
+        float Boy { get; set; }
         string BirimAğırlık { get; }
-        [NotMapped]
+        BirimTipi BirimAuEbY { get; set; }
+        float Alan { get; set; }
+        BirimTipi AlanınBirimi { get; set; }
+        float Ağırlık { get; set; }
+        BirimTipi AğırlığınBirimi { get; set; }
+        [NotMapped,DatabaseGenerated(DatabaseGeneratedOption.Computed)]
         string BirimAğızÖlçüsü { get; }
-        [NotMapped]
+        [NotMapped,DatabaseGenerated(DatabaseGeneratedOption.Computed)]
         string BirimUzunluk { get; }
-        [NotMapped]
+        [NotMapped,DatabaseGenerated(DatabaseGeneratedOption.Computed)]
         string BirimEn { get; }
-        [NotMapped]
+        [NotMapped,DatabaseGenerated(DatabaseGeneratedOption.Computed)]
         string BirimBoy { get; }
-        [NotMapped]
+        [NotMapped,DatabaseGenerated(DatabaseGeneratedOption.Computed)]
         string BirimYükseklik { get; }
+        [NotMapped,DatabaseGenerated(DatabaseGeneratedOption.Computed)]
+        string BirimAlan { get; }
     }
 
-    public class BaseMamül : BaseEntityDurum
+    public class BaseMamül : BaseEntityDurum, IBaseMamül
     {
         [Index(name: "IX_Kod", IsUnique = true)]
         public override string Kod { get; set; }
@@ -45,45 +64,34 @@ namespace Zenix.Model.Entities
         public float Boy { get; set; }
         public float Yükseklik { get; set; }
         public BirimTipi BirimAuEbY { get; set; }
-
         public float Alan { get; set; }
         public BirimTipi AlanınBirimi { get; set; }
         public float Ağırlık { get; set; }
         public BirimTipi AğırlığınBirimi { get; set; }
-
-        [NotMapped]
-        public string BirimAlan { get => $"{Alan:n1} {AlanınBirimi.ToName()}"; }
-        [NotMapped]
-        public string BirimAğırlık { get => $"{Ağırlık:n1} {AğırlığınBirimi.ToName()}"; }
-        [NotMapped]
-        public string BirimAğızÖlçüsü { get => $"{BirimAğızÖlçüsü:n1} {BirimAuEbY.ToName()}"; }
-        [NotMapped]
-
-        public string BirimUzunluk { get => $"{Uzunluk:n1} {BirimAuEbY.ToName()}"; }
-
-        [NotMapped]
-
-        public string BirimEn { get => $"{En:n1} {BirimAuEbY.ToName()}"; }
-
-        [NotMapped]
-
-        public string BirimBoy { get => $"{Boy:n1} {BirimAuEbY.ToName()}"; }
-
-        [NotMapped]
-
-        public string BirimYükseklik { get => $"{Yükseklik:n1} {BirimAuEbY.ToName()}"; }
-
+        public string GetStr(BirimTipi birm, float value) => birm == BirimTipi.yok ? $"{value:n2}" : $"{value:n1} {birm.ToName()}";
+        public string GetStr(float value) => GetStr(BirimAuEbY, value);
+        public string BirimAlan { get => GetStr(AlanınBirimi, Alan); }
+        public string BirimAğırlık { get => GetStr(AğırlığınBirimi, Ağırlık); }
+        public string BirimAğızÖlçüsü { get => GetStr(AğızÖlçüsü); }
+        public string BirimUzunluk { get => GetStr(Uzunluk); }
+        public string BirimEn { get => GetStr(En); }
+        public string BirimBoy { get => GetStr(Boy); }
+        public string BirimYükseklik { get => GetStr(Yükseklik); }
     }
-    public class Mamül : BaseMamül
+
+
+    public class Mamül : BaseMamül,IMamül
     {
-        [ZorunluAlan("Adı", "txtAdı")]
-        public string Adı { get; set; }
+        [ZorunluAlan("Mamül Adı", "txtMamülAdı")]
+        public string MamülAdı { get; set; }
         public SarfTipi SarfTipi { get; set; }
         public BirimTipi MalzemeBirimi { get; set; }
         public MalzemeTipi MalzemeTipi { get; set; }
         public int Hacim { get; set; }
+        [Required(),ZorunluAlan("Ambalaj Tipi","txtAmbalajTipi")]
         public long AmbalajTipiId { get; set; }
         public AmbalajTipi AmbalajTipi { get; set; }
+        [Required(), ZorunluAlan("Ambalaj Maddesinin Tipi", "txtAmbalajMaddesi")]
         public long AmbalajMaddeTipiId { get; set; }
         public AmbalajMaddeTipi AmbalajMaddeTipi { get; set; }
     }

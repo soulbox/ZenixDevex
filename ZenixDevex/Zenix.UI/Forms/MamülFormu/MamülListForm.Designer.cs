@@ -32,16 +32,18 @@
             this.longNavigator = new Zenix.WinUI.myUserControls.Navigator.LongNavigator();
             this.myBandedGridControl1 = new Zenix.WinUI.myUserControls.Grid.myBandedGridControl();
             this.Tablo = new Zenix.WinUI.myUserControls.Grid.myBandedGridview();
-            this.gridBand1 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
+            this.aaaa = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
             this.colId = new Zenix.WinUI.myUserControls.Grid.myBandedGridColumn();
             this.colKod = new Zenix.WinUI.myUserControls.Grid.myBandedGridColumn();
             this.colMalzeme = new Zenix.WinUI.myUserControls.Grid.myBandedGridColumn();
+            this.colHacim = new Zenix.WinUI.myUserControls.Grid.myBandedGridColumn();
             this.colMalzemeBirimi = new Zenix.WinUI.myUserControls.Grid.myBandedGridColumn();
+            this.gridBand3 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
             this.colMalzemeTipi = new Zenix.WinUI.myUserControls.Grid.myBandedGridColumn();
             this.colAmbalajTipi = new Zenix.WinUI.myUserControls.Grid.myBandedGridColumn();
             this.colAmbalajMaddes = new Zenix.WinUI.myUserControls.Grid.myBandedGridColumn();
             this.colSarfTipi = new Zenix.WinUI.myUserControls.Grid.myBandedGridColumn();
-            this.colHacim = new Zenix.WinUI.myUserControls.Grid.myBandedGridColumn();
+            this.gridBand4 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
             this.colAğızÖlçüsü = new Zenix.WinUI.myUserControls.Grid.myBandedGridColumn();
             this.colUzunluk = new Zenix.WinUI.myUserControls.Grid.myBandedGridColumn();
             this.colEn = new Zenix.WinUI.myUserControls.Grid.myBandedGridColumn();
@@ -49,9 +51,7 @@
             this.colYükseklik = new Zenix.WinUI.myUserControls.Grid.myBandedGridColumn();
             this.colAlan = new Zenix.WinUI.myUserControls.Grid.myBandedGridColumn();
             this.colAğırlık = new Zenix.WinUI.myUserControls.Grid.myBandedGridColumn();
-            this.aaaa = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
-            this.gridBand3 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
-            this.gridBand4 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
+            this.gridBand1 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.myBandedGridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Tablo)).BeginInit();
@@ -160,11 +160,17 @@
             this.Tablo.StatusBarKisayol = null;
             this.Tablo.StatusBarKisayolAciklama = null;
             // 
-            // gridBand1
+            // aaaa
             // 
-            this.gridBand1.Caption = "gridBand1";
-            this.gridBand1.Name = "gridBand1";
-            this.gridBand1.VisibleIndex = 3;
+            this.aaaa.Caption = "Malzeme";
+            this.aaaa.Columns.Add(this.colId);
+            this.aaaa.Columns.Add(this.colKod);
+            this.aaaa.Columns.Add(this.colMalzeme);
+            this.aaaa.Columns.Add(this.colHacim);
+            this.aaaa.Columns.Add(this.colMalzemeBirimi);
+            this.aaaa.Name = "aaaa";
+            this.aaaa.VisibleIndex = 0;
+            this.aaaa.Width = 325;
             // 
             // colId
             // 
@@ -193,7 +199,7 @@
             // colMalzeme
             // 
             this.colMalzeme.Caption = "Malzeme";
-            this.colMalzeme.FieldName = "Adı";
+            this.colMalzeme.FieldName = "MamülAdı";
             this.colMalzeme.Name = "colMalzeme";
             this.colMalzeme.OptionsColumn.AllowEdit = false;
             this.colMalzeme.StatusBarAciklama = null;
@@ -201,6 +207,18 @@
             this.colMalzeme.StatusBarKisayolAciklama = null;
             this.colMalzeme.Visible = true;
             this.colMalzeme.Width = 150;
+            // 
+            // colHacim
+            // 
+            this.colHacim.Caption = "Hacim";
+            this.colHacim.FieldName = "Hacim";
+            this.colHacim.Name = "colHacim";
+            this.colHacim.OptionsColumn.AllowEdit = false;
+            this.colHacim.StatusBarAciklama = null;
+            this.colHacim.StatusBarKisayol = null;
+            this.colHacim.StatusBarKisayolAciklama = null;
+            this.colHacim.Visible = true;
+            this.colHacim.Width = 50;
             // 
             // colMalzemeBirimi
             // 
@@ -213,6 +231,17 @@
             this.colMalzemeBirimi.StatusBarKisayolAciklama = null;
             this.colMalzemeBirimi.Visible = true;
             this.colMalzemeBirimi.Width = 50;
+            // 
+            // gridBand3
+            // 
+            this.gridBand3.Caption = "Tipi";
+            this.gridBand3.Columns.Add(this.colMalzemeTipi);
+            this.gridBand3.Columns.Add(this.colAmbalajTipi);
+            this.gridBand3.Columns.Add(this.colAmbalajMaddes);
+            this.gridBand3.Columns.Add(this.colSarfTipi);
+            this.gridBand3.Name = "gridBand3";
+            this.gridBand3.VisibleIndex = 1;
+            this.gridBand3.Width = 300;
             // 
             // colMalzemeTipi
             // 
@@ -258,17 +287,19 @@
             this.colSarfTipi.StatusBarKisayolAciklama = null;
             this.colSarfTipi.Visible = true;
             // 
-            // colHacim
+            // gridBand4
             // 
-            this.colHacim.Caption = "Hacim";
-            this.colHacim.FieldName = "Hacim";
-            this.colHacim.Name = "colHacim";
-            this.colHacim.OptionsColumn.AllowEdit = false;
-            this.colHacim.StatusBarAciklama = null;
-            this.colHacim.StatusBarKisayol = null;
-            this.colHacim.StatusBarKisayolAciklama = null;
-            this.colHacim.Visible = true;
-            this.colHacim.Width = 50;
+            this.gridBand4.Caption = "Teknik Özellikler";
+            this.gridBand4.Columns.Add(this.colAğızÖlçüsü);
+            this.gridBand4.Columns.Add(this.colUzunluk);
+            this.gridBand4.Columns.Add(this.colEn);
+            this.gridBand4.Columns.Add(this.colboy);
+            this.gridBand4.Columns.Add(this.colYükseklik);
+            this.gridBand4.Columns.Add(this.colAlan);
+            this.gridBand4.Columns.Add(this.colAğırlık);
+            this.gridBand4.Name = "gridBand4";
+            this.gridBand4.VisibleIndex = 2;
+            this.gridBand4.Width = 425;
             // 
             // colAğızÖlçüsü
             // 
@@ -351,42 +382,11 @@
             this.colAğırlık.Visible = true;
             this.colAğırlık.Width = 50;
             // 
-            // aaaa
+            // gridBand1
             // 
-            this.aaaa.Caption = "Malzeme";
-            this.aaaa.Columns.Add(this.colId);
-            this.aaaa.Columns.Add(this.colKod);
-            this.aaaa.Columns.Add(this.colMalzeme);
-            this.aaaa.Columns.Add(this.colHacim);
-            this.aaaa.Columns.Add(this.colMalzemeBirimi);
-            this.aaaa.Name = "aaaa";
-            this.aaaa.VisibleIndex = 0;
-            this.aaaa.Width = 325;
-            // 
-            // gridBand3
-            // 
-            this.gridBand3.Caption = "Tipi";
-            this.gridBand3.Columns.Add(this.colMalzemeTipi);
-            this.gridBand3.Columns.Add(this.colAmbalajTipi);
-            this.gridBand3.Columns.Add(this.colAmbalajMaddes);
-            this.gridBand3.Columns.Add(this.colSarfTipi);
-            this.gridBand3.Name = "gridBand3";
-            this.gridBand3.VisibleIndex = 1;
-            this.gridBand3.Width = 300;
-            // 
-            // gridBand4
-            // 
-            this.gridBand4.Caption = "Teknik Özellikler";
-            this.gridBand4.Columns.Add(this.colAğızÖlçüsü);
-            this.gridBand4.Columns.Add(this.colUzunluk);
-            this.gridBand4.Columns.Add(this.colEn);
-            this.gridBand4.Columns.Add(this.colboy);
-            this.gridBand4.Columns.Add(this.colYükseklik);
-            this.gridBand4.Columns.Add(this.colAlan);
-            this.gridBand4.Columns.Add(this.colAğırlık);
-            this.gridBand4.Name = "gridBand4";
-            this.gridBand4.VisibleIndex = 2;
-            this.gridBand4.Width = 425;
+            this.gridBand1.Caption = "gridBand1";
+            this.gridBand1.Name = "gridBand1";
+            this.gridBand1.VisibleIndex = -1;
             // 
             // MamülListForm
             // 

@@ -72,7 +72,8 @@ namespace Zenix.WinUI.Forms.FirmaFormu
             {
                 if (sender == txtÜlke)
                     sec.Seç(txtÜlke);
-
+               else if (sender == txtFirmaTipi)
+                    sec.Seç(txtFirmaTipi);
             }
         }
     }

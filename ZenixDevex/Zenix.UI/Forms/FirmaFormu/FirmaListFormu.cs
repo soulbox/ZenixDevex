@@ -13,7 +13,6 @@ using System.Linq;
 using Zenix.Common.Function;
 using DevExpress.XtraGrid.Views.Grid;
 using Zenix.WinUI.MainForm;
-using Zenix.WinUI.Forms.ÜrünlerFormu;
 
 namespace Zenix.WinUI.Forms.FirmaFormu
 {

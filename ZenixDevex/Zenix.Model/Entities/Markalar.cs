@@ -13,11 +13,16 @@ using Zenix.Model.Entities.Base.Interfaces;
 
 namespace Zenix.Model.Entities
 {
-    public class Markalar : BaseEntityDurum, IBaseSimpleModel
+    public interface IMarka
+    {
+        string MarkaAdı { get; set; }
+    }
+    public class Markalar : BaseEntityDurum, IMarka
     {
         [Index(name: "IX_Kod", IsUnique = true)]
         public override string Kod { get; set; }
-        public string Adı { get; set; }
+        [ZorunluAlan("Marka Adı", "txtMarkaAdı")]
+        public string MarkaAdı { get; set; }
 
     }
 }

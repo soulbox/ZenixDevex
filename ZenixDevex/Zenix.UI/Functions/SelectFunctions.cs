@@ -14,6 +14,8 @@ using Zenix.BLL.Base;
 using Zenix.Model.Entities.Base;
 using Zenix.BLL.Interfaces;
 using Zenix.WinUI.Forms.AmbalajTipiFormu;
+using Zenix.WinUI.Forms.MarkalarFormu;
+using Zenix.WinUI.Forms.MamülFormu;
 
 namespace Zenix.WinUI.Functions
 {
@@ -77,17 +79,6 @@ namespace Zenix.WinUI.Functions
                         }
                     }
                     break;
-                case "txtFirma":
-                    {
-                        var entity = (FirmalarL)ShowListForms<FirmaListFormu>.ShowDialogListForm(KartTuru.Firma, btnedit.Id);
-                        if (entity != null)
-                        {
-                            btnedit.Tag = entity;
-                            btnedit.Id = entity.Id;
-                            btnedit.EditValue = entity.FirmaAdi;
-                        }
-                    }
-                    break;
                 case "txtAmbalajTipi":
                     {
                         var entity = (AmbalajTipi)ShowListForms<AmbalajTipiListForm>.ShowDialogListForm(KartTuru.AmbalajTipi, btnedit.Id);
@@ -100,11 +91,51 @@ namespace Zenix.WinUI.Functions
                     break;
                 case "txtAmbalajMaddesi":
                     {
-                        var entity = (AmbalajMaddeTipi )ShowListForms<AmbalajMaddeTipiListForm>.ShowDialogListForm(KartTuru.AmbalajMaddeTipi, btnedit.Id);
+                        var entity = (AmbalajMaddeTipi)ShowListForms<AmbalajMaddeTipiListForm>.ShowDialogListForm(KartTuru.AmbalajMaddeTipi, btnedit.Id);
                         if (entity != null)
                         {
                             btnedit.Id = entity.Id;
                             btnedit.EditValue = entity.Adı;
+                        }
+                    }
+                    break;
+                case "txtFirmaTipi":
+                    {
+                        var entity = (FirmaTipi)ShowListForms<FirmaTipiListForm>.ShowDialogListForm(KartTuru.FirmaTipi, btnedit.Id);
+                        if (entity != null)
+                        {
+                            btnedit.Id = entity.Id;
+                            btnedit.EditValue = entity.Adı;
+                        }
+                    }
+                    break;
+                case "txtFirma":
+                    {
+                        var entity = (FirmalarL)ShowListForms<FirmaListFormu>.ShowDialogListForm(KartTuru.Firma, btnedit.Id);
+                        if (entity != null)
+                        {
+                            btnedit.Tag = entity;
+                            btnedit.Id = entity.Id;
+                            btnedit.EditValue = entity.FirmaAdi;
+                        }
+                    }
+                    break;
+                case "txtMarka":
+                    {
+                        var entity = (Markalar)ShowListForms<MarkalarListForm>.ShowDialogListForm(KartTuru.Markalar, btnedit.Id);
+                        if (entity != null)
+                        {
+                            btnedit.Id = entity.Id;
+                            btnedit.EditValue = entity.MarkaAdı;
+                        }
+                    }
+                    break;
+                case "txtÜrün":
+                    {
+                        var entity = (MamülL)ShowListForms<MamülListForm>.ShowDialogListForm(KartTuru.Mamül, btnedit.Id);
+                        if (entity != null)                        {
+                            btnedit.Id = entity.Id;
+                            btnedit.EditValue = entity.MamülAdı;
                         }
                     }
                     break;
