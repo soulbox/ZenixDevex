@@ -7,10 +7,12 @@ using System.Threading.Tasks;
 
 namespace Zenix.Common.Enums
 {
-    public enum MalzemeTipi:byte
+    public enum MalzemeTipi : byte
     {
+        [Description("Ürün")]
+        Ürün = 0,
         [Description("Kimyasal")]
-        Kimyasal,
+        Kimyasal=1,
         [Description("Ambalaj")]
         Ambalaj,
         [Description("Etiket")]
@@ -25,5 +27,6 @@ namespace Zenix.Common.Enums
         Koli,
         [Description("Kutu")]
         Kutu,
+
     }
 }

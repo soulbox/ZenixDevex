@@ -13,6 +13,7 @@ using Zenix.BLL.General;
 using Zenix.BLL.Base;
 using Zenix.Model.Entities.Base;
 using Zenix.BLL.Interfaces;
+using Zenix.WinUI.Forms.AmbalajTipiFormu;
 
 namespace Zenix.WinUI.Functions
 {
@@ -87,32 +88,27 @@ namespace Zenix.WinUI.Functions
                         }
                     }
                     break;
-                case "txtÜrün":
+                case "txtAmbalajTipi":
                     {
-
-                        var entity = (Ürün)ShowListForms<ÜrünListForm>.ShowDialogListForm(KartTuru.Ürün, btnedit.Id);
+                        var entity = (AmbalajTipi)ShowListForms<AmbalajTipiListForm>.ShowDialogListForm(KartTuru.AmbalajTipi, btnedit.Id);
                         if (entity != null)
                         {
-                            btnedit.Tag = entity;
                             btnedit.Id = entity.Id;
                             btnedit.EditValue = entity.Adı;
                         }
                     }
                     break;
-                case "txtRevizyon":
+                case "txtAmbalajMaddesi":
                     {
-                        
-                        var ürün = prmedit.Tag;
-                        if (prmedit.Tag == null)
-                            ürün = GetSingle<ÜrünBll, Ürün>(prmedit.Id);
-                        var entity = (Revizyon)ShowListForms<ReziyonListForm>.ShowDialogListForm(KartTuru.Revizyon, btnedit.Id, ürün);
+                        var entity = (AmbalajMaddeTipi )ShowListForms<AmbalajMaddeTipiListForm>.ShowDialogListForm(KartTuru.AmbalajMaddeTipi, btnedit.Id);
                         if (entity != null)
                         {
                             btnedit.Id = entity.Id;
-                            btnedit.EditValue = entity.RevKodu;
+                            btnedit.EditValue = entity.Adı;
                         }
                     }
                     break;
+
             }
         }
 

@@ -15,33 +15,31 @@ using DevExpress.XtraGrid.Views.Grid;
 using Zenix.WinUI.MainForm;
 using Zenix.WinUI.Forms.ÜrünlerFormu;
 
-namespace Zenix.WinUI.Forms.MalzemeFormu
+namespace Zenix.WinUI.Forms.MamülFormu
 {
-    public partial class MalzemeListForm : BaseListForm
+    public partial class MamülListForm : BaseListForm
+
     {
-        public MalzemeListForm()
+        public MamülListForm()
         {
             InitializeComponent();
-            Bll = new MalzemeBll();
+            Bll = new MamülBll();
 
         }
         protected override void Degiskenleridoldur()
         {
             this.tablo = Tablo;
-            this.KartTuru = Common.Enums.KartTuru.Malzeme;
-            this.FormShow = new ShowEditForms<MalzemeEditForm>();
+            this.KartTuru = Common.Enums.KartTuru.FirmaTipi;
+            this.FormShow = new ShowEditForms<MamülEditForm>();
             this.Navigator = longNavigator.controlNavigator;
-            Text = "Malzeme Kartları ";
+            Text = "Firma Tipi Kartları ";
             Tablo.ViewCaption = Text;
-
 
         }
         protected override void Listele()
         {
-            Tablo.GridControl.DataSource = ((MalzemeBll)Bll).List(FilterFunctions.Filter<Malzeme>(AktifKayitlariGoster));
+            Tablo.GridControl.DataSource = ((MamülBll)Bll).List(FilterFunctions.Filter<Mamül >(AktifKayitlariGoster));
 
         }
-
-
     }
 }

@@ -14,47 +14,12 @@ using Zenix.Model.Entities.Base;
 
 namespace Zenix.BLL.General
 {
-    public class MarkalarBll : BaseGenelBLL<Markalar>, IBaseCommonBLL
+    public class MarkalarBll : BaseGenelBLL<Markalar>, IBaseGenelBll, IBaseCommonBLL
     {
         public MarkalarBll() : base(KartTuru.Markalar) { }
 
         public MarkalarBll(Control ctrl) : base(ctrl, KartTuru.Markalar) { }
-        public override BaseEntity Single(Expression<Func<Markalar, bool>> filter)
-        {
-            return BaseSingle(filter, x => new MarkalarS
-            {
-                Id = x.Id,
-                Durum = x.Durum,
-                Kod = x.Kod,
-                Adı = x.Adı,
-                GTIN = x.GTIN,
-                Açıklama = x.Açıklama,
-                FirmaAdı = x.Firma.FirmaAdi,
-                ÜrünAdı = x.Ürün.Adı,
-                FirmaId = x.FirmaId,
-                ÜrünId = x.ÜrünId,
-                FirmaTipi=x.Firma.FirmaTipi,
-
-            });
-        }
-        public override IEnumerable<BaseEntity> List(Expression<Func<Markalar, bool>> filter)
-        {
-            return BaseList(filter, x => new MarkalarS
-            {
-                Id = x.Id,
-                Durum = x.Durum,
-                Kod = x.Kod,
-                Adı = x.Adı,
-                GTIN = x.GTIN,
-                Açıklama = x.Açıklama,
-                FirmaAdı = x.Firma.FirmaAdi,
-                ÜrünAdı = x.Ürün.Adı,
-                FirmaId = x.FirmaId,
-                ÜrünId = x.ÜrünId,
-                FirmaTipi = x.Firma.FirmaTipi,
-
-            }).ToList();
-        }
+      
 
     }
 }

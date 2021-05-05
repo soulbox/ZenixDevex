@@ -40,7 +40,7 @@ namespace Zenix.WinUI.Forms.İşemriFormu
             txtReçete.Text = entity.ReçeteAdı;
             txtReçete.Id = entity.ReçeteId;
             txtŞarj.Text = entity.ŞarjNo.ToString();
-            txtŞarj.Id = entity.ŞarjId;
+            //txtŞarj.Id = entity.ŞarjId;
             txtKazan.Text = entity.KazanNo.ToString();
             txtKazan.Id = entity.KazanId;
             txtŞarjMiktarı.EditValue = entity.ŞarzMiktarı;
@@ -59,7 +59,7 @@ namespace Zenix.WinUI.Forms.İşemriFormu
                 KullanıcıId = AnaForm.Kullanıcı.Id,
                 KazanId = txtKazan.Id.ConvertTo<long>(),
                 ReçeteId = txtReçete.Id.ConvertTo<long>(),
-                ŞarjId = txtŞarj.Id.ConvertTo<long>(),
+                //ŞarjId = txtŞarj.Id.ConvertTo<long>(),
                 ŞarzMiktarı = txtŞarjMiktarı.EditValue.ConvertTo<int>(),
 
 

@@ -36,16 +36,17 @@ namespace Zenix.Data.Context
         public DbSet<Ülke> Ülke { get; set; }
         public DbSet<Ürün> Ürün { get; set; }
         public DbSet<Revizyon> Revizyon { get; set; }
-        public DbSet<Şarj> Şarj { get; set; }
         public DbSet<Paketleme> Paketleme { get; set; }
         public DbSet<Sipariş> Sipariş { get; set; }
-        public DbSet<Malzeme> Malzeme { get; set; }
         public DbSet<Reçete> Reçete { get; set; }
         public DbSet<ReçeteMalzemeler> ReçeteMalzemeler { get; set; }
         public DbSet<Kazan> Kazan { get; set; }
         public DbSet<Markalar> Markalar { get; set; }
+        public DbSet<AmbalajTipi> AmbalajTipi { get; set; }
+        public DbSet<AmbalajMaddeTipi> AmbalajMaddeTipi { get; set; }
 
         public DbSet<İşemri> İşemri { get; set; }
+        public DbSet<Mamül > Mamül { get; set; }
 
 
 

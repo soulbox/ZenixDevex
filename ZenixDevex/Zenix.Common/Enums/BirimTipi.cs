@@ -4,27 +4,35 @@ namespace Zenix.Common.Enums
 {
     public enum BirimTipi : byte
     {
-        [Description("yok")]
-        yok=0,
+        [Description("Yok")]
+        yok = 0,
+        [Description("gr")]
+        gr,
         [Description("kg")]
-        kg=1,
+        kg,
+        [Description("ton")]
+        ton,
         [Description("mL")]
-        mL=2,
-        [Description("Etiket")]
-        Etiket=3,
-        [Description("Kapak")]
-        Kapak=4,
-        [Description("Sarf")]
-        Sarf=5,
-        [Description("Şişe")]
-        Şişe=6,
-        [Description("Koli")]
-        Koli=7,
-        [Description("Kutu")]
-        Kutu=8,
-        [Description("cm")]
-        cm = 9,
+        mL,
+        [Description("Lt")]
+        Lt,
+        [Description("ad")]   
+        ad,
         [Description("mm")]
-        mm = 10,
+        mm,
+        [Description("cm")]
+        cm,
+        [Description("dm")]
+        dm,
+        [Description("m")]
+        m,
+        [Description("cm²")]
+        cm2,
+        [Description("m²")]
+        m2,
+        [Description("cm³")]
+        cm3,
+        [Description("m³")]
+        m3,
     }
 }

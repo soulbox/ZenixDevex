@@ -24,7 +24,9 @@ namespace Zenix.Model.Entities
         public string VergiNo { get; set; }
         public string Adres { get; set; }
         public FirmaTipi FirmaTipi { get; set; }
-        public ICollection<Ürün> Ürün { get; set; }
+        [Required(), ZorunluAlan("Firma Tipi", "txtFrimaTipi")]
+        public long FirmaTipiId { get; set; }
+
         public Ülke Ülke { get; set; }
         [Required(), ZorunluAlan("Ülke", "txtÜlke")]
         public long ÜlkeId { get; set; }

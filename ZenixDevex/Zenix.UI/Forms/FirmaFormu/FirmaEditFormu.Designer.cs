@@ -41,7 +41,6 @@
             DevExpress.XtraLayout.RowDefinition rowDefinition8 = new DevExpress.XtraLayout.RowDefinition();
             this.myDataLayoutControl = new Zenix.WinUI.myUserControls.Controls.myDataLayoutControl();
             this.txtÜlke = new Zenix.WinUI.myUserControls.Controls.myButtonEdit();
-            this.cmbFirmatipi = new Zenix.WinUI.myUserControls.Controls.myComboBoxEdit();
             this.txtAdress = new Zenix.WinUI.myUserControls.Controls.myMemoEdit();
             this.txtVergiNo = new Zenix.WinUI.myUserControls.Controls.mySNTextEdit();
             this.txtVergiDairesi = new Zenix.WinUI.myUserControls.Controls.myTextEdit();
@@ -55,13 +54,13 @@
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.txtFirmaTipi = new Zenix.WinUI.myUserControls.Controls.myButtonEdit();
+            this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.myDataLayoutControl)).BeginInit();
             this.myDataLayoutControl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtÜlke.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmbFirmatipi.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtAdress.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtVergiNo.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtVergiDairesi.Properties)).BeginInit();
@@ -75,8 +74,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtFirmaTipi.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbonControl
@@ -94,8 +94,8 @@
             // 
             // myDataLayoutControl
             // 
+            this.myDataLayoutControl.Controls.Add(this.txtFirmaTipi);
             this.myDataLayoutControl.Controls.Add(this.txtÜlke);
-            this.myDataLayoutControl.Controls.Add(this.cmbFirmatipi);
             this.myDataLayoutControl.Controls.Add(this.txtAdress);
             this.myDataLayoutControl.Controls.Add(this.txtVergiNo);
             this.myDataLayoutControl.Controls.Add(this.txtVergiDairesi);
@@ -129,24 +129,6 @@
             this.txtÜlke.StatusBarKisayolAciklama = "Seç";
             this.txtÜlke.StyleController = this.myDataLayoutControl;
             this.txtÜlke.TabIndex = 2;
-            // 
-            // cmbFirmatipi
-            // 
-            this.cmbFirmatipi.EnterMoveNextControl = true;
-            this.cmbFirmatipi.Location = new System.Drawing.Point(74, 60);
-            this.cmbFirmatipi.MenuManager = this.ribbonControl;
-            this.cmbFirmatipi.Name = "cmbFirmatipi";
-            this.cmbFirmatipi.Properties.AppearanceFocused.BackColor = System.Drawing.Color.LightCyan;
-            this.cmbFirmatipi.Properties.AppearanceFocused.Options.UseBackColor = true;
-            this.cmbFirmatipi.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cmbFirmatipi.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.cmbFirmatipi.Size = new System.Drawing.Size(134, 20);
-            this.cmbFirmatipi.StatusBarAciklama = "Firma Tipini Seçiniz.";
-            this.cmbFirmatipi.StatusBarKisayol = "F4 :";
-            this.cmbFirmatipi.StatusBarKisayolAciklama = "Seç";
-            this.cmbFirmatipi.StyleController = this.myDataLayoutControl;
-            this.cmbFirmatipi.TabIndex = 1;
             // 
             // txtAdress
             // 
@@ -259,8 +241,8 @@
             this.layoutControlItem7,
             this.layoutControlItem8,
             this.layoutControlItem9,
-            this.layoutControlItem4,
-            this.layoutControlItem5});
+            this.layoutControlItem5,
+            this.layoutControlItem4});
             this.Root.LayoutMode = DevExpress.XtraLayout.Utils.LayoutMode.Table;
             this.Root.Name = "Root";
             columnDefinition1.SizeType = System.Windows.Forms.SizeType.Absolute;
@@ -375,18 +357,6 @@
             this.layoutControlItem9.Text = "Adres";
             this.layoutControlItem9.TextSize = new System.Drawing.Size(59, 13);
             // 
-            // layoutControlItem4
-            // 
-            this.layoutControlItem4.AppearanceItemCaption.ForeColor = System.Drawing.Color.Maroon;
-            this.layoutControlItem4.AppearanceItemCaption.Options.UseForeColor = true;
-            this.layoutControlItem4.Control = this.cmbFirmatipi;
-            this.layoutControlItem4.Location = new System.Drawing.Point(0, 48);
-            this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.OptionsTableLayoutItem.RowIndex = 2;
-            this.layoutControlItem4.Size = new System.Drawing.Size(200, 24);
-            this.layoutControlItem4.Text = "Firma Tipi";
-            this.layoutControlItem4.TextSize = new System.Drawing.Size(59, 13);
-            // 
             // layoutControlItem5
             // 
             this.layoutControlItem5.AppearanceItemCaption.ForeColor = System.Drawing.Color.Maroon;
@@ -398,6 +368,37 @@
             this.layoutControlItem5.Size = new System.Drawing.Size(200, 24);
             this.layoutControlItem5.Text = "Ülke";
             this.layoutControlItem5.TextSize = new System.Drawing.Size(59, 13);
+            // 
+            // txtFirmaTipi
+            // 
+            this.txtFirmaTipi.EnterMoveNextControl = true;
+            this.txtFirmaTipi.Id = null;
+            this.txtFirmaTipi.Location = new System.Drawing.Point(74, 60);
+            this.txtFirmaTipi.MenuManager = this.ribbonControl;
+            this.txtFirmaTipi.Name = "txtFirmaTipi";
+            this.txtFirmaTipi.Properties.AppearanceFocused.BackColor = System.Drawing.Color.LightCyan;
+            this.txtFirmaTipi.Properties.AppearanceFocused.Options.UseBackColor = true;
+            this.txtFirmaTipi.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton()});
+            this.txtFirmaTipi.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
+            this.txtFirmaTipi.Size = new System.Drawing.Size(134, 20);
+            this.txtFirmaTipi.StatusBarAciklama = "Firma Tipi Seçiniz";
+            this.txtFirmaTipi.StatusBarKisayol = "F4 :";
+            this.txtFirmaTipi.StatusBarKisayolAciklama = "Seç";
+            this.txtFirmaTipi.StyleController = this.myDataLayoutControl;
+            this.txtFirmaTipi.TabIndex = 8;
+            // 
+            // layoutControlItem4
+            // 
+            this.layoutControlItem4.AppearanceItemCaption.ForeColor = System.Drawing.Color.Maroon;
+            this.layoutControlItem4.AppearanceItemCaption.Options.UseForeColor = true;
+            this.layoutControlItem4.Control = this.txtFirmaTipi;
+            this.layoutControlItem4.Location = new System.Drawing.Point(0, 48);
+            this.layoutControlItem4.Name = "layoutControlItem4";
+            this.layoutControlItem4.OptionsTableLayoutItem.RowIndex = 2;
+            this.layoutControlItem4.Size = new System.Drawing.Size(200, 24);
+            this.layoutControlItem4.Text = "Firma Tipi";
+            this.layoutControlItem4.TextSize = new System.Drawing.Size(59, 13);
             // 
             // FirmaEditFormu
             // 
@@ -415,7 +416,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.myDataLayoutControl)).EndInit();
             this.myDataLayoutControl.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.txtÜlke.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmbFirmatipi.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtAdress.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtVergiNo.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtVergiDairesi.Properties)).EndInit();
@@ -429,8 +429,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtFirmaTipi.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -452,9 +453,9 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem8;
         private myUserControls.Controls.myMemoEdit txtAdress;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem9;
-        private myUserControls.Controls.myComboBoxEdit cmbFirmatipi;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
         private myUserControls.Controls.myButtonEdit txtÜlke;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
+        private myUserControls.Controls.myButtonEdit txtFirmaTipi;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
     }
 }

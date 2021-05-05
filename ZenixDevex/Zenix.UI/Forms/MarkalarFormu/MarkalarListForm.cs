@@ -16,8 +16,6 @@ using Zenix.WinUI.MainForm;
 using Zenix.WinUI.Forms.ÜrünlerFormu;
 using Zenix.Model.DTO;
 using Zenix.WinUI.Forms.RevizyonFormu;
-using Zenix.WinUI.Forms.ŞarzFormu;
-using Zenix.WinUI.Forms.PaketlemeFormu;
 
 namespace Zenix.WinUI.Forms.MarkalarFormu
 {
@@ -37,33 +35,11 @@ namespace Zenix.WinUI.Forms.MarkalarFormu
             this.Navigator = longNavigator.controlNavigator;
             Text = "Marka Kartları ";
             Tablo.ViewCaption = Text;
-            this.btnBağlıKayıtları.ImageOptions.Image = Properties.Resources.code_fork_16px;
-            this.btnBağlıKayıtları.ImageOptions.LargeImage = Properties.Resources.code_fork_32px;
-            btnBağlıKayıtları.Caption = "Revizyon Kartları";
-            ShowHideButtons(IsMdiChild, btnBağlıKayıtları, btnŞarz, btnPaketleme);
 
         }
         protected override void Listele()
         {
             Tablo.GridControl.DataSource = ((MarkalarBll)Bll).List(FilterFunctions.Filter<Markalar>(AktifKayitlariGoster));
-
-        }
-        MarkalarS GetÜrün { get => tablo.GetRow<MarkalarS>(); }
-        protected override void BağlıKayıtlarAc()
-        {
-            if (GetÜrün == null) return;
-            ShowListForms<ReziyonListForm>.ShowListForm(Common.Enums.KartTuru.Revizyon, GetÜrün);
-        }
-        protected override void ŞarjAc()
-        {
-            if (GetÜrün == null) return;
-            ShowListForms<ŞarzListForm>.ShowListForm(Common.Enums.KartTuru.Şarj, GetÜrün);
-
-        }
-        protected override void PaketlemeAc()
-        {
-            if (GetÜrün == null) return;
-            ShowListForms<PaketlemeListForm>.ShowListForm(Common.Enums.KartTuru.Paketleme, GetÜrün);
 
         }
 

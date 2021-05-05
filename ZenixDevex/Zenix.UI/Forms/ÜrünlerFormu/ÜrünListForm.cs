@@ -14,9 +14,7 @@ using Zenix.WinUI.Show;
 using Zenix.Model.DTO;
 using Zenix.WinUI.Functions;
 using Zenix.WinUI.Forms.RevizyonFormu;
-using Zenix.WinUI.Forms.ŞarzFormu;
 using Zenix.Model.Entities;
-using Zenix.WinUI.Forms.PaketlemeFormu;
 
 namespace Zenix.WinUI.Forms.ÜrünlerFormu
 {

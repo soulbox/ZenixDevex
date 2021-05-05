@@ -60,11 +60,14 @@
     <Compile Include="Functions\Crypto.cs" />
     <Compile Include="Functions\GeneralFunctions.cs" />
     <Compile Include="Functions\ValidationFunctions.cs" />
+    <Compile Include="General\AmbalajMaddeTipiBll.cs" />
+    <Compile Include="General\AmbalajTipiBll.cs" />
     <Compile Include="General\FiltreBll.cs" />
     <Compile Include="General\FirmaBll.cs" />
+    <Compile Include="General\FirmaTipiBll.cs" />
     <Compile Include="General\KazanBll.cs" />
     <Compile Include="General\KullanıcıBll.cs" />
-    <Compile Include="General\MalzemeBll.cs" />
+    <Compile Include="General\MamülBll.cs" />
     <Compile Include="General\MarkalarBll.cs" />
     <Compile Include="General\PaketlemeBll.cs" />
     <Compile Include="General\RevizyonBll.cs" />
@@ -76,7 +79,6 @@
     <Compile Include="General\ÜlkeBll.cs" />
     <Compile Include="General\ÜrünBll.cs" />
     <Compile Include="General\İşemriBll.cs" />
-    <Compile Include="General\ŞarzBll.cs" />
     <Compile Include="Interfaces\IBaseBLL.cs" />
     <Compile Include="Interfaces\IBaseCommonBLL.cs" />
     <Compile Include="Interfaces\IBaseGenelBll.cs" />

@@ -16,8 +16,8 @@ namespace Zenix.Model.Entities
 
         public Reçete Reçete { get; set; }
         public long ReçeteId { get; set; }
-        public Malzeme Malzeme { get; set; }
-        public long MalzemeId { get; set; }
+        //public Malzeme Malzeme { get; set; }
+        //public long MalzemeId { get; set; }
         public float Miktar { get; set; }
         public FazTipi FazTipi { get; set; }
 

@@ -20,7 +20,6 @@ namespace Zenix.WinUI.Forms.FirmaFormu
             this.DataLayoutControl = myDataLayoutControl;
             this.Bll = new FirmaBll(myDataLayoutControl);
             this.KartTuru = KartTuru.Firma;
-            cmbFirmatipi.ToData<FirmaTipi>();
             EventsLoad();
         }
         protected internal override void Yukle()
@@ -39,7 +38,8 @@ namespace Zenix.WinUI.Forms.FirmaFormu
             txtKod.Text          = entity.Kod;
             tglDurum.IsOn        = entity.Durum;
             txtFirmaAdi.Text     = entity.FirmaAdi;
-            cmbFirmatipi.Text    = entity.FirmaTipi.ToName();
+            txtFirmaTipi.Text    = entity.FirmaTipiAdı;
+            txtFirmaTipi.Id      = entity.FirmaTipiId;
             txtAdress.Text       = entity.Adres;
             txtVergiNo.Text      = entity.VergiNo;
             txtVergiDairesi.Text = entity.VergiDairesi;
@@ -57,10 +57,10 @@ namespace Zenix.WinUI.Forms.FirmaFormu
                 FirmaAdi     = txtFirmaAdi.Text,
                 Adres        = txtAdress.Text,
                 VergiDairesi = txtVergiDairesi.Text,
-                FirmaTipi    = cmbFirmatipi.Text.GetEnum<FirmaTipi>(),
+                FirmaTipiId  = txtFirmaTipi.GetId(),
                 VergiNo      = txtVergiNo.Text.GetNumbers(),
                 Tarih        = ((Firma)OldEntity).Tarih,
-                ÜlkeId       = txtÜlke.Id.ConvertTo<long>(),
+                ÜlkeId       = txtÜlke.GetId(),
 
             };
             ButtonEnableDurumu();

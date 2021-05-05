@@ -1,6 +1,6 @@
-﻿namespace Zenix.WinUI.Forms.ŞarzFormu
+﻿namespace Zenix.WinUI.Forms.AmbalajTipiFormu
 {
-    partial class ŞarzListForm
+    partial class FirmaTipiListForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,21 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ŞarzListForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AmbalajTipiListForm));
+            this.longNavigator = new Zenix.WinUI.myUserControls.Navigator.LongNavigator();
             this.Grid = new Zenix.WinUI.myUserControls.Grid.myGridControl();
             this.Tablo = new Zenix.WinUI.myUserControls.Grid.myGridview();
             this.colId = new Zenix.WinUI.myUserControls.Grid.MyGridColumn();
             this.colKod = new Zenix.WinUI.myUserControls.Grid.MyGridColumn();
-            this.colRevTarih = new Zenix.WinUI.myUserControls.Grid.MyGridColumn();
-            this.repositoryItemDateEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
-            this.colRevKodu = new Zenix.WinUI.myUserControls.Grid.MyGridColumn();
-            this.colAçıklama = new Zenix.WinUI.myUserControls.Grid.MyGridColumn();
-            this.longNavigator = new Zenix.WinUI.myUserControls.Navigator.LongNavigator();
+            this.colAdı = new Zenix.WinUI.myUserControls.Grid.MyGridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Grid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Tablo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1.CalendarTimeProperties)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbonControl
@@ -55,12 +50,21 @@
             this.ribbonControl.SearchEditItem.EditWidth = 150;
             this.ribbonControl.SearchEditItem.Id = -5000;
             this.ribbonControl.SearchEditItem.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
+            this.ribbonControl.Size = new System.Drawing.Size(528, 109);
             this.ribbonControl.Toolbar.ShowCustomizeItem = false;
             // 
             // btnGonder
             // 
             this.btnGonder.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnGonder.ImageOptions.Image")));
             this.btnGonder.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnGonder.ImageOptions.LargeImage")));
+            // 
+            // longNavigator
+            // 
+            this.longNavigator.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.longNavigator.Location = new System.Drawing.Point(0, 500);
+            this.longNavigator.Name = "longNavigator";
+            this.longNavigator.Size = new System.Drawing.Size(528, 24);
+            this.longNavigator.TabIndex = 2;
             // 
             // Grid
             // 
@@ -69,10 +73,8 @@
             this.Grid.MainView = this.Tablo;
             this.Grid.MenuManager = this.ribbonControl;
             this.Grid.Name = "Grid";
-            this.Grid.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
-            this.repositoryItemDateEdit1});
-            this.Grid.Size = new System.Drawing.Size(952, 357);
-            this.Grid.TabIndex = 9;
+            this.Grid.Size = new System.Drawing.Size(528, 391);
+            this.Grid.TabIndex = 4;
             this.Grid.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.Tablo});
             // 
@@ -91,9 +93,7 @@
             this.Tablo.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colId,
             this.colKod,
-            this.colRevTarih,
-            this.colRevKodu,
-            this.colAçıklama});
+            this.colAdı});
             this.Tablo.GridControl = this.Grid;
             this.Tablo.Name = "Tablo";
             this.Tablo.OptionsFind.AlwaysVisible = true;
@@ -107,7 +107,6 @@
             this.Tablo.OptionsNavigation.EnterMoveNextColumn = true;
             this.Tablo.OptionsPrint.AutoWidth = false;
             this.Tablo.OptionsPrint.PrintGroupFooter = false;
-            this.Tablo.OptionsView.ColumnAutoWidth = false;
             this.Tablo.OptionsView.HeaderFilterButtonShowMode = DevExpress.XtraEditors.Controls.FilterButtonShowMode.Button;
             this.Tablo.OptionsView.RowAutoHeight = true;
             this.Tablo.OptionsView.ShowAutoFilterRow = true;
@@ -116,6 +115,7 @@
             this.Tablo.StatusBarAciklama = null;
             this.Tablo.StatusBarKisayol = null;
             this.Tablo.StatusBarKisayolAciklama = null;
+            this.Tablo.ViewCaption = "Filitreler";
             // 
             // colId
             // 
@@ -136,91 +136,44 @@
             this.colKod.FieldName = "Kod";
             this.colKod.Name = "colKod";
             this.colKod.OptionsColumn.AllowEdit = false;
+            this.colKod.OptionsColumn.FixedWidth = true;
             this.colKod.StatusBarAciklama = null;
             this.colKod.StatusBarKisayol = null;
             this.colKod.StatusBarKisayolAciklama = null;
             this.colKod.Visible = true;
             this.colKod.VisibleIndex = 0;
-            this.colKod.Width = 108;
+            this.colKod.Width = 169;
             // 
-            // colRevTarih
+            // colAdı
             // 
-            this.colRevTarih.AppearanceCell.Options.UseTextOptions = true;
-            this.colRevTarih.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colRevTarih.Caption = "Şarz Tarihi";
-            this.colRevTarih.ColumnEdit = this.repositoryItemDateEdit1;
-            this.colRevTarih.FieldName = "Tarih";
-            this.colRevTarih.Name = "colRevTarih";
-            this.colRevTarih.OptionsColumn.AllowEdit = false;
-            this.colRevTarih.StatusBarAciklama = null;
-            this.colRevTarih.StatusBarKisayol = null;
-            this.colRevTarih.StatusBarKisayolAciklama = null;
-            this.colRevTarih.Visible = true;
-            this.colRevTarih.VisibleIndex = 1;
-            this.colRevTarih.Width = 200;
+            this.colAdı.Caption = "Adı";
+            this.colAdı.FieldName = "Adı";
+            this.colAdı.Name = "colAdı";
+            this.colAdı.OptionsColumn.AllowEdit = false;
+            this.colAdı.StatusBarAciklama = null;
+            this.colAdı.StatusBarKisayol = null;
+            this.colAdı.StatusBarKisayolAciklama = null;
+            this.colAdı.Visible = true;
+            this.colAdı.VisibleIndex = 1;
+            this.colAdı.Width = 280;
             // 
-            // repositoryItemDateEdit1
-            // 
-            this.repositoryItemDateEdit1.AutoHeight = false;
-            this.repositoryItemDateEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repositoryItemDateEdit1.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repositoryItemDateEdit1.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.DateTimeAdvancingCaret;
-            this.repositoryItemDateEdit1.Name = "repositoryItemDateEdit1";
-            // 
-            // colRevKodu
-            // 
-            this.colRevKodu.Caption = "Şarz Kodu";
-            this.colRevKodu.FieldName = "ŞarzKodu";
-            this.colRevKodu.Name = "colRevKodu";
-            this.colRevKodu.OptionsColumn.AllowEdit = false;
-            this.colRevKodu.StatusBarAciklama = null;
-            this.colRevKodu.StatusBarKisayol = null;
-            this.colRevKodu.StatusBarKisayolAciklama = null;
-            this.colRevKodu.Visible = true;
-            this.colRevKodu.VisibleIndex = 2;
-            this.colRevKodu.Width = 200;
-            // 
-            // colAçıklama
-            // 
-            this.colAçıklama.Caption = "Açıklama";
-            this.colAçıklama.FieldName = "Açıklama";
-            this.colAçıklama.Name = "colAçıklama";
-            this.colAçıklama.OptionsColumn.AllowEdit = false;
-            this.colAçıklama.StatusBarAciklama = null;
-            this.colAçıklama.StatusBarKisayol = null;
-            this.colAçıklama.StatusBarKisayolAciklama = null;
-            this.colAçıklama.Visible = true;
-            this.colAçıklama.VisibleIndex = 3;
-            this.colAçıklama.Width = 200;
-            // 
-            // longNavigator
-            // 
-            this.longNavigator.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.longNavigator.Location = new System.Drawing.Point(0, 466);
-            this.longNavigator.Name = "longNavigator";
-            this.longNavigator.Size = new System.Drawing.Size(952, 24);
-            this.longNavigator.TabIndex = 8;
-            // 
-            // ŞarzListForm
+            // AmbalajTipiListForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(952, 514);
+            this.ClientSize = new System.Drawing.Size(528, 548);
             this.Controls.Add(this.Grid);
             this.Controls.Add(this.longNavigator);
             this.IconOptions.ShowIcon = false;
-            this.Name = "ŞarzListForm";
-            this.Text = "ŞarzListForm";
+            this.MinimumSize = new System.Drawing.Size(530, 549);
+            this.Name = "AmbalajTipiListForm";
+            this.Text = "AmbalajTİpiListForm";
             this.Controls.SetChildIndex(this.ribbonControl, 0);
             this.Controls.SetChildIndex(this.longNavigator, 0);
             this.Controls.SetChildIndex(this.Grid, 0);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Grid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Tablo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1.CalendarTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -228,14 +181,11 @@
 
         #endregion
 
+        private myUserControls.Navigator.LongNavigator longNavigator;
         private myUserControls.Grid.myGridControl Grid;
         private myUserControls.Grid.myGridview Tablo;
         private myUserControls.Grid.MyGridColumn colId;
         private myUserControls.Grid.MyGridColumn colKod;
-        protected myUserControls.Grid.MyGridColumn colRevTarih;
-        private DevExpress.XtraEditors.Repository.RepositoryItemDateEdit repositoryItemDateEdit1;
-        protected myUserControls.Grid.MyGridColumn colRevKodu;
-        private myUserControls.Grid.MyGridColumn colAçıklama;
-        private myUserControls.Navigator.LongNavigator longNavigator;
+        private myUserControls.Grid.MyGridColumn colAdı;
     }
 }

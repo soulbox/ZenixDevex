@@ -15,8 +15,8 @@ namespace Zenix.Model.Entities
     {
         public Satınalma Satınalma  { get; set; }
         public long SatınalmaId { get; set; }
-        public Malzeme Malzeme  { get; set; }
-        public long MalzemeId { get; set; }
+        //public Malzeme Malzeme  { get; set; }
+        //public long MalzemeId { get; set; }
         public int Miktar { get; set; }
         public DateTime TerminTarihi { get; set; }
 

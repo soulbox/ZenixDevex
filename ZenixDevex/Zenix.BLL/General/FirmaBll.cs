@@ -34,6 +34,7 @@ namespace Zenix.BLL.General
                 FirmaTipi = x.FirmaTipi,
                 ÜlkeAdı = x.Ülke.Adı,
                 ÜlkeId = x.ÜlkeId,
+                FirmaTipiAdı=x.FirmaTipi.Adı,
 
             });
         }
@@ -52,6 +53,8 @@ namespace Zenix.BLL.General
                 FirmaTipi = x.FirmaTipi,
                 ÜlkeAdı  = x.Ülke.Adı,
                 ÜlkeId = x.ÜlkeId,
+                FirmaTipiAdı = x.FirmaTipi.Adı,
+
 
             }).OrderBy(x => x.Kod).ToList();
         }

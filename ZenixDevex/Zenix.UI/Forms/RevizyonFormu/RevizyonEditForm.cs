@@ -19,10 +19,10 @@ namespace Zenix.WinUI.Forms.RevizyonFormu
 {
     public partial class RevizyonEditForm : BaseEditForm
     {
-        readonly MarkalarS marka;
+      
         public RevizyonEditForm(params object[] prm)
         {
-            marka = (MarkalarS)prm[0];
+         
             InitializeComponent();
             
             this.DataLayoutControl = myDataLayoutControl;
@@ -43,7 +43,7 @@ namespace Zenix.WinUI.Forms.RevizyonFormu
             NesneyiKontrollereBagla();
             if (BaseIslemTuru != IslemTuru.EntityInsert) return;
             Id = BaseIslemTuru.IdOlustur(OldEntity);
-            txtKod.Text = ((RevizyonBll)Bll).YeniKodVer(x => x.MarkalarId == marka.Id );
+            //txtKod.Text = ((RevizyonBll)Bll).YeniKodVer(x => x.MarkalarId == marka.Id );
             dtRevTarih.Focus();
         }
         protected override void NesneyiKontrollereBagla()
@@ -70,14 +70,14 @@ namespace Zenix.WinUI.Forms.RevizyonFormu
 
         }
 
-        protected override bool EntityInsert()
-        {
-            return ((RevizyonBll)Bll).Insert(CurrentEntity, x => x.Kod == CurrentEntity.Kod && x.MarkalarId  == marka.Id);
-        }
-        protected override bool EntityUpdate()
-        {
-            return ((RevizyonBll)Bll).Update(OldEntity, CurrentEntity, x => x.Kod == CurrentEntity.Kod && x.MarkalarId == marka.Id);
+        //protected override bool EntityInsert()
+        //{
+        //    return ((RevizyonBll)Bll).Insert(CurrentEntity, x => x.Kod == CurrentEntity.Kod && x.MarkalarId  == marka.Id);
+        //}
+        //protected override bool EntityUpdate()
+        //{
+        //    return ((RevizyonBll)Bll).Update(OldEntity, CurrentEntity, x => x.Kod == CurrentEntity.Kod && x.MarkalarId == marka.Id);
 
-        }
+        //}
     }
 }

@@ -12,5 +12,7 @@ namespace Zenix.Model.DTO
     public class FirmalarL : Firma
     {
         public string ÜlkeAdı { get; set; }
+        public string FirmaTipiAdı { get; set; }
+
     }
 }

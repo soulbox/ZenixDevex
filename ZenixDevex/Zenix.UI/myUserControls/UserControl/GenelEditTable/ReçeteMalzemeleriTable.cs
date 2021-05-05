@@ -43,22 +43,22 @@ namespace Zenix.WinUI.myUserControls.UserControl.GenelEditTable
         protected override void HareketEkle()
         {
 
-            var source = tablo.DataController.ListSource;
-            ListeDışıtutulacakkayıtlar = source.Cast<ReçeteMalzemeleriL>().Where(x => !x.Delete).Select(x => (long)x.MalzemeId).ToList();
-            var entities = ShowListForms<ReçeteMalzemeleriListForm>.ShowDialogListForm(ListeDışıtutulacakkayıtlar, true).EntityListConvert<ReçeteMalzemeleriS>();
-            if (entities == null) return;
-            entities.ForEach(x =>
-            {
-                source.Add(new ReçeteMalzemeleriL
-                {
-                    ReçeteId = ownerform != null ? ownerform.Id : 0,
-                    MalzemeAdı = x.Adı,
-                    MalzemeId = x.Id,
-                    Insert = true
-                });
-            });
-            tablo.Focus();
-            tablo.RefreshDataSource();
+            //var source = tablo.DataController.ListSource;
+            //ListeDışıtutulacakkayıtlar = source.Cast<ReçeteMalzemeleriL>().Where(x => !x.Delete).Select(x => (long)x.MalzemeId).ToList();
+            //var entities = ShowListForms<ReçeteMalzemeleriListForm>.ShowDialogListForm(ListeDışıtutulacakkayıtlar, true).EntityListConvert<ReçeteMalzemeleriS>();
+            //if (entities == null) return;
+            //entities.ForEach(x =>
+            //{
+            //    source.Add(new ReçeteMalzemeleriL
+            //    {
+            //        ReçeteId = ownerform != null ? ownerform.Id : 0,
+            //        MalzemeAdı = x.Adı,
+            //        MalzemeId = x.Id,
+            //        Insert = true
+            //    });
+            //});
+            //tablo.Focus();
+            //tablo.RefreshDataSource();
 
             tablo.FocusedRowHandle = tablo.DataRowCount - 1;
             ButtonEnableDurum(true);

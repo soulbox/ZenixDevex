@@ -67,7 +67,7 @@
     <GenerateManifests>true</GenerateManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <SignManifests>true</SignManifests>
+    <SignManifests>false</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationIcon>zenix.ico</ApplicationIcon>
@@ -127,6 +127,30 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Forms\AmbalajMaddeTipiFormu\AmbalajMaddeTipiEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AmbalajMaddeTipiFormu\AmbalajMaddeTipiEditForm.Designer.cs">
+      <DependentUpon>AmbalajMaddeTipiEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AmbalajMaddeTipiFormu\AmbalajMaddeTipiListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AmbalajMaddeTipiFormu\AmbalajMaddeTipiListForm.Designer.cs">
+      <DependentUpon>AmbalajMaddeTipiListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AmbalajTipiFormu\AmbalajTipiEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AmbalajTipiFormu\AmbalajTipiEditForm.Designer.cs">
+      <DependentUpon>AmbalajTipiEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AmbalajTipiFormu\AmbalajTipiListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AmbalajTipiFormu\AmbalajTipiListForm.Designer.cs">
+      <DependentUpon>AmbalajTipiListForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\BaseForms\BaseEditForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -162,6 +186,18 @@
     </Compile>
     <Compile Include="Forms\FirmaFormu\FirmaListFormu.Designer.cs">
       <DependentUpon>FirmaListFormu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FirmaTipiFormu\FirmaTipiEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FirmaTipiFormu\FirmaTipiEditForm.Designer.cs">
+      <DependentUpon>FirmaTipiEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FirmaTipiFormu\FirmaTipiListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FirmaTipiFormu\FirmaTipiListForm.Designer.cs">
+      <DependentUpon>FirmaTipiListForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\KazanFormu\KazanEditForm.cs">
       <SubType>Form</SubType>
@@ -217,17 +253,17 @@
     <Compile Include="Forms\KullanıcıForms\ŞifremiUnuttumEditForm.Designer.cs">
       <DependentUpon>ŞifremiUnuttumEditForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\MalzemeFormu\MalzemeEditForm.cs">
+    <Compile Include="Forms\MamülFormu\MamülEditForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\MalzemeFormu\MalzemeEditForm.Designer.cs">
-      <DependentUpon>MalzemeEditForm.cs</DependentUpon>
+    <Compile Include="Forms\MamülFormu\MamülEditForm.Designer.cs">
+      <DependentUpon>MamülEditForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\MalzemeFormu\MalzemeListForm.cs">
+    <Compile Include="Forms\MamülFormu\MamülListForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\MalzemeFormu\MalzemeListForm.Designer.cs">
-      <DependentUpon>MalzemeListForm.cs</DependentUpon>
+    <Compile Include="Forms\MamülFormu\MamülListForm.Designer.cs">
+      <DependentUpon>MamülListForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\MarkalarFormu\MarkalarEditForm.cs">
       <SubType>Form</SubType>
@@ -240,18 +276,6 @@
     </Compile>
     <Compile Include="Forms\MarkalarFormu\MarkalarListForm.Designer.cs">
       <DependentUpon>MarkalarListForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\PaketlemeFormu\PaketlemeEditForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\PaketlemeFormu\PaketlemeEditForm.Designer.cs">
-      <DependentUpon>PaketlemeEditForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\PaketlemeFormu\PaketlemeListForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\PaketlemeFormu\PaketlemeListForm.Designer.cs">
-      <DependentUpon>PaketlemeListForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\RevizyonFormu\RevizyonEditForm.cs">
       <SubType>Form</SubType>
@@ -330,18 +354,6 @@
     </Compile>
     <Compile Include="Forms\İşemriFormu\İşemriListForm.Designer.cs">
       <DependentUpon>İşemriListForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\ŞarzFormu\ŞarzEditForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\ŞarzFormu\ŞarzEditForm.Designer.cs">
-      <DependentUpon>ŞarzEditForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\ŞarzFormu\ŞarzListForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\ŞarzFormu\ŞarzListForm.Designer.cs">
-      <DependentUpon>ŞarzListForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Functions\FileFunctions.cs" />
     <Compile Include="Functions\FilterFunctions.cs" />
@@ -508,6 +520,18 @@
     <Compile Include="Show\ShowEditForms.cs" />
     <Compile Include="Show\ShowListForms.cs" />
     <Compile Include="Show\ShowRibbonForms.cs" />
+    <EmbeddedResource Include="Forms\AmbalajMaddeTipiFormu\AmbalajMaddeTipiEditForm.resx">
+      <DependentUpon>AmbalajMaddeTipiEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AmbalajMaddeTipiFormu\AmbalajMaddeTipiListForm.resx">
+      <DependentUpon>AmbalajMaddeTipiListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AmbalajTipiFormu\AmbalajTipiEditForm.resx">
+      <DependentUpon>AmbalajTipiEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AmbalajTipiFormu\AmbalajTipiListForm.resx">
+      <DependentUpon>AmbalajTipiListForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\BaseForms\BaseEditForm.resx">
       <DependentUpon>BaseEditForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -525,6 +549,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FirmaFormu\FirmaListFormu.resx">
       <DependentUpon>FirmaListFormu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FirmaTipiFormu\FirmaTipiEditForm.resx">
+      <DependentUpon>FirmaTipiEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FirmaTipiFormu\FirmaTipiListForm.resx">
+      <DependentUpon>FirmaTipiListForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\KazanFormu\KazanEditForm.resx">
       <DependentUpon>KazanEditForm.cs</DependentUpon>
@@ -553,23 +583,17 @@
     <EmbeddedResource Include="Forms\KullanıcıForms\ŞifremiUnuttumEditForm.resx">
       <DependentUpon>ŞifremiUnuttumEditForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\MalzemeFormu\MalzemeEditForm.resx">
-      <DependentUpon>MalzemeEditForm.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\MamülFormu\MamülEditForm.resx">
+      <DependentUpon>MamülEditForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\MalzemeFormu\MalzemeListForm.resx">
-      <DependentUpon>MalzemeListForm.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\MamülFormu\MamülListForm.resx">
+      <DependentUpon>MamülListForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MarkalarFormu\MarkalarEditForm.resx">
       <DependentUpon>MarkalarEditForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MarkalarFormu\MarkalarListForm.resx">
       <DependentUpon>MarkalarListForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\PaketlemeFormu\PaketlemeEditForm.resx">
-      <DependentUpon>PaketlemeEditForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\PaketlemeFormu\PaketlemeListForm.resx">
-      <DependentUpon>PaketlemeListForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\RevizyonFormu\RevizyonEditForm.resx">
       <DependentUpon>RevizyonEditForm.cs</DependentUpon>
@@ -606,12 +630,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\İşemriFormu\İşemriEditForm.resx">
       <DependentUpon>İşemriEditForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ŞarzFormu\ŞarzEditForm.resx">
-      <DependentUpon>ŞarzEditForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ŞarzFormu\ŞarzListForm.resx">
-      <DependentUpon>ŞarzListForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm\AnaForm.resx">
       <DependentUpon>AnaForm.cs</DependentUpon>
@@ -695,6 +713,10 @@
     <Content Include="Logs\Dosya Sistemi.txt" />
     <Content Include="Logs\kasa.txt" />
     <Content Include="Logs\Müşteri Kartları.txt" />
+    <None Include="Resources\box_settings_16px.png" />
+    <None Include="Resources\box_settings_32px.png" />
+    <None Include="Resources\icons8_gg_16px.png" />
+    <None Include="Resources\icons8_gg_32px_3.png" />
     <Content Include="zenix.ico" />
     <None Include="Resources\abacus_16px.png" />
     <None Include="Resources\abacus_32px.png" />
@@ -2088,6 +2110,7 @@
       <FileType>Satellite</FileType>
     </PublishFile>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

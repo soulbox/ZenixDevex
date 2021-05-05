@@ -223,7 +223,7 @@
             // colMTipi
             // 
             this.colMTipi.Caption = "Firma Tipi";
-            this.colMTipi.FieldName = "FirmaTipi";
+            this.colMTipi.FieldName = "FirmaTipiAdı";
             this.colMTipi.Name = "colMTipi";
             this.colMTipi.OptionsColumn.AllowEdit = false;
             this.colMTipi.StatusBarAciklama = null;

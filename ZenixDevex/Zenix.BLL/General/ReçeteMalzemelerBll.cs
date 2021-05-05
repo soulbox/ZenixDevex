@@ -22,10 +22,10 @@ namespace Zenix.BLL.General
                 Id = x.Id,
                 ReçeteId = x.ReçeteId,
                 Miktar = x.Miktar,
-                MalzemeId = x.MalzemeId,
-                FazTipi = x.FazTipi,
-                MalzemeAdı = x.Malzeme.Adı,
-                Birim = x.Malzeme.MalzemeBirimi,
+                //MalzemeId = x.MalzemeId,
+                //FazTipi = x.FazTipi,
+                //MalzemeAdı = x.Malzeme.Adı,
+                //Birim = x.Malzeme.MalzemeBirimi,
             })
            //.AsEnumerable()// veriler çekilsin
            //.OrderBy(x => x.KartTuru.ToName())

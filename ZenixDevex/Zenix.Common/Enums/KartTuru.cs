@@ -27,8 +27,8 @@ namespace Zenix.Common.Enums
         Paketleme = 10,
         [Description("Sipariş Kartı")]
         Sipariş = 11,
-        [Description("Malzeme Kartı")]
-        Malzeme = 12,
+        [Description("Mamül Kartı")]
+        Mamül = 12,
         [Description("Reçete Kartı")]
         Reçete = 13,
         [Description("Kazan Kartı")]
@@ -37,6 +37,12 @@ namespace Zenix.Common.Enums
         İşemri = 15,
         [Description("Marka Kartı")]
         Markalar = 16,
+        [Description("Ambalaj Kartı")]
+        AmbalajTipi = 17,
+        [Description("Ambalaj Madde Kartı")]
+        AmbalajMaddeTipi = 18,
+        [Description("Firma Tipi Kartı")]
+        FirmaTipi = 19,
 
     }
 }
