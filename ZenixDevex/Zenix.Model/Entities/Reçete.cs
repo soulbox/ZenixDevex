@@ -11,16 +11,33 @@ using Zenix.Model.Entities.Base;
 
 namespace Zenix.Model.Entities
 {
-    public class Reçete : BaseEntity
+    public interface IBaseReçete
     {
-        [Index(name: "IX_Kod", IsUnique = false)]
+        long RevizyonId { get; set; }
+        string AFazıHazırlanış { get; set; }
+        string BFazıHazırlanış { get; set; }
+        string CFazıHazırlanış { get; set; }
+        string DFazıHazırlanış { get; set; }
+        string Açıklama { get; set; }
+
+    }
+    public class Reçete : BaseEntityDurum, IBaseReçete
+    {
+        [Index(name: "IX_Kod", IsUnique = true)]
         public override string Kod { get; set; }
-        public Markalar Markalar { get; set; }
-        [ZorunluAlan("Revizyon","txtRevizyon")]
-        public long MarkalarId { get; set; }
+        public Ürün Ürün { get; set; }
+        [Required,ZorunluAlan("Ürün", "txtÜrün")]
+        public long ÜrünId { get; set; }
+        public Revizyon Revizyon { get; set; }
+        [Required,ZorunluAlan("Revizyonu", "txtRevizyon")]
+        public long RevizyonId { get; set; }
+
         public string AFazıHazırlanış { get; set; }
         public string BFazıHazırlanış { get; set; }
         public string CFazıHazırlanış { get; set; }
+        public string DFazıHazırlanış { get; set; }
+        public string Açıklama { get; set; }
+
 
         public ICollection<ReçeteMalzemeler> ReçeteMalzemeler { get; set; }
     }

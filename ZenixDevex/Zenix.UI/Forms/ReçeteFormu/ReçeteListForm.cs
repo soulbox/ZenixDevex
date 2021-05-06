@@ -36,9 +36,9 @@ namespace Zenix.WinUI.Forms.ReçeteFormu
         }
         protected override void Listele()
         {
-            //var liste = ((ReçeteBll)Bll).List(x =>  x.Revizyon.Durum == AktifKayitlariGoster   );
+            var liste = ((ReçeteBll)Bll).List(x => x.Durum == AktifKayitlariGoster);
 
-            //Tablo.GridControl.DataSource = liste;
+            Tablo.GridControl.DataSource = liste;
         }
     }
 }

@@ -36,6 +36,7 @@ namespace Zenix.BLL.General
                 MamülId = x.MamülId,
                 MarkaAdı = x.Marka.MarkaAdı,
                 MarkaId = x.MarkaId,
+                
 
 
             });

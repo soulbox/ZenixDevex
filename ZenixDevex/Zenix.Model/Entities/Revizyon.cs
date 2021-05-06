@@ -13,19 +13,22 @@ using Zenix.Model.Entities.Base;
 
 namespace Zenix.Model.Entities
 {
-    public class Revizyon : BaseEntityDurum
+    public class Revizyon : BaseRevizyon
+    {
+
+        public Ürün Ürün { get; set; }
+        public long ÜrünId { get; set; }
+        public string Açıklama { get; set; }
+
+    }
+    public class BaseRevizyon : BaseEntityDurum
     {
         [Index(name: "IX_Kod", IsUnique = false)]
         public override string Kod { get; set; }
-        public Markalar Markalar { get; set; }
-        public long MarkalarId { get; set; }
-        public DateTime RevizyonTarihi { get; set; }= DateTime.Now;
-        public string Açıklama { get; set; }
+        public DateTime RevizyonTarihi { get; set; } = DateTime.Now;
         [NotMapped]
-        int GetRevNo { get => Convert.ToInt32(Regex.Match(Kod, @"\d+").Value); }
+        public int RevNo { get => string.IsNullOrEmpty(Kod) ? 1 : Convert.ToInt32(Regex.Match(Kod, @"\d+").Value); }
         [NotMapped]
-        public string RevKodu { get => $"{RevizyonTarihi:ddMMyyyy}-{GetRevNo:00}"; }
-
-
+        public string RevKodu { get => $"{RevizyonTarihi:ddMMyyyy}-{RevNo:00}"; }
     }
 }

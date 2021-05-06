@@ -36,27 +36,32 @@ namespace Zenix.WinUI.Forms.ReçeteFormu
             TabloYükle();
             if (BaseIslemTuru != Common.Enums.IslemTuru.EntityInsert) return;
             Id = BaseIslemTuru.IdOlustur(OldEntity);
-            //txtKod.Text = ((ReçeteBll)Bll).YeniKodVer(x => x.RevizyonId == ((ReçeteS)OldEntity).RevizyonId);
+            txtKod.Text = ((ReçeteBll)Bll).YeniKodVer();
             txtÜrün.Focus();
         }
         protected override void NesneyiKontrollereBagla()
         {
             var entity = (ReçeteS)OldEntity;
             txtKod.Text = entity.Kod;
-            txtFirma.Text = entity.FirmaAdı;
-            txtFirma.Id = entity.FirmaId;
-            txtÜrün.Text = entity.ÜrünAdı;
+            tglDurum.IsOn = entity.Durum;
             txtÜrün.Id = entity.ÜrünId;
-            txtRevizyon.Text = entity.RevKodu;
-            //txtRevizyon.Id = entity.RevizyonId;
-
+            txtRevizyon.Id = entity.RevizyonId;
             txtAFaz.Text = entity.AFazıHazırlanış;
             txtBFaz.Text = entity.BFazıHazırlanış;
             txtCFaz.Text = entity.CFazıHazırlanış;
-            if (BaseIslemTuru == Common.Enums.IslemTuru.EntityUpdate)
+            txtAçıklama.Text = entity.Açıklama;
+            if (BaseIslemTuru == Common.Enums.IslemTuru.EntityInsert) return;
+            txtÜrün.Text = $"[{entity.MarkaAdı}-{entity.MamülAdı}-{entity.GTIN}]";
+            txtRevizyon.Text = entity.RevKodu;
+            txtÜrün.Tag = new ÜrünL
             {
-                //txtÜrün.Tag =
-            }
+                Id = entity.ÜrünId,
+                GTIN = entity.GTIN,
+                MamülAdı = entity.MamülAdı,
+                MarkaAdı = entity.MarkaAdı,
+                FirmaAdi = entity.FirmaAdi,
+
+            };
 
         }
         protected override void GuncelNesneOluştur()
@@ -65,11 +70,13 @@ namespace Zenix.WinUI.Forms.ReçeteFormu
             {
                 Id = Id,
                 Kod = txtKod.Text,
-                //RevizyonId = txtRevizyon.Id.ConvertTo<long>(),
+                Durum = tglDurum.IsOn,
+                RevizyonId = txtRevizyon.GetId(),
+                ÜrünId = txtÜrün.GetId(),
                 AFazıHazırlanış = txtAFaz.Text,
                 BFazıHazırlanış = txtBFaz.Text,
                 CFazıHazırlanış = txtCFaz.Text,
-
+                Açıklama = txtAçıklama.Text,
 
             };
             ButtonEnableDurumu();
@@ -79,10 +86,17 @@ namespace Zenix.WinUI.Forms.ReçeteFormu
             if (!(sender is myButtonEdit)) return;
             using (var sec = new SelectFunctions())
             {
-                if (sender == txtFirma)
-                    sec.Seç(txtFirma);
                 if (sender == txtÜrün)
-                    sec.Seç(txtÜrün, txtFirma);
+                {
+                    sec.Seç(txtÜrün);
+                    using (var revbll = new RevizyonBll())
+                    {
+                        var entity = revbll.GetMaxRevizyon(txtÜrün.GetId());
+                        if (entity == null) return;
+                        txtRevizyon.Id = entity.Id;
+                        txtRevizyon.Text = entity.RevKodu;
+                    }
+                }
                 if (sender == txtRevizyon)
                     sec.Seç(txtRevizyon, txtÜrün);
 
@@ -90,12 +104,9 @@ namespace Zenix.WinUI.Forms.ReçeteFormu
         }
         protected override void Control_EnabledChange(object sender, EventArgs e)
         {
-            if (sender == txtFirma)
-                txtFirma.KontrolEnabledChange(txtÜrün);
             if (sender == txtÜrün)
                 txtÜrün.KontrolEnabledChange(txtRevizyon);
-            if (sender == txtRevizyon)
-                EditValueChanged(sender, e);
+            EditValueChanged(sender, e);
         }
         protected override void EditValueChanged(object sender, EventArgs e)
         {
@@ -115,17 +126,17 @@ namespace Zenix.WinUI.Forms.ReçeteFormu
             GeneralFunctions.ButtonEnabledDurumu(btnYeni, btnKaydet, btnGeriAl, btnSil, OldEntity, CurrentEntity, reçeteMalzemeleriTable.tablevaluechanged);
         }
 
-        //protected override bool EntityInsert()
-        //{
+        protected override bool EntityInsert()
+        {
 
-        //    if (reçeteMalzemeleriTable.HatalıGiriş()) return false;
-        //    return ((ReçeteBll)Bll).Insert(CurrentEntity, x => x.Kod == CurrentEntity.Kod && x.RevizyonId == txtRevizyon.Id) && reçeteMalzemeleriTable.Kaydet();
-        //}
-        //protected override bool EntityUpdate()
-        //{
+            if (reçeteMalzemeleriTable.HatalıGiriş()) return false;
+            return base.EntityInsert() && reçeteMalzemeleriTable.Kaydet();
+        }
+        protected override bool EntityUpdate()
+        {
 
-        //    if (reçeteMalzemeleriTable.HatalıGiriş()) return false;
-        //    return ((ReçeteBll)Bll).Update(OldEntity, CurrentEntity, x => x.Kod == CurrentEntity.Kod && x.RevizyonId == txtRevizyon.Id) && reçeteMalzemeleriTable.Kaydet();
-        //}
+            if (reçeteMalzemeleriTable.HatalıGiriş()) return false;
+            return base.EntityUpdate() && reçeteMalzemeleriTable.Kaydet();
+        }
     }
 }

@@ -12,15 +12,18 @@ using System.ComponentModel;
 
 namespace Zenix.Model.Entities
 {
-    public interface IÜrün
+    public interface IPaket
+    {
+        int Kutu { get; set; }
+        int Stand { get; set; }
+        int Koli { get; set; }
+    }
+    public interface IÜrün:IPaket
     {
         string GTIN { get; set; }
         long MarkaId { get; set; }
         long? FirmaId { get; set; }
         long MamülId { get; set; }
-        int Kutu { get; set; }
-        int Stand { get; set; }
-        int Koli { get; set; }
 
     }
     public class Ürün : BaseEntityDurum, IÜrün
@@ -36,7 +39,7 @@ namespace Zenix.Model.Entities
         public long MarkaId { get; set; }
         //[Required,ZorunluAlan("Firma","txtFirma")]
         public long? FirmaId { get; set; }
-        [Required, ZorunluAlan("Mamül", "txtÜrün")]
+        [Required, ZorunluAlan("Mamül", "txtMamül")]
         public long MamülId { get; set; }
         public Markalar Marka { get; set; }
         public Firma Firma { get; set; }

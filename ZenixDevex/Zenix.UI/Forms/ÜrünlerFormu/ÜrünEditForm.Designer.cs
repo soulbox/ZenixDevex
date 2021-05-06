@@ -50,6 +50,14 @@
             DevExpress.XtraLayout.RowDefinition rowDefinition15 = new DevExpress.XtraLayout.RowDefinition();
             DevExpress.XtraLayout.RowDefinition rowDefinition16 = new DevExpress.XtraLayout.RowDefinition();
             this.myDataLayoutControl = new Zenix.WinUI.myUserControls.Controls.myDataLayoutControl();
+            this.txtFirma = new Zenix.WinUI.myUserControls.Controls.myButtonEdit();
+            this.txtMamül = new Zenix.WinUI.myUserControls.Controls.myButtonEdit();
+            this.txtKoli = new Zenix.WinUI.myUserControls.Controls.mySpinEdit();
+            this.txtStand = new Zenix.WinUI.myUserControls.Controls.mySpinEdit();
+            this.txtKutu = new Zenix.WinUI.myUserControls.Controls.mySpinEdit();
+            this.txtMarka = new Zenix.WinUI.myUserControls.Controls.myButtonEdit();
+            this.myCheckedComboBoxEdit1 = new Zenix.WinUI.myUserControls.Controls.myCheckedComboBoxEdit();
+            this.txtGTIN = new Zenix.WinUI.myUserControls.Controls.myUrunGTIN();
             this.txtBoy = new Zenix.WinUI.myUserControls.Controls.mySpinEdit();
             this.cmbAğırlıkBirim = new Zenix.WinUI.myUserControls.Controls.myComboBoxEdit();
             this.cmbAlanBirim = new Zenix.WinUI.myUserControls.Controls.myComboBoxEdit();
@@ -85,25 +93,25 @@
             this.lay = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem13 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.txtGTIN = new Zenix.WinUI.myUserControls.Controls.myUrunGTIN();
-            this.myCheckedComboBoxEdit1 = new Zenix.WinUI.myUserControls.Controls.myCheckedComboBoxEdit();
-            this.txtMarka = new Zenix.WinUI.myUserControls.Controls.myButtonEdit();
-            this.txtKutu = new Zenix.WinUI.myUserControls.Controls.mySpinEdit();
-            this.txtStand = new Zenix.WinUI.myUserControls.Controls.mySpinEdit();
             this.layoutControlItem22 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem21 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem20 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.txtKoli = new Zenix.WinUI.myUserControls.Controls.mySpinEdit();
             this.layoutControlItem23 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem12 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.txtÜrün = new Zenix.WinUI.myUserControls.Controls.myButtonEdit();
             this.layoutControlItem24 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.txtFirma = new Zenix.WinUI.myUserControls.Controls.myButtonEdit();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.myDataLayoutControl)).BeginInit();
             this.myDataLayoutControl.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtFirma.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtMamül.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtKoli.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtStand.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtKutu.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtMarka.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.myCheckedComboBoxEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtGTIN.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtBoy.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbAğırlıkBirim.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbAlanBirim.Properties)).BeginInit();
@@ -139,21 +147,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.lay)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtGTIN.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.myCheckedComboBoxEdit1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtMarka.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtKutu.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtStand.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem22)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem21)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem20)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtKoli.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem23)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtÜrün.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem24)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtFirma.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
             this.SuspendLayout();
             // 
@@ -173,7 +173,7 @@
             // myDataLayoutControl
             // 
             this.myDataLayoutControl.Controls.Add(this.txtFirma);
-            this.myDataLayoutControl.Controls.Add(this.txtÜrün);
+            this.myDataLayoutControl.Controls.Add(this.txtMamül);
             this.myDataLayoutControl.Controls.Add(this.txtKoli);
             this.myDataLayoutControl.Controls.Add(this.txtStand);
             this.myDataLayoutControl.Controls.Add(this.txtKutu);
@@ -205,6 +205,168 @@
             this.myDataLayoutControl.Size = new System.Drawing.Size(539, 405);
             this.myDataLayoutControl.TabIndex = 0;
             this.myDataLayoutControl.Text = "myDataLayoutControl1";
+            // 
+            // txtFirma
+            // 
+            this.txtFirma.EnterMoveNextControl = true;
+            this.txtFirma.Id = null;
+            this.txtFirma.Location = new System.Drawing.Point(95, 36);
+            this.txtFirma.MenuManager = this.ribbonControl;
+            this.txtFirma.Name = "txtFirma";
+            this.txtFirma.Properties.AppearanceFocused.BackColor = System.Drawing.Color.LightCyan;
+            this.txtFirma.Properties.AppearanceFocused.Options.UseBackColor = true;
+            this.txtFirma.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton()});
+            this.txtFirma.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
+            this.txtFirma.Size = new System.Drawing.Size(313, 20);
+            this.txtFirma.StatusBarAciklama = "Firma Seç";
+            this.txtFirma.StatusBarKisayol = "F4 :";
+            this.txtFirma.StatusBarKisayolAciklama = "Seç";
+            this.txtFirma.StyleController = this.myDataLayoutControl;
+            this.txtFirma.TabIndex = 0;
+            // 
+            // txtMamül
+            // 
+            this.txtMamül.EnterMoveNextControl = true;
+            this.txtMamül.Id = null;
+            this.txtMamül.Location = new System.Drawing.Point(95, 84);
+            this.txtMamül.MenuManager = this.ribbonControl;
+            this.txtMamül.Name = "txtMamül";
+            this.txtMamül.Properties.AppearanceFocused.BackColor = System.Drawing.Color.LightCyan;
+            this.txtMamül.Properties.AppearanceFocused.Options.UseBackColor = true;
+            this.txtMamül.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton()});
+            this.txtMamül.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
+            this.txtMamül.Size = new System.Drawing.Size(313, 20);
+            this.txtMamül.StatusBarAciklama = "Ürün Seç";
+            this.txtMamül.StatusBarKisayol = "F4 :";
+            this.txtMamül.StatusBarKisayolAciklama = "Seç";
+            this.txtMamül.StyleController = this.myDataLayoutControl;
+            this.txtMamül.TabIndex = 2;
+            // 
+            // txtKoli
+            // 
+            this.txtKoli.EditValue = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.txtKoli.EnterMoveNextControl = true;
+            this.txtKoli.Location = new System.Drawing.Point(95, 180);
+            this.txtKoli.MenuManager = this.ribbonControl;
+            this.txtKoli.Name = "txtKoli";
+            this.txtKoli.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
+            this.txtKoli.Properties.AppearanceFocused.BackColor = System.Drawing.Color.LightCyan;
+            this.txtKoli.Properties.AppearanceFocused.Options.UseBackColor = true;
+            this.txtKoli.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.txtKoli.Properties.Mask.EditMask = "d";
+            this.txtKoli.Size = new System.Drawing.Size(113, 20);
+            this.txtKoli.StatusBarAciklama = null;
+            this.txtKoli.StyleController = this.myDataLayoutControl;
+            this.txtKoli.TabIndex = 6;
+            // 
+            // txtStand
+            // 
+            this.txtStand.EditValue = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.txtStand.EnterMoveNextControl = true;
+            this.txtStand.Location = new System.Drawing.Point(95, 156);
+            this.txtStand.MenuManager = this.ribbonControl;
+            this.txtStand.Name = "txtStand";
+            this.txtStand.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
+            this.txtStand.Properties.AppearanceFocused.BackColor = System.Drawing.Color.LightCyan;
+            this.txtStand.Properties.AppearanceFocused.Options.UseBackColor = true;
+            this.txtStand.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.txtStand.Properties.Mask.EditMask = "d";
+            this.txtStand.Size = new System.Drawing.Size(113, 20);
+            this.txtStand.StatusBarAciklama = null;
+            this.txtStand.StyleController = this.myDataLayoutControl;
+            this.txtStand.TabIndex = 5;
+            // 
+            // txtKutu
+            // 
+            this.txtKutu.EditValue = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.txtKutu.EnterMoveNextControl = true;
+            this.txtKutu.Location = new System.Drawing.Point(95, 132);
+            this.txtKutu.MenuManager = this.ribbonControl;
+            this.txtKutu.Name = "txtKutu";
+            this.txtKutu.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
+            this.txtKutu.Properties.AppearanceFocused.BackColor = System.Drawing.Color.LightCyan;
+            this.txtKutu.Properties.AppearanceFocused.Options.UseBackColor = true;
+            this.txtKutu.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.txtKutu.Properties.Mask.EditMask = "d";
+            this.txtKutu.Size = new System.Drawing.Size(113, 20);
+            this.txtKutu.StatusBarAciklama = null;
+            this.txtKutu.StyleController = this.myDataLayoutControl;
+            this.txtKutu.TabIndex = 4;
+            // 
+            // txtMarka
+            // 
+            this.txtMarka.EnterMoveNextControl = true;
+            this.txtMarka.Id = null;
+            this.txtMarka.Location = new System.Drawing.Point(95, 60);
+            this.txtMarka.MenuManager = this.ribbonControl;
+            this.txtMarka.Name = "txtMarka";
+            this.txtMarka.Properties.AppearanceFocused.BackColor = System.Drawing.Color.LightCyan;
+            this.txtMarka.Properties.AppearanceFocused.Options.UseBackColor = true;
+            this.txtMarka.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton()});
+            this.txtMarka.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
+            this.txtMarka.Size = new System.Drawing.Size(313, 20);
+            this.txtMarka.StatusBarAciklama = "Marka Seç";
+            this.txtMarka.StatusBarKisayol = "F4 :";
+            this.txtMarka.StatusBarKisayolAciklama = "Seç";
+            this.txtMarka.StyleController = this.myDataLayoutControl;
+            this.txtMarka.TabIndex = 1;
+            // 
+            // myCheckedComboBoxEdit1
+            // 
+            this.myCheckedComboBoxEdit1.EnterMoveNextControl = true;
+            this.myCheckedComboBoxEdit1.Location = new System.Drawing.Point(295, 252);
+            this.myCheckedComboBoxEdit1.MenuManager = this.ribbonControl;
+            this.myCheckedComboBoxEdit1.Name = "myCheckedComboBoxEdit1";
+            this.myCheckedComboBoxEdit1.Properties.Appearance.BackColor = System.Drawing.Color.LightCyan;
+            this.myCheckedComboBoxEdit1.Properties.Appearance.Options.UseBackColor = true;
+            this.myCheckedComboBoxEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.myCheckedComboBoxEdit1.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
+            this.myCheckedComboBoxEdit1.Size = new System.Drawing.Size(142, 20);
+            this.myCheckedComboBoxEdit1.StatusBarAciklama = null;
+            this.myCheckedComboBoxEdit1.StatusBarKisayol = "F4 :";
+            this.myCheckedComboBoxEdit1.StatusBarKisayolAciklama = null;
+            this.myCheckedComboBoxEdit1.StyleController = this.myDataLayoutControl;
+            this.myCheckedComboBoxEdit1.TabIndex = 20;
+            // 
+            // txtGTIN
+            // 
+            this.txtGTIN.EnterMoveNextControl = true;
+            this.txtGTIN.Location = new System.Drawing.Point(95, 108);
+            this.txtGTIN.MenuManager = this.ribbonControl;
+            this.txtGTIN.Name = "txtGTIN";
+            this.txtGTIN.Properties.Appearance.BackColor = System.Drawing.Color.PaleVioletRed;
+            this.txtGTIN.Properties.Appearance.Options.UseBackColor = true;
+            this.txtGTIN.Properties.Appearance.Options.UseTextOptions = true;
+            this.txtGTIN.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.txtGTIN.Properties.AppearanceFocused.BackColor = System.Drawing.Color.LightCyan;
+            this.txtGTIN.Properties.AppearanceFocused.Options.UseBackColor = true;
+            this.txtGTIN.Properties.Mask.AutoComplete = DevExpress.XtraEditors.Mask.AutoCompleteType.None;
+            this.txtGTIN.Properties.Mask.EditMask = "\\d?\\d?\\d?\\d?\\d?\\d?\\d?\\d?\\d?\\d?\\d?\\d?\\d?\\d?";
+            this.txtGTIN.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Regular;
+            this.txtGTIN.Properties.MaxLength = 50;
+            this.txtGTIN.Size = new System.Drawing.Size(113, 20);
+            this.txtGTIN.StatusBarAciklama = "14 Haneli Ürün GTIN Giriniz.";
+            this.txtGTIN.StyleController = this.myDataLayoutControl;
+            this.txtGTIN.TabIndex = 3;
             // 
             // txtBoy
             // 
@@ -885,108 +1047,6 @@
             this.layoutControlItem13.TextToControlDistance = 9;
             this.layoutControlItem13.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
             // 
-            // txtGTIN
-            // 
-            this.txtGTIN.EnterMoveNextControl = true;
-            this.txtGTIN.Location = new System.Drawing.Point(95, 108);
-            this.txtGTIN.MenuManager = this.ribbonControl;
-            this.txtGTIN.Name = "txtGTIN";
-            this.txtGTIN.Properties.Appearance.BackColor = System.Drawing.Color.PaleVioletRed;
-            this.txtGTIN.Properties.Appearance.Options.UseBackColor = true;
-            this.txtGTIN.Properties.Appearance.Options.UseTextOptions = true;
-            this.txtGTIN.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.txtGTIN.Properties.AppearanceFocused.BackColor = System.Drawing.Color.LightCyan;
-            this.txtGTIN.Properties.AppearanceFocused.Options.UseBackColor = true;
-            this.txtGTIN.Properties.Mask.AutoComplete = DevExpress.XtraEditors.Mask.AutoCompleteType.None;
-            this.txtGTIN.Properties.Mask.EditMask = "\\d?\\d?\\d?\\d?\\d?\\d?\\d?\\d?\\d?\\d?\\d?\\d?\\d?\\d?";
-            this.txtGTIN.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Regular;
-            this.txtGTIN.Properties.MaxLength = 50;
-            this.txtGTIN.Size = new System.Drawing.Size(113, 20);
-            this.txtGTIN.StatusBarAciklama = "14 Haneli Ürün GTIN Giriniz.";
-            this.txtGTIN.StyleController = this.myDataLayoutControl;
-            this.txtGTIN.TabIndex = 3;
-            // 
-            // myCheckedComboBoxEdit1
-            // 
-            this.myCheckedComboBoxEdit1.EnterMoveNextControl = true;
-            this.myCheckedComboBoxEdit1.Location = new System.Drawing.Point(295, 252);
-            this.myCheckedComboBoxEdit1.MenuManager = this.ribbonControl;
-            this.myCheckedComboBoxEdit1.Name = "myCheckedComboBoxEdit1";
-            this.myCheckedComboBoxEdit1.Properties.Appearance.BackColor = System.Drawing.Color.LightCyan;
-            this.myCheckedComboBoxEdit1.Properties.Appearance.Options.UseBackColor = true;
-            this.myCheckedComboBoxEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.myCheckedComboBoxEdit1.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
-            this.myCheckedComboBoxEdit1.Size = new System.Drawing.Size(142, 20);
-            this.myCheckedComboBoxEdit1.StatusBarAciklama = null;
-            this.myCheckedComboBoxEdit1.StatusBarKisayol = "F4 :";
-            this.myCheckedComboBoxEdit1.StatusBarKisayolAciklama = null;
-            this.myCheckedComboBoxEdit1.StyleController = this.myDataLayoutControl;
-            this.myCheckedComboBoxEdit1.TabIndex = 20;
-            // 
-            // txtMarka
-            // 
-            this.txtMarka.EnterMoveNextControl = true;
-            this.txtMarka.Id = null;
-            this.txtMarka.Location = new System.Drawing.Point(95, 60);
-            this.txtMarka.MenuManager = this.ribbonControl;
-            this.txtMarka.Name = "txtMarka";
-            this.txtMarka.Properties.AppearanceFocused.BackColor = System.Drawing.Color.LightCyan;
-            this.txtMarka.Properties.AppearanceFocused.Options.UseBackColor = true;
-            this.txtMarka.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton()});
-            this.txtMarka.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.txtMarka.Size = new System.Drawing.Size(313, 20);
-            this.txtMarka.StatusBarAciklama = "Marka Seç";
-            this.txtMarka.StatusBarKisayol = "F4 :";
-            this.txtMarka.StatusBarKisayolAciklama = "Seç";
-            this.txtMarka.StyleController = this.myDataLayoutControl;
-            this.txtMarka.TabIndex = 1;
-            // 
-            // txtKutu
-            // 
-            this.txtKutu.EditValue = new decimal(new int[] {
-            0,
-            0,
-            0,
-            0});
-            this.txtKutu.EnterMoveNextControl = true;
-            this.txtKutu.Location = new System.Drawing.Point(95, 132);
-            this.txtKutu.MenuManager = this.ribbonControl;
-            this.txtKutu.Name = "txtKutu";
-            this.txtKutu.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
-            this.txtKutu.Properties.AppearanceFocused.BackColor = System.Drawing.Color.LightCyan;
-            this.txtKutu.Properties.AppearanceFocused.Options.UseBackColor = true;
-            this.txtKutu.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.txtKutu.Properties.Mask.EditMask = "d";
-            this.txtKutu.Size = new System.Drawing.Size(113, 20);
-            this.txtKutu.StatusBarAciklama = null;
-            this.txtKutu.StyleController = this.myDataLayoutControl;
-            this.txtKutu.TabIndex = 4;
-            // 
-            // txtStand
-            // 
-            this.txtStand.EditValue = new decimal(new int[] {
-            0,
-            0,
-            0,
-            0});
-            this.txtStand.EnterMoveNextControl = true;
-            this.txtStand.Location = new System.Drawing.Point(95, 156);
-            this.txtStand.MenuManager = this.ribbonControl;
-            this.txtStand.Name = "txtStand";
-            this.txtStand.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
-            this.txtStand.Properties.AppearanceFocused.BackColor = System.Drawing.Color.LightCyan;
-            this.txtStand.Properties.AppearanceFocused.Options.UseBackColor = true;
-            this.txtStand.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.txtStand.Properties.Mask.EditMask = "d";
-            this.txtStand.Size = new System.Drawing.Size(113, 20);
-            this.txtStand.StatusBarAciklama = null;
-            this.txtStand.StyleController = this.myDataLayoutControl;
-            this.txtStand.TabIndex = 5;
-            // 
             // layoutControlItem22
             // 
             this.layoutControlItem22.AppearanceItemCaption.ForeColor = System.Drawing.Color.Maroon;
@@ -1025,28 +1085,6 @@
             this.layoutControlItem20.Size = new System.Drawing.Size(400, 24);
             this.layoutControlItem20.Text = "Marka";
             this.layoutControlItem20.TextSize = new System.Drawing.Size(80, 13);
-            // 
-            // txtKoli
-            // 
-            this.txtKoli.EditValue = new decimal(new int[] {
-            0,
-            0,
-            0,
-            0});
-            this.txtKoli.EnterMoveNextControl = true;
-            this.txtKoli.Location = new System.Drawing.Point(95, 180);
-            this.txtKoli.MenuManager = this.ribbonControl;
-            this.txtKoli.Name = "txtKoli";
-            this.txtKoli.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
-            this.txtKoli.Properties.AppearanceFocused.BackColor = System.Drawing.Color.LightCyan;
-            this.txtKoli.Properties.AppearanceFocused.Options.UseBackColor = true;
-            this.txtKoli.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.txtKoli.Properties.Mask.EditMask = "d";
-            this.txtKoli.Size = new System.Drawing.Size(113, 20);
-            this.txtKoli.StatusBarAciklama = null;
-            this.txtKoli.StyleController = this.myDataLayoutControl;
-            this.txtKoli.TabIndex = 6;
             // 
             // layoutControlItem23
             // 
@@ -1088,30 +1126,11 @@
             this.layoutControlItem12.Text = "GTIN";
             this.layoutControlItem12.TextSize = new System.Drawing.Size(80, 13);
             // 
-            // txtÜrün
-            // 
-            this.txtÜrün.EnterMoveNextControl = true;
-            this.txtÜrün.Id = null;
-            this.txtÜrün.Location = new System.Drawing.Point(95, 84);
-            this.txtÜrün.MenuManager = this.ribbonControl;
-            this.txtÜrün.Name = "txtÜrün";
-            this.txtÜrün.Properties.AppearanceFocused.BackColor = System.Drawing.Color.LightCyan;
-            this.txtÜrün.Properties.AppearanceFocused.Options.UseBackColor = true;
-            this.txtÜrün.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton()});
-            this.txtÜrün.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.txtÜrün.Size = new System.Drawing.Size(313, 20);
-            this.txtÜrün.StatusBarAciklama = "Ürün Seç";
-            this.txtÜrün.StatusBarKisayol = "F4 :";
-            this.txtÜrün.StatusBarKisayolAciklama = "Seç";
-            this.txtÜrün.StyleController = this.myDataLayoutControl;
-            this.txtÜrün.TabIndex = 2;
-            // 
             // layoutControlItem24
             // 
             this.layoutControlItem24.AppearanceItemCaption.ForeColor = System.Drawing.Color.Maroon;
             this.layoutControlItem24.AppearanceItemCaption.Options.UseForeColor = true;
-            this.layoutControlItem24.Control = this.txtÜrün;
+            this.layoutControlItem24.Control = this.txtMamül;
             this.layoutControlItem24.Location = new System.Drawing.Point(0, 72);
             this.layoutControlItem24.Name = "layoutControlItem24";
             this.layoutControlItem24.OptionsTableLayoutItem.ColumnSpan = 3;
@@ -1119,25 +1138,6 @@
             this.layoutControlItem24.Size = new System.Drawing.Size(400, 24);
             this.layoutControlItem24.Text = "Ürün";
             this.layoutControlItem24.TextSize = new System.Drawing.Size(80, 13);
-            // 
-            // txtFirma
-            // 
-            this.txtFirma.EnterMoveNextControl = true;
-            this.txtFirma.Id = null;
-            this.txtFirma.Location = new System.Drawing.Point(95, 36);
-            this.txtFirma.MenuManager = this.ribbonControl;
-            this.txtFirma.Name = "txtFirma";
-            this.txtFirma.Properties.AppearanceFocused.BackColor = System.Drawing.Color.LightCyan;
-            this.txtFirma.Properties.AppearanceFocused.Options.UseBackColor = true;
-            this.txtFirma.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton()});
-            this.txtFirma.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.txtFirma.Size = new System.Drawing.Size(313, 20);
-            this.txtFirma.StatusBarAciklama = "Firma Seç";
-            this.txtFirma.StatusBarKisayol = "F4 :";
-            this.txtFirma.StatusBarKisayolAciklama = "Seç";
-            this.txtFirma.StyleController = this.myDataLayoutControl;
-            this.txtFirma.TabIndex = 0;
             // 
             // layoutControlItem6
             // 
@@ -1166,6 +1166,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.myDataLayoutControl)).EndInit();
             this.myDataLayoutControl.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.txtFirma.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtMamül.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtKoli.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtStand.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtKutu.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtMarka.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.myCheckedComboBoxEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtGTIN.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtBoy.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbAğırlıkBirim.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbAlanBirim.Properties)).EndInit();
@@ -1201,21 +1209,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.lay)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtGTIN.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.myCheckedComboBoxEdit1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtMarka.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtKutu.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtStand.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem22)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem21)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem20)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtKoli.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem23)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtÜrün.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem24)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtFirma.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -1261,7 +1261,7 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem10;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem13;
         private myUserControls.Controls.myButtonEdit txtFirma;
-        private myUserControls.Controls.myButtonEdit txtÜrün;
+        private myUserControls.Controls.myButtonEdit txtMamül;
         private myUserControls.Controls.mySpinEdit txtKoli;
         private myUserControls.Controls.mySpinEdit txtStand;
         private myUserControls.Controls.mySpinEdit txtKutu;

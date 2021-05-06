@@ -37,8 +37,8 @@ namespace Zenix.WinUI.Forms.ÜrünlerFormu
             tglDurum.IsOn = entity.Durum;
             txtFirma.Text = entity.FirmaAdi;
             txtFirma.Id = entity.FirmaId;
-            txtÜrün.Text = entity.MamülAdı;
-            txtÜrün.Id = entity.MamülId;
+            txtMamül.Text = entity.MamülAdı;
+            txtMamül.Id = entity.MamülId;
             txtMarka.Text = entity.MarkaAdı;
             txtMarka.Id = entity.MarkaId;
             txtGTIN.Text = entity.GTIN;
@@ -58,7 +58,7 @@ namespace Zenix.WinUI.Forms.ÜrünlerFormu
                 Kod = txtKod.Text,
                 Durum = tglDurum.IsOn,
                 FirmaId = firmaid,
-                MamülId = txtÜrün.GetId(),
+                MamülId = txtMamül.GetId(),
                 MarkaId = txtMarka.GetId(),
                 GTIN = txtGTIN.Text,
                 Koli = txtKoli.EditValue.ConvertTo<int>(),
@@ -77,8 +77,8 @@ namespace Zenix.WinUI.Forms.ÜrünlerFormu
                     sec.Seç(txtFirma);
                 else if (sender == txtMarka)
                     sec.Seç(txtMarka);
-                else if (sender == txtÜrün)
-                    sec.Seç(txtÜrün);
+                else if (sender == txtMamül)
+                    sec.Seç(txtMamül);
             }
         }
     }

@@ -81,7 +81,7 @@ namespace Zenix.WinUI.Forms.MamülFormu
                 AğırlığınBirimi    =cmbAğırlıkBirim.Text   .GetEnum<BirimTipi>()   ,
                 MalzemeBirimi      =cmbMalzemeBirim.Text   .GetEnum<BirimTipi>()   ,
                 BirimAuEbY         =cmbTeknikBirim.Text    .GetEnum<BirimTipi>()   ,
-                MalzemeTipi        =cmbMalzemeTipi.Text    .GetEnum<MalzemeTipi>() ,
+                MalzemeTipi        = malzemetipi,
                 SarfTipi           =sarftipi,
                 MamülAdı           =txtMamülAdı.Text                                 ,               
                 AmbalajMaddeTipiId =txtAmbalajMaddesi       .GetId()            ,

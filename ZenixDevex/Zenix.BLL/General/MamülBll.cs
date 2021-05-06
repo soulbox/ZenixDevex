@@ -24,7 +24,7 @@ namespace Zenix.BLL.General
                 Id                 = x.Id,
                 Kod                = x.Kod,
                 Durum              = x.Durum,
-                MamülAdı                = x.MamülAdı,
+                MamülAdı           = x.MamülAdı,
                 Alan               = x.Alan,
                 AlanınBirimi       = x.AlanınBirimi,
                 AmbalajMaddeAdı    = x.AmbalajMaddeTipi.Adı,
@@ -42,9 +42,43 @@ namespace Zenix.BLL.General
                 MalzemeBirimi      = x.MalzemeBirimi,
                 SarfTipi           = x.SarfTipi,
                 Yükseklik          = x.Yükseklik,
+                MalzemeTipi        = x.MalzemeTipi,
+
             });
         }
         public override IEnumerable<BaseEntity> List(Expression<Func<Mamül, bool>> filter)
+        {
+            return BaseList(filter, x => new MamülL
+            {
+                Id                 = x.Id,
+                Kod                = x.Kod,
+                Durum              = x.Durum,
+                MamülAdı           = x.MamülAdı,
+                Alan               = x.Alan,
+                AlanınBirimi       = x.AlanınBirimi,
+                AmbalajMaddeAdı    = x.AmbalajMaddeTipi.Adı,
+                AmbalajMaddeTipiId = x.AmbalajMaddeTipiId,
+                AmbalajTipiAdı     = x.AmbalajTipi.Adı,
+                AmbalajTipiId      = x.AmbalajTipiId,
+                Ağırlık            = x.Ağırlık,
+                AğırlığınBirimi    = x.AğırlığınBirimi,
+                AğızÖlçüsü         = x.AğızÖlçüsü,
+                BirimAuEbY         = x.BirimAuEbY,
+                Boy                = x.Boy,
+                En                 = x.En,
+                Uzunluk            = x.Uzunluk,
+                Hacim              = x.Hacim,
+                MalzemeBirimi      = x.MalzemeBirimi,
+                SarfTipi           = x.SarfTipi,
+                Yükseklik          = x.Yükseklik,
+                MalzemeTipi        = x.MalzemeTipi,
+                
+
+            })
+                .ToList();
+        }
+
+        public List<MamülL> ReçeteMamül(Expression<Func<Mamül, bool>> filter) 
         {
             return BaseList(filter, x => new MamülL
             {
@@ -52,26 +86,27 @@ namespace Zenix.BLL.General
                 Kod = x.Kod,
                 Durum = x.Durum,
                 MamülAdı = x.MamülAdı,
-                Alan = x.Alan,
-                AlanınBirimi = x.AlanınBirimi,
-                AmbalajMaddeAdı = x.AmbalajMaddeTipi.Adı,
-                AmbalajMaddeTipiId = x.AmbalajMaddeTipiId,
-                AmbalajTipiAdı = x.AmbalajTipi.Adı,
-                AmbalajTipiId = x.AmbalajTipiId,
-                Ağırlık = x.Ağırlık,
-                AğırlığınBirimi = x.AğırlığınBirimi,
-                AğızÖlçüsü = x.AğızÖlçüsü,
-                BirimAuEbY = x.BirimAuEbY,
-                Boy = x.Boy,
-                En = x.En,
-                Uzunluk = x.Uzunluk,
-                Hacim = x.Hacim,
-                MalzemeBirimi = x.MalzemeBirimi,
-                SarfTipi = x.SarfTipi,
-                Yükseklik = x.Yükseklik,
+                //Alan = x.Alan,
+                //AlanınBirimi = x.AlanınBirimi,
+                //AmbalajMaddeAdı = x.AmbalajMaddeTipi.Adı,
+                //AmbalajMaddeTipiId = x.AmbalajMaddeTipiId,
+                //AmbalajTipiAdı = x.AmbalajTipi.Adı,
+                //AmbalajTipiId = x.AmbalajTipiId,
+                //Ağırlık = x.Ağırlık,
+                //AğırlığınBirimi = x.AğırlığınBirimi,
+                //AğızÖlçüsü = x.AğızÖlçüsü,
+                //BirimAuEbY = x.BirimAuEbY,
+                //Boy = x.Boy,
+                //En = x.En,
+                //Uzunluk = x.Uzunluk,
+                //Hacim = x.Hacim,
+                //MalzemeBirimi = x.MalzemeBirimi,
+                //SarfTipi = x.SarfTipi,
+                //Yükseklik = x.Yükseklik,
 
             })
-                .ToList();
+        .ToList();
         }
+
     }
 }

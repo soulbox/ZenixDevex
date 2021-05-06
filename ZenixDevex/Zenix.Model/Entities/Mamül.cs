@@ -15,19 +15,22 @@ using Zenix.Model.Entities.Base;
 namespace Zenix.Model.Entities
 {
 
-
+    public interface IHacim
+    {
+    
+        int Hacim { get; set; }
+    }
 
     public interface IMamül : IBaseMamül
     {
         string MamülAdı { get; set; }
         SarfTipi SarfTipi { get; set; }
         BirimTipi MalzemeBirimi { get; set; }
-        MalzemeTipi MalzemeTipi { get; set; }
-        int Hacim { get; set; }
+        MalzemeTipi MalzemeTipi { get; set; }     
         long AmbalajTipiId { get; set; }
         long AmbalajMaddeTipiId { get; set; }
     }
-    public interface IBaseMamül
+    public interface IBaseMamül:IHacim
     {
         float AğızÖlçüsü { get; set; }
         float Uzunluk { get; set; }
@@ -53,11 +56,12 @@ namespace Zenix.Model.Entities
         string BirimAlan { get; }
     }
 
+  
     public class BaseMamül : BaseEntityDurum, IBaseMamül
     {
         [Index(name: "IX_Kod", IsUnique = true)]
         public override string Kod { get; set; }
-
+        public int Hacim { get; set; }
         public float AğızÖlçüsü { get; set; }
         public float Uzunluk { get; set; }
         public float En { get; set; }
@@ -68,8 +72,8 @@ namespace Zenix.Model.Entities
         public BirimTipi AlanınBirimi { get; set; }
         public float Ağırlık { get; set; }
         public BirimTipi AğırlığınBirimi { get; set; }
-        public string GetStr(BirimTipi birm, float value) => birm == BirimTipi.yok ? $"{value:n2}" : $"{value:n1} {birm.ToName()}";
-        public string GetStr(float value) => GetStr(BirimAuEbY, value);
+        public static string GetStr(BirimTipi birm, float value) => birm == BirimTipi.yok ? $"{value:n2}" : $"{value:n1} {birm.ToName()}";
+        public  string GetStr(float value) => GetStr(BirimAuEbY, value);
         public string BirimAlan { get => GetStr(AlanınBirimi, Alan); }
         public string BirimAğırlık { get => GetStr(AğırlığınBirimi, Ağırlık); }
         public string BirimAğızÖlçüsü { get => GetStr(AğızÖlçüsü); }
@@ -87,7 +91,6 @@ namespace Zenix.Model.Entities
         public SarfTipi SarfTipi { get; set; }
         public BirimTipi MalzemeBirimi { get; set; }
         public MalzemeTipi MalzemeTipi { get; set; }
-        public int Hacim { get; set; }
         [Required(),ZorunluAlan("Ambalaj Tipi","txtAmbalajTipi")]
         public long AmbalajTipiId { get; set; }
         public AmbalajTipi AmbalajTipi { get; set; }

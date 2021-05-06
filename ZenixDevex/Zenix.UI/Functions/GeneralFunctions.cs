@@ -66,7 +66,10 @@ namespace Zenix.WinUI.Functions
             foreach (var prop in currentEntity.GetType().GetProperties())
             {
                 if (prop.PropertyType.Namespace == "System.Collections.Generic") continue;
-                var oldvalue = prop.GetValue(oldEntity) ?? string.Empty;
+                if (!oldEntity.GetType().GetProperties().Any(x => x.Name == prop.Name)) continue;
+                var oldvalue = oldEntity.GetType().GetProperty (prop.Name).GetValue(oldEntity,null) ?? string.Empty;               
+
+                //var oldvalue = prop.GetValue(oldEntity) ?? string.Empty;
                 var curvalue = prop.GetValue(currentEntity) ?? string.Empty;
                 //byte tipindeyse [Resim Olabili]
                 if (prop.PropertyType == typeof(byte[]))

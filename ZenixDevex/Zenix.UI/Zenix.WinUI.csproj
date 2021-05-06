@@ -31,7 +31,7 @@
     <PublisherName>Erkan Ceylan &amp; Kadir Aygün</PublisherName>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>3</ApplicationRevision>
+    <ApplicationRevision>7</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>true</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -283,11 +283,11 @@
     <Compile Include="Forms\RevizyonFormu\RevizyonEditForm.Designer.cs">
       <DependentUpon>RevizyonEditForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\RevizyonFormu\ReziyonListForm.cs">
+    <Compile Include="Forms\RevizyonFormu\RevizyonListForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\RevizyonFormu\ReziyonListForm.Designer.cs">
-      <DependentUpon>ReziyonListForm.cs</DependentUpon>
+    <Compile Include="Forms\RevizyonFormu\RevizyonListForm.Designer.cs">
+      <DependentUpon>RevizyonListForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\ReçeteFormu\ReçeteEditForm.cs">
       <SubType>Form</SubType>
@@ -598,8 +598,8 @@
     <EmbeddedResource Include="Forms\RevizyonFormu\RevizyonEditForm.resx">
       <DependentUpon>RevizyonEditForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\RevizyonFormu\ReziyonListForm.resx">
-      <DependentUpon>ReziyonListForm.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\RevizyonFormu\RevizyonListForm.resx">
+      <DependentUpon>RevizyonListForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ReçeteFormu\ReçeteEditForm.resx">
       <DependentUpon>ReçeteEditForm.cs</DependentUpon>

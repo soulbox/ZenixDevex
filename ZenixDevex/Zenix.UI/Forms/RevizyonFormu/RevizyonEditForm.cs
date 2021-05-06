@@ -19,36 +19,37 @@ namespace Zenix.WinUI.Forms.RevizyonFormu
 {
     public partial class RevizyonEditForm : BaseEditForm
     {
-      
+        readonly ÜrünL ürün;
+
         public RevizyonEditForm(params object[] prm)
         {
-         
+            ürün = (ÜrünL)prm[0];
             InitializeComponent();
-            
+
             this.DataLayoutControl = myDataLayoutControl;
             this.Bll = new RevizyonBll(myDataLayoutControl);
             this.KartTuru = Common.Enums.KartTuru.Revizyon;
-            Text = "Revizyon Kartı";
+            this.Text = $"[{ürün.MarkaAdı}-{ürün.MamülAdı}] Revizyon";
+
             dtRevTarih.Properties.MinValue = DateTime.Now.AddYears(-20);
-      
+
 
             EventsLoad();
         }
         protected internal override void Yukle()
         {
-            //if (isirsaliye && BaseIslemTuru == IslemTuru.EntityInsert)
-            //    LayoutGizle(layFirma, layGTIN, layBarcodeSize, laygecikme);
-            OldEntity = BaseIslemTuru == IslemTuru.EntityInsert ? new Revizyon() : ((RevizyonBll)Bll).Single(FilterFunctions.Filter<Revizyon>(Id));
+
+            OldEntity = BaseIslemTuru == IslemTuru.EntityInsert ? new RevizyonS() : ((RevizyonBll)Bll).Single(FilterFunctions.Filter<Revizyon>(Id));
 
             NesneyiKontrollereBagla();
             if (BaseIslemTuru != IslemTuru.EntityInsert) return;
             Id = BaseIslemTuru.IdOlustur(OldEntity);
-            //txtKod.Text = ((RevizyonBll)Bll).YeniKodVer(x => x.MarkalarId == marka.Id );
+            txtKod.Text = ((RevizyonBll)Bll).YeniKodVer(x => x.ÜrünId == ürün.Id);
             dtRevTarih.Focus();
         }
         protected override void NesneyiKontrollereBagla()
         {
-            var entity = (Revizyon)OldEntity;
+            var entity = (RevizyonS)OldEntity;
             txtKod.Text = entity.Kod;
             tglDurum.IsOn = entity.Durum;
             dtRevTarih.DateTime = entity.RevizyonTarihi;
@@ -64,20 +65,21 @@ namespace Zenix.WinUI.Forms.RevizyonFormu
                 Durum = tglDurum.IsOn,
                 RevizyonTarihi = dtRevTarih.DateTime,
                 Açıklama = txtAçıklama.Text,
+                ÜrünId = ürün.Id,
 
             };
             ButtonEnableDurumu();
 
         }
 
-        //protected override bool EntityInsert()
-        //{
-        //    return ((RevizyonBll)Bll).Insert(CurrentEntity, x => x.Kod == CurrentEntity.Kod && x.MarkalarId  == marka.Id);
-        //}
-        //protected override bool EntityUpdate()
-        //{
-        //    return ((RevizyonBll)Bll).Update(OldEntity, CurrentEntity, x => x.Kod == CurrentEntity.Kod && x.MarkalarId == marka.Id);
+        protected override bool EntityInsert()
+        {
+            return ((RevizyonBll)Bll).Insert(CurrentEntity, x => x.Kod == CurrentEntity.Kod && x.ÜrünId == ürün.Id);
+        }
+        protected override bool EntityUpdate()
+        {
+            return ((RevizyonBll)Bll).Update(OldEntity, CurrentEntity, x => x.Kod == CurrentEntity.Kod && x.ÜrünId == ürün.Id);
 
-        //}
+        }
     }
 }

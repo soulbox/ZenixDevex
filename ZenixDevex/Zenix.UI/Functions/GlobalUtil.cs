@@ -10,7 +10,7 @@ namespace Zenix.WinUI.Functions
     public static class GlobalUtil 
     {    
         public static bool HasValue(this IBaseEntity sourc) =>  sourc != null;
-        public static bool isNUll(this IBaseEntity sourc) => sourc == null;
+        public static bool isNull(this IBaseEntity sourc) => sourc == null;
 
         //public static (bool hasval, T value) HasValue<T>(this T sourc) => sourc == null ? (false, sourc ) : (true, sourc);
 

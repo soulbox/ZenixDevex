@@ -31,7 +31,7 @@ namespace Zenix.Model.DTO
         public SarfTipi SarfTipi { get; set; }
         public BirimTipi MalzemeBirimi { get; set; }
         public MalzemeTipi MalzemeTipi { get; set; }
-        public int Hacim { get; set; }
+        //public int Hacim { get; set; }
         public long AmbalajTipiId { get; set; }
         public long AmbalajMaddeTipiId { get; set; }
         public string GTIN { get; set; }

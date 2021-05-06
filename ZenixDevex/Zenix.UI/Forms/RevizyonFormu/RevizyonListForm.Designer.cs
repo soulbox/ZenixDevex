@@ -1,6 +1,6 @@
-﻿namespace Zenix.WinUI.Forms.ReçeteFormu
+﻿namespace Zenix.WinUI.Forms.RevizyonFormu
 {
-    partial class ReçeteListForm
+    partial class RevizyonListForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,26 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReçeteListForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RevizyonListForm));
             this.myBandedGridControl1 = new Zenix.WinUI.myUserControls.Grid.myBandedGridControl();
             this.Tablo = new Zenix.WinUI.myUserControls.Grid.myBandedGridview();
-            this.aaaa = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
             this.colId = new Zenix.WinUI.myUserControls.Grid.myBandedGridColumn();
             this.colKod = new Zenix.WinUI.myUserControls.Grid.myBandedGridColumn();
             this.colMarka = new Zenix.WinUI.myUserControls.Grid.myBandedGridColumn();
             this.colFirma = new Zenix.WinUI.myUserControls.Grid.myBandedGridColumn();
             this.colMalzeme = new Zenix.WinUI.myUserControls.Grid.myBandedGridColumn();
             this.colGTIN = new Zenix.WinUI.myUserControls.Grid.myBandedGridColumn();
-            this.gridBand1 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
-            this.colAfaz = new Zenix.WinUI.myUserControls.Grid.myBandedGridColumn();
-            this.colBFazıHazırlanış = new Zenix.WinUI.myUserControls.Grid.myBandedGridColumn();
-            this.colCFazıHazırlanış = new Zenix.WinUI.myUserControls.Grid.myBandedGridColumn();
-            this.colRevTarihi = new Zenix.WinUI.myUserControls.Grid.myBandedGridColumn();
-            this.colRevizyonKodu = new Zenix.WinUI.myUserControls.Grid.myBandedGridColumn();
-            this.colRevizyonDurumu = new Zenix.WinUI.myUserControls.Grid.myBandedGridColumn();
-            this.colMalzemeMiktarı = new Zenix.WinUI.myUserControls.Grid.myBandedGridColumn();
-            this.colAçıklama = new Zenix.WinUI.myUserControls.Grid.myBandedGridColumn();
             this.longNavigator = new Zenix.WinUI.myUserControls.Navigator.LongNavigator();
+            this.colRevizyonKodu = new Zenix.WinUI.myUserControls.Grid.myBandedGridColumn();
+            this.colRevTarihi = new Zenix.WinUI.myUserControls.Grid.myBandedGridColumn();
+            this.colAçıklama = new Zenix.WinUI.myUserControls.Grid.myBandedGridColumn();
+            this.aaaa = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
+            this.gridBand1 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.myBandedGridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Tablo)).BeginInit();
@@ -78,7 +73,7 @@
             this.myBandedGridControl1.MenuManager = this.ribbonControl;
             this.myBandedGridControl1.Name = "myBandedGridControl1";
             this.myBandedGridControl1.Size = new System.Drawing.Size(952, 357);
-            this.myBandedGridControl1.TabIndex = 10;
+            this.myBandedGridControl1.TabIndex = 8;
             this.myBandedGridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.Tablo});
             // 
@@ -115,12 +110,7 @@
             this.colGTIN,
             this.colRevizyonKodu,
             this.colRevTarihi,
-            this.colAfaz,
-            this.colBFazıHazırlanış,
-            this.colCFazıHazırlanış,
-            this.colAçıklama,
-            this.colRevizyonDurumu,
-            this.colMalzemeMiktarı});
+            this.colAçıklama});
             this.Tablo.GridControl = this.myBandedGridControl1;
             this.Tablo.Name = "Tablo";
             this.Tablo.OptionsFind.AlwaysVisible = true;
@@ -144,19 +134,6 @@
             this.Tablo.StatusBarAciklama = null;
             this.Tablo.StatusBarKisayol = null;
             this.Tablo.StatusBarKisayolAciklama = null;
-            // 
-            // aaaa
-            // 
-            this.aaaa.Caption = "Ürün Tanımı";
-            this.aaaa.Columns.Add(this.colId);
-            this.aaaa.Columns.Add(this.colKod);
-            this.aaaa.Columns.Add(this.colMarka);
-            this.aaaa.Columns.Add(this.colFirma);
-            this.aaaa.Columns.Add(this.colMalzeme);
-            this.aaaa.Columns.Add(this.colGTIN);
-            this.aaaa.Name = "aaaa";
-            this.aaaa.VisibleIndex = 0;
-            this.aaaa.Width = 790;
             // 
             // colId
             // 
@@ -230,67 +207,13 @@
             this.colGTIN.Visible = true;
             this.colGTIN.Width = 115;
             // 
-            // gridBand1
+            // longNavigator
             // 
-            this.gridBand1.Caption = "Reçete Bilgileri";
-            this.gridBand1.Columns.Add(this.colAfaz);
-            this.gridBand1.Columns.Add(this.colBFazıHazırlanış);
-            this.gridBand1.Columns.Add(this.colCFazıHazırlanış);
-            this.gridBand1.Columns.Add(this.colRevTarihi);
-            this.gridBand1.Columns.Add(this.colRevizyonKodu);
-            this.gridBand1.Columns.Add(this.colRevizyonDurumu);
-            this.gridBand1.Columns.Add(this.colMalzemeMiktarı);
-            this.gridBand1.Columns.Add(this.colAçıklama);
-            this.gridBand1.Name = "gridBand1";
-            this.gridBand1.VisibleIndex = 1;
-            this.gridBand1.Width = 1100;
-            // 
-            // colAfaz
-            // 
-            this.colAfaz.Caption = "A Fazı Hazırlanış";
-            this.colAfaz.FieldName = "AFazıHazırlanış";
-            this.colAfaz.Name = "colAfaz";
-            this.colAfaz.OptionsColumn.AllowEdit = false;
-            this.colAfaz.StatusBarAciklama = null;
-            this.colAfaz.StatusBarKisayol = null;
-            this.colAfaz.StatusBarKisayolAciklama = null;
-            this.colAfaz.Visible = true;
-            this.colAfaz.Width = 200;
-            // 
-            // colBFazıHazırlanış
-            // 
-            this.colBFazıHazırlanış.Caption = "B Fazı Hazırlanış";
-            this.colBFazıHazırlanış.FieldName = "BFazıHazırlanış";
-            this.colBFazıHazırlanış.Name = "colBFazıHazırlanış";
-            this.colBFazıHazırlanış.OptionsColumn.AllowEdit = false;
-            this.colBFazıHazırlanış.StatusBarAciklama = null;
-            this.colBFazıHazırlanış.StatusBarKisayol = null;
-            this.colBFazıHazırlanış.StatusBarKisayolAciklama = null;
-            this.colBFazıHazırlanış.Visible = true;
-            this.colBFazıHazırlanış.Width = 200;
-            // 
-            // colCFazıHazırlanış
-            // 
-            this.colCFazıHazırlanış.Caption = "C Fazı Hazırlanış";
-            this.colCFazıHazırlanış.FieldName = "CFazıHazırlanış";
-            this.colCFazıHazırlanış.Name = "colCFazıHazırlanış";
-            this.colCFazıHazırlanış.OptionsColumn.AllowEdit = false;
-            this.colCFazıHazırlanış.StatusBarAciklama = null;
-            this.colCFazıHazırlanış.StatusBarKisayol = null;
-            this.colCFazıHazırlanış.StatusBarKisayolAciklama = null;
-            this.colCFazıHazırlanış.Visible = true;
-            this.colCFazıHazırlanış.Width = 200;
-            // 
-            // colRevTarihi
-            // 
-            this.colRevTarihi.Caption = "Revizyon Tarihi";
-            this.colRevTarihi.FieldName = "RevizyonTarihi";
-            this.colRevTarihi.Name = "colRevTarihi";
-            this.colRevTarihi.OptionsColumn.AllowEdit = false;
-            this.colRevTarihi.StatusBarAciklama = null;
-            this.colRevTarihi.StatusBarKisayol = null;
-            this.colRevTarihi.StatusBarKisayolAciklama = null;
-            this.colRevTarihi.Visible = true;
+            this.longNavigator.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.longNavigator.Location = new System.Drawing.Point(0, 466);
+            this.longNavigator.Name = "longNavigator";
+            this.longNavigator.Size = new System.Drawing.Size(952, 24);
+            this.longNavigator.TabIndex = 7;
             // 
             // colRevizyonKodu
             // 
@@ -303,27 +226,16 @@
             this.colRevizyonKodu.StatusBarKisayolAciklama = null;
             this.colRevizyonKodu.Visible = true;
             // 
-            // colRevizyonDurumu
+            // colRevTarihi
             // 
-            this.colRevizyonDurumu.Caption = "Revizyon Durumu";
-            this.colRevizyonDurumu.FieldName = "RevizyonDurum";
-            this.colRevizyonDurumu.Name = "colRevizyonDurumu";
-            this.colRevizyonDurumu.OptionsColumn.AllowEdit = false;
-            this.colRevizyonDurumu.StatusBarAciklama = null;
-            this.colRevizyonDurumu.StatusBarKisayol = null;
-            this.colRevizyonDurumu.StatusBarKisayolAciklama = null;
-            this.colRevizyonDurumu.Visible = true;
-            // 
-            // colMalzemeMiktarı
-            // 
-            this.colMalzemeMiktarı.Caption = "Malzeme Miktarı";
-            this.colMalzemeMiktarı.FieldName = "MalzemeMiktarı";
-            this.colMalzemeMiktarı.Name = "colMalzemeMiktarı";
-            this.colMalzemeMiktarı.OptionsColumn.AllowEdit = false;
-            this.colMalzemeMiktarı.StatusBarAciklama = null;
-            this.colMalzemeMiktarı.StatusBarKisayol = null;
-            this.colMalzemeMiktarı.StatusBarKisayolAciklama = null;
-            this.colMalzemeMiktarı.Visible = true;
+            this.colRevTarihi.Caption = "Revizyon Tarihi";
+            this.colRevTarihi.FieldName = "RevizyonTarihi";
+            this.colRevTarihi.Name = "colRevTarihi";
+            this.colRevTarihi.OptionsColumn.AllowEdit = false;
+            this.colRevTarihi.StatusBarAciklama = null;
+            this.colRevTarihi.StatusBarKisayol = null;
+            this.colRevTarihi.StatusBarKisayolAciklama = null;
+            this.colRevTarihi.Visible = true;
             // 
             // colAçıklama
             // 
@@ -335,17 +247,32 @@
             this.colAçıklama.StatusBarKisayol = null;
             this.colAçıklama.StatusBarKisayolAciklama = null;
             this.colAçıklama.Visible = true;
-            this.colAçıklama.Width = 200;
+            this.colAçıklama.Width = 150;
             // 
-            // longNavigator
+            // aaaa
             // 
-            this.longNavigator.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.longNavigator.Location = new System.Drawing.Point(0, 466);
-            this.longNavigator.Name = "longNavigator";
-            this.longNavigator.Size = new System.Drawing.Size(952, 24);
-            this.longNavigator.TabIndex = 9;
+            this.aaaa.Caption = "Ürün Tanımı";
+            this.aaaa.Columns.Add(this.colId);
+            this.aaaa.Columns.Add(this.colKod);
+            this.aaaa.Columns.Add(this.colMarka);
+            this.aaaa.Columns.Add(this.colFirma);
+            this.aaaa.Columns.Add(this.colMalzeme);
+            this.aaaa.Columns.Add(this.colGTIN);
+            this.aaaa.Name = "aaaa";
+            this.aaaa.VisibleIndex = 0;
+            this.aaaa.Width = 790;
             // 
-            // ReçeteListForm
+            // gridBand1
+            // 
+            this.gridBand1.Caption = "Revizyon Bilgileri";
+            this.gridBand1.Columns.Add(this.colRevizyonKodu);
+            this.gridBand1.Columns.Add(this.colRevTarihi);
+            this.gridBand1.Columns.Add(this.colAçıklama);
+            this.gridBand1.Name = "gridBand1";
+            this.gridBand1.VisibleIndex = 1;
+            this.gridBand1.Width = 300;
+            // 
+            // ReziyonListForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -353,8 +280,8 @@
             this.Controls.Add(this.myBandedGridControl1);
             this.Controls.Add(this.longNavigator);
             this.IconOptions.ShowIcon = false;
-            this.Name = "ReçeteListForm";
-            this.Text = "ReçeteListForm";
+            this.Name = "ReziyonListForm";
+            this.Text = "ReziyonListForm";
             this.Controls.SetChildIndex(this.ribbonControl, 0);
             this.Controls.SetChildIndex(this.longNavigator, 0);
             this.Controls.SetChildIndex(this.myBandedGridControl1, 0);
@@ -378,14 +305,9 @@
         private myUserControls.Grid.myBandedGridColumn colGTIN;
         private myUserControls.Grid.myBandedGridColumn colRevizyonKodu;
         private myUserControls.Grid.myBandedGridColumn colRevTarihi;
-        private myUserControls.Grid.myBandedGridColumn colAçıklama;
         private myUserControls.Navigator.LongNavigator longNavigator;
-        private myUserControls.Grid.myBandedGridColumn colAfaz;
-        private myUserControls.Grid.myBandedGridColumn colBFazıHazırlanış;
-        private myUserControls.Grid.myBandedGridColumn colCFazıHazırlanış;
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand aaaa;
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand1;
-        private myUserControls.Grid.myBandedGridColumn colRevizyonDurumu;
-        private myUserControls.Grid.myBandedGridColumn colMalzemeMiktarı;
+        private myUserControls.Grid.myBandedGridColumn colAçıklama;
     }
 }

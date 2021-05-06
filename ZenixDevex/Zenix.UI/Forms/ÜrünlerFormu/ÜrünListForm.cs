@@ -13,6 +13,8 @@ using System.Linq;
 using Zenix.Common.Function;
 using DevExpress.XtraGrid.Views.Grid;
 using Zenix.WinUI.MainForm;
+using Zenix.Model.DTO;
+using Zenix.WinUI.Forms.RevizyonFormu;
 
 namespace Zenix.WinUI.Forms.ÜrünlerFormu
 {
@@ -32,8 +34,10 @@ namespace Zenix.WinUI.Forms.ÜrünlerFormu
             this.Navigator = longNavigator.controlNavigator;
             Text = "Ürün Tanıtım Kartları ";
             Tablo.ViewCaption = Text;
-            //ShowHideButtons(IsMdiChild, btnBağlıKayıtları);
-            //btnBağlıKayıtları.Caption = "Ürünleri";
+            ShowHideButtons(IsMdiChild, btnBağlıKayıtları);
+            btnBağlıKayıtları.Caption = "Revizyon Kartı";
+            btnBağlıKayıtları.ImageOptions.Image = Properties.Resources.code_fork_16px ;
+            btnBağlıKayıtları.ImageOptions.LargeImage = Properties.Resources.code_fork_32px;
 
 
         }
@@ -41,6 +45,13 @@ namespace Zenix.WinUI.Forms.ÜrünlerFormu
         {
             var liste = ((ÜrünBll)Bll).List(FilterFunctions.Filter<Ürün>(AktifKayitlariGoster));
             Tablo.GridControl.DataSource = ((ÜrünBll)Bll).List(FilterFunctions.Filter<Ürün>(AktifKayitlariGoster));
+
+        }
+        protected override void BağlıKayıtlarAc()
+        {
+            var entity = tablo.GetRow<ÜrünL>();
+            if (entity.isNull()) return;
+            ShowListForms<RevizyonListForm>.ShowListForm(Common.Enums.KartTuru.Revizyon, entity);
 
         }
 

@@ -43,8 +43,8 @@ namespace Zenix.WinUI.Functions
                 where T : BaseGenelBLL<A>
                 where A : BaseEntity
             {
-                using (var item = (T)Activator.CreateInstance(typeof(T)))          
-                return (A)item.Single(x=>x.Id==id);
+                using (var item = (T)Activator.CreateInstance(typeof(T)))
+                    return (A)item.Single(x => x.Id == id);
             }
             switch (btnedit.Name)
             {
@@ -130,12 +130,36 @@ namespace Zenix.WinUI.Functions
                         }
                     }
                     break;
-                case "txtÜrün":
+                case "txtMamül":
                     {
                         var entity = (MamülL)ShowListForms<MamülListForm>.ShowDialogListForm(KartTuru.Mamül, btnedit.Id);
-                        if (entity != null)                        {
+                        if (entity != null)
+                        {
+                            btnedit.Tag = entity;
                             btnedit.Id = entity.Id;
-                            btnedit.EditValue = entity.MamülAdı;
+                            btnedit.EditValue =entity.MamülAdı ;
+                        }
+                    }
+                    break;
+                case "txtÜrün":
+                    {
+                        var entity = (ÜrünL)ShowListForms<ÜrünListForm>.ShowDialogListForm(KartTuru.Ürün, btnedit.Id);
+                        if (entity != null)
+                        {
+                            btnedit.Tag = entity;
+                            btnedit.Id = entity.Id;
+                            btnedit.EditValue = $"[{entity.MarkaAdı}-{entity.MamülAdı}-{entity.GTIN}]";
+                        }
+                    }
+                    break;
+                case "txtRevizyon":
+                    {
+
+                        var entity = (RevizyonS)ShowListForms<RevizyonListForm>.ShowDialogListForm(KartTuru.Revizyon, btnedit.Id, prmedit.Tag);
+                        if (entity != null)
+                        {
+                            btnedit.Id = entity.Id;
+                            btnedit.EditValue = entity.RevKodu;
                         }
                     }
                     break;

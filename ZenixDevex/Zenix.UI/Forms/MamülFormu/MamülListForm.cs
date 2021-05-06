@@ -37,6 +37,7 @@ namespace Zenix.WinUI.Forms.MamülFormu
         }
         protected override void Listele()
         {
+            //var liste = ((MamülBll)Bll).List(FilterFunctions.Filter<Mamül>(AktifKayitlariGoster));
             Tablo.GridControl.DataSource = ((MamülBll)Bll).List(FilterFunctions.Filter<Mamül >(AktifKayitlariGoster));
 
         }

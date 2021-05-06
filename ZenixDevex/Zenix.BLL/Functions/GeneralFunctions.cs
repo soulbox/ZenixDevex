@@ -5,6 +5,7 @@ using System.Configuration;
 using System.Data.Entity;
 using System.Linq;
 using System.Linq.Expressions;
+using System.Reflection;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -52,8 +53,8 @@ namespace Zenix.BLL.Functions
 
         public static IList<string> GetChangedFields<T>(this T oldEntity, T currentEntity)
         {
-            IList<string> alanlar = new List<string>();
-            IList<string> Discard = new List<string>();
+            List<string> alanlar = new List<string>();
+            List<string> Discard = new List<string>();
 
             currentEntity.GetType().GetPropertiyAttributeFromType<NotMappedAttribute>()
                .Select(x => x.PropertyInfo.Name).ToList().ForEach(x => Discard.Add(x));
@@ -62,14 +63,28 @@ namespace Zenix.BLL.Functions
                 .Select(x => x.PropertyInfo.Name)
                 .ToList().ForEach(x => Discard.Add(x));
 
-            currentEntity.GetType().GetProperties()
-                .Where(x => !Discard.Contains(x.Name))
-                .Where(x => x.PropertyType.Namespace != "System.Collections.Generic" | !x.PropertyType.IsClass | !x.CanWrite)//collection tipindeki propertiler dışındakilerde işlem yapılıcak
-                .ToList()
-                .ForEach(prop =>
+            List<PropertyInfo> GetList()
+            {
+                List<PropertyInfo> proplist = new List<PropertyInfo>();
+                foreach (var x in currentEntity.GetType().GetProperties())
+                {
+                    if (x.PropertyType.IsClass && !x.PropertyType.FullName.StartsWith("System.")) continue;
+                    if (!x.CanWrite || Discard.Contains(x.Name) |
+                        x.PropertyType.Namespace.Equals("System.Collections.Generic")) continue;
+                    proplist.Add(x);
+                }
+
+                return proplist;
+            }
+            var list = GetList();
+            //Console.WriteLine("");
+
+            list.ForEach(prop =>
                 {
                     //null olan değerler karşılaştırma yapılamadığından.null ise stringe çek. 
-                    var oldvalue = prop.GetValue(oldEntity) ?? string.Empty;
+                    //if (prop.PropertyType.Namespace.Equals("System.Collections.Generic") | prop.PropertyType.IsClass | prop.CanWrite) return;
+                    var oldvalue = oldEntity.GetType().GetProperty(prop.Name).GetValue(oldEntity, null) ?? string.Empty;
+                    //prop.GetValue(oldEntity) ?? string.Empty;
                     var curvalue = prop.GetValue(currentEntity) ?? string.Empty;
                     //byte tipindeyse [Resim Olabili]
                     if (prop.PropertyType == typeof(byte[]))

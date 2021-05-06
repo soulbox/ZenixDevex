@@ -14,16 +14,17 @@ using Zenix.WinUI.Show;
 using Zenix.Model.DTO;
 using Zenix.Model.Entities;
 using Zenix.WinUI.Functions;
+using Zenix.Model.Entities.Base;
 
 namespace Zenix.WinUI.Forms.RevizyonFormu
 {
-    public partial class ReziyonListForm : BaseListForm
+    public partial class RevizyonListForm : BaseListForm
     {
 
-      
-        public ReziyonListForm(params object[] prm)
+        readonly ÜrünL ürün;
+        public RevizyonListForm(params object[] prm)
         {
-       
+            ürün = (ÜrünL)prm[0];
             InitializeComponent();
             Bll = new RevizyonBll();
         }
@@ -34,7 +35,7 @@ namespace Zenix.WinUI.Forms.RevizyonFormu
             this.KartTuru = Common.Enums.KartTuru.Revizyon;
             this.Navigator = longNavigator.controlNavigator;
             //this.FormShow = new ShowEditForms<RevizyonEditForm>();
-            //this.Text = $"[{marka.Adı}-{marka.ÜrünAdı}] Revizyonları";
+            this.Text = $"[{ürün.MarkaAdı}-{ürün.MamülAdı}-{ürün.GTIN}] Revizyonları";
             Tablo.ViewCaption = Text;
 
             //if (IsMdiChild)
@@ -45,14 +46,14 @@ namespace Zenix.WinUI.Forms.RevizyonFormu
         protected override void Listele()
         {
 
-            var liste = ((RevizyonBll)Bll).List(x =>  x.Durum == AktifKayitlariGoster);
+            var liste = ((RevizyonBll)Bll).List(x =>  x.Durum == AktifKayitlariGoster && x.ÜrünId==ürün.Id).Cast<RevizyonS>().ToList();
             Tablo.GridControl.DataSource = liste;
 
         }
         protected override void ShowEditForm(long id)
         {
-            //var result = new ShowEditForms<RevizyonEditForm>().ShowDialogEditForm(Common.Enums.KartTuru.Revizyon, id, marka);
-            //ShowEditFormDefault(result);
+            var result = new ShowEditForms<RevizyonEditForm>().ShowDialogEditForm(Common.Enums.KartTuru.Revizyon, id, ürün);
+            ShowEditFormDefault(result);
         }
     }
 }

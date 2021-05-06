@@ -9,14 +9,28 @@ using Zenix.Model.Entities.Base;
 
 namespace Zenix.Model.DTO
 {
-    [NotMapped]
-    public class RevizyonS : Revizyon
-    {
 
-    }
-    [NotMapped]
-    public class RevizyonL : BaseEntity
+    public interface IBaseÜrünTanıtım
     {
-
+         long ÜrünId { get; set; }
+        string MamülAdı { get; set; }
+        string FirmaAdi { get; set; }
+        string MarkaAdı { get; set; }
+        string GTIN { get; set; }
     }
+
+    public interface IRevizyon : IBaseÜrünTanıtım
+    {
+        string Açıklama { get; set; }
+    }
+
+    [NotMapped]
+    public class RevizyonS : Revizyon, IRevizyon
+    {
+        public string MamülAdı { get; set; }
+        public string FirmaAdi { get; set; }
+        public string MarkaAdı { get; set; }
+        public string GTIN { get; set; }
+    }
+
 }

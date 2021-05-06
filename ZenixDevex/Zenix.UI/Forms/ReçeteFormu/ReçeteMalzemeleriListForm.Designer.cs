@@ -110,7 +110,7 @@
             // colMalzeme
             // 
             this.colMalzeme.Caption = "Malzeme";
-            this.colMalzeme.FieldName = "Adı";
+            this.colMalzeme.FieldName = "MamülAdı";
             this.colMalzeme.Name = "colMalzeme";
             this.colMalzeme.OptionsColumn.AllowEdit = false;
             this.colMalzeme.StatusBarAciklama = null;

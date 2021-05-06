@@ -23,7 +23,7 @@ namespace Zenix.WinUI.Forms.ReçeteFormu
         public ReçeteMalzemeleriListForm()
         {
             InitializeComponent();
-            //Bll = new MalzemeBll();
+            Bll = new MamülBll();
 
             ShowHideButtons(false,
             btnYeni,
@@ -49,14 +49,14 @@ namespace Zenix.WinUI.Forms.ReçeteFormu
 
         }
         protected override void Listele()
-        {         
-            //var liste = ((MalzemeBll)Bll).MalzemeAdListesi(x => !ListeDışıBırakılıcakKayıtlar.Contains(x.Id)).ToList();
-            //Tablo.GridControl.DataSource = liste;
-            //if (!isMultiSelect) return;
-            //if (liste.Any())
-            //    EkelenebilecekEntityVar = true;
-            //else
-            //    Msg.UyariMesajı("İşlem Yapılabilecek Kart Bulunamadı");
+        {
+            var liste = ((MamülBll)Bll).ReçeteMamül(x => !ListeDışıBırakılıcakKayıtlar.Contains(x.Id) && x.MalzemeTipi != MalzemeTipi.Ürün).ToList();
+            Tablo.GridControl.DataSource = liste;
+            if (!isMultiSelect) return;
+            if (liste.Any())
+                EkelenebilecekEntityVar = true;
+            else
+                Msg.UyariMesajı("İşlem Yapılabilecek Kart Bulunamadı");
 
         }
 

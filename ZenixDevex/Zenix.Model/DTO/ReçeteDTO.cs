@@ -10,34 +10,28 @@ using System.Text.RegularExpressions;
 
 namespace Zenix.Model.DTO
 {
+
     [NotMapped]
-    public class ReçeteS : Reçete
+    public class ReçeteS : BaseRevizyon, IBaseÜrünTanıtım, IBaseReçete
     {
-        public string FirmaAdı { get; set; }
-        public long FirmaId { get; set; }
-        public string ÜrünAdı { get; set; }
         public long ÜrünId { get; set; }
-        //
-        public string RevizyonKod { get; set; }
-        bool isEmptyKod { get => string.IsNullOrEmpty(Kod); }
-        int GetRevNo { get => isEmptyKod ? 1 : Convert.ToInt32(Regex.Match(Kod, @"\d+").Value); }
-        public DateTime RevizyonTarihi { get; set; } = DateTime.Now;
-        public string RevKodu { get => isEmptyKod ? "" : $"{RevizyonTarihi:ddMMyyyy}-{GetRevNo:00}"; }
-    }
-    [NotMapped]
-    public class ReçeteL : BaseEntityDurum
-    {
-        public string FirmaAdı { get; set; }
-        public string ÜrünAdı { get; set; }
+        public long RevizyonId { get; set; }
+        public string MamülAdı { get; set; }
+        public string FirmaAdi { get; set; }
+        public string MarkaAdı { get; set; }
+        public string GTIN { get; set; }
         public string AFazıHazırlanış { get; set; }
         public string BFazıHazırlanış { get; set; }
         public string CFazıHazırlanış { get; set; }
-        //
-        public string RevizyonKod { get; set; }
-        int GetRevNo { get => Convert.ToInt32(Regex.Match(Kod, @"\d+").Value); }
-        public DateTime RevizyonTarihi { get; set; }
-        public string RevKodu { get => $"{RevizyonTarihi:ddMMyyyy}-{GetRevNo:00}"; }
+        public string DFazıHazırlanış { get; set; }
+        public string Açıklama { get; set; }
 
+
+    }
+    [NotMapped]
+    public class ReçeteL : ReçeteS
+    {
+        public bool RevizyonDurum { get; set; }
         public int MalzemeMiktarı { get; set; }
 
     }
