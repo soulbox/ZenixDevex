@@ -62,6 +62,7 @@
     <Compile Include="DTO\ReçeteMalzemeleriDTO.cs" />
     <Compile Include="DTO\RolYetkileriDTO.cs" />
     <Compile Include="DTO\SatınalmaDTO.cs" />
+    <Compile Include="DTO\SatınAlmaMalzemeleriDTO.cs" />
     <Compile Include="DTO\SiparişDTO.cs" />
     <Compile Include="DTO\SiparişÜrünleriDTO.cs" />
     <Compile Include="DTO\ÜrünDTO.cs" />

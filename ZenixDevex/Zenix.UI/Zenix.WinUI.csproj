@@ -697,6 +697,9 @@
     <EmbeddedResource Include="myUserControls\UserControl\GenelEditTable\RolYetkileriTable.resx">
       <DependentUpon>RolYetkileriTable.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="myUserControls\UserControl\GenelEditTable\SatınAlmaMalzemeleriTable.resx">
+      <DependentUpon>SatınAlmaMalzemeleriTable.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="myUserControls\UserControl\GenelEditTable\SiparişÜrünleriTable.resx">
       <DependentUpon>SiparişÜrünleriTable.cs</DependentUpon>
     </EmbeddedResource>
@@ -750,6 +753,8 @@
     <None Include="Resources\box_settings_32px.png" />
     <None Include="Resources\icons8_gg_16px.png" />
     <None Include="Resources\icons8_gg_32px_3.png" />
+    <None Include="Resources\buy_32x32.png" />
+    <None Include="Resources\buy_16x16.png" />
     <Content Include="zenix.ico" />
     <None Include="Resources\abacus_16px.png" />
     <None Include="Resources\abacus_32px.png" />

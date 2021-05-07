@@ -28,7 +28,7 @@ namespace Zenix.BLL.General
                 Durum = x.Durum,
                 Kod = x.Kod,
                 FirmaAdi = x.Firma.FirmaAdi,
-                Tarihi = x.Tarihi,
+                Tarih = x.Tarih,
                 FirmaId=x.FirmaId,
                 KullanıcıId=x.KullanıcıId,
 
@@ -44,7 +44,7 @@ namespace Zenix.BLL.General
                 AdSoyad = x.Kullanıcı.Adı + " " + x.Kullanıcı.Soyadı,
                 FirmaAdi = x.Firma.FirmaAdi,
                 FirmaTipi = x.Firma.FirmaTipi.Adı,
-                Tarihi = x.Tarihi,
+                Tarih = x.Tarih,
                 SatınAlmaMiktarı = x.SatınAlmaMalzemeler.Count,
                 Ülke=x.Firma.Ülke.Adı,
                 FirmaId = x.FirmaId,

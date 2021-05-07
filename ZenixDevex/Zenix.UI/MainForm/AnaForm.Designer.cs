@@ -71,6 +71,7 @@
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.xtraTabbedMdiManager = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             this.imgBackGround = new DevExpress.XtraEditors.PictureEdit();
+            this.btnSatınAlma = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgBackGround.Properties)).BeginInit();
@@ -111,9 +112,10 @@
             this.btnAmbalajTipi,
             this.btnAmbalajMaddeTipi,
             this.btnMarkalar,
-            this.btnÜrün});
+            this.btnÜrün,
+            this.btnSatınAlma});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 45;
+            this.ribbon.MaxItemId = 46;
             this.ribbon.Name = "ribbon";
             this.ribbon.OptionsAnimation.PageCategoryShowAnimation = DevExpress.Utils.DefaultBoolean.True;
             this.ribbon.OptionsPageCategories.ShowCaptions = false;
@@ -396,6 +398,7 @@
             this.ribbonYönetim.ItemLinks.Add(this.btnMamüller);
             this.ribbonYönetim.ItemLinks.Add(this.btnReçete);
             this.ribbonYönetim.ItemLinks.Add(this.btnÜrün);
+            this.ribbonYönetim.ItemLinks.Add(this.btnSatınAlma);
             this.ribbonYönetim.Name = "ribbonYönetim";
             this.ribbonYönetim.Text = "Yönetim";
             // 
@@ -465,6 +468,14 @@
             this.imgBackGround.Size = new System.Drawing.Size(1020, 479);
             this.imgBackGround.TabIndex = 7;
             // 
+            // btnSatınAlma
+            // 
+            this.btnSatınAlma.Caption = "Satın Alma";
+            this.btnSatınAlma.Id = 45;
+            this.btnSatınAlma.ImageOptions.Image = global::Zenix.WinUI.Properties.Resources.buy_16x16;
+            this.btnSatınAlma.ImageOptions.LargeImage = global::Zenix.WinUI.Properties.Resources.buy_32x32;
+            this.btnSatınAlma.Name = "btnSatınAlma";
+            // 
             // AnaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -533,5 +544,6 @@
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage2;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup riibontanımlamalar;
         private DevExpress.XtraBars.BarButtonItem btnÜrün;
+        private DevExpress.XtraBars.BarButtonItem btnSatınAlma;
     }
 }

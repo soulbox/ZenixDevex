@@ -76,6 +76,7 @@
     <Compile Include="General\RolBll.cs" />
     <Compile Include="General\RolYetkileriBll.cs" />
     <Compile Include="General\SatınAlmaBll.cs" />
+    <Compile Include="General\SatınAlmaMalzemelerBll.cs" />
     <Compile Include="General\SiparişBll.cs" />
     <Compile Include="General\SiparişÜrünleriBll.cs" />
     <Compile Include="General\ÜlkeBll.cs" />

@@ -1058,7 +1058,6 @@
             this.layoutControlItem22.Size = new System.Drawing.Size(200, 24);
             this.layoutControlItem22.Text = "Stand";
             this.layoutControlItem22.TextSize = new System.Drawing.Size(80, 13);
-            this.layoutControlItem22.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
             // 
             // layoutControlItem21
             // 
@@ -1071,7 +1070,6 @@
             this.layoutControlItem21.Size = new System.Drawing.Size(200, 24);
             this.layoutControlItem21.Text = "Kutu";
             this.layoutControlItem21.TextSize = new System.Drawing.Size(80, 13);
-            this.layoutControlItem21.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
             // 
             // layoutControlItem20
             // 
@@ -1097,7 +1095,6 @@
             this.layoutControlItem23.Size = new System.Drawing.Size(200, 24);
             this.layoutControlItem23.Text = "Koli";
             this.layoutControlItem23.TextSize = new System.Drawing.Size(80, 13);
-            this.layoutControlItem23.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
             // 
             // layoutControlItem3
             // 

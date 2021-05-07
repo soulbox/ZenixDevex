@@ -22,7 +22,7 @@ namespace Zenix.Model.Entities
         public long KullanıcıId { get; set; }
         public Kullanici Kullanıcı { get; set; }
         [Column(TypeName = "Date")]
-        public DateTime Tarihi { get; set; } = DateTime.Now;
+        public DateTime Tarih { get; set; } = DateTime.Now;
 
         public ICollection<SatınAlmaMalzemeler > SatınAlmaMalzemeler { get; set; }
 

@@ -47,6 +47,9 @@ namespace Zenix.Data.Context
 
         public DbSet<İşemri> İşemri { get; set; }
         public DbSet<Mamül > Mamül { get; set; }
+        public DbSet<Satınalma> Satınalma { get; set; }
+        public DbSet<SatınAlmaMalzemeler> SatınAlmaMalzemeler { get; set; }
+
 
 
 

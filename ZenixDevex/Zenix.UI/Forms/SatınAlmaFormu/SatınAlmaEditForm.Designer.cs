@@ -47,6 +47,8 @@
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.satınAlmaMalzemeleriTable = new Zenix.WinUI.myUserControls.UserControl.GenelEditTable.SatınAlmaMalzemeleriTable();
+            this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.myDataLayoutControl)).BeginInit();
             this.myDataLayoutControl.SuspendLayout();
@@ -60,6 +62,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbonControl
@@ -72,11 +75,12 @@
             this.ribbonControl.SearchEditItem.EditWidth = 150;
             this.ribbonControl.SearchEditItem.Id = -5000;
             this.ribbonControl.SearchEditItem.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
-            this.ribbonControl.Size = new System.Drawing.Size(1019, 109);
+            this.ribbonControl.Size = new System.Drawing.Size(846, 109);
             this.ribbonControl.Toolbar.ShowCustomizeItem = false;
             // 
             // myDataLayoutControl
             // 
+            this.myDataLayoutControl.Controls.Add(this.satınAlmaMalzemeleriTable);
             this.myDataLayoutControl.Controls.Add(this.dtTarih);
             this.myDataLayoutControl.Controls.Add(this.txtFirma);
             this.myDataLayoutControl.Controls.Add(this.tglDurum);
@@ -86,7 +90,7 @@
             this.myDataLayoutControl.Name = "myDataLayoutControl";
             this.myDataLayoutControl.OptionsFocus.EnableAutoTabOrder = false;
             this.myDataLayoutControl.Root = this.Root;
-            this.myDataLayoutControl.Size = new System.Drawing.Size(1019, 458);
+            this.myDataLayoutControl.Size = new System.Drawing.Size(846, 403);
             this.myDataLayoutControl.TabIndex = 2;
             this.myDataLayoutControl.Text = "myDataLayoutControl1";
             // 
@@ -126,7 +130,7 @@
             this.txtFirma.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton()});
             this.txtFirma.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.txtFirma.Size = new System.Drawing.Size(876, 20);
+            this.txtFirma.Size = new System.Drawing.Size(703, 20);
             this.txtFirma.StatusBarAciklama = "Firma Seçin.";
             this.txtFirma.StatusBarKisayol = "F4 :";
             this.txtFirma.StatusBarKisayolAciklama = "Seç";
@@ -136,7 +140,7 @@
             // tglDurum
             // 
             this.tglDurum.EnterMoveNextControl = true;
-            this.tglDurum.Location = new System.Drawing.Point(921, 12);
+            this.tglDurum.Location = new System.Drawing.Point(748, 12);
             this.tglDurum.MenuManager = this.ribbonControl;
             this.tglDurum.Name = "tglDurum";
             this.tglDurum.Properties.Appearance.ForeColor = System.Drawing.Color.Maroon;
@@ -177,7 +181,8 @@
             this.layoutControlItem2,
             this.layoutControlItem3,
             this.layoutControlItem1,
-            this.layoutControlItem8});
+            this.layoutControlItem8,
+            this.layoutControlItem4});
             this.Root.LayoutMode = DevExpress.XtraLayout.Utils.LayoutMode.Table;
             this.Root.Name = "Root";
             columnDefinition1.SizeType = System.Windows.Forms.SizeType.Absolute;
@@ -209,7 +214,7 @@
             rowDefinition3,
             rowDefinition4,
             rowDefinition5});
-            this.Root.Size = new System.Drawing.Size(1019, 458);
+            this.Root.Size = new System.Drawing.Size(846, 403);
             this.Root.TextVisible = false;
             // 
             // layoutControlItem2
@@ -217,7 +222,7 @@
             this.layoutControlItem2.AppearanceItemCaption.ForeColor = System.Drawing.Color.Maroon;
             this.layoutControlItem2.AppearanceItemCaption.Options.UseForeColor = true;
             this.layoutControlItem2.Control = this.tglDurum;
-            this.layoutControlItem2.Location = new System.Drawing.Point(909, 0);
+            this.layoutControlItem2.Location = new System.Drawing.Point(736, 0);
             this.layoutControlItem2.Name = "layoutControlItem2";
             this.layoutControlItem2.OptionsTableLayoutItem.ColumnIndex = 3;
             this.layoutControlItem2.Size = new System.Drawing.Size(90, 24);
@@ -233,7 +238,7 @@
             this.layoutControlItem3.Name = "layoutControlItem3";
             this.layoutControlItem3.OptionsTableLayoutItem.ColumnSpan = 3;
             this.layoutControlItem3.OptionsTableLayoutItem.RowIndex = 1;
-            this.layoutControlItem3.Size = new System.Drawing.Size(909, 24);
+            this.layoutControlItem3.Size = new System.Drawing.Size(736, 24);
             this.layoutControlItem3.Text = "Firma";
             this.layoutControlItem3.TextSize = new System.Drawing.Size(26, 13);
             // 
@@ -260,11 +265,31 @@
             this.layoutControlItem8.Text = "Tarih";
             this.layoutControlItem8.TextSize = new System.Drawing.Size(26, 13);
             // 
+            // satınAlmaMalzemeleriTable
+            // 
+            this.satınAlmaMalzemeleriTable.Location = new System.Drawing.Point(12, 108);
+            this.satınAlmaMalzemeleriTable.Name = "satınAlmaMalzemeleriTable";
+            this.satınAlmaMalzemeleriTable.Size = new System.Drawing.Size(822, 283);
+            this.satınAlmaMalzemeleriTable.TabIndex = 8;
+            // 
+            // layoutControlItem4
+            // 
+            this.layoutControlItem4.AppearanceItemCaption.ForeColor = System.Drawing.Color.Maroon;
+            this.layoutControlItem4.AppearanceItemCaption.Options.UseForeColor = true;
+            this.layoutControlItem4.Control = this.satınAlmaMalzemeleriTable;
+            this.layoutControlItem4.Location = new System.Drawing.Point(0, 96);
+            this.layoutControlItem4.Name = "layoutControlItem4";
+            this.layoutControlItem4.OptionsTableLayoutItem.ColumnSpan = 4;
+            this.layoutControlItem4.OptionsTableLayoutItem.RowIndex = 4;
+            this.layoutControlItem4.Size = new System.Drawing.Size(826, 287);
+            this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem4.TextVisible = false;
+            // 
             // SatınAlmaEditForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1019, 591);
+            this.ClientSize = new System.Drawing.Size(846, 536);
             this.Controls.Add(this.myDataLayoutControl);
             this.IconOptions.ShowIcon = false;
             this.Name = "SatınAlmaEditForm";
@@ -284,6 +309,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -301,5 +327,7 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem8;
+        private myUserControls.UserControl.GenelEditTable.SatınAlmaMalzemeleriTable satınAlmaMalzemeleriTable;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
     }
 }

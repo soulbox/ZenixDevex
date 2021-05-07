@@ -20,6 +20,7 @@ using Zenix.WinUI.Functions;
 using Zenix.Common.Enums;
 using DevExpress.XtraBars;
 using Zenix.WinUI.Forms.ReçeteFormu;
+using Zenix.WinUI.Forms.MamülFormu;
 
 namespace Zenix.WinUI.myUserControls.UserControl.GenelEditTable
 {
@@ -28,6 +29,52 @@ namespace Zenix.WinUI.myUserControls.UserControl.GenelEditTable
         public SatınAlmaMalzemeleriTable()
         {
             InitializeComponent();
+            Bll = new SatınAlmaMalzemelerBll();
+            baseTablo = tablo;
+            //ShowItems = new BarItem[] { btnTümSeçimleriKaldır, btnTümünüSeç };
+            EventsLoad();
+        }
+        protected internal override void Listele()
+        {
+            var lists = ((SatınAlmaMalzemelerBll)Bll).List(x => x.SatınalmaId  == ownerform.Id).ToBindingList<SatınAlmaMalzemeleriL>();
+            tablo.GridControl.DataSource = lists;
+        }
+        protected override void HareketEkle()
+        {
+
+            var source = tablo.DataController.ListSource;
+            ListeDışıtutulacakkayıtlar = source.Cast<SatınAlmaMalzemeleriL>().Where(x => !x.Delete).Select(x => x.MamülId).ToList();
+            var entities = ShowListForms<MamülListForm>.ShowDialogListForm(ListeDışıtutulacakkayıtlar, true).EntityListConvert<MamülL>();
+            //var entities = ShowListForms<ReçeteMalzemeleriListForm>.ShowDialogListForm(ListeDışıtutulacakkayıtlar, true).EntityListConvert<MamülL>();
+            if (entities == null) return;
+            entities.ForEach(x =>
+            {
+                source.Add(new SatınAlmaMalzemeleriL
+                {
+                    SatınalmaId  = ownerform != null ? ownerform.Id : 0,
+                    MamülId = x.Id ,
+                    MamülAdı = x.MamülAdı,
+                    MalzemeBirimi = x.MalzemeBirimi,
+
+                    Insert = true
+                });
+            });
+            tablo.Focus();
+            tablo.RefreshDataSource();
+
+            tablo.FocusedRowHandle = tablo.DataRowCount - 1;
+            ButtonEnableDurum(true);
+
+        }
+        protected override void RowCellAllowEdit()
+        {
+            if (tablo.DataRowCount == 0) return;
+            var enti = tablo.GetRow<SatınAlmaMalzemeleriL>();
+            if (!enti.HasValue()) return;
+            //colEkleyebilir.OptionsColumn.AllowEdit = enti.Ekleyebilir != 2;
+            //colDeğiştirebilir.OptionsColumn.AllowEdit = enti.Değiştirebilir != 2;
+            //colSilebilir.OptionsColumn.AllowEdit = enti.Silebilir != 2;
+
         }
     }
 }
