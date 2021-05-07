@@ -39,7 +39,7 @@ namespace Zenix.Data.Context
         public DbSet<Paketleme> Paketleme { get; set; }
         public DbSet<Sipariş> Sipariş { get; set; }
         public DbSet<Reçete> Reçete { get; set; }
-        public DbSet<ReçeteMalzemeler> ReçeteMalzemeler { get; set; }
+        public DbSet<SiparişÜrünleri> ReçeteMalzemeler { get; set; }
         public DbSet<Kazan> Kazan { get; set; }
         public DbSet<Markalar> Markalar { get; set; }
         public DbSet<AmbalajTipi> AmbalajTipi { get; set; }

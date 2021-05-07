@@ -89,6 +89,8 @@ namespace Zenix.WinUI.Functions
             column.Visible = true;
             column.VisibleIndex = 0;
             column.FieldName = "Secim";
+            column.Name = "Secim";
+            column.Caption = "Seç";
             column.OptionsColumn.ShowCaption = false;
             column.OptionsColumn.AllowEdit = false;
             column.OptionsColumn.AllowSize = false;
@@ -104,12 +106,12 @@ namespace Zenix.WinUI.Functions
                 var band = view.Bands["BndSeçim"];
                 if (band == null)
                 {
-                    view.Bands.Add(band = new GridBand() { Caption = "BndSeçim"});
+                    view.Bands.Add(band = new GridBand() {Name= "BndSeçim", Caption = "Seç"});
                 }
                 band.Visible = true;
                 band.VisibleIndex = 0;
                 band.Columns.Add((BandedGridColumn)column);
-
+                view.Bands.MoveTo(0, band);
             }
             tablo.Click += Tablo_Click;
             tablo.CustomDrawColumnHeader += Tablo_CustomDrawColumnHeader;

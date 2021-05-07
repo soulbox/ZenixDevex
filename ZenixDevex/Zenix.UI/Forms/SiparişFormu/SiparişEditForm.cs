@@ -29,7 +29,6 @@ namespace Zenix.WinUI.Forms.SiparişFormu
             this.DataLayoutControl = myDataLayoutControl;
             this.Bll = new SiparişBll(myDataLayoutControl);
             this.KartTuru = KartTuru.Sipariş;
-            cmbBirim.ToData<BirimTipi>();
             EventsLoad();
         }
         protected internal override void Yukle()
@@ -37,6 +36,7 @@ namespace Zenix.WinUI.Forms.SiparişFormu
 
             OldEntity = BaseIslemTuru == Common.Enums.IslemTuru.EntityInsert ? new SiparişS() : ((SiparişBll)Bll).Single(FilterFunctions.Filter<Sipariş>(Id));
             NesneyiKontrollereBagla();
+            TabloYükle();
             if (BaseIslemTuru != Common.Enums.IslemTuru.EntityInsert) return;
             Id = BaseIslemTuru.IdOlustur(OldEntity);
             txtKod.Text = ((SiparişBll)Bll).YeniKodVer();
@@ -47,14 +47,10 @@ namespace Zenix.WinUI.Forms.SiparişFormu
             var entity = (SiparişS)OldEntity;
             txtKod.Text = entity.Kod;
             tglDurum.IsOn = entity.Durum;
-            txtFirma.Text = entity.FirmaAdı;
+            txtFirma.Text = entity.FirmaAdi;
             txtFirma.Id = entity.FirmaId;
-            txtÜrün.Text = entity.ÜrünAdı;
-            txtÜrün.Id = entity.Id;
-            txtMiktar.EditValue = entity.Miktar;
-            cmbBirim.Text = entity.BirimTipi.ToName();
-            txtAçıklama.Text = entity.Açıklama;
             dtTarih.DateTime = entity.Tarih;
+            txtAçıklama.Text = entity.Açıklama;
 
         }
         protected override void GuncelNesneOluştur()
@@ -62,15 +58,13 @@ namespace Zenix.WinUI.Forms.SiparişFormu
 
             CurrentEntity = new Sipariş
             {
-                Id = Id,
-                Kod = txtKod.Text,
-                Durum = tglDurum.IsOn,
-                ÜrünId = txtÜrün.Id.ConvertTo<long>(),
-                BirimTipi = cmbBirim.Text.GetEnum<BirimTipi>(),
+                Id          = Id,
+                Kod         = txtKod.Text,
+                Durum       = tglDurum.IsOn,
+                FirmaId     = txtFirma.GetId(),
                 KullanıcıId = AnaForm.Kullanıcı.Id,
-                Miktar = txtMiktar.EditValue.ConvertTo<int>(),
-                Tarih = dtTarih.DateTime,
-                Açıklama = txtAçıklama.Text,
+                Tarih       = dtTarih.DateTime,
+                Açıklama    = txtAçıklama.Text,
 
             };
             ButtonEnableDurumu();
@@ -83,15 +77,31 @@ namespace Zenix.WinUI.Forms.SiparişFormu
             {
                 if (sender == txtFirma)
                     sec.Seç(txtFirma);
-                if (sender == txtÜrün)
-                    sec.Seç(txtÜrün, txtFirma);
-
             }
         }
-        protected override void Control_EnabledChange(object sender, EventArgs e)
+        protected override void TabloYükle()
         {
-            if (sender == txtFirma)
-                txtFirma.KontrolEnabledChange(txtÜrün);
+            siparişÜrünleriTable.ownerform = this;
+
+            siparişÜrünleriTable.Yukle();
+        }
+        protected internal override void ButtonEnableDurumu()
+        {
+            if (!isLoaded) return;
+            GeneralFunctions.ButtonEnabledDurumu(btnYeni, btnKaydet, btnGeriAl, btnSil, OldEntity, CurrentEntity, siparişÜrünleriTable.tablevaluechanged);
+        }
+
+        protected override bool EntityInsert()
+        {
+
+            if (siparişÜrünleriTable.HatalıGiriş()) return false;
+            return base.EntityInsert() && siparişÜrünleriTable.Kaydet();
+        }
+        protected override bool EntityUpdate()
+        {
+
+            if (siparişÜrünleriTable.HatalıGiriş()) return false;
+            return base.EntityUpdate() && siparişÜrünleriTable.Kaydet();
         }
     }
 }

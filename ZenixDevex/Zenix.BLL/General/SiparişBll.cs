@@ -18,7 +18,36 @@ namespace Zenix.BLL.General
         public SiparişBll() : base(KartTuru.Sipariş) { }
 
         public SiparişBll(Control ctrl) : base(ctrl, KartTuru.Sipariş) { }
-       
+        public override BaseEntity Single(Expression<Func<Sipariş, bool>> filter)
+        {
+            return BaseSingle(filter, x => new SiparişS
+            {
+                Id = x.Id,
+                Durum = x.Durum,
+                Kod = x.Kod,
+                AdSoyad = x.Kullanıcı.Adı + " " + x.Kullanıcı.Soyadı,
+                Açıklama = x.Açıklama,
+                FirmaAdi = x.Firma.FirmaAdi,
+                FirmaId = x.FirmaId,
+                KullanıcıId = x.KullanıcıId,
+                Tarih = x.Tarih,
+
+            });
+        }
+        public override IEnumerable<BaseEntity> List(Expression<Func<Sipariş, bool>> filter)
+        {
+            return BaseList(filter, x => new SiparişL
+            {
+                Id = x.Id,
+                Durum = x.Durum,
+                Kod = x.Kod,
+                AdSoyad = x.Kullanıcı.Adı + " " + x.Kullanıcı.Soyadı,
+                Açıklama = x.Açıklama,
+                FirmaAdi = x.Firma.FirmaAdi,
+                Tarih = x.Tarih,
+                ÜrünMiktarı = x.SiparişÜrünleri.Count,
+            }).ToList();
+        }
 
     }
 }

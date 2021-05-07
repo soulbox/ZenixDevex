@@ -21,6 +21,7 @@ namespace Zenix.Model.DTO
 
     public interface IRevizyon : IBaseÜrünTanıtım
     {
+  
         string Açıklama { get; set; }
     }
 

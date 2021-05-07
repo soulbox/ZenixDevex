@@ -15,6 +15,8 @@ using DevExpress.XtraGrid.Views.Grid;
 using Zenix.WinUI.MainForm;
 using Zenix.Model.DTO;
 using Zenix.WinUI.Forms.RevizyonFormu;
+using Zenix.Common.Messages;
+using DevExpress.XtraGrid.Views.BandedGrid;
 
 namespace Zenix.WinUI.Forms.ÜrünlerFormu
 {
@@ -44,9 +46,20 @@ namespace Zenix.WinUI.Forms.ÜrünlerFormu
         protected override void Listele()
         {
             var liste = ((ÜrünBll)Bll).List(FilterFunctions.Filter<Ürün>(AktifKayitlariGoster));
-            Tablo.GridControl.DataSource = ((ÜrünBll)Bll).List(FilterFunctions.Filter<Ürün>(AktifKayitlariGoster));
-
+            Tablo.GridControl.DataSource = liste;
+            if (!isMultiSelect) return;
+            if (liste.Any())
+                EkelenebilecekEntityVar = true;
+            else
+                Msg.UyariMesajı("İşlem Yapılabilecek Kart Bulunamadı");
         }
+
+
+        private void Tablo_ColumnPositionChanged(object sender, EventArgs e)
+        {
+         
+        }
+
         protected override void BağlıKayıtlarAc()
         {
             var entity = tablo.GetRow<ÜrünL>();

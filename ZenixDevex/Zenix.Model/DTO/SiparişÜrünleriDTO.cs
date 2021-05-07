@@ -1,0 +1,60 @@
+﻿using Zenix.Common.Enums;
+using Zenix.Model.Entities;
+using Zenix.Model.Entities.Base.Interfaces;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Zenix.Model.Entities.Base;
+
+namespace Zenix.Model.DTO
+{
+
+
+
+    [NotMapped]
+    public class SiparişÜrünleriL : SiparişÜrünleri, IBaseHaraketEntity, IÜrün, IBaseÜrünTanıtım, IHacim, IMamül
+    {
+        public string GTIN { get; set; }
+        public long MarkaId { get; set; }
+        public long? FirmaId { get; set; }
+        public long MamülId { get; set; }
+        public int Kutu { get; set; }
+        public int Stand { get; set; }
+        public int Koli { get; set; }
+        public string MamülAdı { get; set; }
+        public string FirmaAdi { get; set; }
+        public string MarkaAdı { get; set; }
+        public int Hacim { get; set; }
+        public string AmbalajTipiAdı { get; set; }
+        public string AmbalajMaddeAdı { get; set; }
+        public SarfTipi SarfTipi { get; set; }
+        public BirimTipi MalzemeBirimi { get; set; }
+        public MalzemeTipi MalzemeTipi { get; set; }
+        public long AmbalajTipiId { get; set; }
+        public long AmbalajMaddeTipiId { get; set; }
+        public float AğızÖlçüsü { get; set; }
+        public float Uzunluk { get; set; }
+        public float En { get; set; }
+        public float Boy { get; set; }
+        public BirimTipi BirimAuEbY { get; set; }
+        public float Alan { get; set; }
+        public BirimTipi AlanınBirimi { get; set; }
+        public float Ağırlık { get; set; }
+        public BirimTipi AğırlığınBirimi { get; set; }
+        public string BirimAğızÖlçüsü { get; }
+        public string BirimUzunluk { get; }
+        public string BirimEn { get; }
+        public string BirimBoy { get; }
+        public string BirimYükseklik { get; }
+        public string BirimAlan { get; }
+
+        public string BirimAğırlık { get; }
+        public string ÜrünAdı { get => $"{FirmaAdi} - {MarkaAdı } - {MamülAdı }"; }
+        public bool Insert { get; set; }
+        public bool Update { get; set; }
+        public bool Delete { get; set; }
+    }
+}

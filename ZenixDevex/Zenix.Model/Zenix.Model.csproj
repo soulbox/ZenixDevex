@@ -62,6 +62,7 @@
     <Compile Include="DTO\ReçeteMalzemeleriDTO.cs" />
     <Compile Include="DTO\RolYetkileriDTO.cs" />
     <Compile Include="DTO\SiparişDTO.cs" />
+    <Compile Include="DTO\SiparişÜrünleriDTO.cs" />
     <Compile Include="DTO\ÜrünDTO.cs" />
     <Compile Include="DTO\İşemriDTO.cs" />
     <Compile Include="Entities\AmbalajMaddeTipi.cs" />
@@ -88,6 +89,7 @@
     <Compile Include="Entities\Paketleme.cs" />
     <Compile Include="Entities\Satınalma.cs" />
     <Compile Include="Entities\SatınAlmaMalzemeler.cs" />
+    <Compile Include="Entities\SiparişÜrünleri.cs" />
     <Compile Include="Entities\Ülke.cs" />
     <Compile Include="Entities\Ürün.cs" />
     <Compile Include="Entities\İşemri.cs" />

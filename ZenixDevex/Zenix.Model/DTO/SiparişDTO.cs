@@ -11,26 +11,22 @@ using Zenix.Common.Enums;
 namespace Zenix.Model.DTO
 {
     [NotMapped]
-    public class SiparişS : Sipariş
+    public class SiparişS : Sipariş, IFirma
     {
-        public string FirmaAdı { get; set; }
-        public string ÜrünAdı { get; set; }
-        public string AdSoyad { get; set; }
-        public string Personel { get=>AdSoyad.ToUpper(); }
-        public long FirmaId { get; set; }
 
+        public string AdSoyad { get; set; }
+        public string Personel { get => AdSoyad.ToUpper(); }
+        public string FirmaAdi { get; set; }
     }
     [NotMapped]
-    public class SiparişL : BaseEntityDurum
+    public class SiparişL : BaseEntityDurum, IFirma
     {
-        public string FirmaAdı { get; set; }
-        public string ÜrünAdı { get; set; }
-        public BirimTipi BirimTipi { get; set; }    
-        public int Miktar { get; set; }
+        public string FirmaAdi { get; set; }  
         public DateTime Tarih { get; set; }
         public string AdSoyad { get; set; }
         public string Personel { get => AdSoyad.ToUpper(); }
         public string Açıklama { get; set; }
+        public int ÜrünMiktarı { get; set; }
 
     }
 }

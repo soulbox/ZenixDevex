@@ -54,9 +54,9 @@
             this.labelCopyright.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.labelCopyright.Location = new System.Drawing.Point(24, 287);
             this.labelCopyright.Name = "labelCopyright";
-            this.labelCopyright.Size = new System.Drawing.Size(197, 13);
+            this.labelCopyright.Size = new System.Drawing.Size(126, 13);
             this.labelCopyright.TabIndex = 6;
-            this.labelCopyright.Text = "Copyright © Erkan Ceylan && Kadir Aygün";
+            this.labelCopyright.Text = "Copyright © Erkan Ceylan";
             // 
             // labelStatus
             // 

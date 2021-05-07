@@ -294,7 +294,7 @@
             // 
             // btnFirma
             // 
-            this.btnFirma.Caption = "Firma Kartları";
+            this.btnFirma.Caption = "Firmalar";
             this.btnFirma.Id = 34;
             this.btnFirma.ImageOptions.Image = global::Zenix.WinUI.Properties.Resources.manufacturing_16px;
             this.btnFirma.ImageOptions.LargeImage = global::Zenix.WinUI.Properties.Resources.manufacturing_32px;
@@ -302,7 +302,7 @@
             // 
             // btnÜlkeler
             // 
-            this.btnÜlkeler.Caption = "Ülke Kartları";
+            this.btnÜlkeler.Caption = "Ülkeler";
             this.btnÜlkeler.Id = 35;
             this.btnÜlkeler.ImageOptions.Image = global::Zenix.WinUI.Properties.Resources.countries_16x;
             this.btnÜlkeler.ImageOptions.LargeImage = global::Zenix.WinUI.Properties.Resources.countries_32x1;
@@ -310,7 +310,7 @@
             // 
             // btnSipariş
             // 
-            this.btnSipariş.Caption = "Sipariş Kartları";
+            this.btnSipariş.Caption = "Siparişler";
             this.btnSipariş.Id = 36;
             this.btnSipariş.ImageOptions.Image = global::Zenix.WinUI.Properties.Resources.salesanalysis_16x16;
             this.btnSipariş.ImageOptions.LargeImage = global::Zenix.WinUI.Properties.Resources.salesanalysis_32x32;
@@ -318,7 +318,7 @@
             // 
             // btnMamüller
             // 
-            this.btnMamüller.Caption = "Mamül Kartları";
+            this.btnMamüller.Caption = "Malzemeler";
             this.btnMamüller.Id = 37;
             this.btnMamüller.ImageOptions.Image = global::Zenix.WinUI.Properties.Resources.commodity_16px;
             this.btnMamüller.ImageOptions.LargeImage = global::Zenix.WinUI.Properties.Resources.commodity_32px;
@@ -326,7 +326,7 @@
             // 
             // btnReçete
             // 
-            this.btnReçete.Caption = "Reçete Kartları";
+            this.btnReçete.Caption = "Reçeteler";
             this.btnReçete.Id = 38;
             this.btnReçete.ImageOptions.Image = global::Zenix.WinUI.Properties.Resources.syringe_16px;
             this.btnReçete.ImageOptions.LargeImage = global::Zenix.WinUI.Properties.Resources.syringe_32px;
@@ -342,7 +342,7 @@
             // 
             // btnİşemri
             // 
-            this.btnİşemri.Caption = "İşemri Kartları";
+            this.btnİşemri.Caption = "İş Emirleri";
             this.btnİşemri.Id = 40;
             this.btnİşemri.ImageOptions.DisabledImage = global::Zenix.WinUI.Properties.Resources.work_16px;
             this.btnİşemri.ImageOptions.LargeImage = global::Zenix.WinUI.Properties.Resources.work_32px;
@@ -350,7 +350,7 @@
             // 
             // btnAmbalajTipi
             // 
-            this.btnAmbalajTipi.Caption = "Ambalaj Tipi Kartları";
+            this.btnAmbalajTipi.Caption = "Ambalaj Tipleri";
             this.btnAmbalajTipi.Id = 41;
             this.btnAmbalajTipi.ImageOptions.Image = global::Zenix.WinUI.Properties.Resources.box_settings_16px;
             this.btnAmbalajTipi.ImageOptions.LargeImage = global::Zenix.WinUI.Properties.Resources.box_settings_32px;
@@ -358,7 +358,7 @@
             // 
             // btnAmbalajMaddeTipi
             // 
-            this.btnAmbalajMaddeTipi.Caption = "Ambalaj Madde Kartları";
+            this.btnAmbalajMaddeTipi.Caption = "Ambalaj Maddeleri";
             this.btnAmbalajMaddeTipi.Id = 42;
             this.btnAmbalajMaddeTipi.ImageOptions.Image = global::Zenix.WinUI.Properties.Resources.layers_16px;
             this.btnAmbalajMaddeTipi.ImageOptions.LargeImage = global::Zenix.WinUI.Properties.Resources.layers_32px;
@@ -366,7 +366,7 @@
             // 
             // btnMarkalar
             // 
-            this.btnMarkalar.Caption = "Marka Kartları";
+            this.btnMarkalar.Caption = "Markalar";
             this.btnMarkalar.Id = 43;
             this.btnMarkalar.ImageOptions.Image = global::Zenix.WinUI.Properties.Resources.icons8_gg_16px;
             this.btnMarkalar.ImageOptions.LargeImage = global::Zenix.WinUI.Properties.Resources.gg_32px_3;
@@ -374,7 +374,7 @@
             // 
             // btnÜrün
             // 
-            this.btnÜrün.Caption = "Ürün Kartları";
+            this.btnÜrün.Caption = "Ürünler";
             this.btnÜrün.Id = 44;
             this.btnÜrün.ImageOptions.Image = global::Zenix.WinUI.Properties.Resources.handle_with_care_16px;
             this.btnÜrün.ImageOptions.LargeImage = global::Zenix.WinUI.Properties.Resources.handle_with_care_32px;
@@ -415,9 +415,9 @@
             // 
             // riibontanımlamalar
             // 
-            this.riibontanımlamalar.ItemLinks.Add(this.btnAmbalajTipi, true);
-            this.riibontanımlamalar.ItemLinks.Add(this.btnFirma);
+            this.riibontanımlamalar.ItemLinks.Add(this.btnFirma, true);
             this.riibontanımlamalar.ItemLinks.Add(this.btnMarkalar);
+            this.riibontanımlamalar.ItemLinks.Add(this.btnAmbalajTipi);
             this.riibontanımlamalar.ItemLinks.Add(this.btnAmbalajMaddeTipi);
             this.riibontanımlamalar.ItemLinks.Add(this.btnMamüller);
             this.riibontanımlamalar.ItemLinks.Add(this.btnÜlkeler);
