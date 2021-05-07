@@ -307,6 +307,18 @@
     <Compile Include="Forms\ReçeteFormu\ReçeteMalzemeleriListForm.Designer.cs">
       <DependentUpon>ReçeteMalzemeleriListForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\SatınAlmaFormu\SatınAlmaEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SatınAlmaFormu\SatınAlmaEditForm.Designer.cs">
+      <DependentUpon>SatınAlmaEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SatınAlmaFormu\SatınAlmaListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SatınAlmaFormu\SatınAlmaListForm.Designer.cs">
+      <DependentUpon>SatınAlmaListForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\SiparişFormu\SiparişEditForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -514,6 +526,12 @@
     <Compile Include="myUserControls\UserControl\GenelEditTable\RolYetkileriTable.Designer.cs">
       <DependentUpon>RolYetkileriTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="myUserControls\UserControl\GenelEditTable\SatınAlmaMalzemeleriTable.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="myUserControls\UserControl\GenelEditTable\SatınAlmaMalzemeleriTable.Designer.cs">
+      <DependentUpon>SatınAlmaMalzemeleriTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="myUserControls\UserControl\GenelEditTable\SiparişÜrünleriTable.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -615,6 +633,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ReçeteFormu\ReçeteMalzemeleriListForm.resx">
       <DependentUpon>ReçeteMalzemeleriListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SatınAlmaFormu\SatınAlmaEditForm.resx">
+      <DependentUpon>SatınAlmaEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SatınAlmaFormu\SatınAlmaListForm.resx">
+      <DependentUpon>SatınAlmaListForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\SiparişFormu\SiparişEditForm.resx">
       <DependentUpon>SiparişEditForm.cs</DependentUpon>

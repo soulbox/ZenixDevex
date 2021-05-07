@@ -43,6 +43,8 @@ namespace Zenix.Common.Enums
         AmbalajMaddeTipi = 18,
         [Description("Firma Tipi Kartı")]
         FirmaTipi = 19,
+        [Description("Satın Alma  Kartı")]
+        SatınAlma = 20,
 
     }
 }

@@ -55,17 +55,13 @@ namespace Zenix.WinUI.Forms.ÜrünlerFormu
         }
 
 
-        private void Tablo_ColumnPositionChanged(object sender, EventArgs e)
-        {
-         
-        }
+
 
         protected override void BağlıKayıtlarAc()
         {
             var entity = tablo.GetRow<ÜrünL>();
             if (entity.isNull()) return;
             ShowListForms<RevizyonListForm>.ShowListForm(Common.Enums.KartTuru.Revizyon, entity);
-
         }
 
     }

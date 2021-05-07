@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Zenix.Common.Enums;
+using Zenix.Model.Attributes;
 using Zenix.Model.Entities.Base;
 
 namespace Zenix.Model.Entities
@@ -16,12 +17,14 @@ namespace Zenix.Model.Entities
         [Index(name: "IX_Kod", IsUnique = true)]
         public override string Kod { get; set; }
         public Firma Firma { get; set; }
+        [Required, ZorunluAlan("Firma", "txtFirma")]
         public long FirmaId { get; set; }
         public long KullanıcıId { get; set; }
         public Kullanici Kullanıcı { get; set; }
-        public DateTime KayıtTarihi { get; set; } = DateTime.Now;
-        public bool Teslimat { get; set; }
-        public bool Onay { get; set; }
+        [Column(TypeName = "Date")]
+        public DateTime Tarihi { get; set; } = DateTime.Now;
+
+        public ICollection<SatınAlmaMalzemeler > SatınAlmaMalzemeler { get; set; }
 
     }
 }

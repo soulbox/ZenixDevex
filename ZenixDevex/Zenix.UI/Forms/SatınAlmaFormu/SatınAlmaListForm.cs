@@ -13,38 +13,34 @@ using System.Linq;
 using Zenix.Common.Function;
 using DevExpress.XtraGrid.Views.Grid;
 using Zenix.WinUI.MainForm;
-using Zenix.Common.Messages;
 
-namespace Zenix.WinUI.Forms.MamülFormu
+namespace Zenix.WinUI.Forms.SatınAlmaFormu
 {
-    public partial class MamülListForm : BaseListForm
-
+    public partial class SatınAlmaListForm :BaseListForm
     {
-        public MamülListForm()
+        public SatınAlmaListForm()
         {
             InitializeComponent();
-            Bll = new MamülBll();
+            Bll = new SatınAlmaBll();
 
         }
         protected override void Degiskenleridoldur()
         {
             this.tablo = Tablo;
-            this.KartTuru = Common.Enums.KartTuru.FirmaTipi;
-            this.FormShow = new ShowEditForms<MamülEditForm>();
+            this.KartTuru = Common.Enums.KartTuru.Firma;
+            this.FormShow = new ShowEditForms<SatınAlmaEditForm >();
             this.Navigator = longNavigator.controlNavigator;
-            Text = "Mamül Kartları ";
+            Text = "Satın Alma Kartları ";
             Tablo.ViewCaption = Text;
+            //ShowHideButtons(IsMdiChild, btnBağlıKayıtları);
+            //btnBağlıKayıtları.Caption = "Ürünleri";
+
 
         }
         protected override void Listele()
         {
-            var liste = ((MamülBll)Bll).List(FilterFunctions.Filter<Mamül>(AktifKayitlariGoster));
-            Tablo.GridControl.DataSource = liste;
-            if (!isMultiSelect) return;
-            if (liste.Any())
-                EkelenebilecekEntityVar = true;
-            else
-                Msg.UyariMesajı("İşlem Yapılabilecek Kart Bulunamadı");
+            Tablo.GridControl.DataSource = ((SatınAlmaBll)Bll).List(FilterFunctions.Filter<Satınalma>(AktifKayitlariGoster));
+
         }
     }
 }

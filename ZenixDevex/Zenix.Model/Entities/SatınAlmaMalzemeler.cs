@@ -11,15 +11,25 @@ using Zenix.Model.Entities.Base;
 
 namespace Zenix.Model.Entities
 {
-    public class SatınAlmaMalzemeler : BaseEntityHaraket
+    public interface ISatınAlmaMalzeme
     {
-        public Satınalma Satınalma  { get; set; }
+        bool GelenMiktar { get; set; }       
+        bool EksikFazla { get; set; }
+    }
+    public class SatınAlmaMalzemeler : BaseEntityHaraket,ISatınAlmaMalzeme
+    {
+        public Satınalma Satınalma { get; set; }
         public long SatınalmaId { get; set; }
-        //public Malzeme Malzeme  { get; set; }
-        //public long MalzemeId { get; set; }
+        public Mamül Mamül { get; set; }
+        public long MamülId { get; set; }
         public int Miktar { get; set; }
-        public DateTime TerminTarihi { get; set; }
-
+        [Column(TypeName = "Date")]
+        public DateTime TerminTarihi { get; set; } = DateTime.Now;      
+        public bool Teslimat { get; set; }
+        [NotMapped]
+        public bool GelenMiktar { get; set; }
+        [NotMapped]
+        public bool EksikFazla { get; set; }
 
 
     }
