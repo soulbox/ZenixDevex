@@ -55,23 +55,26 @@
             this.btnSipariş = new DevExpress.XtraBars.BarButtonItem();
             this.btnMamüller = new DevExpress.XtraBars.BarButtonItem();
             this.btnReçete = new DevExpress.XtraBars.BarButtonItem();
-            this.btnKazan = new DevExpress.XtraBars.BarButtonItem();
             this.btnİşemri = new DevExpress.XtraBars.BarButtonItem();
             this.btnAmbalajTipi = new DevExpress.XtraBars.BarButtonItem();
             this.btnAmbalajMaddeTipi = new DevExpress.XtraBars.BarButtonItem();
             this.btnMarkalar = new DevExpress.XtraBars.BarButtonItem();
             this.btnÜrün = new DevExpress.XtraBars.BarButtonItem();
+            this.btnSatınAlma = new DevExpress.XtraBars.BarButtonItem();
+            this.btnMalzemeDepo = new DevExpress.XtraBars.BarButtonItem();
+            this.btnÜrünDepo = new DevExpress.XtraBars.BarButtonItem();
+            this.btnSevkiyat = new DevExpress.XtraBars.BarButtonItem();
+            this.btnDepo = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonYönetim = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.riibontanımlamalar = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonMüş = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonKullanıcı = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.xtraTabbedMdiManager = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             this.imgBackGround = new DevExpress.XtraEditors.PictureEdit();
-            this.btnSatınAlma = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgBackGround.Properties)).BeginInit();
@@ -107,23 +110,25 @@
             this.btnSipariş,
             this.btnMamüller,
             this.btnReçete,
-            this.btnKazan,
             this.btnİşemri,
             this.btnAmbalajTipi,
             this.btnAmbalajMaddeTipi,
             this.btnMarkalar,
             this.btnÜrün,
-            this.btnSatınAlma});
+            this.btnSatınAlma,
+            this.btnMalzemeDepo,
+            this.btnÜrünDepo,
+            this.btnSevkiyat,
+            this.btnDepo});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 46;
+            this.ribbon.MaxItemId = 51;
             this.ribbon.Name = "ribbon";
             this.ribbon.OptionsAnimation.PageCategoryShowAnimation = DevExpress.Utils.DefaultBoolean.True;
-            this.ribbon.OptionsPageCategories.ShowCaptions = false;
             this.ribbon.OptionsTouch.ShowTouchUISelectorInSearchMenu = false;
+            this.ribbon.OptionsTouch.TouchUI = DevExpress.Utils.DefaultBoolean.False;
             this.ribbon.PageAnimationLength = 100;
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
-            this.ribbonPage2,
             this.ribbonMüş});
             this.ribbon.QuickToolbarItemLinks.Add(this.baruserinfo);
             this.ribbon.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.False;
@@ -131,13 +136,11 @@
             this.ribbon.ShowExpandCollapseButton = DevExpress.Utils.DefaultBoolean.False;
             this.ribbon.ShowMoreCommandsButton = DevExpress.Utils.DefaultBoolean.False;
             this.ribbon.ShowPageHeadersInFormCaption = DevExpress.Utils.DefaultBoolean.False;
-            this.ribbon.ShowPageHeadersMode = DevExpress.XtraBars.Ribbon.ShowPageHeadersMode.Show;
-            this.ribbon.ShowQatLocationSelector = false;
             this.ribbon.ShowToolbarCustomizeItem = false;
-            this.ribbon.Size = new System.Drawing.Size(1020, 185);
+            this.ribbon.Size = new System.Drawing.Size(1020, 161);
             this.ribbon.StatusBar = this.ribbonStatusBar;
             this.ribbon.Toolbar.ShowCustomizeItem = false;
-            this.ribbon.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Below;
+            this.ribbon.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden;
             // 
             // btnMusteri
             // 
@@ -334,14 +337,6 @@
             this.btnReçete.ImageOptions.LargeImage = global::Zenix.WinUI.Properties.Resources.syringe_32px;
             this.btnReçete.Name = "btnReçete";
             // 
-            // btnKazan
-            // 
-            this.btnKazan.Caption = "Kazan Kartları";
-            this.btnKazan.Id = 39;
-            this.btnKazan.ImageOptions.Image = global::Zenix.WinUI.Properties.Resources.whisky_still_16px;
-            this.btnKazan.ImageOptions.LargeImage = global::Zenix.WinUI.Properties.Resources.whisky_still_32px;
-            this.btnKazan.Name = "btnKazan";
-            // 
             // btnİşemri
             // 
             this.btnİşemri.Caption = "İş Emirleri";
@@ -382,18 +377,59 @@
             this.btnÜrün.ImageOptions.LargeImage = global::Zenix.WinUI.Properties.Resources.handle_with_care_32px;
             this.btnÜrün.Name = "btnÜrün";
             // 
+            // btnSatınAlma
+            // 
+            this.btnSatınAlma.Caption = "Satın Alma";
+            this.btnSatınAlma.Id = 45;
+            this.btnSatınAlma.ImageOptions.Image = global::Zenix.WinUI.Properties.Resources.buy_16x16;
+            this.btnSatınAlma.ImageOptions.LargeImage = global::Zenix.WinUI.Properties.Resources.buy_32x32;
+            this.btnSatınAlma.Name = "btnSatınAlma";
+            // 
+            // btnMalzemeDepo
+            // 
+            this.btnMalzemeDepo.Caption = "Malzeme Depo";
+            this.btnMalzemeDepo.Id = 46;
+            this.btnMalzemeDepo.ImageOptions.Image = global::Zenix.WinUI.Properties.Resources.warehouse_16px;
+            this.btnMalzemeDepo.ImageOptions.LargeImage = global::Zenix.WinUI.Properties.Resources.warehouse_32px;
+            this.btnMalzemeDepo.Name = "btnMalzemeDepo";
+            // 
+            // btnÜrünDepo
+            // 
+            this.btnÜrünDepo.Caption = "Ürün Depo";
+            this.btnÜrünDepo.Id = 47;
+            this.btnÜrünDepo.ImageOptions.Image = global::Zenix.WinUI.Properties.Resources.warehouse_16px;
+            this.btnÜrünDepo.ImageOptions.LargeImage = global::Zenix.WinUI.Properties.Resources.warehouse_32px;
+            this.btnÜrünDepo.Name = "btnÜrünDepo";
+            // 
+            // btnSevkiyat
+            // 
+            this.btnSevkiyat.Caption = "Sevkiyat";
+            this.btnSevkiyat.Id = 48;
+            this.btnSevkiyat.ImageOptions.Image = global::Zenix.WinUI.Properties.Resources.trolley_16px;
+            this.btnSevkiyat.ImageOptions.LargeImage = global::Zenix.WinUI.Properties.Resources.trolley_32px;
+            this.btnSevkiyat.Name = "btnSevkiyat";
+            // 
+            // btnDepo
+            // 
+            this.btnDepo.Caption = "Depo";
+            this.btnDepo.Id = 49;
+            this.btnDepo.ImageOptions.Image = global::Zenix.WinUI.Properties.Resources.warehouse_16px;
+            this.btnDepo.ImageOptions.LargeImage = global::Zenix.WinUI.Properties.Resources.warehouse_32px;
+            this.btnDepo.Name = "btnDepo";
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonYönetim,
-            this.ribbonPageGroup1});
+            this.ribbonPageGroup1,
+            this.ribbonPageGroup2,
+            this.ribbonPageGroup3});
             this.ribbonPage1.Name = "ribbonPage1";
             this.ribbonPage1.Text = "Yönetim";
             // 
             // ribbonYönetim
             // 
             this.ribbonYönetim.ItemLinks.Add(this.btnİşemri);
-            this.ribbonYönetim.ItemLinks.Add(this.btnFirma);
             this.ribbonYönetim.ItemLinks.Add(this.btnSipariş);
             this.ribbonYönetim.ItemLinks.Add(this.btnMamüller);
             this.ribbonYönetim.ItemLinks.Add(this.btnReçete);
@@ -405,27 +441,26 @@
             // ribbonPageGroup1
             // 
             this.ribbonPageGroup1.Alignment = DevExpress.XtraBars.Ribbon.RibbonPageGroupAlignment.Far;
-            this.ribbonPageGroup1.ItemLinks.Add(this.btnÜlkeler);
-            this.ribbonPageGroup1.ItemLinks.Add(this.btnKazan);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
             // 
-            // ribbonPage2
+            // ribbonPageGroup2
             // 
-            this.ribbonPage2.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.riibontanımlamalar});
-            this.ribbonPage2.Name = "ribbonPage2";
-            this.ribbonPage2.Text = "Tanımlamalar";
+            this.ribbonPageGroup2.ItemLinks.Add(this.btnMalzemeDepo);
+            this.ribbonPageGroup2.ItemLinks.Add(this.btnÜrünDepo);
+            this.ribbonPageGroup2.ItemLinks.Add(this.btnSevkiyat);
+            this.ribbonPageGroup2.ItemLinks.Add(this.btnDepo);
+            this.ribbonPageGroup2.Name = "ribbonPageGroup2";
+            this.ribbonPageGroup2.Text = "Depo";
             // 
-            // riibontanımlamalar
+            // ribbonPageGroup3
             // 
-            this.riibontanımlamalar.ItemLinks.Add(this.btnFirma, true);
-            this.riibontanımlamalar.ItemLinks.Add(this.btnMarkalar);
-            this.riibontanımlamalar.ItemLinks.Add(this.btnAmbalajTipi);
-            this.riibontanımlamalar.ItemLinks.Add(this.btnAmbalajMaddeTipi);
-            this.riibontanımlamalar.ItemLinks.Add(this.btnMamüller);
-            this.riibontanımlamalar.ItemLinks.Add(this.btnÜlkeler);
-            this.riibontanımlamalar.ItemLinks.Add(this.btnKazan);
-            this.riibontanımlamalar.Name = "riibontanımlamalar";
+            this.ribbonPageGroup3.ItemLinks.Add(this.btnFirma);
+            this.ribbonPageGroup3.ItemLinks.Add(this.btnMarkalar);
+            this.ribbonPageGroup3.ItemLinks.Add(this.btnÜlkeler);
+            this.ribbonPageGroup3.ItemLinks.Add(this.btnAmbalajTipi);
+            this.ribbonPageGroup3.ItemLinks.Add(this.btnAmbalajMaddeTipi);
+            this.ribbonPageGroup3.Name = "ribbonPageGroup3";
+            this.ribbonPageGroup3.Text = "Tanımlamalar";
             // 
             // ribbonMüş
             // 
@@ -460,21 +495,13 @@
             // 
             this.imgBackGround.Dock = System.Windows.Forms.DockStyle.Fill;
             this.imgBackGround.EditValue = global::Zenix.WinUI.Properties.Resources.back;
-            this.imgBackGround.Location = new System.Drawing.Point(0, 185);
+            this.imgBackGround.Location = new System.Drawing.Point(0, 161);
             this.imgBackGround.MenuManager = this.ribbon;
             this.imgBackGround.Name = "imgBackGround";
             this.imgBackGround.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
             this.imgBackGround.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
-            this.imgBackGround.Size = new System.Drawing.Size(1020, 479);
+            this.imgBackGround.Size = new System.Drawing.Size(1020, 503);
             this.imgBackGround.TabIndex = 7;
-            // 
-            // btnSatınAlma
-            // 
-            this.btnSatınAlma.Caption = "Satın Alma";
-            this.btnSatınAlma.Id = 45;
-            this.btnSatınAlma.ImageOptions.Image = global::Zenix.WinUI.Properties.Resources.buy_16x16;
-            this.btnSatınAlma.ImageOptions.LargeImage = global::Zenix.WinUI.Properties.Resources.buy_32x32;
-            this.btnSatınAlma.Name = "btnSatınAlma";
             // 
             // AnaForm
             // 
@@ -536,14 +563,17 @@
         private DevExpress.XtraBars.BarButtonItem btnMamüller;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
         private DevExpress.XtraBars.BarButtonItem btnReçete;
-        private DevExpress.XtraBars.BarButtonItem btnKazan;
         private DevExpress.XtraBars.BarButtonItem btnİşemri;
         private DevExpress.XtraBars.BarButtonItem btnAmbalajTipi;
         private DevExpress.XtraBars.BarButtonItem btnAmbalajMaddeTipi;
         private DevExpress.XtraBars.BarButtonItem btnMarkalar;
-        private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage2;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup riibontanımlamalar;
         private DevExpress.XtraBars.BarButtonItem btnÜrün;
         private DevExpress.XtraBars.BarButtonItem btnSatınAlma;
+        private DevExpress.XtraBars.BarButtonItem btnMalzemeDepo;
+        private DevExpress.XtraBars.BarButtonItem btnÜrünDepo;
+        private DevExpress.XtraBars.BarButtonItem btnSevkiyat;
+        private DevExpress.XtraBars.BarButtonItem btnDepo;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup3;
     }
 }

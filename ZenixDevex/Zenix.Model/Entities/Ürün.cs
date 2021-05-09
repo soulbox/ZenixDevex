@@ -39,7 +39,7 @@ namespace Zenix.Model.Entities
         public long MarkaId { get; set; }
         //[Required,ZorunluAlan("Firma","txtFirma")]
         public long? FirmaId { get; set; }
-        [Required, ZorunluAlan("Mamül", "txtMamül")]
+        [Required, ZorunluAlan("Ürün", "txtMamül")]
         public long MamülId { get; set; }
         public Markalar Marka { get; set; }
         public Firma Firma { get; set; }

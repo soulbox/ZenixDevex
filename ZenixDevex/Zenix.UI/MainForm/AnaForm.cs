@@ -22,7 +22,6 @@ using Zenix.WinUI.Forms.FirmaFormu;
 using Zenix.WinUI.Forms.ÜlkeFormu;
 using Zenix.WinUI.Forms.SiparişFormu;
 using Zenix.WinUI.Forms.ReçeteFormu;
-using Zenix.WinUI.Forms.KazanFormu;
 using Zenix.WinUI.Forms.İşemriFormu;
 using Zenix.WinUI.Forms.MamülFormu;
 using Zenix.WinUI.Forms.AmbalajTipiFormu;
@@ -105,8 +104,6 @@ namespace Zenix.WinUI.MainForm
                                 ShowListForms<MamülListForm>.ShowListForm(KartTuru.Mamül);
                             else if (e.Item == btnReçete)
                                 ShowListForms<ReçeteListForm>.ShowListForm(KartTuru.Reçete);
-                            else if (e.Item == btnKazan)
-                                ShowListForms<KazanListForm>.ShowListForm(KartTuru.Kazan);
                             else if (e.Item == btnİşemri)
                                 ShowListForms<İşemriListForm>.ShowListForm(KartTuru.İşemri);
                             else if (e.Item == btnAmbalajMaddeTipi)

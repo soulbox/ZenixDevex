@@ -31,20 +31,18 @@ namespace Zenix.Common.Enums
         Mamül = 12,
         [Description("Reçete Kartı")]
         Reçete = 13,
-        [Description("Kazan Kartı")]
-        Kazan = 14,
         [Description("İşemri Kartı")]
-        İşemri = 15,
+        İşemri = 14,
         [Description("Marka Kartı")]
-        Markalar = 16,
+        Markalar = 15,
         [Description("Ambalaj Kartı")]
-        AmbalajTipi = 17,
+        AmbalajTipi = 16,
         [Description("Ambalaj Madde Kartı")]
-        AmbalajMaddeTipi = 18,
+        AmbalajMaddeTipi = 17,
         [Description("Firma Tipi Kartı")]
-        FirmaTipi = 19,
+        FirmaTipi = 18,
         [Description("Satın Alma  Kartı")]
-        SatınAlma = 20,
+        SatınAlma = 19,
 
     }
 }

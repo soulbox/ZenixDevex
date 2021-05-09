@@ -1,0 +1,42 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Zenix.Model.Attributes;
+using Zenix.Model.Entities.Base;
+namespace Zenix.Model.Entities
+{
+    public class Depo : BaseEntity
+    {
+        [Index(name: "IX_Kod", IsUnique = true)]
+        public override string Kod { get; set; }
+        public Mamül Mamül { get; set; }
+        [Required, ZorunluAlan("Malzeme", "txtMamül")]
+        public long MamülId { get; set; }
+        public DepoTipi DepoTipi { get; set; }
+        public İşemri İşemri { get; set; }
+        public long? İşemriId { get; set; }
+        public Satınalma Satınalma { get; set; }
+        public long? SatınalmaId { get; set; }
+        public Firma SevkFirma { get; set; }
+        public long? SevkFirmaId { get; set; }
+        public float DepoMiktar { get; set; }
+    }
+
+    public enum DepoTipi : byte
+    {
+        [Description("Satın Alındı")]
+        Satınalma = 0,//+
+        [Description("Üretime Gitti")]
+        ÜKullanıldı = 10,//-
+        [Description("Üretildi")]
+        Üretildi = 20,//+
+        [Description("Sevkiyat")]
+        Sevkiyat = 30,//-
+
+    }
+}

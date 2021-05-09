@@ -14,6 +14,8 @@ namespace Zenix.Model.DTO
     [NotMapped]
     public class ReçeteS : BaseRevizyon, IBaseÜrünTanıtım, IBaseReçete
     {
+        public string ReçeteAdı => $"{MarkaAdı}-{MamülAdı}-{GTIN}-{RevKodu}";
+
         public long ÜrünId { get; set; }
         public long RevizyonId { get; set; }
         public string MamülAdı { get; set; }

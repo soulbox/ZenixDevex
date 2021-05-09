@@ -2263,6 +2263,46 @@ namespace Zenix.WinUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap warehouse_42px {
+            get {
+                object obj = ResourceManager.GetObject("warehouse_42px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap warehouseSevk_16px {
+            get {
+                object obj = ResourceManager.GetObject("warehouseSevk_16px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap warehouseSevk_32px {
+            get {
+                object obj = ResourceManager.GetObject("warehouseSevk_32px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap warehouseSevk_42px {
+            get {
+                object obj = ResourceManager.GetObject("warehouseSevk_42px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap weekend_16x16 {
             get {
                 object obj = ResourceManager.GetObject("weekend_16x16", resourceCulture);

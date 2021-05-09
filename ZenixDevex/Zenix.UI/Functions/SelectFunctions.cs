@@ -16,6 +16,7 @@ using Zenix.BLL.Interfaces;
 using Zenix.WinUI.Forms.AmbalajTipiFormu;
 using Zenix.WinUI.Forms.MarkalarFormu;
 using Zenix.WinUI.Forms.MamülFormu;
+using Zenix.WinUI.Forms.ReçeteFormu;
 
 namespace Zenix.WinUI.Functions
 {
@@ -137,7 +138,7 @@ namespace Zenix.WinUI.Functions
                         {
                             btnedit.Tag = entity;
                             btnedit.Id = entity.Id;
-                            btnedit.EditValue =entity.MamülAdı ;
+                            btnedit.EditValue = entity.MamülAdı;
                         }
                     }
                     break;
@@ -160,6 +161,18 @@ namespace Zenix.WinUI.Functions
                         {
                             btnedit.Id = entity.Id;
                             btnedit.EditValue = entity.RevKodu;
+                        }
+                    }
+                    break;
+                case "txtReçete":
+                    {
+
+                        var entity = (ReçeteL)ShowListForms<ReçeteListForm>.ShowDialogListForm(KartTuru.Reçete, btnedit.Id);
+                        if (entity != null)
+                        {
+                            btnedit.Tag = entity;
+                            btnedit.Id = entity.Id;
+                            btnedit.EditValue = entity.ReçeteAdı;
                         }
                     }
                     break;

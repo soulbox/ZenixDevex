@@ -74,6 +74,7 @@
     <Compile Include="Entities\Base\BaseEntityHaraket.cs" />
     <Compile Include="Entities\Base\Interfaces\IBaseEntity.cs" />
     <Compile Include="Entities\Base\Interfaces\IBaseHaraketEntity.cs" />
+    <Compile Include="Entities\Depo.cs" />
     <Compile Include="Entities\FirmaTipi.cs" />
     <Compile Include="Entities\Mamül.cs" />
     <Compile Include="Entities\Markalar.cs" />

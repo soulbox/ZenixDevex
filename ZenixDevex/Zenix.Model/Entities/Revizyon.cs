@@ -27,7 +27,9 @@ namespace Zenix.Model.Entities
         public override string Kod { get; set; }
         public DateTime RevizyonTarihi { get; set; } = DateTime.Now;
         [NotMapped]
-        public int RevNo { get => string.IsNullOrEmpty(Kod) ? 1 : Convert.ToInt32(Regex.Match(Kod, @"\d+").Value); }
+        public string BaseRevKod { get; set; }
+        [NotMapped]
+        public int RevNo { get => string.IsNullOrEmpty(BaseRevKod) ? 1 : Convert.ToInt32(Regex.Match(BaseRevKod, @"\d+").Value); }
         [NotMapped]
         public string RevKodu { get => $"{RevizyonTarihi:ddMMyyyy}-{RevNo:00}"; }
     }

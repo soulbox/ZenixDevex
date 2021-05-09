@@ -39,6 +39,7 @@ namespace Zenix.BLL.General
                 RevizyonTarihi = x.Revizyon.RevizyonTarihi,
                 ÜrünId = x.ÜrünId,
                 Açıklama = x.Açıklama,
+                BaseRevKod=x.Revizyon.Kod,
                 
 
             });
@@ -64,6 +65,8 @@ namespace Zenix.BLL.General
                 RevizyonDurum = x.Revizyon.Durum,
                 MalzemeMiktarı = x.ReçeteMalzemeler.Count,
                 Açıklama = x.Açıklama,
+                BaseRevKod = x.Revizyon.Kod,
+
             }).ToList();
         }
 

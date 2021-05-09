@@ -12,15 +12,18 @@ namespace Zenix.WinUI.Forms.İşemriFormu
 {
     public partial class İşemriEditForm : BaseEditForm
     {
+        int şarjno = 1;
+
         public İşemriEditForm()
         {
             InitializeComponent();
-            System.Windows.Forms.MessageBox.Show("Yapımda");
-            return;
+
             this.DataLayoutControl = myDataLayoutControl;
             this.Bll = new İşemriBll(myDataLayoutControl);
             this.KartTuru = KartTuru.İşemri;
             EventsLoad();
+
+
         }
         protected internal override void Yukle()
         {
@@ -37,14 +40,12 @@ namespace Zenix.WinUI.Forms.İşemriFormu
             var entity = (İşemriS)OldEntity;
             txtKod.Text = entity.Kod;
             tglDurum.IsOn = entity.Durum;
-            txtReçete.Text = entity.ReçeteAdı;
             txtReçete.Id = entity.ReçeteId;
-            txtŞarj.Text = entity.ŞarjNo.ToString();
-            //txtŞarj.Id = entity.ŞarjId;
-            txtKazan.Text = entity.KazanNo.ToString();
-            txtKazan.Id = entity.KazanId;
-            txtŞarjMiktarı.EditValue = entity.ŞarzMiktarı;
-            dtTarih.DateTime = entity.Tarih;
+            txtŞarjMiktarı.EditValue = entity.ŞarjMiktarı;
+            dtTarih.DateTime = entity.işemriTarih;
+            if (BaseIslemTuru == Common.Enums.IslemTuru.EntityInsert) return;
+            txtReçete.Text = entity.ReçeteAdı;
+
 
         }
         protected override void GuncelNesneOluştur()
@@ -55,13 +56,11 @@ namespace Zenix.WinUI.Forms.İşemriFormu
                 Id = Id,
                 Kod = txtKod.Text,
                 Durum = tglDurum.IsOn,
-                Tarih = dtTarih.DateTime,
+                işemriTarih = dtTarih.DateTime,
                 KullanıcıId = AnaForm.Kullanıcı.Id,
-                KazanId = txtKazan.Id.ConvertTo<long>(),
                 ReçeteId = txtReçete.Id.ConvertTo<long>(),
-                //ŞarjId = txtŞarj.Id.ConvertTo<long>(),
-                ŞarzMiktarı = txtŞarjMiktarı.EditValue.ConvertTo<int>(),
-
+                ŞarjMiktarı = txtŞarjMiktarı.EditValue.ConvertTo<int>(),
+                ŞarjNo = şarjno,    
 
             };
             ButtonEnableDurumu();
@@ -73,10 +72,6 @@ namespace Zenix.WinUI.Forms.İşemriFormu
             {
                 if (sender == txtReçete)
                     sec.Seç(txtReçete);
-                else if (sender == txtŞarj)
-                    sec.Seç(txtŞarj, txtReçete);
-                else if (sender == txtKazan)
-                    sec.Seç(txtKazan);
             }
         }
     }

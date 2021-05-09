@@ -65,7 +65,6 @@
     <Compile Include="General\FiltreBll.cs" />
     <Compile Include="General\FirmaBll.cs" />
     <Compile Include="General\FirmaTipiBll.cs" />
-    <Compile Include="General\KazanBll.cs" />
     <Compile Include="General\KullanıcıBll.cs" />
     <Compile Include="General\MamülBll.cs" />
     <Compile Include="General\MarkalarBll.cs" />

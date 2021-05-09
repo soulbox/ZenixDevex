@@ -11,21 +11,29 @@ using Zenix.Model.Entities.Base;
 
 namespace Zenix.Model.Entities
 {
-    public class İşemri : BaseEntityDurum
+    public interface Iİşemri
+    {
+        long ReçeteId { get; set; }
+        long KullanıcıId { get; set; }
+        int ŞarjMiktarı { get; set; }
+        int ŞarjNo { get; set; }
+        string Açıklama { get; set; }
+        DateTime işemriTarih { get; set; }
+
+    }
+    public class İşemri : BaseEntityDurum,Iİşemri
     {
         [Index(name: "IX_Kod", IsUnique = false)]
         public override string Kod { get; set; }
         [ZorunluAlan("Reçete", "txtReçete")]
         public long ReçeteId { get; set; }
         public Reçete Reçete { get; set; }
-        public DateTime Tarih { get; set; } = DateTime.Now;
+        public DateTime işemriTarih { get; set; } = DateTime.Now;
         public long KullanıcıId { get; set; }
         public Kullanici Kullanici { get; set; }
-        public int ŞarzMiktarı { get; set; }
-        public long KazanId { get; set; }
-        public Kazan Kazan { get; set; }
-
-
+        public int ŞarjMiktarı { get; set; }
+        public int ŞarjNo { get; set; }
+        public string Açıklama { get; set; }
 
     }
 }

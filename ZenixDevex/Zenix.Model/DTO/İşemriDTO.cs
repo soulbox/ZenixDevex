@@ -7,28 +7,73 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Text.RegularExpressions;
-
+using Zenix.Common.Enums;
 
 namespace Zenix.Model.DTO
 {
-    public class İşemriS : İşemri
+
+    public interface IReçeteAdı
     {
-        public string FirmaAdı { get; set; }
-        public long FirmaId { get; set; }
-        public string ÜrünAdı { get; set; }
+         string ReçeteAdı { get;  }
+    }
+    [NotMapped]
+    public class İşemriS : BaseRevizyon, IBaseÜrünTanıtım, IMamül, IRevizyon, IPersonel, Iİşemri, IBaseReçete,IReçeteAdı
+    {
+
+        public string ReçeteAdı => $"{MarkaAdı}-{MamülAdı}-{GTIN}-{RevKodu}";
+
+        public string Açıklama { get; set; }
         public long ÜrünId { get; set; }
-        public long RevizyonId { get; set; }
-        //
-        public string RevizyonKod { get; set; }
-        bool isEmptyKod { get => string.IsNullOrEmpty(Kod); }
-        int GetRevNo { get => isEmptyKod ? 1 : Convert.ToInt32(Regex.Match(Kod, @"\d+").Value); }
-        public DateTime RevizyonTarihi { get; set; } 
-        public string RevKodu { get => isEmptyKod ? "" : $"{RevizyonTarihi:ddMMyyyy}-{GetRevNo:00}"; }
-        public string ReçeteAdı { get => $"{ÜrünAdı}-{RevKodu}"; }
-        public byte KazanNo { get; set; }
-
+        public string MamülAdı { get; set; }
+        public string FirmaAdi { get; set; }
+        public string MarkaAdı { get; set; }
+        public string GTIN { get; set; }
+        public SarfTipi SarfTipi { get; set; }
+        public BirimTipi MalzemeBirimi { get; set; }
+        public MalzemeTipi MalzemeTipi { get; set; }
+        public long AmbalajTipiId { get; set; }
+        public long AmbalajMaddeTipiId { get; set; }
+        public float AğızÖlçüsü { get; set; }
+        public float Uzunluk { get; set; }
+        public float En { get; set; }
+        public float Boy { get; set; }
+        public BirimTipi BirimAuEbY { get; set; }
+        public float Alan { get; set; }
+        public BirimTipi AlanınBirimi { get; set; }
+        public float Ağırlık { get; set; }
+        public BirimTipi AğırlığınBirimi { get; set; }
+        public string BirimAğırlık { get; }
+        public string BirimAğızÖlçüsü { get; }
+        public string BirimUzunluk { get; }
+        public string BirimEn { get; }
+        public string BirimBoy { get; }
+        public string BirimYükseklik { get; }
+        public string BirimAlan { get; }
+        public int Hacim { get; set; }
+        public string AdSoyad { get; set; }
+        public long ReçeteId { get; set; }
+        public long KullanıcıId { get; set; }
+        public int ŞarjMiktarı { get; set; }
         public int ŞarjNo { get; set; }
-
+        public DateTime işemriTarih { get; set; }
+        public string Personel { get => AdSoyad.ToUpper(); }
+        public long RevizyonId { get; set; }
+        public string AFazıHazırlanış { get; set; }
+        public string BFazıHazırlanış { get; set; }
+        public string CFazıHazırlanış { get; set; }
+        public string DFazıHazırlanış { get; set; }
 
     }
+    [NotMapped]
+    public class İşemriL : İşemriS
+    {
+
+        [NotMapped]
+        public DateTime SKT { get => işemriTarih.AddYears(5); }
+        [NotMapped]
+        public string EXP { get => $"EXP:{SKT:MMyyyy}"; }
+        [NotMapped]
+        public string işemriNo { get => $"{işemriTarih:ddMM}{ŞarjNo:00}{işemriTarih:yy}"; }
+    }
+
 }

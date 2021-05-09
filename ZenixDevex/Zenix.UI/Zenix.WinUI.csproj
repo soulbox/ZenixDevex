@@ -31,7 +31,7 @@
     <PublisherName>Erkan Ceylan</PublisherName>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>9</ApplicationRevision>
+    <ApplicationRevision>11</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>true</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -198,18 +198,6 @@
     </Compile>
     <Compile Include="Forms\FirmaTipiFormu\FirmaTipiListForm.Designer.cs">
       <DependentUpon>FirmaTipiListForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\KazanFormu\KazanEditForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\KazanFormu\KazanEditForm.Designer.cs">
-      <DependentUpon>KazanEditForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\KazanFormu\KazanListForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\KazanFormu\KazanListForm.Designer.cs">
-      <DependentUpon>KazanListForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\KullanıcıForms\KullanıcıEditForm.cs">
       <SubType>Form</SubType>
@@ -580,12 +568,6 @@
     <EmbeddedResource Include="Forms\FirmaTipiFormu\FirmaTipiListForm.resx">
       <DependentUpon>FirmaTipiListForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\KazanFormu\KazanEditForm.resx">
-      <DependentUpon>KazanEditForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\KazanFormu\KazanListForm.resx">
-      <DependentUpon>KazanListForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\KullanıcıForms\KullanıcıEditForm.resx">
       <DependentUpon>KullanıcıEditForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -660,6 +642,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\İşemriFormu\İşemriEditForm.resx">
       <DependentUpon>İşemriEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\İşemriFormu\İşemriListForm.resx">
+      <DependentUpon>İşemriListForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm\AnaForm.resx">
       <DependentUpon>AnaForm.cs</DependentUpon>
@@ -755,6 +740,12 @@
     <None Include="Resources\icons8_gg_32px_3.png" />
     <None Include="Resources\buy_32x32.png" />
     <None Include="Resources\buy_16x16.png" />
+    <None Include="Resources\warehouseSevk_16px.png" />
+    <None Include="Resources\warehouseSevk_32px.png" />
+    <None Include="Resources\warehouseSevk_42px.png" />
+    <None Include="Resources\trolley_16px.png" />
+    <None Include="Resources\trolley_32px.png" />
+    <Content Include="Resources\warehouse_42px.png" />
     <Content Include="zenix.ico" />
     <None Include="Resources\abacus_16px.png" />
     <None Include="Resources\abacus_32px.png" />
@@ -952,8 +943,6 @@
     <None Include="Resources\travelator_32px.png" />
     <None Include="Resources\treatment_16px.png" />
     <None Include="Resources\treatment_32px.png" />
-    <None Include="Resources\trolley_16px.png" />
-    <None Include="Resources\trolley_32px.png" />
     <None Include="Resources\usergroup_16x16.png" />
     <None Include="Resources\usergroup_16x161.png" />
     <None Include="Resources\usergroup_16x162.png" />

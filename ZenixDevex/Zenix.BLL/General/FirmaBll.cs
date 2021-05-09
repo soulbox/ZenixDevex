@@ -31,10 +31,11 @@ namespace Zenix.BLL.General
                 Tarih = x.Tarih,
                 VergiDairesi = x.VergiDairesi,
                 VergiNo = x.VergiNo,
-                FirmaTipi = x.FirmaTipi,
+                FirmaTipiId  = x.FirmaTipiId ,
                 ÜlkeAdı = x.Ülke.Adı,
                 ÜlkeId = x.ÜlkeId,
                 FirmaTipiAdı=x.FirmaTipi.Adı,
+                
 
             });
         }

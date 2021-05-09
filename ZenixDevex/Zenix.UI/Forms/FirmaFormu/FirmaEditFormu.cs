@@ -76,5 +76,10 @@ namespace Zenix.WinUI.Forms.FirmaFormu
                     sec.Seç(txtFirmaTipi);
             }
         }
+        protected override bool EntityInsert()
+        {
+
+            return base.EntityInsert();
+        }
     }
 }

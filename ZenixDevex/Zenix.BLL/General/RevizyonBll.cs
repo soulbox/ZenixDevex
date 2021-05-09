@@ -43,6 +43,7 @@ namespace Zenix.BLL.General
             {
                 Id = x.Id,
                 Kod = x.Kod,
+                BaseRevKod = x.Kod,
                 Durum = x.Durum,
                 Açıklama = x.Açıklama,
                 FirmaAdi = x.Ürün.Firma.FirmaAdi,
