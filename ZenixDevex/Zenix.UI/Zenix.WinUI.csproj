@@ -31,7 +31,7 @@
     <PublisherName>Erkan Ceylan</PublisherName>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>11</ApplicationRevision>
+    <ApplicationRevision>12</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>true</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -162,6 +162,24 @@
     </Compile>
     <Compile Include="Forms\BaseForms\BaseListForm.Designer.cs">
       <DependentUpon>BaseListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DepoFormu\DepoEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DepoFormu\DepoEditForm.Designer.cs">
+      <DependentUpon>DepoEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DepoFormu\MalzemeDepoListform.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DepoFormu\MalzemeDepoListform.Designer.cs">
+      <DependentUpon>MalzemeDepoListform.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DepoFormu\ÜrünDepoListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DepoFormu\ÜrünDepoListForm.Designer.cs">
+      <DependentUpon>ÜrünDepoListForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\FiltreFormu\FiltreEditForm.cs">
       <SubType>Form</SubType>
@@ -330,6 +348,18 @@
     </Compile>
     <Compile Include="Forms\ÜlkeFormu\ÜlkeListForm.Designer.cs">
       <DependentUpon>ÜlkeListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ÜretimFormu\ÜretimEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ÜretimFormu\ÜretimEditForm.Designer.cs">
+      <DependentUpon>ÜretimEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ÜretimFormu\ÜretimListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ÜretimFormu\ÜretimListForm.Designer.cs">
+      <DependentUpon>ÜretimListForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\ÜrünlerFormu\ÜrünEditForm.cs">
       <SubType>Form</SubType>
@@ -502,6 +532,12 @@
     <Compile Include="myUserControls\UserControl\Base\BaseTablo.Designer.cs">
       <DependentUpon>BaseTablo.cs</DependentUpon>
     </Compile>
+    <Compile Include="myUserControls\UserControl\GenelEditTable\DepoGridTable.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="myUserControls\UserControl\GenelEditTable\DepoGridTable.Designer.cs">
+      <DependentUpon>DepoGridTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="myUserControls\UserControl\GenelEditTable\ReçeteMalzemeleriTable.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -549,6 +585,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\BaseForms\BaseListForm.resx">
       <DependentUpon>BaseListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DepoFormu\DepoEditForm.resx">
+      <DependentUpon>DepoEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DepoFormu\MalzemeDepoListform.resx">
+      <DependentUpon>MalzemeDepoListform.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DepoFormu\ÜrünDepoListForm.resx">
+      <DependentUpon>ÜrünDepoListForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FiltreFormu\FiltreEditForm.resx">
       <DependentUpon>FiltreEditForm.cs</DependentUpon>
@@ -634,6 +679,9 @@
     <EmbeddedResource Include="Forms\ÜlkeFormu\ÜlkeListForm.resx">
       <DependentUpon>ÜlkeListForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ÜretimFormu\ÜretimListForm.resx">
+      <DependentUpon>ÜretimListForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\ÜrünlerFormu\ÜrünEditForm.resx">
       <DependentUpon>ÜrünEditForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -675,6 +723,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="myUserControls\UserControl\Base\BaseTablo.resx">
       <DependentUpon>BaseTablo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="myUserControls\UserControl\GenelEditTable\DepoGridTable.resx">
+      <DependentUpon>DepoGridTable.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="myUserControls\UserControl\GenelEditTable\ReçeteMalzemeleriTable.resx">
       <DependentUpon>ReçeteMalzemeleriTable.cs</DependentUpon>
@@ -745,6 +796,16 @@
     <None Include="Resources\warehouseSevk_42px.png" />
     <None Include="Resources\trolley_16px.png" />
     <None Include="Resources\trolley_32px.png" />
+    <None Include="Resources\add_32x32.png" />
+    <None Include="Resources\add_16x16.png" />
+    <None Include="Resources\add_32x321.png" />
+    <None Include="Resources\add_16x161.png" />
+    <None Include="Resources\add_32x322.png" />
+    <None Include="Resources\add_16x162.png" />
+    <None Include="Resources\add_32x323.png" />
+    <None Include="Resources\add_16x163.png" />
+    <None Include="Resources\apply_32x322.png" />
+    <None Include="Resources\apply_16x162.png" />
     <Content Include="Resources\warehouse_42px.png" />
     <Content Include="zenix.ico" />
     <None Include="Resources\abacus_16px.png" />

@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Zenix.Model.Entities.Base;
+using System.Text.RegularExpressions;
 
 namespace Zenix.Model.DTO
 {
@@ -56,5 +57,23 @@ namespace Zenix.Model.DTO
         public bool Insert { get; set; }
         public bool Update { get; set; }
         public bool Delete { get; set; }
+    }
+    [NotMapped]
+    public class SiparişÜrünleriDepo : SiparişÜrünleri, IBaseÜrünTanıtım, IBaseRevizyon
+    {
+        public string MarkaAdı { get; set; }
+        public string FirmaAdi { get; set; }
+        public string MamülAdı { get; set; }
+        public string GTIN { get; set; }
+        public string Revkodu { get; set; }
+        public string SiparişKod { get; set; }
+        public DateTime RevizyonTarihi { get; set; }
+        public string BaseRevKod { get; set; }
+        public float Giden { get; set; }
+        public float Stok { get; set; }
+        public string ÜrünAdı { get => $"{MarkaAdı }-{MamülAdı }-{Revkodu}"; }
+        public string SiparişKodFirma { get => $"{SiparişKod}-{FirmaAdi.ToUpper()}"; }
+        public float EksikFazla { get => Giden - Miktar; }
+        public string RevKodu { get => BaseRevizyon.GetRevKodu(BaseRevKod, RevizyonTarihi); }
     }
 }

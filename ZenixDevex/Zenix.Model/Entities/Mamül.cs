@@ -14,16 +14,18 @@ using Zenix.Model.Entities.Base;
 
 namespace Zenix.Model.Entities
 {
-
+    public interface IMamülAdı
+    {
+        string MamülAdı { get; set; }
+    }
     public interface IHacim
     {
     
         int Hacim { get; set; }
     }
 
-    public interface IMamül : IBaseMamül
+    public interface IMamül : IBaseMamül, IMamülAdı
     {
-        string MamülAdı { get; set; }
         SarfTipi SarfTipi { get; set; }
         BirimTipi MalzemeBirimi { get; set; }
         MalzemeTipi MalzemeTipi { get; set; }     

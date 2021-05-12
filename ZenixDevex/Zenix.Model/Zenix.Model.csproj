@@ -54,6 +54,7 @@
     <Compile Include="Attributes\IPValid.cs" />
     <Compile Include="Attributes\Kod.cs" />
     <Compile Include="Attributes\ZorunluAlan.cs" />
+    <Compile Include="DTO\DepoDTO.cs" />
     <Compile Include="DTO\FirmalarDTO.cs" />
     <Compile Include="DTO\KullanıcıDTO.cs" />
     <Compile Include="DTO\MamülDTO.cs" />
@@ -65,6 +66,7 @@
     <Compile Include="DTO\SatınAlmaMalzemeleriDTO.cs" />
     <Compile Include="DTO\SiparişDTO.cs" />
     <Compile Include="DTO\SiparişÜrünleriDTO.cs" />
+    <Compile Include="DTO\ÜretimDTO.cs" />
     <Compile Include="DTO\ÜrünDTO.cs" />
     <Compile Include="DTO\İşemriDTO.cs" />
     <Compile Include="Entities\AmbalajMaddeTipi.cs" />
@@ -94,6 +96,7 @@
     <Compile Include="Entities\SatınAlmaMalzemeler.cs" />
     <Compile Include="Entities\SiparişÜrünleri.cs" />
     <Compile Include="Entities\Ülke.cs" />
+    <Compile Include="Entities\Üretim.cs" />
     <Compile Include="Entities\Ürün.cs" />
     <Compile Include="Entities\İşemri.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -62,6 +62,7 @@
     <Compile Include="Functions\ValidationFunctions.cs" />
     <Compile Include="General\AmbalajMaddeTipiBll.cs" />
     <Compile Include="General\AmbalajTipiBll.cs" />
+    <Compile Include="General\DepoBll.cs" />
     <Compile Include="General\FiltreBll.cs" />
     <Compile Include="General\FirmaBll.cs" />
     <Compile Include="General\FirmaTipiBll.cs" />
@@ -79,6 +80,7 @@
     <Compile Include="General\SiparişBll.cs" />
     <Compile Include="General\SiparişÜrünleriBll.cs" />
     <Compile Include="General\ÜlkeBll.cs" />
+    <Compile Include="General\ÜretimBll.cs" />
     <Compile Include="General\ÜrünBll.cs" />
     <Compile Include="General\İşemriBll.cs" />
     <Compile Include="Interfaces\IBaseBLL.cs" />

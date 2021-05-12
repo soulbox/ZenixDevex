@@ -21,6 +21,7 @@ using Zenix.Common.Enums;
 using DevExpress.XtraBars;
 using Zenix.WinUI.Forms.ReçeteFormu;
 using Zenix.WinUI.Forms.MamülFormu;
+using Zenix.Common.Messages;
 
 namespace Zenix.WinUI.myUserControls.UserControl.GenelEditTable
 {
@@ -36,7 +37,7 @@ namespace Zenix.WinUI.myUserControls.UserControl.GenelEditTable
         }
         protected internal override void Listele()
         {
-            var lists = ((SatınAlmaMalzemelerBll)Bll).List(x => x.SatınalmaId  == ownerform.Id).ToBindingList<SatınAlmaMalzemeleriL>();
+            var lists = ((SatınAlmaMalzemelerBll)Bll).List(x => x.SatınalmaId == ownerform.Id).ToBindingList<SatınAlmaMalzemeleriL>();
             tablo.GridControl.DataSource = lists;
         }
         protected override void HareketEkle()
@@ -44,21 +45,27 @@ namespace Zenix.WinUI.myUserControls.UserControl.GenelEditTable
 
             var source = tablo.DataController.ListSource;
             ListeDışıtutulacakkayıtlar = source.Cast<SatınAlmaMalzemeleriL>().Where(x => !x.Delete).Select(x => x.MamülId).ToList();
-            var entities = ShowListForms<MamülListForm>.ShowDialogListForm(ListeDışıtutulacakkayıtlar, true).EntityListConvert<MamülL>();
+            var entities = ShowListForms<MamülListForm>.ShowDialogListForm(ListeDışıtutulacakkayıtlar, true);
+            var result = entities.EntityListConvert<MamülL>();
             //var entities = ShowListForms<ReçeteMalzemeleriListForm>.ShowDialogListForm(ListeDışıtutulacakkayıtlar, true).EntityListConvert<MamülL>();
-            if (entities == null) return;
-            entities.ForEach(x =>
+            if (result == null) return;
+            if (result.Count(x => x != null) == 0)
             {
-                source.Add(new SatınAlmaMalzemeleriL
+                Msg.HataMesajı("Herhangi bir Kayıt Seçilmedi");
+                return;
+            }
+            result.Where(x => x != null).ForEach(x =>
                 {
-                    SatınalmaId  = ownerform != null ? ownerform.Id : 0,
-                    MamülId = x.Id ,
-                    MamülAdı = x.MamülAdı,
-                    MalzemeBirimi = x.MalzemeBirimi,
+                    source.Add(new SatınAlmaMalzemeleriL
+                    {
+                        SatınalmaId = ownerform != null ? ownerform.Id : 0,
+                        MamülId = x.Id,
+                        MamülAdı = x.MamülAdı,
+                        MalzemeBirimi = x.MalzemeBirimi,
 
-                    Insert = true
+                        Insert = true
+                    });
                 });
-            });
             tablo.Focus();
             tablo.RefreshDataSource();
 

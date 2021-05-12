@@ -75,6 +75,8 @@
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.xtraTabbedMdiManager = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             this.imgBackGround = new DevExpress.XtraEditors.PictureEdit();
+            this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.btnÜretim = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgBackGround.Properties)).BeginInit();
@@ -119,9 +121,10 @@
             this.btnMalzemeDepo,
             this.btnÜrünDepo,
             this.btnSevkiyat,
-            this.btnDepo});
+            this.btnDepo,
+            this.btnÜretim});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 51;
+            this.ribbon.MaxItemId = 52;
             this.ribbon.Name = "ribbon";
             this.ribbon.OptionsAnimation.PageCategoryShowAnimation = DevExpress.Utils.DefaultBoolean.True;
             this.ribbon.OptionsTouch.ShowTouchUISelectorInSearchMenu = false;
@@ -420,6 +423,7 @@
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.ribbonPageGroup4,
             this.ribbonYönetim,
             this.ribbonPageGroup1,
             this.ribbonPageGroup2,
@@ -429,7 +433,6 @@
             // 
             // ribbonYönetim
             // 
-            this.ribbonYönetim.ItemLinks.Add(this.btnİşemri);
             this.ribbonYönetim.ItemLinks.Add(this.btnSipariş);
             this.ribbonYönetim.ItemLinks.Add(this.btnMamüller);
             this.ribbonYönetim.ItemLinks.Add(this.btnReçete);
@@ -503,6 +506,21 @@
             this.imgBackGround.Size = new System.Drawing.Size(1020, 503);
             this.imgBackGround.TabIndex = 7;
             // 
+            // ribbonPageGroup4
+            // 
+            this.ribbonPageGroup4.ItemLinks.Add(this.btnİşemri);
+            this.ribbonPageGroup4.ItemLinks.Add(this.btnÜretim);
+            this.ribbonPageGroup4.Name = "ribbonPageGroup4";
+            this.ribbonPageGroup4.Text = "Üretim";
+            // 
+            // btnÜretim
+            // 
+            this.btnÜretim.Caption = "Üretim";
+            this.btnÜretim.Id = 51;
+            this.btnÜretim.ImageOptions.Image = global::Zenix.WinUI.Properties.Resources.deployment_16px;
+            this.btnÜretim.ImageOptions.LargeImage = global::Zenix.WinUI.Properties.Resources.deployment_32px;
+            this.btnÜretim.Name = "btnÜretim";
+            // 
             // AnaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -575,5 +593,7 @@
         private DevExpress.XtraBars.BarButtonItem btnDepo;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup3;
+        private DevExpress.XtraBars.BarButtonItem btnÜretim;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup4;
     }
 }

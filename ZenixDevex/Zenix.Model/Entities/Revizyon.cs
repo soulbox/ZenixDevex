@@ -21,7 +21,14 @@ namespace Zenix.Model.Entities
         public string Açıklama { get; set; }
 
     }
-    public class BaseRevizyon : BaseEntityDurum
+   public interface IBaseRevizyon
+    {
+        string BaseRevKod { get; set; }
+        string RevKodu { get; }
+        DateTime RevizyonTarihi { get; set; }
+    }
+
+    public class BaseRevizyon : BaseEntityDurum,IBaseRevizyon
     {
         [Index(name: "IX_Kod", IsUnique = false)]
         public override string Kod { get; set; }
@@ -32,5 +39,10 @@ namespace Zenix.Model.Entities
         public int RevNo { get => string.IsNullOrEmpty(BaseRevKod) ? 1 : Convert.ToInt32(Regex.Match(BaseRevKod, @"\d+").Value); }
         [NotMapped]
         public string RevKodu { get => $"{RevizyonTarihi:ddMMyyyy}-{RevNo:00}"; }
+        public static string GetRevKodu(string kod,DateTime revtarih) 
+        {
+        int getrevno = string.IsNullOrEmpty(kod) ? 1 : Convert.ToInt32(Regex.Match(kod, @"\d+").Value);
+            return $"{revtarih:ddMMyyyy}-{getrevno:00}";
+        }
     }
 }

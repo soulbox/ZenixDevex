@@ -12,7 +12,7 @@ namespace Zenix.Model.Entities
 {
     public class Depo : BaseEntity
     {
-        [Index(name: "IX_Kod", IsUnique = true)]
+        [Index(name: "IX_Kod", IsUnique = false)]
         public override string Kod { get; set; }
         public Mamül Mamül { get; set; }
         [Required, ZorunluAlan("Malzeme", "txtMamül")]
@@ -25,6 +25,7 @@ namespace Zenix.Model.Entities
         public Firma SevkFirma { get; set; }
         public long? SevkFirmaId { get; set; }
         public float DepoMiktar { get; set; }
+        public DateTime KayıtTarihi { get; set; } = DateTime.Now;
     }
 
     public enum DepoTipi : byte

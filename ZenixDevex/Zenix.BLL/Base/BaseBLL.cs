@@ -107,6 +107,14 @@ namespace Zenix.BLL.Base
 
             return uow.Save();
         }
+        protected bool BaseInsert(List<BaseEntity> entities)
+        {
+            GeneralFunctions.CreateUnitOfWork<TEntity, TContext>(ref uow);
+            //if (!Validation(IslemTuru.EntityInsert, null, entity, filter)) return false;
+            uow.Rep.InsertRange(entities.EntityListConvert<TEntity>());
+
+            return uow.Save();
+        }
         protected Boolean BaseInsertRange(List<BaseEntity> entity, Expression<Func<TEntity, bool>> filter)
         {
             GeneralFunctions.CreateUnitOfWork<TEntity, TContext>(ref uow);

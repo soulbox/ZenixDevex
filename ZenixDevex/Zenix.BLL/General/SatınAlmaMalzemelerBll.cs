@@ -22,15 +22,32 @@ namespace Zenix.BLL.General
                 MamülId = x.MamülId,
                 MamülAdı = x.Mamül.MamülAdı,
                 MalzemeBirimi = x.Mamül.MalzemeBirimi,
-                SatınalmaId=x.SatınalmaId,
+                SatınalmaId = x.SatınalmaId,
 
                 Miktar = x.Miktar,
                 TerminTarihi = x.TerminTarihi,
-                Teslimat=x.Teslimat,              
-                
-                
+                Teslimat = x.Teslimat,
+
+
             })
             .ToList();
+        }
+        public List<SatınAlmaMalzemeleriDepo> Deposatınalma(Expression<Func<SatınAlmaMalzemeler, bool>> filter)
+        {
+            return List(filter, x => new SatınAlmaMalzemeleriDepo
+            {
+                Id = x.Id,
+                MamülId = x.MamülId,
+                MamülAdı = x.Mamül.MamülAdı,
+                SatınalmaId = x.SatınalmaId,
+                FirmaAdi = x.Satınalma.Firma.FirmaAdi,
+                SatınAlmaKod = x.Satınalma.Kod,
+                Miktar = x.Miktar,
+                TerminTarihi = x.TerminTarihi,
+                Teslimat = x.Teslimat,
+
+            })
+                .ToList();
         }
     }
 }
