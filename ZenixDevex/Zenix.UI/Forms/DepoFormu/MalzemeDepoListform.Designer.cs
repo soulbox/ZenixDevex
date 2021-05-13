@@ -35,6 +35,14 @@
             DevExpress.XtraLayout.RowDefinition rowDefinition1 = new DevExpress.XtraLayout.RowDefinition();
             this.longNavigator = new Zenix.WinUI.myUserControls.Navigator.LongNavigator();
             this.myDataLayoutControl1 = new Zenix.WinUI.myUserControls.Controls.myDataLayoutControl();
+            this.myGridControl1 = new Zenix.WinUI.myUserControls.Grid.myGridControl();
+            this.Tablo = new Zenix.WinUI.myUserControls.Grid.myGridview();
+            this.colId = new Zenix.WinUI.myUserControls.Grid.MyGridColumn();
+            this.colMamülAdı = new Zenix.WinUI.myUserControls.Grid.MyGridColumn();
+            this.colSatınalma = new Zenix.WinUI.myUserControls.Grid.MyGridColumn();
+            this.colMiktar = new Zenix.WinUI.myUserControls.Grid.MyGridColumn();
+            this.colTarih = new Zenix.WinUI.myUserControls.Grid.MyGridColumn();
+            this.colTip = new Zenix.WinUI.myUserControls.Grid.MyGridColumn();
             this.myGridControl2 = new Zenix.WinUI.myUserControls.Grid.myGridControl();
             this.TabloSatınAlma = new Zenix.WinUI.myUserControls.Grid.myGridview();
             this.colId1 = new Zenix.WinUI.myUserControls.Grid.MyGridColumn();
@@ -46,6 +54,7 @@
             this.colStok = new Zenix.WinUI.myUserControls.Grid.MyGridColumn();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.popupMenuSatınalma = new DevExpress.XtraBars.PopupMenu(this.components);
             this.btnHepsiniAL = new DevExpress.XtraBars.BarButtonItem();
             this.btnAL = new DevExpress.XtraBars.BarButtonItem();
@@ -56,27 +65,18 @@
             this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
             this.barMdiChildrenListItem1 = new DevExpress.XtraBars.BarMdiChildrenListItem();
             this.barListItem1 = new DevExpress.XtraBars.BarListItem();
-            this.myGridControl1 = new Zenix.WinUI.myUserControls.Grid.myGridControl();
-            this.Tablo = new Zenix.WinUI.myUserControls.Grid.myGridview();
-            this.colId = new Zenix.WinUI.myUserControls.Grid.MyGridColumn();
-            this.colMamülAdı = new Zenix.WinUI.myUserControls.Grid.MyGridColumn();
-            this.colSatınalma = new Zenix.WinUI.myUserControls.Grid.MyGridColumn();
-            this.colMiktar = new Zenix.WinUI.myUserControls.Grid.MyGridColumn();
-            this.colTarih = new Zenix.WinUI.myUserControls.Grid.MyGridColumn();
-            this.colTip = new Zenix.WinUI.myUserControls.Grid.MyGridColumn();
-            this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.myDataLayoutControl1)).BeginInit();
             this.myDataLayoutControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.myGridControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Tablo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.myGridControl2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TabloSatınAlma)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenuSatınalma)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSpinEditMiktar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.myGridControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Tablo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbonControl
@@ -129,6 +129,140 @@
             this.myDataLayoutControl1.Size = new System.Drawing.Size(1020, 479);
             this.myDataLayoutControl1.TabIndex = 4;
             this.myDataLayoutControl1.Text = "myDataLayoutControl1";
+            // 
+            // myGridControl1
+            // 
+            this.myGridControl1.Location = new System.Drawing.Point(12, 12);
+            this.myGridControl1.MainView = this.Tablo;
+            this.myGridControl1.Name = "myGridControl1";
+            this.myGridControl1.Size = new System.Drawing.Size(596, 455);
+            this.myGridControl1.TabIndex = 6;
+            this.myGridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.Tablo});
+            // 
+            // Tablo
+            // 
+            this.Tablo.Appearance.FooterPanel.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.Tablo.Appearance.FooterPanel.ForeColor = System.Drawing.Color.Maroon;
+            this.Tablo.Appearance.FooterPanel.Options.UseFont = true;
+            this.Tablo.Appearance.FooterPanel.Options.UseForeColor = true;
+            this.Tablo.Appearance.HeaderPanel.ForeColor = System.Drawing.Color.Maroon;
+            this.Tablo.Appearance.HeaderPanel.Options.UseForeColor = true;
+            this.Tablo.Appearance.HeaderPanel.Options.UseTextOptions = true;
+            this.Tablo.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.Tablo.Appearance.ViewCaption.ForeColor = System.Drawing.Color.Maroon;
+            this.Tablo.Appearance.ViewCaption.Options.UseForeColor = true;
+            this.Tablo.AppearancePrint.FooterPanel.Options.UseTextOptions = true;
+            this.Tablo.AppearancePrint.FooterPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.Tablo.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colId,
+            this.colMamülAdı,
+            this.colSatınalma,
+            this.colMiktar,
+            this.colTarih,
+            this.colTip});
+            this.Tablo.GridControl = this.myGridControl1;
+            this.Tablo.GroupCount = 1;
+            this.Tablo.GroupSummary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "DepoMiktar", this.colMiktar, "Stok {0:n0}")});
+            this.Tablo.Name = "Tablo";
+            this.Tablo.OptionsBehavior.AutoExpandAllGroups = true;
+            this.Tablo.OptionsFind.AlwaysVisible = true;
+            this.Tablo.OptionsFind.FindDelay = 100;
+            this.Tablo.OptionsFind.FindMode = DevExpress.XtraEditors.FindMode.Always;
+            this.Tablo.OptionsFind.FindNullPrompt = "Ara";
+            this.Tablo.OptionsFind.ShowFindButton = false;
+            this.Tablo.OptionsMenu.EnableColumnMenu = false;
+            this.Tablo.OptionsMenu.EnableFooterMenu = false;
+            this.Tablo.OptionsMenu.EnableGroupPanelMenu = false;
+            this.Tablo.OptionsNavigation.EnterMoveNextColumn = true;
+            this.Tablo.OptionsPrint.AutoWidth = false;
+            this.Tablo.OptionsPrint.PrintGroupFooter = false;
+            this.Tablo.OptionsView.ColumnAutoWidth = false;
+            this.Tablo.OptionsView.HeaderFilterButtonShowMode = DevExpress.XtraEditors.Controls.FilterButtonShowMode.Button;
+            this.Tablo.OptionsView.RowAutoHeight = true;
+            this.Tablo.OptionsView.ShowAutoFilterRow = true;
+            this.Tablo.OptionsView.ShowGroupPanel = false;
+            this.Tablo.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colMamülAdı, DevExpress.Data.ColumnSortOrder.Ascending)});
+            this.Tablo.StatusBarAciklama = null;
+            this.Tablo.StatusBarKisayol = null;
+            this.Tablo.StatusBarKisayolAciklama = null;
+            // 
+            // colId
+            // 
+            this.colId.Caption = "Id";
+            this.colId.FieldName = "Id";
+            this.colId.Name = "colId";
+            this.colId.OptionsColumn.AllowEdit = false;
+            this.colId.OptionsColumn.ShowInCustomizationForm = false;
+            this.colId.StatusBarAciklama = null;
+            this.colId.StatusBarKisayol = null;
+            this.colId.StatusBarKisayolAciklama = null;
+            // 
+            // colMamülAdı
+            // 
+            this.colMamülAdı.Caption = "Malzeme";
+            this.colMamülAdı.FieldName = "MamülAdı";
+            this.colMamülAdı.Name = "colMamülAdı";
+            this.colMamülAdı.OptionsColumn.AllowEdit = false;
+            this.colMamülAdı.StatusBarAciklama = null;
+            this.colMamülAdı.StatusBarKisayol = null;
+            this.colMamülAdı.StatusBarKisayolAciklama = null;
+            this.colMamülAdı.Visible = true;
+            this.colMamülAdı.VisibleIndex = 1;
+            // 
+            // colSatınalma
+            // 
+            this.colSatınalma.Caption = "Satın Alma";
+            this.colSatınalma.FieldName = "SatınAlma";
+            this.colSatınalma.Name = "colSatınalma";
+            this.colSatınalma.OptionsColumn.AllowEdit = false;
+            this.colSatınalma.StatusBarAciklama = null;
+            this.colSatınalma.StatusBarKisayol = null;
+            this.colSatınalma.StatusBarKisayolAciklama = null;
+            this.colSatınalma.Visible = true;
+            this.colSatınalma.VisibleIndex = 0;
+            this.colSatınalma.Width = 217;
+            // 
+            // colMiktar
+            // 
+            this.colMiktar.Caption = "Miktar";
+            this.colMiktar.FieldName = "DepoMiktar";
+            this.colMiktar.Name = "colMiktar";
+            this.colMiktar.OptionsColumn.AllowEdit = false;
+            this.colMiktar.StatusBarAciklama = null;
+            this.colMiktar.StatusBarKisayol = null;
+            this.colMiktar.StatusBarKisayolAciklama = null;
+            this.colMiktar.Visible = true;
+            this.colMiktar.VisibleIndex = 1;
+            this.colMiktar.Width = 110;
+            // 
+            // colTarih
+            // 
+            this.colTarih.Caption = "Tarih";
+            this.colTarih.FieldName = "KayıtTarihi";
+            this.colTarih.Name = "colTarih";
+            this.colTarih.OptionsColumn.AllowEdit = false;
+            this.colTarih.StatusBarAciklama = null;
+            this.colTarih.StatusBarKisayol = null;
+            this.colTarih.StatusBarKisayolAciklama = null;
+            this.colTarih.Visible = true;
+            this.colTarih.VisibleIndex = 2;
+            this.colTarih.Width = 127;
+            // 
+            // colTip
+            // 
+            this.colTip.Caption = "Stok Tipi";
+            this.colTip.FieldName = "DepoTipi";
+            this.colTip.Name = "colTip";
+            this.colTip.OptionsColumn.AllowEdit = false;
+            this.colTip.StatusBarAciklama = null;
+            this.colTip.StatusBarKisayol = null;
+            this.colTip.StatusBarKisayolAciklama = null;
+            this.colTip.Visible = true;
+            this.colTip.VisibleIndex = 3;
+            this.colTip.Width = 131;
             // 
             // myGridControl2
             // 
@@ -310,6 +444,17 @@
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem2.TextVisible = false;
             // 
+            // layoutControlItem1
+            // 
+            this.layoutControlItem1.AppearanceItemCaption.ForeColor = System.Drawing.Color.Maroon;
+            this.layoutControlItem1.AppearanceItemCaption.Options.UseForeColor = true;
+            this.layoutControlItem1.Control = this.myGridControl1;
+            this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem1.Name = "layoutControlItem1";
+            this.layoutControlItem1.Size = new System.Drawing.Size(600, 459);
+            this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem1.TextVisible = false;
+            // 
             // popupMenuSatınalma
             // 
             this.popupMenuSatınalma.ItemLinks.Add(this.btnHepsiniAL);
@@ -343,13 +488,18 @@
             this.barSubItemMiktar.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(this.barBirMiktar),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnMiktarOnayla)});
-            this.barSubItemMiktar.MenuBarWidth = 150;
             this.barSubItemMiktar.Name = "barSubItemMiktar";
             // 
             // barBirMiktar
             // 
             this.barBirMiktar.Caption = "Miktar";
             this.barBirMiktar.Edit = this.repositoryItemSpinEditMiktar;
+            this.barBirMiktar.EditValue = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.barBirMiktar.EditWidth = 100;
             this.barBirMiktar.Id = 69;
             this.barBirMiktar.Name = "barBirMiktar";
             // 
@@ -398,151 +548,6 @@
             this.barListItem1.Id = 65;
             this.barListItem1.Name = "barListItem1";
             // 
-            // myGridControl1
-            // 
-            this.myGridControl1.Location = new System.Drawing.Point(12, 12);
-            this.myGridControl1.MainView = this.Tablo;
-            this.myGridControl1.Name = "myGridControl1";
-            this.myGridControl1.Size = new System.Drawing.Size(596, 455);
-            this.myGridControl1.TabIndex = 6;
-            this.myGridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.Tablo});
-            // 
-            // Tablo
-            // 
-            this.Tablo.Appearance.FooterPanel.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.Tablo.Appearance.FooterPanel.ForeColor = System.Drawing.Color.Maroon;
-            this.Tablo.Appearance.FooterPanel.Options.UseFont = true;
-            this.Tablo.Appearance.FooterPanel.Options.UseForeColor = true;
-            this.Tablo.Appearance.HeaderPanel.ForeColor = System.Drawing.Color.Maroon;
-            this.Tablo.Appearance.HeaderPanel.Options.UseForeColor = true;
-            this.Tablo.Appearance.HeaderPanel.Options.UseTextOptions = true;
-            this.Tablo.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.Tablo.Appearance.ViewCaption.ForeColor = System.Drawing.Color.Maroon;
-            this.Tablo.Appearance.ViewCaption.Options.UseForeColor = true;
-            this.Tablo.AppearancePrint.FooterPanel.Options.UseTextOptions = true;
-            this.Tablo.AppearancePrint.FooterPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.Tablo.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colId,
-            this.colMamülAdı,
-            this.colSatınalma,
-            this.colMiktar,
-            this.colTarih,
-            this.colTip});
-            this.Tablo.GridControl = this.myGridControl1;
-            this.Tablo.GroupCount = 1;
-            this.Tablo.GroupSummary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "DepoMiktar", this.colMiktar, "Stok {0:n0}")});
-            this.Tablo.Name = "Tablo";
-            this.Tablo.OptionsBehavior.AutoExpandAllGroups = true;
-            this.Tablo.OptionsFind.AlwaysVisible = true;
-            this.Tablo.OptionsFind.FindDelay = 100;
-            this.Tablo.OptionsFind.FindMode = DevExpress.XtraEditors.FindMode.Always;
-            this.Tablo.OptionsFind.FindNullPrompt = "Ara";
-            this.Tablo.OptionsFind.ShowFindButton = false;
-            this.Tablo.OptionsMenu.EnableColumnMenu = false;
-            this.Tablo.OptionsMenu.EnableFooterMenu = false;
-            this.Tablo.OptionsMenu.EnableGroupPanelMenu = false;
-            this.Tablo.OptionsNavigation.EnterMoveNextColumn = true;
-            this.Tablo.OptionsPrint.AutoWidth = false;
-            this.Tablo.OptionsPrint.PrintGroupFooter = false;
-            this.Tablo.OptionsView.ColumnAutoWidth = false;
-            this.Tablo.OptionsView.HeaderFilterButtonShowMode = DevExpress.XtraEditors.Controls.FilterButtonShowMode.Button;
-            this.Tablo.OptionsView.RowAutoHeight = true;
-            this.Tablo.OptionsView.ShowAutoFilterRow = true;
-            this.Tablo.OptionsView.ShowGroupPanel = false;
-            this.Tablo.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
-            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colMamülAdı, DevExpress.Data.ColumnSortOrder.Ascending)});
-            this.Tablo.StatusBarAciklama = null;
-            this.Tablo.StatusBarKisayol = null;
-            this.Tablo.StatusBarKisayolAciklama = null;
-            // 
-            // colId
-            // 
-            this.colId.Caption = "Id";
-            this.colId.FieldName = "Id";
-            this.colId.Name = "colId";
-            this.colId.OptionsColumn.AllowEdit = false;
-            this.colId.OptionsColumn.ShowInCustomizationForm = false;
-            this.colId.StatusBarAciklama = null;
-            this.colId.StatusBarKisayol = null;
-            this.colId.StatusBarKisayolAciklama = null;
-            // 
-            // colMamülAdı
-            // 
-            this.colMamülAdı.Caption = "Malzeme";
-            this.colMamülAdı.FieldName = "MamülAdı";
-            this.colMamülAdı.Name = "colMamülAdı";
-            this.colMamülAdı.OptionsColumn.AllowEdit = false;
-            this.colMamülAdı.StatusBarAciklama = null;
-            this.colMamülAdı.StatusBarKisayol = null;
-            this.colMamülAdı.StatusBarKisayolAciklama = null;
-            this.colMamülAdı.Visible = true;
-            this.colMamülAdı.VisibleIndex = 1;
-            // 
-            // colSatınalma
-            // 
-            this.colSatınalma.Caption = "Satın Alma";
-            this.colSatınalma.FieldName = "SatınAlma";
-            this.colSatınalma.Name = "colSatınalma";
-            this.colSatınalma.OptionsColumn.AllowEdit = false;
-            this.colSatınalma.StatusBarAciklama = null;
-            this.colSatınalma.StatusBarKisayol = null;
-            this.colSatınalma.StatusBarKisayolAciklama = null;
-            this.colSatınalma.Visible = true;
-            this.colSatınalma.VisibleIndex = 0;
-            this.colSatınalma.Width = 217;
-            // 
-            // colMiktar
-            // 
-            this.colMiktar.Caption = "Miktar";
-            this.colMiktar.FieldName = "DepoMiktar";
-            this.colMiktar.Name = "colMiktar";
-            this.colMiktar.OptionsColumn.AllowEdit = false;
-            this.colMiktar.StatusBarAciklama = null;
-            this.colMiktar.StatusBarKisayol = null;
-            this.colMiktar.StatusBarKisayolAciklama = null;
-            this.colMiktar.Visible = true;
-            this.colMiktar.VisibleIndex = 1;
-            this.colMiktar.Width = 110;
-            // 
-            // colTarih
-            // 
-            this.colTarih.Caption = "Tarih";
-            this.colTarih.FieldName = "KayıtTarihi";
-            this.colTarih.Name = "colTarih";
-            this.colTarih.OptionsColumn.AllowEdit = false;
-            this.colTarih.StatusBarAciklama = null;
-            this.colTarih.StatusBarKisayol = null;
-            this.colTarih.StatusBarKisayolAciklama = null;
-            this.colTarih.Visible = true;
-            this.colTarih.VisibleIndex = 2;
-            this.colTarih.Width = 127;
-            // 
-            // colTip
-            // 
-            this.colTip.Caption = "Stok Tipi";
-            this.colTip.FieldName = "DepoTipi";
-            this.colTip.Name = "colTip";
-            this.colTip.OptionsColumn.AllowEdit = false;
-            this.colTip.StatusBarAciklama = null;
-            this.colTip.StatusBarKisayol = null;
-            this.colTip.StatusBarKisayolAciklama = null;
-            this.colTip.Visible = true;
-            this.colTip.VisibleIndex = 3;
-            this.colTip.Width = 131;
-            // 
-            // layoutControlItem1
-            // 
-            this.layoutControlItem1.AppearanceItemCaption.ForeColor = System.Drawing.Color.Maroon;
-            this.layoutControlItem1.AppearanceItemCaption.Options.UseForeColor = true;
-            this.layoutControlItem1.Control = this.myGridControl1;
-            this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(600, 459);
-            this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem1.TextVisible = false;
-            // 
             // MalzemeDepoListform
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -559,15 +564,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.myDataLayoutControl1)).EndInit();
             this.myDataLayoutControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.myGridControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Tablo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.myGridControl2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TabloSatınAlma)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenuSatınalma)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSpinEditMiktar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.myGridControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Tablo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

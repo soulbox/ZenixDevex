@@ -56,6 +56,7 @@ namespace Zenix.Model.Entities
         string BirimYükseklik { get; }
         [NotMapped,DatabaseGenerated(DatabaseGeneratedOption.Computed)]
         string BirimAlan { get; }
+
     }
 
   
@@ -99,5 +100,6 @@ namespace Zenix.Model.Entities
         [Required(), ZorunluAlan("Ambalaj Maddesinin Tipi", "txtAmbalajMaddesi")]
         public long AmbalajMaddeTipiId { get; set; }
         public AmbalajMaddeTipi AmbalajMaddeTipi { get; set; }
+        public ICollection<Depo> Depo { get; set; }
     }
 }

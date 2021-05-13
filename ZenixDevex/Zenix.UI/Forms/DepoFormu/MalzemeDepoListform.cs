@@ -146,6 +146,7 @@ namespace Zenix.WinUI.Forms.DepoFormu
             ShowHideButtons(eksikvarmı, btnAL, barSubItemMiktar);
             repositoryItemSpinEditMiktar.MaxValue = eksikvarmı ? (decimal)(-1 * entity.EksikFazla) : 0;
             repositoryItemSpinEditMiktar.MinValue = eksikvarmı ? 1 : 0;
+            barBirMiktar.EditValue = Math.Abs(entity.EksikFazla);
             var ListeEksikvarmı = TabloSatınAlma.DataController.ListSource.Cast<SatınAlmaMalzemeleriDepo>()
                 .Any(x => x.SatınalmaId == entity.SatınalmaId && x.EksikFazla < 0);
             ShowHideButtons(ListeEksikvarmı, btnHepsiniAL);
@@ -175,6 +176,10 @@ namespace Zenix.WinUI.Forms.DepoFormu
 
                 TabloSatınAlma.GridControl.DataSource = liste;
             }
+        }
+        protected override void ShowEditForm(long id)
+        {
+            //base.ShowEditForm(id);
         }
     }
 }

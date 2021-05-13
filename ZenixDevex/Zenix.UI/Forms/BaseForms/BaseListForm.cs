@@ -53,10 +53,13 @@ namespace Zenix.WinUI.Forms.BaseForms
         {
 
             InitializeComponent();
-
+            //repoComboAşamaTipi.Items.Add()
+            repoComboAşamaTipi.ToData<AşamaTipi>();
+            cmbAşamaTipi.EditValue = AşamaTipi.yok;
 
 
         }
+
 
         protected virtual void ShowEditForm(long id)
         {
@@ -153,7 +156,10 @@ namespace Zenix.WinUI.Forms.BaseForms
                         AktifKayitlariGoster = !AktifKayitlariGoster;
                         FormCaptionAyarla();
                     }
-
+                    else if (e.Item == btnAşamaOnayla)
+                        AşamaOnayla();
+                    else if (e.Item == btnTümAlamalarYapıldı)
+                        TümAşamalarYapıldı();
                     Cursor.Current = DefaultCursor;
 
                 };
@@ -178,10 +184,8 @@ namespace Zenix.WinUI.Forms.BaseForms
                         break;
                 }
             };
-            tablo.MouseUp += (sender, e) =>
-            {
-                e.SagMenuGoster(sagMenu);
-            };
+            tablo.MouseUp += SagMenuGoster;
+
             tablo.ColumnWidthChanged += (sender, e) => TablosablonKayitEdilicek = true;
             tablo.ColumnPositionChanged += (sender, e) => TablosablonKayitEdilicek = true;
             tablo.EndSorting += (sender, e) => TablosablonKayitEdilicek = true;
@@ -208,6 +212,7 @@ namespace Zenix.WinUI.Forms.BaseForms
             {
 
             });
+            tablo.SelectionChanged += Tablo_SelectionChanged;
             //navigator
             Navigator.ButtonClick += (sender, e) =>
             {
@@ -253,6 +258,8 @@ namespace Zenix.WinUI.Forms.BaseForms
             this.SizeChanged += (sender, e) => FormSablonKayitEdilecek = true;
 
         }
+
+
 
         private void EntityDelete()
         {
@@ -319,8 +326,15 @@ namespace Zenix.WinUI.Forms.BaseForms
             else
                 btnDüzelt.PerformClick();
         }
-        protected virtual void SutunGizleGoster() { }
 
+        protected virtual void SagMenuGoster(object sender, MouseEventArgs e)
+        {
+            e.SagMenuGoster(sagMenu);
+        }
+        protected virtual void Tablo_SelectionChanged(object sender, DevExpress.Data.SelectionChangedEventArgs e) { }
+        protected virtual void SutunGizleGoster() { }
+        protected virtual void AşamaOnayla() { }
+        protected virtual void TümAşamalarYapıldı() { }
         protected virtual void Listele() { }
         protected virtual void ŞarjAc() { }
         protected virtual void PaketlemeAc() { }

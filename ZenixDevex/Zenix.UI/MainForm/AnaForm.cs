@@ -29,6 +29,7 @@ using Zenix.WinUI.Forms.MarkalarFormu;
 using Zenix.WinUI.Forms.ÜrünlerFormu;
 using Zenix.WinUI.Forms.SatınAlmaFormu;
 using Zenix.WinUI.Forms.DepoFormu;
+using Zenix.WinUI.Forms.ÜretimFormu;
 
 namespace Zenix.WinUI.MainForm
 {
@@ -119,6 +120,10 @@ namespace Zenix.WinUI.MainForm
                                 ShowListForms<SatınAlmaListForm>.ShowListForm(KartTuru.SatınAlma);
                             else if (e.Item == btnMalzemeDepo)
                                 ShowListForms<MalzemeDepoListform>.ShowListForm(KartTuru.Depo);
+                            else if (e.Item == btnÜretim)
+                                ShowListForms<ÜretimListForm>.ShowListForm(KartTuru.Üretim );
+                            else if (e.Item == btnÜrünDepo)
+                                ShowListForms<ÜrünDepoListForm>.ShowListForm(KartTuru.Depo);
 
                         };
                         break;

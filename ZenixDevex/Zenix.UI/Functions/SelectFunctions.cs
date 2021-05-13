@@ -172,7 +172,7 @@ namespace Zenix.WinUI.Functions
                         {
                             btnedit.Tag = entity;
                             btnedit.Id = entity.Id;
-                            btnedit.EditValue = entity.ReçeteAdı;
+                            btnedit.Text = entity.ReçeteAdı;
                         }
                     }
                     break;

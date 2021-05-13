@@ -45,6 +45,8 @@ namespace Zenix.Common.Enums
         SatınAlma = 19,
         [Description("Depo  Kartı")]
         Depo = 20,
+        [Description("Üretim  Kartı")]
+        Üretim = 21,
 
     }
 }

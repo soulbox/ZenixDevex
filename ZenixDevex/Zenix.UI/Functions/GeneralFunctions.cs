@@ -40,7 +40,7 @@ namespace Zenix.WinUI.Functions
             return -1;
         }
         public static long GetId(this myButtonEdit btn) => btn.Id.ConvertTo<long>();
-        public static void ToData<T>(this ComboBoxEdit combo ) where T:Enum
+        public static void ToData<T>(this ComboBoxEdit combo) where T : Enum
         {
             combo.Properties.Items.AddRange(EnumFunction.GetEnumDescriptionList<T>());
         }
@@ -67,7 +67,7 @@ namespace Zenix.WinUI.Functions
             {
                 if (prop.PropertyType.Namespace == "System.Collections.Generic") continue;
                 if (!oldEntity.GetType().GetProperties().Any(x => x.Name == prop.Name)) continue;
-                var oldvalue = oldEntity.GetType().GetProperty (prop.Name).GetValue(oldEntity,null) ?? string.Empty;               
+                var oldvalue = oldEntity.GetType().GetProperty(prop.Name).GetValue(oldEntity, null) ?? string.Empty;
 
                 //var oldvalue = prop.GetValue(oldEntity) ?? string.Empty;
                 var curvalue = prop.GetValue(currentEntity) ?? string.Empty;
@@ -253,6 +253,7 @@ namespace Zenix.WinUI.Functions
             if (source == null || source == DBNull.Value) return default(T);
             return (T)Convert.ChangeType(source, typeof(T));
         }
+
         public static void CustomVisibility(this GridColumn column, bool visible, int showindex)
         {
             column.Visible = visible;

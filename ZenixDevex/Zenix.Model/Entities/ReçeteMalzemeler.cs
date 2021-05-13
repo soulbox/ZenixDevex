@@ -27,6 +27,7 @@ namespace Zenix.Model.Entities
 
         public Reçete Reçete { get; set; }
         public long ReçeteId { get; set; }
+        public int MalzemeİçiÜrün { get; set; }
         public Mamül Mamül { get; set; }
         public long MamülId { get; set; }
         public float Miktar { get; set; }

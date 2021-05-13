@@ -61,6 +61,7 @@ namespace Zenix.WinUI.myUserControls.UserControl.GenelEditTable
             });
             tablo.Focus();
             tablo.RefreshDataSource();
+            
 
             tablo.FocusedRowHandle = tablo.DataRowCount - 1;
             ButtonEnableDurum(true);

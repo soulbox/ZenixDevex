@@ -126,12 +126,20 @@
             this.btnDosyaGrub = new DevExpress.XtraBars.BarButtonItem();
             this.btnSigortaları = new DevExpress.XtraBars.BarButtonItem();
             this.btnSmsGönder = new DevExpress.XtraBars.BarButtonItem();
+            this.btnAşamalar = new DevExpress.XtraBars.BarSubItem();
+            this.btnTümAlamalarYapıldı = new DevExpress.XtraBars.BarButtonItem();
+            this.cmbAşamaTipi = new DevExpress.XtraBars.BarEditItem();
+            this.repoComboAşamaTipi = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
+            this.btnAşamaOnayla = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.repositoryItemImageComboBox1 = new DevExpress.XtraEditors.Repository.RepositoryItemImageComboBox();
             this.ribbonStatusBar1 = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.sagMenu = new DevExpress.XtraBars.PopupMenu(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repoComboAşamaTipi)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemImageComboBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sagMenu)).BeginInit();
             this.SuspendLayout();
             // 
@@ -188,12 +196,19 @@
             this.btnPaketleme,
             this.btnDosyaGrub,
             this.btnSigortaları,
-            this.btnSmsGönder});
+            this.btnSmsGönder,
+            this.btnAşamalar,
+            this.cmbAşamaTipi,
+            this.btnAşamaOnayla,
+            this.btnTümAlamalarYapıldı});
             this.ribbonControl.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl.MaxItemId = 63;
+            this.ribbonControl.MaxItemId = 68;
             this.ribbonControl.Name = "ribbonControl";
             this.ribbonControl.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
+            this.ribbonControl.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.repoComboAşamaTipi,
+            this.repositoryItemImageComboBox1});
             this.ribbonControl.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.False;
             this.ribbonControl.ShowDisplayOptionsMenuButton = DevExpress.Utils.DefaultBoolean.False;
             this.ribbonControl.ShowExpandCollapseButton = DevExpress.Utils.DefaultBoolean.False;
@@ -724,6 +739,53 @@
             this.btnSmsGönder.Name = "btnSmsGönder";
             this.btnSmsGönder.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             // 
+            // btnAşamalar
+            // 
+            this.btnAşamalar.Caption = "Aşamalar";
+            this.btnAşamalar.Id = 63;
+            this.btnAşamalar.ImageOptions.Image = global::Zenix.WinUI.Properties.Resources.hideproduct_16x16;
+            this.btnAşamalar.ImageOptions.LargeImage = global::Zenix.WinUI.Properties.Resources.hideproduct_32x32;
+            this.btnAşamalar.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnTümAlamalarYapıldı),
+            new DevExpress.XtraBars.LinkPersistInfo(this.cmbAşamaTipi),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnAşamaOnayla)});
+            this.btnAşamalar.Name = "btnAşamalar";
+            this.btnAşamalar.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            // 
+            // btnTümAlamalarYapıldı
+            // 
+            this.btnTümAlamalarYapıldı.Caption = "Tüm Aşamalar Yapıldı";
+            this.btnTümAlamalarYapıldı.Id = 67;
+            this.btnTümAlamalarYapıldı.ImageOptions.Image = global::Zenix.WinUI.Properties.Resources.showproduct_16x162;
+            this.btnTümAlamalarYapıldı.ImageOptions.LargeImage = global::Zenix.WinUI.Properties.Resources.showproduct_32x322;
+            this.btnTümAlamalarYapıldı.Name = "btnTümAlamalarYapıldı";
+            // 
+            // cmbAşamaTipi
+            // 
+            this.cmbAşamaTipi.Caption = "Aşama Tipi";
+            this.cmbAşamaTipi.Edit = this.repoComboAşamaTipi;
+            this.cmbAşamaTipi.EditWidth = 150;
+            this.cmbAşamaTipi.Id = 64;
+            this.cmbAşamaTipi.ImageOptions.Image = global::Zenix.WinUI.Properties.Resources.selectall_16x16;
+            this.cmbAşamaTipi.ImageOptions.LargeImage = global::Zenix.WinUI.Properties.Resources.selectall_32x32;
+            this.cmbAşamaTipi.Name = "cmbAşamaTipi";
+            // 
+            // repoComboAşamaTipi
+            // 
+            this.repoComboAşamaTipi.AutoHeight = false;
+            this.repoComboAşamaTipi.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repoComboAşamaTipi.Name = "repoComboAşamaTipi";
+            this.repoComboAşamaTipi.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
+            // 
+            // btnAşamaOnayla
+            // 
+            this.btnAşamaOnayla.Caption = "Aşama Onayla";
+            this.btnAşamaOnayla.Id = 65;
+            this.btnAşamaOnayla.ImageOptions.Image = global::Zenix.WinUI.Properties.Resources.apply_16x163;
+            this.btnAşamaOnayla.ImageOptions.LargeImage = global::Zenix.WinUI.Properties.Resources.apply_32x323;
+            this.btnAşamaOnayla.Name = "btnAşamaOnayla";
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -753,6 +815,13 @@
             this.ribbonPageGroup1.ItemLinks.Add(this.btnCikis);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
             this.ribbonPageGroup1.Text = "ribbonPageGroup1";
+            // 
+            // repositoryItemImageComboBox1
+            // 
+            this.repositoryItemImageComboBox1.AutoHeight = false;
+            this.repositoryItemImageComboBox1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemImageComboBox1.Name = "repositoryItemImageComboBox1";
             // 
             // ribbonStatusBar1
             // 
@@ -789,6 +858,7 @@
             // 
             // sagMenu
             // 
+            this.sagMenu.ItemLinks.Add(this.btnAşamalar);
             this.sagMenu.ItemLinks.Add(this.btnYeni);
             this.sagMenu.ItemLinks.Add(this.btnDüzelt);
             this.sagMenu.ItemLinks.Add(this.btnSeç);
@@ -813,6 +883,8 @@
             this.ShowInTaskbar = false;
             this.StatusBar = this.ribbonStatusBar1;
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repoComboAşamaTipi)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemImageComboBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sagMenu)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -873,5 +945,11 @@
         protected DevExpress.XtraBars.BarButtonItem btnSigortaları;
         protected DevExpress.XtraBars.BarButtonItem btnPolisoftExcel;
         protected DevExpress.XtraBars.BarButtonItem btnSmsGönder;
+        private DevExpress.XtraEditors.Repository.RepositoryItemComboBox repoComboAşamaTipi;
+        private DevExpress.XtraBars.BarButtonItem btnAşamaOnayla;
+        protected DevExpress.XtraBars.BarSubItem btnAşamalar;
+        private DevExpress.XtraEditors.Repository.RepositoryItemImageComboBox repositoryItemImageComboBox1;
+        protected DevExpress.XtraBars.BarEditItem cmbAşamaTipi;
+        protected DevExpress.XtraBars.BarButtonItem btnTümAlamalarYapıldı;
     }
 }

@@ -17,28 +17,36 @@ namespace Zenix.Model.DTO
 
     [NotMapped]
 
-    public class ReçeteMalzemeleriL : ReçeteMalzemeler, IBaseHaraketEntity, IMamül,IPaket
+    public class ReçeteMalzemeleriL : ReçeteMalzemeler, IBaseHaraketEntity, IMamül, IPaket
     {
-        public int Hacim { get ; set ; }
+        public string HacimliMalzemeAdı { get; set; }
+        public float ihtiyaç { get => MalzemeTipi == MalzemeTipi.Kimyasal ? Miktar * ŞarjMiktarı / KimyasalOran : ŞarjMiktarı / Hacim * 1000 / MalzemeİçiÜrün; }
+        public float ReçeteMiktar { get => MalzemeTipi == MalzemeTipi.Kimyasal ? Miktar : KimyasalOran / Hacim * 1000 / MalzemeİçiÜrün; }
+        public float Stok { get; set; }
+        //set et
+        public float ŞarjMiktarı { get; set; }
+        public int Hacim { get; set; }
+        public float KimyasalOran { get; set; }
+        //
         public int Kutu { get; set; }
         public int Stand { get; set; }
-        public int Koli { get; set; }      
+        public int Koli { get; set; }
 
-        public string MamülAdı { get ; set ; }
-        public SarfTipi SarfTipi { get ; set ; }
-        public BirimTipi MalzemeBirimi { get ; set ; }
-        public MalzemeTipi MalzemeTipi { get ; set ; }
-        public long AmbalajTipiId { get ; set ; }
-        public long AmbalajMaddeTipiId { get ; set ; }
-        public float AğızÖlçüsü { get ; set ; }
-        public float Uzunluk { get ; set ; }
-        public float En { get ; set ; }
-        public float Boy { get ; set ; }
-        public BirimTipi BirimAuEbY { get ; set ; }
-        public float Alan { get ; set ; }
-        public BirimTipi AlanınBirimi { get ; set ; }
-        public float Ağırlık { get ; set ; }
-        public BirimTipi AğırlığınBirimi { get ; set ; }
+        public string MamülAdı { get; set; }
+        public SarfTipi SarfTipi { get; set; }
+        public BirimTipi MalzemeBirimi { get; set; }
+        public MalzemeTipi MalzemeTipi { get; set; }
+        public long AmbalajTipiId { get; set; }
+        public long AmbalajMaddeTipiId { get; set; }
+        public float AğızÖlçüsü { get; set; }
+        public float Uzunluk { get; set; }
+        public float En { get; set; }
+        public float Boy { get; set; }
+        public BirimTipi BirimAuEbY { get; set; }
+        public float Alan { get; set; }
+        public BirimTipi AlanınBirimi { get; set; }
+        public float Ağırlık { get; set; }
+        public BirimTipi AğırlığınBirimi { get; set; }
         public string BirimAğırlık { get; }
         public string BirimAğızÖlçüsü { get; }
         public string BirimUzunluk { get; }

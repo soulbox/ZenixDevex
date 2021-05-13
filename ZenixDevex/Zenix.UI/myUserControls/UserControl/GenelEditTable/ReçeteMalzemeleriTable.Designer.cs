@@ -41,6 +41,7 @@
             this.colReçeteBirimi = new Zenix.WinUI.myUserControls.Grid.MyGridColumn();
             this.repoCheck = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
             this.repoCombo = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
+            this.colMalzemeİçiÜrün = new Zenix.WinUI.myUserControls.Grid.MyGridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.myGridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tablo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repoimagecomboFaz)).BeginInit();
@@ -53,7 +54,7 @@
             // insUpdNavigator
             // 
             this.insUpdNavigator.Location = new System.Drawing.Point(0, 335);
-            this.insUpdNavigator.Size = new System.Drawing.Size(596, 24);
+            this.insUpdNavigator.Size = new System.Drawing.Size(687, 24);
             // 
             // myGridControl1
             // 
@@ -67,7 +68,7 @@
             this.repoCombo,
             this.repoimagecomboFaz,
             this.repoimgaecomboAşama});
-            this.myGridControl1.Size = new System.Drawing.Size(596, 335);
+            this.myGridControl1.Size = new System.Drawing.Size(687, 335);
             this.myGridControl1.TabIndex = 6;
             this.myGridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.tablo});
@@ -91,6 +92,7 @@
             this.colId,
             this.colMalzemeAdı,
             this.colFazTipi,
+            this.colMalzemeİçiÜrün,
             this.colMiktar,
             this.colAşamaTipi,
             this.colReçeteBirimi});
@@ -201,7 +203,7 @@
             this.colAşamaTipi.StatusBarKisayol = null;
             this.colAşamaTipi.StatusBarKisayolAciklama = null;
             this.colAşamaTipi.Visible = true;
-            this.colAşamaTipi.VisibleIndex = 3;
+            this.colAşamaTipi.VisibleIndex = 4;
             this.colAşamaTipi.Width = 106;
             // 
             // repoimgaecomboAşama
@@ -223,7 +225,7 @@
             this.colReçeteBirimi.StatusBarKisayol = null;
             this.colReçeteBirimi.StatusBarKisayolAciklama = null;
             this.colReçeteBirimi.Visible = true;
-            this.colReçeteBirimi.VisibleIndex = 4;
+            this.colReçeteBirimi.VisibleIndex = 5;
             // 
             // repoCheck
             // 
@@ -241,13 +243,26 @@
             this.repoCombo.Name = "repoCombo";
             this.repoCombo.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             // 
+            // colMalzemeİçiÜrün
+            // 
+            this.colMalzemeİçiÜrün.Caption = "Malzeme içi Ürün";
+            this.colMalzemeİçiÜrün.ColumnEdit = this.repoSpin;
+            this.colMalzemeİçiÜrün.FieldName = "MalzemeİçiÜrün";
+            this.colMalzemeİçiÜrün.Name = "colMalzemeİçiÜrün";
+            this.colMalzemeİçiÜrün.StatusBarAciklama = null;
+            this.colMalzemeİçiÜrün.StatusBarKisayol = null;
+            this.colMalzemeİçiÜrün.StatusBarKisayolAciklama = null;
+            this.colMalzemeİçiÜrün.Visible = true;
+            this.colMalzemeİçiÜrün.VisibleIndex = 3;
+            this.colMalzemeİçiÜrün.Width = 94;
+            // 
             // ReçeteMalzemeleriTable
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.myGridControl1);
             this.Name = "ReçeteMalzemeleriTable";
-            this.Size = new System.Drawing.Size(596, 359);
+            this.Size = new System.Drawing.Size(687, 359);
             this.Controls.SetChildIndex(this.insUpdNavigator, 0);
             this.Controls.SetChildIndex(this.myGridControl1, 0);
             ((System.ComponentModel.ISupportInitialize)(this.myGridControl1)).EndInit();
@@ -277,5 +292,6 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemImageComboBox repoimagecomboFaz;
         private Grid.MyGridColumn colAşamaTipi;
         private DevExpress.XtraEditors.Repository.RepositoryItemImageComboBox repoimgaecomboAşama;
+        private Grid.MyGridColumn colMalzemeİçiÜrün;
     }
 }

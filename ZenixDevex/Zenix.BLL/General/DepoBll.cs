@@ -36,6 +36,7 @@ namespace Zenix.BLL.General
                 SatınAlma = x.Satınalma == null ? "" : x.Satınalma.Kod,
                 SatınalmaId=x.SatınalmaId,
                 MamülId=x.MamülId,
+                
 
             }).ToList();
 

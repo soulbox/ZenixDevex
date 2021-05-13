@@ -55,7 +55,7 @@ namespace Zenix.Model.DTO
         public long KullanıcıId { get; set; }
         public int ŞarjMiktarı { get; set; }
         public int ŞarjNo { get; set; }
-        public DateTime işemriTarih { get; set; }
+        public DateTime işemriTarih { get; set; } = DateTime.Now;
         public string Personel { get => AdSoyad.ToUpper(); }
         public long RevizyonId { get; set; }
         public string AFazıHazırlanış { get; set; }

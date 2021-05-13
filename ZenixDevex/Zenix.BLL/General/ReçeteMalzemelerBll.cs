@@ -17,7 +17,7 @@ namespace Zenix.BLL.General
     {
         public IEnumerable<BaseEntityHaraket> List(Expression<Func<ReçeteMalzemeler, bool>> filter)
         {
-            return List(filter, x => new ReçeteMalzemeleriL
+            var list = List(filter, x => new ReçeteMalzemeleriL
             {
                 Id = x.Id,
                 ReçeteId = x.ReçeteId,
@@ -27,6 +27,10 @@ namespace Zenix.BLL.General
                 FazTipi = x.FazTipi,
                 MamülId = x.MamülId,
                 MamülAdı = x.Mamül.MamülAdı,
+                Hacim = x.Mamül.Hacim,
+                MalzemeTipi = x.Mamül.MalzemeTipi,
+                MalzemeİçiÜrün = x.MalzemeİçiÜrün,
+                Stok=x.Mamül.Depo.Select(a=>a.DepoMiktar).Sum()
                 //MalzemeId = x.MalzemeId,
                 //FazTipi = x.FazTipi,
                 //MalzemeAdı = x.Malzeme.Adı,
@@ -35,7 +39,21 @@ namespace Zenix.BLL.General
            //.AsEnumerable()// veriler çekilsin
            //.OrderBy(x => x.KartTuru.ToName())
            .ToList();
+            var hacim = list.FirstOrDefault(x => x.Hacim > 0);
+            var kimyasaloran = list
+                .Where(x => x.MalzemeTipi == Common.Enums.MalzemeTipi.Kimyasal)
+                .Select(x => x.Miktar).DefaultIfEmpty(0).Sum();
+            if (hacim != null)
+                list.ForEach(x =>
+                {
+                    x.Hacim = hacim.Hacim;
+                    x.HacimliMalzemeAdı = hacim.MamülAdı;
+                    x.KimyasalOran = kimyasaloran;
+                });
+            return list;
         }
 
+        public List<ReçeteMalzemeleriL> ReçeteList(Expression<Func<ReçeteMalzemeler, bool>> filter) 
+            => List(filter ).Cast<ReçeteMalzemeleriL>().ToList();
     }
 }

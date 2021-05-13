@@ -38,9 +38,5 @@ namespace Zenix.Model.DTO
 
 
 
-        //------------
-        //public bool Insert { get; set; }
-        //public bool Update { get; set; }
-        //public bool Delete { get; set; }
     }
 }

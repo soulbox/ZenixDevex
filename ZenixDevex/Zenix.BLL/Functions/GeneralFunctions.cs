@@ -36,6 +36,7 @@ namespace Zenix.BLL.Functions
         {
             return GetConnectionString(server);
         }
+        
         private static TContext CreateContext<TContext>() where TContext : DbContext
         {
 

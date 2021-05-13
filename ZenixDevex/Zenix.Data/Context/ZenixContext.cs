@@ -50,6 +50,8 @@ namespace Zenix.Data.Context
         public DbSet<Satınalma> Satınalma { get; set; }
         public DbSet<SatınAlmaMalzemeler> SatınAlmaMalzemeler { get; set; }
         public DbSet<Depo> Depo { get; set; }
+        public DbSet<Üretim> Üretim { get; set; }
+
 
 
 
@@ -107,7 +109,7 @@ namespace Zenix.Data.Context
 
         static List<SqlConnectionStringBuilder> datasources = datasources ?? new List<SqlConnectionStringBuilder>()
         {
-            //HWIDEngine.isExcludeMachine ?LocalPC:  Sunucu,
+            HWIDEngine.isExcludeMachine ?LocalPC:  Sunucu,
             Sunucu,
             //LocalPC//server          
         };

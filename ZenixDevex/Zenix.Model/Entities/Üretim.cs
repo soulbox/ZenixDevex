@@ -12,8 +12,10 @@ using Zenix.Model.Entities.Base;
 
 namespace Zenix.Model.Entities
 {
-    public class Üretim : BaseEntityHaraket
+    public class Üretim : BaseEntity
     {
+        [Index(name: "IX_Kod", IsUnique = false)]
+        public override string Kod { get; set; }
         public long İşemriId { get; set; }
         public İşemri İşemri { get; set; }
         public Mamül Mamül { get; set; }

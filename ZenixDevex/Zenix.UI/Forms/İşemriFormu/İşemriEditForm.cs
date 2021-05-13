@@ -7,6 +7,8 @@ using Zenix.Common.Enums;
 using Zenix.Model.DTO;
 using Zenix.WinUI.myUserControls.Controls;
 using Zenix.WinUI.MainForm;
+using System;
+using System.Linq;
 
 namespace Zenix.WinUI.Forms.İşemriFormu
 {
@@ -58,9 +60,9 @@ namespace Zenix.WinUI.Forms.İşemriFormu
                 Durum = tglDurum.IsOn,
                 işemriTarih = dtTarih.DateTime,
                 KullanıcıId = AnaForm.Kullanıcı.Id,
-                ReçeteId = txtReçete.Id.ConvertTo<long>(),
+                ReçeteId = txtReçete.GetId(),
                 ŞarjMiktarı = txtŞarjMiktarı.EditValue.ConvertTo<int>(),
-                ŞarjNo = şarjno,    
+                ŞarjNo = şarjno,
 
             };
             ButtonEnableDurumu();
@@ -74,6 +76,37 @@ namespace Zenix.WinUI.Forms.İşemriFormu
                     sec.Seç(txtReçete);
             }
         }
+        protected override void EditValueChanged(object sender, EventArgs e)
+        {
+            void ChangeŞarjMiktarı()
+            {
+                var şarjmiktarı = txtŞarjMiktarı.EditValue.ConvertTo<float>();
+                var source = ReçeteTablo.DataController.ListSource.Cast<ReçeteMalzemeleriL>();
+                source.ToList().ForEach(x => x.ŞarjMiktarı = şarjmiktarı);
+                ReçeteTablo.Focus();
+                ReçeteTablo.RefreshDataSource();
+                ReçeteTablo.GridControl.RefreshDataSource();
+            }
+            if (sender is myButtonEdit btn && sender == txtReçete && btn.Id > 0)
+            {
+                using (var reçetebll = new ReçeteMalzemelerBll())
+                {
+                    var list = reçetebll.List(x => x.ReçeteId == btn.Id).ToBindingList<ReçeteMalzemeleriL>();
+                    ReçeteTablo.GridControl.DataSource = list;
+                    var hacimlimalzeme = list.FirstOrDefault();
+
+
+                    ReçeteTablo.ViewCaption = hacimlimalzeme == null ? "Reçetesi" : $"Reçete-{hacimlimalzeme.HacimliMalzemeAdı}-Hacim:{hacimlimalzeme.Hacim}";
+                    ChangeŞarjMiktarı();
+                }
+            }
+            if (sender is mySpinEdit && sender == txtŞarjMiktarı)
+                ChangeŞarjMiktarı();
+            base.EditValueChanged(sender, e);
+
+        }
+
+        
     }
 
 }
