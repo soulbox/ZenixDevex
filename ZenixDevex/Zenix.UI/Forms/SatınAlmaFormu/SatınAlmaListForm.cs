@@ -13,6 +13,8 @@ using System.Linq;
 using Zenix.Common.Function;
 using DevExpress.XtraGrid.Views.Grid;
 using Zenix.WinUI.MainForm;
+using DevExpress.XtraGrid.Views.Base;
+using Zenix.Model.DTO;
 
 namespace Zenix.WinUI.Forms.SatınAlmaFormu
 {
@@ -41,6 +43,13 @@ namespace Zenix.WinUI.Forms.SatınAlmaFormu
         {
             Tablo.GridControl.DataSource = ((SatınAlmaBll)Bll).List(FilterFunctions.Filter<Satınalma>(AktifKayitlariGoster));
 
+        }
+        protected override void Tablo_FocusedRowChanged(object sender, FocusedRowChangedEventArgs e)
+        {
+            var entity = tablo.GetRow<SatınalmaL>();
+            if (entity == null) return;
+            using (var Satınalmabll = new SatınAlmaMalzemelerBll())
+                TabloSatınalma.GridControl.DataSource = Satınalmabll.List(x => x.SatınalmaId == entity.Id);
         }
     }
 }

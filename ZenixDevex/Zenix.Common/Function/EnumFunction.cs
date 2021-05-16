@@ -50,6 +50,13 @@ namespace Zenix.Common.Function
                 .Cast<DescriptionAttribute>())
                 .Select(x => x.Description).ToList();
         }
+        public static ICollection GetEnumDescriptionList<T>(Func<DescriptionAttribute,bool> predic) where T : Enum
+        {
+            return typeof(T).GetMembers()
+                .SelectMany(x => x.GetCustomAttributes(typeof(DescriptionAttribute), true)
+                .Cast<DescriptionAttribute>()).Where(predic)
+                .Select(x => x.Description).ToList();
+        }
 
         public static T GetEnum<T>(this string description)
         {

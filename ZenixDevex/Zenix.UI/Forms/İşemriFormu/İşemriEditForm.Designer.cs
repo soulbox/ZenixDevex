@@ -68,6 +68,7 @@
             this.simpleLabelItem1 = new DevExpress.XtraLayout.SimpleLabelItem();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.colMalzemeTipi = new Zenix.WinUI.myUserControls.Grid.MyGridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.myDataLayoutControl)).BeginInit();
             this.myDataLayoutControl.SuspendLayout();
@@ -106,7 +107,7 @@
             this.ribbonControl.SearchEditItem.EditWidth = 150;
             this.ribbonControl.SearchEditItem.Id = -5000;
             this.ribbonControl.SearchEditItem.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
-            this.ribbonControl.Size = new System.Drawing.Size(784, 109);
+            this.ribbonControl.Size = new System.Drawing.Size(865, 109);
             this.ribbonControl.Toolbar.ShowCustomizeItem = false;
             // 
             // myDataLayoutControl
@@ -123,7 +124,7 @@
             this.myDataLayoutControl.Name = "myDataLayoutControl";
             this.myDataLayoutControl.OptionsFocus.EnableAutoTabOrder = false;
             this.myDataLayoutControl.Root = this.Root;
-            this.myDataLayoutControl.Size = new System.Drawing.Size(784, 465);
+            this.myDataLayoutControl.Size = new System.Drawing.Size(865, 465);
             this.myDataLayoutControl.TabIndex = 0;
             this.myDataLayoutControl.Text = "myDataLayoutControl1";
             // 
@@ -138,7 +139,7 @@
             this.repoCombo,
             this.repoimagecomboFaz,
             this.repoimgaecomboAşama});
-            this.myGridControl1.Size = new System.Drawing.Size(760, 321);
+            this.myGridControl1.Size = new System.Drawing.Size(841, 321);
             this.myGridControl1.TabIndex = 8;
             this.myGridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.ReçeteTablo});
@@ -165,7 +166,8 @@
             this.colReçeteBirimi,
             this.colihtiyaç,
             this.colMalzemeİçiÜrün,
-            this.colStok});
+            this.colStok,
+            this.colMalzemeTipi});
             this.ReçeteTablo.GridControl = this.myGridControl1;
             this.ReçeteTablo.Name = "ReçeteTablo";
             this.ReçeteTablo.OptionsFind.FindDelay = 100;
@@ -227,7 +229,7 @@
             this.colMiktar.StatusBarKisayol = null;
             this.colMiktar.StatusBarKisayolAciklama = null;
             this.colMiktar.Visible = true;
-            this.colMiktar.VisibleIndex = 2;
+            this.colMiktar.VisibleIndex = 3;
             // 
             // repoSpin
             // 
@@ -251,7 +253,7 @@
             this.colAşamaTipi.StatusBarKisayol = null;
             this.colAşamaTipi.StatusBarKisayolAciklama = null;
             this.colAşamaTipi.Visible = true;
-            this.colAşamaTipi.VisibleIndex = 6;
+            this.colAşamaTipi.VisibleIndex = 7;
             this.colAşamaTipi.Width = 106;
             // 
             // colReçeteBirimi
@@ -267,7 +269,7 @@
             this.colReçeteBirimi.StatusBarKisayol = null;
             this.colReçeteBirimi.StatusBarKisayolAciklama = null;
             this.colReçeteBirimi.Visible = true;
-            this.colReçeteBirimi.VisibleIndex = 5;
+            this.colReçeteBirimi.VisibleIndex = 6;
             // 
             // colihtiyaç
             // 
@@ -279,7 +281,7 @@
             this.colihtiyaç.StatusBarKisayol = null;
             this.colihtiyaç.StatusBarKisayolAciklama = null;
             this.colihtiyaç.Visible = true;
-            this.colihtiyaç.VisibleIndex = 3;
+            this.colihtiyaç.VisibleIndex = 4;
             // 
             // colMalzemeİçiÜrün
             // 
@@ -291,7 +293,7 @@
             this.colMalzemeİçiÜrün.StatusBarKisayol = null;
             this.colMalzemeİçiÜrün.StatusBarKisayolAciklama = null;
             this.colMalzemeİçiÜrün.Visible = true;
-            this.colMalzemeİçiÜrün.VisibleIndex = 1;
+            this.colMalzemeİçiÜrün.VisibleIndex = 2;
             this.colMalzemeİçiÜrün.Width = 95;
             // 
             // colStok
@@ -304,7 +306,7 @@
             this.colStok.StatusBarKisayol = null;
             this.colStok.StatusBarKisayolAciklama = null;
             this.colStok.Visible = true;
-            this.colStok.VisibleIndex = 4;
+            this.colStok.VisibleIndex = 5;
             // 
             // repoCheck
             // 
@@ -346,7 +348,7 @@
             this.txtAçıklama.Properties.AppearanceFocused.BackColor = System.Drawing.Color.LightCyan;
             this.txtAçıklama.Properties.AppearanceFocused.Options.UseBackColor = true;
             this.txtAçıklama.Properties.MaxLength = 500;
-            this.txtAçıklama.Size = new System.Drawing.Size(609, 20);
+            this.txtAçıklama.Size = new System.Drawing.Size(690, 20);
             this.txtAçıklama.StatusBarAciklama = "Açıklama Giriniz.";
             this.txtAçıklama.StyleController = this.myDataLayoutControl;
             this.txtAçıklama.TabIndex = 7;
@@ -424,7 +426,7 @@
             this.txtReçete.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton()});
             this.txtReçete.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.txtReçete.Size = new System.Drawing.Size(609, 20);
+            this.txtReçete.Size = new System.Drawing.Size(690, 20);
             this.txtReçete.StatusBarAciklama = "Reçete Seç";
             this.txtReçete.StatusBarKisayol = "F4 :";
             this.txtReçete.StatusBarKisayolAciklama = "Seç";
@@ -434,7 +436,7 @@
             // tglDurum
             // 
             this.tglDurum.EnterMoveNextControl = true;
-            this.tglDurum.Location = new System.Drawing.Point(686, 12);
+            this.tglDurum.Location = new System.Drawing.Point(767, 12);
             this.tglDurum.MenuManager = this.ribbonControl;
             this.tglDurum.Name = "tglDurum";
             this.tglDurum.Properties.Appearance.ForeColor = System.Drawing.Color.Maroon;
@@ -511,7 +513,7 @@
             rowDefinition4,
             rowDefinition5,
             rowDefinition6});
-            this.Root.Size = new System.Drawing.Size(784, 465);
+            this.Root.Size = new System.Drawing.Size(865, 465);
             this.Root.TextVisible = false;
             // 
             // layoutControlItem2
@@ -519,7 +521,7 @@
             this.layoutControlItem2.AppearanceItemCaption.ForeColor = System.Drawing.Color.Maroon;
             this.layoutControlItem2.AppearanceItemCaption.Options.UseForeColor = true;
             this.layoutControlItem2.Control = this.tglDurum;
-            this.layoutControlItem2.Location = new System.Drawing.Point(674, 0);
+            this.layoutControlItem2.Location = new System.Drawing.Point(755, 0);
             this.layoutControlItem2.Name = "layoutControlItem2";
             this.layoutControlItem2.OptionsTableLayoutItem.ColumnIndex = 2;
             this.layoutControlItem2.Size = new System.Drawing.Size(90, 24);
@@ -535,7 +537,7 @@
             this.layoutControlItem3.Name = "layoutControlItem3";
             this.layoutControlItem3.OptionsTableLayoutItem.ColumnSpan = 2;
             this.layoutControlItem3.OptionsTableLayoutItem.RowIndex = 1;
-            this.layoutControlItem3.Size = new System.Drawing.Size(674, 24);
+            this.layoutControlItem3.Size = new System.Drawing.Size(755, 24);
             this.layoutControlItem3.Text = "Reçete";
             this.layoutControlItem3.TextSize = new System.Drawing.Size(58, 13);
             // 
@@ -572,7 +574,7 @@
             this.layoutControlItem4.Name = "layoutControlItem4";
             this.layoutControlItem4.OptionsTableLayoutItem.ColumnSpan = 2;
             this.layoutControlItem4.OptionsTableLayoutItem.RowIndex = 4;
-            this.layoutControlItem4.Size = new System.Drawing.Size(674, 24);
+            this.layoutControlItem4.Size = new System.Drawing.Size(755, 24);
             this.layoutControlItem4.Text = "Açıklama";
             this.layoutControlItem4.TextSize = new System.Drawing.Size(58, 13);
             // 
@@ -583,7 +585,7 @@
             this.simpleLabelItem1.Name = "simpleLabelItem1";
             this.simpleLabelItem1.OptionsTableLayoutItem.ColumnIndex = 1;
             this.simpleLabelItem1.OptionsTableLayoutItem.RowIndex = 3;
-            this.simpleLabelItem1.Size = new System.Drawing.Size(474, 24);
+            this.simpleLabelItem1.Size = new System.Drawing.Size(555, 24);
             this.simpleLabelItem1.Text = "ŞarjNo:";
             this.simpleLabelItem1.TextSize = new System.Drawing.Size(58, 13);
             // 
@@ -596,7 +598,7 @@
             this.layoutControlItem6.Name = "layoutControlItem6";
             this.layoutControlItem6.OptionsTableLayoutItem.ColumnSpan = 3;
             this.layoutControlItem6.OptionsTableLayoutItem.RowIndex = 5;
-            this.layoutControlItem6.Size = new System.Drawing.Size(764, 325);
+            this.layoutControlItem6.Size = new System.Drawing.Size(845, 325);
             this.layoutControlItem6.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem6.TextVisible = false;
             // 
@@ -611,11 +613,23 @@
             this.layoutControlItem1.Text = "Kod";
             this.layoutControlItem1.TextSize = new System.Drawing.Size(58, 13);
             // 
+            // colMalzemeTipi
+            // 
+            this.colMalzemeTipi.Caption = "MalzemeTipi";
+            this.colMalzemeTipi.FieldName = "MalzemeTipi";
+            this.colMalzemeTipi.Name = "colMalzemeTipi";
+            this.colMalzemeTipi.OptionsColumn.AllowEdit = false;
+            this.colMalzemeTipi.StatusBarAciklama = null;
+            this.colMalzemeTipi.StatusBarKisayol = null;
+            this.colMalzemeTipi.StatusBarKisayolAciklama = null;
+            this.colMalzemeTipi.Visible = true;
+            this.colMalzemeTipi.VisibleIndex = 1;
+            // 
             // İşemriEditForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(784, 598);
+            this.ClientSize = new System.Drawing.Size(865, 598);
             this.Controls.Add(this.myDataLayoutControl);
             this.IconOptions.ShowIcon = false;
             this.Name = "İşemriEditForm";
@@ -686,5 +700,6 @@
         private myUserControls.Grid.MyGridColumn colihtiyaç;
         private myUserControls.Grid.MyGridColumn colMalzemeİçiÜrün;
         private myUserControls.Grid.MyGridColumn colStok;
+        private myUserControls.Grid.MyGridColumn colMalzemeTipi;
     }
 }

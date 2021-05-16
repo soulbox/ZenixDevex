@@ -83,6 +83,11 @@
             this.btnGonder.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnGonder.ImageOptions.Image")));
             this.btnGonder.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnGonder.ImageOptions.LargeImage")));
             // 
+            // btnAşamalar
+            // 
+            this.btnAşamalar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAşamalar.ImageOptions.Image")));
+            this.btnAşamalar.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnAşamalar.ImageOptions.LargeImage")));
+            // 
             // longNavigator
             // 
             this.longNavigator.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -125,6 +130,7 @@
             this.Tablo.GridControl = this.myGridControl1;
             this.Tablo.GroupCount = 1;
             this.Tablo.Name = "Tablo";
+            this.Tablo.OptionsBehavior.AutoExpandAllGroups = true;
             this.Tablo.OptionsFind.AlwaysVisible = true;
             this.Tablo.OptionsFind.FindDelay = 100;
             this.Tablo.OptionsFind.FindMode = DevExpress.XtraEditors.FindMode.Always;
@@ -173,7 +179,7 @@
             // colmalzeme
             // 
             this.colmalzeme.Caption = "Malzeme";
-            this.colmalzeme.FieldName = "MalzemeAdı";
+            this.colmalzeme.FieldName = "MamülAdı";
             this.colmalzeme.Name = "colmalzeme";
             this.colmalzeme.OptionsColumn.AllowEdit = false;
             this.colmalzeme.StatusBarAciklama = null;

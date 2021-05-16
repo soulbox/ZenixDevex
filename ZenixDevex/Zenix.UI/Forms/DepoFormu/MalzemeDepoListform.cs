@@ -36,7 +36,7 @@ namespace Zenix.WinUI.Forms.DepoFormu
             this.KartTuru = Common.Enums.KartTuru.Depo;
             //this.FormShow = new ShowEditForms<FirmaEditFormu>();
             this.Navigator = longNavigator.controlNavigator;
-            Text = "Malzeme Kartları ";
+            Text = "Malzeme Depo ";
             Tablo.ViewCaption = Text;
             //ShowHideButtons(IsMdiChild, btnBağlıKayıtları);
             //btnBağlıKayıtları.Caption = "Ürünleri";
@@ -157,7 +157,10 @@ namespace Zenix.WinUI.Forms.DepoFormu
 
 
         }
-
+        protected override void ShowEditForm(long id)
+        {
+            //base.ShowEditForm(id);
+        }
         protected override void Listele()
         {
             var depolist = ((DepoBll)Bll).MalzemeDepoList(x => x.Mamül.MalzemeTipi != Common.Enums.MalzemeTipi.Ürün);
@@ -177,9 +180,6 @@ namespace Zenix.WinUI.Forms.DepoFormu
                 TabloSatınAlma.GridControl.DataSource = liste;
             }
         }
-        protected override void ShowEditForm(long id)
-        {
-            //base.ShowEditForm(id);
-        }
+
     }
 }

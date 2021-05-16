@@ -19,6 +19,8 @@ namespace Zenix.Model.Entities
         public long ÜrünId { get; set; }
         public int Miktar { get; set; }
         public BirimTipi BirimTipi { get; set; }
+        public bool Teslimat { get; set; }
+
 
     }
 }

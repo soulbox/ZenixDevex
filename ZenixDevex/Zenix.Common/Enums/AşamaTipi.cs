@@ -35,6 +35,8 @@ namespace Zenix.Common.Enums
         etiket,
         [Description("Şarj")]
         Şarj,
+        [Description("Tam Üretim")]
+        TamÜretim,
 
     }
 }

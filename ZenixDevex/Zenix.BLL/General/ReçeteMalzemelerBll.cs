@@ -10,6 +10,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
+using Zenix.Common.Enums;
 
 namespace Zenix.BLL.General
 {
@@ -30,7 +31,7 @@ namespace Zenix.BLL.General
                 Hacim = x.Mamül.Hacim,
                 MalzemeTipi = x.Mamül.MalzemeTipi,
                 MalzemeİçiÜrün = x.MalzemeİçiÜrün,
-                Stok=x.Mamül.Depo.Select(a=>a.DepoMiktar).Sum()
+                Stok = x.Mamül.Depo.Select(a => a.DepoMiktar).DefaultIfEmpty(0).Sum()
                 //MalzemeId = x.MalzemeId,
                 //FazTipi = x.FazTipi,
                 //MalzemeAdı = x.Malzeme.Adı,
@@ -41,7 +42,7 @@ namespace Zenix.BLL.General
            .ToList();
             var hacim = list.FirstOrDefault(x => x.Hacim > 0);
             var kimyasaloran = list
-                .Where(x => x.MalzemeTipi == Common.Enums.MalzemeTipi.Kimyasal)
+                .Where(x => x.MalzemeTipi == MalzemeTipi.Esans | x.MalzemeTipi == MalzemeTipi.HamMadde)
                 .Select(x => x.Miktar).DefaultIfEmpty(0).Sum();
             if (hacim != null)
                 list.ForEach(x =>
@@ -53,7 +54,13 @@ namespace Zenix.BLL.General
             return list;
         }
 
-        public List<ReçeteMalzemeleriL> ReçeteList(Expression<Func<ReçeteMalzemeler, bool>> filter) 
-            => List(filter ).Cast<ReçeteMalzemeleriL>().ToList();
+        public List<ReçeteMalzemeleriL> ReçeteList(Expression<Func<ReçeteMalzemeler, bool>> filter)
+            => List(filter).Cast<ReçeteMalzemeleriL>().ToList();
+        public List<ReçeteMalzemeleriL> ReçeteList(Expression<Func<ReçeteMalzemeler, bool>> filter,float şarjmiktarı) 
+        {
+            var list = ReçeteList(filter);
+            list.ForEach(x => x.ŞarjMiktarı = şarjmiktarı);
+            return list;
+        }
     }
 }

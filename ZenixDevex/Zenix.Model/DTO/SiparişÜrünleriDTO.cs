@@ -13,11 +13,20 @@ using System.Text.RegularExpressions;
 namespace Zenix.Model.DTO
 {
 
-
+    public interface IStok
+    {
+        float Gelen { get; set; }
+        float Stok { get; set; }
+        float EksikFazla { get; }
+    }
 
     [NotMapped]
-    public class SiparişÜrünleriL : SiparişÜrünleri, IBaseHaraketEntity, IÜrün, IBaseÜrünTanıtım, IHacim, IMamül
+    public class SiparişÜrünleriL : SiparişÜrünleri, IBaseHaraketEntity, IÜrün, IBaseÜrünTanıtım, IHacim, IMamül, IStok
     {
+        public float Gelen { get; set; }
+        public float Stok { get; set; }
+        public float EksikFazla { get => Gelen - Miktar; }
+
         public string GTIN { get; set; }
         public long MarkaId { get; set; }
         public long? FirmaId { get; set; }
@@ -51,9 +60,11 @@ namespace Zenix.Model.DTO
         public string BirimBoy { get; }
         public string BirimYükseklik { get; }
         public string BirimAlan { get; }
-
         public string BirimAğırlık { get; }
         public string ÜrünAdı { get => $"{FirmaAdi} - {MarkaAdı } - {MamülAdı }"; }
+        public string SiparişFirmaAdı { get; set; }
+        public string SiparişKod { get; set; }
+        public string SiparişKodFirma { get => $"{SiparişKod}-{ SiparişFirmaAdı?.ToUpper()}"; }
         public bool Insert { get; set; }
         public bool Update { get; set; }
         public bool Delete { get; set; }
@@ -61,6 +72,8 @@ namespace Zenix.Model.DTO
     [NotMapped]
     public class SiparişÜrünleriDepo : SiparişÜrünleri, IBaseÜrünTanıtım, IBaseRevizyon
     {
+
+
         public string MarkaAdı { get; set; }
         public string FirmaAdi { get; set; }
         public string MamülAdı { get; set; }

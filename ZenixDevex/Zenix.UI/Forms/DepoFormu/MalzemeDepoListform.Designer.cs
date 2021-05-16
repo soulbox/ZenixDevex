@@ -39,7 +39,7 @@
             this.Tablo = new Zenix.WinUI.myUserControls.Grid.myGridview();
             this.colId = new Zenix.WinUI.myUserControls.Grid.MyGridColumn();
             this.colMamülAdı = new Zenix.WinUI.myUserControls.Grid.MyGridColumn();
-            this.colSatınalma = new Zenix.WinUI.myUserControls.Grid.MyGridColumn();
+            this.colKayıtDUrum = new Zenix.WinUI.myUserControls.Grid.MyGridColumn();
             this.colMiktar = new Zenix.WinUI.myUserControls.Grid.MyGridColumn();
             this.colTarih = new Zenix.WinUI.myUserControls.Grid.MyGridColumn();
             this.colTip = new Zenix.WinUI.myUserControls.Grid.MyGridColumn();
@@ -109,6 +109,11 @@
             this.btnGonder.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnGonder.ImageOptions.Image")));
             this.btnGonder.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnGonder.ImageOptions.LargeImage")));
             // 
+            // btnAşamalar
+            // 
+            this.btnAşamalar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAşamalar.ImageOptions.Image")));
+            this.btnAşamalar.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnAşamalar.ImageOptions.LargeImage")));
+            // 
             // longNavigator
             // 
             this.longNavigator.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -157,7 +162,7 @@
             this.Tablo.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colId,
             this.colMamülAdı,
-            this.colSatınalma,
+            this.colKayıtDUrum,
             this.colMiktar,
             this.colTarih,
             this.colTip});
@@ -202,7 +207,7 @@
             // 
             // colMamülAdı
             // 
-            this.colMamülAdı.Caption = "Malzeme";
+            this.colMamülAdı.Caption = "    ";
             this.colMamülAdı.FieldName = "MamülAdı";
             this.colMamülAdı.Name = "colMamülAdı";
             this.colMamülAdı.OptionsColumn.AllowEdit = false;
@@ -212,18 +217,18 @@
             this.colMamülAdı.Visible = true;
             this.colMamülAdı.VisibleIndex = 1;
             // 
-            // colSatınalma
+            // colKayıtDUrum
             // 
-            this.colSatınalma.Caption = "Satın Alma";
-            this.colSatınalma.FieldName = "SatınAlma";
-            this.colSatınalma.Name = "colSatınalma";
-            this.colSatınalma.OptionsColumn.AllowEdit = false;
-            this.colSatınalma.StatusBarAciklama = null;
-            this.colSatınalma.StatusBarKisayol = null;
-            this.colSatınalma.StatusBarKisayolAciklama = null;
-            this.colSatınalma.Visible = true;
-            this.colSatınalma.VisibleIndex = 0;
-            this.colSatınalma.Width = 217;
+            this.colKayıtDUrum.Caption = "Durum";
+            this.colKayıtDUrum.FieldName = "KayıtDurum";
+            this.colKayıtDUrum.Name = "colKayıtDUrum";
+            this.colKayıtDUrum.OptionsColumn.AllowEdit = false;
+            this.colKayıtDUrum.StatusBarAciklama = null;
+            this.colKayıtDUrum.StatusBarKisayol = null;
+            this.colKayıtDUrum.StatusBarKisayolAciklama = null;
+            this.colKayıtDUrum.Visible = true;
+            this.colKayıtDUrum.VisibleIndex = 0;
+            this.colKayıtDUrum.Width = 217;
             // 
             // colMiktar
             // 
@@ -339,7 +344,7 @@
             // 
             // colSatınAlmaKod
             // 
-            this.colSatınAlmaKod.Caption = "Satın Alma";
+            this.colSatınAlmaKod.Caption = "Durum";
             this.colSatınAlmaKod.FieldName = "SatınAlmaKodFirma";
             this.colSatınAlmaKod.Name = "colSatınAlmaKod";
             this.colSatınAlmaKod.OptionsColumn.AllowEdit = false;
@@ -351,7 +356,7 @@
             // 
             // colMamül
             // 
-            this.colMamül.Caption = "Malzeme";
+            this.colMamül.Caption = " Malzeme";
             this.colMamül.FieldName = "MamülAdı";
             this.colMamül.Name = "colMamül";
             this.colMamül.OptionsColumn.AllowEdit = false;
@@ -607,7 +612,7 @@
         public myUserControls.Grid.myGridview Tablo;
         private myUserControls.Grid.MyGridColumn colId;
         private myUserControls.Grid.MyGridColumn colMamülAdı;
-        private myUserControls.Grid.MyGridColumn colSatınalma;
+        private myUserControls.Grid.MyGridColumn colKayıtDUrum;
         private myUserControls.Grid.MyGridColumn colMiktar;
         private myUserControls.Grid.MyGridColumn colTarih;
         private myUserControls.Grid.MyGridColumn colTip;

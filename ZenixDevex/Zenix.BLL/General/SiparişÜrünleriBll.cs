@@ -21,7 +21,7 @@ namespace Zenix.BLL.General
             {
                 Id = x.Id,
                 SiparişId = x.SiparişId,
-                ÜrünId = x.Id,
+                ÜrünId = x.ÜrünId,
                 MamülAdı = x.Ürün.Mamül.MamülAdı,
                 FirmaAdi = x.Ürün.Firma.FirmaAdi,
                 MarkaAdı = x.Ürün.Marka.MarkaAdı,
@@ -31,7 +31,15 @@ namespace Zenix.BLL.General
                 Stand = x.Ürün.Stand,
                 BirimTipi = x.BirimTipi,
                 Miktar = x.Miktar,
+                FirmaId = x.Sipariş.FirmaId,
+                MamülId = x.Ürün.MamülId,
+                SiparişFirmaAdı = x.Sipariş.Firma.FirmaAdi,
+                SiparişKod = x.Sipariş.Kod,
+                Teslimat=x.Teslimat,
+                //SiparişDurum = x.Sipariş.Durum,
             }).ToList();
         }
+        public List<SiparişÜrünleriL> SiparişListesi(Expression<Func<SiparişÜrünleri, bool>> filter)
+            => List(filter).Cast<SiparişÜrünleriL>().ToList();
     }
 }

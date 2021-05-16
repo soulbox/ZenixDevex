@@ -34,7 +34,7 @@ namespace Zenix.WinUI.Forms.İşemriFormu
             NesneyiKontrollereBagla();
             if (BaseIslemTuru != Common.Enums.IslemTuru.EntityInsert) return;
             Id = BaseIslemTuru.IdOlustur(OldEntity);
-            txtKod.Text = ((İşemriBll)Bll).YeniKodVer(x => x.ReçeteId == ((İşemriS)OldEntity).ReçeteId);
+            txtKod.Text = ((İşemriBll)Bll).YeniKodVer();
             txtReçete.Focus();
         }
         protected override void NesneyiKontrollereBagla()

@@ -28,27 +28,29 @@ namespace Zenix.BLL.General
         {
             return BaseList(filter, x => new ÜretimL
             {
-                Id             = x.Id,
-                AşamaTipi      = x.AşamaTipi,
-                BaseRevKod = x.İşemri.Reçete.Revizyon.Kod ,
-                ReçeteId       = x.İşemri.ReçeteId,
-                İşemriId       = x.İşemriId,
-                ÜrünId         = x.İşemri.Reçete.ÜrünId,
-                Miktar         = x.Miktar,
-                MamülAdı       = x.Mamül.MamülAdı,
-                ÜrünAdı        = x.İşemri.Reçete.Ürün.Mamül.MamülAdı,
-                işemriTarih    = x.İşemri.işemriTarih,
-                ŞarjMiktarı    = x.İşemri.ŞarjMiktarı,
-                ŞarjNo         = x.İşemri.ŞarjNo,
-                MarkaAdı       = x.İşemri.Reçete.Ürün.Marka.MarkaAdı,
-                FirmaAdi       = x.İşemri.Reçete.Ürün.Firma.FirmaAdi,
+                Id = x.Id,
+                AşamaTipi = x.AşamaTipi,
+                BaseRevKod = x.İşemri.Reçete.Revizyon.Kod,
+                ReçeteId = x.İşemri.ReçeteId,
+                İşemriId = x.İşemriId,
+                ÜrünId = x.İşemri.Reçete.ÜrünId,
+                Miktar = x.Miktar,
+                MamülAdı = x.Mamül.MamülAdı,
+                ÜrünAdı = x.İşemri.Reçete.Ürün.Mamül.MamülAdı,
+                işemriTarih = x.İşemri.işemriTarih,
+                ŞarjMiktarı = x.İşemri.ŞarjMiktarı,
+                ŞarjNo = x.İşemri.ŞarjNo,
+                MarkaAdı = x.İşemri.Reçete.Ürün.Marka.MarkaAdı,
+                FirmaAdi = x.İşemri.Reçete.Ürün.Firma.FirmaAdi,
                 RevizyonTarihi = x.İşemri.Reçete.Revizyon.RevizyonTarihi,
-                GTIN           = x.İşemri.Reçete.Ürün.GTIN,
-                KullanıcıId    = x.İşemri.KullanıcıId,
-                MamülId        = x.MamülId,
-                
+                GTIN = x.İşemri.Reçete.Ürün.GTIN,
+                KullanıcıId = x.İşemri.KullanıcıId,
+                MamülId = x.MamülId,
+
             }).ToList();
         }
+        public List<ÜretimL> ÜretimList(Expression<Func<Üretim, bool>> filter)
+            => List(filter).Cast<ÜretimL>().ToList();
 
     }
 }

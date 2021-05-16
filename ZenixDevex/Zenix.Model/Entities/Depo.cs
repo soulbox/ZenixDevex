@@ -22,8 +22,10 @@ namespace Zenix.Model.Entities
         public long? İşemriId { get; set; }
         public Satınalma Satınalma { get; set; }
         public long? SatınalmaId { get; set; }
-        public Firma SevkFirma { get; set; }
-        public long? SevkFirmaId { get; set; }
+        public Ürün Ürün { get; set; }
+        public long? ÜrünId { get; set; }
+        public Sipariş Sipariş { get; set; }
+        public long? SiparişId { get; set; }
         public float DepoMiktar { get; set; }
         public DateTime KayıtTarihi { get; set; } = DateTime.Now;
     }

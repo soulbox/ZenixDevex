@@ -26,19 +26,38 @@ namespace Zenix.BLL.General
 
         public List<MalzemeDepoL> MalzemeDepoList(Expression<Func<Depo, bool>> filter)
         {
-            return BaseList(filter, x => new MalzemeDepoL
+            var list = BaseList(filter, x => new MalzemeDepoL
             {
                 Id = x.Id,
                 Kod = x.Kod,
                 DepoMiktar = x.DepoMiktar,
                 KayıtTarihi = x.KayıtTarihi,
                 MamülAdı = x.Mamül.MamülAdı,
-                SatınAlma = x.Satınalma == null ? "" : x.Satınalma.Kod,
-                SatınalmaId=x.SatınalmaId,
-                MamülId=x.MamülId,
-                
+                SatınalmaId = x.SatınalmaId == null ? default : x.SatınalmaId,
+                SatınAlma = x.SatınalmaId == null ? default : x.Satınalma.Kod,
+                İşemriId = x.İşemriId == null ? default : x.İşemriId,
+                işemriTarih = x.İşemriId == null ? default : x.İşemri.işemriTarih,
+                ŞarjNo = x.İşemriId == null ? default : x.İşemri.ŞarjNo,
+                MarkaAdı = x.İşemriId == null ? default : x.İşemri.Reçete.Ürün.Marka.MarkaAdı,
+                GTIN = x.İşemriId == null ? default : x.İşemri.Reçete.Ürün.GTIN,
+                FirmaAdi = x.İşemriId == null ? default : x.İşemri.Reçete.Ürün.Firma.FirmaAdi,
+                RevizyonTarihi = x.İşemriId == null ? default : x.İşemri.Reçete.Revizyon.RevizyonTarihi,
+                BaseRevKod = x.İşemriId == null ? default : x.İşemri.Reçete.Revizyon.Kod,
+                SiparişFirmaAdi = x.ÜrünId == null ? default : x.Ürün.Firma.FirmaAdi,
+                SiparişMarkaAdı = x.ÜrünId == null ? default : x.Ürün.Marka.MarkaAdı,
+                ÜrünId = x.ÜrünId,
+                MamülId = x.MamülId,
+                DepoTipi = x.DepoTipi,
+                SiparişId = x.SiparişId,
+                SiparişNo = x.Sipariş.Kod,
+
 
             }).ToList();
+            list.ForEach(x =>
+            {
+                x.KayıtDurum = x.SatınalmaId != null ? x.SatınAlma : x.İşemriId != null ? $"İşemriNo:{x.işemriNo}" : x.SiparişId != null ? $"Sipariş No:{x.SiparişNo}" : "";
+            });
+            return list;
 
         }
 

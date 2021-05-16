@@ -63,12 +63,18 @@
             this.ribbonControl.SearchEditItem.EditWidth = 150;
             this.ribbonControl.SearchEditItem.Id = -5000;
             this.ribbonControl.SearchEditItem.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
+            this.ribbonControl.Size = new System.Drawing.Size(986, 109);
             this.ribbonControl.Toolbar.ShowCustomizeItem = false;
             // 
             // btnGonder
             // 
             this.btnGonder.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnGonder.ImageOptions.Image")));
             this.btnGonder.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnGonder.ImageOptions.LargeImage")));
+            // 
+            // btnAşamalar
+            // 
+            this.btnAşamalar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAşamalar.ImageOptions.Image")));
+            this.btnAşamalar.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnAşamalar.ImageOptions.LargeImage")));
             // 
             // myBandedGridControl1
             // 
@@ -77,7 +83,7 @@
             this.myBandedGridControl1.MainView = this.Tablo;
             this.myBandedGridControl1.MenuManager = this.ribbonControl;
             this.myBandedGridControl1.Name = "myBandedGridControl1";
-            this.myBandedGridControl1.Size = new System.Drawing.Size(952, 357);
+            this.myBandedGridControl1.Size = new System.Drawing.Size(986, 357);
             this.myBandedGridControl1.TabIndex = 10;
             this.myBandedGridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.Tablo});
@@ -342,14 +348,14 @@
             this.longNavigator.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.longNavigator.Location = new System.Drawing.Point(0, 466);
             this.longNavigator.Name = "longNavigator";
-            this.longNavigator.Size = new System.Drawing.Size(952, 24);
+            this.longNavigator.Size = new System.Drawing.Size(986, 24);
             this.longNavigator.TabIndex = 9;
             // 
             // ReçeteListForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(952, 514);
+            this.ClientSize = new System.Drawing.Size(986, 514);
             this.Controls.Add(this.myBandedGridControl1);
             this.Controls.Add(this.longNavigator);
             this.IconOptions.ShowIcon = false;

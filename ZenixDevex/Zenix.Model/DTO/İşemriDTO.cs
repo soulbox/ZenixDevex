@@ -17,7 +17,7 @@ namespace Zenix.Model.DTO
          string ReçeteAdı { get;  }
     }
     [NotMapped]
-    public class İşemriS : BaseRevizyon, IBaseÜrünTanıtım, IMamül, IRevizyon, IPersonel, Iİşemri, IBaseReçete,IReçeteAdı
+    public class İşemriS : BaseRevizyon, IBaseÜrünTanıtım, IMamül, IRevizyon, IPersonel, Iİşemri, IBaseReçete,IReçeteAdı, IÜrün
     {
 
         public string ReçeteAdı => $"{MarkaAdı}-{MamülAdı}-{GTIN}-{RevKodu}";
@@ -62,7 +62,12 @@ namespace Zenix.Model.DTO
         public string BFazıHazırlanış { get; set; }
         public string CFazıHazırlanış { get; set; }
         public string DFazıHazırlanış { get; set; }
-
+        public long MarkaId { get ; set ; }
+        public long? FirmaId { get ; set ; }
+        public long MamülId { get  ; set ; }
+        public int Kutu { get ; set ; }
+        public int Stand { get ; set ; }
+        public int Koli { get ; set ; }
     }
     [NotMapped]
     public class İşemriL : İşemriS
@@ -74,6 +79,7 @@ namespace Zenix.Model.DTO
         public string EXP { get => $"EXP:{SKT:MMyyyy}"; }
         [NotMapped]
         public string işemriNo { get => $"{işemriTarih:ddMM}{ŞarjNo:00}{işemriTarih:yy}"; }
+        public İşemriL Clone { get=>(İşemriL)MemberwiseClone(); }
     }
 
 }

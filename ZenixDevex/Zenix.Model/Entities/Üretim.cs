@@ -22,6 +22,8 @@ namespace Zenix.Model.Entities
         public long MamülId { get; set; }
         public float Miktar { get; set; }
         public AşamaTipi AşamaTipi { get; set; }
+        public DateTime KayıtTarihi { get; set; } = DateTime.Now;
+
 
 
     }

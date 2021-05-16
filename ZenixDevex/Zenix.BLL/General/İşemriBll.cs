@@ -94,7 +94,8 @@ namespace Zenix.BLL.General
                 Uzunluk = x.Reçete.Ürün.Mamül.Uzunluk,
                 AğızÖlçüsü = x.Reçete.Ürün.Mamül.AğızÖlçüsü,
                 AğırlığınBirimi = x.Reçete.Ürün.Mamül.AğırlığınBirimi,
-                BirimAuEbY = x.Reçete.Ürün.Mamül.BirimAuEbY,                
+                BirimAuEbY = x.Reçete.Ürün.Mamül.BirimAuEbY,    
+                MamülId=x.Reçete.Ürün.MamülId,
 
             }).ToList();
         }

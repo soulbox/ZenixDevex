@@ -17,6 +17,8 @@ using DevExpress.Data;
 using Zenix.Model.DTO;
 using Zenix.Common.Enums;
 using Zenix.Common.Messages;
+using Zenix.Model.Entities.Base;
+using DevExpress.XtraGrid.Views.Base;
 
 namespace Zenix.WinUI.Forms.İşemriFormu
 {
@@ -44,7 +46,6 @@ namespace Zenix.WinUI.Forms.İşemriFormu
         protected override void Listele()
         {
             Tablo.GridControl.DataSource = ((İşemriBll)Bll).List(FilterFunctions.Filter<İşemri>(AktifKayitlariGoster));
-            Tablo_SelectionChanged(tablo, null);
         }
         protected override void SagMenuGoster(object sender, MouseEventArgs e)
         {
@@ -53,10 +54,16 @@ namespace Zenix.WinUI.Forms.İşemriFormu
             ShowHideButtons(entity != null, btnAşamalar);
             base.SagMenuGoster(sender, e);
         }
-        protected override void Tablo_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        protected override void Tablo_FocusedRowChanged(object sender, FocusedRowChangedEventArgs e)
         {
             var entity = Tablo.GetRow<İşemriL>();
-            if (entity.isNull()) return;
+
+            if (entity.isNull())
+            {
+                ReçeteTablo.GridControl.DataSource = null;
+                TabloÜretim.GridControl.DataSource = null;
+                return;
+            }
             using (var üretimbll = new ÜretimBll())
             {
                 var list = üretimbll.List(x => x.İşemriId == entity.Id);
@@ -74,35 +81,95 @@ namespace Zenix.WinUI.Forms.İşemriFormu
 
             }
         }
+
+        enum Çarpan : int
+        {
+            giriş = 1,
+            çıkış = -1
+        }
         protected override void TümAşamalarYapıldı()
         {
 
-            if (Msg.HayirSeciliEvetHayir("Tüm Aşamalar Üretime Aktarılacak. Onaylıyormusunuxz?", "Tüm Aşamalar") != DialogResult.Yes)
+            if (Msg.HayirSeciliEvetHayir("Tüm Aşamalar Üretime Aktarılacak. Onaylıyormusunuz?", "Tüm Aşamalar") != DialogResult.Yes)
                 return;
             var entity = Tablo.GetRow<İşemriL>();
             if (entity.isNull()) return;
+
+
             using (var depobll = new DepoBll())
             using (var reçetebll = new ReçeteMalzemelerBll())
             using (var üretimbll = new ÜretimBll())
             {
+                //işemrinin reçete malzemeleri
+                var reçetelist = reçetebll.ReçeteList(x => x.ReçeteId == entity.ReçeteId, entity.ŞarjMiktarı);
+                var mamülidler = reçetelist.Select(a => a.MamülId).ToList();
+                //işemrinin reçetesindeki malzemelerin deposundaki liste
+                var depodakiler = depobll.MalzemeDepoList(x => x.İşemriId == entity.Id && mamülidler.Contains(x.MamülId));
+                var üretimdekiler = üretimbll.ÜretimList(x => x.İşemriId == entity.Id);
 
-                var reçetelist = reçetebll.ReçeteList(x => x.Id == entity.ReçeteId);
-                var depodakiler = depobll.MalzemeDepoList(x => x.İşemriId == entity.Id && reçetelist.Select(a => a.MamülId).Contains(x.MamülId));
-                var depos = reçetelist.Select(x =>
+
+                (Depo depo, Üretim üretim) KayıtGetir(long mamülid, DepoTipi depoTipi, float ihtiyaç, Çarpan girişçıkış, bool isürün = false)
                 {
-                    var Depodakimiktar = depodakiler.Where(a => a.MamülId == x.MamülId)
-                    .Select(a => a.DepoMiktar).DefaultIfEmpty(0).Sum();
-                    var DepoMiktarMutlak = Math.Abs(Depodakimiktar);
-                    return DepoMiktarMutlak < x.ihtiyaç ? new Depo
-                    {
-                        DepoMiktar = -1 * (x.ihtiyaç - DepoMiktarMutlak),
-                        DepoTipi=DepoTipi.ÜKullanıldı,
-                        MamülId=x.MamülId,
-                        İşemriId=entity.Id,
-                        KayıtTarihi=DateTime.Now,                        
-                    } : null;
-                }).Where(x => x != null).ToList();
+                    var Depodakimiktar = depodakiler.Where(a => !isürün ? a.MamülId == mamülid : a.MamülId == mamülid && a.İşemriId == entity.Id)
+                 .Select(a => a.DepoMiktar).DefaultIfEmpty(0).Sum();
 
+                    var DepoMiktarMutlak = Math.Abs(Depodakimiktar);
+                    //Üretimdeki x malzemesinin Miktar toplamı
+                    var üretimdekimiktar = üretimdekiler.Where(a => a.MamülId == mamülid && a.İşemriId==entity.Id)
+                    .Select(a => a.Miktar).DefaultIfEmpty(0).Sum();
+                    var üretimMiktarMutlak = Math.Abs(üretimdekimiktar);
+                    var üretim = üretimMiktarMutlak < ihtiyaç ? new Üretim
+                    {
+                        Id = IslemTuru.EntityInsert.IdOlustur(null),
+                        Kod = depobll.YeniKodVer(),
+                        Miktar = (ihtiyaç - üretimMiktarMutlak),
+                        AşamaTipi = AşamaTipi.TamÜretim,
+                        MamülId = mamülid,
+                        İşemriId = entity.Id,
+                        KayıtTarihi = DateTime.Now,
+                    } : null;
+
+                    var depo = DepoMiktarMutlak < ihtiyaç ? new Depo
+                    {
+                        Id = IslemTuru.EntityInsert.IdOlustur(null),
+                        Kod = depobll.YeniKodVer(),
+                        DepoMiktar = (int)girişçıkış * (ihtiyaç - DepoMiktarMutlak),
+                        DepoTipi = depoTipi,
+                        MamülId = mamülid,
+                        İşemriId = entity.Id,
+                        KayıtTarihi = DateTime.Now,
+                    } : null;
+                    if (isürün)
+                        depo.ÜrünId = entity.ÜrünId;
+                    return (depo, üretim);
+
+                }
+
+                //
+                var AksiyonListesi = reçetelist.Select(x => KayıtGetir(x.MamülId, DepoTipi.ÜKullanıldı, x.ihtiyaç, Çarpan.çıkış)).ToList();
+                var update = entity.Clone;
+                update.Durum = false;
+                //şarj/hacim*1000
+                var düşülecekMalzemeler = AksiyonListesi.Where(x => x.depo != null)
+                    .Select(x => x.depo).Cast<BaseEntity>().ToList();
+                var üretimdüşülecekmalzemeler = AksiyonListesi.Where(x => x.üretim != null)
+                    .Select(x => x.üretim).Cast<BaseEntity>().ToList();
+
+                var hacim = reçetelist.FirstOrDefault()?.Hacim;
+                var ürünihtiyaç = (float)((float)entity.ŞarjMiktarı / (float)hacim.Value * 1000);
+                var ürüneklenicek = KayıtGetir(entity.MamülId, DepoTipi.Üretildi, ürünihtiyaç, Çarpan.giriş, true);
+                if (ürüneklenicek.depo != null)
+                    düşülecekMalzemeler.Add(ürüneklenicek.depo);
+                if (ürüneklenicek.üretim != null)
+                    üretimdüşülecekmalzemeler.Add(ürüneklenicek.üretim);
+
+                if (!depobll.Insert(düşülecekMalzemeler) & !üretimbll.Insert(üretimdüşülecekmalzemeler) & !((İşemriBll)Bll).Update(entity, update))
+                    Msg.HataMesajı("Bu işemrinin Reçetedeki Malzemeleri Malzeme Depodan Düşülemedi");
+                else
+                {
+                    Listele();
+                    Tablo_FocusedRowChanged(null, null);
+                }
 
             }
 

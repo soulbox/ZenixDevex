@@ -40,6 +40,7 @@
             this.colBirim = new Zenix.WinUI.myUserControls.Grid.MyGridColumn();
             this.repoimagecomboBirim = new DevExpress.XtraEditors.Repository.RepositoryItemImageComboBox();
             this.repoCheck = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
+            this.colTeslimat = new Zenix.WinUI.myUserControls.Grid.MyGridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.myGridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tablo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repoSpin)).BeginInit();
@@ -50,7 +51,7 @@
             // insUpdNavigator
             // 
             this.insUpdNavigator.Location = new System.Drawing.Point(0, 493);
-            this.insUpdNavigator.Size = new System.Drawing.Size(782, 24);
+            this.insUpdNavigator.Size = new System.Drawing.Size(831, 24);
             // 
             // myGridControl1
             // 
@@ -62,7 +63,7 @@
             this.repoCheck,
             this.repoSpin,
             this.repoimagecomboBirim});
-            this.myGridControl1.Size = new System.Drawing.Size(782, 493);
+            this.myGridControl1.Size = new System.Drawing.Size(831, 493);
             this.myGridControl1.TabIndex = 7;
             this.myGridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.tablo});
@@ -88,7 +89,8 @@
             this.colStand,
             this.colKoli,
             this.colMiktar,
-            this.colBirim});
+            this.colBirim,
+            this.colTeslimat});
             this.tablo.GridControl = this.myGridControl1;
             this.tablo.Name = "tablo";
             this.tablo.OptionsFind.FindDelay = 100;
@@ -226,9 +228,18 @@
             // 
             this.repoCheck.AutoHeight = false;
             this.repoCheck.Name = "repoCheck";
-            this.repoCheck.ValueChecked = ((byte)(1));
-            this.repoCheck.ValueGrayed = ((byte)(2));
-            this.repoCheck.ValueUnchecked = ((byte)(0));
+            // 
+            // colTeslimat
+            // 
+            this.colTeslimat.Caption = "Teslimat";
+            this.colTeslimat.ColumnEdit = this.repoCheck;
+            this.colTeslimat.FieldName = "Teslimat";
+            this.colTeslimat.Name = "colTeslimat";
+            this.colTeslimat.StatusBarAciklama = null;
+            this.colTeslimat.StatusBarKisayol = null;
+            this.colTeslimat.StatusBarKisayolAciklama = null;
+            this.colTeslimat.Visible = true;
+            this.colTeslimat.VisibleIndex = 6;
             // 
             // SiparişÜrünleriTable
             // 
@@ -236,7 +247,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.myGridControl1);
             this.Name = "SiparişÜrünleriTable";
-            this.Size = new System.Drawing.Size(782, 517);
+            this.Size = new System.Drawing.Size(831, 517);
             this.Controls.SetChildIndex(this.insUpdNavigator, 0);
             this.Controls.SetChildIndex(this.myGridControl1, 0);
             ((System.ComponentModel.ISupportInitialize)(this.myGridControl1)).EndInit();
@@ -263,5 +274,6 @@
         private Grid.MyGridColumn colKutu;
         private Grid.MyGridColumn colStand;
         private Grid.MyGridColumn colKoli;
+        private Grid.MyGridColumn colTeslimat;
     }
 }

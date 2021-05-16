@@ -81,7 +81,7 @@
             this.layoutControlItem16 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layMalzemetipi = new DevExpress.XtraLayout.LayoutControlItem();
             this.lay = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem13 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -124,7 +124,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem16)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layMalzemetipi)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lay)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).BeginInit();
@@ -566,7 +566,7 @@
             this.layoutControlItem16,
             this.layoutControlItem5,
             this.layoutControlItem4,
-            this.layoutControlItem6,
+            this.layMalzemetipi,
             this.lay,
             this.layoutControlItem10,
             this.layoutControlItem13});
@@ -823,17 +823,17 @@
             this.layoutControlItem4.TextSize = new System.Drawing.Size(22, 13);
             this.layoutControlItem4.TextToControlDistance = 5;
             // 
-            // layoutControlItem6
+            // layMalzemetipi
             // 
-            this.layoutControlItem6.AppearanceItemCaption.ForeColor = System.Drawing.Color.Maroon;
-            this.layoutControlItem6.AppearanceItemCaption.Options.UseForeColor = true;
-            this.layoutControlItem6.Control = this.cmbMalzemeTipi;
-            this.layoutControlItem6.Location = new System.Drawing.Point(0, 48);
-            this.layoutControlItem6.Name = "layoutControlItem6";
-            this.layoutControlItem6.OptionsTableLayoutItem.RowIndex = 2;
-            this.layoutControlItem6.Size = new System.Drawing.Size(200, 24);
-            this.layoutControlItem6.Text = "Malzeme Tipi";
-            this.layoutControlItem6.TextSize = new System.Drawing.Size(80, 13);
+            this.layMalzemetipi.AppearanceItemCaption.ForeColor = System.Drawing.Color.Maroon;
+            this.layMalzemetipi.AppearanceItemCaption.Options.UseForeColor = true;
+            this.layMalzemetipi.Control = this.cmbMalzemeTipi;
+            this.layMalzemetipi.Location = new System.Drawing.Point(0, 48);
+            this.layMalzemetipi.Name = "layMalzemetipi";
+            this.layMalzemetipi.OptionsTableLayoutItem.RowIndex = 2;
+            this.layMalzemetipi.Size = new System.Drawing.Size(200, 24);
+            this.layMalzemetipi.Text = "Malzeme Tipi";
+            this.layMalzemetipi.TextSize = new System.Drawing.Size(80, 13);
             // 
             // lay
             // 
@@ -941,7 +941,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem16)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layMalzemetipi)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lay)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).EndInit();
@@ -988,7 +988,7 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem16;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;
+        private DevExpress.XtraLayout.LayoutControlItem layMalzemetipi;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem12;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem10;
         private DevExpress.XtraLayout.LayoutControlItem lay;

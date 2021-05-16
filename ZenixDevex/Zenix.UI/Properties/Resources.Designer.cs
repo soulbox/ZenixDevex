@@ -223,6 +223,16 @@ namespace Zenix.WinUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap apply_16x164 {
+            get {
+                object obj = ResourceManager.GetObject("apply_16x164", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap apply_32x32 {
             get {
                 object obj = ResourceManager.GetObject("apply_32x32", resourceCulture);
@@ -256,6 +266,16 @@ namespace Zenix.WinUI.Properties {
         public static System.Drawing.Bitmap apply_32x323 {
             get {
                 object obj = ResourceManager.GetObject("apply_32x323", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap apply_32x324 {
+            get {
+                object obj = ResourceManager.GetObject("apply_32x324", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1791,6 +1811,16 @@ namespace Zenix.WinUI.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type DevExpress.Utils.Svg.SvgImage.
+        /// </summary>
+        public static DevExpress.Utils.Svg.SvgImage productquickshippments {
+            get {
+                object obj = ResourceManager.GetObject("productquickshippments", resourceCulture);
+                return ((DevExpress.Utils.Svg.SvgImage)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         public static System.Drawing.Bitmap projectfile_16x16 {
@@ -2027,6 +2057,16 @@ namespace Zenix.WinUI.Properties {
             get {
                 object obj = ResourceManager.GetObject("Set", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type DevExpress.Utils.Svg.SvgImage.
+        /// </summary>
+        public static DevExpress.Utils.Svg.SvgImage shipmenttransit {
+            get {
+                object obj = ResourceManager.GetObject("shipmenttransit", resourceCulture);
+                return ((DevExpress.Utils.Svg.SvgImage)(obj));
             }
         }
         

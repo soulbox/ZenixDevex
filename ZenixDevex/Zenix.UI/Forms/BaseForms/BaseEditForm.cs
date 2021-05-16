@@ -23,6 +23,7 @@ using DevExpress.XtraBars;
 using Zenix.WinUI.myUserControls.Grid;
 using Zenix.WinUI.Interfaces;
 using Zenix.Model.Entities.Base.Interfaces;
+using DevExpress.XtraLayout;
 
 namespace Zenix.WinUI.Forms.BaseForms
 {
@@ -256,6 +257,11 @@ namespace Zenix.WinUI.Forms.BaseForms
         {
             ShowItems?.ForEach(x => x.Visibility = BarItemVisibility.Always);
             HideItems?.ForEach(x => x.Visibility = BarItemVisibility.Never);
+        }
+        protected void LayoutGizleGoster(bool visible, params BaseLayoutItem[] param) 
+        {
+            param?.Where(x => x != null).ToList()
+                .ForEach(x => x.Visibility = visible ? DevExpress.XtraLayout.Utils.LayoutVisibility.Always : DevExpress.XtraLayout.Utils.LayoutVisibility.Never);
         }
         private void EntityDelete()
         {

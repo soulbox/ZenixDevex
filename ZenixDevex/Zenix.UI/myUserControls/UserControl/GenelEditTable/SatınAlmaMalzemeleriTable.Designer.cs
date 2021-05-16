@@ -37,9 +37,9 @@
             this.repositoryItemDateEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
             this.colMiktar = new Zenix.WinUI.myUserControls.Grid.MyGridColumn();
             this.repoSpin = new DevExpress.XtraEditors.Repository.RepositoryItemSpinEdit();
+            this.colTeslimat = new Zenix.WinUI.myUserControls.Grid.MyGridColumn();
             this.repoCheck = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
             this.repoimgaecomboBirim = new DevExpress.XtraEditors.Repository.RepositoryItemImageComboBox();
-            this.colTeslimat = new Zenix.WinUI.myUserControls.Grid.MyGridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.myGridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tablo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1)).BeginInit();
@@ -205,21 +205,6 @@
             this.repoSpin.Mask.EditMask = "n1";
             this.repoSpin.Name = "repoSpin";
             // 
-            // repoCheck
-            // 
-            this.repoCheck.AutoHeight = false;
-            this.repoCheck.Name = "repoCheck";
-            this.repoCheck.ValueChecked = ((byte)(1));
-            this.repoCheck.ValueGrayed = ((byte)(2));
-            this.repoCheck.ValueUnchecked = ((byte)(0));
-            // 
-            // repoimgaecomboBirim
-            // 
-            this.repoimgaecomboBirim.AutoHeight = false;
-            this.repoimgaecomboBirim.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repoimgaecomboBirim.Name = "repoimgaecomboBirim";
-            // 
             // colTeslimat
             // 
             this.colTeslimat.Caption = "Teslimat";
@@ -231,6 +216,18 @@
             this.colTeslimat.StatusBarKisayolAciklama = null;
             this.colTeslimat.Visible = true;
             this.colTeslimat.VisibleIndex = 4;
+            // 
+            // repoCheck
+            // 
+            this.repoCheck.AutoHeight = false;
+            this.repoCheck.Name = "repoCheck";
+            // 
+            // repoimgaecomboBirim
+            // 
+            this.repoimgaecomboBirim.AutoHeight = false;
+            this.repoimgaecomboBirim.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repoimgaecomboBirim.Name = "repoimgaecomboBirim";
             // 
             // SatınAlmaMalzemeleriTable
             // 

@@ -20,8 +20,8 @@ namespace Zenix.Model.DTO
     public class ReçeteMalzemeleriL : ReçeteMalzemeler, IBaseHaraketEntity, IMamül, IPaket
     {
         public string HacimliMalzemeAdı { get; set; }
-        public float ihtiyaç { get => MalzemeTipi == MalzemeTipi.Kimyasal ? Miktar * ŞarjMiktarı / KimyasalOran : ŞarjMiktarı / Hacim * 1000 / MalzemeİçiÜrün; }
-        public float ReçeteMiktar { get => MalzemeTipi == MalzemeTipi.Kimyasal ? Miktar : KimyasalOran / Hacim * 1000 / MalzemeİçiÜrün; }
+        public float ihtiyaç { get => MalzemeTipi == MalzemeTipi.Esans | MalzemeTipi == MalzemeTipi.HamMadde ? Miktar * ŞarjMiktarı / KimyasalOran : ŞarjMiktarı / Hacim * 1000 / MalzemeİçiÜrün; }
+        public float ReçeteMiktar { get => MalzemeTipi == MalzemeTipi.Esans | MalzemeTipi == MalzemeTipi.HamMadde ? Miktar : KimyasalOran / Hacim * 1000 / MalzemeİçiÜrün; }
         public float Stok { get; set; }
         //set et
         public float ŞarjMiktarı { get; set; }

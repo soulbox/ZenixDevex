@@ -54,7 +54,8 @@ namespace Zenix.BLL.Base
                     foreach (var prop in typeof(TEntity).GetPropertiyAttributeFromType<ZorunluAlan>())
                     {
                         if (prop.Attribute == null) continue;
-                        var value = prop.PropertyInfo.GetValue(CurrentEntity);
+                        var value = CurrentEntity.GetType().GetProperty(prop.PropertyInfo.Name).GetValue(CurrentEntity, null);
+                        //var value = prop.PropertyInfo.GetValue(CurrentEntity);
                         if (prop.PropertyInfo.PropertyType == typeof(long))
                             if ((long)value == 0) value = null;
                         if (!string.IsNullOrEmpty(value?.ToString())) continue;

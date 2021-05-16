@@ -212,7 +212,8 @@ namespace Zenix.WinUI.Forms.BaseForms
             {
 
             });
-            tablo.SelectionChanged += Tablo_SelectionChanged;
+            tablo.FocusedRowChanged += Tablo_FocusedRowChanged;
+            //tablo.SelectionChanged  +=(sender,e)=> Tablo_FocusedRowChanged(sender,null);
             //navigator
             Navigator.ButtonClick += (sender, e) =>
             {
@@ -258,8 +259,6 @@ namespace Zenix.WinUI.Forms.BaseForms
             this.SizeChanged += (sender, e) => FormSablonKayitEdilecek = true;
 
         }
-
-
 
         private void EntityDelete()
         {
@@ -331,7 +330,8 @@ namespace Zenix.WinUI.Forms.BaseForms
         {
             e.SagMenuGoster(sagMenu);
         }
-        protected virtual void Tablo_SelectionChanged(object sender, DevExpress.Data.SelectionChangedEventArgs e) { }
+        protected virtual void Tablo_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e) { }
+
         protected virtual void SutunGizleGoster() { }
         protected virtual void AşamaOnayla() { }
         protected virtual void TümAşamalarYapıldı() { }

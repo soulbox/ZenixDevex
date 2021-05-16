@@ -14,6 +14,7 @@ using Zenix.WinUI.Show;
 using Zenix.Model.DTO;
 using Zenix.Model.Entities;
 using Zenix.WinUI.Functions;
+using DevExpress.XtraGrid.Views.Base;
 
 namespace Zenix.WinUI.Forms.SiparişFormu
 {
@@ -39,6 +40,13 @@ namespace Zenix.WinUI.Forms.SiparişFormu
         {
             Tablo.GridControl.DataSource = ((SiparişBll)Bll).List(FilterFunctions.Filter<Sipariş>(AktifKayitlariGoster));
 
+        }
+        protected override void Tablo_FocusedRowChanged(object sender, FocusedRowChangedEventArgs e)
+        {
+            var entity = tablo.GetRow<SiparişL>();
+            if (entity == null) return;
+            using (var siparişbll = new SiparişÜrünleriBll())
+                TabloSipariş.GridControl.DataSource = siparişbll.List(x => x.SiparişId == entity.Id);
         }
     }
 }

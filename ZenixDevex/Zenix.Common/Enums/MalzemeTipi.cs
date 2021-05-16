@@ -11,8 +11,10 @@ namespace Zenix.Common.Enums
     {
         [Description("Ürün")]
         Ürün = 0,
-        [Description("Kimyasal")]
-        Kimyasal=1,
+        [Description("Esans")]
+        Esans,
+        [Description("Ham Madde")]
+        HamMadde,
         [Description("Ambalaj")]
         Ambalaj,
         [Description("Etiket")]
@@ -28,5 +30,7 @@ namespace Zenix.Common.Enums
         [Description("Kutu")]
         Kutu,
 
+
     }
+
 }

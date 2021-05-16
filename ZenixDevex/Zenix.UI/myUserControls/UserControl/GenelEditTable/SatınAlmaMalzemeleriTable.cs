@@ -45,7 +45,7 @@ namespace Zenix.WinUI.myUserControls.UserControl.GenelEditTable
 
             var source = tablo.DataController.ListSource;
             ListeDışıtutulacakkayıtlar = source.Cast<SatınAlmaMalzemeleriL>().Where(x => !x.Delete).Select(x => x.MamülId).ToList();
-            var entities = ShowListForms<MamülListForm>.ShowDialogListForm(ListeDışıtutulacakkayıtlar, true);
+            var entities = ShowListForms<MamülListForm>.ShowDialogListForm(ListeDışıtutulacakkayıtlar, true,false);
             var result = entities.EntityListConvert<MamülL>();
             //var entities = ShowListForms<ReçeteMalzemeleriListForm>.ShowDialogListForm(ListeDışıtutulacakkayıtlar, true).EntityListConvert<MamülL>();
             if (result == null) return;

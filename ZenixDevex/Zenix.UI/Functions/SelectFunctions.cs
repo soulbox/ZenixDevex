@@ -133,7 +133,7 @@ namespace Zenix.WinUI.Functions
                     break;
                 case "txtMamül":
                     {
-                        var entity = (MamülL)ShowListForms<MamülListForm>.ShowDialogListForm(KartTuru.Mamül, btnedit.Id);
+                        var entity = (MamülL)ShowListForms<MamülListForm>.ShowDialogListForm(KartTuru.Mamül, btnedit.Id, true);
                         if (entity != null)
                         {
                             btnedit.Tag = entity;

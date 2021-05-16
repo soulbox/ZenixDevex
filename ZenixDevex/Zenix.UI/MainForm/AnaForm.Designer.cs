@@ -63,9 +63,9 @@
             this.btnSatınAlma = new DevExpress.XtraBars.BarButtonItem();
             this.btnMalzemeDepo = new DevExpress.XtraBars.BarButtonItem();
             this.btnÜrünDepo = new DevExpress.XtraBars.BarButtonItem();
-            this.btnSevkiyat = new DevExpress.XtraBars.BarButtonItem();
-            this.btnDepo = new DevExpress.XtraBars.BarButtonItem();
+            this.btnÜretim = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonYönetim = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -75,8 +75,6 @@
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.xtraTabbedMdiManager = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             this.imgBackGround = new DevExpress.XtraEditors.PictureEdit();
-            this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.btnÜretim = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgBackGround.Properties)).BeginInit();
@@ -120,8 +118,6 @@
             this.btnSatınAlma,
             this.btnMalzemeDepo,
             this.btnÜrünDepo,
-            this.btnSevkiyat,
-            this.btnDepo,
             this.btnÜretim});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
             this.ribbon.MaxItemId = 52;
@@ -404,21 +400,13 @@
             this.btnÜrünDepo.ImageOptions.LargeImage = global::Zenix.WinUI.Properties.Resources.warehouse_32px;
             this.btnÜrünDepo.Name = "btnÜrünDepo";
             // 
-            // btnSevkiyat
+            // btnÜretim
             // 
-            this.btnSevkiyat.Caption = "Sevkiyat";
-            this.btnSevkiyat.Id = 48;
-            this.btnSevkiyat.ImageOptions.Image = global::Zenix.WinUI.Properties.Resources.trolley_16px;
-            this.btnSevkiyat.ImageOptions.LargeImage = global::Zenix.WinUI.Properties.Resources.trolley_32px;
-            this.btnSevkiyat.Name = "btnSevkiyat";
-            // 
-            // btnDepo
-            // 
-            this.btnDepo.Caption = "Depo";
-            this.btnDepo.Id = 49;
-            this.btnDepo.ImageOptions.Image = global::Zenix.WinUI.Properties.Resources.warehouse_16px;
-            this.btnDepo.ImageOptions.LargeImage = global::Zenix.WinUI.Properties.Resources.warehouse_32px;
-            this.btnDepo.Name = "btnDepo";
+            this.btnÜretim.Caption = "Üretim";
+            this.btnÜretim.Id = 51;
+            this.btnÜretim.ImageOptions.Image = global::Zenix.WinUI.Properties.Resources.deployment_16px;
+            this.btnÜretim.ImageOptions.LargeImage = global::Zenix.WinUI.Properties.Resources.deployment_32px;
+            this.btnÜretim.Name = "btnÜretim";
             // 
             // ribbonPage1
             // 
@@ -430,6 +418,13 @@
             this.ribbonPageGroup3});
             this.ribbonPage1.Name = "ribbonPage1";
             this.ribbonPage1.Text = "Yönetim";
+            // 
+            // ribbonPageGroup4
+            // 
+            this.ribbonPageGroup4.ItemLinks.Add(this.btnİşemri);
+            this.ribbonPageGroup4.ItemLinks.Add(this.btnÜretim);
+            this.ribbonPageGroup4.Name = "ribbonPageGroup4";
+            this.ribbonPageGroup4.Text = "Üretim";
             // 
             // ribbonYönetim
             // 
@@ -450,8 +445,6 @@
             // 
             this.ribbonPageGroup2.ItemLinks.Add(this.btnMalzemeDepo);
             this.ribbonPageGroup2.ItemLinks.Add(this.btnÜrünDepo);
-            this.ribbonPageGroup2.ItemLinks.Add(this.btnSevkiyat);
-            this.ribbonPageGroup2.ItemLinks.Add(this.btnDepo);
             this.ribbonPageGroup2.Name = "ribbonPageGroup2";
             this.ribbonPageGroup2.Text = "Depo";
             // 
@@ -505,21 +498,6 @@
             this.imgBackGround.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
             this.imgBackGround.Size = new System.Drawing.Size(1020, 503);
             this.imgBackGround.TabIndex = 7;
-            // 
-            // ribbonPageGroup4
-            // 
-            this.ribbonPageGroup4.ItemLinks.Add(this.btnİşemri);
-            this.ribbonPageGroup4.ItemLinks.Add(this.btnÜretim);
-            this.ribbonPageGroup4.Name = "ribbonPageGroup4";
-            this.ribbonPageGroup4.Text = "Üretim";
-            // 
-            // btnÜretim
-            // 
-            this.btnÜretim.Caption = "Üretim";
-            this.btnÜretim.Id = 51;
-            this.btnÜretim.ImageOptions.Image = global::Zenix.WinUI.Properties.Resources.deployment_16px;
-            this.btnÜretim.ImageOptions.LargeImage = global::Zenix.WinUI.Properties.Resources.deployment_32px;
-            this.btnÜretim.Name = "btnÜretim";
             // 
             // AnaForm
             // 
@@ -589,8 +567,6 @@
         private DevExpress.XtraBars.BarButtonItem btnSatınAlma;
         private DevExpress.XtraBars.BarButtonItem btnMalzemeDepo;
         private DevExpress.XtraBars.BarButtonItem btnÜrünDepo;
-        private DevExpress.XtraBars.BarButtonItem btnSevkiyat;
-        private DevExpress.XtraBars.BarButtonItem btnDepo;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup3;
         private DevExpress.XtraBars.BarButtonItem btnÜretim;

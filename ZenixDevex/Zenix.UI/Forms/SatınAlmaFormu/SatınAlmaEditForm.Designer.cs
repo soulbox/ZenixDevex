@@ -38,6 +38,7 @@
             DevExpress.XtraLayout.RowDefinition rowDefinition4 = new DevExpress.XtraLayout.RowDefinition();
             DevExpress.XtraLayout.RowDefinition rowDefinition5 = new DevExpress.XtraLayout.RowDefinition();
             this.myDataLayoutControl = new Zenix.WinUI.myUserControls.Controls.myDataLayoutControl();
+            this.satınAlmaMalzemeleriTable = new Zenix.WinUI.myUserControls.UserControl.GenelEditTable.SatınAlmaMalzemeleriTable();
             this.dtTarih = new Zenix.WinUI.myUserControls.Controls.myDateEdit();
             this.txtFirma = new Zenix.WinUI.myUserControls.Controls.myButtonEdit();
             this.tglDurum = new Zenix.WinUI.myUserControls.Controls.myToogleSwitch();
@@ -47,7 +48,6 @@
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.satınAlmaMalzemeleriTable = new Zenix.WinUI.myUserControls.UserControl.GenelEditTable.SatınAlmaMalzemeleriTable();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.myDataLayoutControl)).BeginInit();
@@ -93,6 +93,13 @@
             this.myDataLayoutControl.Size = new System.Drawing.Size(846, 403);
             this.myDataLayoutControl.TabIndex = 2;
             this.myDataLayoutControl.Text = "myDataLayoutControl1";
+            // 
+            // satınAlmaMalzemeleriTable
+            // 
+            this.satınAlmaMalzemeleriTable.Location = new System.Drawing.Point(12, 108);
+            this.satınAlmaMalzemeleriTable.Name = "satınAlmaMalzemeleriTable";
+            this.satınAlmaMalzemeleriTable.Size = new System.Drawing.Size(822, 283);
+            this.satınAlmaMalzemeleriTable.TabIndex = 8;
             // 
             // dtTarih
             // 
@@ -264,13 +271,6 @@
             this.layoutControlItem8.Size = new System.Drawing.Size(150, 24);
             this.layoutControlItem8.Text = "Tarih";
             this.layoutControlItem8.TextSize = new System.Drawing.Size(26, 13);
-            // 
-            // satınAlmaMalzemeleriTable
-            // 
-            this.satınAlmaMalzemeleriTable.Location = new System.Drawing.Point(12, 108);
-            this.satınAlmaMalzemeleriTable.Name = "satınAlmaMalzemeleriTable";
-            this.satınAlmaMalzemeleriTable.Size = new System.Drawing.Size(822, 283);
-            this.satınAlmaMalzemeleriTable.TabIndex = 8;
             // 
             // layoutControlItem4
             // 

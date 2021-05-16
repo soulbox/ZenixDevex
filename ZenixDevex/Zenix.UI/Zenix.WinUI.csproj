@@ -818,6 +818,10 @@
     <None Include="Resources\hideproduct_16x16.png" />
     <None Include="Resources\showproduct_32x322.png" />
     <None Include="Resources\showproduct_16x162.png" />
+    <None Include="Resources\apply_32x324.png" />
+    <None Include="Resources\apply_16x164.png" />
+    <None Include="Resources\productquickshippments.svg" />
+    <None Include="Resources\shipmenttransit.svg" />
     <Content Include="Resources\warehouse_42px.png" />
     <Content Include="zenix.ico" />
     <None Include="Resources\abacus_16px.png" />

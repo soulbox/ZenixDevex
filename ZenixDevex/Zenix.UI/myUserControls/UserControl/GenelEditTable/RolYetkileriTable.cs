@@ -86,6 +86,7 @@ namespace Zenix.WinUI.myUserControls.UserControl.GenelEditTable
         }
         protected internal override bool HatalıGiriş()
         {
+
             return base.HatalıGiriş();
         }
         protected override void RowCellAllowEdit()
