@@ -45,6 +45,7 @@ namespace Zenix.BLL.General
                 Miktar = x.Miktar,
                 TerminTarihi = x.TerminTarihi,
                 Teslimat = x.Teslimat,
+                
 
             })
                 .ToList();

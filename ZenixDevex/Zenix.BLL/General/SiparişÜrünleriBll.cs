@@ -36,6 +36,7 @@ namespace Zenix.BLL.General
                 SiparişFirmaAdı = x.Sipariş.Firma.FirmaAdi,
                 SiparişKod = x.Sipariş.Kod,
                 Teslimat=x.Teslimat,
+                KoliAdedi=x.KoliAdedi,
                 //SiparişDurum = x.Sipariş.Durum,
             }).ToList();
         }

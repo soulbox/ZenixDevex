@@ -21,6 +21,7 @@ using Zenix.Common.Enums;
 using DevExpress.XtraBars;
 using Zenix.WinUI.Forms.ReçeteFormu;
 using Zenix.WinUI.Forms.ÜrünlerFormu;
+using DevExpress.XtraGrid.Views.Base;
 
 namespace Zenix.WinUI.myUserControls.UserControl.GenelEditTable
 {
@@ -47,7 +48,7 @@ namespace Zenix.WinUI.myUserControls.UserControl.GenelEditTable
             ListeDışıtutulacakkayıtlar = source.Cast<SiparişÜrünleriL>().Where(x => !x.Delete).Select(x => x.ÜrünId).ToList();
             var entities = ShowListForms<ÜrünListForm>.ShowDialogListForm(ListeDışıtutulacakkayıtlar, true).EntityListConvert<ÜrünL>();
             //var entities = ShowListForms<ReçeteMalzemeleriListForm>.ShowDialogListForm(ListeDışıtutulacakkayıtlar, true).EntityListConvert<MamülL>();
-            
+
             if (entities == null) return;
             entities.ForEach(x =>
             {
@@ -61,7 +62,7 @@ namespace Zenix.WinUI.myUserControls.UserControl.GenelEditTable
                     GTIN = x.GTIN,
                     Kutu = x.Kutu,
                     Koli = x.Koli,
-                    Stand = x.Stand,                    
+                    Stand = x.Stand,
                     Insert = true
                 });
             });
@@ -72,11 +73,30 @@ namespace Zenix.WinUI.myUserControls.UserControl.GenelEditTable
             ButtonEnableDurum(true);
 
         }
+        protected override void Tablo_CellValueChanged(object sender, CellValueChangedEventArgs e)
+        {
+            //colMiktar=koliadedi*koliiçi
+            var enti = tablo.GetRow<SiparişÜrünleriL>();
+            if (enti != null && e.Column == colMiktar)
+            {
+                enti.KoliAdedi = enti.Koli != 0 ? enti.Miktar / enti.Koli : enti.KoliAdedi;
+                tablo.GridControl.RefreshDataSource();
+            }
+            else if (enti != null && e.Column == colkoliadedi)
+            {
+                enti.Miktar = enti.Koli * enti.KoliAdedi;
+                tablo.GridControl.RefreshDataSource();
+            }
+
+            base.Tablo_CellValueChanged(sender, e);
+        }
         protected override void RowCellAllowEdit()
         {
             if (tablo.DataRowCount == 0) return;
             var enti = tablo.GetRow<SiparişÜrünleriL>();
             if (!enti.HasValue()) return;
+
+
             //colEkleyebilir.OptionsColumn.AllowEdit = enti.Ekleyebilir != 2;
             //colDeğiştirebilir.OptionsColumn.AllowEdit = enti.Değiştirebilir != 2;
             //colSilebilir.OptionsColumn.AllowEdit = enti.Silebilir != 2;

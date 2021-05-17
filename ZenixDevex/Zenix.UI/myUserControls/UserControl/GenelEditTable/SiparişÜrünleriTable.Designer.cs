@@ -33,14 +33,14 @@
             this.colId = new Zenix.WinUI.myUserControls.Grid.MyGridColumn();
             this.colÜrün = new Zenix.WinUI.myUserControls.Grid.MyGridColumn();
             this.colKutu = new Zenix.WinUI.myUserControls.Grid.MyGridColumn();
-            this.colStand = new Zenix.WinUI.myUserControls.Grid.MyGridColumn();
+            this.colkoliadedi = new Zenix.WinUI.myUserControls.Grid.MyGridColumn();
             this.colKoli = new Zenix.WinUI.myUserControls.Grid.MyGridColumn();
             this.colMiktar = new Zenix.WinUI.myUserControls.Grid.MyGridColumn();
             this.repoSpin = new DevExpress.XtraEditors.Repository.RepositoryItemSpinEdit();
             this.colBirim = new Zenix.WinUI.myUserControls.Grid.MyGridColumn();
             this.repoimagecomboBirim = new DevExpress.XtraEditors.Repository.RepositoryItemImageComboBox();
-            this.repoCheck = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
             this.colTeslimat = new Zenix.WinUI.myUserControls.Grid.MyGridColumn();
+            this.repoCheck = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
             ((System.ComponentModel.ISupportInitialize)(this.myGridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tablo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repoSpin)).BeginInit();
@@ -86,7 +86,7 @@
             this.colId,
             this.colÜrün,
             this.colKutu,
-            this.colStand,
+            this.colkoliadedi,
             this.colKoli,
             this.colMiktar,
             this.colBirim,
@@ -150,21 +150,21 @@
             this.colKutu.Visible = true;
             this.colKutu.VisibleIndex = 1;
             // 
-            // colStand
+            // colkoliadedi
             // 
-            this.colStand.Caption = "Stand";
-            this.colStand.FieldName = "Stand";
-            this.colStand.Name = "colStand";
-            this.colStand.OptionsColumn.AllowEdit = false;
-            this.colStand.StatusBarAciklama = null;
-            this.colStand.StatusBarKisayol = null;
-            this.colStand.StatusBarKisayolAciklama = null;
-            this.colStand.Visible = true;
-            this.colStand.VisibleIndex = 2;
+            this.colkoliadedi.Caption = "Koli Adedi";
+            this.colkoliadedi.ColumnEdit = this.repoSpin;
+            this.colkoliadedi.FieldName = "KoliAdedi";
+            this.colkoliadedi.Name = "colkoliadedi";
+            this.colkoliadedi.StatusBarAciklama = null;
+            this.colkoliadedi.StatusBarKisayol = null;
+            this.colkoliadedi.StatusBarKisayolAciklama = null;
+            this.colkoliadedi.Visible = true;
+            this.colkoliadedi.VisibleIndex = 3;
             // 
             // colKoli
             // 
-            this.colKoli.Caption = "Koli";
+            this.colKoli.Caption = "Koli içi Ürün";
             this.colKoli.FieldName = "Koli";
             this.colKoli.Name = "colKoli";
             this.colKoli.OptionsColumn.AllowEdit = false;
@@ -172,7 +172,7 @@
             this.colKoli.StatusBarKisayol = null;
             this.colKoli.StatusBarKisayolAciklama = null;
             this.colKoli.Visible = true;
-            this.colKoli.VisibleIndex = 3;
+            this.colKoli.VisibleIndex = 2;
             // 
             // colMiktar
             // 
@@ -224,11 +224,6 @@
             this.repoimagecomboBirim.CaseSensitiveSearch = true;
             this.repoimagecomboBirim.Name = "repoimagecomboBirim";
             // 
-            // repoCheck
-            // 
-            this.repoCheck.AutoHeight = false;
-            this.repoCheck.Name = "repoCheck";
-            // 
             // colTeslimat
             // 
             this.colTeslimat.Caption = "Teslimat";
@@ -240,6 +235,11 @@
             this.colTeslimat.StatusBarKisayolAciklama = null;
             this.colTeslimat.Visible = true;
             this.colTeslimat.VisibleIndex = 6;
+            // 
+            // repoCheck
+            // 
+            this.repoCheck.AutoHeight = false;
+            this.repoCheck.Name = "repoCheck";
             // 
             // SiparişÜrünleriTable
             // 
@@ -272,7 +272,7 @@
         private Grid.MyGridColumn colBirim;
         private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit repoCheck;
         private Grid.MyGridColumn colKutu;
-        private Grid.MyGridColumn colStand;
+        private Grid.MyGridColumn colkoliadedi;
         private Grid.MyGridColumn colKoli;
         private Grid.MyGridColumn colTeslimat;
     }
