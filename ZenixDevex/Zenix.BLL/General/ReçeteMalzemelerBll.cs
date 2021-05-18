@@ -31,6 +31,7 @@ namespace Zenix.BLL.General
                 Hacim = x.Mamül.Hacim,
                 MalzemeTipi = x.Mamül.MalzemeTipi,
                 MalzemeİçiÜrün = x.MalzemeİçiÜrün,
+                MalzemeBirimi = x.Mamül.MalzemeBirimi,
                 Stok = x.Mamül.Depo.Select(a => a.DepoMiktar).DefaultIfEmpty(0).Sum()
                 //MalzemeId = x.MalzemeId,
                 //FazTipi = x.FazTipi,

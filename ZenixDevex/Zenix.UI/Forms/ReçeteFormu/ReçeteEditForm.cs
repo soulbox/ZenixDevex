@@ -49,6 +49,9 @@ namespace Zenix.WinUI.Forms.ReçeteFormu
             txtAFaz.Text = entity.AFazıHazırlanış;
             txtBFaz.Text = entity.BFazıHazırlanış;
             txtCFaz.Text = entity.CFazıHazırlanış;
+            txtDFaz.Text = entity.DFazıHazırlanış;
+            txtEFaz.Text = entity.EFazıHazırlanış;
+
             txtAçıklama.Text = entity.Açıklama;
             if (BaseIslemTuru == Common.Enums.IslemTuru.EntityInsert) return;
             txtÜrün.Text = $"[{entity.MarkaAdı}-{entity.MamülAdı}-{entity.GTIN}]";
@@ -76,6 +79,7 @@ namespace Zenix.WinUI.Forms.ReçeteFormu
                 AFazıHazırlanış = txtAFaz.Text,
                 BFazıHazırlanış = txtBFaz.Text,
                 CFazıHazırlanış = txtCFaz.Text,
+                DFazıHazırlanış = txtDFaz.Text,
                 Açıklama = txtAçıklama.Text,
 
             };

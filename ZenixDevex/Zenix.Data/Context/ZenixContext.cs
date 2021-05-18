@@ -22,7 +22,7 @@ namespace Zenix.Data.Context
             Configuration.LazyLoadingEnabled = false;
             Configuration.AutoDetectChangesEnabled = false;
             Configuration.ProxyCreationEnabled = false;
-            //Database.SetInitializer(new MigrateDatabaseToLatestVersion<StoreContext, ContextInitializer>());
+            //Database.SetInitializer(new MigrateDatabaseToLatestVersion<, ContextInitializer>());
             //this.Database.Initialize(new MigrateDatabaseToLatestVersion<ZenixContext,>)
 
 
@@ -46,7 +46,7 @@ namespace Zenix.Data.Context
         public DbSet<AmbalajMaddeTipi> AmbalajMaddeTipi { get; set; }
 
         public DbSet<İşemri> İşemri { get; set; }
-        public DbSet<Mamül > Mamül { get; set; }
+        public DbSet<Mamül> Mamül { get; set; }
         public DbSet<Satınalma> Satınalma { get; set; }
         public DbSet<SatınAlmaMalzemeler> SatınAlmaMalzemeler { get; set; }
         public DbSet<Depo> Depo { get; set; }
@@ -106,9 +106,19 @@ namespace Zenix.Data.Context
             Password = "Zenix2021!",
             InitialCatalog = "ZENIX",
         };
+        static SqlConnectionStringBuilder Simpaş = new SqlConnectionStringBuilder()
+        {
+
+            DataSource = "213.14.174.241",
+            UserID = "sa",
+            Password = "63792958",
+            InitialCatalog = "ZENIX",
+        };
+
 
         static List<SqlConnectionStringBuilder> datasources = datasources ?? new List<SqlConnectionStringBuilder>()
         {
+            Sunucu,
             HWIDEngine.isExcludeMachine ?LocalPC:  Sunucu,
             Sunucu,
             //LocalPC//server          
@@ -121,8 +131,8 @@ namespace Zenix.Data.Context
             {
                 //if (x.DataSource  != "213.14.174.241") continue;
                 //x.IntegratedSecurity = true; // windows auth için aktif olması gerek
-                x.ApplicationIntent = ApplicationIntent.ReadOnly;
-                x.ConnectTimeout = 10;
+                //x.ApplicationIntent = ApplicationIntent.ReadOnly;
+                //x.ConnectTimeout = 10;
                 x.MultipleActiveResultSets = true;
                 using (var con = new SqlConnection(x.ConnectionString))
                 {
@@ -148,7 +158,7 @@ namespace Zenix.Data.Context
             return LocalPC;
         }
 
-        public static SqlConnectionStringBuilder ConBuilder = ConBuilder ?? FirstOrDefaultConnections();
+        public static SqlConnectionStringBuilder ConBuilder = ConBuilder ?? datasources.FirstOrDefault();
 
     }
 }

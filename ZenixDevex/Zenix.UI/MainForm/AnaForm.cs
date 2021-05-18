@@ -106,8 +106,6 @@ namespace Zenix.WinUI.MainForm
                                 ShowListForms<MamülListForm>.ShowListForm(KartTuru.Mamül, false);
                             else if (e.Item == btnReçete)
                                 ShowListForms<ReçeteListForm>.ShowListForm(KartTuru.Reçete);
-                            else if (e.Item == btnİşemri)
-                                ShowListForms<İşemriListForm>.ShowListForm(KartTuru.İşemri);
                             else if (e.Item == btnAmbalajMaddeTipi)
                                 ShowListForms<AmbalajMaddeTipiListForm>.ShowListForm(KartTuru.AmbalajMaddeTipi);
                             else if (e.Item == btnAmbalajTipi)
@@ -120,10 +118,13 @@ namespace Zenix.WinUI.MainForm
                                 ShowListForms<SatınAlmaListForm>.ShowListForm(KartTuru.SatınAlma);
                             else if (e.Item == btnMalzemeDepo)
                                 ShowListForms<MalzemeDepoListform>.ShowListForm(KartTuru.Depo);
-                            else if (e.Item == btnÜretim)
-                                ShowListForms<ÜretimListForm>.ShowListForm(KartTuru.Üretim);
                             else if (e.Item == btnÜrünDepo)
                                 ShowListForms<ÜrünDepoListForm>.ShowListForm(KartTuru.Depo);
+
+                            else if (e.Item == btnÜretim)
+                                ShowListForms<ÜretimListFormDetay>.ShowListForm(KartTuru.Üretim);
+                            else if (e.Item == btnİşemri)
+                                ShowListForms<İşemriListBasicForm>.ShowListForm(KartTuru.İşemri);
 
                         };
                         break;

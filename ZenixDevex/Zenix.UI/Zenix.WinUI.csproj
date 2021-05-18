@@ -31,7 +31,7 @@
     <PublisherName>Erkan Ceylan</PublisherName>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>12</ApplicationRevision>
+    <ApplicationRevision>13</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>true</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -361,6 +361,12 @@
     <Compile Include="Forms\ÜretimFormu\ÜretimListForm.Designer.cs">
       <DependentUpon>ÜretimListForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\ÜretimFormu\ÜretimListFormDetay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ÜretimFormu\ÜretimListFormDetay.Designer.cs">
+      <DependentUpon>ÜretimListFormDetay.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\ÜrünlerFormu\ÜrünEditForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -378,6 +384,12 @@
     </Compile>
     <Compile Include="Forms\İşemriFormu\İşemriEditForm.Designer.cs">
       <DependentUpon>İşemriEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\İşemriFormu\İşemriListBasicForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\İşemriFormu\İşemriListBasicForm.Designer.cs">
+      <DependentUpon>İşemriListBasicForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\İşemriFormu\İşemriListForm.cs">
       <SubType>Form</SubType>
@@ -682,6 +694,9 @@
     <EmbeddedResource Include="Forms\ÜretimFormu\ÜretimListForm.resx">
       <DependentUpon>ÜretimListForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ÜretimFormu\ÜretimListFormDetay.resx">
+      <DependentUpon>ÜretimListFormDetay.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\ÜrünlerFormu\ÜrünEditForm.resx">
       <DependentUpon>ÜrünEditForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -690,6 +705,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\İşemriFormu\İşemriEditForm.resx">
       <DependentUpon>İşemriEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\İşemriFormu\İşemriListBasicForm.resx">
+      <DependentUpon>İşemriListBasicForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\İşemriFormu\İşemriListForm.resx">
       <DependentUpon>İşemriListForm.cs</DependentUpon>

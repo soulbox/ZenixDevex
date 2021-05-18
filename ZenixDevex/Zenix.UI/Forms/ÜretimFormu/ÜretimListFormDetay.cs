@@ -20,21 +20,20 @@ using Zenix.Common.Messages;
 using Zenix.Model.Entities.Base;
 using DevExpress.XtraGrid.Views.Base;
 
-namespace Zenix.WinUI.Forms.İşemriFormu
+namespace Zenix.WinUI.Forms.ÜretimFormu
 {
-    public partial class İşemriListForm : BaseListForm
+    public partial class ÜretimListFormDetay : BaseListForm
     {
-        public İşemriListForm()
+        public ÜretimListFormDetay()
         {
             InitializeComponent();
-            Bll = new İşemriBll();
-
+            Bll = new ÜretimBll();
         }
         protected override void Degiskenleridoldur()
         {
             this.tablo = Tablo;
-            this.KartTuru = Common.Enums.KartTuru.Firma;
-            this.FormShow = new ShowEditForms<İşemriEditForm>();
+            this.KartTuru = Common.Enums.KartTuru.Üretim;
+            this.FormShow = new ShowEditForms<ÜretimEditForm>();
             this.Navigator = longNavigator.controlNavigator;
             Text = "Üretim Kartları ";
             Tablo.ViewCaption = Text;
@@ -46,7 +45,9 @@ namespace Zenix.WinUI.Forms.İşemriFormu
         }
         protected override void Listele()
         {
-            Tablo.GridControl.DataSource = ((İşemriBll)Bll).List(FilterFunctions.Filter<İşemri>(AktifKayitlariGoster));
+            using (var işemribll = new İşemriBll())
+                Tablo.GridControl.DataSource = işemribll.List(FilterFunctions.Filter<İşemri>(AktifKayitlariGoster));
+
         }
         protected override void SagMenuGoster(object sender, MouseEventArgs e)
         {
@@ -82,7 +83,6 @@ namespace Zenix.WinUI.Forms.İşemriFormu
 
             }
         }
-
         enum Çarpan : int
         {
             giriş = 1,

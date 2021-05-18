@@ -31,11 +31,11 @@ namespace Zenix.BLL.General
                 Tarih = x.Tarih,
                 VergiDairesi = x.VergiDairesi,
                 VergiNo = x.VergiNo,
-                FirmaTipiId  = x.FirmaTipiId ,
+                FirmaTipiId = x.FirmaTipiId,
                 ÜlkeAdı = x.Ülke.Adı,
                 ÜlkeId = x.ÜlkeId,
-                FirmaTipiAdı=x.FirmaTipi.Adı,
-                
+                FirmaTipiAdı = x.FirmaTipi.Adı,
+
 
             });
         }
@@ -52,9 +52,10 @@ namespace Zenix.BLL.General
                 VergiDairesi = x.VergiDairesi,
                 VergiNo = x.VergiNo,
                 FirmaTipi = x.FirmaTipi,
-                ÜlkeAdı  = x.Ülke.Adı,
+                ÜlkeAdı = x.Ülke.Adı,
                 ÜlkeId = x.ÜlkeId,
                 FirmaTipiAdı = x.FirmaTipi.Adı,
+                FirmaTipiId = x.FirmaTipiId,
 
 
             }).OrderBy(x => x.Kod).ToList();

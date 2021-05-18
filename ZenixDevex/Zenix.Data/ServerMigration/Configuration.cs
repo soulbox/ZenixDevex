@@ -22,7 +22,7 @@ namespace Zenix.Data.ServerMigration
             // migration işlemi yaparken veri kaybına izin ver
             //-örn long tipinde alanını int tipine dönüştürdüğünde longda iken db de veri varsa int dönüşümünde veri kaybı olur.
             AutomaticMigrationDataLossAllowed = true;
-
+          
         }
         protected override void Seed(ZenixContext context)
         {

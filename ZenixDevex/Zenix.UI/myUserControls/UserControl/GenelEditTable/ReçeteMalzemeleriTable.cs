@@ -41,6 +41,9 @@ namespace Zenix.WinUI.myUserControls.UserControl.GenelEditTable
         {
             var lists = ((ReçeteMalzemelerBll)Bll).List(x => x.ReçeteId == ownerform.Id).ToBindingList<ReçeteMalzemeleriL>();
             var hacim = lists.FirstOrDefault(x => x.Hacim > 0)?.Hacim;
+            var enti = lists.FirstOrDefault(x => x.Hacim > 0);
+            tablo.ViewCaption = hacim.HasValue ? $"Malzemeleri {enti.MamülAdı }-{hacim}{enti.MalzemeBirimi} " : $"Malzemeleri";
+
             lists.ForEach(x =>
             {
                 bool isKim = x.MalzemeTipi == MalzemeTipi.HamMadde | x.MalzemeTipi == MalzemeTipi.Esans;
@@ -58,7 +61,10 @@ namespace Zenix.WinUI.myUserControls.UserControl.GenelEditTable
             //var entities = ShowListForms<ReçeteMalzemeleriListForm>.ShowDialogListForm(ListeDışıtutulacakkayıtlar, true).EntityListConvert<MamülL>();
 
             if (entities == null) return;
-            var hacim = entities.FirstOrDefault(x => x.Hacim > 0)?.Hacim;
+            var hacimentity = entities.FirstOrDefault(x => x.Hacim > 0);
+            var hacim = hacimentity?.Hacim;
+            var hacimmalzeme = hacimentity?.MamülAdı;
+
             entities.ForEach(x =>
             {
                 bool isKim = x.MalzemeTipi == MalzemeTipi.HamMadde | x.MalzemeTipi == MalzemeTipi.Esans;
@@ -68,16 +74,28 @@ namespace Zenix.WinUI.myUserControls.UserControl.GenelEditTable
                     MamülAdı = x.MamülAdı,
                     MamülId = x.Id,
                     Insert = true,
-                    Miktar = !isKim ? (100 / (float)hacim.Value * 1000) : 0,
+                    Miktar = !isKim & hacim.HasValue ? (100 / (float)hacim.Value * 1000) : 0,
                     ReçeteBirimi = isKim ? BirimTipi.kg : BirimTipi.ad,
                     AşamaTipi = isKim ? AşamaTipi.Şarj : AşamaTipi.yok,
+                    MalzemeTipi = x.MalzemeTipi,
+                    Hacim = x.Hacim,
 
                 });
 
             });
+            var sourcehacim = source.Cast<ReçeteMalzemeleriL>().FirstOrDefault(x => x.Hacim > 0);
+            source.Cast<ReçeteMalzemeleriL>().ForEach(x =>
+            {
+                bool isKim = x.MalzemeTipi == MalzemeTipi.HamMadde | x.MalzemeTipi == MalzemeTipi.Esans;
+                var sourcehacimval = sourcehacim?.Hacim;
+                x.Miktar = !isKim & sourcehacimval.HasValue ? (100 / (float)sourcehacimval.Value * 1000) : x.Miktar;
+
+            });
+            tablo.ViewCaption = (sourcehacim?.Hacim).HasValue ? $"Malzemeleri {sourcehacim.MamülAdı}-{sourcehacim.Hacim}{sourcehacim.MalzemeBirimi} " : $"Malzemeleri";
+
             tablo.Focus();
             tablo.RefreshDataSource();
-
+            tablo.GridControl.RefreshDataSource();
 
             tablo.FocusedRowHandle = tablo.DataRowCount - 1;
             ButtonEnableDurum(true);

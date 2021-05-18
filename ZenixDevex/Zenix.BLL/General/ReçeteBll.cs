@@ -31,6 +31,7 @@ namespace Zenix.BLL.General
                 BFazıHazırlanış = x.BFazıHazırlanış,
                 CFazıHazırlanış = x.CFazıHazırlanış,
                 DFazıHazırlanış = x.DFazıHazırlanış,
+                EFazıHazırlanış = x.EFazıHazırlanış,
                 GTIN = x.Ürün.GTIN,
                 FirmaAdi = x.Ürün.Firma.FirmaAdi,
                 MamülAdı = x.Ürün.Mamül.MamülAdı,
