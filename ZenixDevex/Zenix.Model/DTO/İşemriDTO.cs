@@ -62,6 +62,8 @@ namespace Zenix.Model.DTO
         public string BFazıHazırlanış { get; set; }
         public string CFazıHazırlanış { get; set; }
         public string DFazıHazırlanış { get; set; }
+        public string EFazıHazırlanış { get; set; }
+
         public long MarkaId { get ; set ; }
         public long? FirmaId { get ; set ; }
         public long MamülId { get  ; set ; }
