@@ -6,17 +6,18 @@ using Zenix.Common.Function;
 using Zenix.Common.Enums;
 using Zenix.Model.DTO;
 using Zenix.WinUI.myUserControls.Controls;
+using System;
 
 namespace Zenix.WinUI.Forms.MamülFormu
 {
     public partial class MamülEditForm : BaseEditForm
     {
         bool isÜrün { get; }
-
-        public MamülEditForm(bool isürün)
+        MamülL Ticarimamül = null;
+        public MamülEditForm(bool isürün, MamülL mamül = null)
         {
             isÜrün = isürün;
-
+            Ticarimamül = mamül;
             InitializeComponent();
             this.DataLayoutControl = myDataLayoutControl;
             this.Bll = new MamülBll(myDataLayoutControl);
@@ -25,6 +26,7 @@ namespace Zenix.WinUI.Forms.MamülFormu
             cmbAğırlıkBirim.ToData<BirimTipi>();
             cmbMalzemeBirim.ToData<BirimTipi>();
             cmbTeknikBirim.ToData<BirimTipi>();
+
             cmbMalzemeTipi.ToData<MalzemeTipi>(x => !x.Description.Contains("Ürün"));
             cmbSarfTipi.ToData<SarfTipi>();
             LayoutGizleGoster(!isÜrün, layMalzemetipi);
@@ -34,16 +36,25 @@ namespace Zenix.WinUI.Forms.MamülFormu
         }
         protected internal override void Yukle()
         {
+            if (Ticarimamül != null)
+                BaseIslemTuru = IslemTuru.EntityInsert;
+            OldEntity = BaseIslemTuru == Common.Enums.IslemTuru.EntityInsert ? Ticarimamül == null ? new MamülL() { MalzemeTipi = !isÜrün ? MalzemeTipi.HamMadde : default } : Ticarimamül : ((MamülBll)Bll).Single(FilterFunctions.Filter<Mamül>(Id));
 
-            OldEntity = BaseIslemTuru == Common.Enums.IslemTuru.EntityInsert ? new MamülL() : ((MamülBll)Bll).Single(FilterFunctions.Filter<Mamül>(Id));
             NesneyiKontrollereBagla();
             if (BaseIslemTuru != Common.Enums.IslemTuru.EntityInsert) return;
             Id = BaseIslemTuru.IdOlustur(OldEntity);
             txtKod.Text = ((MamülBll)Bll).YeniKodVer();
-            txtMamülAdı.Focus();
+            if (Ticarimamül == null)
+                txtMamülAdı.Focus();
+            else
+                txtTicariİsim.Focus();
+
 
 
         }
+
+
+
         protected override void NesneyiKontrollereBagla()
         {
             var entity = (MamülL)OldEntity;
@@ -69,9 +80,39 @@ namespace Zenix.WinUI.Forms.MamülFormu
             txtAğızölçüsü.EditValue = entity.AğızÖlçüsü;
             txtHacim.EditValue = entity.Hacim;
 
+            txtTicariİsim.Text = entity.Ticariİsim;
 
 
+        }
+        protected override void EditValueChanged(object sender, EventArgs e)
+        {
+            var maltipi = cmbMalzemeTipi.Text.GetEnum<MalzemeTipi>();
+            bool kimyasal = maltipi == MalzemeTipi.HamMadde | maltipi == MalzemeTipi.Esans;
+            void changekod()
+            {
+                var indexchar = txtKod.Text.IndexOf('-');
+                if (indexchar < 0) return;
+                var prefix = txtKod.Text.Substring(0, indexchar);
+                var prefixchange = prefix;
+                if (kimyasal)
+                    prefixchange = "HM";
+                else if (isÜrün)
+                    prefixchange = "Ürün";
+                else
+                    prefixchange = "AMB";
+                var val = txtKod.Text.Replace(prefix, prefixchange);
+                if (txtKod.Text != val)
+                    txtKod.Text = txtKod.Text.Replace(prefix, prefixchange);
+            }
+            changekod();
+            //if (CurrentEntity!=null && Ticarimamül != null && sender == txtKod && !string.IsNullOrEmpty(txtKod.Text) && maltipi != ((Mamül)CurrentEntity).MalzemeTipi)
+            //{
 
+
+            //    txtKod.Text = ((MamülBll)Bll).YeniKodVer(x => kimyasal);
+            //    changekod();
+            //}
+            base.EditValueChanged(sender, e);
         }
         protected override void GuncelNesneOluştur()
         {
@@ -99,6 +140,7 @@ namespace Zenix.WinUI.Forms.MamülFormu
                 Yükseklik = txtYükseklik.EditValue.ConvertTo<float>(),
                 AğızÖlçüsü = txtAğızölçüsü.EditValue.ConvertTo<float>(),
                 Hacim = txtHacim.EditValue.ConvertTo<int>(),
+                Ticariİsim = txtTicariİsim.Text,
 
             };
             ButtonEnableDurumu();

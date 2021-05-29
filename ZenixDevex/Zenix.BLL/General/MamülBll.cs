@@ -43,6 +43,7 @@ namespace Zenix.BLL.General
                 SarfTipi           = x.SarfTipi,
                 Yükseklik          = x.Yükseklik,
                 MalzemeTipi        = x.MalzemeTipi,
+                Ticariİsim          =x.Ticariİsim,
 
             });
         }
@@ -72,7 +73,8 @@ namespace Zenix.BLL.General
                 SarfTipi           = x.SarfTipi,
                 Yükseklik          = x.Yükseklik,
                 MalzemeTipi        = x.MalzemeTipi,
-                
+                Ticariİsim          =x.Ticariİsim,
+
 
             })
                 .ToList();

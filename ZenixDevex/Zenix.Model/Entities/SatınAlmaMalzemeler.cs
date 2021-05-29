@@ -21,8 +21,12 @@ namespace Zenix.Model.Entities
         public long MamülId { get; set; }
         public int Miktar { get; set; }
         [Column(TypeName = "Date")]
-        public DateTime TerminTarihi { get; set; } = DateTime.Now;      
+        public DateTime TerminTarihi { get; set; } = DateTime.Now;
         public bool Teslimat { get; set; }
+        public float BirimFiyat { get; set; }
+        public ParaBirimi ParaBirimi { get; set; } = ParaBirimi.TL;
+        [NotMapped]
+        public float Tutar { get => Miktar * BirimFiyat; }
 
 
     }

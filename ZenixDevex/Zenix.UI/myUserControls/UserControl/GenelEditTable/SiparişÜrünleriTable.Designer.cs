@@ -34,24 +34,28 @@
             this.colÜrün = new Zenix.WinUI.myUserControls.Grid.MyGridColumn();
             this.colKutu = new Zenix.WinUI.myUserControls.Grid.MyGridColumn();
             this.colkoliadedi = new Zenix.WinUI.myUserControls.Grid.MyGridColumn();
+            this.repoSpin = new DevExpress.XtraEditors.Repository.RepositoryItemSpinEdit();
             this.colKoli = new Zenix.WinUI.myUserControls.Grid.MyGridColumn();
             this.colMiktar = new Zenix.WinUI.myUserControls.Grid.MyGridColumn();
-            this.repoSpin = new DevExpress.XtraEditors.Repository.RepositoryItemSpinEdit();
             this.colBirim = new Zenix.WinUI.myUserControls.Grid.MyGridColumn();
             this.repoimagecomboBirim = new DevExpress.XtraEditors.Repository.RepositoryItemImageComboBox();
             this.colTeslimat = new Zenix.WinUI.myUserControls.Grid.MyGridColumn();
             this.repoCheck = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
+            this.colStok = new Zenix.WinUI.myUserControls.Grid.MyGridColumn();
+            this.colAçıklama = new Zenix.WinUI.myUserControls.Grid.MyGridColumn();
+            this.repositoryItemTextEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.myGridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tablo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repoSpin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repoimagecomboBirim)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repoCheck)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             this.SuspendLayout();
             // 
             // insUpdNavigator
             // 
             this.insUpdNavigator.Location = new System.Drawing.Point(0, 493);
-            this.insUpdNavigator.Size = new System.Drawing.Size(831, 24);
+            this.insUpdNavigator.Size = new System.Drawing.Size(979, 24);
             // 
             // myGridControl1
             // 
@@ -62,8 +66,9 @@
             this.myGridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repoCheck,
             this.repoSpin,
-            this.repoimagecomboBirim});
-            this.myGridControl1.Size = new System.Drawing.Size(831, 493);
+            this.repoimagecomboBirim,
+            this.repositoryItemTextEdit1});
+            this.myGridControl1.Size = new System.Drawing.Size(979, 493);
             this.myGridControl1.TabIndex = 7;
             this.myGridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.tablo});
@@ -90,7 +95,9 @@
             this.colKoli,
             this.colMiktar,
             this.colBirim,
-            this.colTeslimat});
+            this.colTeslimat,
+            this.colStok,
+            this.colAçıklama});
             this.tablo.GridControl = this.myGridControl1;
             this.tablo.Name = "tablo";
             this.tablo.OptionsFind.FindDelay = 100;
@@ -162,6 +169,18 @@
             this.colkoliadedi.Visible = true;
             this.colkoliadedi.VisibleIndex = 3;
             // 
+            // repoSpin
+            // 
+            this.repoSpin.AutoHeight = false;
+            this.repoSpin.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repoSpin.DisplayFormat.FormatString = "{0:n1}";
+            this.repoSpin.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.repoSpin.EditFormat.FormatString = "{0:n1}";
+            this.repoSpin.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.repoSpin.Mask.EditMask = "n1";
+            this.repoSpin.Name = "repoSpin";
+            // 
             // colKoli
             // 
             this.colKoli.Caption = "Koli içi Ürün";
@@ -188,18 +207,6 @@
             this.colMiktar.StatusBarKisayolAciklama = null;
             this.colMiktar.Visible = true;
             this.colMiktar.VisibleIndex = 4;
-            // 
-            // repoSpin
-            // 
-            this.repoSpin.AutoHeight = false;
-            this.repoSpin.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repoSpin.DisplayFormat.FormatString = "{0:n1}";
-            this.repoSpin.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.repoSpin.EditFormat.FormatString = "{0:n1}";
-            this.repoSpin.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.repoSpin.Mask.EditMask = "n1";
-            this.repoSpin.Name = "repoSpin";
             // 
             // colBirim
             // 
@@ -234,12 +241,43 @@
             this.colTeslimat.StatusBarKisayol = null;
             this.colTeslimat.StatusBarKisayolAciklama = null;
             this.colTeslimat.Visible = true;
-            this.colTeslimat.VisibleIndex = 6;
+            this.colTeslimat.VisibleIndex = 8;
+            this.colTeslimat.Width = 51;
             // 
             // repoCheck
             // 
             this.repoCheck.AutoHeight = false;
             this.repoCheck.Name = "repoCheck";
+            // 
+            // colStok
+            // 
+            this.colStok.Caption = "Stok";
+            this.colStok.FieldName = "Stok";
+            this.colStok.Name = "colStok";
+            this.colStok.OptionsColumn.AllowEdit = false;
+            this.colStok.StatusBarAciklama = null;
+            this.colStok.StatusBarKisayol = null;
+            this.colStok.StatusBarKisayolAciklama = null;
+            this.colStok.Visible = true;
+            this.colStok.VisibleIndex = 6;
+            // 
+            // colAçıklama
+            // 
+            this.colAçıklama.Caption = "Açıklama";
+            this.colAçıklama.ColumnEdit = this.repositoryItemTextEdit1;
+            this.colAçıklama.FieldName = "Açıklama";
+            this.colAçıklama.Name = "colAçıklama";
+            this.colAçıklama.StatusBarAciklama = null;
+            this.colAçıklama.StatusBarKisayol = null;
+            this.colAçıklama.StatusBarKisayolAciklama = null;
+            this.colAçıklama.Visible = true;
+            this.colAçıklama.VisibleIndex = 7;
+            this.colAçıklama.Width = 100;
+            // 
+            // repositoryItemTextEdit1
+            // 
+            this.repositoryItemTextEdit1.AutoHeight = false;
+            this.repositoryItemTextEdit1.Name = "repositoryItemTextEdit1";
             // 
             // SiparişÜrünleriTable
             // 
@@ -247,7 +285,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.myGridControl1);
             this.Name = "SiparişÜrünleriTable";
-            this.Size = new System.Drawing.Size(831, 517);
+            this.Size = new System.Drawing.Size(979, 517);
             this.Controls.SetChildIndex(this.insUpdNavigator, 0);
             this.Controls.SetChildIndex(this.myGridControl1, 0);
             ((System.ComponentModel.ISupportInitialize)(this.myGridControl1)).EndInit();
@@ -255,6 +293,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.repoSpin)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repoimagecomboBirim)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repoCheck)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -275,5 +314,8 @@
         private Grid.MyGridColumn colkoliadedi;
         private Grid.MyGridColumn colKoli;
         private Grid.MyGridColumn colTeslimat;
+        private Grid.MyGridColumn colStok;
+        private Grid.MyGridColumn colAçıklama;
+        private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemTextEdit1;
     }
 }

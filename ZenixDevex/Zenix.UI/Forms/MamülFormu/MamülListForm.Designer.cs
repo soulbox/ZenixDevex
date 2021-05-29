@@ -32,18 +32,15 @@
             this.longNavigator = new Zenix.WinUI.myUserControls.Navigator.LongNavigator();
             this.myBandedGridControl1 = new Zenix.WinUI.myUserControls.Grid.myBandedGridControl();
             this.Tablo = new Zenix.WinUI.myUserControls.Grid.myBandedGridview();
-            this.aaaa = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
             this.colId = new Zenix.WinUI.myUserControls.Grid.myBandedGridColumn();
             this.colKod = new Zenix.WinUI.myUserControls.Grid.myBandedGridColumn();
             this.colMalzeme = new Zenix.WinUI.myUserControls.Grid.myBandedGridColumn();
             this.colHacim = new Zenix.WinUI.myUserControls.Grid.myBandedGridColumn();
             this.colMalzemeBirimi = new Zenix.WinUI.myUserControls.Grid.myBandedGridColumn();
-            this.gridBand3 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
             this.colMalzemeTipi = new Zenix.WinUI.myUserControls.Grid.myBandedGridColumn();
             this.colAmbalajTipi = new Zenix.WinUI.myUserControls.Grid.myBandedGridColumn();
             this.colAmbalajMaddes = new Zenix.WinUI.myUserControls.Grid.myBandedGridColumn();
             this.colSarfTipi = new Zenix.WinUI.myUserControls.Grid.myBandedGridColumn();
-            this.gridBand4 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
             this.colAğızÖlçüsü = new Zenix.WinUI.myUserControls.Grid.myBandedGridColumn();
             this.colUzunluk = new Zenix.WinUI.myUserControls.Grid.myBandedGridColumn();
             this.colEn = new Zenix.WinUI.myUserControls.Grid.myBandedGridColumn();
@@ -52,6 +49,10 @@
             this.colAlan = new Zenix.WinUI.myUserControls.Grid.myBandedGridColumn();
             this.colAğırlık = new Zenix.WinUI.myUserControls.Grid.myBandedGridColumn();
             this.gridBand1 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
+            this.colTicariİsim = new Zenix.WinUI.myUserControls.Grid.myBandedGridColumn();
+            this.aaaa = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
+            this.gridBand3 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
+            this.gridBand4 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.myBandedGridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Tablo)).BeginInit();
@@ -67,6 +68,7 @@
             this.ribbonControl.SearchEditItem.EditWidth = 150;
             this.ribbonControl.SearchEditItem.Id = -5000;
             this.ribbonControl.SearchEditItem.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
+            this.ribbonControl.Size = new System.Drawing.Size(1027, 109);
             this.ribbonControl.Toolbar.ShowCustomizeItem = false;
             // 
             // btnGonder
@@ -74,12 +76,17 @@
             this.btnGonder.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnGonder.ImageOptions.Image")));
             this.btnGonder.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnGonder.ImageOptions.LargeImage")));
             // 
+            // btnAşamalar
+            // 
+            this.btnAşamalar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAşamalar.ImageOptions.Image")));
+            this.btnAşamalar.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnAşamalar.ImageOptions.LargeImage")));
+            // 
             // longNavigator
             // 
             this.longNavigator.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.longNavigator.Location = new System.Drawing.Point(0, 466);
             this.longNavigator.Name = "longNavigator";
-            this.longNavigator.Size = new System.Drawing.Size(952, 24);
+            this.longNavigator.Size = new System.Drawing.Size(1027, 24);
             this.longNavigator.TabIndex = 3;
             // 
             // myBandedGridControl1
@@ -89,7 +96,7 @@
             this.myBandedGridControl1.MainView = this.Tablo;
             this.myBandedGridControl1.MenuManager = this.ribbonControl;
             this.myBandedGridControl1.Name = "myBandedGridControl1";
-            this.myBandedGridControl1.Size = new System.Drawing.Size(952, 357);
+            this.myBandedGridControl1.Size = new System.Drawing.Size(1027, 357);
             this.myBandedGridControl1.TabIndex = 4;
             this.myBandedGridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.Tablo});
@@ -135,7 +142,8 @@
             this.colboy,
             this.colYükseklik,
             this.colAlan,
-            this.colAğırlık});
+            this.colAğırlık,
+            this.colTicariİsim});
             this.Tablo.GridControl = this.myBandedGridControl1;
             this.Tablo.Name = "Tablo";
             this.Tablo.OptionsFind.AlwaysVisible = true;
@@ -159,18 +167,6 @@
             this.Tablo.StatusBarAciklama = null;
             this.Tablo.StatusBarKisayol = null;
             this.Tablo.StatusBarKisayolAciklama = null;
-            // 
-            // aaaa
-            // 
-            this.aaaa.Caption = "Malzeme";
-            this.aaaa.Columns.Add(this.colId);
-            this.aaaa.Columns.Add(this.colKod);
-            this.aaaa.Columns.Add(this.colMalzeme);
-            this.aaaa.Columns.Add(this.colHacim);
-            this.aaaa.Columns.Add(this.colMalzemeBirimi);
-            this.aaaa.Name = "aaaa";
-            this.aaaa.VisibleIndex = 0;
-            this.aaaa.Width = 325;
             // 
             // colId
             // 
@@ -232,17 +228,6 @@
             this.colMalzemeBirimi.Visible = true;
             this.colMalzemeBirimi.Width = 50;
             // 
-            // gridBand3
-            // 
-            this.gridBand3.Caption = "Tipi";
-            this.gridBand3.Columns.Add(this.colMalzemeTipi);
-            this.gridBand3.Columns.Add(this.colAmbalajTipi);
-            this.gridBand3.Columns.Add(this.colAmbalajMaddes);
-            this.gridBand3.Columns.Add(this.colSarfTipi);
-            this.gridBand3.Name = "gridBand3";
-            this.gridBand3.VisibleIndex = 1;
-            this.gridBand3.Width = 300;
-            // 
             // colMalzemeTipi
             // 
             this.colMalzemeTipi.Caption = "Malzeme Tipi";
@@ -286,20 +271,6 @@
             this.colSarfTipi.StatusBarKisayol = null;
             this.colSarfTipi.StatusBarKisayolAciklama = null;
             this.colSarfTipi.Visible = true;
-            // 
-            // gridBand4
-            // 
-            this.gridBand4.Caption = "Teknik Özellikler";
-            this.gridBand4.Columns.Add(this.colAğızÖlçüsü);
-            this.gridBand4.Columns.Add(this.colUzunluk);
-            this.gridBand4.Columns.Add(this.colEn);
-            this.gridBand4.Columns.Add(this.colboy);
-            this.gridBand4.Columns.Add(this.colYükseklik);
-            this.gridBand4.Columns.Add(this.colAlan);
-            this.gridBand4.Columns.Add(this.colAğırlık);
-            this.gridBand4.Name = "gridBand4";
-            this.gridBand4.VisibleIndex = 2;
-            this.gridBand4.Width = 425;
             // 
             // colAğızÖlçüsü
             // 
@@ -388,11 +359,61 @@
             this.gridBand1.Name = "gridBand1";
             this.gridBand1.VisibleIndex = -1;
             // 
+            // colTicariİsim
+            // 
+            this.colTicariİsim.Caption = "Ticariİsim";
+            this.colTicariİsim.FieldName = "Ticariİsim";
+            this.colTicariİsim.Name = "colTicariİsim";
+            this.colTicariİsim.OptionsColumn.AllowEdit = false;
+            this.colTicariİsim.StatusBarAciklama = null;
+            this.colTicariİsim.StatusBarKisayol = null;
+            this.colTicariİsim.StatusBarKisayolAciklama = null;
+            this.colTicariİsim.Visible = true;
+            this.colTicariİsim.Width = 94;
+            // 
+            // aaaa
+            // 
+            this.aaaa.Caption = "Malzeme";
+            this.aaaa.Columns.Add(this.colId);
+            this.aaaa.Columns.Add(this.colKod);
+            this.aaaa.Columns.Add(this.colMalzeme);
+            this.aaaa.Columns.Add(this.colTicariİsim);
+            this.aaaa.Columns.Add(this.colHacim);
+            this.aaaa.Columns.Add(this.colMalzemeBirimi);
+            this.aaaa.Name = "aaaa";
+            this.aaaa.VisibleIndex = 0;
+            this.aaaa.Width = 419;
+            // 
+            // gridBand3
+            // 
+            this.gridBand3.Caption = "Tipi";
+            this.gridBand3.Columns.Add(this.colMalzemeTipi);
+            this.gridBand3.Columns.Add(this.colAmbalajTipi);
+            this.gridBand3.Columns.Add(this.colAmbalajMaddes);
+            this.gridBand3.Columns.Add(this.colSarfTipi);
+            this.gridBand3.Name = "gridBand3";
+            this.gridBand3.VisibleIndex = 1;
+            this.gridBand3.Width = 300;
+            // 
+            // gridBand4
+            // 
+            this.gridBand4.Caption = "Teknik Özellikler";
+            this.gridBand4.Columns.Add(this.colAğızÖlçüsü);
+            this.gridBand4.Columns.Add(this.colUzunluk);
+            this.gridBand4.Columns.Add(this.colEn);
+            this.gridBand4.Columns.Add(this.colboy);
+            this.gridBand4.Columns.Add(this.colYükseklik);
+            this.gridBand4.Columns.Add(this.colAlan);
+            this.gridBand4.Columns.Add(this.colAğırlık);
+            this.gridBand4.Name = "gridBand4";
+            this.gridBand4.VisibleIndex = 2;
+            this.gridBand4.Width = 425;
+            // 
             // MamülListForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(952, 514);
+            this.ClientSize = new System.Drawing.Size(1027, 514);
             this.Controls.Add(this.myBandedGridControl1);
             this.Controls.Add(this.longNavigator);
             this.IconOptions.ShowIcon = false;
@@ -413,18 +434,15 @@
         private myUserControls.Navigator.LongNavigator longNavigator;
         private myUserControls.Grid.myBandedGridControl myBandedGridControl1;
         private myUserControls.Grid.myBandedGridview Tablo;
-        private DevExpress.XtraGrid.Views.BandedGrid.GridBand aaaa;
         private myUserControls.Grid.myBandedGridColumn colId;
         private myUserControls.Grid.myBandedGridColumn colKod;
         private myUserControls.Grid.myBandedGridColumn colMalzeme;
         private myUserControls.Grid.myBandedGridColumn colHacim;
         private myUserControls.Grid.myBandedGridColumn colMalzemeBirimi;
-        private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand3;
         private myUserControls.Grid.myBandedGridColumn colMalzemeTipi;
         private myUserControls.Grid.myBandedGridColumn colAmbalajTipi;
         private myUserControls.Grid.myBandedGridColumn colAmbalajMaddes;
         private myUserControls.Grid.myBandedGridColumn colSarfTipi;
-        private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand4;
         private myUserControls.Grid.myBandedGridColumn colAğızÖlçüsü;
         private myUserControls.Grid.myBandedGridColumn colUzunluk;
         private myUserControls.Grid.myBandedGridColumn colEn;
@@ -433,5 +451,9 @@
         private myUserControls.Grid.myBandedGridColumn colAlan;
         private myUserControls.Grid.myBandedGridColumn colAğırlık;
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand1;
+        private DevExpress.XtraGrid.Views.BandedGrid.GridBand aaaa;
+        private myUserControls.Grid.myBandedGridColumn colTicariİsim;
+        private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand3;
+        private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand4;
     }
 }

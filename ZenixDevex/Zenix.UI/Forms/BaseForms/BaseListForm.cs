@@ -160,6 +160,10 @@ namespace Zenix.WinUI.Forms.BaseForms
                         AşamaOnayla();
                     else if (e.Item == btnTümAlamalarYapıldı)
                         TümAşamalarYapıldı();
+                    else if (e.Item == btnYeniTicariİsim)
+                        YeniTicariİsim();
+                    else if (e.Item == btnYeniSiparişKullan)
+                        YeniSiparişKullan();
                     Cursor.Current = DefaultCursor;
 
                 };
@@ -335,6 +339,9 @@ namespace Zenix.WinUI.Forms.BaseForms
         protected virtual void SutunGizleGoster() { }
         protected virtual void AşamaOnayla() { }
         protected virtual void TümAşamalarYapıldı() { }
+        protected virtual void YeniTicariİsim() { }
+        protected virtual void YeniSiparişKullan() { }
+
         protected virtual void Listele() { }
         protected virtual void ŞarjAc() { }
         protected virtual void PaketlemeAc() { }

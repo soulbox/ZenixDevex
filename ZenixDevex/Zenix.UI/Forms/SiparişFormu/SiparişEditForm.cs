@@ -23,6 +23,9 @@ namespace Zenix.WinUI.Forms.SiparişFormu
 {
     public partial class SiparişEditForm : BaseEditForm
     {
+        SiparişL clonsipariş = null;
+
+
         public SiparişEditForm()
         {
             InitializeComponent();
@@ -31,16 +34,40 @@ namespace Zenix.WinUI.Forms.SiparişFormu
             this.KartTuru = KartTuru.Sipariş;
             EventsLoad();
         }
+        public SiparişEditForm(SiparişL sipariş) : this()
+        {
+            clonsipariş = sipariş;
+        }
         protected internal override void Yukle()
         {
-
-            OldEntity = BaseIslemTuru == Common.Enums.IslemTuru.EntityInsert ? new SiparişS() : ((SiparişBll)Bll).Single(FilterFunctions.Filter<Sipariş>(Id));
+            if (clonsipariş != null)
+                BaseIslemTuru = IslemTuru.EntityInsert;
+            OldEntity = BaseIslemTuru == Common.Enums.IslemTuru.EntityInsert ? clonsipariş == null ? new SiparişS() : ((SiparişBll)Bll).Single(x => x.Id == clonsipariş.Id) : ((SiparişBll)Bll).Single(FilterFunctions.Filter<Sipariş>(Id));
             NesneyiKontrollereBagla();
             TabloYükle();
+
+
             if (BaseIslemTuru != Common.Enums.IslemTuru.EntityInsert) return;
             Id = BaseIslemTuru.IdOlustur(OldEntity);
             txtKod.Text = ((SiparişBll)Bll).YeniKodVer();
             txtFirma.Focus();
+        }
+        protected override void OnShown(EventArgs e)
+        {
+            if (clonsipariş != null)
+                using (var siparişbll = new SiparişÜrünleriBll())
+                {
+                    var list = siparişbll.List(x => x.SiparişId == clonsipariş.Id);
+                    list.Cast<SiparişÜrünleriL>().ToList().ForEach(x =>
+                    {
+                        x.Teslimat = false;
+                        x.SiparişId = Id;
+                        x.Insert = true;
+                    });
+
+                    siparişÜrünleriTable.tablo.GridControl.DataSource = list.ToBindingList<SiparişÜrünleriL>();
+                }
+            base.OnShown(e);
         }
         protected override void NesneyiKontrollereBagla()
         {
@@ -58,13 +85,13 @@ namespace Zenix.WinUI.Forms.SiparişFormu
 
             CurrentEntity = new Sipariş
             {
-                Id          = Id,
-                Kod         = txtKod.Text,
-                Durum       = tglDurum.IsOn,
-                FirmaId     = txtFirma.GetId(),
+                Id = Id,
+                Kod = txtKod.Text,
+                Durum = tglDurum.IsOn,
+                FirmaId = txtFirma.GetId(),
                 KullanıcıId = AnaForm.Kullanıcı.Id,
-                Tarih       = dtTarih.DateTime,
-                Açıklama    = txtAçıklama.Text,
+                Tarih = dtTarih.DateTime,
+                Açıklama = txtAçıklama.Text,
 
             };
             ButtonEnableDurumu();
@@ -95,7 +122,18 @@ namespace Zenix.WinUI.Forms.SiparişFormu
         {
 
             if (siparişÜrünleriTable.HatalıGiriş()) return false;
+            if (clonsipariş != null)
+            {
+                var source = siparişÜrünleriTable.tablo.DataController.ListSource.Cast<SiparişÜrünleriL>();
+                source.ToList().ForEach(x => x.SiparişId = CurrentEntity.Id);
+                siparişÜrünleriTable.tablo.GridControl.DataSource = source.ToBindingList<SiparişÜrünleriL>();
+                siparişÜrünleriTable.tablo.Focus();
+                siparişÜrünleriTable.tablo.RefreshDataSource();
+                siparişÜrünleriTable.tablo.GridControl.RefreshDataSource();
+
+            }
             return base.EntityInsert() && siparişÜrünleriTable.Kaydet();
+
         }
         protected override bool EntityUpdate()
         {

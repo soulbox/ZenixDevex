@@ -39,9 +39,6 @@
             this.colMalzeme = new Zenix.WinUI.myUserControls.Grid.myBandedGridColumn();
             this.colGTIN = new Zenix.WinUI.myUserControls.Grid.myBandedGridColumn();
             this.gridBand1 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
-            this.colAfaz = new Zenix.WinUI.myUserControls.Grid.myBandedGridColumn();
-            this.colBFazıHazırlanış = new Zenix.WinUI.myUserControls.Grid.myBandedGridColumn();
-            this.colCFazıHazırlanış = new Zenix.WinUI.myUserControls.Grid.myBandedGridColumn();
             this.colRevTarihi = new Zenix.WinUI.myUserControls.Grid.myBandedGridColumn();
             this.colRevizyonKodu = new Zenix.WinUI.myUserControls.Grid.myBandedGridColumn();
             this.colRevizyonDurumu = new Zenix.WinUI.myUserControls.Grid.myBandedGridColumn();
@@ -121,9 +118,6 @@
             this.colGTIN,
             this.colRevizyonKodu,
             this.colRevTarihi,
-            this.colAfaz,
-            this.colBFazıHazırlanış,
-            this.colCFazıHazırlanış,
             this.colAçıklama,
             this.colRevizyonDurumu,
             this.colMalzemeMiktarı});
@@ -239,9 +233,6 @@
             // gridBand1
             // 
             this.gridBand1.Caption = "Reçete Bilgileri";
-            this.gridBand1.Columns.Add(this.colAfaz);
-            this.gridBand1.Columns.Add(this.colBFazıHazırlanış);
-            this.gridBand1.Columns.Add(this.colCFazıHazırlanış);
             this.gridBand1.Columns.Add(this.colRevTarihi);
             this.gridBand1.Columns.Add(this.colRevizyonKodu);
             this.gridBand1.Columns.Add(this.colRevizyonDurumu);
@@ -249,43 +240,7 @@
             this.gridBand1.Columns.Add(this.colAçıklama);
             this.gridBand1.Name = "gridBand1";
             this.gridBand1.VisibleIndex = 1;
-            this.gridBand1.Width = 1100;
-            // 
-            // colAfaz
-            // 
-            this.colAfaz.Caption = "A Fazı Hazırlanış";
-            this.colAfaz.FieldName = "AFazıHazırlanış";
-            this.colAfaz.Name = "colAfaz";
-            this.colAfaz.OptionsColumn.AllowEdit = false;
-            this.colAfaz.StatusBarAciklama = null;
-            this.colAfaz.StatusBarKisayol = null;
-            this.colAfaz.StatusBarKisayolAciklama = null;
-            this.colAfaz.Visible = true;
-            this.colAfaz.Width = 200;
-            // 
-            // colBFazıHazırlanış
-            // 
-            this.colBFazıHazırlanış.Caption = "B Fazı Hazırlanış";
-            this.colBFazıHazırlanış.FieldName = "BFazıHazırlanış";
-            this.colBFazıHazırlanış.Name = "colBFazıHazırlanış";
-            this.colBFazıHazırlanış.OptionsColumn.AllowEdit = false;
-            this.colBFazıHazırlanış.StatusBarAciklama = null;
-            this.colBFazıHazırlanış.StatusBarKisayol = null;
-            this.colBFazıHazırlanış.StatusBarKisayolAciklama = null;
-            this.colBFazıHazırlanış.Visible = true;
-            this.colBFazıHazırlanış.Width = 200;
-            // 
-            // colCFazıHazırlanış
-            // 
-            this.colCFazıHazırlanış.Caption = "C Fazı Hazırlanış";
-            this.colCFazıHazırlanış.FieldName = "CFazıHazırlanış";
-            this.colCFazıHazırlanış.Name = "colCFazıHazırlanış";
-            this.colCFazıHazırlanış.OptionsColumn.AllowEdit = false;
-            this.colCFazıHazırlanış.StatusBarAciklama = null;
-            this.colCFazıHazırlanış.StatusBarKisayol = null;
-            this.colCFazıHazırlanış.StatusBarKisayolAciklama = null;
-            this.colCFazıHazırlanış.Visible = true;
-            this.colCFazıHazırlanış.Width = 200;
+            this.gridBand1.Width = 500;
             // 
             // colRevTarihi
             // 
@@ -386,9 +341,6 @@
         private myUserControls.Grid.myBandedGridColumn colRevTarihi;
         private myUserControls.Grid.myBandedGridColumn colAçıklama;
         private myUserControls.Navigator.LongNavigator longNavigator;
-        private myUserControls.Grid.myBandedGridColumn colAfaz;
-        private myUserControls.Grid.myBandedGridColumn colBFazıHazırlanış;
-        private myUserControls.Grid.myBandedGridColumn colCFazıHazırlanış;
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand aaaa;
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand1;
         private myUserControls.Grid.myBandedGridColumn colRevizyonDurumu;

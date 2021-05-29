@@ -31,6 +31,7 @@ namespace Zenix.Model.DTO
         public int Kutu { get; set; }
         public int Stand { get; set; }
         public int Koli { get; set; }
+        public string Ticariİsim { get; set; }
 
         public string MamülAdı { get; set; }
         public SarfTipi SarfTipi { get; set; }

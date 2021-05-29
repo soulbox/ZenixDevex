@@ -9,18 +9,18 @@ using System.Threading.Tasks;
 
 namespace Zenix.Model.DTO
 {
-    public interface IMamülDTO 
+    public interface IMamülDTO
     {
         string AmbalajTipiAdı { get; set; }
         string AmbalajMaddeAdı { get; set; }
     }
     [NotMapped]
-    public class MamülL : Mamül,IMamülDTO
+    public class MamülL : Mamül, IMamülDTO
     {
 
         public string AmbalajTipiAdı { get; set; }
         public string AmbalajMaddeAdı { get; set; }
-
+        public Mamül Clone { get => (MamülL)this.MemberwiseClone(); }
     }
 
 

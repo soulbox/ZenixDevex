@@ -48,7 +48,7 @@ namespace Zenix.DAL.Base
                         Msg.HataMesajı("İşlem yapmış olduğunuz tablo veritabanında bulunamadı.");
                         break;
                     case 547:
-                        Msg.HataMesajı("Seçilen kaydın işlem görmüş haraketleri var. Kayıt Silinemez!.");
+                        Msg.HataMesajı($"Seçilen kaydın işlem görmüş haraketleri var. Kayıt Silinemez!.\n{sqlexp.Message}");
                         break;
                     case 2601:
                     case 2627:

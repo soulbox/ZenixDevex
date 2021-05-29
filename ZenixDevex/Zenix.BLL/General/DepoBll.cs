@@ -60,6 +60,6 @@ namespace Zenix.BLL.General
             return list;
 
         }
-
+        public float StokVer(long mamülid) => BaseList(x => x.MamülId == mamülid, x => x.DepoMiktar).DefaultIfEmpty(0).Sum();
     }
 }

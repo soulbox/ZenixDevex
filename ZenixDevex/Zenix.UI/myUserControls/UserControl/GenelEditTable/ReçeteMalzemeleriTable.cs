@@ -37,6 +37,19 @@ namespace Zenix.WinUI.myUserControls.UserControl.GenelEditTable
             //ShowItems = new BarItem[] { btnTümSeçimleriKaldır, btnTümünüSeç };
             EventsLoad();
         }
+        Dictionary<MalzemeTipi, int> enumOrder = new Dictionary<MalzemeTipi, int>()
+            {
+                { MalzemeTipi.Esans , 1 },
+                { MalzemeTipi.HamMadde , 2 },
+                { MalzemeTipi.Ambalaj , 3 },
+                { MalzemeTipi.Etiket , 4 },
+                { MalzemeTipi.Kapak , 5 },
+                { MalzemeTipi.Sarf , 6 },
+                { MalzemeTipi.Şişe , 7 },
+                { MalzemeTipi.Koli , 8 },
+                { MalzemeTipi.Kutu , 9 },
+                { MalzemeTipi.Kavanoz , 10 }
+            };
         protected internal override void Listele()
         {
             var lists = ((ReçeteMalzemelerBll)Bll).List(x => x.ReçeteId == ownerform.Id).ToBindingList<ReçeteMalzemeleriL>();
@@ -45,13 +58,20 @@ namespace Zenix.WinUI.myUserControls.UserControl.GenelEditTable
             tablo.ViewCaption = hacim.HasValue ? $"Malzemeleri {enti.MamülAdı }-{hacim}{enti.MalzemeBirimi} " : $"Malzemeleri";
 
             lists.ForEach(x =>
-            {
-                bool isKim = x.MalzemeTipi == MalzemeTipi.HamMadde | x.MalzemeTipi == MalzemeTipi.Esans;
-                x.Miktar = !isKim ? (100 / (float)hacim * 1000) : x.Miktar;
-            });
+                {
+                    bool isKim = x.MalzemeTipi == MalzemeTipi.HamMadde | x.MalzemeTipi == MalzemeTipi.Esans;
+                    x.Miktar = !isKim ? (100 / (float)hacim * 1000) : x.Miktar;
+                });
             tablo.GridControl.DataSource = lists;
+            SortList();
         }
+        void SortList()
+        {
+            var source = tablo.DataController.ListSource.Cast<ReçeteMalzemeleriL>();
 
+            var newlist = source.OrderBy(x => enumOrder[x.MalzemeTipi]).ThenBy(x => enumOrder[x.MalzemeTipi]).ToList();
+            tablo.GridControl.DataSource = newlist.ToBindingList<ReçeteMalzemeleriL>();
+        }
         protected override void HareketEkle()
         {
 
@@ -68,19 +88,21 @@ namespace Zenix.WinUI.myUserControls.UserControl.GenelEditTable
             entities.ForEach(x =>
             {
                 bool isKim = x.MalzemeTipi == MalzemeTipi.HamMadde | x.MalzemeTipi == MalzemeTipi.Esans;
-                source.Add(new ReçeteMalzemeleriL
-                {
-                    ReçeteId = ownerform != null ? ownerform.Id : 0,
-                    MamülAdı = x.MamülAdı,
-                    MamülId = x.Id,
-                    Insert = true,
-                    Miktar = !isKim & hacim.HasValue ? (100 / (float)hacim.Value * 1000) : 0,
-                    ReçeteBirimi = isKim ? BirimTipi.kg : BirimTipi.ad,
-                    AşamaTipi = isKim ? AşamaTipi.Şarj : AşamaTipi.yok,
-                    MalzemeTipi = x.MalzemeTipi,
-                    Hacim = x.Hacim,
+                using (var depobll = new DepoBll())
+                    source.Add(new ReçeteMalzemeleriL
+                    {
+                        ReçeteId = ownerform != null ? ownerform.Id : 0,
+                        MamülAdı = x.MamülAdı,
+                        MamülId = x.Id,
+                        Insert = true,
+                        Miktar = !isKim & hacim.HasValue ? (100 / (float)hacim.Value * 1000) : 0,
+                        ReçeteBirimi = isKim ? BirimTipi.kg : BirimTipi.ad,
+                        AşamaTipi = isKim ? AşamaTipi.Şarj : AşamaTipi.yok,
+                        MalzemeTipi = x.MalzemeTipi,
+                        Hacim = x.Hacim,
+                        Stok = depobll.StokVer(x.Id)
 
-                });
+                    });
 
             });
             var sourcehacim = source.Cast<ReçeteMalzemeleriL>().FirstOrDefault(x => x.Hacim > 0);
@@ -95,8 +117,9 @@ namespace Zenix.WinUI.myUserControls.UserControl.GenelEditTable
 
             tablo.Focus();
             tablo.RefreshDataSource();
-            tablo.GridControl.RefreshDataSource();
 
+            tablo.GridControl.RefreshDataSource();
+            SortList();
             tablo.FocusedRowHandle = tablo.DataRowCount - 1;
             ButtonEnableDurum(true);
 

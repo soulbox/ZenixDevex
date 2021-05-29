@@ -35,8 +35,10 @@ namespace Zenix.BLL.General
                 MamülId = x.Ürün.MamülId,
                 SiparişFirmaAdı = x.Sipariş.Firma.FirmaAdi,
                 SiparişKod = x.Sipariş.Kod,
-                Teslimat=x.Teslimat,
-                KoliAdedi=x.KoliAdedi,
+                Teslimat = x.Teslimat,
+                KoliAdedi = x.KoliAdedi,
+                Stok = x.Ürün.Mamül.Depo.Select(a => a.DepoMiktar).DefaultIfEmpty(0).Sum(),
+                Açıklama = x.Açıklama,
                 //SiparişDurum = x.Sipariş.Durum,
             }).ToList();
         }

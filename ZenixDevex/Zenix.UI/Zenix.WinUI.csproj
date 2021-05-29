@@ -841,6 +841,9 @@
     <None Include="Resources\apply_16x164.png" />
     <None Include="Resources\productquickshippments.svg" />
     <None Include="Resources\shipmenttransit.svg" />
+    <None Include="Resources\edit_property_16px.png" />
+    <None Include="Resources\add_32x324.png" />
+    <None Include="Resources\add_16x164.png" />
     <Content Include="Resources\warehouse_42px.png" />
     <Content Include="zenix.ico" />
     <None Include="Resources\abacus_16px.png" />

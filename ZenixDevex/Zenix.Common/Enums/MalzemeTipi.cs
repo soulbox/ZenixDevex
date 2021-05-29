@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace Zenix.Common.Enums
 {
+
     public enum MalzemeTipi : byte
     {
         [Description("Ürün")]
@@ -29,7 +30,8 @@ namespace Zenix.Common.Enums
         Koli,
         [Description("Kutu")]
         Kutu,
-
+        [Description("Kavanoz")]
+        Kavanoz,
 
     }
 

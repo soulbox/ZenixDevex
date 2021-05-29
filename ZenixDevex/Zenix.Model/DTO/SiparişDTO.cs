@@ -27,6 +27,7 @@ namespace Zenix.Model.DTO
         public string Personel { get => AdSoyad.ToUpper(); }
         public string Açıklama { get; set; }
         public int ÜrünMiktarı { get; set; }
+        public SiparişL Clone { get =>(SiparişL)this.MemberwiseClone(); }
 
     }
 }

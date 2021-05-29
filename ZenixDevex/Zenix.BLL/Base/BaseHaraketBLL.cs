@@ -36,7 +36,9 @@ namespace Zenix.BLL.Base
         public Boolean Insert(IList<BaseEntityHaraket> entities)
         {
             GeneralFunctions.CreateUnitOfWork<TEntity, TContext>(ref uow);
-            uow.Rep.InsertRange (entities.EntityListConvert<TEntity>());
+            //2021052915533641800
+            var convert = entities.EntityListConvert<TEntity>();
+            uow.Rep.InsertRange (convert);
             return uow.Save();
         }
 

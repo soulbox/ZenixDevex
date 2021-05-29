@@ -134,7 +134,6 @@ namespace Zenix.DAL.Base
                 string kod = null;
                 var dizi = kartTuru.ToName() + "-0001";
 
-
                 return dizi;
             }
             string YeniKodVer(string kod)

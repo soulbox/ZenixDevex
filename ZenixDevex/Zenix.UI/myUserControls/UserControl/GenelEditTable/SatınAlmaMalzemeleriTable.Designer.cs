@@ -37,9 +37,13 @@
             this.repositoryItemDateEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
             this.colMiktar = new Zenix.WinUI.myUserControls.Grid.MyGridColumn();
             this.repoSpin = new DevExpress.XtraEditors.Repository.RepositoryItemSpinEdit();
+            this.colStok = new Zenix.WinUI.myUserControls.Grid.MyGridColumn();
             this.colTeslimat = new Zenix.WinUI.myUserControls.Grid.MyGridColumn();
             this.repoCheck = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
             this.repoimgaecomboBirim = new DevExpress.XtraEditors.Repository.RepositoryItemImageComboBox();
+            this.colBirimFiyat = new Zenix.WinUI.myUserControls.Grid.MyGridColumn();
+            this.colParaBirimi = new Zenix.WinUI.myUserControls.Grid.MyGridColumn();
+            this.colTutar = new Zenix.WinUI.myUserControls.Grid.MyGridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.myGridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tablo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1)).BeginInit();
@@ -52,7 +56,7 @@
             // insUpdNavigator
             // 
             this.insUpdNavigator.Location = new System.Drawing.Point(0, 340);
-            this.insUpdNavigator.Size = new System.Drawing.Size(617, 24);
+            this.insUpdNavigator.Size = new System.Drawing.Size(930, 24);
             // 
             // myGridControl1
             // 
@@ -65,7 +69,7 @@
             this.repoSpin,
             this.repoimgaecomboBirim,
             this.repositoryItemDateEdit1});
-            this.myGridControl1.Size = new System.Drawing.Size(617, 340);
+            this.myGridControl1.Size = new System.Drawing.Size(930, 340);
             this.myGridControl1.TabIndex = 7;
             this.myGridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.tablo});
@@ -90,7 +94,11 @@
             this.colReçeteBirimi,
             this.colTermin,
             this.colMiktar,
-            this.colTeslimat});
+            this.colStok,
+            this.colTeslimat,
+            this.colBirimFiyat,
+            this.colParaBirimi,
+            this.colTutar});
             this.tablo.GridControl = this.myGridControl1;
             this.tablo.Name = "tablo";
             this.tablo.OptionsFind.FindDelay = 100;
@@ -151,7 +159,7 @@
             this.colReçeteBirimi.StatusBarKisayol = null;
             this.colReçeteBirimi.StatusBarKisayolAciklama = null;
             this.colReçeteBirimi.Visible = true;
-            this.colReçeteBirimi.VisibleIndex = 1;
+            this.colReçeteBirimi.VisibleIndex = 2;
             // 
             // colTermin
             // 
@@ -165,7 +173,7 @@
             this.colTermin.StatusBarKisayol = null;
             this.colTermin.StatusBarKisayolAciklama = null;
             this.colTermin.Visible = true;
-            this.colTermin.VisibleIndex = 2;
+            this.colTermin.VisibleIndex = 4;
             this.colTermin.Width = 99;
             // 
             // repositoryItemDateEdit1
@@ -191,7 +199,7 @@
             this.colMiktar.StatusBarKisayol = null;
             this.colMiktar.StatusBarKisayolAciklama = null;
             this.colMiktar.Visible = true;
-            this.colMiktar.VisibleIndex = 3;
+            this.colMiktar.VisibleIndex = 1;
             // 
             // repoSpin
             // 
@@ -205,6 +213,18 @@
             this.repoSpin.Mask.EditMask = "n1";
             this.repoSpin.Name = "repoSpin";
             // 
+            // colStok
+            // 
+            this.colStok.Caption = "Stok";
+            this.colStok.FieldName = "Stok";
+            this.colStok.Name = "colStok";
+            this.colStok.OptionsColumn.AllowEdit = false;
+            this.colStok.StatusBarAciklama = null;
+            this.colStok.StatusBarKisayol = null;
+            this.colStok.StatusBarKisayolAciklama = null;
+            this.colStok.Visible = true;
+            this.colStok.VisibleIndex = 3;
+            // 
             // colTeslimat
             // 
             this.colTeslimat.Caption = "Teslimat";
@@ -215,7 +235,7 @@
             this.colTeslimat.StatusBarKisayol = null;
             this.colTeslimat.StatusBarKisayolAciklama = null;
             this.colTeslimat.Visible = true;
-            this.colTeslimat.VisibleIndex = 4;
+            this.colTeslimat.VisibleIndex = 5;
             // 
             // repoCheck
             // 
@@ -229,13 +249,49 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.repoimgaecomboBirim.Name = "repoimgaecomboBirim";
             // 
+            // colBirimFiyat
+            // 
+            this.colBirimFiyat.Caption = "BirimFiyat";
+            this.colBirimFiyat.ColumnEdit = this.repoSpin;
+            this.colBirimFiyat.FieldName = "BirimFiyat";
+            this.colBirimFiyat.Name = "colBirimFiyat";
+            this.colBirimFiyat.StatusBarAciklama = null;
+            this.colBirimFiyat.StatusBarKisayol = null;
+            this.colBirimFiyat.StatusBarKisayolAciklama = null;
+            this.colBirimFiyat.Visible = true;
+            this.colBirimFiyat.VisibleIndex = 6;
+            // 
+            // colParaBirimi
+            // 
+            this.colParaBirimi.Caption = "ParaBirimi";
+            this.colParaBirimi.ColumnEdit = this.repoimgaecomboBirim;
+            this.colParaBirimi.FieldName = "ParaBirimi";
+            this.colParaBirimi.Name = "colParaBirimi";
+            this.colParaBirimi.StatusBarAciklama = null;
+            this.colParaBirimi.StatusBarKisayol = null;
+            this.colParaBirimi.StatusBarKisayolAciklama = null;
+            this.colParaBirimi.Visible = true;
+            this.colParaBirimi.VisibleIndex = 7;
+            // 
+            // colTutar
+            // 
+            this.colTutar.Caption = "Tutar";
+            this.colTutar.FieldName = "Tutar";
+            this.colTutar.Name = "colTutar";
+            this.colTutar.OptionsColumn.AllowEdit = false;
+            this.colTutar.StatusBarAciklama = null;
+            this.colTutar.StatusBarKisayol = null;
+            this.colTutar.StatusBarKisayolAciklama = null;
+            this.colTutar.Visible = true;
+            this.colTutar.VisibleIndex = 8;
+            // 
             // SatınAlmaMalzemeleriTable
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.myGridControl1);
             this.Name = "SatınAlmaMalzemeleriTable";
-            this.Size = new System.Drawing.Size(617, 364);
+            this.Size = new System.Drawing.Size(930, 364);
             this.Controls.SetChildIndex(this.insUpdNavigator, 0);
             this.Controls.SetChildIndex(this.myGridControl1, 0);
             ((System.ComponentModel.ISupportInitialize)(this.myGridControl1)).EndInit();
@@ -264,5 +320,9 @@
         private Grid.MyGridColumn colTermin;
         private DevExpress.XtraEditors.Repository.RepositoryItemDateEdit repositoryItemDateEdit1;
         private Grid.MyGridColumn colTeslimat;
+        private Grid.MyGridColumn colStok;
+        private Grid.MyGridColumn colBirimFiyat;
+        private Grid.MyGridColumn colParaBirimi;
+        private Grid.MyGridColumn colTutar;
     }
 }

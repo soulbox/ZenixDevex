@@ -26,6 +26,7 @@ namespace Zenix.Model.DTO
         public float Gelen { get; set; }
         public float Stok { get; set; }
         public float EksikFazla { get => Gelen - Miktar; }
+        public string Ticariİsim { get; set; }
 
         public string GTIN { get; set; }
         public long MarkaId { get; set; }

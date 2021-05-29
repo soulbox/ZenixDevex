@@ -36,6 +36,22 @@ namespace Zenix.WinUI.Forms.SiparişFormu
             Tablo.ViewCaption = Text;
 
         }
+        protected override void SagMenuGoster(object sender, MouseEventArgs e)
+        {
+            var isRight = (e.Button == MouseButtons.Right);
+            var entity = Tablo.GetRow<SiparişL>();
+            ShowHideButtons(entity != null, btnYeniSiparişKullan);
+            base.SagMenuGoster(sender, e);
+        }
+        protected override void YeniSiparişKullan()
+        {
+            var entity = Tablo.GetRow<SiparişL>();
+            var clone = entity.Clone;
+            var result = new ShowEditForms<SiparişEditForm>().ShowDialogEditForm(Common.Enums.KartTuru.Sipariş, clone.Id, clone);
+            Listele();
+            ShowEditFormDefault(result);
+
+        }
         protected override void Listele()
         {
             Tablo.GridControl.DataSource = ((SiparişBll)Bll).List(FilterFunctions.Filter<Sipariş>(AktifKayitlariGoster));

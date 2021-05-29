@@ -22,6 +22,7 @@ namespace Zenix.Model.Entities
 
         public BirimTipi BirimTipi { get; set; }
         public bool Teslimat { get; set; }
+        public string Açıklama { get; set; }
 
 
     }

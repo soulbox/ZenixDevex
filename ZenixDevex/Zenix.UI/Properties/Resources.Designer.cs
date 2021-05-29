@@ -123,6 +123,16 @@ namespace Zenix.WinUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap add_16x164 {
+            get {
+                object obj = ResourceManager.GetObject("add_16x164", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap add_32x32 {
             get {
                 object obj = ResourceManager.GetObject("add_32x32", resourceCulture);
@@ -156,6 +166,16 @@ namespace Zenix.WinUI.Properties {
         public static System.Drawing.Bitmap add_32x323 {
             get {
                 object obj = ResourceManager.GetObject("add_32x323", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap add_32x324 {
+            get {
+                object obj = ResourceManager.GetObject("add_32x324", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1116,6 +1136,16 @@ namespace Zenix.WinUI.Properties {
         public static System.Drawing.Bitmap edit_32x32 {
             get {
                 object obj = ResourceManager.GetObject("edit_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap edit_property_16px {
+            get {
+                object obj = ResourceManager.GetObject("edit_property_16px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

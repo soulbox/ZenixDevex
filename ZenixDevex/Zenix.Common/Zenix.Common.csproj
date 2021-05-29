@@ -76,6 +76,7 @@
     <Compile Include="Enums\MalzemeTipi.cs" />
     <Compile Include="Enums\MedeniHali.cs" />
     <Compile Include="Enums\MüşteriTipi.cs" />
+    <Compile Include="Enums\ParaBirimi.cs" />
     <Compile Include="Enums\RaporuKagidaSigdirmaTuru.cs" />
     <Compile Include="Enums\SarfTipi.cs" />
     <Compile Include="Enums\VeriDegisimYeri.cs" />

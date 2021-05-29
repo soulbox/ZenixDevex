@@ -51,12 +51,12 @@ namespace Zenix.BLL.General
                 Hacim = x.Reçete.Ürün.Mamül.Hacim,
                 AlanınBirimi = x.Reçete.Ürün.Mamül.AlanınBirimi,
                 Ağırlık = x.Reçete.Ürün.Mamül.Ağırlık,
-                Uzunluk= x.Reçete.Ürün.Mamül.Uzunluk,
-                AğızÖlçüsü= x.Reçete.Ürün.Mamül.AğızÖlçüsü,
-                AğırlığınBirimi= x.Reçete.Ürün.Mamül.AğırlığınBirimi,
-                BirimAuEbY= x.Reçete.Ürün.Mamül.BirimAuEbY,
-                
-                
+                Uzunluk = x.Reçete.Ürün.Mamül.Uzunluk,
+                AğızÖlçüsü = x.Reçete.Ürün.Mamül.AğızÖlçüsü,
+                AğırlığınBirimi = x.Reçete.Ürün.Mamül.AğırlığınBirimi,
+                BirimAuEbY = x.Reçete.Ürün.Mamül.BirimAuEbY,
+
+
             });
         }
         public override IEnumerable<BaseEntity> List(Expression<Func<İşemri, bool>> filter)
@@ -88,14 +88,14 @@ namespace Zenix.BLL.General
                 Alan = x.Reçete.Ürün.Mamül.Alan,
                 En = x.Reçete.Ürün.Mamül.En,
                 Boy = x.Reçete.Ürün.Mamül.Boy,
-                Hacim = x.Reçete.Ürün.Mamül.Hacim,
+                Hacim = x.Reçete.ReçeteMalzemeler.Select(a => a.Mamül.Hacim).FirstOrDefault(a => a > 0),
                 AlanınBirimi = x.Reçete.Ürün.Mamül.AlanınBirimi,
                 Ağırlık = x.Reçete.Ürün.Mamül.Ağırlık,
                 Uzunluk = x.Reçete.Ürün.Mamül.Uzunluk,
                 AğızÖlçüsü = x.Reçete.Ürün.Mamül.AğızÖlçüsü,
                 AğırlığınBirimi = x.Reçete.Ürün.Mamül.AğırlığınBirimi,
-                BirimAuEbY = x.Reçete.Ürün.Mamül.BirimAuEbY,    
-                MamülId=x.Reçete.Ürün.MamülId,
+                BirimAuEbY = x.Reçete.Ürün.Mamül.BirimAuEbY,
+                MamülId = x.Reçete.Ürün.MamülId,
 
             }).ToList();
         }

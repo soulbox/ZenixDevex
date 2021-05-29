@@ -16,6 +16,7 @@ using Zenix.WinUI.MainForm;
 using Zenix.Common.Messages;
 using System.Linq.Expressions;
 using Zenix.Model.Entities.Base;
+using Zenix.Model.DTO;
 
 namespace Zenix.WinUI.Forms.MamülFormu
 {
@@ -30,6 +31,7 @@ namespace Zenix.WinUI.Forms.MamülFormu
             InitializeComponent();
             Bll = new MamülBll();
             isÜrün = isürün;
+            //ShowHideButtons(true, btnYeniTicariİsim);
         }
 
         protected override void Degiskenleridoldur()
@@ -42,6 +44,8 @@ namespace Zenix.WinUI.Forms.MamülFormu
             Tablo.ViewCaption = Text;
 
         }
+
+
         protected override void Listele()
         {
             IEnumerable<BaseEntity> liste = null;
@@ -57,10 +61,29 @@ namespace Zenix.WinUI.Forms.MamülFormu
             else
                 Msg.UyariMesajı("İşlem Yapılabilecek Kart Bulunamadı");
         }
+        protected override void SagMenuGoster(object sender, MouseEventArgs e)
+        {
+            var isRight = (e.Button == MouseButtons.Right);
+            var entity = Tablo.GetRow<MamülL>();
+            ShowHideButtons(entity != null, btnYeniTicariİsim);
+            base.SagMenuGoster(sender, e);
+        }
+
+        protected override void YeniTicariİsim()
+        {
+            var entity = Tablo.GetRow<MamülL>();
+            var clone = entity.Clone;
+            clone.Ticariİsim = string.Empty;
+            var result = new ShowEditForms<MamülEditForm>().ShowDialogEditForm(Common.Enums.KartTuru.Mamül, entity.Id, isÜrün, clone);
+            Listele();
+            ShowEditFormDefault(result);
+
+
+        }
         protected override void ShowEditForm(long id)
         {
 
-            var result = new ShowEditForms<MamülEditForm>().ShowDialogEditForm(Common.Enums.KartTuru.Mamül, id, isÜrün);
+            var result = new ShowEditForms<MamülEditForm>().ShowDialogEditForm(Common.Enums.KartTuru.Mamül, id, isÜrün, null);
             ShowEditFormDefault(result);
         }
     }

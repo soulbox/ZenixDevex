@@ -46,6 +46,9 @@ namespace Zenix.Model.DTO
         public string BirimYükseklik { get; }
 
         public string BirimAlan { get; }
+        public float Stok { get; set; }
+        public string Ticariİsim { get; set; }
+
     }
     [NotMapped]
     public class SatınAlmaMalzemeleriDepo : SatınAlmaMalzemeler, IMamülAdı, IFirma
@@ -56,7 +59,7 @@ namespace Zenix.Model.DTO
         public string SatınAlmaKodFirma { get => $"{SatınAlmaKod}-{FirmaAdi.ToUpper()}"; }
         public float Gelen { get; set; }
         public float Stok { get; set; }
-        public float EksikFazla { get => Gelen- Miktar  ; }
+        public float EksikFazla { get => Gelen - Miktar; }
 
     }
 }

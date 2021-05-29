@@ -80,6 +80,7 @@ namespace Zenix.WinUI.Forms.DepoFormu
         {
             var entity = TabloSatınAlma.GetRow<SatınAlmaMalzemeleriDepo>();
             if (entity == null) return;
+            if (Msg.HayirSeciliEvetHayir("Hepsi Alınıcak. Onaylıyormusunuz?", "Onay") != DialogResult.Yes) return;
             var source = TabloSatınAlma.DataController.ListSource.Cast<SatınAlmaMalzemeleriDepo>()
                 .Where(x => x.SatınalmaId == entity.SatınalmaId && x.EksikFazla < 0).ToList();
             var eklenicekler = source.Select(x => new Depo

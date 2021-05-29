@@ -34,6 +34,7 @@ namespace Zenix.WinUI.myUserControls.UserControl.GenelEditTable
             baseTablo = tablo;
             //ShowItems = new BarItem[] { btnTümSeçimleriKaldır, btnTümünüSeç };
             EventsLoad();
+            repoimgaecomboBirim.AddEnum<ParaBirimi>();
         }
         protected internal override void Listele()
         {
@@ -45,7 +46,7 @@ namespace Zenix.WinUI.myUserControls.UserControl.GenelEditTable
 
             var source = tablo.DataController.ListSource;
             ListeDışıtutulacakkayıtlar = source.Cast<SatınAlmaMalzemeleriL>().Where(x => !x.Delete).Select(x => x.MamülId).ToList();
-            var entities = ShowListForms<MamülListForm>.ShowDialogListForm(ListeDışıtutulacakkayıtlar, true,false);
+            var entities = ShowListForms<MamülListForm>.ShowDialogListForm(ListeDışıtutulacakkayıtlar, true, false);
             var result = entities.EntityListConvert<MamülL>();
             //var entities = ShowListForms<ReçeteMalzemeleriListForm>.ShowDialogListForm(ListeDışıtutulacakkayıtlar, true).EntityListConvert<MamülL>();
             if (result == null) return;
@@ -56,15 +57,16 @@ namespace Zenix.WinUI.myUserControls.UserControl.GenelEditTable
             }
             result.Where(x => x != null).ForEach(x =>
                 {
-                    source.Add(new SatınAlmaMalzemeleriL
-                    {
-                        SatınalmaId = ownerform != null ? ownerform.Id : 0,
-                        MamülId = x.Id,
-                        MamülAdı = x.MamülAdı,
-                        MalzemeBirimi = x.MalzemeBirimi,
-
-                        Insert = true
-                    });
+                    using (var depobll = new DepoBll())
+                        source.Add(new SatınAlmaMalzemeleriL
+                        {
+                            SatınalmaId = ownerform != null ? ownerform.Id : 0,
+                            MamülId = x.Id,
+                            MamülAdı = x.MamülAdı,
+                            MalzemeBirimi = x.MalzemeBirimi,
+                            Stok = depobll.StokVer(x.Id),                            
+                            Insert = true
+                        });
                 });
             tablo.Focus();
             tablo.RefreshDataSource();

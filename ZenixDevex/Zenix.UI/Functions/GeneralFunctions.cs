@@ -46,7 +46,8 @@ namespace Zenix.WinUI.Functions
         }
         public static void ToData<T>(this ComboBoxEdit combo,Func<DescriptionAttribute,bool> filter) where T : Enum
         {
-            combo.Properties.Items.AddRange(EnumFunction.GetEnumDescriptionList<T>(filter));
+            var liste = EnumFunction.GetEnumDescriptionList<T>(filter);
+            combo.Properties.Items.AddRange(liste);
         }
         public static void ToData<T>(this RepositoryItemComboBox combo) where T : Enum
         {
