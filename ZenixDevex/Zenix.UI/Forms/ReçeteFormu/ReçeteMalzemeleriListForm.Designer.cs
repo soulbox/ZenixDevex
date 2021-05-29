@@ -32,7 +32,9 @@
             this.Grid = new Zenix.WinUI.myUserControls.Grid.myGridControl();
             this.Tablo = new Zenix.WinUI.myUserControls.Grid.myGridview();
             this.colMalzeme = new Zenix.WinUI.myUserControls.Grid.MyGridColumn();
+            this.colHacim = new Zenix.WinUI.myUserControls.Grid.MyGridColumn();
             this.longNavigator = new Zenix.WinUI.myUserControls.Navigator.LongNavigator();
+            this.colMalzemeTipi = new Zenix.WinUI.myUserControls.Grid.MyGridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Grid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Tablo)).BeginInit();
@@ -55,6 +57,11 @@
             // 
             this.btnGonder.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnGonder.ImageOptions.Image")));
             this.btnGonder.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnGonder.ImageOptions.LargeImage")));
+            // 
+            // btnAşamalar
+            // 
+            this.btnAşamalar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAşamalar.ImageOptions.Image")));
+            this.btnAşamalar.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnAşamalar.ImageOptions.LargeImage")));
             // 
             // Grid
             // 
@@ -83,7 +90,9 @@
             this.Tablo.AppearancePrint.FooterPanel.Options.UseTextOptions = true;
             this.Tablo.AppearancePrint.FooterPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.Tablo.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colMalzeme});
+            this.colMalzeme,
+            this.colHacim,
+            this.colMalzemeTipi});
             this.Tablo.GridControl = this.Grid;
             this.Tablo.Name = "Tablo";
             this.Tablo.OptionsFind.AlwaysVisible = true;
@@ -118,6 +127,20 @@
             this.colMalzeme.StatusBarKisayolAciklama = null;
             this.colMalzeme.Visible = true;
             this.colMalzeme.VisibleIndex = 0;
+            this.colMalzeme.Width = 299;
+            // 
+            // colHacim
+            // 
+            this.colHacim.Caption = "Hacim";
+            this.colHacim.FieldName = "Hacim";
+            this.colHacim.Name = "colHacim";
+            this.colHacim.OptionsColumn.AllowEdit = false;
+            this.colHacim.StatusBarAciklama = null;
+            this.colHacim.StatusBarKisayol = null;
+            this.colHacim.StatusBarKisayolAciklama = null;
+            this.colHacim.Visible = true;
+            this.colHacim.VisibleIndex = 2;
+            this.colHacim.Width = 85;
             // 
             // longNavigator
             // 
@@ -126,6 +149,19 @@
             this.longNavigator.Name = "longNavigator";
             this.longNavigator.Size = new System.Drawing.Size(496, 24);
             this.longNavigator.TabIndex = 4;
+            // 
+            // colMalzemeTipi
+            // 
+            this.colMalzemeTipi.Caption = "Malzeme";
+            this.colMalzemeTipi.FieldName = "MalzemeTipi";
+            this.colMalzemeTipi.Name = "colMalzemeTipi";
+            this.colMalzemeTipi.OptionsColumn.AllowEdit = false;
+            this.colMalzemeTipi.StatusBarAciklama = null;
+            this.colMalzemeTipi.StatusBarKisayol = null;
+            this.colMalzemeTipi.StatusBarKisayolAciklama = null;
+            this.colMalzemeTipi.Visible = true;
+            this.colMalzemeTipi.VisibleIndex = 1;
+            this.colMalzemeTipi.Width = 87;
             // 
             // ReçeteMalzemeleriListForm
             // 
@@ -154,5 +190,7 @@
         private myUserControls.Grid.myGridview Tablo;
         private myUserControls.Grid.MyGridColumn colMalzeme;
         private myUserControls.Navigator.LongNavigator longNavigator;
+        private myUserControls.Grid.MyGridColumn colHacim;
+        private myUserControls.Grid.MyGridColumn colMalzemeTipi;
     }
 }

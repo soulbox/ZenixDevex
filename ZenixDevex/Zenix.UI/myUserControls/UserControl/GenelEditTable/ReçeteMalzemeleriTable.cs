@@ -55,7 +55,7 @@ namespace Zenix.WinUI.myUserControls.UserControl.GenelEditTable
             var lists = ((ReçeteMalzemelerBll)Bll).List(x => x.ReçeteId == ownerform.Id).ToBindingList<ReçeteMalzemeleriL>();
             var hacim = lists.FirstOrDefault(x => x.Hacim > 0)?.Hacim;
             var enti = lists.FirstOrDefault(x => x.Hacim > 0);
-            tablo.ViewCaption = hacim.HasValue ? $"Malzemeleri {enti.MamülAdı }-{hacim}{enti.MalzemeBirimi} " : $"Malzemeleri";
+            tablo.ViewCaption = hacim.HasValue ? $"Malzemeleri {enti.HacimliMalzemeAdı}-{hacim}{enti.HacimliMalzemeBirimi  } " : $"Malzemeleri";
 
             lists.ForEach(x =>
                 {
@@ -81,7 +81,15 @@ namespace Zenix.WinUI.myUserControls.UserControl.GenelEditTable
             //var entities = ShowListForms<ReçeteMalzemeleriListForm>.ShowDialogListForm(ListeDışıtutulacakkayıtlar, true).EntityListConvert<MamülL>();
 
             if (entities == null) return;
+            var birdenfazlahacimlimalzeme = source.Cast<ReçeteMalzemeleriL>().Where(x => x.Hacim > 0).Count() >= 1 &
+                entities.Where(x => x.Hacim > 0).Count() >= 1;
+            if (birdenfazlahacimlimalzeme)
+            {
+                Msg.HataMesajı("Şişe veya Kavanoz seçildi ");
+                return;
+            }
             var hacimentity = entities.FirstOrDefault(x => x.Hacim > 0);
+
             var hacim = hacimentity?.Hacim;
             var hacimmalzeme = hacimentity?.MamülAdı;
 

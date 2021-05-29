@@ -50,14 +50,16 @@ namespace Zenix.BLL.General
                 {
                     x.Hacim = hacim.Hacim;
                     x.HacimliMalzemeAdı = hacim.MamülAdı;
+                    x.HacimliMalzemeBirimi = hacim.MalzemeBirimi;
                     x.KimyasalOran = kimyasaloran;
+
                 });
             return list;
         }
 
         public List<ReçeteMalzemeleriL> ReçeteList(Expression<Func<ReçeteMalzemeler, bool>> filter)
             => List(filter).Cast<ReçeteMalzemeleriL>().ToList();
-        public List<ReçeteMalzemeleriL> ReçeteList(Expression<Func<ReçeteMalzemeler, bool>> filter,float şarjmiktarı) 
+        public List<ReçeteMalzemeleriL> ReçeteList(Expression<Func<ReçeteMalzemeler, bool>> filter, float şarjmiktarı)
         {
             var list = ReçeteList(filter);
             list.ForEach(x => x.ŞarjMiktarı = şarjmiktarı);
