@@ -34,6 +34,8 @@ namespace Zenix.WinUI.myUserControls.UserControl.GenelEditTable
             Bll = new SiparişÜrünleriBll();
             baseTablo = tablo;
             //ShowItems = new BarItem[] { btnTümSeçimleriKaldır, btnTümünüSeç };
+            repoParabirimi.AddEnum<ParaBirimi>();
+
             EventsLoad();
         }
         protected internal override void Listele()
@@ -62,7 +64,7 @@ namespace Zenix.WinUI.myUserControls.UserControl.GenelEditTable
                     GTIN = x.GTIN,
                     Kutu = x.Kutu,
                     Koli = x.Koli,
-                    Stand = x.Stand,
+                    Stand = x.Stand,                    
                     Insert = true
                 });
             });

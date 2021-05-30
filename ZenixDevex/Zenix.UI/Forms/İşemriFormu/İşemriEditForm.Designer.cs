@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DevExpress.XtraGrid.GridFormatRule gridFormatRule1 = new DevExpress.XtraGrid.GridFormatRule();
+            DevExpress.XtraEditors.FormatConditionRuleExpression formatConditionRuleExpression1 = new DevExpress.XtraEditors.FormatConditionRuleExpression();
             DevExpress.XtraLayout.ColumnDefinition columnDefinition1 = new DevExpress.XtraLayout.ColumnDefinition();
             DevExpress.XtraLayout.ColumnDefinition columnDefinition2 = new DevExpress.XtraLayout.ColumnDefinition();
             DevExpress.XtraLayout.ColumnDefinition columnDefinition3 = new DevExpress.XtraLayout.ColumnDefinition();
@@ -49,6 +51,7 @@
             this.colihtiyaç = new Zenix.WinUI.myUserControls.Grid.MyGridColumn();
             this.colMalzemeİçiÜrün = new Zenix.WinUI.myUserControls.Grid.MyGridColumn();
             this.colStok = new Zenix.WinUI.myUserControls.Grid.MyGridColumn();
+            this.colMalzemeTipi = new Zenix.WinUI.myUserControls.Grid.MyGridColumn();
             this.repoCheck = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
             this.repoCombo = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
             this.repoimagecomboFaz = new DevExpress.XtraEditors.Repository.RepositoryItemImageComboBox();
@@ -68,7 +71,7 @@
             this.simpleLabelItem1 = new DevExpress.XtraLayout.SimpleLabelItem();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.colMalzemeTipi = new Zenix.WinUI.myUserControls.Grid.MyGridColumn();
+            this.colHazırlanış = new Zenix.WinUI.myUserControls.Grid.MyGridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.myDataLayoutControl)).BeginInit();
             this.myDataLayoutControl.SuspendLayout();
@@ -167,7 +170,14 @@
             this.colihtiyaç,
             this.colMalzemeİçiÜrün,
             this.colStok,
-            this.colMalzemeTipi});
+            this.colMalzemeTipi,
+            this.colHazırlanış});
+            gridFormatRule1.Column = this.colihtiyaç;
+            gridFormatRule1.Name = "İhtiyaç Yeterli Değil";
+            formatConditionRuleExpression1.Expression = "[ihtiyaç] > [Stok]";
+            formatConditionRuleExpression1.PredefinedName = "Red Fill";
+            gridFormatRule1.Rule = formatConditionRuleExpression1;
+            this.ReçeteTablo.FormatRules.Add(gridFormatRule1);
             this.ReçeteTablo.GridControl = this.myGridControl1;
             this.ReçeteTablo.Name = "ReçeteTablo";
             this.ReçeteTablo.OptionsFind.FindDelay = 100;
@@ -307,6 +317,18 @@
             this.colStok.StatusBarKisayolAciklama = null;
             this.colStok.Visible = true;
             this.colStok.VisibleIndex = 5;
+            // 
+            // colMalzemeTipi
+            // 
+            this.colMalzemeTipi.Caption = "MalzemeTipi";
+            this.colMalzemeTipi.FieldName = "MalzemeTipi";
+            this.colMalzemeTipi.Name = "colMalzemeTipi";
+            this.colMalzemeTipi.OptionsColumn.AllowEdit = false;
+            this.colMalzemeTipi.StatusBarAciklama = null;
+            this.colMalzemeTipi.StatusBarKisayol = null;
+            this.colMalzemeTipi.StatusBarKisayolAciklama = null;
+            this.colMalzemeTipi.Visible = true;
+            this.colMalzemeTipi.VisibleIndex = 1;
             // 
             // repoCheck
             // 
@@ -613,17 +635,17 @@
             this.layoutControlItem1.Text = "Kod";
             this.layoutControlItem1.TextSize = new System.Drawing.Size(58, 13);
             // 
-            // colMalzemeTipi
+            // colHazırlanış
             // 
-            this.colMalzemeTipi.Caption = "MalzemeTipi";
-            this.colMalzemeTipi.FieldName = "MalzemeTipi";
-            this.colMalzemeTipi.Name = "colMalzemeTipi";
-            this.colMalzemeTipi.OptionsColumn.AllowEdit = false;
-            this.colMalzemeTipi.StatusBarAciklama = null;
-            this.colMalzemeTipi.StatusBarKisayol = null;
-            this.colMalzemeTipi.StatusBarKisayolAciklama = null;
-            this.colMalzemeTipi.Visible = true;
-            this.colMalzemeTipi.VisibleIndex = 1;
+            this.colHazırlanış.Caption = "Hazırlanış";
+            this.colHazırlanış.FieldName = "Hazırlanış";
+            this.colHazırlanış.Name = "colHazırlanış";
+            this.colHazırlanış.OptionsColumn.AllowEdit = false;
+            this.colHazırlanış.StatusBarAciklama = null;
+            this.colHazırlanış.StatusBarKisayol = null;
+            this.colHazırlanış.StatusBarKisayolAciklama = null;
+            this.colHazırlanış.Visible = true;
+            this.colHazırlanış.VisibleIndex = 8;
             // 
             // İşemriEditForm
             // 
@@ -701,5 +723,6 @@
         private myUserControls.Grid.MyGridColumn colMalzemeİçiÜrün;
         private myUserControls.Grid.MyGridColumn colStok;
         private myUserControls.Grid.MyGridColumn colMalzemeTipi;
+        private myUserControls.Grid.MyGridColumn colHazırlanış;
     }
 }

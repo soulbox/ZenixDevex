@@ -44,18 +44,23 @@
             this.colStok = new Zenix.WinUI.myUserControls.Grid.MyGridColumn();
             this.colAçıklama = new Zenix.WinUI.myUserControls.Grid.MyGridColumn();
             this.repositoryItemTextEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
+            this.colParaBirim = new Zenix.WinUI.myUserControls.Grid.MyGridColumn();
+            this.repoParabirimi = new DevExpress.XtraEditors.Repository.RepositoryItemImageComboBox();
+            this.colBirimFiyat = new Zenix.WinUI.myUserControls.Grid.MyGridColumn();
+            this.colTutar = new Zenix.WinUI.myUserControls.Grid.MyGridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.myGridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tablo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repoSpin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repoimagecomboBirim)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repoCheck)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repoParabirimi)).BeginInit();
             this.SuspendLayout();
             // 
             // insUpdNavigator
             // 
             this.insUpdNavigator.Location = new System.Drawing.Point(0, 493);
-            this.insUpdNavigator.Size = new System.Drawing.Size(979, 24);
+            this.insUpdNavigator.Size = new System.Drawing.Size(1206, 24);
             // 
             // myGridControl1
             // 
@@ -67,8 +72,9 @@
             this.repoCheck,
             this.repoSpin,
             this.repoimagecomboBirim,
-            this.repositoryItemTextEdit1});
-            this.myGridControl1.Size = new System.Drawing.Size(979, 493);
+            this.repositoryItemTextEdit1,
+            this.repoParabirimi});
+            this.myGridControl1.Size = new System.Drawing.Size(1206, 493);
             this.myGridControl1.TabIndex = 7;
             this.myGridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.tablo});
@@ -97,7 +103,10 @@
             this.colBirim,
             this.colTeslimat,
             this.colStok,
-            this.colAçıklama});
+            this.colAçıklama,
+            this.colParaBirim,
+            this.colBirimFiyat,
+            this.colTutar});
             this.tablo.GridControl = this.myGridControl1;
             this.tablo.Name = "tablo";
             this.tablo.OptionsFind.FindDelay = 100;
@@ -279,13 +288,58 @@
             this.repositoryItemTextEdit1.AutoHeight = false;
             this.repositoryItemTextEdit1.Name = "repositoryItemTextEdit1";
             // 
+            // colParaBirim
+            // 
+            this.colParaBirim.Caption = "ParaBirim";
+            this.colParaBirim.ColumnEdit = this.repoParabirimi;
+            this.colParaBirim.FieldName = "ParaBirimi";
+            this.colParaBirim.Name = "colParaBirim";
+            this.colParaBirim.StatusBarAciklama = null;
+            this.colParaBirim.StatusBarKisayol = null;
+            this.colParaBirim.StatusBarKisayolAciklama = null;
+            this.colParaBirim.Visible = true;
+            this.colParaBirim.VisibleIndex = 10;
+            // 
+            // repoParabirimi
+            // 
+            this.repoParabirimi.AutoHeight = false;
+            this.repoParabirimi.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repoParabirimi.Name = "repoParabirimi";
+            // 
+            // colBirimFiyat
+            // 
+            this.colBirimFiyat.Caption = "BirimFiyat";
+            this.colBirimFiyat.ColumnEdit = this.repoSpin;
+            this.colBirimFiyat.FieldName = "BirimFiyat";
+            this.colBirimFiyat.Name = "colBirimFiyat";
+            this.colBirimFiyat.StatusBarAciklama = null;
+            this.colBirimFiyat.StatusBarKisayol = null;
+            this.colBirimFiyat.StatusBarKisayolAciklama = null;
+            this.colBirimFiyat.Visible = true;
+            this.colBirimFiyat.VisibleIndex = 9;
+            // 
+            // colTutar
+            // 
+            this.colTutar.Caption = "Tutar";
+            this.colTutar.DisplayFormat.FormatString = "{0:n2}";
+            this.colTutar.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.colTutar.FieldName = "Tutar";
+            this.colTutar.Name = "colTutar";
+            this.colTutar.OptionsColumn.AllowEdit = false;
+            this.colTutar.StatusBarAciklama = null;
+            this.colTutar.StatusBarKisayol = null;
+            this.colTutar.StatusBarKisayolAciklama = null;
+            this.colTutar.Visible = true;
+            this.colTutar.VisibleIndex = 11;
+            // 
             // SiparişÜrünleriTable
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.myGridControl1);
             this.Name = "SiparişÜrünleriTable";
-            this.Size = new System.Drawing.Size(979, 517);
+            this.Size = new System.Drawing.Size(1206, 517);
             this.Controls.SetChildIndex(this.insUpdNavigator, 0);
             this.Controls.SetChildIndex(this.myGridControl1, 0);
             ((System.ComponentModel.ISupportInitialize)(this.myGridControl1)).EndInit();
@@ -294,6 +348,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.repoimagecomboBirim)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repoCheck)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repoParabirimi)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -317,5 +372,9 @@
         private Grid.MyGridColumn colStok;
         private Grid.MyGridColumn colAçıklama;
         private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemTextEdit1;
+        private Grid.MyGridColumn colParaBirim;
+        private Grid.MyGridColumn colBirimFiyat;
+        private Grid.MyGridColumn colTutar;
+        private DevExpress.XtraEditors.Repository.RepositoryItemImageComboBox repoParabirimi;
     }
 }

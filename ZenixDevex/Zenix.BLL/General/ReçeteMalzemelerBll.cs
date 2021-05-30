@@ -32,7 +32,12 @@ namespace Zenix.BLL.General
                 MalzemeTipi = x.Mamül.MalzemeTipi,
                 MalzemeİçiÜrün = x.MalzemeİçiÜrün,
                 MalzemeBirimi = x.Mamül.MalzemeBirimi,
-                Stok = x.Mamül.Depo.Select(a => a.DepoMiktar).DefaultIfEmpty(0).Sum()
+                Stok = x.Mamül.Depo.Select(a => a.DepoMiktar).DefaultIfEmpty(0).Sum(),
+                AFazıHazırlanış = x.Reçete.AFazıHazırlanış,
+                BFazıHazırlanış = x.Reçete.BFazıHazırlanış,
+                CFazıHazırlanış = x.Reçete.CFazıHazırlanış,
+                DFazıHazırlanış = x.Reçete.DFazıHazırlanış,
+                EFazıHazırlanış = x.Reçete.EFazıHazırlanış,
                 //MalzemeId = x.MalzemeId,
                 //FazTipi = x.FazTipi,
                 //MalzemeAdı = x.Malzeme.Adı,

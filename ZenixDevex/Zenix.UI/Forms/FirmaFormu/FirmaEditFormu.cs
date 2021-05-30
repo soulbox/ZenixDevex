@@ -11,7 +11,7 @@ namespace Zenix.WinUI.Forms.FirmaFormu
 {
     public partial class FirmaEditFormu : BaseEditForm
     {
-
+        FirmalarL defaultfirma = null;
         public FirmaEditFormu()
 
         {
@@ -21,11 +21,15 @@ namespace Zenix.WinUI.Forms.FirmaFormu
             this.Bll = new FirmaBll(myDataLayoutControl);
             this.KartTuru = KartTuru.Firma;
             EventsLoad();
+            if (BaseIslemTuru == IslemTuru.EntityInsert)
+                using (var ülkebll = new ÜlkeBll())
+                    if (ülkebll.Single(x => x.Adı.Contains("türkiye")) is Ülke ent && ent.HasValue())
+                        defaultfirma = new FirmalarL { ÜlkeAdı = ent.Adı, ÜlkeId = ent.Id };
         }
         protected internal override void Yukle()
         {
 
-            OldEntity = BaseIslemTuru == Common.Enums.IslemTuru.EntityInsert ? new FirmalarL() : ((FirmaBll)Bll).Single(FilterFunctions.Filter<Firma>(Id));
+            OldEntity = BaseIslemTuru == Common.Enums.IslemTuru.EntityInsert ? defaultfirma ?? new FirmalarL() : ((FirmaBll)Bll).Single(FilterFunctions.Filter<Firma>(Id));
             NesneyiKontrollereBagla();
             if (BaseIslemTuru != Common.Enums.IslemTuru.EntityInsert) return;
             Id = BaseIslemTuru.IdOlustur(OldEntity);
@@ -35,32 +39,32 @@ namespace Zenix.WinUI.Forms.FirmaFormu
         protected override void NesneyiKontrollereBagla()
         {
             var entity = (FirmalarL)OldEntity;
-            txtKod.Text          = entity.Kod;
-            tglDurum.IsOn        = entity.Durum;
-            txtFirmaAdi.Text     = entity.FirmaAdi;
-            txtFirmaTipi.Text    = entity.FirmaTipiAdı;
-            txtFirmaTipi.Id      = entity.FirmaTipiId;
-            txtAdress.Text       = entity.Adres;
-            txtVergiNo.Text      = entity.VergiNo;
+            txtKod.Text = entity.Kod;
+            tglDurum.IsOn = entity.Durum;
+            txtFirmaAdi.Text = entity.FirmaAdi;
+            txtFirmaTipi.Text = entity.FirmaTipiAdı;
+            txtFirmaTipi.Id = entity.FirmaTipiId;
+            txtAdress.Text = entity.Adres;
+            txtVergiNo.Text = entity.VergiNo;
             txtVergiDairesi.Text = entity.VergiDairesi;
-            txtÜlke.Text         = entity.ÜlkeAdı;
-            txtÜlke.Id           = entity.ÜlkeId;
+            txtÜlke.Text = entity.ÜlkeAdı;
+            txtÜlke.Id = entity.ÜlkeId;
         }
         protected override void GuncelNesneOluştur()
         {
 
             CurrentEntity = new Firma
             {
-                Id           = Id,
-                Kod          = txtKod.Text,
-                Durum        = tglDurum.IsOn,
-                FirmaAdi     = txtFirmaAdi.Text,
-                Adres        = txtAdress.Text,
+                Id = Id,
+                Kod = txtKod.Text,
+                Durum = tglDurum.IsOn,
+                FirmaAdi = txtFirmaAdi.Text,
+                Adres = txtAdress.Text,
                 VergiDairesi = txtVergiDairesi.Text,
-                FirmaTipiId  = txtFirmaTipi.GetId(),
-                VergiNo      = txtVergiNo.Text.GetNumbers(),
-                Tarih        = ((Firma)OldEntity).Tarih,
-                ÜlkeId       = txtÜlke.GetId(),
+                FirmaTipiId = txtFirmaTipi.GetId(),
+                VergiNo = txtVergiNo.Text.GetNumbers(),
+                Tarih = ((Firma)OldEntity).Tarih,
+                ÜlkeId = txtÜlke.GetId(),
 
             };
             ButtonEnableDurumu();
@@ -72,7 +76,7 @@ namespace Zenix.WinUI.Forms.FirmaFormu
             {
                 if (sender == txtÜlke)
                     sec.Seç(txtÜlke);
-               else if (sender == txtFirmaTipi)
+                else if (sender == txtFirmaTipi)
                     sec.Seç(txtFirmaTipi);
             }
         }

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Zenix.Common.Enums;
+using Zenix.Common.Function;
 using Zenix.Model.DTO;
 using Zenix.Model.Entities.Base;
 
@@ -26,7 +27,7 @@ namespace Zenix.Model.Entities
         public float BirimFiyat { get; set; }
         public ParaBirimi ParaBirimi { get; set; } = ParaBirimi.TL;
         [NotMapped]
-        public float Tutar { get => Miktar * BirimFiyat; }
+        public string Tutar { get => string.Format("{0:n2}" + $"{ParaBirimi.ToName()}", Miktar * BirimFiyat); }
 
 
     }

@@ -29,24 +29,15 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(İşemriListBasicForm));
+            DevExpress.XtraGrid.GridFormatRule gridFormatRule1 = new DevExpress.XtraGrid.GridFormatRule();
+            DevExpress.XtraEditors.FormatConditionRuleExpression formatConditionRuleExpression1 = new DevExpress.XtraEditors.FormatConditionRuleExpression();
             DevExpress.XtraLayout.ColumnDefinition columnDefinition1 = new DevExpress.XtraLayout.ColumnDefinition();
             DevExpress.XtraLayout.RowDefinition rowDefinition1 = new DevExpress.XtraLayout.RowDefinition();
             DevExpress.XtraLayout.RowDefinition rowDefinition2 = new DevExpress.XtraLayout.RowDefinition();
             this.myDataLayoutControl1 = new Zenix.WinUI.myUserControls.Controls.myDataLayoutControl();
-            this.myGridControl2 = new Zenix.WinUI.myUserControls.Grid.myGridControl();
-            this.ReçeteTablo = new Zenix.WinUI.myUserControls.Grid.myGridview();
-            this.myGridColumn3 = new Zenix.WinUI.myUserControls.Grid.MyGridColumn();
-            this.colMalzemeAdı = new Zenix.WinUI.myUserControls.Grid.MyGridColumn();
-            this.myGridColumn4 = new Zenix.WinUI.myUserControls.Grid.MyGridColumn();
-            this.repoSpin = new DevExpress.XtraEditors.Repository.RepositoryItemSpinEdit();
-            this.colihtiyaç = new Zenix.WinUI.myUserControls.Grid.MyGridColumn();
-            this.colAşamaTipi2 = new Zenix.WinUI.myUserControls.Grid.MyGridColumn();
-            this.repoCheck = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
-            this.repoCombo = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
-            this.repoimagecomboFaz = new DevExpress.XtraEditors.Repository.RepositoryItemImageComboBox();
-            this.repoimgaecomboAşama = new DevExpress.XtraEditors.Repository.RepositoryItemImageComboBox();
             this.myBandedGridControl1 = new Zenix.WinUI.myUserControls.Grid.myBandedGridControl();
             this.Tablo = new Zenix.WinUI.myUserControls.Grid.myBandedGridview();
+            this.aaaa = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
             this.colId = new Zenix.WinUI.myUserControls.Grid.myBandedGridColumn();
             this.colKod = new Zenix.WinUI.myUserControls.Grid.myBandedGridColumn();
             this.colİşemriNo = new Zenix.WinUI.myUserControls.Grid.myBandedGridColumn();
@@ -57,26 +48,42 @@
             this.colMalzeme = new Zenix.WinUI.myUserControls.Grid.myBandedGridColumn();
             this.colGTIN = new Zenix.WinUI.myUserControls.Grid.myBandedGridColumn();
             this.colEXP = new Zenix.WinUI.myUserControls.Grid.myBandedGridColumn();
+            this.gridBand1 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
             this.colRevizyonKodu = new Zenix.WinUI.myUserControls.Grid.myBandedGridColumn();
+            this.colAdet = new Zenix.WinUI.myUserControls.Grid.myBandedGridColumn();
+            this.myGridControl1 = new Zenix.WinUI.myUserControls.Grid.myGridControl();
+            this.ReçeteTablo = new Zenix.WinUI.myUserControls.Grid.myGridview();
+            this.myGridColumn1 = new Zenix.WinUI.myUserControls.Grid.MyGridColumn();
+            this.colMalzemeAdı = new Zenix.WinUI.myUserControls.Grid.MyGridColumn();
+            this.colMiktar = new Zenix.WinUI.myUserControls.Grid.MyGridColumn();
+            this.repoSpin = new DevExpress.XtraEditors.Repository.RepositoryItemSpinEdit();
+            this.colAşamaTipi = new Zenix.WinUI.myUserControls.Grid.MyGridColumn();
+            this.colReçeteBirimi = new Zenix.WinUI.myUserControls.Grid.MyGridColumn();
+            this.colihtiyaç = new Zenix.WinUI.myUserControls.Grid.MyGridColumn();
+            this.colMalzemeİçiÜrün = new Zenix.WinUI.myUserControls.Grid.MyGridColumn();
+            this.colStok = new Zenix.WinUI.myUserControls.Grid.MyGridColumn();
+            this.colMalzemeTipi = new Zenix.WinUI.myUserControls.Grid.MyGridColumn();
+            this.colFazHazırlanış = new Zenix.WinUI.myUserControls.Grid.MyGridColumn();
+            this.repoCheck = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
+            this.repoCombo = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
+            this.repoimagecomboFaz = new DevExpress.XtraEditors.Repository.RepositoryItemImageComboBox();
+            this.repoimgaecomboAşama = new DevExpress.XtraEditors.Repository.RepositoryItemImageComboBox();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.longNavigator = new Zenix.WinUI.myUserControls.Navigator.LongNavigator();
-            this.colAdet = new Zenix.WinUI.myUserControls.Grid.myBandedGridColumn();
-            this.aaaa = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
-            this.gridBand1 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.myDataLayoutControl1)).BeginInit();
             this.myDataLayoutControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.myGridControl2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.myBandedGridControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Tablo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.myGridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ReçeteTablo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repoSpin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repoCheck)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repoCombo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repoimagecomboFaz)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repoimgaecomboAşama)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.myBandedGridControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Tablo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
@@ -92,6 +99,7 @@
             this.ribbonControl.SearchEditItem.EditWidth = 150;
             this.ribbonControl.SearchEditItem.Id = -5000;
             this.ribbonControl.SearchEditItem.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
+            this.ribbonControl.Size = new System.Drawing.Size(984, 109);
             this.ribbonControl.Toolbar.ShowCustomizeItem = false;
             // 
             // btnGonder
@@ -106,181 +114,16 @@
             // 
             // myDataLayoutControl1
             // 
-            this.myDataLayoutControl1.Controls.Add(this.myGridControl2);
             this.myDataLayoutControl1.Controls.Add(this.myBandedGridControl1);
+            this.myDataLayoutControl1.Controls.Add(this.myGridControl1);
             this.myDataLayoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.myDataLayoutControl1.Location = new System.Drawing.Point(0, 109);
             this.myDataLayoutControl1.Name = "myDataLayoutControl1";
             this.myDataLayoutControl1.OptionsFocus.EnableAutoTabOrder = false;
             this.myDataLayoutControl1.Root = this.Root;
-            this.myDataLayoutControl1.Size = new System.Drawing.Size(952, 392);
+            this.myDataLayoutControl1.Size = new System.Drawing.Size(984, 462);
             this.myDataLayoutControl1.TabIndex = 2;
             this.myDataLayoutControl1.Text = "myDataLayoutControl1";
-            // 
-            // myGridControl2
-            // 
-            this.myGridControl2.Location = new System.Drawing.Point(12, 198);
-            this.myGridControl2.MainView = this.ReçeteTablo;
-            this.myGridControl2.Name = "myGridControl2";
-            this.myGridControl2.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
-            this.repoCheck,
-            this.repoSpin,
-            this.repoCombo,
-            this.repoimagecomboFaz,
-            this.repoimgaecomboAşama});
-            this.myGridControl2.Size = new System.Drawing.Size(928, 182);
-            this.myGridControl2.TabIndex = 17;
-            this.myGridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.ReçeteTablo});
-            // 
-            // ReçeteTablo
-            // 
-            this.ReçeteTablo.Appearance.FooterPanel.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.ReçeteTablo.Appearance.FooterPanel.ForeColor = System.Drawing.Color.Maroon;
-            this.ReçeteTablo.Appearance.FooterPanel.Options.UseFont = true;
-            this.ReçeteTablo.Appearance.FooterPanel.Options.UseForeColor = true;
-            this.ReçeteTablo.Appearance.HeaderPanel.ForeColor = System.Drawing.Color.Maroon;
-            this.ReçeteTablo.Appearance.HeaderPanel.Options.UseForeColor = true;
-            this.ReçeteTablo.Appearance.HeaderPanel.Options.UseTextOptions = true;
-            this.ReçeteTablo.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.ReçeteTablo.Appearance.ViewCaption.ForeColor = System.Drawing.Color.Maroon;
-            this.ReçeteTablo.Appearance.ViewCaption.Options.UseForeColor = true;
-            this.ReçeteTablo.AppearancePrint.FooterPanel.Options.UseTextOptions = true;
-            this.ReçeteTablo.AppearancePrint.FooterPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.ReçeteTablo.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.myGridColumn3,
-            this.colMalzemeAdı,
-            this.myGridColumn4,
-            this.colihtiyaç,
-            this.colAşamaTipi2});
-            this.ReçeteTablo.GridControl = this.myGridControl2;
-            this.ReçeteTablo.Name = "ReçeteTablo";
-            this.ReçeteTablo.OptionsFind.FindDelay = 100;
-            this.ReçeteTablo.OptionsFind.FindNullPrompt = "Ara";
-            this.ReçeteTablo.OptionsFind.ShowFindButton = false;
-            this.ReçeteTablo.OptionsMenu.EnableColumnMenu = false;
-            this.ReçeteTablo.OptionsMenu.EnableFooterMenu = false;
-            this.ReçeteTablo.OptionsMenu.EnableGroupPanelMenu = false;
-            this.ReçeteTablo.OptionsNavigation.EnterMoveNextColumn = true;
-            this.ReçeteTablo.OptionsPrint.AutoWidth = false;
-            this.ReçeteTablo.OptionsPrint.PrintGroupFooter = false;
-            this.ReçeteTablo.OptionsView.ColumnAutoWidth = false;
-            this.ReçeteTablo.OptionsView.HeaderFilterButtonShowMode = DevExpress.XtraEditors.Controls.FilterButtonShowMode.Button;
-            this.ReçeteTablo.OptionsView.RowAutoHeight = true;
-            this.ReçeteTablo.OptionsView.ShowGroupPanel = false;
-            this.ReçeteTablo.StatusBarAciklama = "Malzeme Kartları";
-            this.ReçeteTablo.StatusBarKisayol = "Shift+Insert";
-            this.ReçeteTablo.StatusBarKisayolAciklama = "Malzeme Kartı Ekle";
-            this.ReçeteTablo.ViewCaption = "Malzemeleri";
-            // 
-            // myGridColumn3
-            // 
-            this.myGridColumn3.Caption = "Id";
-            this.myGridColumn3.FieldName = "Id";
-            this.myGridColumn3.Name = "myGridColumn3";
-            this.myGridColumn3.OptionsColumn.AllowEdit = false;
-            this.myGridColumn3.OptionsColumn.ShowInCustomizationForm = false;
-            this.myGridColumn3.StatusBarAciklama = null;
-            this.myGridColumn3.StatusBarKisayol = null;
-            this.myGridColumn3.StatusBarKisayolAciklama = null;
-            // 
-            // colMalzemeAdı
-            // 
-            this.colMalzemeAdı.Caption = "Malzeme";
-            this.colMalzemeAdı.FieldName = "MamülAdı";
-            this.colMalzemeAdı.Name = "colMalzemeAdı";
-            this.colMalzemeAdı.OptionsColumn.AllowEdit = false;
-            this.colMalzemeAdı.OptionsFilter.AllowAutoFilter = false;
-            this.colMalzemeAdı.OptionsFilter.AllowFilter = false;
-            this.colMalzemeAdı.StatusBarAciklama = null;
-            this.colMalzemeAdı.StatusBarKisayol = null;
-            this.colMalzemeAdı.StatusBarKisayolAciklama = null;
-            this.colMalzemeAdı.Visible = true;
-            this.colMalzemeAdı.VisibleIndex = 0;
-            this.colMalzemeAdı.Width = 233;
-            // 
-            // myGridColumn4
-            // 
-            this.myGridColumn4.Caption = "Miktar";
-            this.myGridColumn4.ColumnEdit = this.repoSpin;
-            this.myGridColumn4.FieldName = "ReçeteMiktar";
-            this.myGridColumn4.Name = "myGridColumn4";
-            this.myGridColumn4.OptionsColumn.AllowEdit = false;
-            this.myGridColumn4.OptionsFilter.AllowAutoFilter = false;
-            this.myGridColumn4.OptionsFilter.AllowFilter = false;
-            this.myGridColumn4.OptionsFilter.FilterBySortField = DevExpress.Utils.DefaultBoolean.False;
-            this.myGridColumn4.StatusBarAciklama = null;
-            this.myGridColumn4.StatusBarKisayol = null;
-            this.myGridColumn4.StatusBarKisayolAciklama = null;
-            this.myGridColumn4.Visible = true;
-            this.myGridColumn4.VisibleIndex = 1;
-            // 
-            // repoSpin
-            // 
-            this.repoSpin.AutoHeight = false;
-            this.repoSpin.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repoSpin.DisplayFormat.FormatString = "{0:n1}";
-            this.repoSpin.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.repoSpin.EditFormat.FormatString = "{0:n1}";
-            this.repoSpin.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.repoSpin.Mask.EditMask = "n1";
-            this.repoSpin.Name = "repoSpin";
-            // 
-            // colihtiyaç
-            // 
-            this.colihtiyaç.Caption = "İhtiyaç";
-            this.colihtiyaç.FieldName = "ihtiyaç";
-            this.colihtiyaç.Name = "colihtiyaç";
-            this.colihtiyaç.OptionsColumn.AllowEdit = false;
-            this.colihtiyaç.StatusBarAciklama = null;
-            this.colihtiyaç.StatusBarKisayol = null;
-            this.colihtiyaç.StatusBarKisayolAciklama = null;
-            this.colihtiyaç.Visible = true;
-            this.colihtiyaç.VisibleIndex = 2;
-            // 
-            // colAşamaTipi2
-            // 
-            this.colAşamaTipi2.Caption = "AşamaTipi";
-            this.colAşamaTipi2.FieldName = "AşamaTipi";
-            this.colAşamaTipi2.Name = "colAşamaTipi2";
-            this.colAşamaTipi2.OptionsColumn.AllowEdit = false;
-            this.colAşamaTipi2.StatusBarAciklama = null;
-            this.colAşamaTipi2.StatusBarKisayol = null;
-            this.colAşamaTipi2.StatusBarKisayolAciklama = null;
-            this.colAşamaTipi2.Visible = true;
-            this.colAşamaTipi2.VisibleIndex = 3;
-            // 
-            // repoCheck
-            // 
-            this.repoCheck.AutoHeight = false;
-            this.repoCheck.Name = "repoCheck";
-            this.repoCheck.ValueChecked = ((byte)(1));
-            this.repoCheck.ValueGrayed = ((byte)(2));
-            this.repoCheck.ValueUnchecked = ((byte)(0));
-            // 
-            // repoCombo
-            // 
-            this.repoCombo.AutoHeight = false;
-            this.repoCombo.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repoCombo.Name = "repoCombo";
-            this.repoCombo.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            // 
-            // repoimagecomboFaz
-            // 
-            this.repoimagecomboFaz.AutoHeight = false;
-            this.repoimagecomboFaz.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repoimagecomboFaz.CaseSensitiveSearch = true;
-            this.repoimagecomboFaz.Name = "repoimagecomboFaz";
-            // 
-            // repoimgaecomboAşama
-            // 
-            this.repoimgaecomboAşama.AutoHeight = false;
-            this.repoimgaecomboAşama.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repoimgaecomboAşama.Name = "repoimgaecomboAşama";
             // 
             // myBandedGridControl1
             // 
@@ -288,8 +131,8 @@
             this.myBandedGridControl1.MainView = this.Tablo;
             this.myBandedGridControl1.MenuManager = this.ribbonControl;
             this.myBandedGridControl1.Name = "myBandedGridControl1";
-            this.myBandedGridControl1.Size = new System.Drawing.Size(928, 182);
-            this.myBandedGridControl1.TabIndex = 16;
+            this.myBandedGridControl1.Size = new System.Drawing.Size(960, 217);
+            this.myBandedGridControl1.TabIndex = 18;
             this.myBandedGridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.Tablo});
             // 
@@ -351,6 +194,23 @@
             this.Tablo.StatusBarAciklama = null;
             this.Tablo.StatusBarKisayol = null;
             this.Tablo.StatusBarKisayolAciklama = null;
+            // 
+            // aaaa
+            // 
+            this.aaaa.Caption = "Ürün Tanımı";
+            this.aaaa.Columns.Add(this.colId);
+            this.aaaa.Columns.Add(this.colKod);
+            this.aaaa.Columns.Add(this.colİşemriNo);
+            this.aaaa.Columns.Add(this.colŞarj);
+            this.aaaa.Columns.Add(this.colŞarjMiktarı);
+            this.aaaa.Columns.Add(this.colMarka);
+            this.aaaa.Columns.Add(this.colFirma);
+            this.aaaa.Columns.Add(this.colMalzeme);
+            this.aaaa.Columns.Add(this.colGTIN);
+            this.aaaa.Columns.Add(this.colEXP);
+            this.aaaa.Name = "aaaa";
+            this.aaaa.VisibleIndex = 0;
+            this.aaaa.Width = 1090;
             // 
             // colId
             // 
@@ -468,6 +328,15 @@
             this.colEXP.StatusBarKisayolAciklama = null;
             this.colEXP.Visible = true;
             // 
+            // gridBand1
+            // 
+            this.gridBand1.Caption = "Reçete Bilgileri";
+            this.gridBand1.Columns.Add(this.colRevizyonKodu);
+            this.gridBand1.Columns.Add(this.colAdet);
+            this.gridBand1.Name = "gridBand1";
+            this.gridBand1.VisibleIndex = 1;
+            this.gridBand1.Width = 150;
+            // 
             // colRevizyonKodu
             // 
             this.colRevizyonKodu.Caption = "Revizyon Kodu";
@@ -478,6 +347,259 @@
             this.colRevizyonKodu.StatusBarKisayol = null;
             this.colRevizyonKodu.StatusBarKisayolAciklama = null;
             this.colRevizyonKodu.Visible = true;
+            // 
+            // colAdet
+            // 
+            this.colAdet.Caption = "Adet";
+            this.colAdet.FieldName = "Adet";
+            this.colAdet.Name = "colAdet";
+            this.colAdet.OptionsColumn.AllowEdit = false;
+            this.colAdet.StatusBarAciklama = null;
+            this.colAdet.StatusBarKisayol = null;
+            this.colAdet.StatusBarKisayolAciklama = null;
+            this.colAdet.Visible = true;
+            // 
+            // myGridControl1
+            // 
+            this.myGridControl1.Location = new System.Drawing.Point(12, 233);
+            this.myGridControl1.MainView = this.ReçeteTablo;
+            this.myGridControl1.Name = "myGridControl1";
+            this.myGridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.repoCheck,
+            this.repoSpin,
+            this.repoCombo,
+            this.repoimagecomboFaz,
+            this.repoimgaecomboAşama});
+            this.myGridControl1.Size = new System.Drawing.Size(960, 217);
+            this.myGridControl1.TabIndex = 17;
+            this.myGridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.ReçeteTablo});
+            // 
+            // ReçeteTablo
+            // 
+            this.ReçeteTablo.Appearance.FooterPanel.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.ReçeteTablo.Appearance.FooterPanel.ForeColor = System.Drawing.Color.Maroon;
+            this.ReçeteTablo.Appearance.FooterPanel.Options.UseFont = true;
+            this.ReçeteTablo.Appearance.FooterPanel.Options.UseForeColor = true;
+            this.ReçeteTablo.Appearance.HeaderPanel.ForeColor = System.Drawing.Color.Maroon;
+            this.ReçeteTablo.Appearance.HeaderPanel.Options.UseForeColor = true;
+            this.ReçeteTablo.Appearance.HeaderPanel.Options.UseTextOptions = true;
+            this.ReçeteTablo.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.ReçeteTablo.Appearance.ViewCaption.ForeColor = System.Drawing.Color.Maroon;
+            this.ReçeteTablo.Appearance.ViewCaption.Options.UseForeColor = true;
+            this.ReçeteTablo.AppearancePrint.FooterPanel.Options.UseTextOptions = true;
+            this.ReçeteTablo.AppearancePrint.FooterPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.ReçeteTablo.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.myGridColumn1,
+            this.colMalzemeAdı,
+            this.colMiktar,
+            this.colAşamaTipi,
+            this.colReçeteBirimi,
+            this.colihtiyaç,
+            this.colMalzemeİçiÜrün,
+            this.colStok,
+            this.colMalzemeTipi,
+            this.colFazHazırlanış});
+            gridFormatRule1.Column = this.colihtiyaç;
+            gridFormatRule1.Name = "ihtiyaç Yeterli Değil";
+            formatConditionRuleExpression1.Expression = "[ihtiyaç] > [Stok]";
+            formatConditionRuleExpression1.PredefinedName = "Red Fill, Red Text";
+            gridFormatRule1.Rule = formatConditionRuleExpression1;
+            this.ReçeteTablo.FormatRules.Add(gridFormatRule1);
+            this.ReçeteTablo.GridControl = this.myGridControl1;
+            this.ReçeteTablo.Name = "ReçeteTablo";
+            this.ReçeteTablo.OptionsFind.FindDelay = 100;
+            this.ReçeteTablo.OptionsFind.FindNullPrompt = "Ara";
+            this.ReçeteTablo.OptionsFind.ShowFindButton = false;
+            this.ReçeteTablo.OptionsMenu.EnableColumnMenu = false;
+            this.ReçeteTablo.OptionsMenu.EnableFooterMenu = false;
+            this.ReçeteTablo.OptionsMenu.EnableGroupPanelMenu = false;
+            this.ReçeteTablo.OptionsNavigation.EnterMoveNextColumn = true;
+            this.ReçeteTablo.OptionsPrint.AutoWidth = false;
+            this.ReçeteTablo.OptionsPrint.PrintGroupFooter = false;
+            this.ReçeteTablo.OptionsView.ColumnAutoWidth = false;
+            this.ReçeteTablo.OptionsView.HeaderFilterButtonShowMode = DevExpress.XtraEditors.Controls.FilterButtonShowMode.Button;
+            this.ReçeteTablo.OptionsView.RowAutoHeight = true;
+            this.ReçeteTablo.OptionsView.ShowGroupPanel = false;
+            this.ReçeteTablo.OptionsView.ShowViewCaption = true;
+            this.ReçeteTablo.StatusBarAciklama = "Malzeme Kartları";
+            this.ReçeteTablo.StatusBarKisayol = "Shift+Insert";
+            this.ReçeteTablo.StatusBarKisayolAciklama = "Malzeme Kartı Ekle";
+            this.ReçeteTablo.ViewCaption = "Malzemeleri";
+            // 
+            // myGridColumn1
+            // 
+            this.myGridColumn1.Caption = "Id";
+            this.myGridColumn1.FieldName = "Id";
+            this.myGridColumn1.Name = "myGridColumn1";
+            this.myGridColumn1.OptionsColumn.AllowEdit = false;
+            this.myGridColumn1.OptionsColumn.ShowInCustomizationForm = false;
+            this.myGridColumn1.StatusBarAciklama = null;
+            this.myGridColumn1.StatusBarKisayol = null;
+            this.myGridColumn1.StatusBarKisayolAciklama = null;
+            // 
+            // colMalzemeAdı
+            // 
+            this.colMalzemeAdı.Caption = "Malzeme";
+            this.colMalzemeAdı.FieldName = "MamülAdı";
+            this.colMalzemeAdı.Name = "colMalzemeAdı";
+            this.colMalzemeAdı.OptionsColumn.AllowEdit = false;
+            this.colMalzemeAdı.OptionsFilter.AllowAutoFilter = false;
+            this.colMalzemeAdı.OptionsFilter.AllowFilter = false;
+            this.colMalzemeAdı.StatusBarAciklama = null;
+            this.colMalzemeAdı.StatusBarKisayol = null;
+            this.colMalzemeAdı.StatusBarKisayolAciklama = null;
+            this.colMalzemeAdı.Visible = true;
+            this.colMalzemeAdı.VisibleIndex = 0;
+            this.colMalzemeAdı.Width = 233;
+            // 
+            // colMiktar
+            // 
+            this.colMiktar.Caption = "Miktar";
+            this.colMiktar.ColumnEdit = this.repoSpin;
+            this.colMiktar.FieldName = "ReçeteMiktar";
+            this.colMiktar.Name = "colMiktar";
+            this.colMiktar.OptionsColumn.AllowEdit = false;
+            this.colMiktar.OptionsFilter.AllowAutoFilter = false;
+            this.colMiktar.OptionsFilter.AllowFilter = false;
+            this.colMiktar.OptionsFilter.FilterBySortField = DevExpress.Utils.DefaultBoolean.False;
+            this.colMiktar.StatusBarAciklama = null;
+            this.colMiktar.StatusBarKisayol = null;
+            this.colMiktar.StatusBarKisayolAciklama = null;
+            this.colMiktar.Visible = true;
+            this.colMiktar.VisibleIndex = 3;
+            // 
+            // repoSpin
+            // 
+            this.repoSpin.AutoHeight = false;
+            this.repoSpin.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repoSpin.DisplayFormat.FormatString = "{0:n1}";
+            this.repoSpin.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.repoSpin.EditFormat.FormatString = "{0:n1}";
+            this.repoSpin.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.repoSpin.Mask.EditMask = "n1";
+            this.repoSpin.Name = "repoSpin";
+            // 
+            // colAşamaTipi
+            // 
+            this.colAşamaTipi.Caption = "Aşama Tipi";
+            this.colAşamaTipi.FieldName = "AşamaTipi";
+            this.colAşamaTipi.Name = "colAşamaTipi";
+            this.colAşamaTipi.OptionsColumn.AllowEdit = false;
+            this.colAşamaTipi.StatusBarAciklama = null;
+            this.colAşamaTipi.StatusBarKisayol = null;
+            this.colAşamaTipi.StatusBarKisayolAciklama = null;
+            this.colAşamaTipi.Visible = true;
+            this.colAşamaTipi.VisibleIndex = 7;
+            this.colAşamaTipi.Width = 106;
+            // 
+            // colReçeteBirimi
+            // 
+            this.colReçeteBirimi.Caption = "Birim";
+            this.colReçeteBirimi.FieldName = "ReçeteBirimi";
+            this.colReçeteBirimi.Name = "colReçeteBirimi";
+            this.colReçeteBirimi.OptionsColumn.AllowEdit = false;
+            this.colReçeteBirimi.OptionsFilter.AllowAutoFilter = false;
+            this.colReçeteBirimi.OptionsFilter.AllowFilter = false;
+            this.colReçeteBirimi.OptionsFilter.FilterBySortField = DevExpress.Utils.DefaultBoolean.False;
+            this.colReçeteBirimi.StatusBarAciklama = null;
+            this.colReçeteBirimi.StatusBarKisayol = null;
+            this.colReçeteBirimi.StatusBarKisayolAciklama = null;
+            this.colReçeteBirimi.Visible = true;
+            this.colReçeteBirimi.VisibleIndex = 6;
+            // 
+            // colihtiyaç
+            // 
+            this.colihtiyaç.Caption = "İhtiyaç";
+            this.colihtiyaç.FieldName = "ihtiyaç";
+            this.colihtiyaç.Name = "colihtiyaç";
+            this.colihtiyaç.OptionsColumn.AllowEdit = false;
+            this.colihtiyaç.StatusBarAciklama = null;
+            this.colihtiyaç.StatusBarKisayol = null;
+            this.colihtiyaç.StatusBarKisayolAciklama = null;
+            this.colihtiyaç.Visible = true;
+            this.colihtiyaç.VisibleIndex = 4;
+            // 
+            // colMalzemeİçiÜrün
+            // 
+            this.colMalzemeİçiÜrün.Caption = "Malzeme İçi Ürün";
+            this.colMalzemeİçiÜrün.FieldName = "MalzemeİçiÜrün";
+            this.colMalzemeİçiÜrün.Name = "colMalzemeİçiÜrün";
+            this.colMalzemeİçiÜrün.OptionsColumn.AllowEdit = false;
+            this.colMalzemeİçiÜrün.StatusBarAciklama = null;
+            this.colMalzemeİçiÜrün.StatusBarKisayol = null;
+            this.colMalzemeİçiÜrün.StatusBarKisayolAciklama = null;
+            this.colMalzemeİçiÜrün.Visible = true;
+            this.colMalzemeİçiÜrün.VisibleIndex = 2;
+            this.colMalzemeİçiÜrün.Width = 95;
+            // 
+            // colStok
+            // 
+            this.colStok.Caption = "Stok";
+            this.colStok.FieldName = "Stok";
+            this.colStok.Name = "colStok";
+            this.colStok.OptionsColumn.AllowEdit = false;
+            this.colStok.StatusBarAciklama = null;
+            this.colStok.StatusBarKisayol = null;
+            this.colStok.StatusBarKisayolAciklama = null;
+            this.colStok.Visible = true;
+            this.colStok.VisibleIndex = 5;
+            // 
+            // colMalzemeTipi
+            // 
+            this.colMalzemeTipi.Caption = "MalzemeTipi";
+            this.colMalzemeTipi.FieldName = "MalzemeTipi";
+            this.colMalzemeTipi.Name = "colMalzemeTipi";
+            this.colMalzemeTipi.OptionsColumn.AllowEdit = false;
+            this.colMalzemeTipi.StatusBarAciklama = null;
+            this.colMalzemeTipi.StatusBarKisayol = null;
+            this.colMalzemeTipi.StatusBarKisayolAciklama = null;
+            this.colMalzemeTipi.Visible = true;
+            this.colMalzemeTipi.VisibleIndex = 1;
+            // 
+            // colFazHazırlanış
+            // 
+            this.colFazHazırlanış.Caption = "Hazırlanışı";
+            this.colFazHazırlanış.FieldName = "Hazırlanış";
+            this.colFazHazırlanış.Name = "colFazHazırlanış";
+            this.colFazHazırlanış.OptionsColumn.AllowEdit = false;
+            this.colFazHazırlanış.StatusBarAciklama = null;
+            this.colFazHazırlanış.StatusBarKisayol = null;
+            this.colFazHazırlanış.StatusBarKisayolAciklama = null;
+            this.colFazHazırlanış.Visible = true;
+            this.colFazHazırlanış.VisibleIndex = 8;
+            // 
+            // repoCheck
+            // 
+            this.repoCheck.AutoHeight = false;
+            this.repoCheck.Name = "repoCheck";
+            this.repoCheck.ValueChecked = ((byte)(1));
+            this.repoCheck.ValueGrayed = ((byte)(2));
+            this.repoCheck.ValueUnchecked = ((byte)(0));
+            // 
+            // repoCombo
+            // 
+            this.repoCombo.AutoHeight = false;
+            this.repoCombo.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repoCombo.Name = "repoCombo";
+            this.repoCombo.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
+            // 
+            // repoimagecomboFaz
+            // 
+            this.repoimagecomboFaz.AutoHeight = false;
+            this.repoimagecomboFaz.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repoimagecomboFaz.CaseSensitiveSearch = true;
+            this.repoimagecomboFaz.Name = "repoimagecomboFaz";
+            // 
+            // repoimgaecomboAşama
+            // 
+            this.repoimgaecomboAşama.AutoHeight = false;
+            this.repoimgaecomboAşama.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repoimgaecomboAşama.Name = "repoimgaecomboAşama";
             // 
             // Root
             // 
@@ -499,7 +621,7 @@
             this.Root.OptionsTableLayoutGroup.RowDefinitions.AddRange(new DevExpress.XtraLayout.RowDefinition[] {
             rowDefinition1,
             rowDefinition2});
-            this.Root.Size = new System.Drawing.Size(952, 392);
+            this.Root.Size = new System.Drawing.Size(984, 462);
             this.Root.TextVisible = false;
             // 
             // layoutControlItem1
@@ -509,7 +631,7 @@
             this.layoutControlItem1.Control = this.myBandedGridControl1;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(932, 186);
+            this.layoutControlItem1.Size = new System.Drawing.Size(964, 221);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
@@ -517,64 +639,27 @@
             // 
             this.layoutControlItem2.AppearanceItemCaption.ForeColor = System.Drawing.Color.Maroon;
             this.layoutControlItem2.AppearanceItemCaption.Options.UseForeColor = true;
-            this.layoutControlItem2.Control = this.myGridControl2;
-            this.layoutControlItem2.Location = new System.Drawing.Point(0, 186);
+            this.layoutControlItem2.Control = this.myGridControl1;
+            this.layoutControlItem2.Location = new System.Drawing.Point(0, 221);
             this.layoutControlItem2.Name = "layoutControlItem2";
             this.layoutControlItem2.OptionsTableLayoutItem.RowIndex = 1;
-            this.layoutControlItem2.Size = new System.Drawing.Size(932, 186);
+            this.layoutControlItem2.Size = new System.Drawing.Size(964, 221);
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem2.TextVisible = false;
             // 
             // longNavigator
             // 
             this.longNavigator.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.longNavigator.Location = new System.Drawing.Point(0, 501);
+            this.longNavigator.Location = new System.Drawing.Point(0, 571);
             this.longNavigator.Name = "longNavigator";
-            this.longNavigator.Size = new System.Drawing.Size(952, 24);
+            this.longNavigator.Size = new System.Drawing.Size(984, 24);
             this.longNavigator.TabIndex = 12;
-            // 
-            // colAdet
-            // 
-            this.colAdet.Caption = "Adet";
-            this.colAdet.FieldName = "Adet";
-            this.colAdet.Name = "colAdet";
-            this.colAdet.OptionsColumn.AllowEdit = false;
-            this.colAdet.StatusBarAciklama = null;
-            this.colAdet.StatusBarKisayol = null;
-            this.colAdet.StatusBarKisayolAciklama = null;
-            this.colAdet.Visible = true;
-            // 
-            // aaaa
-            // 
-            this.aaaa.Caption = "Ürün Tanımı";
-            this.aaaa.Columns.Add(this.colId);
-            this.aaaa.Columns.Add(this.colKod);
-            this.aaaa.Columns.Add(this.colİşemriNo);
-            this.aaaa.Columns.Add(this.colŞarj);
-            this.aaaa.Columns.Add(this.colŞarjMiktarı);
-            this.aaaa.Columns.Add(this.colMarka);
-            this.aaaa.Columns.Add(this.colFirma);
-            this.aaaa.Columns.Add(this.colMalzeme);
-            this.aaaa.Columns.Add(this.colGTIN);
-            this.aaaa.Columns.Add(this.colEXP);
-            this.aaaa.Name = "aaaa";
-            this.aaaa.VisibleIndex = 0;
-            this.aaaa.Width = 1090;
-            // 
-            // gridBand1
-            // 
-            this.gridBand1.Caption = "Reçete Bilgileri";
-            this.gridBand1.Columns.Add(this.colRevizyonKodu);
-            this.gridBand1.Columns.Add(this.colAdet);
-            this.gridBand1.Name = "gridBand1";
-            this.gridBand1.VisibleIndex = 1;
-            this.gridBand1.Width = 150;
             // 
             // İşemriListBasicForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(952, 549);
+            this.ClientSize = new System.Drawing.Size(984, 619);
             this.Controls.Add(this.myDataLayoutControl1);
             this.Controls.Add(this.longNavigator);
             this.IconOptions.ShowIcon = false;
@@ -586,15 +671,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.myDataLayoutControl1)).EndInit();
             this.myDataLayoutControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.myGridControl2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.myBandedGridControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Tablo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.myGridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ReçeteTablo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repoSpin)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repoCheck)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repoCombo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repoimagecomboFaz)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repoimgaecomboAşama)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.myBandedGridControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Tablo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
@@ -607,8 +692,10 @@
 
         private myUserControls.Controls.myDataLayoutControl myDataLayoutControl1;
         private DevExpress.XtraLayout.LayoutControlGroup Root;
+        private myUserControls.Navigator.LongNavigator longNavigator;
         private myUserControls.Grid.myBandedGridControl myBandedGridControl1;
         private myUserControls.Grid.myBandedGridview Tablo;
+        private DevExpress.XtraGrid.Views.BandedGrid.GridBand aaaa;
         private myUserControls.Grid.myBandedGridColumn colId;
         private myUserControls.Grid.myBandedGridColumn colKod;
         private myUserControls.Grid.myBandedGridColumn colİşemriNo;
@@ -619,24 +706,27 @@
         private myUserControls.Grid.myBandedGridColumn colMalzeme;
         private myUserControls.Grid.myBandedGridColumn colGTIN;
         private myUserControls.Grid.myBandedGridColumn colEXP;
+        private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand1;
         private myUserControls.Grid.myBandedGridColumn colRevizyonKodu;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
-        private myUserControls.Grid.myGridControl myGridControl2;
+        private myUserControls.Grid.myBandedGridColumn colAdet;
+        private myUserControls.Grid.myGridControl myGridControl1;
         public myUserControls.Grid.myGridview ReçeteTablo;
-        private myUserControls.Grid.MyGridColumn myGridColumn3;
+        private myUserControls.Grid.MyGridColumn myGridColumn1;
         private myUserControls.Grid.MyGridColumn colMalzemeAdı;
-        private myUserControls.Grid.MyGridColumn myGridColumn4;
+        private myUserControls.Grid.MyGridColumn colMiktar;
         private DevExpress.XtraEditors.Repository.RepositoryItemSpinEdit repoSpin;
+        private myUserControls.Grid.MyGridColumn colAşamaTipi;
+        private myUserControls.Grid.MyGridColumn colReçeteBirimi;
         private myUserControls.Grid.MyGridColumn colihtiyaç;
-        private myUserControls.Grid.MyGridColumn colAşamaTipi2;
+        private myUserControls.Grid.MyGridColumn colMalzemeİçiÜrün;
+        private myUserControls.Grid.MyGridColumn colStok;
+        private myUserControls.Grid.MyGridColumn colMalzemeTipi;
         private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit repoCheck;
         private DevExpress.XtraEditors.Repository.RepositoryItemComboBox repoCombo;
         private DevExpress.XtraEditors.Repository.RepositoryItemImageComboBox repoimagecomboFaz;
         private DevExpress.XtraEditors.Repository.RepositoryItemImageComboBox repoimgaecomboAşama;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
-        private myUserControls.Navigator.LongNavigator longNavigator;
-        private DevExpress.XtraGrid.Views.BandedGrid.GridBand aaaa;
-        private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand1;
-        private myUserControls.Grid.myBandedGridColumn colAdet;
+        private myUserControls.Grid.MyGridColumn colFazHazırlanış;
     }
 }

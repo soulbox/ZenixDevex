@@ -53,19 +53,20 @@ namespace Zenix.WinUI.Forms.İşemriFormu
 
             if (entity.isNull())
             {
-                ReçeteTablo.GridControl.DataSource = null;              
+                ReçeteTablo.GridControl.DataSource = null;
                 return;
-            }          
+            }
             using (var reçetebll = new ReçeteMalzemelerBll())
             {
 
-                var list = reçetebll.List(x => x.ReçeteId == entity.ReçeteId).Cast<ReçeteMalzemeleriL>().ToList();
+                var list = reçetebll.List(x => x.ReçeteId == entity.ReçeteId).Cast<ReçeteMalzemeleriL>().Order();
                 list.ForEach(x => x.ŞarjMiktarı = entity.ŞarjMiktarı);
                 ReçeteTablo.GridControl.DataSource = list;
                 var hacimlimalzeme = list.FirstOrDefault();
                 ReçeteTablo.ViewCaption = hacimlimalzeme == null ? "Reçetesi" : $"Reçete-{hacimlimalzeme.HacimliMalzemeAdı}-Hacim:{hacimlimalzeme.Hacim}";
 
             }
+
         }
     }
 }

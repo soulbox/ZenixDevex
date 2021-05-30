@@ -80,6 +80,7 @@ namespace Zenix.WinUI.Forms.ReçeteFormu
                 BFazıHazırlanış = txtBFaz.Text,
                 CFazıHazırlanış = txtCFaz.Text,
                 DFazıHazırlanış = txtDFaz.Text,
+                EFazıHazırlanış = txtEFaz.Text,
                 Açıklama = txtAçıklama.Text,
 
             };

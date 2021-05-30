@@ -96,16 +96,18 @@ namespace Zenix.WinUI.Forms.ÜretimFormu
             var entity = Tablo.GetRow<İşemriL>();
             if (entity.isNull()) return;
 
-
+            using (var işemribll = new İşemriBll())
             using (var depobll = new DepoBll())
             using (var reçetebll = new ReçeteMalzemelerBll())
             using (var üretimbll = new ÜretimBll())
             {
                 //işemrinin reçete malzemeleri
+
                 var reçetelist = reçetebll.ReçeteList(x => x.ReçeteId == entity.ReçeteId, entity.ŞarjMiktarı);
-                var mamülidler = reçetelist.Select(a => a.MamülId).ToList();
+                var mamülidler = reçetelist.Select(a => a.MamülId).ToList();                
+                //mamülidler.Add(entity.MamülId);//ürünidde gelsin
                 //işemrinin reçetesindeki malzemelerin deposundaki liste
-                var depodakiler = depobll.MalzemeDepoList(x => x.İşemriId == entity.Id && mamülidler.Contains(x.MamülId));
+                var depodakiler = depobll.MalzemeDepoList(x => (x.İşemriId == entity.Id && mamülidler.Contains(x.MamülId)) | (x.ÜrünId.HasValue && x.ÜrünId == entity.ÜrünId));
                 var üretimdekiler = üretimbll.ÜretimList(x => x.İşemriId == entity.Id);
 
 
@@ -134,13 +136,14 @@ namespace Zenix.WinUI.Forms.ÜretimFormu
                     {
                         Id = IslemTuru.EntityInsert.IdOlustur(null),
                         Kod = depobll.YeniKodVer(),
+
                         DepoMiktar = (int)girişçıkış * (ihtiyaç - DepoMiktarMutlak),
                         DepoTipi = depoTipi,
                         MamülId = mamülid,
                         İşemriId = entity.Id,
                         KayıtTarihi = DateTime.Now,
                     } : null;
-                    if (isürün)
+                    if (isürün && depo!=null)
                         depo.ÜrünId = entity.ÜrünId;
                     return (depo, üretim);
 
@@ -158,13 +161,14 @@ namespace Zenix.WinUI.Forms.ÜretimFormu
 
                 var hacim = reçetelist.FirstOrDefault()?.Hacim;
                 var ürünihtiyaç = (float)((float)entity.ŞarjMiktarı / (float)hacim.Value * 1000);
+
                 var ürüneklenicek = KayıtGetir(entity.MamülId, DepoTipi.Üretildi, ürünihtiyaç, Çarpan.giriş, true);
                 if (ürüneklenicek.depo != null)
                     düşülecekMalzemeler.Add(ürüneklenicek.depo);
                 if (ürüneklenicek.üretim != null)
                     üretimdüşülecekmalzemeler.Add(ürüneklenicek.üretim);
 
-                if (!depobll.Insert(düşülecekMalzemeler) & !üretimbll.Insert(üretimdüşülecekmalzemeler) & !((İşemriBll)Bll).Update(entity, update))
+                if (!depobll.Insert(düşülecekMalzemeler) & !üretimbll.Insert(üretimdüşülecekmalzemeler) & !işemribll.Update(entity, update))
                     Msg.HataMesajı("Bu işemrinin Reçetedeki Malzemeleri Malzeme Depodan Düşülemedi");
                 else
                 {

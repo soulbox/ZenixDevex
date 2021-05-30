@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DevExpress.XtraGrid.GridFormatRule gridFormatRule1 = new DevExpress.XtraGrid.GridFormatRule();
+            DevExpress.XtraEditors.FormatConditionRuleExpression formatConditionRuleExpression1 = new DevExpress.XtraEditors.FormatConditionRuleExpression();
             this.myGridControl1 = new Zenix.WinUI.myUserControls.Grid.myGridControl();
             this.tablo = new Zenix.WinUI.myUserControls.Grid.myGridview();
             this.colId = new Zenix.WinUI.myUserControls.Grid.MyGridColumn();
@@ -41,9 +43,9 @@
             this.repoimgaecomboAşama = new DevExpress.XtraEditors.Repository.RepositoryItemImageComboBox();
             this.colReçeteBirimi = new Zenix.WinUI.myUserControls.Grid.MyGridColumn();
             this.colMalzemeTipi = new Zenix.WinUI.myUserControls.Grid.MyGridColumn();
+            this.colStok = new Zenix.WinUI.myUserControls.Grid.MyGridColumn();
             this.repoCheck = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
             this.repoCombo = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
-            this.colStok = new Zenix.WinUI.myUserControls.Grid.MyGridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.myGridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tablo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repoimagecomboFaz)).BeginInit();
@@ -100,6 +102,12 @@
             this.colReçeteBirimi,
             this.colMalzemeTipi,
             this.colStok});
+            gridFormatRule1.ApplyToRow = true;
+            gridFormatRule1.Name = "Kimyasal Renkler";
+            formatConditionRuleExpression1.Expression = "Contains([MalzemeTipi], \'madde\') Or Contains([MalzemeTipi], \'sans\')";
+            formatConditionRuleExpression1.PredefinedName = "Green Fill";
+            gridFormatRule1.Rule = formatConditionRuleExpression1;
+            this.tablo.FormatRules.Add(gridFormatRule1);
             this.tablo.GridControl = this.myGridControl1;
             this.tablo.Name = "tablo";
             this.tablo.OptionsFind.FindDelay = 100;
@@ -257,6 +265,20 @@
             this.colMalzemeTipi.Visible = true;
             this.colMalzemeTipi.VisibleIndex = 1;
             // 
+            // colStok
+            // 
+            this.colStok.Caption = "Stok";
+            this.colStok.DisplayFormat.FormatString = "{0:n0}";
+            this.colStok.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.colStok.FieldName = "Stok";
+            this.colStok.Name = "colStok";
+            this.colStok.OptionsColumn.AllowEdit = false;
+            this.colStok.StatusBarAciklama = null;
+            this.colStok.StatusBarKisayol = null;
+            this.colStok.StatusBarKisayolAciklama = null;
+            this.colStok.Visible = true;
+            this.colStok.VisibleIndex = 7;
+            // 
             // repoCheck
             // 
             this.repoCheck.AutoHeight = false;
@@ -272,20 +294,6 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.repoCombo.Name = "repoCombo";
             this.repoCombo.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            // 
-            // colStok
-            // 
-            this.colStok.Caption = "Stok";
-            this.colStok.DisplayFormat.FormatString = "{0:n0}";
-            this.colStok.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.colStok.FieldName = "Stok";
-            this.colStok.Name = "colStok";
-            this.colStok.OptionsColumn.AllowEdit = false;
-            this.colStok.StatusBarAciklama = null;
-            this.colStok.StatusBarKisayol = null;
-            this.colStok.StatusBarKisayolAciklama = null;
-            this.colStok.Visible = true;
-            this.colStok.VisibleIndex = 7;
             // 
             // ReçeteMalzemeleriTable
             // 

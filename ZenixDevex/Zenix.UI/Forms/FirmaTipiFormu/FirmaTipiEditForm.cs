@@ -18,6 +18,7 @@ namespace Zenix.WinUI.Forms.AmbalajTipiFormu
             this.Bll = new FirmaTipiBll(myDataLayoutControl);
             this.KartTuru = KartTuru.FirmaTipi;
             EventsLoad();
+
         }
         protected internal override void Yukle()
         {

@@ -171,7 +171,6 @@
             this.Tablo.GroupSummary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "DepoMiktar", this.colMiktar, "Stok {0:n0}")});
             this.Tablo.Name = "Tablo";
-            this.Tablo.OptionsBehavior.AutoExpandAllGroups = true;
             this.Tablo.OptionsFind.AlwaysVisible = true;
             this.Tablo.OptionsFind.FindDelay = 100;
             this.Tablo.OptionsFind.FindMode = DevExpress.XtraEditors.FindMode.Always;
@@ -233,6 +232,8 @@
             // colMiktar
             // 
             this.colMiktar.Caption = "Miktar";
+            this.colMiktar.DisplayFormat.FormatString = "{0:n0}";
+            this.colMiktar.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colMiktar.FieldName = "DepoMiktar";
             this.colMiktar.Name = "colMiktar";
             this.colMiktar.OptionsColumn.AllowEdit = false;
@@ -380,7 +381,7 @@
             // 
             // coGelen
             // 
-            this.coGelen.Caption = "Gelen";
+            this.coGelen.Caption = "Alınan";
             this.coGelen.FieldName = "Gelen";
             this.coGelen.Name = "coGelen";
             this.coGelen.OptionsColumn.AllowEdit = false;
@@ -392,7 +393,7 @@
             // 
             // colEksikFazla
             // 
-            this.colEksikFazla.Caption = "Eksik Fazla";
+            this.colEksikFazla.Caption = "Kalan";
             this.colEksikFazla.FieldName = "EksikFazla";
             this.colEksikFazla.Name = "colEksikFazla";
             this.colEksikFazla.OptionsColumn.AllowEdit = false;

@@ -34,8 +34,8 @@ namespace Zenix.UI
                     Application.EnableVisualStyles();
                     Application.SetCompatibleTextRenderingDefault(false);
                     if (HWIDEngine.isExcludeMachine)
-                        MainContext.MainForm = new AnaForm();
-                    //MainContext.MainForm = new Login();
+                        //MainContext.MainForm = new AnaForm();
+                    MainContext.MainForm = new Login();
                     else
                         MainContext.MainForm = new Login();
 

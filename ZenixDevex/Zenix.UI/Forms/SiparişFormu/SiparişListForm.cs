@@ -62,7 +62,7 @@ namespace Zenix.WinUI.Forms.SiparişFormu
             var entity = tablo.GetRow<SiparişL>();
             if (entity == null) return;
             using (var siparişbll = new SiparişÜrünleriBll())
-                TabloSipariş.GridControl.DataSource = siparişbll.List(x => x.SiparişId == entity.Id);
+                SiparişTablo .GridControl.DataSource = siparişbll.List(x => x.SiparişId == entity.Id);
         }
     }
 }

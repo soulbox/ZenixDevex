@@ -37,19 +37,7 @@ namespace Zenix.WinUI.myUserControls.UserControl.GenelEditTable
             //ShowItems = new BarItem[] { btnTümSeçimleriKaldır, btnTümünüSeç };
             EventsLoad();
         }
-        Dictionary<MalzemeTipi, int> enumOrder = new Dictionary<MalzemeTipi, int>()
-            {
-                { MalzemeTipi.Esans , 1 },
-                { MalzemeTipi.HamMadde , 2 },
-                { MalzemeTipi.Ambalaj , 3 },
-                { MalzemeTipi.Etiket , 4 },
-                { MalzemeTipi.Kapak , 5 },
-                { MalzemeTipi.Sarf , 6 },
-                { MalzemeTipi.Şişe , 7 },
-                { MalzemeTipi.Koli , 8 },
-                { MalzemeTipi.Kutu , 9 },
-                { MalzemeTipi.Kavanoz , 10 }
-            };
+
         protected internal override void Listele()
         {
             var lists = ((ReçeteMalzemelerBll)Bll).List(x => x.ReçeteId == ownerform.Id).ToBindingList<ReçeteMalzemeleriL>();
@@ -68,9 +56,7 @@ namespace Zenix.WinUI.myUserControls.UserControl.GenelEditTable
         void SortList()
         {
             var source = tablo.DataController.ListSource.Cast<ReçeteMalzemeleriL>();
-
-            var newlist = source.OrderBy(x => enumOrder[x.MalzemeTipi]).ThenBy(x => enumOrder[x.MalzemeTipi]).ToList();
-            tablo.GridControl.DataSource = newlist.ToBindingList<ReçeteMalzemeleriL>();
+            tablo.GridControl.DataSource =source.Order().ToBindingList<ReçeteMalzemeleriL>();
         }
         protected override void HareketEkle()
         {

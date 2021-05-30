@@ -15,5 +15,7 @@ namespace Zenix.Common.Enums
         CFazı,
         [Description("D Fazı")]
         DFazı,
+        [Description("E Fazı")]
+        EFazı,
     }
 }

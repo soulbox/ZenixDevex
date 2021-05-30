@@ -91,7 +91,7 @@ namespace Zenix.WinUI.Forms.İşemriFormu
             {
                 using (var reçetebll = new ReçeteMalzemelerBll())
                 {
-                    var list = reçetebll.List(x => x.ReçeteId == btn.Id).ToBindingList<ReçeteMalzemeleriL>();
+                    var list = reçetebll.List(x => x.ReçeteId == btn.Id).Cast<ReçeteMalzemeleriL>().Order().ToBindingList<ReçeteMalzemeleriL>();
                     ReçeteTablo.GridControl.DataSource = list;
                     var hacimlimalzeme = list.FirstOrDefault();
 

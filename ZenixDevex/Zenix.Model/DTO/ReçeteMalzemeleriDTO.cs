@@ -17,7 +17,7 @@ namespace Zenix.Model.DTO
 
     [NotMapped]
 
-    public class ReçeteMalzemeleriL : ReçeteMalzemeler, IBaseHaraketEntity, IMamül, IPaket
+    public class ReçeteMalzemeleriL : ReçeteMalzemeler, IBaseHaraketEntity, IMamül, IPaket,IBaseReçete 
     {
         public string HacimliMalzemeAdı { get; set; }
         public BirimTipi HacimliMalzemeBirimi { get; set; }
@@ -30,6 +30,16 @@ namespace Zenix.Model.DTO
         public int Hacim { get; set; }
         public float KimyasalOran { get; set; }
         //
+        public string Açıklama { get; set; }
+        public string Hazırlanış { get => FazTipi == FazTipi.AFazı ? AFazıHazırlanış : FazTipi == FazTipi.BFazı ? BFazıHazırlanış : FazTipi == FazTipi.CFazı ? CFazıHazırlanış : FazTipi == FazTipi.EFazı ? EFazıHazırlanış : default; }
+        public string AFazıHazırlanış { get; set; }
+        public string BFazıHazırlanış { get; set; }
+        public string CFazıHazırlanış { get; set; }
+        public string DFazıHazırlanış { get; set; }
+        public string EFazıHazırlanış { get; set; }
+        public long RevizyonId { get; set; }
+
+
         public int Kutu { get; set; }
         public int Stand { get; set; }
         public int Koli { get; set; }
