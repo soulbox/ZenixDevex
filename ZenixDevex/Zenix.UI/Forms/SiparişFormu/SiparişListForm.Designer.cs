@@ -51,9 +51,9 @@
             this.myGridColumn2 = new Zenix.WinUI.myUserControls.Grid.MyGridColumn();
             this.repositoryItemTextEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             this.colParaBirim = new Zenix.WinUI.myUserControls.Grid.MyGridColumn();
-            this.repoParabirimi = new DevExpress.XtraEditors.Repository.RepositoryItemImageComboBox();
             this.colBirimFiyat = new Zenix.WinUI.myUserControls.Grid.MyGridColumn();
             this.colTutar = new Zenix.WinUI.myUserControls.Grid.MyGridColumn();
+            this.repoParabirimi = new DevExpress.XtraEditors.Repository.RepositoryItemImageComboBox();
             this.Grid = new Zenix.WinUI.myUserControls.Grid.myGridControl();
             this.Tablo = new Zenix.WinUI.myUserControls.Grid.myGridview();
             this.colId = new Zenix.WinUI.myUserControls.Grid.MyGridColumn();
@@ -189,10 +189,11 @@
             this.SiparişTablo.OptionsView.HeaderFilterButtonShowMode = DevExpress.XtraEditors.Controls.FilterButtonShowMode.Button;
             this.SiparişTablo.OptionsView.RowAutoHeight = true;
             this.SiparişTablo.OptionsView.ShowGroupPanel = false;
+            this.SiparişTablo.OptionsView.ShowViewCaption = true;
             this.SiparişTablo.StatusBarAciklama = "Malzeme Kartları";
             this.SiparişTablo.StatusBarKisayol = "Shift+Insert";
             this.SiparişTablo.StatusBarKisayolAciklama = "Malzeme Kartı Ekle";
-            this.SiparişTablo.ViewCaption = "Ürünler";
+            this.SiparişTablo.ViewCaption = "Sipariş Detayı";
             // 
             // myGridColumn1
             // 
@@ -230,7 +231,7 @@
             this.colKutu.StatusBarKisayol = null;
             this.colKutu.StatusBarKisayolAciklama = null;
             this.colKutu.Visible = true;
-            this.colKutu.VisibleIndex = 1;
+            this.colKutu.VisibleIndex = 2;
             // 
             // colkoliadedi
             // 
@@ -243,7 +244,7 @@
             this.colkoliadedi.StatusBarKisayol = null;
             this.colkoliadedi.StatusBarKisayolAciklama = null;
             this.colkoliadedi.Visible = true;
-            this.colkoliadedi.VisibleIndex = 3;
+            this.colkoliadedi.VisibleIndex = 4;
             // 
             // repoSpin
             // 
@@ -267,7 +268,7 @@
             this.colKoli.StatusBarKisayol = null;
             this.colKoli.StatusBarKisayolAciklama = null;
             this.colKoli.Visible = true;
-            this.colKoli.VisibleIndex = 2;
+            this.colKoli.VisibleIndex = 3;
             // 
             // colMiktar
             // 
@@ -283,12 +284,11 @@
             this.colMiktar.StatusBarKisayol = null;
             this.colMiktar.StatusBarKisayolAciklama = null;
             this.colMiktar.Visible = true;
-            this.colMiktar.VisibleIndex = 4;
+            this.colMiktar.VisibleIndex = 5;
             // 
             // colBirim
             // 
             this.colBirim.Caption = "Birim";
-            this.colBirim.ColumnEdit = this.repoimagecomboBirim;
             this.colBirim.FieldName = "BirimTipi";
             this.colBirim.Name = "colBirim";
             this.colBirim.OptionsColumn.AllowEdit = false;
@@ -299,7 +299,7 @@
             this.colBirim.StatusBarKisayol = null;
             this.colBirim.StatusBarKisayolAciklama = null;
             this.colBirim.Visible = true;
-            this.colBirim.VisibleIndex = 5;
+            this.colBirim.VisibleIndex = 7;
             // 
             // repoimagecomboBirim
             // 
@@ -320,7 +320,7 @@
             this.colTeslimat.StatusBarKisayol = null;
             this.colTeslimat.StatusBarKisayolAciklama = null;
             this.colTeslimat.Visible = true;
-            this.colTeslimat.VisibleIndex = 8;
+            this.colTeslimat.VisibleIndex = 1;
             this.colTeslimat.Width = 51;
             // 
             // repoCheck
@@ -351,7 +351,7 @@
             this.myGridColumn2.StatusBarKisayol = null;
             this.myGridColumn2.StatusBarKisayolAciklama = null;
             this.myGridColumn2.Visible = true;
-            this.myGridColumn2.VisibleIndex = 7;
+            this.myGridColumn2.VisibleIndex = 8;
             this.myGridColumn2.Width = 100;
             // 
             // repositoryItemTextEdit1
@@ -370,13 +370,6 @@
             this.colParaBirim.StatusBarKisayolAciklama = null;
             this.colParaBirim.Visible = true;
             this.colParaBirim.VisibleIndex = 10;
-            // 
-            // repoParabirimi
-            // 
-            this.repoParabirimi.AutoHeight = false;
-            this.repoParabirimi.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repoParabirimi.Name = "repoParabirimi";
             // 
             // colBirimFiyat
             // 
@@ -404,6 +397,13 @@
             this.colTutar.StatusBarKisayolAciklama = null;
             this.colTutar.Visible = true;
             this.colTutar.VisibleIndex = 11;
+            // 
+            // repoParabirimi
+            // 
+            this.repoParabirimi.AutoHeight = false;
+            this.repoParabirimi.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repoParabirimi.Name = "repoParabirimi";
             // 
             // Grid
             // 
@@ -458,9 +458,11 @@
             this.Tablo.OptionsView.RowAutoHeight = true;
             this.Tablo.OptionsView.ShowAutoFilterRow = true;
             this.Tablo.OptionsView.ShowGroupPanel = false;
+            this.Tablo.OptionsView.ShowViewCaption = true;
             this.Tablo.StatusBarAciklama = null;
             this.Tablo.StatusBarKisayol = null;
             this.Tablo.StatusBarKisayolAciklama = null;
+            this.Tablo.ViewCaption = "Sipariş Formları";
             // 
             // colId
             // 

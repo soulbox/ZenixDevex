@@ -62,7 +62,7 @@ namespace Zenix.Model.DTO
         public string BirimYükseklik { get; }
         public string BirimAlan { get; }
         public string BirimAğırlık { get; }
-        public string ÜrünAdı { get => $"{FirmaAdi} - {MarkaAdı } - {MamülAdı }"; }
+        public string ÜrünAdı { get => $"{MarkaAdı } - {MamülAdı }"; }
         public string SiparişFirmaAdı { get; set; }
         public string SiparişKod { get; set; }
         public string SiparişKodFirma { get => $"{SiparişKod}-{ SiparişFirmaAdı?.ToUpper()}"; }

@@ -34,10 +34,10 @@
             DevExpress.XtraLayout.ColumnDefinition columnDefinition1 = new DevExpress.XtraLayout.ColumnDefinition();
             DevExpress.XtraLayout.RowDefinition rowDefinition1 = new DevExpress.XtraLayout.RowDefinition();
             DevExpress.XtraLayout.RowDefinition rowDefinition2 = new DevExpress.XtraLayout.RowDefinition();
+            this.colihtiyaç = new Zenix.WinUI.myUserControls.Grid.MyGridColumn();
             this.myDataLayoutControl1 = new Zenix.WinUI.myUserControls.Controls.myDataLayoutControl();
             this.myBandedGridControl1 = new Zenix.WinUI.myUserControls.Grid.myBandedGridControl();
             this.Tablo = new Zenix.WinUI.myUserControls.Grid.myBandedGridview();
-            this.aaaa = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
             this.colId = new Zenix.WinUI.myUserControls.Grid.myBandedGridColumn();
             this.colKod = new Zenix.WinUI.myUserControls.Grid.myBandedGridColumn();
             this.colİşemriNo = new Zenix.WinUI.myUserControls.Grid.myBandedGridColumn();
@@ -48,7 +48,6 @@
             this.colMalzeme = new Zenix.WinUI.myUserControls.Grid.myBandedGridColumn();
             this.colGTIN = new Zenix.WinUI.myUserControls.Grid.myBandedGridColumn();
             this.colEXP = new Zenix.WinUI.myUserControls.Grid.myBandedGridColumn();
-            this.gridBand1 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
             this.colRevizyonKodu = new Zenix.WinUI.myUserControls.Grid.myBandedGridColumn();
             this.colAdet = new Zenix.WinUI.myUserControls.Grid.myBandedGridColumn();
             this.myGridControl1 = new Zenix.WinUI.myUserControls.Grid.myGridControl();
@@ -59,7 +58,6 @@
             this.repoSpin = new DevExpress.XtraEditors.Repository.RepositoryItemSpinEdit();
             this.colAşamaTipi = new Zenix.WinUI.myUserControls.Grid.MyGridColumn();
             this.colReçeteBirimi = new Zenix.WinUI.myUserControls.Grid.MyGridColumn();
-            this.colihtiyaç = new Zenix.WinUI.myUserControls.Grid.MyGridColumn();
             this.colMalzemeİçiÜrün = new Zenix.WinUI.myUserControls.Grid.MyGridColumn();
             this.colStok = new Zenix.WinUI.myUserControls.Grid.MyGridColumn();
             this.colMalzemeTipi = new Zenix.WinUI.myUserControls.Grid.MyGridColumn();
@@ -72,6 +70,9 @@
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.longNavigator = new Zenix.WinUI.myUserControls.Navigator.LongNavigator();
+            this.colPD = new Zenix.WinUI.myUserControls.Grid.myBandedGridColumn();
+            this.aaaa = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
+            this.gridBand1 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.myDataLayoutControl1)).BeginInit();
             this.myDataLayoutControl1.SuspendLayout();
@@ -111,6 +112,18 @@
             // 
             this.btnAşamalar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAşamalar.ImageOptions.Image")));
             this.btnAşamalar.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnAşamalar.ImageOptions.LargeImage")));
+            // 
+            // colihtiyaç
+            // 
+            this.colihtiyaç.Caption = "İhtiyaç";
+            this.colihtiyaç.FieldName = "ihtiyaç";
+            this.colihtiyaç.Name = "colihtiyaç";
+            this.colihtiyaç.OptionsColumn.AllowEdit = false;
+            this.colihtiyaç.StatusBarAciklama = null;
+            this.colihtiyaç.StatusBarKisayol = null;
+            this.colihtiyaç.StatusBarKisayolAciklama = null;
+            this.colihtiyaç.Visible = true;
+            this.colihtiyaç.VisibleIndex = 4;
             // 
             // myDataLayoutControl1
             // 
@@ -172,7 +185,8 @@
             this.colŞarj,
             this.colEXP,
             this.colŞarjMiktarı,
-            this.colAdet});
+            this.colAdet,
+            this.colPD});
             this.Tablo.GridControl = this.myBandedGridControl1;
             this.Tablo.Name = "Tablo";
             this.Tablo.OptionsFind.FindDelay = 100;
@@ -194,23 +208,6 @@
             this.Tablo.StatusBarAciklama = null;
             this.Tablo.StatusBarKisayol = null;
             this.Tablo.StatusBarKisayolAciklama = null;
-            // 
-            // aaaa
-            // 
-            this.aaaa.Caption = "Ürün Tanımı";
-            this.aaaa.Columns.Add(this.colId);
-            this.aaaa.Columns.Add(this.colKod);
-            this.aaaa.Columns.Add(this.colİşemriNo);
-            this.aaaa.Columns.Add(this.colŞarj);
-            this.aaaa.Columns.Add(this.colŞarjMiktarı);
-            this.aaaa.Columns.Add(this.colMarka);
-            this.aaaa.Columns.Add(this.colFirma);
-            this.aaaa.Columns.Add(this.colMalzeme);
-            this.aaaa.Columns.Add(this.colGTIN);
-            this.aaaa.Columns.Add(this.colEXP);
-            this.aaaa.Name = "aaaa";
-            this.aaaa.VisibleIndex = 0;
-            this.aaaa.Width = 1090;
             // 
             // colId
             // 
@@ -319,7 +316,7 @@
             // 
             // colEXP
             // 
-            this.colEXP.Caption = "SKT";
+            this.colEXP.Caption = "EXP";
             this.colEXP.FieldName = "EXP";
             this.colEXP.Name = "colEXP";
             this.colEXP.OptionsColumn.AllowEdit = false;
@@ -328,18 +325,9 @@
             this.colEXP.StatusBarKisayolAciklama = null;
             this.colEXP.Visible = true;
             // 
-            // gridBand1
-            // 
-            this.gridBand1.Caption = "Reçete Bilgileri";
-            this.gridBand1.Columns.Add(this.colRevizyonKodu);
-            this.gridBand1.Columns.Add(this.colAdet);
-            this.gridBand1.Name = "gridBand1";
-            this.gridBand1.VisibleIndex = 1;
-            this.gridBand1.Width = 150;
-            // 
             // colRevizyonKodu
             // 
-            this.colRevizyonKodu.Caption = "Revizyon Kodu";
+            this.colRevizyonKodu.Caption = "Rev Kod";
             this.colRevizyonKodu.FieldName = "RevKodu";
             this.colRevizyonKodu.Name = "colRevizyonKodu";
             this.colRevizyonKodu.OptionsColumn.AllowEdit = false;
@@ -509,18 +497,6 @@
             this.colReçeteBirimi.Visible = true;
             this.colReçeteBirimi.VisibleIndex = 6;
             // 
-            // colihtiyaç
-            // 
-            this.colihtiyaç.Caption = "İhtiyaç";
-            this.colihtiyaç.FieldName = "ihtiyaç";
-            this.colihtiyaç.Name = "colihtiyaç";
-            this.colihtiyaç.OptionsColumn.AllowEdit = false;
-            this.colihtiyaç.StatusBarAciklama = null;
-            this.colihtiyaç.StatusBarKisayol = null;
-            this.colihtiyaç.StatusBarKisayolAciklama = null;
-            this.colihtiyaç.Visible = true;
-            this.colihtiyaç.VisibleIndex = 4;
-            // 
             // colMalzemeİçiÜrün
             // 
             this.colMalzemeİçiÜrün.Caption = "Malzeme İçi Ürün";
@@ -655,6 +631,44 @@
             this.longNavigator.Size = new System.Drawing.Size(984, 24);
             this.longNavigator.TabIndex = 12;
             // 
+            // colPD
+            // 
+            this.colPD.Caption = "PD";
+            this.colPD.FieldName = "PD";
+            this.colPD.Name = "colPD";
+            this.colPD.OptionsColumn.AllowEdit = false;
+            this.colPD.StatusBarAciklama = null;
+            this.colPD.StatusBarKisayol = null;
+            this.colPD.StatusBarKisayolAciklama = null;
+            this.colPD.Visible = true;
+            // 
+            // aaaa
+            // 
+            this.aaaa.Caption = "Ürün Tanımı";
+            this.aaaa.Columns.Add(this.colId);
+            this.aaaa.Columns.Add(this.colKod);
+            this.aaaa.Columns.Add(this.colİşemriNo);
+            this.aaaa.Columns.Add(this.colŞarj);
+            this.aaaa.Columns.Add(this.colŞarjMiktarı);
+            this.aaaa.Columns.Add(this.colAdet);
+            this.aaaa.Columns.Add(this.colMarka);
+            this.aaaa.Columns.Add(this.colMalzeme);
+            this.aaaa.Columns.Add(this.colFirma);
+            this.aaaa.Columns.Add(this.colPD);
+            this.aaaa.Columns.Add(this.colEXP);
+            this.aaaa.Columns.Add(this.colGTIN);
+            this.aaaa.Name = "aaaa";
+            this.aaaa.VisibleIndex = 0;
+            this.aaaa.Width = 1240;
+            // 
+            // gridBand1
+            // 
+            this.gridBand1.Caption = "Reçete Bilgileri";
+            this.gridBand1.Columns.Add(this.colRevizyonKodu);
+            this.gridBand1.Name = "gridBand1";
+            this.gridBand1.VisibleIndex = 1;
+            this.gridBand1.Width = 75;
+            // 
             // İşemriListBasicForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -695,7 +709,6 @@
         private myUserControls.Navigator.LongNavigator longNavigator;
         private myUserControls.Grid.myBandedGridControl myBandedGridControl1;
         private myUserControls.Grid.myBandedGridview Tablo;
-        private DevExpress.XtraGrid.Views.BandedGrid.GridBand aaaa;
         private myUserControls.Grid.myBandedGridColumn colId;
         private myUserControls.Grid.myBandedGridColumn colKod;
         private myUserControls.Grid.myBandedGridColumn colİşemriNo;
@@ -706,7 +719,6 @@
         private myUserControls.Grid.myBandedGridColumn colMalzeme;
         private myUserControls.Grid.myBandedGridColumn colGTIN;
         private myUserControls.Grid.myBandedGridColumn colEXP;
-        private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand1;
         private myUserControls.Grid.myBandedGridColumn colRevizyonKodu;
         private myUserControls.Grid.myBandedGridColumn colAdet;
         private myUserControls.Grid.myGridControl myGridControl1;
@@ -728,5 +740,8 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
         private myUserControls.Grid.MyGridColumn colFazHazırlanış;
+        private DevExpress.XtraGrid.Views.BandedGrid.GridBand aaaa;
+        private myUserControls.Grid.myBandedGridColumn colPD;
+        private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand1;
     }
 }

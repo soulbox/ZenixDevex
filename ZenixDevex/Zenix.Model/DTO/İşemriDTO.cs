@@ -80,6 +80,8 @@ namespace Zenix.Model.DTO
         [NotMapped]
         public string EXP { get => $"EXP:{SKT:MMyyyy}"; }
         [NotMapped]
+        public string PD { get => $"PD:{işemriTarih:MM/yyyy}-{ŞarjNo:00}"; }
+        [NotMapped]
         public string işemriNo { get => $"{işemriTarih:ddMM}{ŞarjNo:00}{işemriTarih:yy}"; }
 
         public int Adet { get =>(int)((float)ŞarjMiktarı / (float)Hacim * 1000); }

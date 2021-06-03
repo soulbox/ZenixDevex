@@ -46,7 +46,7 @@ tr:nth-child(even) {
 </head>
 <body>
 
-<h2>Müşteri Takip Programına Giriş İçin Gereken Kullanıcı Adı ve Şifre Bilgileri Aşağıdadır</h2>
+<h2>Zenix ERP Modülü  Giriş İçin Gereken Kullanıcı Adı ve Şifre Bilgileri Aşağıdadır</h2>
 <table>
 	<tr>
 		<th>Bilgiler</th>

@@ -30,7 +30,7 @@ namespace Zenix.WinUI.Forms.ReçeteFormu
             this.KartTuru = Common.Enums.KartTuru.Reçete;
             this.FormShow = new ShowEditForms<ReçeteEditForm>();
             this.Navigator = longNavigator.controlNavigator;
-            Text = "Reçete Kartları";
+            Text = "Reçeteler";
             Tablo.ViewCaption = Text;
 
         }

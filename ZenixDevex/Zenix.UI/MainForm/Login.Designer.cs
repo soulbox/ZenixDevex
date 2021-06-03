@@ -39,6 +39,7 @@
             DevExpress.XtraLayout.RowDefinition rowDefinition6 = new DevExpress.XtraLayout.RowDefinition();
             DevExpress.XtraLayout.RowDefinition rowDefinition7 = new DevExpress.XtraLayout.RowDefinition();
             this.myDataLayoutControl1 = new Zenix.WinUI.myUserControls.Controls.myDataLayoutControl();
+            this.btnUnuttum = new DevExpress.XtraEditors.HyperlinkLabelControl();
             this.chckHatırla = new Zenix.WinUI.myUserControls.Controls.myCheckEdit();
             this.txtPassword = new Zenix.WinUI.myUserControls.Controls.myTextEdit();
             this.txtusername = new Zenix.WinUI.myUserControls.Controls.myTextEdit();
@@ -49,7 +50,6 @@
             this.laysif = new DevExpress.XtraLayout.LayoutControlItem();
             this.lblVers = new DevExpress.XtraLayout.SimpleLabelItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.btnUnuttum = new DevExpress.XtraEditors.HyperlinkLabelControl();
             this.layout = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.myDataLayoutControl1)).BeginInit();
             this.myDataLayoutControl1.SuspendLayout();
@@ -82,6 +82,18 @@
             this.myDataLayoutControl1.TabIndex = 0;
             this.myDataLayoutControl1.Text = "myDataLayoutControl1";
             // 
+            // btnUnuttum
+            // 
+            this.btnUnuttum.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            this.btnUnuttum.Location = new System.Drawing.Point(290, 60);
+            this.btnUnuttum.Name = "btnUnuttum";
+            this.btnUnuttum.Size = new System.Drawing.Size(82, 20);
+            this.btnUnuttum.StyleController = this.myDataLayoutControl1;
+            this.btnUnuttum.TabIndex = 4;
+            this.btnUnuttum.Text = "Şifremi Unuttum";
+            this.btnUnuttum.UseMnemonic = false;
+            this.btnUnuttum.Click += new System.EventHandler(this.btnUnuttum_Click);
+            // 
             // chckHatırla
             // 
             this.chckHatırla.EnterMoveNextControl = true;
@@ -93,7 +105,7 @@
             this.chckHatırla.Size = new System.Drawing.Size(246, 20);
             this.chckHatırla.StatusBarAciklama = null;
             this.chckHatırla.StyleController = this.myDataLayoutControl1;
-            this.chckHatırla.TabIndex = 2;
+            this.chckHatırla.TabIndex = 3;
             // 
             // txtPassword
             // 
@@ -130,7 +142,7 @@
             this.btnGiriş.Name = "btnGiriş";
             this.btnGiriş.Size = new System.Drawing.Size(246, 20);
             this.btnGiriş.StyleController = this.myDataLayoutControl1;
-            this.btnGiriş.TabIndex = 3;
+            this.btnGiriş.TabIndex = 2;
             this.btnGiriş.Text = "Giriş";
             this.btnGiriş.Click += new System.EventHandler(this.btnGiriş_Click);
             // 
@@ -246,18 +258,6 @@
             this.layoutControlItem2.Size = new System.Drawing.Size(250, 24);
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem2.TextVisible = false;
-            // 
-            // btnUnuttum
-            // 
-            this.btnUnuttum.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
-            this.btnUnuttum.Location = new System.Drawing.Point(290, 60);
-            this.btnUnuttum.Name = "btnUnuttum";
-            this.btnUnuttum.Size = new System.Drawing.Size(82, 20);
-            this.btnUnuttum.StyleController = this.myDataLayoutControl1;
-            this.btnUnuttum.TabIndex = 4;
-            this.btnUnuttum.Text = "Şifremi Unuttum";
-            this.btnUnuttum.UseMnemonic = false;
-            this.btnUnuttum.Click += new System.EventHandler(this.btnUnuttum_Click);
             // 
             // layout
             // 

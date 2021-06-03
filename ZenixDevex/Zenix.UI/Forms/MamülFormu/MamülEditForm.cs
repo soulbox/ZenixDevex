@@ -29,7 +29,8 @@ namespace Zenix.WinUI.Forms.MamülFormu
 
             cmbMalzemeTipi.ToData<MalzemeTipi>(x => !x.Description.Contains("Ürün"));
             cmbSarfTipi.ToData<SarfTipi>();
-            LayoutGizleGoster(!isÜrün, layMalzemetipi);
+            LayoutGizleGoster(!isÜrün, layMalzemetipi, layticari);
+
 
             EventsLoad();
 

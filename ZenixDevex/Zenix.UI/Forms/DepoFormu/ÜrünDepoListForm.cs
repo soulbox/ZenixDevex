@@ -54,7 +54,7 @@ namespace Zenix.WinUI.Forms.DepoFormu
             var yeni = new Depo
             {
                 Id = IslemTuru.EntityInsert.IdOlustur(null),
-                DepoMiktar =-1* Math.Abs(entity.EksikFazla),
+                DepoMiktar = -1 * Math.Abs(entity.EksikFazla),
                 DepoTipi = DepoTipi.Sevkiyat,
                 Kod = ((DepoBll)Bll).YeniKodVer(),
                 MamülId = entity.MamülId,
@@ -92,7 +92,7 @@ namespace Zenix.WinUI.Forms.DepoFormu
                 Kod = ((DepoBll)Bll).YeniKodVer(),
                 MamülId = x.MamülId,
                 SiparişId = x.SiparişId,
-                ÜrünId=x.ÜrünId,
+                ÜrünId = x.ÜrünId,
             }).Cast<BaseEntity>().ToList();
             if (!((DepoBll)Bll).Insert(eklenicekler))
                 Msg.HataMesajı("Depoya Eklenemedi");
@@ -147,9 +147,11 @@ namespace Zenix.WinUI.Forms.DepoFormu
             if (e.Button != MouseButtons.Right) return;
             var entity = TabloSipariş.GetRow<SiparişÜrünleriL>();
             if (entity == null) return;
-            var eksikvarmı = entity.EksikFazla < 0;
+            var eksikvarmı = entity.EksikFazla < 0 & Math.Abs(entity.EksikFazla) <= entity.Stok;
             ShowHideButtons(eksikvarmı, btnSevk, btnSubSevkItem);
-            txtBirKısımSevk.MaxValue = eksikvarmı ? (decimal)(-1 * entity.EksikFazla) : 0;
+            //txtBirKısımSevk.MaxValue = eksikvarmı ? (decimal)(-1 * entity.EksikFazla) : 0;
+            txtBirKısımSevk.MaxValue = eksikvarmı ? (decimal)(entity.Stok) : 0;
+
             txtBirKısımSevk.MinValue = eksikvarmı ? 1 : 0;
             barbirkısmıSevk.EditValue = Math.Abs(entity.EksikFazla);
             var ListeEksikvarmı = TabloSipariş.DataController.ListSource.Cast<SiparişÜrünleriL>()
