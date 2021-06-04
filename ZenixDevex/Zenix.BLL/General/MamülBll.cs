@@ -12,7 +12,7 @@ using Zenix.Model.Entities;
 using Zenix.Model.Entities.Base;
 namespace Zenix.BLL.General
 {
-    public class MamülBll : BaseGenelBLL<Mamül>, IBaseGenelBll, IBaseCommonBLL
+    public class MamülBll : BaseGenelBLL<Mamül>,  IBaseCommonBLL
     {
         public MamülBll() : base(KartTuru.Mamül) { }
 

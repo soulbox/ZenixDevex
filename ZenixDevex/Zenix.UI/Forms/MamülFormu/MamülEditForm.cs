@@ -44,7 +44,7 @@ namespace Zenix.WinUI.Forms.MamülFormu
             NesneyiKontrollereBagla();
             if (BaseIslemTuru != Common.Enums.IslemTuru.EntityInsert) return;
             Id = BaseIslemTuru.IdOlustur(OldEntity);
-            txtKod.Text = ((MamülBll)Bll).YeniKodVer();
+            txtKod.Text = ((MamülBll)Bll).YeniKodVer(x => x.MalzemeTipi == ((IMamül)OldEntity).MalzemeTipi);
             if (Ticarimamül == null)
                 txtMamülAdı.Focus();
             else
@@ -88,31 +88,9 @@ namespace Zenix.WinUI.Forms.MamülFormu
         protected override void EditValueChanged(object sender, EventArgs e)
         {
             var maltipi = cmbMalzemeTipi.Text.GetEnum<MalzemeTipi>();
-            bool kimyasal = maltipi == MalzemeTipi.HamMadde | maltipi == MalzemeTipi.Esans;
-            void changekod()
-            {
-                var indexchar = txtKod.Text.IndexOf('-');
-                if (indexchar < 0) return;
-                var prefix = txtKod.Text.Substring(0, indexchar);
-                var prefixchange = prefix;
-                if (kimyasal)
-                    prefixchange = "HM";
-                else if (isÜrün)
-                    prefixchange = "Ürün";
-                else
-                    prefixchange = "AMB";
-                var val = txtKod.Text.Replace(prefix, prefixchange);
-                if (txtKod.Text != val)
-                    txtKod.Text = txtKod.Text.Replace(prefix, prefixchange);
-            }
-            changekod();
-            //if (CurrentEntity!=null && Ticarimamül != null && sender == txtKod && !string.IsNullOrEmpty(txtKod.Text) && maltipi != ((Mamül)CurrentEntity).MalzemeTipi)
-            //{
+            if (sender == cmbMalzemeTipi)
+                txtKod.Text = ((MamülBll)Bll).YeniKodVer(x=>x.MalzemeTipi== maltipi);
 
-
-            //    txtKod.Text = ((MamülBll)Bll).YeniKodVer(x => kimyasal);
-            //    changekod();
-            //}
             base.EditValueChanged(sender, e);
         }
         protected override void GuncelNesneOluştur()
@@ -156,6 +134,16 @@ namespace Zenix.WinUI.Forms.MamülFormu
                 else if (sender == txtAmbalajMaddesi)
                     sec.Seç(txtAmbalajMaddesi);
             }
+        }
+        protected override bool EntityInsert()
+        {
+            return ((MamülBll)Bll).Insert(CurrentEntity, x => x.Kod == CurrentEntity.Kod && x.MalzemeTipi == ((IMamül)CurrentEntity).MalzemeTipi);
+
+        }
+        protected override bool EntityUpdate()
+        {
+            return ((MamülBll)Bll).Insert(CurrentEntity, x => x.Kod == CurrentEntity.Kod && x.MalzemeTipi == ((IMamül)CurrentEntity).MalzemeTipi);
+
         }
     }
 

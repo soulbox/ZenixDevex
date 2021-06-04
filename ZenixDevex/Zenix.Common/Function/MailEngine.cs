@@ -19,6 +19,7 @@ namespace Zenix.Common.Function
         const string mypass = "63792958";
         const string myhost = "smtp.gmail.com";
         const int myport = 587;
+        const string Description = "Zenix ERP Modülü";
 
         static string mailbody = @"<html>
 <head>
@@ -46,7 +47,7 @@ tr:nth-child(even) {
 </head>
 <body>
 
-<h2>Zenix ERP Modülü  Giriş İçin Gereken Kullanıcı Adı ve Şifre Bilgileri Aşağıdadır</h2>
+<h2>{Description}  Giriş İçin Gereken Kullanıcı Adı ve Şifre Bilgileri Aşağıdadır</h2>
 <table>
 	<tr>
 		<th>Bilgiler</th>
@@ -80,14 +81,16 @@ tr:nth-child(even) {
             {
                 var message = new MailMessage
                 {
-                    From = new MailAddress(mymail, "Müşteri Takip Programı"),
+                    From = new MailAddress(mymail, $"{Description} Programı"),
                     To = { email },
-                    Subject = "Müşteri Takip Programı Kullanıcı Bilgileri",
+                    Subject = $"{Description} Programı Kullanıcı Bilgileri",
                     IsBodyHtml = true,
                     Body = mailbody
                     .Replace("{Rol}", rol)
                     .Replace("{KullanıcıAdı}", kullanıcıAdı)
                     .Replace("{Şifre}", secureŞifre.ConvertToUnsecureString())
+                    .Replace("{Description}", Description)
+
 
                 };
                 try

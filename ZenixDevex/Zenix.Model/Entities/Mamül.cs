@@ -10,8 +10,6 @@ using Zenix.Common.Enums;
 using Zenix.Common.Function;
 using Zenix.Model.Attributes;
 using Zenix.Model.Entities.Base;
-
-
 namespace Zenix.Model.Entities
 {
     public interface IMamülAdı

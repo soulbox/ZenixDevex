@@ -41,8 +41,8 @@ namespace Zenix.BLL.Base
                     {
                         if (prop.Attribute == null) continue;
                         if ((ıslemTuru == IslemTuru.EntityInsert || OldEntity.Kod == CurrentEntity.Kod) && ıslemTuru == IslemTuru.EntityUpdate) continue;
-                        if ( uow.Rep.Count(filter) < 1) continue;
-                        if (ShowMessageOnValidation )
+                        if (uow.Rep.Count(filter) < 1) continue;
+                        if (ShowMessageOnValidation)
                             Msg.MukerrerKayitHataMesajı(prop.Attribute.Description);
 
                         return prop.Attribute.ControlName;
@@ -159,6 +159,12 @@ namespace Zenix.BLL.Base
         {
             GeneralFunctions.CreateUnitOfWork<TEntity, TContext>(ref uow);
             return uow.Rep.YeniKodVer(kayitTuru, filter, where, isyeni);
+
+        }
+        protected string BaseYeniKodVer(KartTuru kayitTuru, MalzemeTipi malzemeTipi, Expression<Func<TEntity, string>> filter, Expression<Func<TEntity, bool>> where = null)
+        {
+            GeneralFunctions.CreateUnitOfWork<TEntity, TContext>(ref uow);
+            return uow.Rep.YeniKodVer(kayitTuru, malzemeTipi, filter, where);
 
         }
         public int ExecuteCommand(string cmd)

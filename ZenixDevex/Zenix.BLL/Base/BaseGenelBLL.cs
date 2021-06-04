@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Zenix.Common.Enums;
 using Zenix.Data.Context;
+using Zenix.Model.Entities;
 using Zenix.Model.Entities.Base;
 
 namespace Zenix.BLL.Base
@@ -77,9 +78,10 @@ namespace Zenix.BLL.Base
         {
             return BaseYeniKodVer(KartTuru, x => x.Kod, filter);
         }
-        //public string YeniKodVer()
-        //{
-        //    return BaseYeniKodVer(KartTuru, x => x.Kod);
-        //}
+
+        public string YeniKodVer(MalzemeTipi malzemeTipi, Expression<Func<TEntity, bool>> filter)
+        {
+            return BaseYeniKodVer(KartTuru.Mamül, malzemeTipi, x => x.Kod, filter);
+        }
     }
 }

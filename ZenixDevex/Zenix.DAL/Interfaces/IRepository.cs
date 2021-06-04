@@ -46,6 +46,7 @@ namespace Zenix.DAL.Interfaces
         string YeniKodVer(KartTuru kartTuru, Expression<Func<TEntity, string>> filter, Expression<Func<TEntity, bool>> where = null);
 
         string YeniKodVer(KartTuru kartTuru, Expression<Func<TEntity, string>> filter, Expression<Func<TEntity, bool>> where = null, bool birüst = false);
-      
+        string YeniKodVer(KartTuru kartTuru,MalzemeTipi malzemeTipi, Expression<Func<TEntity, string>> filter, Expression<Func<TEntity, bool>> where = null);
+
     }
 }

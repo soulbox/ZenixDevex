@@ -9,7 +9,8 @@ using Zenix.DAL.Interfaces;
 
 namespace Zenix.DAL.Base
 {
-    public class Repository<TEntity> : IRepository<TEntity> where TEntity : class
+    public class Repository<TEntity> : IRepository<TEntity>
+        where TEntity : class
     {
         private readonly DbContext Db;
         private readonly DbSet<TEntity> DbSet;
@@ -96,7 +97,7 @@ namespace Zenix.DAL.Base
             {
                 var name = kartTuru.ToName();
                 var dizi = name
-                    .Replace(" Kartı","")
+                    .Replace(" Kartı", "")
                     .Replace("Kredi", "Kart") + "-0001";
                 //if (kartTuru != KartTuru.Sigortalar)
                 //    dizi = dizi.Replace("Sigorta ", "");
@@ -126,7 +127,7 @@ namespace Zenix.DAL.Base
             return maxKod == null ? Kod() : YeniKodVer(maxKod);
 
         }
-        public string YeniKodVer(KartTuru kartTuru, Expression<Func<TEntity, string>> filter, Expression<Func<TEntity, bool>> where = null,bool birüst=false )
+        public string YeniKodVer(KartTuru kartTuru, Expression<Func<TEntity, string>> filter, Expression<Func<TEntity, bool>> where = null, bool birüst = false)
         {
 
             string Kod()
@@ -157,10 +158,68 @@ namespace Zenix.DAL.Base
 
             var maxKod = where == null ? DbSet.Max(filter) : DbSet.Where(where).Max(filter);
 
-            return maxKod == null ? Kod() : birüst ? YeniKodVer(YeniKodVer(maxKod)): YeniKodVer(maxKod);
+            return maxKod == null ? Kod() : birüst ? YeniKodVer(YeniKodVer(maxKod)) : YeniKodVer(maxKod);
 
         }
+        public string YeniKodVer(KartTuru kartTuru, MalzemeTipi malzemeTipi, Expression<Func<TEntity, string>> filter, Expression<Func<TEntity, bool>> where = null)
+        {
+            string Kod()
+            {
+                var name = kartTuru.ToName();
+                var dizi = name
+                    .Replace(" Kartı", "")
+                    .Replace("Kredi", "Kart") + "-0001";
+                switch (malzemeTipi)
+                {
+                    case MalzemeTipi.Ürün:
+                        return "URN-0001";
+                    case MalzemeTipi.Esans:
+                        return "ESNS-0001"; 
+                    case MalzemeTipi.HamMadde:
+                        return "HMD-0001";
+                    case MalzemeTipi.Ambalaj:
+                        return "AMB-0001";
+                    case MalzemeTipi.Etiket:
+                        return "ETKT-0001";
+                    case MalzemeTipi.Kapak:
+                        return "KPK-0001";
+                    case MalzemeTipi.Sarf:
+                        return "SRF-0001";
+                    case MalzemeTipi.Şişe:
+                        return "Şişe-0001";
+                    case MalzemeTipi.Koli:
+                        return "Koli-0001";
+                    case MalzemeTipi.Kutu:
+                        return "Kutu-0001";
+                    case MalzemeTipi.Kavanoz:
+                        return "KVNZ-0001";
+                    default:
+                        return dizi;
+                }
+            }
+            string YeniKodVer(string kod)
+            {
+                var sayısaldeğerler = "";
+                foreach (var karakter in kod)
+                    if (char.IsDigit(karakter))
+                        sayısaldeğerler += karakter;
+                    else
+                        sayısaldeğerler = "";
 
+
+                var artis = int.Parse(sayısaldeğerler) + 1;
+                var fark = kod.Length - artis.ToString().Length;
+                if (fark < 0)
+                    fark = 0;
+                var yenideğer = kod.Substring(0, fark);
+                yenideğer += artis.ToString();
+                return yenideğer.ToString();
+            }
+
+            var maxKod = where == null ? DbSet.Max(filter) : DbSet.Where(where).Max(filter);
+
+            return maxKod == null ? Kod() : YeniKodVer(maxKod);
+        }
         #region Dispose
 
         private bool disposedValue;
@@ -182,6 +241,8 @@ namespace Zenix.DAL.Base
             Dispose(disposing: true);
             GC.SuppressFinalize(this);
         }
+
+
 
 
 
