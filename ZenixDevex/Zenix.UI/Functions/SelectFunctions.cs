@@ -80,7 +80,7 @@ namespace Zenix.WinUI.Functions
                         }
                     }
                     break;
-                case "txtAmbalajTipi":
+                case "txtPaketŞekli":
                     {
                         var entity = (AmbalajTipi)ShowListForms<AmbalajTipiListForm>.ShowDialogListForm(KartTuru.AmbalajTipi, btnedit.Id);
                         if (entity != null)

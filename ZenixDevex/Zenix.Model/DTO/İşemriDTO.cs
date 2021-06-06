@@ -28,10 +28,8 @@ namespace Zenix.Model.DTO
         public string FirmaAdi { get; set; }
         public string MarkaAdı { get; set; }
         public string GTIN { get; set; }
-        public SarfTipi SarfTipi { get; set; }
         public BirimTipi MalzemeBirimi { get; set; }
         public MalzemeTipi MalzemeTipi { get; set; }
-        public long AmbalajTipiId { get; set; }
         public long AmbalajMaddeTipiId { get; set; }
         public float AğızÖlçüsü { get; set; }
         public float Uzunluk { get; set; }
@@ -70,6 +68,9 @@ namespace Zenix.Model.DTO
         public int Kutu { get; set; }
         public int Stand { get; set; }
         public int Koli { get; set; }
+        public long PaketŞekliId { get ; set ; }
+        public string AmbalajTipi { get ; set ; }
+        public string Renk { get ; set ; }
     }
     [NotMapped]
     public class İşemriL : İşemriS

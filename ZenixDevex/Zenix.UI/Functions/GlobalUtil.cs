@@ -9,9 +9,9 @@ using Zenix.Model.DTO;
 
 namespace Zenix.WinUI.Functions
 {
-    public static class GlobalUtil 
-    {    
-        public static bool HasValue(this IBaseEntity sourc) =>  sourc != null;
+    public static class GlobalUtil
+    {
+        public static bool HasValue(this IBaseEntity sourc) => sourc != null;
         public static bool isNull(this IBaseEntity sourc) => sourc == null;
 
         //public static (bool hasval, T value) HasValue<T>(this T sourc) => sourc == null ? (false, sourc ) : (true, sourc);
@@ -26,12 +26,13 @@ namespace Zenix.WinUI.Functions
                 { MalzemeTipi.Şişe , 7 },
                 { MalzemeTipi.Koli , 8 },
                 { MalzemeTipi.Kutu , 9 },
-                { MalzemeTipi.Kavanoz , 10 }
+                { MalzemeTipi.Kavanoz , 10 },
+              { MalzemeTipi.Diğer , 11 }
             };
 
-        public static List<ReçeteMalzemeleriL> Order(this IEnumerable<ReçeteMalzemeleriL> source) 
+        public static List<ReçeteMalzemeleriL> Order(this IEnumerable<ReçeteMalzemeleriL> source)
         {
-        return source.OrderBy(x => enumOrder[x.MalzemeTipi]).ThenBy(x => enumOrder[x.MalzemeTipi]).ToList();
+            return source.OrderBy(x => enumOrder[x.MalzemeTipi]).ThenBy(x => enumOrder[x.MalzemeTipi]).ToList();
         }
 
     }

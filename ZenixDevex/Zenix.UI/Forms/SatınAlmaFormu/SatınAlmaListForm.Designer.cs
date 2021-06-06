@@ -405,6 +405,8 @@
             // 
             this.myGridColumn2.Caption = "Miktar";
             this.myGridColumn2.ColumnEdit = this.repoSpin;
+            this.myGridColumn2.DisplayFormat.FormatString = "{0:n2}";
+            this.myGridColumn2.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.myGridColumn2.FieldName = "Miktar";
             this.myGridColumn2.Name = "myGridColumn2";
             this.myGridColumn2.OptionsColumn.AllowEdit = false;

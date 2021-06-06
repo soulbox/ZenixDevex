@@ -29,8 +29,8 @@ namespace Zenix.BLL.General
                 AlanınBirimi       = x.AlanınBirimi,
                 AmbalajMaddeAdı    = x.AmbalajMaddeTipi.Adı,
                 AmbalajMaddeTipiId = x.AmbalajMaddeTipiId,
-                AmbalajTipiAdı     = x.AmbalajTipi.Adı,
-                AmbalajTipiId      = x.AmbalajTipiId,
+                AmbalajTipiAdı     = x.PaketŞekli .Adı,
+                PaketŞekliId       = x.PaketŞekliId,
                 Ağırlık            = x.Ağırlık,
                 AğırlığınBirimi    = x.AğırlığınBirimi,
                 AğızÖlçüsü         = x.AğızÖlçüsü,
@@ -40,11 +40,11 @@ namespace Zenix.BLL.General
                 Uzunluk            = x.Uzunluk,
                 Hacim              = x.Hacim,
                 MalzemeBirimi      = x.MalzemeBirimi,
-                SarfTipi           = x.SarfTipi,
                 Yükseklik          = x.Yükseklik,
                 MalzemeTipi        = x.MalzemeTipi,
                 Ticariİsim          =x.Ticariİsim,
-
+                Renk            =x.Renk,
+                AmbalajTipi=x.AmbalajTipi,
             });
         }
         public override IEnumerable<BaseEntity> List(Expression<Func<Mamül, bool>> filter)
@@ -59,8 +59,8 @@ namespace Zenix.BLL.General
                 AlanınBirimi       = x.AlanınBirimi,
                 AmbalajMaddeAdı    = x.AmbalajMaddeTipi.Adı,
                 AmbalajMaddeTipiId = x.AmbalajMaddeTipiId,
-                AmbalajTipiAdı     = x.AmbalajTipi.Adı,
-                AmbalajTipiId      = x.AmbalajTipiId,
+                AmbalajTipiAdı = x.PaketŞekli.Adı,
+                PaketŞekliId = x.PaketŞekliId,
                 Ağırlık            = x.Ağırlık,
                 AğırlığınBirimi    = x.AğırlığınBirimi,
                 AğızÖlçüsü         = x.AğızÖlçüsü,
@@ -70,11 +70,11 @@ namespace Zenix.BLL.General
                 Uzunluk            = x.Uzunluk,
                 Hacim              = x.Hacim,
                 MalzemeBirimi      = x.MalzemeBirimi,
-                SarfTipi           = x.SarfTipi,
                 Yükseklik          = x.Yükseklik,
                 MalzemeTipi        = x.MalzemeTipi,
                 Ticariİsim          =x.Ticariİsim,
-
+                Renk = x.Renk,
+                AmbalajTipi = x.AmbalajTipi,
 
             })
                 .ToList();

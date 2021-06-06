@@ -9,6 +9,8 @@ using Zenix.WinUI.myUserControls.Controls;
 using System;
 using Zenix.Model.Entities.Base;
 using Zenix.Common.Messages;
+using System.Linq.Expressions;
+using System.Linq;
 
 namespace Zenix.WinUI.Forms.MamülFormu
 {
@@ -30,12 +32,27 @@ namespace Zenix.WinUI.Forms.MamülFormu
             cmbTeknikBirim.ToData<BirimTipi>();
 
             cmbMalzemeTipi.ToData<MalzemeTipi>(x => !x.Description.Contains("Ürün"));
-            cmbSarfTipi.ToData<SarfTipi>();
+            //cmbSarfTipi.ToData<SarfTipi>();
             LayoutGizleGoster(!isÜrün, layMalzemetipi, layticari);
 
 
             EventsLoad();
 
+        }
+        Expression<Func<Mamül, bool>> Filter(MalzemeTipi malztipi)
+        {
+            Expression<Func<Mamül, bool>> filt = x => x.MalzemeTipi == malztipi;
+            MalzemeTipi[] AMb = { MalzemeTipi.Ambalaj, MalzemeTipi.Kutu, MalzemeTipi.Koli };
+            MalzemeTipi[] Sarf = { MalzemeTipi.Sarf, MalzemeTipi.Kapak };
+            MalzemeTipi[] Hacim = { MalzemeTipi.Kavanoz, MalzemeTipi.Şişe };
+            if (AMb.Any(x => x == malztipi))
+                filt = x => AMb.Contains(x.MalzemeTipi);
+            else if (Sarf.Any(x => x == malztipi))
+                filt = x => Sarf.Contains(x.MalzemeTipi);
+            else if (Hacim.Any(x => x == malztipi))
+                filt = x => Hacim.Contains(x.MalzemeTipi);
+
+            return filt;
         }
         protected internal override void Yukle()
         {
@@ -47,7 +64,7 @@ namespace Zenix.WinUI.Forms.MamülFormu
             if (BaseIslemTuru != Common.Enums.IslemTuru.EntityInsert) return;
             Id = BaseIslemTuru.IdOlustur(OldEntity);
             var maltipi = ((IMamül)OldEntity).MalzemeTipi;
-            txtKod.Text = ((MamülBll)Bll).YeniKodVer(maltipi, x => x.MalzemeTipi == maltipi);
+            txtKod.Text = ((MamülBll)Bll).YeniKodVer(maltipi, Filter(maltipi));
             if (Ticarimamül == null)
                 txtMamülAdı.Focus();
             else
@@ -69,12 +86,11 @@ namespace Zenix.WinUI.Forms.MamülFormu
             cmbMalzemeBirim.Text = entity.MalzemeBirimi.ToName();
             cmbTeknikBirim.Text = entity.BirimAuEbY.ToName();
             cmbMalzemeTipi.Text = entity.MalzemeTipi.ToName();
-            cmbSarfTipi.Text = entity.SarfTipi.ToName();
             txtMamülAdı.Text = entity.MamülAdı;
             txtAmbalajMaddesi.Text = entity.AmbalajMaddeAdı;
             txtAmbalajMaddesi.Id = entity.AmbalajMaddeTipiId;
-            txtAmbalajTipi.Text = entity.AmbalajTipiAdı;
-            txtAmbalajTipi.Id = entity.AmbalajTipiId;
+            txtPaketŞekli.Text = entity.AmbalajTipiAdı;
+            txtPaketŞekli.Id = entity.PaketŞekliId;
             txtAlan.EditValue = entity.Alan;
             txtAğırlık.EditValue = entity.Ağırlık;
             txtBoy.EditValue = entity.Boy;
@@ -83,7 +99,8 @@ namespace Zenix.WinUI.Forms.MamülFormu
             txtYükseklik.EditValue = entity.Yükseklik;
             txtAğızölçüsü.EditValue = entity.AğızÖlçüsü;
             txtHacim.EditValue = entity.Hacim;
-
+            txtAmbalajTipi.Text = entity.AmbalajTipi;
+            txtRenk.Text = entity.Renk;
             txtTicariİsim.Text = entity.Ticariİsim;
 
 
@@ -91,13 +108,15 @@ namespace Zenix.WinUI.Forms.MamülFormu
         protected override void EditValueChanged(object sender, EventArgs e)
         {
 
+
+
             var maltipi = cmbMalzemeTipi.Text.GetEnum<MalzemeTipi>();
             var oldmal = ((Mamül)OldEntity).MalzemeTipi;
             var curmal = ((Mamül)CurrentEntity)?.MalzemeTipi;
             if (sender != txtKod)
                 if (sender == cmbMalzemeTipi && isLoaded)
                     if (maltipi != oldmal || BaseIslemTuru == IslemTuru.EntityInsert)
-                        txtKod.Text = ((MamülBll)Bll).YeniKodVer(maltipi, x => x.MalzemeTipi == maltipi);
+                        txtKod.Text = ((MamülBll)Bll).YeniKodVer(maltipi, Filter(maltipi));
                     else
                         txtKod.Text = ((Mamül)OldEntity).Kod;
             txtHacim.Enabled = maltipi == MalzemeTipi.Ürün | maltipi == MalzemeTipi.Şişe | maltipi == MalzemeTipi.Kavanoz | maltipi == MalzemeTipi.Diğer;
@@ -108,7 +127,7 @@ namespace Zenix.WinUI.Forms.MamülFormu
         protected override void GuncelNesneOluştur()
         {
             var malzemetipi = isÜrün ? MalzemeTipi.Ürün : cmbMalzemeTipi.Text.GetEnum<MalzemeTipi>();
-            var sarftipi = malzemetipi == MalzemeTipi.Ürün ? SarfTipi.Yok : cmbSarfTipi.Text.GetEnum<SarfTipi>();
+            //var sarftipi = malzemetipi == MalzemeTipi.Ürün ? SarfTipi.Yok : cmbSarfTipi.Text.GetEnum<SarfTipi>();
             CurrentEntity = new Mamül
             {
                 Id = Id,
@@ -119,10 +138,10 @@ namespace Zenix.WinUI.Forms.MamülFormu
                 MalzemeBirimi = cmbMalzemeBirim.Text.GetEnum<BirimTipi>(),
                 BirimAuEbY = cmbTeknikBirim.Text.GetEnum<BirimTipi>(),
                 MalzemeTipi = malzemetipi,
-                SarfTipi = sarftipi,
+                //SarfTipi = sarftipi,
                 MamülAdı = txtMamülAdı.Text,
                 AmbalajMaddeTipiId = txtAmbalajMaddesi.GetId(),
-                AmbalajTipiId = txtAmbalajTipi.GetId(),
+                PaketŞekliId = txtPaketŞekli.GetId(),
                 Alan = txtAlan.EditValue.ConvertTo<float>(),
                 Ağırlık = txtAğırlık.EditValue.ConvertTo<float>(),
                 Boy = txtBoy.EditValue.ConvertTo<float>(),
@@ -132,6 +151,8 @@ namespace Zenix.WinUI.Forms.MamülFormu
                 AğızÖlçüsü = txtAğızölçüsü.EditValue.ConvertTo<float>(),
                 Hacim = txtHacim.Enabled ? txtHacim.EditValue.ConvertTo<int>() : default,
                 Ticariİsim = txtTicariİsim.Text,
+                Renk = txtRenk.Text,
+                AmbalajTipi = txtAmbalajTipi.Text,
 
             };
             ButtonEnableDurumu();
@@ -141,8 +162,8 @@ namespace Zenix.WinUI.Forms.MamülFormu
             if (!(sender is myButtonEdit)) return;
             using (var sec = new SelectFunctions())
             {
-                if (sender == txtAmbalajTipi)
-                    sec.Seç(txtAmbalajTipi);
+                if (sender == txtPaketŞekli)
+                    sec.Seç(txtPaketŞekli);
                 else if (sender == txtAmbalajMaddesi)
                     sec.Seç(txtAmbalajMaddesi);
             }
@@ -154,7 +175,7 @@ namespace Zenix.WinUI.Forms.MamülFormu
         }
         protected override bool EntityUpdate()
         {
-            return !HasError(CurrentEntity) && ((MamülBll)Bll).Insert(CurrentEntity, x => x.Kod == CurrentEntity.Kod && x.MalzemeTipi == ((IMamül)CurrentEntity).MalzemeTipi);
+            return !HasError(CurrentEntity) && ((MamülBll)Bll).Update(OldEntity, CurrentEntity, x => x.Kod == CurrentEntity.Kod && x.MalzemeTipi == ((IMamül)CurrentEntity).MalzemeTipi);
 
         }
         bool HasError(BaseEntity curent)

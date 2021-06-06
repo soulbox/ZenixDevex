@@ -19,10 +19,8 @@ namespace Zenix.Model.DTO
         public bool Update { get; set; }
         public bool Delete { get; set; }
         public string MamülAdı { get; set; }
-        public SarfTipi SarfTipi { get; set; }
         public BirimTipi MalzemeBirimi { get; set; }
         public MalzemeTipi MalzemeTipi { get; set; }
-        public long AmbalajTipiId { get; set; }
         public long AmbalajMaddeTipiId { get; set; }
         public float AğızÖlçüsü { get; set; }
         public float Uzunluk { get; set; }
@@ -48,7 +46,9 @@ namespace Zenix.Model.DTO
         public string BirimAlan { get; }
         public float Stok { get; set; }
         public string Ticariİsim { get; set; }
-
+        public long PaketŞekliId { get ; set ; }
+        public string AmbalajTipi { get ; set ; }
+        public string Renk { get ; set ; }
     }
     [NotMapped]
     public class SatınAlmaMalzemeleriDepo : SatınAlmaMalzemeler, IMamülAdı, IFirma

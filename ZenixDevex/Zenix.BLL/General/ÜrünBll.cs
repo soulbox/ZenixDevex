@@ -61,7 +61,7 @@ namespace Zenix.BLL.General
                 Alan = x.Mamül.Alan,
                 AlanınBirimi = x.Mamül.AlanınBirimi,
                 AmbalajMaddeTipiId = x.Mamül.AmbalajMaddeTipiId,
-                AmbalajTipiId = x.Mamül.AmbalajTipiId,
+                AmbalajTipiId = x.Mamül.PaketŞekliId,
                 Ağırlık = x.Mamül.Ağırlık,
                 AğırlığınBirimi = x.Mamül.AğırlığınBirimi,
                 AğızÖlçüsü = x.Mamül.AğızÖlçüsü,
@@ -70,12 +70,11 @@ namespace Zenix.BLL.General
                 Hacim = x.Mamül.Hacim,
                 MalzemeBirimi = x.Mamül.MalzemeBirimi,
                 MalzemeTipi = x.Mamül.MalzemeTipi,
-                SarfTipi = x.Mamül.SarfTipi,
                 Uzunluk = x.Mamül.Uzunluk,
                 Yükseklik = x.Mamül.Yükseklik,
                 BirimAuEbY=x.Mamül.BirimAuEbY,
                 AmbalajMaddeAdı=x.Mamül.AmbalajMaddeTipi.Adı,
-                AmbalajTipiAdı=x.Mamül.AmbalajTipi.Adı,
+                AmbalajTipiAdı=x.Mamül.PaketŞekli.Adı,
                 
 
             }).ToList();

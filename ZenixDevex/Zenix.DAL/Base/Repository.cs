@@ -186,7 +186,7 @@ namespace Zenix.DAL.Base
                     case MalzemeTipi.Şişe://HCM
                         return "HCM-0001";
                     case MalzemeTipi.Kutu://AMB
-                    case MalzemeTipi.Ambalaj:
+                    case MalzemeTipi.Ambalaj://AMB
                     case MalzemeTipi.Koli://AMB
                         return "AMB-0001";
                     case MalzemeTipi.Diğer:

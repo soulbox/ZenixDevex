@@ -35,12 +35,12 @@
             this.colId = new Zenix.WinUI.myUserControls.Grid.myBandedGridColumn();
             this.colKod = new Zenix.WinUI.myUserControls.Grid.myBandedGridColumn();
             this.colMalzeme = new Zenix.WinUI.myUserControls.Grid.myBandedGridColumn();
+            this.colTicariİsim = new Zenix.WinUI.myUserControls.Grid.myBandedGridColumn();
             this.colHacim = new Zenix.WinUI.myUserControls.Grid.myBandedGridColumn();
             this.colMalzemeBirimi = new Zenix.WinUI.myUserControls.Grid.myBandedGridColumn();
             this.colMalzemeTipi = new Zenix.WinUI.myUserControls.Grid.myBandedGridColumn();
-            this.colAmbalajTipi = new Zenix.WinUI.myUserControls.Grid.myBandedGridColumn();
+            this.colPketŞekli = new Zenix.WinUI.myUserControls.Grid.myBandedGridColumn();
             this.colAmbalajMaddes = new Zenix.WinUI.myUserControls.Grid.myBandedGridColumn();
-            this.colSarfTipi = new Zenix.WinUI.myUserControls.Grid.myBandedGridColumn();
             this.colAğızÖlçüsü = new Zenix.WinUI.myUserControls.Grid.myBandedGridColumn();
             this.colUzunluk = new Zenix.WinUI.myUserControls.Grid.myBandedGridColumn();
             this.colEn = new Zenix.WinUI.myUserControls.Grid.myBandedGridColumn();
@@ -49,7 +49,8 @@
             this.colAlan = new Zenix.WinUI.myUserControls.Grid.myBandedGridColumn();
             this.colAğırlık = new Zenix.WinUI.myUserControls.Grid.myBandedGridColumn();
             this.gridBand1 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
-            this.colTicariİsim = new Zenix.WinUI.myUserControls.Grid.myBandedGridColumn();
+            this.colRenk = new Zenix.WinUI.myUserControls.Grid.myBandedGridColumn();
+            this.colAmbalajTipi = new Zenix.WinUI.myUserControls.Grid.myBandedGridColumn();
             this.aaaa = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
             this.gridBand3 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
             this.gridBand4 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
@@ -132,9 +133,8 @@
             this.colMalzeme,
             this.colMalzemeBirimi,
             this.colMalzemeTipi,
-            this.colAmbalajTipi,
+            this.colPketŞekli,
             this.colAmbalajMaddes,
-            this.colSarfTipi,
             this.colHacim,
             this.colAğızÖlçüsü,
             this.colUzunluk,
@@ -143,7 +143,9 @@
             this.colYükseklik,
             this.colAlan,
             this.colAğırlık,
-            this.colTicariİsim});
+            this.colTicariİsim,
+            this.colRenk,
+            this.colAmbalajTipi});
             this.Tablo.GridControl = this.myBandedGridControl1;
             this.Tablo.Name = "Tablo";
             this.Tablo.OptionsFind.AlwaysVisible = true;
@@ -204,6 +206,18 @@
             this.colMalzeme.Visible = true;
             this.colMalzeme.Width = 150;
             // 
+            // colTicariİsim
+            // 
+            this.colTicariİsim.Caption = "Ticariİsim";
+            this.colTicariİsim.FieldName = "Ticariİsim";
+            this.colTicariİsim.Name = "colTicariİsim";
+            this.colTicariİsim.OptionsColumn.AllowEdit = false;
+            this.colTicariİsim.StatusBarAciklama = null;
+            this.colTicariİsim.StatusBarKisayol = null;
+            this.colTicariİsim.StatusBarKisayolAciklama = null;
+            this.colTicariİsim.Visible = true;
+            this.colTicariİsim.Width = 94;
+            // 
             // colHacim
             // 
             this.colHacim.Caption = "Hacim";
@@ -239,20 +253,20 @@
             this.colMalzemeTipi.StatusBarKisayolAciklama = null;
             this.colMalzemeTipi.Visible = true;
             // 
-            // colAmbalajTipi
+            // colPketŞekli
             // 
-            this.colAmbalajTipi.Caption = "Ambalaj Tipi";
-            this.colAmbalajTipi.FieldName = "AmbalajTipiAdı";
-            this.colAmbalajTipi.Name = "colAmbalajTipi";
-            this.colAmbalajTipi.OptionsColumn.AllowEdit = false;
-            this.colAmbalajTipi.StatusBarAciklama = null;
-            this.colAmbalajTipi.StatusBarKisayol = null;
-            this.colAmbalajTipi.StatusBarKisayolAciklama = null;
-            this.colAmbalajTipi.Visible = true;
+            this.colPketŞekli.Caption = "Paket Şekli";
+            this.colPketŞekli.FieldName = "AmbalajTipiAdı";
+            this.colPketŞekli.Name = "colPketŞekli";
+            this.colPketŞekli.OptionsColumn.AllowEdit = false;
+            this.colPketŞekli.StatusBarAciklama = null;
+            this.colPketŞekli.StatusBarKisayol = null;
+            this.colPketŞekli.StatusBarKisayolAciklama = null;
+            this.colPketŞekli.Visible = true;
             // 
             // colAmbalajMaddes
             // 
-            this.colAmbalajMaddes.Caption = "Ambalaj Maddesi";
+            this.colAmbalajMaddes.Caption = "Paket Malzemesi";
             this.colAmbalajMaddes.FieldName = "AmbalajMaddeAdı";
             this.colAmbalajMaddes.Name = "colAmbalajMaddes";
             this.colAmbalajMaddes.OptionsColumn.AllowEdit = false;
@@ -260,17 +274,6 @@
             this.colAmbalajMaddes.StatusBarKisayol = null;
             this.colAmbalajMaddes.StatusBarKisayolAciklama = null;
             this.colAmbalajMaddes.Visible = true;
-            // 
-            // colSarfTipi
-            // 
-            this.colSarfTipi.Caption = "Sarf Tipi";
-            this.colSarfTipi.FieldName = "SarfTipi";
-            this.colSarfTipi.Name = "colSarfTipi";
-            this.colSarfTipi.OptionsColumn.AllowEdit = false;
-            this.colSarfTipi.StatusBarAciklama = null;
-            this.colSarfTipi.StatusBarKisayol = null;
-            this.colSarfTipi.StatusBarKisayolAciklama = null;
-            this.colSarfTipi.Visible = true;
             // 
             // colAğızÖlçüsü
             // 
@@ -359,17 +362,27 @@
             this.gridBand1.Name = "gridBand1";
             this.gridBand1.VisibleIndex = -1;
             // 
-            // colTicariİsim
+            // colRenk
             // 
-            this.colTicariİsim.Caption = "Ticariİsim";
-            this.colTicariİsim.FieldName = "Ticariİsim";
-            this.colTicariİsim.Name = "colTicariİsim";
-            this.colTicariİsim.OptionsColumn.AllowEdit = false;
-            this.colTicariİsim.StatusBarAciklama = null;
-            this.colTicariİsim.StatusBarKisayol = null;
-            this.colTicariİsim.StatusBarKisayolAciklama = null;
-            this.colTicariİsim.Visible = true;
-            this.colTicariİsim.Width = 94;
+            this.colRenk.Caption = "Renk";
+            this.colRenk.FieldName = "Renk";
+            this.colRenk.Name = "colRenk";
+            this.colRenk.OptionsColumn.AllowEdit = false;
+            this.colRenk.StatusBarAciklama = null;
+            this.colRenk.StatusBarKisayol = null;
+            this.colRenk.StatusBarKisayolAciklama = null;
+            this.colRenk.Visible = true;
+            // 
+            // colAmbalajTipi
+            // 
+            this.colAmbalajTipi.Caption = "AmbalajTipi";
+            this.colAmbalajTipi.FieldName = "AmbalajTipi";
+            this.colAmbalajTipi.Name = "colAmbalajTipi";
+            this.colAmbalajTipi.OptionsColumn.AllowEdit = false;
+            this.colAmbalajTipi.StatusBarAciklama = null;
+            this.colAmbalajTipi.StatusBarKisayol = null;
+            this.colAmbalajTipi.StatusBarKisayolAciklama = null;
+            this.colAmbalajTipi.Visible = true;
             // 
             // aaaa
             // 
@@ -378,26 +391,27 @@
             this.aaaa.Columns.Add(this.colKod);
             this.aaaa.Columns.Add(this.colMalzeme);
             this.aaaa.Columns.Add(this.colTicariİsim);
+            this.aaaa.Columns.Add(this.colRenk);
+            this.aaaa.Columns.Add(this.colMalzemeTipi);
+            this.aaaa.Columns.Add(this.colPketŞekli);
             this.aaaa.Columns.Add(this.colHacim);
             this.aaaa.Columns.Add(this.colMalzemeBirimi);
             this.aaaa.Name = "aaaa";
             this.aaaa.VisibleIndex = 0;
-            this.aaaa.Width = 419;
+            this.aaaa.Width = 644;
             // 
             // gridBand3
             // 
             this.gridBand3.Caption = "Tipi";
-            this.gridBand3.Columns.Add(this.colMalzemeTipi);
-            this.gridBand3.Columns.Add(this.colAmbalajTipi);
             this.gridBand3.Columns.Add(this.colAmbalajMaddes);
-            this.gridBand3.Columns.Add(this.colSarfTipi);
             this.gridBand3.Name = "gridBand3";
             this.gridBand3.VisibleIndex = 1;
-            this.gridBand3.Width = 300;
+            this.gridBand3.Width = 75;
             // 
             // gridBand4
             // 
             this.gridBand4.Caption = "Teknik Özellikler";
+            this.gridBand4.Columns.Add(this.colAmbalajTipi);
             this.gridBand4.Columns.Add(this.colAğızÖlçüsü);
             this.gridBand4.Columns.Add(this.colUzunluk);
             this.gridBand4.Columns.Add(this.colEn);
@@ -407,7 +421,7 @@
             this.gridBand4.Columns.Add(this.colAğırlık);
             this.gridBand4.Name = "gridBand4";
             this.gridBand4.VisibleIndex = 2;
-            this.gridBand4.Width = 425;
+            this.gridBand4.Width = 500;
             // 
             // MamülListForm
             // 
@@ -440,9 +454,8 @@
         private myUserControls.Grid.myBandedGridColumn colHacim;
         private myUserControls.Grid.myBandedGridColumn colMalzemeBirimi;
         private myUserControls.Grid.myBandedGridColumn colMalzemeTipi;
-        private myUserControls.Grid.myBandedGridColumn colAmbalajTipi;
+        private myUserControls.Grid.myBandedGridColumn colPketŞekli;
         private myUserControls.Grid.myBandedGridColumn colAmbalajMaddes;
-        private myUserControls.Grid.myBandedGridColumn colSarfTipi;
         private myUserControls.Grid.myBandedGridColumn colAğızÖlçüsü;
         private myUserControls.Grid.myBandedGridColumn colUzunluk;
         private myUserControls.Grid.myBandedGridColumn colEn;
@@ -451,8 +464,10 @@
         private myUserControls.Grid.myBandedGridColumn colAlan;
         private myUserControls.Grid.myBandedGridColumn colAğırlık;
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand1;
-        private DevExpress.XtraGrid.Views.BandedGrid.GridBand aaaa;
         private myUserControls.Grid.myBandedGridColumn colTicariİsim;
+        private myUserControls.Grid.myBandedGridColumn colRenk;
+        private myUserControls.Grid.myBandedGridColumn colAmbalajTipi;
+        private DevExpress.XtraGrid.Views.BandedGrid.GridBand aaaa;
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand3;
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand4;
     }

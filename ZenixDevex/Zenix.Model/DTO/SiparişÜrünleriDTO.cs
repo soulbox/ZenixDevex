@@ -41,10 +41,8 @@ namespace Zenix.Model.DTO
         public int Hacim { get; set; }
         public string AmbalajTipiAdı { get; set; }
         public string AmbalajMaddeAdı { get; set; }
-        public SarfTipi SarfTipi { get; set; }
         public BirimTipi MalzemeBirimi { get; set; }
         public MalzemeTipi MalzemeTipi { get; set; }
-        public long AmbalajTipiId { get; set; }
         public long AmbalajMaddeTipiId { get; set; }
         public float AğızÖlçüsü { get; set; }
         public float Uzunluk { get; set; }
@@ -69,6 +67,9 @@ namespace Zenix.Model.DTO
         public bool Insert { get; set; }
         public bool Update { get; set; }
         public bool Delete { get; set; }
+        public long PaketŞekliId { get ; set ; }
+        public string AmbalajTipi { get ; set ; }
+        public string Renk { get ; set ; }
     }
     [NotMapped]
     public class SiparişÜrünleriDepo : SiparişÜrünleri, IBaseÜrünTanıtım, IBaseRevizyon

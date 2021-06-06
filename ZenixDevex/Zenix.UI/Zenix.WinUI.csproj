@@ -29,10 +29,10 @@
     <InstallUrl>http://sovia.com.tr/ZenixSolution/</InstallUrl>
     <ProductName>Zenix Solution</ProductName>
     <PublisherName>Erkan Ceylan</PublisherName>
-    <MinimumRequiredVersion>1.0.0.21</MinimumRequiredVersion>
+    <MinimumRequiredVersion>1.0.0.23</MinimumRequiredVersion>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>22</ApplicationRevision>
+    <ApplicationRevision>24</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>true</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>

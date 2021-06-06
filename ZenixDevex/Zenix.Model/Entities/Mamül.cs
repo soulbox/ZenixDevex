@@ -24,11 +24,14 @@ namespace Zenix.Model.Entities
 
     public interface IMamül : IBaseMamül, IMamülAdı
     {
-        SarfTipi SarfTipi { get; set; }
         BirimTipi MalzemeBirimi { get; set; }
         MalzemeTipi MalzemeTipi { get; set; }
-        long AmbalajTipiId { get; set; }
+        long PaketŞekliId { get; set; }
         long AmbalajMaddeTipiId { get; set; }
+        [StringLength(50)]
+        string AmbalajTipi { get; set; }
+        [StringLength(20)]
+        string Renk { get; set; }
     }
     public interface IBaseMamül : IHacim
     {
@@ -92,15 +95,16 @@ namespace Zenix.Model.Entities
     {
         [ZorunluAlan("Mamül Adı", "txtMamülAdı")]
         public string MamülAdı { get; set; }
-        public SarfTipi SarfTipi { get; set; }
         public BirimTipi MalzemeBirimi { get; set; }
         public MalzemeTipi MalzemeTipi { get; set; }
         [Required(), ZorunluAlan("Ambalaj Tipi", "txtAmbalajTipi")]
-        public long AmbalajTipiId { get; set; }
-        public AmbalajTipi AmbalajTipi { get; set; }
+        public long PaketŞekliId { get; set; }
+        public AmbalajTipi PaketŞekli { get; set; }
         [Required(), ZorunluAlan("Ambalaj Maddesinin Tipi", "txtAmbalajMaddesi")]
         public long AmbalajMaddeTipiId { get; set; }
         public AmbalajMaddeTipi AmbalajMaddeTipi { get; set; }
         public ICollection<Depo> Depo { get; set; }
+        public string AmbalajTipi { get ; set ; }
+        public string Renk { get ; set ; }
     }
 }

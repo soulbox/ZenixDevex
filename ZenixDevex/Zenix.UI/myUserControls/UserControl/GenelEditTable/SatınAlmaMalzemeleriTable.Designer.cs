@@ -40,9 +40,9 @@
             this.colStok = new Zenix.WinUI.myUserControls.Grid.MyGridColumn();
             this.colTeslimat = new Zenix.WinUI.myUserControls.Grid.MyGridColumn();
             this.repoCheck = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
-            this.repoimgaecomboBirim = new DevExpress.XtraEditors.Repository.RepositoryItemImageComboBox();
             this.colBirimFiyat = new Zenix.WinUI.myUserControls.Grid.MyGridColumn();
             this.colParaBirimi = new Zenix.WinUI.myUserControls.Grid.MyGridColumn();
+            this.repoimgaecomboBirim = new DevExpress.XtraEditors.Repository.RepositoryItemImageComboBox();
             this.colTutar = new Zenix.WinUI.myUserControls.Grid.MyGridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.myGridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tablo)).BeginInit();
@@ -206,17 +206,21 @@
             this.repoSpin.AutoHeight = false;
             this.repoSpin.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repoSpin.DisplayFormat.FormatString = "{0:n1}";
+            this.repoSpin.DisplayFormat.FormatString = "{0:n2}";
             this.repoSpin.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.repoSpin.EditFormat.FormatString = "{0:n1}";
+            this.repoSpin.EditFormat.FormatString = "{0:n2}";
             this.repoSpin.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.repoSpin.Mask.EditMask = "n1";
+            this.repoSpin.Mask.EditMask = "n2";
             this.repoSpin.Name = "repoSpin";
             // 
             // colStok
             // 
             this.colStok.Caption = "Stok";
+            this.colStok.DisplayFormat.FormatString = "{0:n0}";
+            this.colStok.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colStok.FieldName = "Stok";
+            this.colStok.GroupFormat.FormatString = "{0:n0}";
+            this.colStok.GroupFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colStok.Name = "colStok";
             this.colStok.OptionsColumn.AllowEdit = false;
             this.colStok.StatusBarAciklama = null;
@@ -242,13 +246,6 @@
             this.repoCheck.AutoHeight = false;
             this.repoCheck.Name = "repoCheck";
             // 
-            // repoimgaecomboBirim
-            // 
-            this.repoimgaecomboBirim.AutoHeight = false;
-            this.repoimgaecomboBirim.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repoimgaecomboBirim.Name = "repoimgaecomboBirim";
-            // 
             // colBirimFiyat
             // 
             this.colBirimFiyat.Caption = "BirimFiyat";
@@ -272,6 +269,13 @@
             this.colParaBirimi.StatusBarKisayolAciklama = null;
             this.colParaBirimi.Visible = true;
             this.colParaBirimi.VisibleIndex = 7;
+            // 
+            // repoimgaecomboBirim
+            // 
+            this.repoimgaecomboBirim.AutoHeight = false;
+            this.repoimgaecomboBirim.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repoimgaecomboBirim.Name = "repoimgaecomboBirim";
             // 
             // colTutar
             // 
