@@ -36,6 +36,7 @@ namespace Zenix.Model.DTO
     {
         public bool RevizyonDurum { get; set; }
         public int MalzemeMiktarı { get; set; }
+        public ReçeteL  Clone { get=>(ReçeteL )this.MemberwiseClone(); }
 
     }
 }

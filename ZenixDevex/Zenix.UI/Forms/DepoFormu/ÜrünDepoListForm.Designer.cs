@@ -174,6 +174,7 @@
             this.Tablo.OptionsView.RowAutoHeight = true;
             this.Tablo.OptionsView.ShowAutoFilterRow = true;
             this.Tablo.OptionsView.ShowGroupPanel = false;
+            this.Tablo.OptionsView.ShowViewCaption = true;
             this.Tablo.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
             new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colMamülAdı, DevExpress.Data.ColumnSortOrder.Ascending)});
             this.Tablo.StatusBarAciklama = null;
@@ -311,11 +312,13 @@
             this.TabloSipariş.OptionsView.HeaderFilterButtonShowMode = DevExpress.XtraEditors.Controls.FilterButtonShowMode.Button;
             this.TabloSipariş.OptionsView.RowAutoHeight = true;
             this.TabloSipariş.OptionsView.ShowGroupPanel = false;
+            this.TabloSipariş.OptionsView.ShowViewCaption = true;
             this.TabloSipariş.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
             new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colSatınAlmaKod, DevExpress.Data.ColumnSortOrder.Ascending)});
             this.TabloSipariş.StatusBarAciklama = null;
             this.TabloSipariş.StatusBarKisayol = null;
             this.TabloSipariş.StatusBarKisayolAciklama = null;
+            this.TabloSipariş.ViewCaption = "Siparişler";
             // 
             // colId1
             // 

@@ -7,6 +7,8 @@ using Zenix.Common.Enums;
 using Zenix.Model.DTO;
 using Zenix.WinUI.myUserControls.Controls;
 using System;
+using Zenix.Model.Entities.Base;
+using Zenix.Common.Messages;
 
 namespace Zenix.WinUI.Forms.MamülFormu
 {
@@ -39,12 +41,13 @@ namespace Zenix.WinUI.Forms.MamülFormu
         {
             if (Ticarimamül != null)
                 BaseIslemTuru = IslemTuru.EntityInsert;
-            OldEntity = BaseIslemTuru == Common.Enums.IslemTuru.EntityInsert ? Ticarimamül == null ? new MamülL() { MalzemeTipi = !isÜrün ? MalzemeTipi.HamMadde : default } : Ticarimamül : ((MamülBll)Bll).Single(FilterFunctions.Filter<Mamül>(Id));
+            OldEntity = BaseIslemTuru == IslemTuru.EntityInsert ? Ticarimamül ?? new MamülL() { MalzemeTipi = !isÜrün ? MalzemeTipi.HamMadde : default } : ((MamülBll)Bll).Single(FilterFunctions.Filter<Mamül>(Id));
 
             NesneyiKontrollereBagla();
             if (BaseIslemTuru != Common.Enums.IslemTuru.EntityInsert) return;
             Id = BaseIslemTuru.IdOlustur(OldEntity);
-            txtKod.Text = ((MamülBll)Bll).YeniKodVer(x => x.MalzemeTipi == ((IMamül)OldEntity).MalzemeTipi);
+            var maltipi = ((IMamül)OldEntity).MalzemeTipi;
+            txtKod.Text = ((MamülBll)Bll).YeniKodVer(maltipi, x => x.MalzemeTipi == maltipi);
             if (Ticarimamül == null)
                 txtMamülAdı.Focus();
             else
@@ -87,11 +90,20 @@ namespace Zenix.WinUI.Forms.MamülFormu
         }
         protected override void EditValueChanged(object sender, EventArgs e)
         {
+
             var maltipi = cmbMalzemeTipi.Text.GetEnum<MalzemeTipi>();
-            if (sender == cmbMalzemeTipi)
-                txtKod.Text = ((MamülBll)Bll).YeniKodVer(x=>x.MalzemeTipi== maltipi);
+            var oldmal = ((Mamül)OldEntity).MalzemeTipi;
+            var curmal = ((Mamül)CurrentEntity)?.MalzemeTipi;
+            if (sender != txtKod)
+                if (sender == cmbMalzemeTipi && isLoaded)
+                    if (maltipi != oldmal || BaseIslemTuru == IslemTuru.EntityInsert)
+                        txtKod.Text = ((MamülBll)Bll).YeniKodVer(maltipi, x => x.MalzemeTipi == maltipi);
+                    else
+                        txtKod.Text = ((Mamül)OldEntity).Kod;
+            txtHacim.Enabled = maltipi == MalzemeTipi.Ürün | maltipi == MalzemeTipi.Şişe | maltipi == MalzemeTipi.Kavanoz | maltipi == MalzemeTipi.Diğer;
 
             base.EditValueChanged(sender, e);
+
         }
         protected override void GuncelNesneOluştur()
         {
@@ -118,7 +130,7 @@ namespace Zenix.WinUI.Forms.MamülFormu
                 Uzunluk = txtUzunluk.EditValue.ConvertTo<float>(),
                 Yükseklik = txtYükseklik.EditValue.ConvertTo<float>(),
                 AğızÖlçüsü = txtAğızölçüsü.EditValue.ConvertTo<float>(),
-                Hacim = txtHacim.EditValue.ConvertTo<int>(),
+                Hacim = txtHacim.Enabled ? txtHacim.EditValue.ConvertTo<int>() : default,
                 Ticariİsim = txtTicariİsim.Text,
 
             };
@@ -137,12 +149,50 @@ namespace Zenix.WinUI.Forms.MamülFormu
         }
         protected override bool EntityInsert()
         {
-            return ((MamülBll)Bll).Insert(CurrentEntity, x => x.Kod == CurrentEntity.Kod && x.MalzemeTipi == ((IMamül)CurrentEntity).MalzemeTipi);
+            return !HasError(CurrentEntity) && ((MamülBll)Bll).Insert(CurrentEntity, x => x.Kod == CurrentEntity.Kod && x.MalzemeTipi == ((IMamül)CurrentEntity).MalzemeTipi);
 
         }
         protected override bool EntityUpdate()
         {
-            return ((MamülBll)Bll).Insert(CurrentEntity, x => x.Kod == CurrentEntity.Kod && x.MalzemeTipi == ((IMamül)CurrentEntity).MalzemeTipi);
+            return !HasError(CurrentEntity) && ((MamülBll)Bll).Insert(CurrentEntity, x => x.Kod == CurrentEntity.Kod && x.MalzemeTipi == ((IMamül)CurrentEntity).MalzemeTipi);
+
+        }
+        bool HasError(BaseEntity curent)
+        {
+            var ent = (Mamül)curent;
+            var hacimvar = ent.Hacim > 0;
+            var birimvar = ent.MalzemeBirimi != BirimTipi.yok;
+            var kimyasalbirim = ent.MalzemeBirimi == BirimTipi.kg | ent.MalzemeBirimi == BirimTipi.mL;
+            var adbirim = ent.MalzemeBirimi == BirimTipi.ad;
+            var hacimlibirim = hacimvar & birimvar;
+            var hacimsizbirim = !hacimvar & birimvar;
+            var hacimsizkimyasalbirim = !hacimvar & kimyasalbirim;
+            var hacimsizaded = !hacimvar & adbirim;
+            switch (ent.MalzemeTipi)
+            {
+                case MalzemeTipi.Şişe:
+                case MalzemeTipi.Kavanoz:
+                case MalzemeTipi.Ürün:
+                    if (!hacimlibirim)
+                        Msg.HataMesajı("Hacim değerini yada birim tipini giriniz!");
+                    return !hacimlibirim;
+                case MalzemeTipi.HamMadde:
+                case MalzemeTipi.Esans:
+                    if (!hacimsizkimyasalbirim)
+                        Msg.HataMesajı(" Birim tipini giriniz!");
+                    return !hacimsizkimyasalbirim;
+                case MalzemeTipi.Koli:
+                case MalzemeTipi.Kutu:
+                case MalzemeTipi.Ambalaj:
+                case MalzemeTipi.Etiket:
+                case MalzemeTipi.Kapak:
+                case MalzemeTipi.Sarf:
+                    if (!hacimsizaded)
+                        Msg.HataMesajı(" Birim tipini giriniz!");
+                    return !hacimsizaded;
+                default:
+                    return false;
+            }
 
         }
     }

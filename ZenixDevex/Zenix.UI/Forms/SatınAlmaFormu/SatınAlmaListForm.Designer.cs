@@ -170,6 +170,7 @@
             this.Tablo.OptionsView.RowAutoHeight = true;
             this.Tablo.OptionsView.ShowAutoFilterRow = true;
             this.Tablo.OptionsView.ShowGroupPanel = false;
+            this.Tablo.OptionsView.ShowViewCaption = true;
             this.Tablo.StatusBarAciklama = null;
             this.Tablo.StatusBarKisayol = null;
             this.Tablo.StatusBarKisayolAciklama = null;
@@ -327,10 +328,11 @@
             this.TabloSatınalma.OptionsView.HeaderFilterButtonShowMode = DevExpress.XtraEditors.Controls.FilterButtonShowMode.Button;
             this.TabloSatınalma.OptionsView.RowAutoHeight = true;
             this.TabloSatınalma.OptionsView.ShowGroupPanel = false;
+            this.TabloSatınalma.OptionsView.ShowViewCaption = true;
             this.TabloSatınalma.StatusBarAciklama = "Malzeme Kartları";
             this.TabloSatınalma.StatusBarKisayol = "Shift+Insert";
             this.TabloSatınalma.StatusBarKisayolAciklama = "Malzeme Kartı Ekle";
-            this.TabloSatınalma.ViewCaption = "Malzemeleri";
+            this.TabloSatınalma.ViewCaption = "Malzemeler";
             // 
             // myGridColumn1
             // 

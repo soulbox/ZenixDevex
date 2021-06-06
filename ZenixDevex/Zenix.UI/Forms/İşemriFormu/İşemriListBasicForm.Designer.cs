@@ -38,18 +38,21 @@
             this.myDataLayoutControl1 = new Zenix.WinUI.myUserControls.Controls.myDataLayoutControl();
             this.myBandedGridControl1 = new Zenix.WinUI.myUserControls.Grid.myBandedGridControl();
             this.Tablo = new Zenix.WinUI.myUserControls.Grid.myBandedGridview();
+            this.aaaa = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
             this.colId = new Zenix.WinUI.myUserControls.Grid.myBandedGridColumn();
             this.colKod = new Zenix.WinUI.myUserControls.Grid.myBandedGridColumn();
             this.colİşemriNo = new Zenix.WinUI.myUserControls.Grid.myBandedGridColumn();
             this.colŞarj = new Zenix.WinUI.myUserControls.Grid.myBandedGridColumn();
             this.colŞarjMiktarı = new Zenix.WinUI.myUserControls.Grid.myBandedGridColumn();
-            this.colMarka = new Zenix.WinUI.myUserControls.Grid.myBandedGridColumn();
-            this.colFirma = new Zenix.WinUI.myUserControls.Grid.myBandedGridColumn();
-            this.colMalzeme = new Zenix.WinUI.myUserControls.Grid.myBandedGridColumn();
-            this.colGTIN = new Zenix.WinUI.myUserControls.Grid.myBandedGridColumn();
-            this.colEXP = new Zenix.WinUI.myUserControls.Grid.myBandedGridColumn();
-            this.colRevizyonKodu = new Zenix.WinUI.myUserControls.Grid.myBandedGridColumn();
             this.colAdet = new Zenix.WinUI.myUserControls.Grid.myBandedGridColumn();
+            this.colMarka = new Zenix.WinUI.myUserControls.Grid.myBandedGridColumn();
+            this.colMalzeme = new Zenix.WinUI.myUserControls.Grid.myBandedGridColumn();
+            this.colFirma = new Zenix.WinUI.myUserControls.Grid.myBandedGridColumn();
+            this.colPD = new Zenix.WinUI.myUserControls.Grid.myBandedGridColumn();
+            this.colEXP = new Zenix.WinUI.myUserControls.Grid.myBandedGridColumn();
+            this.colGTIN = new Zenix.WinUI.myUserControls.Grid.myBandedGridColumn();
+            this.gridBand1 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
+            this.colRevizyonKodu = new Zenix.WinUI.myUserControls.Grid.myBandedGridColumn();
             this.myGridControl1 = new Zenix.WinUI.myUserControls.Grid.myGridControl();
             this.ReçeteTablo = new Zenix.WinUI.myUserControls.Grid.myGridview();
             this.myGridColumn1 = new Zenix.WinUI.myUserControls.Grid.MyGridColumn();
@@ -70,9 +73,6 @@
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.longNavigator = new Zenix.WinUI.myUserControls.Navigator.LongNavigator();
-            this.colPD = new Zenix.WinUI.myUserControls.Grid.myBandedGridColumn();
-            this.aaaa = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
-            this.gridBand1 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.myDataLayoutControl1)).BeginInit();
             this.myDataLayoutControl1.SuspendLayout();
@@ -205,9 +205,30 @@
             this.Tablo.OptionsView.ShowAutoFilterRow = true;
             this.Tablo.OptionsView.ShowBands = false;
             this.Tablo.OptionsView.ShowGroupPanel = false;
+            this.Tablo.OptionsView.ShowViewCaption = true;
             this.Tablo.StatusBarAciklama = null;
             this.Tablo.StatusBarKisayol = null;
             this.Tablo.StatusBarKisayolAciklama = null;
+            this.Tablo.ViewCaption = "İş Emirleri";
+            // 
+            // aaaa
+            // 
+            this.aaaa.Caption = "Ürün Tanımı";
+            this.aaaa.Columns.Add(this.colId);
+            this.aaaa.Columns.Add(this.colKod);
+            this.aaaa.Columns.Add(this.colİşemriNo);
+            this.aaaa.Columns.Add(this.colŞarj);
+            this.aaaa.Columns.Add(this.colŞarjMiktarı);
+            this.aaaa.Columns.Add(this.colAdet);
+            this.aaaa.Columns.Add(this.colMarka);
+            this.aaaa.Columns.Add(this.colMalzeme);
+            this.aaaa.Columns.Add(this.colFirma);
+            this.aaaa.Columns.Add(this.colPD);
+            this.aaaa.Columns.Add(this.colEXP);
+            this.aaaa.Columns.Add(this.colGTIN);
+            this.aaaa.Name = "aaaa";
+            this.aaaa.VisibleIndex = 0;
+            this.aaaa.Width = 1240;
             // 
             // colId
             // 
@@ -266,6 +287,17 @@
             this.colŞarjMiktarı.StatusBarKisayolAciklama = null;
             this.colŞarjMiktarı.Visible = true;
             // 
+            // colAdet
+            // 
+            this.colAdet.Caption = "Adet";
+            this.colAdet.FieldName = "Adet";
+            this.colAdet.Name = "colAdet";
+            this.colAdet.OptionsColumn.AllowEdit = false;
+            this.colAdet.StatusBarAciklama = null;
+            this.colAdet.StatusBarKisayol = null;
+            this.colAdet.StatusBarKisayolAciklama = null;
+            this.colAdet.Visible = true;
+            // 
             // colMarka
             // 
             this.colMarka.Caption = "Marka";
@@ -277,18 +309,6 @@
             this.colMarka.StatusBarKisayolAciklama = null;
             this.colMarka.Visible = true;
             this.colMarka.Width = 200;
-            // 
-            // colFirma
-            // 
-            this.colFirma.Caption = "Firma";
-            this.colFirma.FieldName = "FirmaAdi";
-            this.colFirma.Name = "colFirma";
-            this.colFirma.OptionsColumn.AllowEdit = false;
-            this.colFirma.StatusBarAciklama = null;
-            this.colFirma.StatusBarKisayol = null;
-            this.colFirma.StatusBarKisayolAciklama = null;
-            this.colFirma.Visible = true;
-            this.colFirma.Width = 200;
             // 
             // colMalzeme
             // 
@@ -302,17 +322,28 @@
             this.colMalzeme.Visible = true;
             this.colMalzeme.Width = 200;
             // 
-            // colGTIN
+            // colFirma
             // 
-            this.colGTIN.Caption = "GTIN";
-            this.colGTIN.FieldName = "GTIN";
-            this.colGTIN.Name = "colGTIN";
-            this.colGTIN.OptionsColumn.AllowEdit = false;
-            this.colGTIN.StatusBarAciklama = null;
-            this.colGTIN.StatusBarKisayol = null;
-            this.colGTIN.StatusBarKisayolAciklama = null;
-            this.colGTIN.Visible = true;
-            this.colGTIN.Width = 115;
+            this.colFirma.Caption = "Firma";
+            this.colFirma.FieldName = "FirmaAdi";
+            this.colFirma.Name = "colFirma";
+            this.colFirma.OptionsColumn.AllowEdit = false;
+            this.colFirma.StatusBarAciklama = null;
+            this.colFirma.StatusBarKisayol = null;
+            this.colFirma.StatusBarKisayolAciklama = null;
+            this.colFirma.Visible = true;
+            this.colFirma.Width = 200;
+            // 
+            // colPD
+            // 
+            this.colPD.Caption = "PD";
+            this.colPD.FieldName = "PD";
+            this.colPD.Name = "colPD";
+            this.colPD.OptionsColumn.AllowEdit = false;
+            this.colPD.StatusBarAciklama = null;
+            this.colPD.StatusBarKisayol = null;
+            this.colPD.StatusBarKisayolAciklama = null;
+            this.colPD.Visible = true;
             // 
             // colEXP
             // 
@@ -325,6 +356,26 @@
             this.colEXP.StatusBarKisayolAciklama = null;
             this.colEXP.Visible = true;
             // 
+            // colGTIN
+            // 
+            this.colGTIN.Caption = "GTIN";
+            this.colGTIN.FieldName = "GTIN";
+            this.colGTIN.Name = "colGTIN";
+            this.colGTIN.OptionsColumn.AllowEdit = false;
+            this.colGTIN.StatusBarAciklama = null;
+            this.colGTIN.StatusBarKisayol = null;
+            this.colGTIN.StatusBarKisayolAciklama = null;
+            this.colGTIN.Visible = true;
+            this.colGTIN.Width = 115;
+            // 
+            // gridBand1
+            // 
+            this.gridBand1.Caption = "Reçete Bilgileri";
+            this.gridBand1.Columns.Add(this.colRevizyonKodu);
+            this.gridBand1.Name = "gridBand1";
+            this.gridBand1.VisibleIndex = 1;
+            this.gridBand1.Width = 75;
+            // 
             // colRevizyonKodu
             // 
             this.colRevizyonKodu.Caption = "Rev Kod";
@@ -335,17 +386,6 @@
             this.colRevizyonKodu.StatusBarKisayol = null;
             this.colRevizyonKodu.StatusBarKisayolAciklama = null;
             this.colRevizyonKodu.Visible = true;
-            // 
-            // colAdet
-            // 
-            this.colAdet.Caption = "Adet";
-            this.colAdet.FieldName = "Adet";
-            this.colAdet.Name = "colAdet";
-            this.colAdet.OptionsColumn.AllowEdit = false;
-            this.colAdet.StatusBarAciklama = null;
-            this.colAdet.StatusBarKisayol = null;
-            this.colAdet.StatusBarKisayolAciklama = null;
-            this.colAdet.Visible = true;
             // 
             // myGridControl1
             // 
@@ -413,7 +453,7 @@
             this.ReçeteTablo.StatusBarAciklama = "Malzeme Kartları";
             this.ReçeteTablo.StatusBarKisayol = "Shift+Insert";
             this.ReçeteTablo.StatusBarKisayolAciklama = "Malzeme Kartı Ekle";
-            this.ReçeteTablo.ViewCaption = "Malzemeleri";
+            this.ReçeteTablo.ViewCaption = "Reçetesi";
             // 
             // myGridColumn1
             // 
@@ -630,44 +670,6 @@
             this.longNavigator.Name = "longNavigator";
             this.longNavigator.Size = new System.Drawing.Size(984, 24);
             this.longNavigator.TabIndex = 12;
-            // 
-            // colPD
-            // 
-            this.colPD.Caption = "PD";
-            this.colPD.FieldName = "PD";
-            this.colPD.Name = "colPD";
-            this.colPD.OptionsColumn.AllowEdit = false;
-            this.colPD.StatusBarAciklama = null;
-            this.colPD.StatusBarKisayol = null;
-            this.colPD.StatusBarKisayolAciklama = null;
-            this.colPD.Visible = true;
-            // 
-            // aaaa
-            // 
-            this.aaaa.Caption = "Ürün Tanımı";
-            this.aaaa.Columns.Add(this.colId);
-            this.aaaa.Columns.Add(this.colKod);
-            this.aaaa.Columns.Add(this.colİşemriNo);
-            this.aaaa.Columns.Add(this.colŞarj);
-            this.aaaa.Columns.Add(this.colŞarjMiktarı);
-            this.aaaa.Columns.Add(this.colAdet);
-            this.aaaa.Columns.Add(this.colMarka);
-            this.aaaa.Columns.Add(this.colMalzeme);
-            this.aaaa.Columns.Add(this.colFirma);
-            this.aaaa.Columns.Add(this.colPD);
-            this.aaaa.Columns.Add(this.colEXP);
-            this.aaaa.Columns.Add(this.colGTIN);
-            this.aaaa.Name = "aaaa";
-            this.aaaa.VisibleIndex = 0;
-            this.aaaa.Width = 1240;
-            // 
-            // gridBand1
-            // 
-            this.gridBand1.Caption = "Reçete Bilgileri";
-            this.gridBand1.Columns.Add(this.colRevizyonKodu);
-            this.gridBand1.Name = "gridBand1";
-            this.gridBand1.VisibleIndex = 1;
-            this.gridBand1.Width = 75;
             // 
             // İşemriListBasicForm
             // 

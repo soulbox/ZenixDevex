@@ -187,6 +187,7 @@
             this.Tablo.OptionsView.RowAutoHeight = true;
             this.Tablo.OptionsView.ShowAutoFilterRow = true;
             this.Tablo.OptionsView.ShowGroupPanel = false;
+            this.Tablo.OptionsView.ShowViewCaption = true;
             this.Tablo.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
             new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colMamülAdı, DevExpress.Data.ColumnSortOrder.Ascending)});
             this.Tablo.StatusBarAciklama = null;
@@ -326,11 +327,13 @@
             this.TabloSatınAlma.OptionsView.HeaderFilterButtonShowMode = DevExpress.XtraEditors.Controls.FilterButtonShowMode.Button;
             this.TabloSatınAlma.OptionsView.RowAutoHeight = true;
             this.TabloSatınAlma.OptionsView.ShowGroupPanel = false;
+            this.TabloSatınAlma.OptionsView.ShowViewCaption = true;
             this.TabloSatınAlma.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
             new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colSatınAlmaKod, DevExpress.Data.ColumnSortOrder.Ascending)});
             this.TabloSatınAlma.StatusBarAciklama = null;
             this.TabloSatınAlma.StatusBarKisayol = null;
             this.TabloSatınAlma.StatusBarKisayolAciklama = null;
+            this.TabloSatınAlma.ViewCaption = "Satın Alma";
             // 
             // colId1
             // 

@@ -32,7 +32,8 @@ namespace Zenix.Common.Enums
         Kutu,
         [Description("Kavanoz")]
         Kavanoz,
-
+        [Description("Diğer")]
+        Diğer,
     }
 
 }

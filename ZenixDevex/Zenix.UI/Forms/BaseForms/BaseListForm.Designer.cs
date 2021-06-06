@@ -132,13 +132,15 @@
             this.repoComboAşamaTipi = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
             this.btnAşamaOnayla = new DevExpress.XtraBars.BarButtonItem();
             this.btnYeniTicariİsim = new DevExpress.XtraBars.BarButtonItem();
+            this.btnYeniSiparişKullan = new DevExpress.XtraBars.BarButtonItem();
+            this.btnYeniRevizyon = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.repositoryItemImageComboBox1 = new DevExpress.XtraEditors.Repository.RepositoryItemImageComboBox();
             this.ribbonStatusBar1 = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.sagMenu = new DevExpress.XtraBars.PopupMenu(this.components);
-            this.btnYeniSiparişKullan = new DevExpress.XtraBars.BarButtonItem();
+            this.btnYeniSatınAlma = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repoComboAşamaTipi)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemImageComboBox1)).BeginInit();
@@ -204,9 +206,11 @@
             this.btnAşamaOnayla,
             this.btnTümAlamalarYapıldı,
             this.btnYeniTicariİsim,
-            this.btnYeniSiparişKullan});
+            this.btnYeniSiparişKullan,
+            this.btnYeniRevizyon,
+            this.btnYeniSatınAlma});
             this.ribbonControl.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl.MaxItemId = 70;
+            this.ribbonControl.MaxItemId = 72;
             this.ribbonControl.Name = "ribbonControl";
             this.ribbonControl.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
@@ -798,6 +802,24 @@
             this.btnYeniTicariİsim.Name = "btnYeniTicariİsim";
             this.btnYeniTicariİsim.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             // 
+            // btnYeniSiparişKullan
+            // 
+            this.btnYeniSiparişKullan.Caption = "Yeni Siparişte Kullan";
+            this.btnYeniSiparişKullan.Id = 69;
+            this.btnYeniSiparişKullan.ImageOptions.Image = global::Zenix.WinUI.Properties.Resources.add_16x164;
+            this.btnYeniSiparişKullan.ImageOptions.LargeImage = global::Zenix.WinUI.Properties.Resources.add_32x324;
+            this.btnYeniSiparişKullan.Name = "btnYeniSiparişKullan";
+            this.btnYeniSiparişKullan.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            // 
+            // btnYeniRevizyon
+            // 
+            this.btnYeniRevizyon.Caption = "Yeni Revizyon";
+            this.btnYeniRevizyon.Id = 70;
+            this.btnYeniRevizyon.ImageOptions.Image = global::Zenix.WinUI.Properties.Resources.add_16x165;
+            this.btnYeniRevizyon.ImageOptions.LargeImage = global::Zenix.WinUI.Properties.Resources.add_32x325;
+            this.btnYeniRevizyon.Name = "btnYeniRevizyon";
+            this.btnYeniRevizyon.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -871,6 +893,8 @@
             // sagMenu
             // 
             this.sagMenu.ItemLinks.Add(this.btnAşamalar);
+            this.sagMenu.ItemLinks.Add(this.btnYeniRevizyon);
+            this.sagMenu.ItemLinks.Add(this.btnYeniSatınAlma);
             this.sagMenu.ItemLinks.Add(this.btnYeniSiparişKullan);
             this.sagMenu.ItemLinks.Add(this.btnYeniTicariİsim);
             this.sagMenu.ItemLinks.Add(this.btnYeni);
@@ -883,14 +907,14 @@
             this.sagMenu.Name = "sagMenu";
             this.sagMenu.Ribbon = this.ribbonControl;
             // 
-            // btnYeniSiparişKullan
+            // btnYeniSatınAlma
             // 
-            this.btnYeniSiparişKullan.Caption = "Yeni Siparişte Kullan";
-            this.btnYeniSiparişKullan.Id = 69;
-            this.btnYeniSiparişKullan.ImageOptions.Image = global::Zenix.WinUI.Properties.Resources.add_16x164;
-            this.btnYeniSiparişKullan.ImageOptions.LargeImage = global::Zenix.WinUI.Properties.Resources.add_32x324;
-            this.btnYeniSiparişKullan.Name = "btnYeniSiparişKullan";
-            this.btnYeniSiparişKullan.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            this.btnYeniSatınAlma.Caption = "Yeni Satın Almada Kullan";
+            this.btnYeniSatınAlma.Id = 71;
+            this.btnYeniSatınAlma.ImageOptions.Image = global::Zenix.WinUI.Properties.Resources.add_16x166;
+            this.btnYeniSatınAlma.ImageOptions.LargeImage = global::Zenix.WinUI.Properties.Resources.add_32x326;
+            this.btnYeniSatınAlma.Name = "btnYeniSatınAlma";
+            this.btnYeniSatınAlma.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             // 
             // BaseListForm
             // 
@@ -976,5 +1000,7 @@
         protected DevExpress.XtraBars.BarButtonItem btnTümAlamalarYapıldı;
         protected DevExpress.XtraBars.BarButtonItem btnYeniTicariİsim;
         protected DevExpress.XtraBars.BarButtonItem btnYeniSiparişKullan;
+        public DevExpress.XtraBars.BarButtonItem btnYeniRevizyon;
+        public DevExpress.XtraBars.BarButtonItem btnYeniSatınAlma;
     }
 }

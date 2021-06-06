@@ -196,9 +196,11 @@
             this.TabloÜretim.OptionsView.RowAutoHeight = true;
             this.TabloÜretim.OptionsView.ShowAutoFilterRow = true;
             this.TabloÜretim.OptionsView.ShowGroupPanel = false;
+            this.TabloÜretim.OptionsView.ShowViewCaption = true;
             this.TabloÜretim.StatusBarAciklama = null;
             this.TabloÜretim.StatusBarKisayol = null;
             this.TabloÜretim.StatusBarKisayolAciklama = null;
+            this.TabloÜretim.ViewCaption = "Üretim Geçmişi";
             // 
             // myGridColumn1
             // 
@@ -303,10 +305,11 @@
             this.ReçeteTablo.OptionsView.HeaderFilterButtonShowMode = DevExpress.XtraEditors.Controls.FilterButtonShowMode.Button;
             this.ReçeteTablo.OptionsView.RowAutoHeight = true;
             this.ReçeteTablo.OptionsView.ShowGroupPanel = false;
+            this.ReçeteTablo.OptionsView.ShowViewCaption = true;
             this.ReçeteTablo.StatusBarAciklama = "Malzeme Kartları";
             this.ReçeteTablo.StatusBarKisayol = "Shift+Insert";
             this.ReçeteTablo.StatusBarKisayolAciklama = "Malzeme Kartı Ekle";
-            this.ReçeteTablo.ViewCaption = "Malzemeleri";
+            this.ReçeteTablo.ViewCaption = "Reçetesi";
             // 
             // myGridColumn3
             // 
@@ -528,9 +531,11 @@
             this.Tablo.OptionsView.ShowAutoFilterRow = true;
             this.Tablo.OptionsView.ShowBands = false;
             this.Tablo.OptionsView.ShowGroupPanel = false;
+            this.Tablo.OptionsView.ShowViewCaption = true;
             this.Tablo.StatusBarAciklama = null;
             this.Tablo.StatusBarKisayol = null;
             this.Tablo.StatusBarKisayolAciklama = null;
+            this.Tablo.ViewCaption = "İş Emirleri";
             // 
             // aaaa
             // 

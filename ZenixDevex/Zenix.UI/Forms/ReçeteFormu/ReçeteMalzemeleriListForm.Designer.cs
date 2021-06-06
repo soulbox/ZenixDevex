@@ -33,8 +33,8 @@
             this.Tablo = new Zenix.WinUI.myUserControls.Grid.myGridview();
             this.colMalzeme = new Zenix.WinUI.myUserControls.Grid.MyGridColumn();
             this.colHacim = new Zenix.WinUI.myUserControls.Grid.MyGridColumn();
-            this.longNavigator = new Zenix.WinUI.myUserControls.Navigator.LongNavigator();
             this.colMalzemeTipi = new Zenix.WinUI.myUserControls.Grid.MyGridColumn();
+            this.longNavigator = new Zenix.WinUI.myUserControls.Navigator.LongNavigator();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Grid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Tablo)).BeginInit();
@@ -114,7 +114,6 @@
             this.Tablo.StatusBarAciklama = null;
             this.Tablo.StatusBarKisayol = null;
             this.Tablo.StatusBarKisayolAciklama = null;
-            this.Tablo.ViewCaption = "Yetki Kartları";
             // 
             // colMalzeme
             // 
@@ -142,14 +141,6 @@
             this.colHacim.VisibleIndex = 2;
             this.colHacim.Width = 85;
             // 
-            // longNavigator
-            // 
-            this.longNavigator.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.longNavigator.Location = new System.Drawing.Point(0, 501);
-            this.longNavigator.Name = "longNavigator";
-            this.longNavigator.Size = new System.Drawing.Size(496, 24);
-            this.longNavigator.TabIndex = 4;
-            // 
             // colMalzemeTipi
             // 
             this.colMalzemeTipi.Caption = "Malzeme";
@@ -162,6 +153,14 @@
             this.colMalzemeTipi.Visible = true;
             this.colMalzemeTipi.VisibleIndex = 1;
             this.colMalzemeTipi.Width = 87;
+            // 
+            // longNavigator
+            // 
+            this.longNavigator.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.longNavigator.Location = new System.Drawing.Point(0, 501);
+            this.longNavigator.Name = "longNavigator";
+            this.longNavigator.Size = new System.Drawing.Size(496, 24);
+            this.longNavigator.TabIndex = 4;
             // 
             // ReçeteMalzemeleriListForm
             // 

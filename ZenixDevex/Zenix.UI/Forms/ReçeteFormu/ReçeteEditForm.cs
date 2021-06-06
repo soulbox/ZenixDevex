@@ -20,6 +20,8 @@ namespace Zenix.WinUI.Forms.ReçeteFormu
 {
     public partial class ReçeteEditForm : BaseEditForm
     {
+        ReçeteL clonereçete = null;
+
         public ReçeteEditForm()
         {
             InitializeComponent();
@@ -28,10 +30,15 @@ namespace Zenix.WinUI.Forms.ReçeteFormu
             this.KartTuru = Common.Enums.KartTuru.Reçete;
             EventsLoad();
         }
+        public ReçeteEditForm(ReçeteL clone):this()
+        {
+            clonereçete = clone;
+        }
         protected internal override void Yukle()
         {
-
-            OldEntity = BaseIslemTuru == Common.Enums.IslemTuru.EntityInsert ? new ReçeteS() : ((ReçeteBll)Bll).Single(FilterFunctions.Filter<Reçete>(Id));
+            if (clonereçete != null)
+                BaseIslemTuru = Common.Enums.IslemTuru.EntityInsert;
+            OldEntity = BaseIslemTuru == Common.Enums.IslemTuru.EntityInsert ?clonereçete==null? new ReçeteS() : ((ReçeteBll)Bll).Single(x=>x.Id==clonereçete.Id) : ((ReçeteBll)Bll).Single(FilterFunctions.Filter<Reçete>(Id));
             NesneyiKontrollereBagla();
             TabloYükle();
             if (BaseIslemTuru != Common.Enums.IslemTuru.EntityInsert) return;
@@ -39,6 +46,7 @@ namespace Zenix.WinUI.Forms.ReçeteFormu
             txtKod.Text = ((ReçeteBll)Bll).YeniKodVer();
             txtÜrün.Focus();
         }
+
         protected override void NesneyiKontrollereBagla()
         {
             var entity = (ReçeteS)OldEntity;
@@ -53,7 +61,7 @@ namespace Zenix.WinUI.Forms.ReçeteFormu
             txtEFaz.Text = entity.EFazıHazırlanış;
 
             txtAçıklama.Text = entity.Açıklama;
-            if (BaseIslemTuru == Common.Enums.IslemTuru.EntityInsert) return;
+            if (BaseIslemTuru == Common.Enums.IslemTuru.EntityInsert && clonereçete==null ) return;
             txtÜrün.Text = $"[{entity.MarkaAdı}-{entity.MamülAdı}-{entity.GTIN}]";
             txtRevizyon.Text = entity.RevKodu;
             txtÜrün.Tag = new ÜrünL

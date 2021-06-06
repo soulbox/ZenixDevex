@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AmbalajTipiListForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FirmaTipiListForm));
             this.longNavigator = new Zenix.WinUI.myUserControls.Navigator.LongNavigator();
             this.Grid = new Zenix.WinUI.myUserControls.Grid.myGridControl();
             this.Tablo = new Zenix.WinUI.myUserControls.Grid.myGridview();
@@ -57,6 +57,11 @@
             // 
             this.btnGonder.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnGonder.ImageOptions.Image")));
             this.btnGonder.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnGonder.ImageOptions.LargeImage")));
+            // 
+            // btnAşamalar
+            // 
+            this.btnAşamalar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAşamalar.ImageOptions.Image")));
+            this.btnAşamalar.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnAşamalar.ImageOptions.LargeImage")));
             // 
             // longNavigator
             // 
@@ -115,7 +120,6 @@
             this.Tablo.StatusBarAciklama = null;
             this.Tablo.StatusBarKisayol = null;
             this.Tablo.StatusBarKisayolAciklama = null;
-            this.Tablo.ViewCaption = "Filitreler";
             // 
             // colId
             // 
@@ -157,7 +161,7 @@
             this.colAdı.VisibleIndex = 1;
             this.colAdı.Width = 280;
             // 
-            // AmbalajTipiListForm
+            // FirmaTipiListForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -166,7 +170,7 @@
             this.Controls.Add(this.longNavigator);
             this.IconOptions.ShowIcon = false;
             this.MinimumSize = new System.Drawing.Size(530, 549);
-            this.Name = "AmbalajTipiListForm";
+            this.Name = "FirmaTipiListForm";
             this.Text = "AmbalajTİpiListForm";
             this.Controls.SetChildIndex(this.ribbonControl, 0);
             this.Controls.SetChildIndex(this.longNavigator, 0);

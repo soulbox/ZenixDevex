@@ -23,6 +23,7 @@ namespace Zenix.Model.DTO
         public string Ülke { get; set; }
         public string FirmaTipi { get; set; }
         public int SatınAlmaMiktarı { get; set; }
+        public SatınalmaL Clone { get => (SatınalmaL)this.MemberwiseClone(); }
     }
 
 }

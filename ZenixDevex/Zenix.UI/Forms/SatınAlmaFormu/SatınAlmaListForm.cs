@@ -32,7 +32,7 @@ namespace Zenix.WinUI.Forms.SatınAlmaFormu
             this.KartTuru = Common.Enums.KartTuru.Firma;
             this.FormShow = new ShowEditForms<SatınAlmaEditForm >();
             this.Navigator = longNavigator.controlNavigator;
-            Text = "Satın Alma Kartları ";
+            Text = "Satın Alma";
             Tablo.ViewCaption = Text;
             //ShowHideButtons(IsMdiChild, btnBağlıKayıtları);
             //btnBağlıKayıtları.Caption = "Ürünleri";
@@ -50,6 +50,21 @@ namespace Zenix.WinUI.Forms.SatınAlmaFormu
             if (entity == null) return;
             using (var Satınalmabll = new SatınAlmaMalzemelerBll())
                 TabloSatınalma.GridControl.DataSource = Satınalmabll.List(x => x.SatınalmaId == entity.Id);
+        }
+        protected override void SagMenuGoster(object sender, MouseEventArgs e)
+        {
+            var isRight = (e.Button == MouseButtons.Right);
+            var entity = Tablo.GetRow<SatınalmaL>();
+            ShowHideButtons(entity != null, btnYeniSatınAlma );
+            base.SagMenuGoster(sender, e);
+        }
+        protected override void YeniSatınAlma()
+        {
+            var entity = Tablo.GetRow<SatınalmaL>();
+            var clone = entity.Clone;
+            var result = new ShowEditForms<SatınAlmaEditForm >().ShowDialogEditForm(Common.Enums.KartTuru.SatınAlma, clone.Id, clone);
+            Listele();
+            ShowEditFormDefault(result);
         }
     }
 }

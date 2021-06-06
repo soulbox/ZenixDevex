@@ -177,22 +177,20 @@ namespace Zenix.DAL.Base
                         return "ESNS-0001"; 
                     case MalzemeTipi.HamMadde:
                         return "HMD-0001";
-                    case MalzemeTipi.Ambalaj:
-                        return "AMB-0001";
                     case MalzemeTipi.Etiket:
                         return "ETKT-0001";
-                    case MalzemeTipi.Kapak:
-                        return "KPK-0001";
                     case MalzemeTipi.Sarf:
-                        return "SRF-0001";
-                    case MalzemeTipi.Şişe:
-                        return "Şişe-0001";
-                    case MalzemeTipi.Koli:
-                        return "Koli-0001";
-                    case MalzemeTipi.Kutu:
-                        return "Kutu-0001";
-                    case MalzemeTipi.Kavanoz:
-                        return "KVNZ-0001";
+                    case MalzemeTipi.Kapak:
+                        return "SARF-0001";//SARF   
+                    case MalzemeTipi.Kavanoz://HCM
+                    case MalzemeTipi.Şişe://HCM
+                        return "HCM-0001";
+                    case MalzemeTipi.Kutu://AMB
+                    case MalzemeTipi.Ambalaj:
+                    case MalzemeTipi.Koli://AMB
+                        return "AMB-0001";
+                    case MalzemeTipi.Diğer:
+                        return "DIGR-0001";
                     default:
                         return dizi;
                 }

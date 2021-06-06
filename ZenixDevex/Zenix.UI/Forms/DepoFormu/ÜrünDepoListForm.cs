@@ -51,6 +51,11 @@ namespace Zenix.WinUI.Forms.DepoFormu
         {
             var entity = TabloSipariş.GetRow<SiparişÜrünleriL>();
             if (entity == null && entity.EksikFazla > 0) return;
+            if (entity.Stok < Math.Abs(entity.EksikFazla))
+            {
+                Msg.HataMesajı("Stok Yetersiz");
+                return;
+            }
             var yeni = new Depo
             {
                 Id = IslemTuru.EntityInsert.IdOlustur(null),
@@ -84,6 +89,12 @@ namespace Zenix.WinUI.Forms.DepoFormu
             if (entity == null) return;
             var source = TabloSipariş.DataController.ListSource.Cast<SiparişÜrünleriL>()
                 .Where(x => x.FirmaId == entity.FirmaId && x.EksikFazla < 0).ToList();
+            var eksikstok = source.Any(x => x.Stok < Math.Abs(x.EksikFazla));
+            if (eksikstok)
+            {
+                Msg.HataMesajı("Stok Yetersiz");
+                return;
+            }
             var eklenicekler = source.Select(x => new Depo
             {
                 Id = IslemTuru.EntityInsert.IdOlustur(null),
@@ -114,6 +125,12 @@ namespace Zenix.WinUI.Forms.DepoFormu
         {
             var entity = TabloSipariş.GetRow<SiparişÜrünleriL>();
             if (entity == null) return;
+            var value = barbirkısmıSevk.EditValue.ConvertTo<float>();
+            if (value > entity.Stok)
+            {
+                Msg.HataMesajı($"Stok Yetersiz\nMaksimum {value:n0} kadar gönderebilirsiniz");
+                return;
+            }
             var yeni = new Depo
             {
                 Id = IslemTuru.EntityInsert.IdOlustur(null),

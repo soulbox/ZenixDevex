@@ -36,7 +36,7 @@ namespace Zenix.WinUI.Forms.ÜretimFormu
             this.FormShow = new ShowEditForms<ÜretimEditForm>();
             this.Navigator = longNavigator.controlNavigator;
             Text = "Üretim Kartları ";
-            Tablo.ViewCaption = Text;
+            //Tablo.ViewCaption = Text;
             //ShowHideButtons(IsMdiChild, btnBağlıKayıtları);
             //btnBağlıKayıtları.Caption = "Ürünleri";
             ShowHideButtons(false, btnYeni, btnDüzelt, btnSil);
