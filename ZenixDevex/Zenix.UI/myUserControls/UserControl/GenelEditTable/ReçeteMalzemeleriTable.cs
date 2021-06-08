@@ -38,25 +38,28 @@ namespace Zenix.WinUI.myUserControls.UserControl.GenelEditTable
             EventsLoad();
         }
 
+        void ListelewithOrder()
+        {
+        }
         protected internal override void Listele()
         {
-            var lists = ((ReçeteMalzemelerBll)Bll).List(x => x.ReçeteId == ownerform.Id).ToBindingList<ReçeteMalzemeleriL>();
-            var hacim = lists.FirstOrDefault(x => x.Hacim > 0)?.Hacim;
-            var enti = lists.FirstOrDefault(x => x.Hacim > 0);
-            tablo.ViewCaption = hacim.HasValue ? $"Malzemeleri {enti.HacimliMalzemeAdı}-{hacim}{enti.HacimliMalzemeBirimi  } " : $"Malzemeleri";
-
-            lists.ForEach(x =>
-                {
-                    bool isKim = x.MalzemeTipi == MalzemeTipi.HamMadde | x.MalzemeTipi == MalzemeTipi.Esans;
-                    x.Miktar = !isKim ? (100 / (float)hacim * 1000) : x.Miktar;
-                });
-            tablo.GridControl.DataSource = lists;
+            tablo.GridControl.DataSource = ((ReçeteMalzemelerBll)Bll).List(x => x.ReçeteId == ownerform.Id).ToBindingList<ReçeteMalzemeleriL>();
             SortList();
         }
         void SortList()
         {
-            var source = tablo.DataController.ListSource.Cast<ReçeteMalzemeleriL>();
-            tablo.GridControl.DataSource =source.Order().ToBindingList<ReçeteMalzemeleriL>();
+            var lists = tablo.DataController.ListSource.Cast<ReçeteMalzemeleriL>();
+            var enti = lists.FirstOrDefault(x => !x.Delete && x.Hacim > 0);
+
+            var hacim = enti?.Hacim;
+            tablo.ViewCaption = hacim.HasValue ? $"Malzemeleri {enti.HacimliMalzemeAdı}-{hacim}{enti.HacimliMalzemeBirimi  } " : $"Malzemeleri";
+            lists.ForEach(x =>
+            {
+                bool isKim = x.MalzemeTipi == MalzemeTipi.HamMadde | x.MalzemeTipi == MalzemeTipi.Esans;
+                x.Miktar = !isKim ? (100 / (float)(hacim ?? 0) * 1000) : x.Miktar;
+            });
+            tablo.GridControl.DataSource = lists;
+            tablo.GridControl.DataSource = lists.Order().ToBindingList<ReçeteMalzemeleriL>();
         }
         protected override void HareketEkle()
         {
@@ -117,6 +120,11 @@ namespace Zenix.WinUI.myUserControls.UserControl.GenelEditTable
             tablo.FocusedRowHandle = tablo.DataRowCount - 1;
             ButtonEnableDurum(true);
 
+        }
+        protected override void HareketSil()
+        {
+            base.HareketSil();
+            SortList();
         }
         protected internal override bool HatalıGiriş()
         {

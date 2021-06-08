@@ -73,7 +73,15 @@ namespace Zenix.WinUI.myUserControls.UserControl.Base
             baseTablo.ColumnWidthChanged += Tablo_SablonChanged;
             baseTablo.EndSorting += Tablo_SablonChanged;
             baseTablo.FocusedRowObjectChanged += Tablo_FocusedRowObjectChanged;
+            baseTablo.CustomRowFilter += Tablo_CustomRowFilter;
+        }
 
+        private void Tablo_CustomRowFilter(object sender, RowFilterEventArgs e)
+        {
+            GridView view = sender as GridView;
+            bool isDeletes = (bool)view.GetListSourceRowCellValue(e.ListSourceRow, "Delete");
+            e.Visible = !isDeletes;
+            e.Handled = isDeletes;
         }
 
         private void Tablo_FocusedRowObjectChanged(object sender, FocusedRowObjectChangedEventArgs e)
@@ -256,7 +264,7 @@ namespace Zenix.WinUI.myUserControls.UserControl.Base
             btnHareketSil.Enabled = baseTablo.RowCount > 0;
             btnTümSeçimleriKaldır.Enabled = baseTablo.RowCount > 0;
             btnTümünüSeç.Enabled = baseTablo.RowCount > 0;
-            btnTümHareketSil .Enabled = baseTablo.RowCount > 0;
+            btnTümHareketSil.Enabled = baseTablo.RowCount > 0;
             e.SagMenuGoster(popupMenu);
         }
 
