@@ -66,6 +66,7 @@
     <Compile Include="DTO\SatınAlmaMalzemeleriDTO.cs" />
     <Compile Include="DTO\SiparişDTO.cs" />
     <Compile Include="DTO\SiparişÜrünleriDTO.cs" />
+    <Compile Include="DTO\YarıMamülDTO.cs" />
     <Compile Include="DTO\ÜretimDTO.cs" />
     <Compile Include="DTO\ÜrünDTO.cs" />
     <Compile Include="DTO\İşemriDTO.cs" />
@@ -95,6 +96,8 @@
     <Compile Include="Entities\Satınalma.cs" />
     <Compile Include="Entities\SatınAlmaMalzemeler.cs" />
     <Compile Include="Entities\SiparişÜrünleri.cs" />
+    <Compile Include="Entities\YarıMamülGrup.cs" />
+    <Compile Include="Entities\YarıMamül.cs" />
     <Compile Include="Entities\Ülke.cs" />
     <Compile Include="Entities\Üretim.cs" />
     <Compile Include="Entities\Ürün.cs" />

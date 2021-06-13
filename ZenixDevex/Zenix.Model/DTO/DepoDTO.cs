@@ -20,7 +20,7 @@ namespace Zenix.Model.DTO
         public string SiparişNo { get; set; }
         public string işemriNo { get => $"{işemriTarih:ddMM}{ŞarjNo:00}{işemriTarih:yy}"; }
         public long ReçeteId { get; set; }
-        public long KullanıcıId { get; set; }
+        public long KullaniciId { get; set; }
         public int ŞarjMiktarı { get; set; }
         public int ŞarjNo { get; set; }
         public string Açıklama { get; set; }

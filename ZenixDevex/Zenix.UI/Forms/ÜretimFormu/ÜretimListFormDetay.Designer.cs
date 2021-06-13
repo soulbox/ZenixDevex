@@ -111,7 +111,7 @@
             this.ribbonControl.SearchEditItem.EditWidth = 150;
             this.ribbonControl.SearchEditItem.Id = -5000;
             this.ribbonControl.SearchEditItem.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
-            this.ribbonControl.Size = new System.Drawing.Size(1119, 109);
+            this.ribbonControl.Size = new System.Drawing.Size(1144, 109);
             this.ribbonControl.Toolbar.ShowCustomizeItem = false;
             // 
             // btnGonder
@@ -133,7 +133,7 @@
             this.myDataLayoutControl1.Name = "myDataLayoutControl1";
             this.myDataLayoutControl1.OptionsFocus.EnableAutoTabOrder = false;
             this.myDataLayoutControl1.Root = this.Root;
-            this.myDataLayoutControl1.Size = new System.Drawing.Size(1119, 473);
+            this.myDataLayoutControl1.Size = new System.Drawing.Size(1144, 473);
             this.myDataLayoutControl1.TabIndex = 14;
             this.myDataLayoutControl1.Text = "myDataLayoutControl1";
             // 
@@ -141,11 +141,11 @@
             // 
             this.myDataLayoutControl2.Controls.Add(this.myGridControl1);
             this.myDataLayoutControl2.Controls.Add(this.myGridControl2);
-            this.myDataLayoutControl2.Location = new System.Drawing.Point(12, 148);
+            this.myDataLayoutControl2.Location = new System.Drawing.Point(12, 193);
             this.myDataLayoutControl2.Name = "myDataLayoutControl2";
             this.myDataLayoutControl2.OptionsFocus.EnableAutoTabOrder = false;
             this.myDataLayoutControl2.Root = this.layoutControlGroup1;
-            this.myDataLayoutControl2.Size = new System.Drawing.Size(1095, 313);
+            this.myDataLayoutControl2.Size = new System.Drawing.Size(1120, 268);
             this.myDataLayoutControl2.TabIndex = 16;
             this.myDataLayoutControl2.Text = "myDataLayoutControl2";
             // 
@@ -155,7 +155,7 @@
             this.myGridControl1.MainView = this.TabloÜretim;
             this.myGridControl1.MenuManager = this.ribbonControl;
             this.myGridControl1.Name = "myGridControl1";
-            this.myGridControl1.Size = new System.Drawing.Size(533, 289);
+            this.myGridControl1.Size = new System.Drawing.Size(546, 244);
             this.myGridControl1.TabIndex = 17;
             this.myGridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.TabloÜretim});
@@ -256,7 +256,7 @@
             // 
             // myGridControl2
             // 
-            this.myGridControl2.Location = new System.Drawing.Point(549, 12);
+            this.myGridControl2.Location = new System.Drawing.Point(562, 12);
             this.myGridControl2.MainView = this.ReçeteTablo;
             this.myGridControl2.Name = "myGridControl2";
             this.myGridControl2.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
@@ -265,7 +265,7 @@
             this.repoCombo,
             this.repoimagecomboFaz,
             this.repoimgaecomboAşama});
-            this.myGridControl2.Size = new System.Drawing.Size(534, 289);
+            this.myGridControl2.Size = new System.Drawing.Size(546, 244);
             this.myGridControl2.TabIndex = 16;
             this.myGridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.ReçeteTablo});
@@ -440,7 +440,7 @@
             rowDefinition1.SizeType = System.Windows.Forms.SizeType.Percent;
             this.layoutControlGroup1.OptionsTableLayoutGroup.RowDefinitions.AddRange(new DevExpress.XtraLayout.RowDefinition[] {
             rowDefinition1});
-            this.layoutControlGroup1.Size = new System.Drawing.Size(1095, 313);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(1120, 268);
             this.layoutControlGroup1.TextVisible = false;
             // 
             // layoutControlItem3
@@ -448,10 +448,10 @@
             this.layoutControlItem3.AppearanceItemCaption.ForeColor = System.Drawing.Color.Maroon;
             this.layoutControlItem3.AppearanceItemCaption.Options.UseForeColor = true;
             this.layoutControlItem3.Control = this.myGridControl2;
-            this.layoutControlItem3.Location = new System.Drawing.Point(537, 0);
+            this.layoutControlItem3.Location = new System.Drawing.Point(550, 0);
             this.layoutControlItem3.Name = "layoutControlItem3";
             this.layoutControlItem3.OptionsTableLayoutItem.ColumnIndex = 1;
-            this.layoutControlItem3.Size = new System.Drawing.Size(538, 293);
+            this.layoutControlItem3.Size = new System.Drawing.Size(550, 248);
             this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem3.TextVisible = false;
             // 
@@ -462,7 +462,7 @@
             this.layoutControlItem4.Control = this.myGridControl1;
             this.layoutControlItem4.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(537, 293);
+            this.layoutControlItem4.Size = new System.Drawing.Size(550, 248);
             this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem4.TextVisible = false;
             // 
@@ -472,7 +472,7 @@
             this.myBandedGridControl1.MainView = this.Tablo;
             this.myBandedGridControl1.MenuManager = this.ribbonControl;
             this.myBandedGridControl1.Name = "myBandedGridControl1";
-            this.myBandedGridControl1.Size = new System.Drawing.Size(1095, 132);
+            this.myBandedGridControl1.Size = new System.Drawing.Size(1120, 177);
             this.myBandedGridControl1.TabIndex = 15;
             this.myBandedGridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.Tablo});
@@ -702,14 +702,14 @@
             columnDefinition3.Width = 100D;
             this.Root.OptionsTableLayoutGroup.ColumnDefinitions.AddRange(new DevExpress.XtraLayout.ColumnDefinition[] {
             columnDefinition3});
-            rowDefinition2.Height = 30D;
+            rowDefinition2.Height = 40D;
             rowDefinition2.SizeType = System.Windows.Forms.SizeType.Percent;
-            rowDefinition3.Height = 70D;
+            rowDefinition3.Height = 60D;
             rowDefinition3.SizeType = System.Windows.Forms.SizeType.Percent;
             this.Root.OptionsTableLayoutGroup.RowDefinitions.AddRange(new DevExpress.XtraLayout.RowDefinition[] {
             rowDefinition2,
             rowDefinition3});
-            this.Root.Size = new System.Drawing.Size(1119, 473);
+            this.Root.Size = new System.Drawing.Size(1144, 473);
             this.Root.TextVisible = false;
             // 
             // layoutControlItem2
@@ -719,7 +719,7 @@
             this.layoutControlItem2.Control = this.myBandedGridControl1;
             this.layoutControlItem2.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(1099, 136);
+            this.layoutControlItem2.Size = new System.Drawing.Size(1124, 181);
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem2.TextVisible = false;
             // 
@@ -728,10 +728,10 @@
             this.layoutControlItem1.AppearanceItemCaption.ForeColor = System.Drawing.Color.Maroon;
             this.layoutControlItem1.AppearanceItemCaption.Options.UseForeColor = true;
             this.layoutControlItem1.Control = this.myDataLayoutControl2;
-            this.layoutControlItem1.Location = new System.Drawing.Point(0, 136);
+            this.layoutControlItem1.Location = new System.Drawing.Point(0, 181);
             this.layoutControlItem1.Name = "layoutControlItem1";
             this.layoutControlItem1.OptionsTableLayoutItem.RowIndex = 1;
-            this.layoutControlItem1.Size = new System.Drawing.Size(1099, 317);
+            this.layoutControlItem1.Size = new System.Drawing.Size(1124, 272);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
@@ -740,14 +740,14 @@
             this.longNavigator.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.longNavigator.Location = new System.Drawing.Point(0, 582);
             this.longNavigator.Name = "longNavigator";
-            this.longNavigator.Size = new System.Drawing.Size(1119, 24);
+            this.longNavigator.Size = new System.Drawing.Size(1144, 24);
             this.longNavigator.TabIndex = 15;
             // 
             // ÜretimListFormDetay
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1119, 630);
+            this.ClientSize = new System.Drawing.Size(1144, 630);
             this.Controls.Add(this.myDataLayoutControl1);
             this.Controls.Add(this.longNavigator);
             this.IconOptions.ShowIcon = false;

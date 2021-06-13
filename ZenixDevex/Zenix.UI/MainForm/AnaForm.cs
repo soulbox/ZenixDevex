@@ -30,6 +30,7 @@ using Zenix.WinUI.Forms.ÜrünlerFormu;
 using Zenix.WinUI.Forms.SatınAlmaFormu;
 using Zenix.WinUI.Forms.DepoFormu;
 using Zenix.WinUI.Forms.ÜretimFormu;
+using Zenix.WinUI.Forms.YarıMamülGrupFormu;
 
 namespace Zenix.WinUI.MainForm
 {
@@ -45,9 +46,9 @@ namespace Zenix.WinUI.MainForm
             hideitemsisexcludemachine?.ForEach(x => x.Visibility = HWIDEngine.isExcludeMachine ? BarItemVisibility.Always : BarItemVisibility.Never);
             hideitems?.ForEach(x => x.Visibility = BarItemVisibility.Never);
             showitems?.ForEach(x => x.Visibility = BarItemVisibility.Always);
-            var KullanıcıGörebilir = KartTuru.Kullanıcı.YetkiKontrolu(YetkiTuru.Gorebilir, false);  //Kullanıcı.isGörebilir(x => x.KartTuru == KartTuru.Kullanıcı);
-            btnKullanıcı.Visibility = KullanıcıGörebilir ? BarItemVisibility.Always : BarItemVisibility.Never;
-            btnRolKartları.Visibility = btnKullanıcı.Visibility;
+            //var KullanıcıGörebilir = KartTuru.Kullanıcı.YetkiKontrolu(YetkiTuru.Gorebilir, false);  //Kullanıcı.isGörebilir(x => x.KartTuru == KartTuru.Kullanıcı);
+            //btnKullanıcı.Visibility = KullanıcıGörebilir ? BarItemVisibility.Always : BarItemVisibility.Never;
+            //btnRolKartları.Visibility = btnKullanıcı.Visibility;
 
         }
         public AnaForm()
@@ -125,6 +126,12 @@ namespace Zenix.WinUI.MainForm
                                 ShowListForms<ÜretimListFormDetay>.ShowListForm(KartTuru.Üretim);
                             else if (e.Item == btnİşemri)
                                 ShowListForms<İşemriListBasicForm>.ShowListForm(KartTuru.İşemri);
+                            else if (e.Item == btnTabloAyarlarıSıfırla)
+                                PathEngine.ClearConfigFiles();
+                            else if (e.Item == btnYarıMamülGrup)
+                                ShowListForms<YarıMamülGrupListForm>.ShowListForm(KartTuru.YarıMamülGrup);
+                            //else if (e.Item == btnYarıMamül)
+                            //    ShowListForms<YarıMamülGrupListForm>.ShowListForm(KartTuru.YarıMamülGrup);
 
                         };
                         break;

@@ -168,6 +168,8 @@ namespace Zenix.WinUI.Forms.BaseForms
                         YeniRevizyon();
                     else if (e.Item == btnYeniSatınAlma )
                         YeniSatınAlma();
+                    else if (e.Item == btnYeniİşemri)
+                        YeniİşemriKullan();
                     Cursor.Current = DefaultCursor;
 
                 };
@@ -347,6 +349,8 @@ namespace Zenix.WinUI.Forms.BaseForms
         protected virtual void YeniSiparişKullan() { }
         protected virtual void YeniRevizyon() { }
         protected virtual void YeniSatınAlma() { }
+        protected virtual void YeniİşemriKullan() { }
+
         protected virtual void Listele() { }
         protected virtual void ŞarjAc() { }
         protected virtual void PaketlemeAc() { }

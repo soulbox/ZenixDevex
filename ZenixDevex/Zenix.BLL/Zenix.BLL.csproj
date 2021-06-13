@@ -79,6 +79,8 @@
     <Compile Include="General\SatınAlmaMalzemelerBll.cs" />
     <Compile Include="General\SiparişBll.cs" />
     <Compile Include="General\SiparişÜrünleriBll.cs" />
+    <Compile Include="General\YarıMamülBll.cs" />
+    <Compile Include="General\YarıMamülGrupBll.cs" />
     <Compile Include="General\ÜlkeBll.cs" />
     <Compile Include="General\ÜretimBll.cs" />
     <Compile Include="General\ÜrünBll.cs" />

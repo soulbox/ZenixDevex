@@ -50,7 +50,7 @@ namespace Zenix.Model.DTO
         public int Hacim { get; set; }
         public string AdSoyad { get; set; }
         public long ReçeteId { get; set; }
-        public long KullanıcıId { get; set; }
+        public long KullaniciId { get; set; }
         public int ŞarjMiktarı { get; set; }
         public int ŞarjNo { get; set; }
         public DateTime işemriTarih { get; set; } = DateTime.Now;
@@ -76,16 +76,18 @@ namespace Zenix.Model.DTO
     public class İşemriL : İşemriS
     {
 
-        [NotMapped]
+  
         public DateTime SKT { get => işemriTarih.AddYears(5); }
-        [NotMapped]
+       
         public string EXP { get => $"EXP:{SKT:MMyyyy}"; }
-        [NotMapped]
+      
         public string PD { get => $"PD:{işemriTarih:MM/yyyy}-{ŞarjNo:00}"; }
-        [NotMapped]
-        public string işemriNo { get => $"{işemriTarih:ddMM}{ŞarjNo:00}{işemriTarih:yy}"; }
+
+        public string işemriNo { get => $"{işemriTarih:ddMMyy}-{RevNo:00}/{ŞarjNo:00}"; }
 
         public int Adet { get =>(int)((float)ŞarjMiktarı / (float)Hacim * 1000); }
+      
+        
         public İşemriL Clone { get => (İşemriL)MemberwiseClone(); }
     }
 

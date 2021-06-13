@@ -25,7 +25,7 @@ namespace Zenix.Model.DTO
         public DateTime işemriTarih { get; set; }
         public int ŞarjNo { get; set; }
         public long ReçeteId { get; set; }
-        public long KullanıcıId { get; set; }
+        public long KullaniciId { get; set; }
         public int ŞarjMiktarı { get; set; }
         public DateTime SKT { get => işemriTarih.AddYears(5); }
         public string EXP { get => $"EXP:{SKT:MMyyyy}"; }

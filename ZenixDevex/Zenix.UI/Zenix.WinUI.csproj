@@ -29,10 +29,10 @@
     <InstallUrl>http://sovia.com.tr/ZenixSolution/</InstallUrl>
     <ProductName>Zenix Solution</ProductName>
     <PublisherName>Erkan Ceylan</PublisherName>
-    <MinimumRequiredVersion>1.0.0.23</MinimumRequiredVersion>
+    <MinimumRequiredVersion>1.0.0.24</MinimumRequiredVersion>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>24</ApplicationRevision>
+    <ApplicationRevision>25</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>true</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -338,6 +338,30 @@
     <Compile Include="Forms\SiparişFormu\SiparişListForm.Designer.cs">
       <DependentUpon>SiparişListForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\YarımamülFormu\YarıMamülEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\YarımamülFormu\YarıMamülEditForm.Designer.cs">
+      <DependentUpon>YarıMamülEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\YarımamülFormu\YarıMamülListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\YarımamülFormu\YarıMamülListForm.Designer.cs">
+      <DependentUpon>YarıMamülListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\YarıMamülGrupFormu\YarıMamülGrupEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\YarıMamülGrupFormu\YarıMamülGrupEditForm.Designer.cs">
+      <DependentUpon>YarıMamülGrupEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\YarıMamülGrupFormu\YarıMamülGrupListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\YarıMamülGrupFormu\YarıMamülGrupListForm.Designer.cs">
+      <DependentUpon>YarıMamülGrupListForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\ÜlkeFormu\ÜlkeEditForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -575,6 +599,12 @@
     <Compile Include="myUserControls\UserControl\GenelEditTable\SiparişÜrünleriTable.Designer.cs">
       <DependentUpon>SiparişÜrünleriTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="myUserControls\UserControl\GenelEditTable\YarıMamülGrupTable.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="myUserControls\UserControl\GenelEditTable\YarıMamülGrupTable.Designer.cs">
+      <DependentUpon>YarıMamülGrupTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Show\Interfaces\IBaseFormShow.cs" />
@@ -685,6 +715,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\SiparişFormu\SiparişListForm.resx">
       <DependentUpon>SiparişListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\YarımamülFormu\YarıMamülEditForm.resx">
+      <DependentUpon>YarıMamülEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\YarıMamülGrupFormu\YarıMamülGrupEditForm.resx">
+      <DependentUpon>YarıMamülGrupEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\YarıMamülGrupFormu\YarıMamülGrupListForm.resx">
+      <DependentUpon>YarıMamülGrupListForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ÜlkeFormu\ÜlkeEditForm.resx">
       <DependentUpon>ÜlkeEditForm.cs</DependentUpon>
@@ -848,6 +887,16 @@
     <None Include="Resources\add_16x165.png" />
     <None Include="Resources\add_32x326.png" />
     <None Include="Resources\add_16x166.png" />
+    <None Include="Resources\add_32x327.png" />
+    <None Include="Resources\add_16x167.png" />
+    <None Include="Resources\newitem_32x321.png" />
+    <None Include="Resources\newitem_16x162.png" />
+    <None Include="Resources\refresh_32x321.png" />
+    <None Include="Resources\refresh_16x161.png" />
+    <None Include="Resources\inbox_16px.png" />
+    <None Include="Resources\inbox_32px.png" />
+    <None Include="Resources\inbox_settings_16px.png" />
+    <None Include="Resources\inbox_settings_32px.png" />
     <Content Include="Resources\warehouse_42px.png" />
     <Content Include="zenix.ico" />
     <None Include="Resources\abacus_16px.png" />

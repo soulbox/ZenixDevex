@@ -47,6 +47,9 @@ namespace Zenix.Common.Enums
         Depo = 20,
         [Description("Üretim  Kartı")]
         Üretim = 21,
-
+        [Description("YarıMamül Grup  Kartı")]
+        YarıMamülGrup = 22,
+        [Description("YarıMamül   Kartı")]
+        YarıMamül = 23,
     }
 }

@@ -24,7 +24,8 @@ namespace Zenix.WinUI.Forms.İşemriFormu
             this.Bll = new İşemriBll(myDataLayoutControl);
             this.KartTuru = KartTuru.İşemri;
             EventsLoad();
-
+            ShowItems = new DevExpress.XtraBars.BarItem[] {btnYazdir };
+            btnYazdir.Caption = "İşemri Yazdır";
 
         }
         protected internal override void Yukle()
@@ -32,10 +33,21 @@ namespace Zenix.WinUI.Forms.İşemriFormu
 
             OldEntity = BaseIslemTuru == Common.Enums.IslemTuru.EntityInsert ? new İşemriS() : ((İşemriBll)Bll).Single(FilterFunctions.Filter<İşemri>(Id));
             NesneyiKontrollereBagla();
+            if (BaseIslemTuru == IslemTuru.EntityUpdate)
+                using (var reçetebll = new ReçeteBll())
+                {
+                    var result = ((İşemriBll)Bll).ŞarjNoÜrün(OldEntity.Id, ((İşemriS)OldEntity).ÜrünId);
+                    şarjno = result == 0 ? 1 : result;
+                    lblŞarj.Text = $"ŞarjNo:{şarjno }";
+                }
+
             if (BaseIslemTuru != Common.Enums.IslemTuru.EntityInsert) return;
             Id = BaseIslemTuru.IdOlustur(OldEntity);
             txtKod.Text = ((İşemriBll)Bll).YeniKodVer();
             txtReçete.Focus();
+
+
+
         }
         protected override void NesneyiKontrollereBagla()
         {
@@ -59,7 +71,7 @@ namespace Zenix.WinUI.Forms.İşemriFormu
                 Kod = txtKod.Text,
                 Durum = tglDurum.IsOn,
                 işemriTarih = dtTarih.DateTime,
-                KullanıcıId = AnaForm.Kullanıcı.Id,
+                KullaniciId = AnaForm.Kullanıcı.Id,
                 ReçeteId = txtReçete.GetId(),
                 ŞarjMiktarı = txtŞarjMiktarı.EditValue.ConvertTo<int>(),
                 ŞarjNo = şarjno,
@@ -102,11 +114,24 @@ namespace Zenix.WinUI.Forms.İşemriFormu
             }
             if (sender is mySpinEdit && sender == txtŞarjMiktarı)
                 ChangeŞarjMiktarı();
+            if (sender == txtReçete)
+            {
+                var entity = (ReçeteL)txtReçete.Tag;
+                if (entity != null)
+                {
+                    var result = ((İşemriBll)Bll).MaxŞarj(entity.ÜrünId);
+                    şarjno = result == 0 ? 1 : result + 1;
+                    lblŞarj.Text = $"ŞarjNo:{şarjno }";
+
+                }
+
+
+            }
             base.EditValueChanged(sender, e);
 
         }
 
-        
+
     }
 
 }

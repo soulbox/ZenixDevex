@@ -39,6 +39,7 @@
             DevExpress.XtraLayout.RowDefinition rowDefinition4 = new DevExpress.XtraLayout.RowDefinition();
             DevExpress.XtraLayout.RowDefinition rowDefinition5 = new DevExpress.XtraLayout.RowDefinition();
             DevExpress.XtraLayout.RowDefinition rowDefinition6 = new DevExpress.XtraLayout.RowDefinition();
+            this.colihtiyaç = new Zenix.WinUI.myUserControls.Grid.MyGridColumn();
             this.myDataLayoutControl = new Zenix.WinUI.myUserControls.Controls.myDataLayoutControl();
             this.myGridControl1 = new Zenix.WinUI.myUserControls.Grid.myGridControl();
             this.ReçeteTablo = new Zenix.WinUI.myUserControls.Grid.myGridview();
@@ -48,10 +49,10 @@
             this.repoSpin = new DevExpress.XtraEditors.Repository.RepositoryItemSpinEdit();
             this.colAşamaTipi = new Zenix.WinUI.myUserControls.Grid.MyGridColumn();
             this.colReçeteBirimi = new Zenix.WinUI.myUserControls.Grid.MyGridColumn();
-            this.colihtiyaç = new Zenix.WinUI.myUserControls.Grid.MyGridColumn();
             this.colMalzemeİçiÜrün = new Zenix.WinUI.myUserControls.Grid.MyGridColumn();
             this.colStok = new Zenix.WinUI.myUserControls.Grid.MyGridColumn();
             this.colMalzemeTipi = new Zenix.WinUI.myUserControls.Grid.MyGridColumn();
+            this.colHazırlanış = new Zenix.WinUI.myUserControls.Grid.MyGridColumn();
             this.repoCheck = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
             this.repoCombo = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
             this.repoimagecomboFaz = new DevExpress.XtraEditors.Repository.RepositoryItemImageComboBox();
@@ -68,10 +69,9 @@
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.simpleLabelItem1 = new DevExpress.XtraLayout.SimpleLabelItem();
+            this.lblŞarj = new DevExpress.XtraLayout.SimpleLabelItem();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.colHazırlanış = new Zenix.WinUI.myUserControls.Grid.MyGridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.myDataLayoutControl)).BeginInit();
             this.myDataLayoutControl.SuspendLayout();
@@ -95,7 +95,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.simpleLabelItem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lblŞarj)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             this.SuspendLayout();
@@ -112,6 +112,18 @@
             this.ribbonControl.SearchEditItem.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
             this.ribbonControl.Size = new System.Drawing.Size(865, 109);
             this.ribbonControl.Toolbar.ShowCustomizeItem = false;
+            // 
+            // colihtiyaç
+            // 
+            this.colihtiyaç.Caption = "İhtiyaç";
+            this.colihtiyaç.FieldName = "ihtiyaç";
+            this.colihtiyaç.Name = "colihtiyaç";
+            this.colihtiyaç.OptionsColumn.AllowEdit = false;
+            this.colihtiyaç.StatusBarAciklama = null;
+            this.colihtiyaç.StatusBarKisayol = null;
+            this.colihtiyaç.StatusBarKisayolAciklama = null;
+            this.colihtiyaç.Visible = true;
+            this.colihtiyaç.VisibleIndex = 4;
             // 
             // myDataLayoutControl
             // 
@@ -281,18 +293,6 @@
             this.colReçeteBirimi.Visible = true;
             this.colReçeteBirimi.VisibleIndex = 6;
             // 
-            // colihtiyaç
-            // 
-            this.colihtiyaç.Caption = "İhtiyaç";
-            this.colihtiyaç.FieldName = "ihtiyaç";
-            this.colihtiyaç.Name = "colihtiyaç";
-            this.colihtiyaç.OptionsColumn.AllowEdit = false;
-            this.colihtiyaç.StatusBarAciklama = null;
-            this.colihtiyaç.StatusBarKisayol = null;
-            this.colihtiyaç.StatusBarKisayolAciklama = null;
-            this.colihtiyaç.Visible = true;
-            this.colihtiyaç.VisibleIndex = 4;
-            // 
             // colMalzemeİçiÜrün
             // 
             this.colMalzemeİçiÜrün.Caption = "Malzeme İçi Ürün";
@@ -329,6 +329,18 @@
             this.colMalzemeTipi.StatusBarKisayolAciklama = null;
             this.colMalzemeTipi.Visible = true;
             this.colMalzemeTipi.VisibleIndex = 1;
+            // 
+            // colHazırlanış
+            // 
+            this.colHazırlanış.Caption = "Hazırlanış";
+            this.colHazırlanış.FieldName = "Hazırlanış";
+            this.colHazırlanış.Name = "colHazırlanış";
+            this.colHazırlanış.OptionsColumn.AllowEdit = false;
+            this.colHazırlanış.StatusBarAciklama = null;
+            this.colHazırlanış.StatusBarKisayol = null;
+            this.colHazırlanış.StatusBarKisayolAciklama = null;
+            this.colHazırlanış.Visible = true;
+            this.colHazırlanış.VisibleIndex = 8;
             // 
             // repoCheck
             // 
@@ -416,7 +428,7 @@
             this.txtŞarjMiktarı.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.txtŞarjMiktarı.Properties.Increment = new decimal(new int[] {
-            50,
+            25,
             0,
             0,
             0});
@@ -427,7 +439,7 @@
             0,
             0});
             this.txtŞarjMiktarı.Properties.MinValue = new decimal(new int[] {
-            100,
+            25,
             0,
             0,
             0});
@@ -501,7 +513,7 @@
             this.layoutControlItem5,
             this.layoutControlItem7,
             this.layoutControlItem4,
-            this.simpleLabelItem1,
+            this.lblŞarj,
             this.layoutControlItem6,
             this.layoutControlItem1});
             this.Root.LayoutMode = DevExpress.XtraLayout.Utils.LayoutMode.Table;
@@ -600,16 +612,18 @@
             this.layoutControlItem4.Text = "Açıklama";
             this.layoutControlItem4.TextSize = new System.Drawing.Size(58, 13);
             // 
-            // simpleLabelItem1
+            // lblŞarj
             // 
-            this.simpleLabelItem1.AllowHotTrack = false;
-            this.simpleLabelItem1.Location = new System.Drawing.Point(200, 72);
-            this.simpleLabelItem1.Name = "simpleLabelItem1";
-            this.simpleLabelItem1.OptionsTableLayoutItem.ColumnIndex = 1;
-            this.simpleLabelItem1.OptionsTableLayoutItem.RowIndex = 3;
-            this.simpleLabelItem1.Size = new System.Drawing.Size(555, 24);
-            this.simpleLabelItem1.Text = "ŞarjNo:";
-            this.simpleLabelItem1.TextSize = new System.Drawing.Size(58, 13);
+            this.lblŞarj.AllowHotTrack = false;
+            this.lblŞarj.AppearanceItemCaption.ForeColor = System.Drawing.Color.Maroon;
+            this.lblŞarj.AppearanceItemCaption.Options.UseForeColor = true;
+            this.lblŞarj.Location = new System.Drawing.Point(200, 72);
+            this.lblŞarj.Name = "lblŞarj";
+            this.lblŞarj.OptionsTableLayoutItem.ColumnIndex = 1;
+            this.lblŞarj.OptionsTableLayoutItem.RowIndex = 3;
+            this.lblŞarj.Size = new System.Drawing.Size(555, 24);
+            this.lblŞarj.Text = "ŞarjNo:";
+            this.lblŞarj.TextSize = new System.Drawing.Size(58, 13);
             // 
             // layoutControlItem6
             // 
@@ -634,18 +648,6 @@
             this.layoutControlItem1.Size = new System.Drawing.Size(200, 24);
             this.layoutControlItem1.Text = "Kod";
             this.layoutControlItem1.TextSize = new System.Drawing.Size(58, 13);
-            // 
-            // colHazırlanış
-            // 
-            this.colHazırlanış.Caption = "Hazırlanış";
-            this.colHazırlanış.FieldName = "Hazırlanış";
-            this.colHazırlanış.Name = "colHazırlanış";
-            this.colHazırlanış.OptionsColumn.AllowEdit = false;
-            this.colHazırlanış.StatusBarAciklama = null;
-            this.colHazırlanış.StatusBarKisayol = null;
-            this.colHazırlanış.StatusBarKisayolAciklama = null;
-            this.colHazırlanış.Visible = true;
-            this.colHazırlanış.VisibleIndex = 8;
             // 
             // İşemriEditForm
             // 
@@ -681,7 +683,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.simpleLabelItem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lblŞarj)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             this.ResumeLayout(false);
@@ -704,7 +706,7 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem7;
         private myUserControls.Controls.myMemoEdit txtAçıklama;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
-        private DevExpress.XtraLayout.SimpleLabelItem simpleLabelItem1;
+        private DevExpress.XtraLayout.SimpleLabelItem lblŞarj;
         private myUserControls.Grid.myGridControl myGridControl1;
         public myUserControls.Grid.myGridview ReçeteTablo;
         private myUserControls.Grid.MyGridColumn colId;

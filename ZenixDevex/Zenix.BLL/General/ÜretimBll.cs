@@ -44,7 +44,7 @@ namespace Zenix.BLL.General
                 FirmaAdi = x.İşemri.Reçete.Ürün.Firma.FirmaAdi,
                 RevizyonTarihi = x.İşemri.Reçete.Revizyon.RevizyonTarihi,
                 GTIN = x.İşemri.Reçete.Ürün.GTIN,
-                KullanıcıId = x.İşemri.KullanıcıId,
+                KullaniciId = x.İşemri.KullaniciId,
                 MamülId = x.MamülId,
 
             }).ToList();

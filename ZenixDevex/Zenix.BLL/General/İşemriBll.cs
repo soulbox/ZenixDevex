@@ -26,7 +26,7 @@ namespace Zenix.BLL.General
                 Id = x.Id,
                 Durum = x.Durum,
                 Kod = x.Kod,
-                AdSoyad = x.Kullanici.Adı + " " + x.Kullanici.Soyadı,
+                AdSoyad = x.Kullanici .Adı + " " + x.Kullanici .Soyadı,
                 FirmaAdi = x.Reçete.Ürün.Firma.FirmaAdi,
                 MamülAdı = x.Reçete.Ürün.Mamül.MamülAdı,
                 MarkaAdı = x.Reçete.Ürün.Marka.MarkaAdı,
@@ -55,7 +55,7 @@ namespace Zenix.BLL.General
                 AğızÖlçüsü = x.Reçete.Ürün.Mamül.AğızÖlçüsü,
                 AğırlığınBirimi = x.Reçete.Ürün.Mamül.AğırlığınBirimi,
                 BirimAuEbY = x.Reçete.Ürün.Mamül.BirimAuEbY,
-
+                
 
             });
         }
@@ -66,7 +66,7 @@ namespace Zenix.BLL.General
                 Id = x.Id,
                 Durum = x.Durum,
                 Kod = x.Kod,
-                AdSoyad = x.Kullanici.Adı + " " + x.Kullanici.Soyadı,
+                AdSoyad = x.Kullanici .Adı + " " + x.Kullanici .Soyadı,
                 FirmaAdi = x.Reçete.Ürün.Firma.FirmaAdi,
                 MamülAdı = x.Reçete.Ürün.Mamül.MamülAdı,
                 MarkaAdı = x.Reçete.Ürün.Marka.MarkaAdı,
@@ -96,10 +96,13 @@ namespace Zenix.BLL.General
                 AğırlığınBirimi = x.Reçete.Ürün.Mamül.AğırlığınBirimi,
                 BirimAuEbY = x.Reçete.Ürün.Mamül.BirimAuEbY,
                 MamülId = x.Reçete.Ürün.MamülId,
+                
 
             }).ToList();
         }
 
-        public int ŞarjNo(long reçeteid) => BaseList(x => x.ReçeteId == reçeteid, x => x.Id).DefaultIfEmpty(1).Count();
+        public int ŞarjNo(long reçeteid) => BaseList(x => x.ReçeteId == reçeteid, x => x.Id).DefaultIfEmpty(0).Count();
+        public int ŞarjNoÜrün(long işemriId, long ürünid) => BaseList(x => x.Id <= işemriId && x.Reçete.ÜrünId == ürünid, x => x.Id).DefaultIfEmpty(0).Count();
+        public int MaxŞarj(long ürünid) => BaseList(x => x.Reçete.ÜrünId == ürünid , x => x.ŞarjNo).DefaultIfEmpty(0).Max();
     }
 }

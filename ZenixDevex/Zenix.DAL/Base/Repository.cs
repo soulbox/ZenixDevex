@@ -77,7 +77,7 @@ namespace Zenix.DAL.Base
         }
         public TResult Find<TResult>(Expression<Func<TEntity, bool>> filter, Expression<Func<TEntity, TResult>> selector)
         {
-            return filter == null ? DbSet.Select(selector).FirstOrDefault() : DbSet.Where(filter).Select(selector).FirstOrDefault();
+             return filter == null ? DbSet.Select(selector).FirstOrDefault() : DbSet.Where(filter).Select(selector).FirstOrDefault();
         }
         public IQueryable<TResult> Select<TResult>(Expression<Func<TEntity, bool>> filter, Expression<Func<TEntity, TResult>> selector)
         {

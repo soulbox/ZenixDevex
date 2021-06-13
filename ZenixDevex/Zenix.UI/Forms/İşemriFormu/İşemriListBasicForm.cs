@@ -45,7 +45,48 @@ namespace Zenix.WinUI.Forms.İşemriFormu
         }
         protected override void Listele()
         {
-            Tablo.GridControl.DataSource = ((İşemriBll)Bll).List(FilterFunctions.Filter<İşemri>(AktifKayitlariGoster));
+            var list = ((İşemriBll)Bll).List(FilterFunctions.Filter<İşemri>(AktifKayitlariGoster));
+
+            Tablo.GridControl.DataSource = list;
+        }
+        protected override void SagMenuGoster(object sender, MouseEventArgs e)
+        {
+            var isRight = (e.Button == MouseButtons.Right);
+            var entity = Tablo.GetRow<İşemriL>();
+            ShowHideButtons(entity != null, btnYeniİşemri);
+            base.SagMenuGoster(sender, e);
+        }
+
+        protected override void YeniİşemriKullan()
+        {
+            var entity = Tablo.GetRow<İşemriL>();
+            var yeniId = IslemTuru.EntityInsert.IdOlustur(null);
+            var revkod = ((İşemriBll)Bll).YeniKodVer();
+            var şarjno = ((İşemriBll)Bll).MaxŞarj(entity.ÜrünId) + 1;
+            var msgres = Msg.HayirSeciliEvetHayir($"{entity.MamülAdı}\nŞarj No:'{şarjno }'\nOlarak Eklenicek Onaylıyormusunuz?", "Onay");
+            if (msgres != DialogResult.Yes) return;
+            var yeniişemri = new İşemri
+            {
+                Id = yeniId,
+                Kod = revkod,
+                Durum = true,
+                işemriTarih = DateTime.Now,
+                KullaniciId = AnaForm.Kullanıcı.Id,
+                ReçeteId = entity.ReçeteId,
+                ŞarjMiktarı = entity.ŞarjMiktarı,
+                ŞarjNo = ((İşemriBll)Bll).MaxŞarj(entity.ÜrünId) + 1,
+            };
+            var res1 = ((İşemriBll)Bll).Insert(yeniişemri);
+            if (!res1)
+                Msg.HataMesajı("Yeni İşemri Eklenemedi");
+            else
+            {
+
+                Listele();
+                tablo.RowFocus("Id", yeniId);
+                ShowEditForm(yeniId);
+            }
+
         }
         protected override void Tablo_FocusedRowChanged(object sender, FocusedRowChangedEventArgs e)
         {
