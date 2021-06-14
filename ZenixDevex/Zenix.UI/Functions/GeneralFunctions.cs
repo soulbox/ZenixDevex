@@ -298,13 +298,13 @@ namespace Zenix.WinUI.Functions
             return kullanici?.Rol?.RolYetkileri?.FirstOrDefault(predicate);
         }
         public static bool isGörebilir(this Kullanici kullanici, Func<RolYetkileri, bool> predicate) =>
-            kullanici.GetRolYetki(predicate).Görebilir == 1;
+            kullanici.GetRolYetki(predicate)?.Görebilir == 1;
         public static bool isEkleyebilir(this Kullanici kullanici, Func<RolYetkileri, bool> predicate) =>
-            kullanici.GetRolYetki(predicate).Ekleyebilir == 1;
+            kullanici.GetRolYetki(predicate)?.Ekleyebilir == 1;
         public static bool isDeğiştirebilir(this Kullanici kullanici, Func<RolYetkileri, bool> predicate) =>
-            kullanici.GetRolYetki(predicate).Değiştirebilir == 1;
+            kullanici.GetRolYetki(predicate)?.Değiştirebilir == 1;
         public static bool isSilebilir(this Kullanici kullanici, Func<RolYetkileri, bool> predicate) =>
-            kullanici.GetRolYetki(predicate).Silebilir == 1;
+            kullanici.GetRolYetki(predicate)?.Silebilir == 1;
 
         public static bool YetkiKontrolu(this KartTuru kartTuru, YetkiTuru yetkiTuru, bool mesajgöster = true)
         {

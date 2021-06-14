@@ -33,7 +33,7 @@ namespace Zenix.WinUI.Forms.İşemriFormu
         protected override void Degiskenleridoldur()
         {
             this.tablo = Tablo;
-            this.KartTuru = Common.Enums.KartTuru.Firma;
+            this.KartTuru = Common.Enums.KartTuru.İşemri;
             this.FormShow = new ShowEditForms<İşemriEditForm>();
             this.Navigator = longNavigator.controlNavigator;
             Text = "İşemri Kartları ";

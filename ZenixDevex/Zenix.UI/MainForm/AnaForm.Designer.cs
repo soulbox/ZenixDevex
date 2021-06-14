@@ -142,11 +142,13 @@
             this.ribbon.ShowExpandCollapseButton = DevExpress.Utils.DefaultBoolean.False;
             this.ribbon.ShowMoreCommandsButton = DevExpress.Utils.DefaultBoolean.False;
             this.ribbon.ShowPageHeadersInFormCaption = DevExpress.Utils.DefaultBoolean.False;
+            this.ribbon.ShowPageHeadersMode = DevExpress.XtraBars.Ribbon.ShowPageHeadersMode.Show;
+            this.ribbon.ShowQatLocationSelector = false;
             this.ribbon.ShowToolbarCustomizeItem = false;
-            this.ribbon.Size = new System.Drawing.Size(1020, 161);
+            this.ribbon.Size = new System.Drawing.Size(1020, 185);
             this.ribbon.StatusBar = this.ribbonStatusBar;
             this.ribbon.Toolbar.ShowCustomizeItem = false;
-            this.ribbon.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden;
+            this.ribbon.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Below;
             // 
             // btnMusteri
             // 
@@ -532,12 +534,12 @@
             // 
             this.imgBackGround.Dock = System.Windows.Forms.DockStyle.Fill;
             this.imgBackGround.EditValue = global::Zenix.WinUI.Properties.Resources.back;
-            this.imgBackGround.Location = new System.Drawing.Point(0, 161);
+            this.imgBackGround.Location = new System.Drawing.Point(0, 185);
             this.imgBackGround.MenuManager = this.ribbon;
             this.imgBackGround.Name = "imgBackGround";
             this.imgBackGround.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
             this.imgBackGround.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
-            this.imgBackGround.Size = new System.Drawing.Size(1020, 503);
+            this.imgBackGround.Size = new System.Drawing.Size(1020, 479);
             this.imgBackGround.TabIndex = 7;
             // 
             // AnaForm

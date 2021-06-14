@@ -56,7 +56,7 @@ namespace Zenix.WinUI.MainForm
             InitializeComponent();
             //TODO :Test Kullanıcı
             if (!Kullanıcı.HasValue())
-                Kullanıcı = Kullanıcı.GetKullanici(x => x.Adı == "admin");
+                Kullanıcı = Kullanıcı.GetKullanici(x => x.Adı.Contains("admin"));
 
             //baruserinfo.Caption = $"Hoşgeldin:{ Kullanıcı?.Adı.ToUpper()} {Kullanıcı?.Soyadı.ToUpper()}";
             barVers.Caption = $"Versiyon :{Program.DeplayVersion()}";
