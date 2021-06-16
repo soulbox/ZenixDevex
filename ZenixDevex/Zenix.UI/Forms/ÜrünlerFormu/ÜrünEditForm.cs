@@ -25,10 +25,23 @@ namespace Zenix.WinUI.Forms.ÜrünlerFormu
 
             OldEntity = BaseIslemTuru == Common.Enums.IslemTuru.EntityInsert ? new ÜrünS() : ((ÜrünBll)Bll).Single(FilterFunctions.Filter<Ürün>(Id));
             NesneyiKontrollereBagla();
+            TabloYükle();
+
             if (BaseIslemTuru != Common.Enums.IslemTuru.EntityInsert) return;
             Id = BaseIslemTuru.IdOlustur(OldEntity);
             txtKod.Text = ((ÜrünBll)Bll).YeniKodVer();
             txtFirma.Focus();
+        }
+        protected override void TabloYükle()
+        {
+            yarıMamülGrupTable1.ownerform = this;
+
+            yarıMamülGrupTable1.Yukle();
+        }
+        protected internal override void ButtonEnableDurumu()
+        {
+            if (!isLoaded) return;
+            GeneralFunctions.ButtonEnabledDurumu(btnYeni, btnKaydet, btnGeriAl, btnSil, OldEntity, CurrentEntity, yarıMamülGrupTable1.tablevaluechanged);
         }
         protected override void NesneyiKontrollereBagla()
         {
@@ -80,6 +93,17 @@ namespace Zenix.WinUI.Forms.ÜrünlerFormu
                 else if (sender == txtMamül)
                     sec.Seç(txtMamül);
             }
+        }
+
+        protected override bool EntityInsert()
+        {
+            if (yarıMamülGrupTable1.HatalıGiriş()) return false;
+            return base.EntityInsert() && yarıMamülGrupTable1.Kaydet();
+        }
+        protected override bool EntityUpdate()
+        {
+            if (yarıMamülGrupTable1.HatalıGiriş()) return false;
+            return base.EntityUpdate() && yarıMamülGrupTable1.Kaydet();
         }
     }
 }

@@ -41,7 +41,7 @@ namespace Zenix.WinUI.Forms.BaseForms
         protected ControlNavigator Navigator;
         protected internal long? SeciliGelecekId;
         protected internal long FiltreId;
-        protected internal IList<long> ListeDışıBırakılıcakKayıtlar;
+        protected internal IList<long> ListeDışıBırakılıcakKayıtlar = new List<long>();
         protected internal SelectRowFunctions rowselect;
         protected internal bool EkelenebilecekEntityVar = false;
         protected internal IList<BaseEntity> SelectedEntities;

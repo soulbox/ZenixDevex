@@ -427,7 +427,7 @@
             // 
             // btnYarıMamülGrup
             // 
-            this.btnYarıMamülGrup.Caption = "Yarı Mamül Grup";
+            this.btnYarıMamülGrup.Caption = "Yarı Mamüller";
             this.btnYarıMamülGrup.Id = 53;
             this.btnYarıMamülGrup.ImageOptions.Image = global::Zenix.WinUI.Properties.Resources.inbox_settings_16px;
             this.btnYarıMamülGrup.ImageOptions.LargeImage = global::Zenix.WinUI.Properties.Resources.inbox_settings_32px;
@@ -435,11 +435,12 @@
             // 
             // btnYarıMamül
             // 
-            this.btnYarıMamül.Caption = "Yarı Mamüller";
+            this.btnYarıMamül.Caption = "Ürün Yarı Mamülleri";
             this.btnYarıMamül.Id = 54;
             this.btnYarıMamül.ImageOptions.Image = global::Zenix.WinUI.Properties.Resources.inbox_16px;
             this.btnYarıMamül.ImageOptions.LargeImage = global::Zenix.WinUI.Properties.Resources.inbox_32px;
             this.btnYarıMamül.Name = "btnYarıMamül";
+            this.btnYarıMamül.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             // 
             // ribbonPage1
             // 

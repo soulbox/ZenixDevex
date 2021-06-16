@@ -56,7 +56,6 @@
             this.txtStand = new Zenix.WinUI.myUserControls.Controls.mySpinEdit();
             this.txtKutu = new Zenix.WinUI.myUserControls.Controls.mySpinEdit();
             this.txtMarka = new Zenix.WinUI.myUserControls.Controls.myButtonEdit();
-            this.myCheckedComboBoxEdit1 = new Zenix.WinUI.myUserControls.Controls.myCheckedComboBoxEdit();
             this.txtGTIN = new Zenix.WinUI.myUserControls.Controls.myUrunGTIN();
             this.txtBoy = new Zenix.WinUI.myUserControls.Controls.mySpinEdit();
             this.cmbAğırlıkBirim = new Zenix.WinUI.myUserControls.Controls.myComboBoxEdit();
@@ -97,10 +96,11 @@
             this.layoutControlItem21 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem20 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem23 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem12 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem24 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.yarıMamülGrupTable1 = new Zenix.WinUI.myUserControls.UserControl.GenelEditTable.YarıMamülGrupTable();
+            this.layoutControlItem25 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.myDataLayoutControl)).BeginInit();
             this.myDataLayoutControl.SuspendLayout();
@@ -110,7 +110,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtStand.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtKutu.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMarka.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.myCheckedComboBoxEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtGTIN.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtBoy.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbAğırlıkBirim.Properties)).BeginInit();
@@ -151,10 +150,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem21)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem20)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem23)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem24)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem25)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbonControl
@@ -167,18 +166,18 @@
             this.ribbonControl.SearchEditItem.EditWidth = 150;
             this.ribbonControl.SearchEditItem.Id = -5000;
             this.ribbonControl.SearchEditItem.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
-            this.ribbonControl.Size = new System.Drawing.Size(539, 109);
+            this.ribbonControl.Size = new System.Drawing.Size(686, 109);
             this.ribbonControl.Toolbar.ShowCustomizeItem = false;
             // 
             // myDataLayoutControl
             // 
+            this.myDataLayoutControl.Controls.Add(this.yarıMamülGrupTable1);
             this.myDataLayoutControl.Controls.Add(this.txtFirma);
             this.myDataLayoutControl.Controls.Add(this.txtMamül);
             this.myDataLayoutControl.Controls.Add(this.txtKoli);
             this.myDataLayoutControl.Controls.Add(this.txtStand);
             this.myDataLayoutControl.Controls.Add(this.txtKutu);
             this.myDataLayoutControl.Controls.Add(this.txtMarka);
-            this.myDataLayoutControl.Controls.Add(this.myCheckedComboBoxEdit1);
             this.myDataLayoutControl.Controls.Add(this.txtGTIN);
             this.myDataLayoutControl.Controls.Add(this.txtBoy);
             this.myDataLayoutControl.Controls.Add(this.cmbAğırlıkBirim);
@@ -202,7 +201,7 @@
             this.myDataLayoutControl.Name = "myDataLayoutControl";
             this.myDataLayoutControl.OptionsFocus.EnableAutoTabOrder = false;
             this.myDataLayoutControl.Root = this.Root;
-            this.myDataLayoutControl.Size = new System.Drawing.Size(539, 405);
+            this.myDataLayoutControl.Size = new System.Drawing.Size(686, 405);
             this.myDataLayoutControl.TabIndex = 0;
             this.myDataLayoutControl.Text = "myDataLayoutControl1";
             // 
@@ -328,24 +327,6 @@
             this.txtMarka.StatusBarKisayolAciklama = "Seç";
             this.txtMarka.StyleController = this.myDataLayoutControl;
             this.txtMarka.TabIndex = 1;
-            // 
-            // myCheckedComboBoxEdit1
-            // 
-            this.myCheckedComboBoxEdit1.EnterMoveNextControl = true;
-            this.myCheckedComboBoxEdit1.Location = new System.Drawing.Point(295, 252);
-            this.myCheckedComboBoxEdit1.MenuManager = this.ribbonControl;
-            this.myCheckedComboBoxEdit1.Name = "myCheckedComboBoxEdit1";
-            this.myCheckedComboBoxEdit1.Properties.Appearance.BackColor = System.Drawing.Color.LightCyan;
-            this.myCheckedComboBoxEdit1.Properties.Appearance.Options.UseBackColor = true;
-            this.myCheckedComboBoxEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.myCheckedComboBoxEdit1.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
-            this.myCheckedComboBoxEdit1.Size = new System.Drawing.Size(142, 20);
-            this.myCheckedComboBoxEdit1.StatusBarAciklama = null;
-            this.myCheckedComboBoxEdit1.StatusBarKisayol = "F4 :";
-            this.myCheckedComboBoxEdit1.StatusBarKisayolAciklama = null;
-            this.myCheckedComboBoxEdit1.StyleController = this.myDataLayoutControl;
-            this.myCheckedComboBoxEdit1.TabIndex = 20;
             // 
             // txtGTIN
             // 
@@ -675,7 +656,7 @@
             // tglDurum
             // 
             this.tglDurum.EnterMoveNextControl = true;
-            this.tglDurum.Location = new System.Drawing.Point(441, 12);
+            this.tglDurum.Location = new System.Drawing.Point(588, 12);
             this.tglDurum.MenuManager = this.ribbonControl;
             this.tglDurum.Name = "tglDurum";
             this.tglDurum.Properties.Appearance.ForeColor = System.Drawing.Color.Maroon;
@@ -734,10 +715,10 @@
             this.layoutControlItem21,
             this.layoutControlItem20,
             this.layoutControlItem23,
-            this.layoutControlItem3,
             this.layoutControlItem12,
             this.layoutControlItem24,
-            this.layoutControlItem6});
+            this.layoutControlItem6,
+            this.layoutControlItem25});
             this.Root.LayoutMode = DevExpress.XtraLayout.Utils.LayoutMode.Table;
             this.Root.Name = "Root";
             columnDefinition1.SizeType = System.Windows.Forms.SizeType.Absolute;
@@ -805,7 +786,7 @@
             rowDefinition14,
             rowDefinition15,
             rowDefinition16});
-            this.Root.Size = new System.Drawing.Size(539, 405);
+            this.Root.Size = new System.Drawing.Size(686, 405);
             this.Root.TextVisible = false;
             // 
             // layoutControlItem1
@@ -824,7 +805,7 @@
             this.layoutControlItem2.AppearanceItemCaption.ForeColor = System.Drawing.Color.Maroon;
             this.layoutControlItem2.AppearanceItemCaption.Options.UseForeColor = true;
             this.layoutControlItem2.Control = this.tglDurum;
-            this.layoutControlItem2.Location = new System.Drawing.Point(429, 0);
+            this.layoutControlItem2.Location = new System.Drawing.Point(576, 0);
             this.layoutControlItem2.Name = "layoutControlItem2";
             this.layoutControlItem2.OptionsTableLayoutItem.ColumnIndex = 4;
             this.layoutControlItem2.Size = new System.Drawing.Size(90, 24);
@@ -1096,21 +1077,6 @@
             this.layoutControlItem23.Text = "Koli";
             this.layoutControlItem23.TextSize = new System.Drawing.Size(80, 13);
             // 
-            // layoutControlItem3
-            // 
-            this.layoutControlItem3.AppearanceItemCaption.ForeColor = System.Drawing.Color.Maroon;
-            this.layoutControlItem3.AppearanceItemCaption.Options.UseForeColor = true;
-            this.layoutControlItem3.Control = this.myCheckedComboBoxEdit1;
-            this.layoutControlItem3.Location = new System.Drawing.Point(200, 240);
-            this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.OptionsTableLayoutItem.ColumnIndex = 1;
-            this.layoutControlItem3.OptionsTableLayoutItem.ColumnSpan = 3;
-            this.layoutControlItem3.OptionsTableLayoutItem.RowIndex = 10;
-            this.layoutControlItem3.Size = new System.Drawing.Size(229, 24);
-            this.layoutControlItem3.Text = "Ürün";
-            this.layoutControlItem3.TextSize = new System.Drawing.Size(80, 13);
-            this.layoutControlItem3.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
-            // 
             // layoutControlItem12
             // 
             this.layoutControlItem12.AppearanceItemCaption.ForeColor = System.Drawing.Color.Maroon;
@@ -1149,11 +1115,33 @@
             this.layoutControlItem6.Text = "Firma";
             this.layoutControlItem6.TextSize = new System.Drawing.Size(80, 13);
             // 
+            // yarıMamülGrupTable1
+            // 
+            this.yarıMamülGrupTable1.Location = new System.Drawing.Point(412, 36);
+            this.yarıMamülGrupTable1.Name = "yarıMamülGrupTable1";
+            this.yarıMamülGrupTable1.Size = new System.Drawing.Size(262, 357);
+            this.yarıMamülGrupTable1.TabIndex = 24;
+            // 
+            // layoutControlItem25
+            // 
+            this.layoutControlItem25.AppearanceItemCaption.ForeColor = System.Drawing.Color.Maroon;
+            this.layoutControlItem25.AppearanceItemCaption.Options.UseForeColor = true;
+            this.layoutControlItem25.Control = this.yarıMamülGrupTable1;
+            this.layoutControlItem25.Location = new System.Drawing.Point(400, 24);
+            this.layoutControlItem25.Name = "layoutControlItem25";
+            this.layoutControlItem25.OptionsTableLayoutItem.ColumnIndex = 3;
+            this.layoutControlItem25.OptionsTableLayoutItem.ColumnSpan = 2;
+            this.layoutControlItem25.OptionsTableLayoutItem.RowIndex = 1;
+            this.layoutControlItem25.OptionsTableLayoutItem.RowSpan = 15;
+            this.layoutControlItem25.Size = new System.Drawing.Size(266, 361);
+            this.layoutControlItem25.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem25.TextVisible = false;
+            // 
             // ÜrünEditForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(539, 538);
+            this.ClientSize = new System.Drawing.Size(686, 538);
             this.Controls.Add(this.myDataLayoutControl);
             this.IconOptions.ShowIcon = false;
             this.Name = "ÜrünEditForm";
@@ -1169,7 +1157,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtStand.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtKutu.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMarka.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.myCheckedComboBoxEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtGTIN.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtBoy.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbAğırlıkBirim.Properties)).EndInit();
@@ -1210,10 +1197,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem21)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem20)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem23)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem24)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem25)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1263,15 +1250,15 @@
         private myUserControls.Controls.mySpinEdit txtStand;
         private myUserControls.Controls.mySpinEdit txtKutu;
         private myUserControls.Controls.myButtonEdit txtMarka;
-        private myUserControls.Controls.myCheckedComboBoxEdit myCheckedComboBoxEdit1;
         private myUserControls.Controls.myUrunGTIN txtGTIN;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem22;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem21;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem20;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem23;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem12;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem24;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;
+        private myUserControls.UserControl.GenelEditTable.YarıMamülGrupTable yarıMamülGrupTable1;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem25;
     }
 }

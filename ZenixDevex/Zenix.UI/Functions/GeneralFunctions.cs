@@ -339,7 +339,8 @@ namespace Zenix.WinUI.Functions
 
             }
             if (!result & mesajgöster)
-                Msg.UyariMesajı("Bu işlem İçin Yetkiniz Bulunmamaktadır");
+                Msg.YetkisiYok(kartTuru.ToName());
+            //Msg.UyariMesajı("Bu işlem İçin Yetkiniz Bulunmamaktadır");
             return result;
         }
         public static bool EditFormYetkiKontrolu(long id, KartTuru kartTuru)

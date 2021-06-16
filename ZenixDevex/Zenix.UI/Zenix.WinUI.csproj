@@ -719,6 +719,9 @@
     <EmbeddedResource Include="Forms\YarımamülFormu\YarıMamülEditForm.resx">
       <DependentUpon>YarıMamülEditForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\YarımamülFormu\YarıMamülListForm.resx">
+      <DependentUpon>YarıMamülListForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\YarıMamülGrupFormu\YarıMamülGrupEditForm.resx">
       <DependentUpon>YarıMamülGrupEditForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -796,6 +799,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="myUserControls\UserControl\GenelEditTable\SiparişÜrünleriTable.resx">
       <DependentUpon>SiparişÜrünleriTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="myUserControls\UserControl\GenelEditTable\YarıMamülGrupTable.resx">
+      <DependentUpon>YarıMamülGrupTable.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
