@@ -429,6 +429,7 @@
     <Compile Include="Functions\SelectFunctions.cs" />
     <Compile Include="Functions\SelectRowFunctions.cs" />
     <Compile Include="Functions\TablePrintingFunctions.cs" />
+    <Compile Include="Functions\UpdateCheck.cs" />
     <Compile Include="Interfaces\IStatusBarAciklama.cs" />
     <Compile Include="Interfaces\IStatusBarKisayol.cs" />
     <Compile Include="MainForm\AnaForm.cs">

@@ -148,7 +148,7 @@ namespace Zenix.WinUI.MainForm
                 //ShowListForms<EkDosyalarListForm>.ShowListForm(KartTuru.Ekdosyalar, (long)2020101119013144500, "araba1"," kadir aygün");
                 Thread.Sleep(1000);
                 btnMusteri.PerformClick();
-
+                UpdateCheck.InstallUpdateSyncWithInfo();
             };
             xtraTabbedMdiManager.PageAdded += (sender, e) => { imgBackGround.SendToBack(); };
             xtraTabbedMdiManager.PageRemoved += (sender, e) =>
