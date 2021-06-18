@@ -38,6 +38,8 @@ namespace Zenix.BLL.General
                 CFazıHazırlanış = x.Reçete.CFazıHazırlanış,
                 DFazıHazırlanış = x.Reçete.DFazıHazırlanış,
                 EFazıHazırlanış = x.Reçete.EFazıHazırlanış,
+                YarıMamülId = x.YarıMamülId,
+                YarıMamülAdı = x.YarıMamül.YarıMamülGrup.YarıMamülAdı,
                 //MalzemeId = x.MalzemeId,
                 //FazTipi = x.FazTipi,
                 //MalzemeAdı = x.Malzeme.Adı,

@@ -20,15 +20,27 @@ namespace Zenix.BLL.General
             return List(filter, x => new YarıMamülL
             {
                 Id = x.Id,
+                YarıMamülAdı = x.YarıMamülGrup.YarıMamülAdı,
                 ÜrünId = x.ÜrünId,
                 YarıMamülGrupId = x.YarıMamülGrupId,
-                YarıMamülAdı = x.YarıMamülGrup.YarıMamülAdı,
                 FirmaAdi = x.Ürün.Firma.FirmaAdi,
                 MamülAdı = x.Ürün.Mamül.MamülAdı,
                 MarkaAdı = x.Ürün.Marka.MarkaAdı,
                 GTIN = x.Ürün.GTIN,
             }).ToList();
         }
+        public IEnumerable<BaseEntityHaraket> LookUpGridList(Expression<Func<YarıMamül, bool>> filter)
+        {
+            List<YarıMamülL> list = new List<YarıMamülL> { new YarıMamülL {YarıMamülAdı="Yok" } };           
+            list.AddRange(List(filter, x => new YarıMamülL
+            {
+                Id = x.Id,
+                YarıMamülAdı = x.YarıMamülGrup.YarıMamülAdı,
+            }).ToList());
+            return list;
+        }
+
+
 
         public List<YarıMamülL> ListÜrünGrup(Expression<Func<YarıMamül, bool>> filter)
         {

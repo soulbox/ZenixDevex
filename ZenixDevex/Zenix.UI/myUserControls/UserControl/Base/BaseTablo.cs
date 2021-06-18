@@ -118,9 +118,11 @@ namespace Zenix.WinUI.myUserControls.UserControl.Base
             insUpdNavigator.Navigator.NavigatableControl = baseTablo.GridControl;
             SablonYukle();
             Listele();
+            Tablo_Column_listele();
             ButtonGizleGoster();
             Tablo_LostFocus(baseTablo, EventArgs.Empty);
         }
+        public virtual void Tablo_Column_listele() { }
 
         protected internal virtual void Listele() { }
 

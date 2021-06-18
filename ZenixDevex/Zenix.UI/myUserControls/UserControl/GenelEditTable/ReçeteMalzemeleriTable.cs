@@ -26,6 +26,8 @@ namespace Zenix.WinUI.myUserControls.UserControl.GenelEditTable
 {
     public partial class ReçeteMalzemeleriTable : BaseTablo
     {
+
+        public static long? ÜrünId { get; set; } = null;
         public ReçeteMalzemeleriTable()
         {
             InitializeComponent();
@@ -36,11 +38,30 @@ namespace Zenix.WinUI.myUserControls.UserControl.GenelEditTable
             baseTablo = tablo;
             //ShowItems = new BarItem[] { btnTümSeçimleriKaldır, btnTümünüSeç };
             EventsLoad();
+
+
         }
 
-        void ListelewithOrder()
+        public override void Tablo_Column_listele()
         {
+            if (ÜrünId.HasValue)
+                using (var yarımamülbll = new YarıMamülBll())
+                {
+                    var list = yarımamülbll.LookUpGridList(x => x.ÜrünId == ÜrünId.Value);
+                    //var list = yarımamülbll.List(x => x.ÜrünId == ÜrünId.Value, x => new { x.Id, x.YarıMamülGrup.YarıMamülAdı }).ToList();
+
+                    repositoryItemGridLookUpEdit1.DataSource = list;
+                    repositoryItemGridLookUpEdit1.NullText = "Yok";
+                    //    RepoYarıMamül.DisplayMember = "YarıMamülAdı";
+                    //RepoYarıMamül.ValueMember = "Id";                    
+                    //RepoYarıMamül.PopulateViewColumns();
+                    //RepoYarıMamül.View.Columns["Id"].Visible = false;
+
+                }
         }
+
+
+
         protected internal override void Listele()
         {
             tablo.GridControl.DataSource = ((ReçeteMalzemelerBll)Bll).List(x => x.ReçeteId == ownerform.Id).ToBindingList<ReçeteMalzemeleriL>();
@@ -81,6 +102,8 @@ namespace Zenix.WinUI.myUserControls.UserControl.GenelEditTable
 
             var hacim = hacimentity?.Hacim;
             var hacimmalzeme = hacimentity?.MamülAdı;
+            var şarjmalz = repositoryItemGridLookUpEdit1.DataSource.CastTo<IEnumerable<YarıMamülL>>()
+                .FirstOrDefault(a => a.YarıMamülAdı.Contains("Şarj"));
 
             entities.ForEach(x =>
             {
@@ -97,7 +120,8 @@ namespace Zenix.WinUI.myUserControls.UserControl.GenelEditTable
                         AşamaTipi = isKim ? AşamaTipi.Şarj : AşamaTipi.yok,
                         MalzemeTipi = x.MalzemeTipi,
                         Hacim = x.Hacim,
-                        Stok = depobll.StokVer(x.Id)
+                        Stok = depobll.StokVer(x.Id),
+                        YarıMamülId = isKim & şarjmalz != null ? şarjmalz.Id : default
 
                     });
 
@@ -141,9 +165,9 @@ namespace Zenix.WinUI.myUserControls.UserControl.GenelEditTable
             bool isKimyasal(ReçeteMalzemeleriL enti) => enti.MalzemeTipi == MalzemeTipi.HamMadde | enti.MalzemeTipi == MalzemeTipi.Esans;
 
             var kimyasaloran = source.Where(x => isKimyasal(x)).Select(x => x.Miktar).DefaultIfEmpty(0).Sum();
-            if (kimyasaloran > 100 | kimyasaloran == 0)
+            if (kimyasaloran > 100 | kimyasaloran < 100 | kimyasaloran == 0)
             {
-                Msg.HataMesajı("Kimyasal Miktar toplam oranı 100 den büyük yada 0 olamaz!");
+                Msg.HataMesajı("Kimyasal Miktar toplam oranı 100 den farklı  yada 0 olamaz!");
                 return true;
             }
 

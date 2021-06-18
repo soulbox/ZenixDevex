@@ -15,6 +15,7 @@ using Zenix.Model.Entities;
 using Zenix.WinUI.MainForm;
 using Zenix.Model.DTO;
 using Zenix.WinUI.myUserControls.Controls;
+using Zenix.WinUI.myUserControls.UserControl.GenelEditTable;
 
 namespace Zenix.WinUI.Forms.ReçeteFormu
 {
@@ -30,7 +31,7 @@ namespace Zenix.WinUI.Forms.ReçeteFormu
             this.KartTuru = Common.Enums.KartTuru.Reçete;
             EventsLoad();
         }
-        public ReçeteEditForm(ReçeteL clone):this()
+        public ReçeteEditForm(ReçeteL clone) : this()
         {
             clonereçete = clone;
         }
@@ -38,8 +39,9 @@ namespace Zenix.WinUI.Forms.ReçeteFormu
         {
             if (clonereçete != null)
                 BaseIslemTuru = Common.Enums.IslemTuru.EntityInsert;
-            OldEntity = BaseIslemTuru == Common.Enums.IslemTuru.EntityInsert ?clonereçete==null? new ReçeteS() : ((ReçeteBll)Bll).Single(x=>x.Id==clonereçete.Id) : ((ReçeteBll)Bll).Single(FilterFunctions.Filter<Reçete>(Id));
+            OldEntity = BaseIslemTuru == Common.Enums.IslemTuru.EntityInsert ? clonereçete == null ? new ReçeteS() : ((ReçeteBll)Bll).Single(x => x.Id == clonereçete.Id) : ((ReçeteBll)Bll).Single(FilterFunctions.Filter<Reçete>(Id));
             NesneyiKontrollereBagla();
+
             TabloYükle();
             if (BaseIslemTuru != Common.Enums.IslemTuru.EntityInsert) return;
             Id = BaseIslemTuru.IdOlustur(OldEntity);
@@ -61,7 +63,7 @@ namespace Zenix.WinUI.Forms.ReçeteFormu
             txtEFaz.Text = entity.EFazıHazırlanış;
 
             txtAçıklama.Text = entity.Açıklama;
-            if (BaseIslemTuru == Common.Enums.IslemTuru.EntityInsert && clonereçete==null ) return;
+            if (BaseIslemTuru == Common.Enums.IslemTuru.EntityInsert && clonereçete == null) return;
             txtÜrün.Text = $"[{entity.MarkaAdı}-{entity.MamülAdı}-{entity.GTIN}]";
             txtRevizyon.Text = entity.RevKodu;
             txtÜrün.Tag = new ÜrünL
@@ -125,12 +127,18 @@ namespace Zenix.WinUI.Forms.ReçeteFormu
         {
             //if (sender is myButtonEdit btn && btn == txtRevizyon && ((ReçeteS)OldEntity).RevizyonId != btn.Id)
             //    txtKod.Text = ((ReçeteBll)Bll).YeniKodVer(x => x.RevizyonId == btn.Id);
+            if (sender == txtÜrün && txtÜrün.Id.HasValue && txtÜrün.Id.Value > 0)
+            {
+                ReçeteMalzemeleriTable.ÜrünId = txtÜrün.Id;
+                reçeteMalzemeleriTable.Tablo_Column_listele();
+            }
+
             base.EditValueChanged(sender, e);
         }
         protected override void TabloYükle()
         {
+            ReçeteMalzemeleriTable.ÜrünId = txtÜrün.Id;
             reçeteMalzemeleriTable.ownerform = this;
-
             reçeteMalzemeleriTable.Yukle();
         }
         protected internal override void ButtonEnableDurumu()

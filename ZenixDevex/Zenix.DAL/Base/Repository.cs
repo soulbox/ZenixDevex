@@ -180,8 +180,9 @@ namespace Zenix.DAL.Base
                     case MalzemeTipi.Etiket:
                         return "ETKT-0001";
                     case MalzemeTipi.Sarf:
+                        return "SARF-0001";//SARF
                     case MalzemeTipi.Kapak:
-                        return "SARF-0001";//SARF   
+                        return "KPK-0001";//SARF   
                     case MalzemeTipi.Kavanoz://HCM
                     case MalzemeTipi.Şişe://HCM
                         return "HCM-0001";

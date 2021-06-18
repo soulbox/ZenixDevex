@@ -17,7 +17,7 @@ namespace Zenix.Model.DTO
 
     [NotMapped]
 
-    public class ReçeteMalzemeleriL : ReçeteMalzemeler, IBaseHaraketEntity, IMamül, IPaket,IBaseReçete 
+    public class ReçeteMalzemeleriL : ReçeteMalzemeler, IBaseHaraketEntity, IMamül, IPaket,IBaseReçete ,IYarıMamülAdı
     {
         public string HacimliMalzemeAdı { get; set; }
         public BirimTipi HacimliMalzemeBirimi { get; set; }
@@ -71,6 +71,7 @@ namespace Zenix.Model.DTO
         public long PaketŞekliId { get ; set ; }
         public string AmbalajTipi { get ; set ; }
         public string Renk { get ; set ; }
+        public string YarıMamülAdı { get ; set; }
     }
 
 }

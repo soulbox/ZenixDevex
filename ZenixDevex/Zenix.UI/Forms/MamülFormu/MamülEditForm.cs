@@ -43,12 +43,9 @@ namespace Zenix.WinUI.Forms.MamülFormu
         {
             Expression<Func<Mamül, bool>> filt = x => x.MalzemeTipi == malztipi;
             MalzemeTipi[] AMb = { MalzemeTipi.Ambalaj, MalzemeTipi.Kutu, MalzemeTipi.Koli };
-            MalzemeTipi[] Sarf = { MalzemeTipi.Sarf, MalzemeTipi.Kapak };
             MalzemeTipi[] Hacim = { MalzemeTipi.Kavanoz, MalzemeTipi.Şişe };
             if (AMb.Any(x => x == malztipi))
                 filt = x => AMb.Contains(x.MalzemeTipi);
-            else if (Sarf.Any(x => x == malztipi))
-                filt = x => Sarf.Contains(x.MalzemeTipi);
             else if (Hacim.Any(x => x == malztipi))
                 filt = x => Hacim.Contains(x.MalzemeTipi);
 

@@ -44,6 +44,11 @@
             this.colReçeteBirimi = new Zenix.WinUI.myUserControls.Grid.MyGridColumn();
             this.colMalzemeTipi = new Zenix.WinUI.myUserControls.Grid.MyGridColumn();
             this.colStok = new Zenix.WinUI.myUserControls.Grid.MyGridColumn();
+            this.colYarıMamül = new Zenix.WinUI.myUserControls.Grid.MyGridColumn();
+            this.repositoryItemGridLookUpEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
+            this.repositoryItemGridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colYarıId = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colYarıMamülAdı = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repoCheck = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
             this.repoCombo = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.myGridControl1)).BeginInit();
@@ -51,6 +56,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.repoimagecomboFaz)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repoSpin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repoimgaecomboAşama)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit1View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repoCheck)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repoCombo)).BeginInit();
             this.SuspendLayout();
@@ -71,7 +78,8 @@
             this.repoSpin,
             this.repoCombo,
             this.repoimagecomboFaz,
-            this.repoimgaecomboAşama});
+            this.repoimgaecomboAşama,
+            this.repositoryItemGridLookUpEdit1});
             this.myGridControl1.Size = new System.Drawing.Size(849, 325);
             this.myGridControl1.TabIndex = 6;
             this.myGridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -101,7 +109,8 @@
             this.colAşamaTipi,
             this.colReçeteBirimi,
             this.colMalzemeTipi,
-            this.colStok});
+            this.colStok,
+            this.colYarıMamül});
             gridFormatRule1.ApplyToRow = true;
             gridFormatRule1.Name = "Kimyasal Renkler";
             formatConditionRuleExpression1.Expression = "Contains([MalzemeTipi], \'madde\') Or Contains([MalzemeTipi], \'sans\')";
@@ -228,8 +237,6 @@
             this.colAşamaTipi.StatusBarAciklama = "Malzemelerin Aşamalarını Seçiniz";
             this.colAşamaTipi.StatusBarKisayol = null;
             this.colAşamaTipi.StatusBarKisayolAciklama = null;
-            this.colAşamaTipi.Visible = true;
-            this.colAşamaTipi.VisibleIndex = 5;
             this.colAşamaTipi.Width = 106;
             // 
             // repoimgaecomboAşama
@@ -279,6 +286,54 @@
             this.colStok.Visible = true;
             this.colStok.VisibleIndex = 7;
             // 
+            // colYarıMamül
+            // 
+            this.colYarıMamül.Caption = "Yarı Mamül";
+            this.colYarıMamül.ColumnEdit = this.repositoryItemGridLookUpEdit1;
+            this.colYarıMamül.FieldName = "YarıMamülId";
+            this.colYarıMamül.Name = "colYarıMamül";
+            this.colYarıMamül.StatusBarAciklama = null;
+            this.colYarıMamül.StatusBarKisayol = null;
+            this.colYarıMamül.StatusBarKisayolAciklama = null;
+            this.colYarıMamül.Visible = true;
+            this.colYarıMamül.VisibleIndex = 5;
+            // 
+            // repositoryItemGridLookUpEdit1
+            // 
+            this.repositoryItemGridLookUpEdit1.AutoHeight = false;
+            this.repositoryItemGridLookUpEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemGridLookUpEdit1.DisplayMember = "YarıMamülAdı";
+            this.repositoryItemGridLookUpEdit1.Name = "repositoryItemGridLookUpEdit1";
+            this.repositoryItemGridLookUpEdit1.PopupView = this.repositoryItemGridLookUpEdit1View;
+            this.repositoryItemGridLookUpEdit1.ValueMember = "Id";
+            // 
+            // repositoryItemGridLookUpEdit1View
+            // 
+            this.repositoryItemGridLookUpEdit1View.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colYarıId,
+            this.colYarıMamülAdı});
+            this.repositoryItemGridLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.repositoryItemGridLookUpEdit1View.Name = "repositoryItemGridLookUpEdit1View";
+            this.repositoryItemGridLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.repositoryItemGridLookUpEdit1View.OptionsView.ShowColumnHeaders = false;
+            this.repositoryItemGridLookUpEdit1View.OptionsView.ShowGroupPanel = false;
+            // 
+            // colYarıId
+            // 
+            this.colYarıId.Caption = "Id";
+            this.colYarıId.FieldName = "Id";
+            this.colYarıId.Name = "colYarıId";
+            // 
+            // colYarıMamülAdı
+            // 
+            this.colYarıMamülAdı.Caption = "Yarı Mamül";
+            this.colYarıMamülAdı.FieldName = "YarıMamülAdı";
+            this.colYarıMamülAdı.Name = "colYarıMamülAdı";
+            this.colYarıMamülAdı.OptionsColumn.AllowEdit = false;
+            this.colYarıMamülAdı.Visible = true;
+            this.colYarıMamülAdı.VisibleIndex = 0;
+            // 
             // repoCheck
             // 
             this.repoCheck.AutoHeight = false;
@@ -309,6 +364,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.repoimagecomboFaz)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repoSpin)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repoimgaecomboAşama)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit1View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repoCheck)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repoCombo)).EndInit();
             this.ResumeLayout(false);
@@ -334,5 +391,10 @@
         private Grid.MyGridColumn colMalzemeİçiÜrün;
         private Grid.MyGridColumn colMalzemeTipi;
         private Grid.MyGridColumn colStok;
+        private Grid.MyGridColumn colYarıMamül;
+        private DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit repositoryItemGridLookUpEdit1;
+        private DevExpress.XtraGrid.Views.Grid.GridView repositoryItemGridLookUpEdit1View;
+        private DevExpress.XtraGrid.Columns.GridColumn colYarıId;
+        private DevExpress.XtraGrid.Columns.GridColumn colYarıMamülAdı;
     }
 }
