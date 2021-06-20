@@ -67,13 +67,22 @@
             this.btnTabloAyarlarıSıfırla = new DevExpress.XtraBars.BarButtonItem();
             this.btnYarıMamülGrup = new DevExpress.XtraBars.BarButtonItem();
             this.btnYarıMamül = new DevExpress.XtraBars.BarButtonItem();
+            this.btnMuhasebe = new DevExpress.XtraBars.BarButtonItem();
+            this.btnPlanlama = new DevExpress.XtraBars.BarButtonItem();
+            this.btnYarıMamülDepo = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonYönetim = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPage4 = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.ribbonYönetim = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPage5 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPage6 = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPage3 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.ribbonPageGroup7 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonMüş = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonKullanıcı = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
@@ -125,9 +134,12 @@
             this.btnÜretim,
             this.btnTabloAyarlarıSıfırla,
             this.btnYarıMamülGrup,
-            this.btnYarıMamül});
+            this.btnYarıMamül,
+            this.btnMuhasebe,
+            this.btnPlanlama,
+            this.btnYarıMamülDepo});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 55;
+            this.ribbon.MaxItemId = 58;
             this.ribbon.Name = "ribbon";
             this.ribbon.OptionsAnimation.PageCategoryShowAnimation = DevExpress.Utils.DefaultBoolean.True;
             this.ribbon.OptionsTouch.ShowTouchUISelectorInSearchMenu = false;
@@ -135,6 +147,11 @@
             this.ribbon.PageAnimationLength = 100;
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
+            this.ribbonPage4,
+            this.ribbonPage5,
+            this.ribbonPage6,
+            this.ribbonPage3,
+            this.ribbonPage2,
             this.ribbonMüş});
             this.ribbon.QuickToolbarItemLinks.Add(this.baruserinfo);
             this.ribbon.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.False;
@@ -145,7 +162,7 @@
             this.ribbon.ShowPageHeadersMode = DevExpress.XtraBars.Ribbon.ShowPageHeadersMode.Show;
             this.ribbon.ShowQatLocationSelector = false;
             this.ribbon.ShowToolbarCustomizeItem = false;
-            this.ribbon.Size = new System.Drawing.Size(1020, 185);
+            this.ribbon.Size = new System.Drawing.Size(1196, 185);
             this.ribbon.StatusBar = this.ribbonStatusBar;
             this.ribbon.Toolbar.ShowCustomizeItem = false;
             this.ribbon.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Below;
@@ -442,71 +459,138 @@
             this.btnYarıMamül.Name = "btnYarıMamül";
             this.btnYarıMamül.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             // 
+            // btnMuhasebe
+            // 
+            this.btnMuhasebe.Caption = "Muhasebe";
+            this.btnMuhasebe.Id = 55;
+            this.btnMuhasebe.ImageOptions.Image = global::Zenix.WinUI.Properties.Resources.Accounting_16px;
+            this.btnMuhasebe.ImageOptions.LargeImage = global::Zenix.WinUI.Properties.Resources.Accounting_32px;
+            this.btnMuhasebe.Name = "btnMuhasebe";
+            // 
+            // btnPlanlama
+            // 
+            this.btnPlanlama.Caption = "Planlama";
+            this.btnPlanlama.Id = 56;
+            this.btnPlanlama.ImageOptions.Image = global::Zenix.WinUI.Properties.Resources.journey_16px;
+            this.btnPlanlama.ImageOptions.LargeImage = global::Zenix.WinUI.Properties.Resources.journey_32px;
+            this.btnPlanlama.Name = "btnPlanlama";
+            // 
+            // btnYarıMamülDepo
+            // 
+            this.btnYarıMamülDepo.Caption = "Yarı Mamül Depo";
+            this.btnYarıMamülDepo.Id = 57;
+            this.btnYarıMamülDepo.ImageOptions.Image = global::Zenix.WinUI.Properties.Resources.warehouse_16px;
+            this.btnYarıMamülDepo.ImageOptions.LargeImage = global::Zenix.WinUI.Properties.Resources.warehouse_32px;
+            this.btnYarıMamülDepo.Name = "btnYarıMamülDepo";
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup4,
-            this.ribbonYönetim,
-            this.ribbonPageGroup1,
-            this.ribbonPageGroup2,
-            this.ribbonPageGroup3,
-            this.ribbonPageGroup5});
-            this.ribbonPage1.ImageOptions.Image = global::Zenix.WinUI.Properties.Resources.newitem_16x162;
+            this.ribbonPageGroup1});
+            this.ribbonPage1.ImageOptions.Image = global::Zenix.WinUI.Properties.Resources.üstmenüsafbeyaz;
             this.ribbonPage1.Name = "ribbonPage1";
-            this.ribbonPage1.Text = "Yönetim";
+            this.ribbonPage1.Text = "Üretim ve Planlaması";
             // 
             // ribbonPageGroup4
             // 
+            this.ribbonPageGroup4.ItemLinks.Add(this.btnReçete);
             this.ribbonPageGroup4.ItemLinks.Add(this.btnİşemri);
             this.ribbonPageGroup4.ItemLinks.Add(this.btnÜretim);
+            this.ribbonPageGroup4.ItemLinks.Add(this.btnPlanlama);
             this.ribbonPageGroup4.Name = "ribbonPageGroup4";
-            this.ribbonPageGroup4.Text = "Üretim";
-            // 
-            // ribbonYönetim
-            // 
-            this.ribbonYönetim.ItemLinks.Add(this.btnSipariş);
-            this.ribbonYönetim.ItemLinks.Add(this.btnMamüller);
-            this.ribbonYönetim.ItemLinks.Add(this.btnReçete);
-            this.ribbonYönetim.ItemLinks.Add(this.btnÜrün);
-            this.ribbonYönetim.ItemLinks.Add(this.btnSatınAlma);
-            this.ribbonYönetim.Name = "ribbonYönetim";
-            this.ribbonYönetim.Text = "Yönetim";
+            this.ribbonPageGroup4.Text = "Üretim ve Planlaması";
             // 
             // ribbonPageGroup1
             // 
             this.ribbonPageGroup1.Alignment = DevExpress.XtraBars.Ribbon.RibbonPageGroupAlignment.Far;
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
             // 
+            // ribbonPage4
+            // 
+            this.ribbonPage4.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.ribbonYönetim});
+            this.ribbonPage4.ImageOptions.Image = global::Zenix.WinUI.Properties.Resources.üstmenüsafbeyaz;
+            this.ribbonPage4.Name = "ribbonPage4";
+            this.ribbonPage4.Text = "Finans";
+            // 
+            // ribbonYönetim
+            // 
+            this.ribbonYönetim.ItemLinks.Add(this.btnSipariş);
+            this.ribbonYönetim.ItemLinks.Add(this.btnSatınAlma);
+            this.ribbonYönetim.ItemLinks.Add(this.btnMuhasebe);
+            this.ribbonYönetim.Name = "ribbonYönetim";
+            this.ribbonYönetim.Text = "Finans";
+            // 
+            // ribbonPage5
+            // 
+            this.ribbonPage5.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.ribbonPageGroup2});
+            this.ribbonPage5.ImageOptions.Image = global::Zenix.WinUI.Properties.Resources.üstmenüsafbeyaz;
+            this.ribbonPage5.Name = "ribbonPage5";
+            this.ribbonPage5.Text = "Depo Yönetimi";
+            // 
             // ribbonPageGroup2
             // 
             this.ribbonPageGroup2.ItemLinks.Add(this.btnMalzemeDepo);
             this.ribbonPageGroup2.ItemLinks.Add(this.btnÜrünDepo);
+            this.ribbonPageGroup2.ItemLinks.Add(this.btnYarıMamülDepo);
             this.ribbonPageGroup2.Name = "ribbonPageGroup2";
-            this.ribbonPageGroup2.Text = "Depo";
+            this.ribbonPageGroup2.Text = "Depo Yönetimi";
             // 
-            // ribbonPageGroup3
+            // ribbonPage6
             // 
-            this.ribbonPageGroup3.ItemLinks.Add(this.btnFirma);
-            this.ribbonPageGroup3.ItemLinks.Add(this.btnMarkalar);
-            this.ribbonPageGroup3.ItemLinks.Add(this.btnÜlkeler);
-            this.ribbonPageGroup3.ItemLinks.Add(this.btnAmbalajTipi);
-            this.ribbonPageGroup3.ItemLinks.Add(this.btnAmbalajMaddeTipi);
-            this.ribbonPageGroup3.ItemLinks.Add(this.btnYarıMamülGrup);
-            this.ribbonPageGroup3.ItemLinks.Add(this.btnYarıMamül);
-            this.ribbonPageGroup3.Name = "ribbonPageGroup3";
-            this.ribbonPageGroup3.Text = "Tanımlamalar";
+            this.ribbonPage6.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.ribbonPageGroup6});
+            this.ribbonPage6.ImageOptions.Image = global::Zenix.WinUI.Properties.Resources.üstmenüsafbeyaz;
+            this.ribbonPage6.Name = "ribbonPage6";
+            this.ribbonPage6.Text = "Malzeme Yönetimi";
+            // 
+            // ribbonPageGroup6
+            // 
+            this.ribbonPageGroup6.ItemLinks.Add(this.btnMamüller);
+            this.ribbonPageGroup6.ItemLinks.Add(this.btnÜrün);
+            this.ribbonPageGroup6.ItemLinks.Add(this.btnYarıMamülGrup);
+            this.ribbonPageGroup6.ItemLinks.Add(this.btnYarıMamül);
+            this.ribbonPageGroup6.Name = "ribbonPageGroup6";
+            this.ribbonPageGroup6.Text = "Malzeme Yönetimi";
+            // 
+            // ribbonPage3
+            // 
+            this.ribbonPage3.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.ribbonPageGroup5});
+            this.ribbonPage3.ImageOptions.Image = global::Zenix.WinUI.Properties.Resources.üstmenüsafbeyaz;
+            this.ribbonPage3.Name = "ribbonPage3";
+            this.ribbonPage3.Text = "Tanımlamalar";
             // 
             // ribbonPageGroup5
             // 
-            this.ribbonPageGroup5.ItemLinks.Add(this.btnTabloAyarlarıSıfırla);
+            this.ribbonPageGroup5.ItemLinks.Add(this.btnAmbalajTipi);
+            this.ribbonPageGroup5.ItemLinks.Add(this.btnMarkalar);
+            this.ribbonPageGroup5.ItemLinks.Add(this.btnFirma);
+            this.ribbonPageGroup5.ItemLinks.Add(this.btnÜlkeler);
+            this.ribbonPageGroup5.ItemLinks.Add(this.btnAmbalajMaddeTipi);
             this.ribbonPageGroup5.Name = "ribbonPageGroup5";
-            this.ribbonPageGroup5.Text = "Tablo Ayarları";
+            this.ribbonPageGroup5.Text = "ribbonPageGroup5";
+            // 
+            // ribbonPage2
+            // 
+            this.ribbonPage2.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.ribbonPageGroup7});
+            this.ribbonPage2.ImageOptions.Image = global::Zenix.WinUI.Properties.Resources.üstmenüsafbeyaz;
+            this.ribbonPage2.Name = "ribbonPage2";
+            this.ribbonPage2.Text = "Ayarlar";
+            // 
+            // ribbonPageGroup7
+            // 
+            this.ribbonPageGroup7.ItemLinks.Add(this.btnTabloAyarlarıSıfırla);
+            this.ribbonPageGroup7.Name = "ribbonPageGroup7";
             // 
             // ribbonMüş
             // 
             this.ribbonMüş.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonKullanıcı});
-            this.ribbonMüş.ImageOptions.Image = global::Zenix.WinUI.Properties.Resources.newitem_16x161;
+            this.ribbonMüş.ImageOptions.Image = global::Zenix.WinUI.Properties.Resources.üstmenüsafbeyaz;
             this.ribbonMüş.Name = "ribbonMüş";
             this.ribbonMüş.Text = "Kullanıcı Ayarları";
             // 
@@ -525,7 +609,7 @@
             this.ribbonStatusBar.Location = new System.Drawing.Point(0, 664);
             this.ribbonStatusBar.Name = "ribbonStatusBar";
             this.ribbonStatusBar.Ribbon = this.ribbon;
-            this.ribbonStatusBar.Size = new System.Drawing.Size(1020, 24);
+            this.ribbonStatusBar.Size = new System.Drawing.Size(1196, 24);
             // 
             // xtraTabbedMdiManager
             // 
@@ -540,14 +624,14 @@
             this.imgBackGround.Name = "imgBackGround";
             this.imgBackGround.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
             this.imgBackGround.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
-            this.imgBackGround.Size = new System.Drawing.Size(1020, 479);
+            this.imgBackGround.Size = new System.Drawing.Size(1196, 479);
             this.imgBackGround.TabIndex = 7;
             // 
             // AnaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1020, 688);
+            this.ClientSize = new System.Drawing.Size(1196, 688);
             this.Controls.Add(this.imgBackGround);
             this.Controls.Add(this.ribbonStatusBar);
             this.Controls.Add(this.ribbon);
@@ -612,12 +696,21 @@
         private DevExpress.XtraBars.BarButtonItem btnMalzemeDepo;
         private DevExpress.XtraBars.BarButtonItem btnÜrünDepo;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup3;
         private DevExpress.XtraBars.BarButtonItem btnÜretim;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup4;
         private DevExpress.XtraBars.BarButtonItem btnTabloAyarlarıSıfırla;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup5;
         private DevExpress.XtraBars.BarButtonItem btnYarıMamülGrup;
         private DevExpress.XtraBars.BarButtonItem btnYarıMamül;
+        private DevExpress.XtraBars.BarButtonItem btnMuhasebe;
+        private DevExpress.XtraBars.BarButtonItem btnPlanlama;
+        private DevExpress.XtraBars.BarButtonItem btnYarıMamülDepo;
+        private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage4;
+        private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage5;
+        private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage6;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup6;
+        private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage3;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup5;
+        private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage2;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup7;
     }
 }

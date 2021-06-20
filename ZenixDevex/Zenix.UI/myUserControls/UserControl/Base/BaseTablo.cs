@@ -101,7 +101,7 @@ namespace Zenix.WinUI.myUserControls.UserControl.Base
         private void SablonKaydet()
         {
             if (tablosablonkayitedilicek)
-                baseTablo.TabloSablonYukle(baseTablo.ViewCaption);
+                baseTablo.TabloSablonKaydet(baseTablo.ViewCaption);
 
         }
         private void ButtonGizleGoster()

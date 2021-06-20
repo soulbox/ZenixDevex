@@ -83,6 +83,26 @@ namespace Zenix.WinUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap Accounting_16px {
+            get {
+                object obj = ResourceManager.GetObject("Accounting_16px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap Accounting_32px {
+            get {
+                object obj = ResourceManager.GetObject("Accounting_32px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap add_16x16 {
             get {
                 object obj = ResourceManager.GetObject("add_16x16", resourceCulture);
@@ -893,6 +913,46 @@ namespace Zenix.WinUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap contentarrangeinrows_16x162 {
+            get {
+                object obj = ResourceManager.GetObject("contentarrangeinrows_16x162", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap contentarrangeinrows_16x163 {
+            get {
+                object obj = ResourceManager.GetObject("contentarrangeinrows_16x163", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap contentarrangeinrows_16x164 {
+            get {
+                object obj = ResourceManager.GetObject("contentarrangeinrows_16x164", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap contentarrangeinrows_16x165 {
+            get {
+                object obj = ResourceManager.GetObject("contentarrangeinrows_16x165", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap convert_32x32 {
             get {
                 object obj = ResourceManager.GetObject("convert_32x32", resourceCulture);
@@ -1673,6 +1733,26 @@ namespace Zenix.WinUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap journey_16px {
+            get {
+                object obj = ResourceManager.GetObject("journey_16px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap journey_32px {
+            get {
+                object obj = ResourceManager.GetObject("journey_32px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap layers_16px {
             get {
                 object obj = ResourceManager.GetObject("layers_16px", resourceCulture);
@@ -1756,6 +1836,16 @@ namespace Zenix.WinUI.Properties {
         public static System.Drawing.Bitmap menu {
             get {
                 object obj = ResourceManager.GetObject("menu", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap menu_24px {
+            get {
+                object obj = ResourceManager.GetObject("menu_24px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -2653,6 +2743,36 @@ namespace Zenix.WinUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap üstmenü {
+            get {
+                object obj = ResourceManager.GetObject("üstmenü", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap üstmenübeyaz {
+            get {
+                object obj = ResourceManager.GetObject("üstmenübeyaz", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap üstmenüsafbeyaz {
+            get {
+                object obj = ResourceManager.GetObject("üstmenüsafbeyaz", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap version_16x16 {
             get {
                 object obj = ResourceManager.GetObject("version_16x16", resourceCulture);
@@ -2796,6 +2916,16 @@ namespace Zenix.WinUI.Properties {
         public static System.Drawing.Bitmap xbox_menu_16px {
             get {
                 object obj = ResourceManager.GetObject("xbox_menu_16px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap xbox_menu_16px1 {
+            get {
+                object obj = ResourceManager.GetObject("xbox_menu_16px1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
