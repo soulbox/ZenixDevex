@@ -60,7 +60,6 @@
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.myBandedGridControl1 = new Zenix.WinUI.myUserControls.Grid.myBandedGridControl();
             this.Tablo = new Zenix.WinUI.myUserControls.Grid.myBandedGridview();
-            this.aaaa = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
             this.colId = new Zenix.WinUI.myUserControls.Grid.myBandedGridColumn();
             this.colKod = new Zenix.WinUI.myUserControls.Grid.myBandedGridColumn();
             this.colİşemriNo = new Zenix.WinUI.myUserControls.Grid.myBandedGridColumn();
@@ -71,12 +70,14 @@
             this.colMalzeme = new Zenix.WinUI.myUserControls.Grid.myBandedGridColumn();
             this.colGTIN = new Zenix.WinUI.myUserControls.Grid.myBandedGridColumn();
             this.colEXP = new Zenix.WinUI.myUserControls.Grid.myBandedGridColumn();
-            this.gridBand1 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
             this.colRevizyonKodu = new Zenix.WinUI.myUserControls.Grid.myBandedGridColumn();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.longNavigator = new Zenix.WinUI.myUserControls.Navigator.LongNavigator();
+            this.colAded = new Zenix.WinUI.myUserControls.Grid.myBandedGridColumn();
+            this.aaaa = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
+            this.gridBand1 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.myDataLayoutControl1)).BeginInit();
             this.myDataLayoutControl1.SuspendLayout();
@@ -502,6 +503,7 @@
             this.aaaa,
             this.gridBand1});
             this.Tablo.Columns.AddRange(new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn[] {
+            this.colAded,
             this.colId,
             this.colİşemriNo,
             this.colKod,
@@ -536,23 +538,6 @@
             this.Tablo.StatusBarKisayol = null;
             this.Tablo.StatusBarKisayolAciklama = null;
             this.Tablo.ViewCaption = "İş Emirleri";
-            // 
-            // aaaa
-            // 
-            this.aaaa.Caption = "Ürün Tanımı";
-            this.aaaa.Columns.Add(this.colId);
-            this.aaaa.Columns.Add(this.colKod);
-            this.aaaa.Columns.Add(this.colİşemriNo);
-            this.aaaa.Columns.Add(this.colŞarj);
-            this.aaaa.Columns.Add(this.colŞarjMiktarı);
-            this.aaaa.Columns.Add(this.colMarka);
-            this.aaaa.Columns.Add(this.colFirma);
-            this.aaaa.Columns.Add(this.colMalzeme);
-            this.aaaa.Columns.Add(this.colGTIN);
-            this.aaaa.Columns.Add(this.colEXP);
-            this.aaaa.Name = "aaaa";
-            this.aaaa.VisibleIndex = 0;
-            this.aaaa.Width = 1090;
             // 
             // colId
             // 
@@ -670,14 +655,6 @@
             this.colEXP.StatusBarKisayolAciklama = null;
             this.colEXP.Visible = true;
             // 
-            // gridBand1
-            // 
-            this.gridBand1.Caption = "Reçete Bilgileri";
-            this.gridBand1.Columns.Add(this.colRevizyonKodu);
-            this.gridBand1.Name = "gridBand1";
-            this.gridBand1.VisibleIndex = 1;
-            this.gridBand1.Width = 75;
-            // 
             // colRevizyonKodu
             // 
             this.colRevizyonKodu.Caption = "Revizyon Kodu";
@@ -742,6 +719,44 @@
             this.longNavigator.Name = "longNavigator";
             this.longNavigator.Size = new System.Drawing.Size(1144, 24);
             this.longNavigator.TabIndex = 15;
+            // 
+            // colAded
+            // 
+            this.colAded.Caption = "Adet";
+            this.colAded.FieldName = "Adet";
+            this.colAded.Name = "colAded";
+            this.colAded.OptionsColumn.AllowEdit = false;
+            this.colAded.StatusBarAciklama = null;
+            this.colAded.StatusBarKisayol = null;
+            this.colAded.StatusBarKisayolAciklama = null;
+            this.colAded.Visible = true;
+            this.colAded.Width = 84;
+            // 
+            // aaaa
+            // 
+            this.aaaa.Caption = "Ürün Tanımı";
+            this.aaaa.Columns.Add(this.colId);
+            this.aaaa.Columns.Add(this.colKod);
+            this.aaaa.Columns.Add(this.colİşemriNo);
+            this.aaaa.Columns.Add(this.colŞarj);
+            this.aaaa.Columns.Add(this.colŞarjMiktarı);
+            this.aaaa.Columns.Add(this.colAded);
+            this.aaaa.Columns.Add(this.colMarka);
+            this.aaaa.Columns.Add(this.colFirma);
+            this.aaaa.Columns.Add(this.colMalzeme);
+            this.aaaa.Columns.Add(this.colGTIN);
+            this.aaaa.Columns.Add(this.colEXP);
+            this.aaaa.Name = "aaaa";
+            this.aaaa.VisibleIndex = 0;
+            this.aaaa.Width = 1174;
+            // 
+            // gridBand1
+            // 
+            this.gridBand1.Caption = "Reçete Bilgileri";
+            this.gridBand1.Columns.Add(this.colRevizyonKodu);
+            this.gridBand1.Name = "gridBand1";
+            this.gridBand1.VisibleIndex = 1;
+            this.gridBand1.Width = 75;
             // 
             // ÜretimListFormDetay
             // 
@@ -810,7 +825,6 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
         private myUserControls.Grid.myBandedGridControl myBandedGridControl1;
         private myUserControls.Grid.myBandedGridview Tablo;
-        private DevExpress.XtraGrid.Views.BandedGrid.GridBand aaaa;
         private myUserControls.Grid.myBandedGridColumn colId;
         private myUserControls.Grid.myBandedGridColumn colKod;
         private myUserControls.Grid.myBandedGridColumn colİşemriNo;
@@ -821,11 +835,13 @@
         private myUserControls.Grid.myBandedGridColumn colMalzeme;
         private myUserControls.Grid.myBandedGridColumn colGTIN;
         private myUserControls.Grid.myBandedGridColumn colEXP;
-        private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand1;
         private myUserControls.Grid.myBandedGridColumn colRevizyonKodu;
         private DevExpress.XtraLayout.LayoutControlGroup Root;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
         private myUserControls.Navigator.LongNavigator longNavigator;
+        private DevExpress.XtraGrid.Views.BandedGrid.GridBand aaaa;
+        private myUserControls.Grid.myBandedGridColumn colAded;
+        private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand1;
     }
 }

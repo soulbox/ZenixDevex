@@ -28,6 +28,7 @@ namespace Zenix.Model.Entities
         public long? SiparişId { get; set; }
         public float DepoMiktar { get; set; }
         public DateTime KayıtTarihi { get; set; } = DateTime.Now;
+
     }
 
     public enum DepoTipi : byte

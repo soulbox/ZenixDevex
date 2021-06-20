@@ -34,7 +34,7 @@ namespace Zenix.Model.Entities
         public FazTipi FazTipi { get; set; }
         public AşamaTipi AşamaTipi { get; set; }
         public BirimTipi ReçeteBirimi { get; set; }
-        public long? YarıMamülId { get; set; }
+        public int? YarıMamülId { get; set; }
         public YarıMamül YarıMamül { get; set; }
     }
 }
