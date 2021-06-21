@@ -27,7 +27,9 @@ namespace Zenix.BLL.General
                 Miktar = x.Miktar,
                 TerminTarihi = x.TerminTarihi,
                 Teslimat = x.Teslimat,
-                Stok = x.Mamül.Depo.Select(a => a.DepoMiktar).DefaultIfEmpty(0).Sum(),
+                Stok = x.Mamül.Depo.Where(a => a.YarıMamül == null).Select(a => a.DepoMiktar).DefaultIfEmpty(0).Sum(),
+                //YarıMamülStok = x.Mamül.Depo.Where(a => a.YarıMamülId != null).Select(a => a.DepoMiktar).DefaultIfEmpty(0).Sum(),
+
                 BirimFiyat = x.BirimFiyat,
                 ParaBirimi = x.ParaBirimi,
 

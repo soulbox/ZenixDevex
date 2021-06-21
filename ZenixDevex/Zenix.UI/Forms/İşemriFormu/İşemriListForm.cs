@@ -178,42 +178,7 @@ namespace Zenix.WinUI.Forms.İşemriFormu
         }
         protected override void AşamaOnayla()
         {
-            var tip = (AşamaTipi)cmbAşamaTipi.EditValue;
-            switch (tip)
-            {
-                case AşamaTipi.yok:
-                    break;
-                case AşamaTipi.Etiketveinkjet:
-                    break;
-                case AşamaTipi.kapakvedolum:
-                    break;
-                case AşamaTipi.kutu:
-                    break;
-                case AşamaTipi.stand:
-                    break;
-                case AşamaTipi.fırça:
-                    break;
-                case AşamaTipi.sarf:
-                    break;
-                case AşamaTipi.koli:
-                    break;
-                case AşamaTipi.palet:
-                    break;
-                case AşamaTipi.kapak:
-                    break;
-                case AşamaTipi.sergrafi:
-                    break;
-                case AşamaTipi.inkjet:
-                    break;
-                case AşamaTipi.dolum:
-                    break;
-                case AşamaTipi.etiket:
-                    break;
-                case AşamaTipi.Şarj:
-                    break;
-                default:
-                    break;
-            }
+
 
         }
     }

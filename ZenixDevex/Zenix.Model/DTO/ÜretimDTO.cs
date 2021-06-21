@@ -13,7 +13,7 @@ namespace Zenix.Model.DTO
 {
     [NotMapped]
 
-    public class ÜretimL : Üretim, IBaseÜrünTanıtım, IRevizyon,  IBaseRevizyon,Iİşemri//,IBaseHaraketEntity
+    public class ÜretimL : Üretim, IBaseÜrünTanıtım, IRevizyon,  IBaseRevizyon,Iİşemri,IYarıMamülAdı
     {
         public string Açıklama { get; set; }
         public long ÜrünId { get; set; }
@@ -35,8 +35,6 @@ namespace Zenix.Model.DTO
         public DateTime RevizyonTarihi { get; set; }
         public string BaseRevKod { get; set; }     
         public string RevKodu { get => BaseRevizyon.GetRevKodu(BaseRevKod, RevizyonTarihi); }
-
-
-
+        public string YarıMamülAdı { get ; set ; }
     }
 }

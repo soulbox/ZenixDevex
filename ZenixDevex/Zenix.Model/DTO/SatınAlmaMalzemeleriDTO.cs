@@ -12,6 +12,7 @@ using Zenix.Common.Enums;
 
 namespace Zenix.Model.DTO
 {
+
     [NotMapped]
     public class SatınAlmaMalzemeleriL : SatınAlmaMalzemeler, IMamül, IBaseHaraketEntity
     {
@@ -45,6 +46,7 @@ namespace Zenix.Model.DTO
 
         public string BirimAlan { get; }
         public float Stok { get; set; }
+
         public string Ticariİsim { get; set; }
         public long PaketŞekliId { get ; set ; }
         public string AmbalajTipi { get ; set ; }

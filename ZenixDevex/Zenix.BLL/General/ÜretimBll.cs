@@ -46,6 +46,9 @@ namespace Zenix.BLL.General
                 GTIN = x.İşemri.Reçete.Ürün.GTIN,
                 KullaniciId = x.İşemri.KullaniciId,
                 MamülId = x.MamülId,
+                YarıMamülId = x.YarıMamülId,
+                YarıMamülAdı = x.YarıMamülId == null ? default : x.YarıMamül.YarıMamülGrup.YarıMamülAdı,
+                KayıtTarihi=x.KayıtTarihi
 
             }).ToList();
         }

@@ -86,8 +86,8 @@ namespace Zenix.Model.DTO
         public string işemriNo { get => $"{işemriTarih:ddMMyy}-{RevNo:00}/{ŞarjNo:00}"; }
 
         public int Adet { get =>(int)((float)ŞarjMiktarı / (float)Hacim * 1000); }
-      
-        
+        public Reçete  Reçete { get; set; }
+
         public İşemriL Clone { get => (İşemriL)MemberwiseClone(); }
     }
 

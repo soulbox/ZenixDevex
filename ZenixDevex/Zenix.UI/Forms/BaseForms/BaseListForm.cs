@@ -55,7 +55,7 @@ namespace Zenix.WinUI.Forms.BaseForms
             InitializeComponent();
             //repoComboAşamaTipi.Items.Add()
             repoComboAşamaTipi.ToData<AşamaTipi>();
-            cmbAşamaTipi.EditValue = AşamaTipi.yok;
+            //cmbAşamaTipi.EditValue = AşamaTipi.yok;
 
 
         }

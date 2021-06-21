@@ -37,6 +37,8 @@ namespace Zenix.Common.Enums
         Şarj,
         [Description("Tam Üretim")]
         TamÜretim,
+        [Description("Yarı Mamül")]
+        YarıMamül,
 
     }
 }

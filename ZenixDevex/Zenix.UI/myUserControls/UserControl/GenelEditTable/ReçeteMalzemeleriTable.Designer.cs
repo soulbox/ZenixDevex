@@ -51,6 +51,7 @@
             this.colYarıMamülAdı = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repoCheck = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
             this.repoCombo = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
+            this.colYarıMamülStok = new Zenix.WinUI.myUserControls.Grid.MyGridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.myGridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tablo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repoimagecomboFaz)).BeginInit();
@@ -110,7 +111,8 @@
             this.colReçeteBirimi,
             this.colMalzemeTipi,
             this.colStok,
-            this.colYarıMamül});
+            this.colYarıMamül,
+            this.colYarıMamülStok});
             gridFormatRule1.ApplyToRow = true;
             gridFormatRule1.Name = "Kimyasal Renkler";
             formatConditionRuleExpression1.Expression = "Contains([MalzemeTipi], \'madde\') Or Contains([MalzemeTipi], \'sans\')";
@@ -350,6 +352,18 @@
             this.repoCombo.Name = "repoCombo";
             this.repoCombo.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             // 
+            // colYarıMamülStok
+            // 
+            this.colYarıMamülStok.Caption = "Y.M. Stok";
+            this.colYarıMamülStok.FieldName = "YarıMamülStok";
+            this.colYarıMamülStok.Name = "colYarıMamülStok";
+            this.colYarıMamülStok.OptionsColumn.AllowEdit = false;
+            this.colYarıMamülStok.StatusBarAciklama = null;
+            this.colYarıMamülStok.StatusBarKisayol = null;
+            this.colYarıMamülStok.StatusBarKisayolAciklama = null;
+            this.colYarıMamülStok.Visible = true;
+            this.colYarıMamülStok.VisibleIndex = 8;
+            // 
             // ReçeteMalzemeleriTable
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -396,5 +410,6 @@
         private DevExpress.XtraGrid.Views.Grid.GridView repositoryItemGridLookUpEdit1View;
         private DevExpress.XtraGrid.Columns.GridColumn colYarıId;
         private DevExpress.XtraGrid.Columns.GridColumn colYarıMamülAdı;
+        private Grid.MyGridColumn colYarıMamülStok;
     }
 }

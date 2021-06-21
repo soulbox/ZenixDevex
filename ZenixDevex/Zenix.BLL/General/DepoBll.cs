@@ -50,9 +50,11 @@ namespace Zenix.BLL.General
                 DepoTipi = x.DepoTipi,
                 SiparişId = x.SiparişId,
                 SiparişNo = x.Sipariş.Kod,
+                YarıMamülId = x.YarıMamülId
 
 
-            }).ToList();
+            }).Where(x => x.YarıMamülId == null)
+                .ToList();
             list.ForEach(x =>
             {
                 x.KayıtDurum = x.SatınalmaId != null ? x.SatınAlma : x.İşemriId != null ? $"İşemriNo:{x.işemriNo}" : x.SiparişId != null ? $"Sipariş No:{x.SiparişNo}" : "";

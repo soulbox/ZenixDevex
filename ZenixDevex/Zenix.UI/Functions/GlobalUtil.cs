@@ -13,6 +13,8 @@ namespace Zenix.WinUI.Functions
     {
         public static bool HasValue(this IBaseEntity sourc) => sourc != null;
         public static bool isNull(this IBaseEntity sourc) => sourc == null;
+        public static bool isNull(this IBaseEntity sourc,params IBaseEntity[] prm) => sourc.isNull() | prm.All(x=>x.isNull());
+
 
         //public static (bool hasval, T value) HasValue<T>(this T sourc) => sourc == null ? (false, sourc ) : (true, sourc);
         internal static Dictionary<MalzemeTipi, int> enumOrder = new Dictionary<MalzemeTipi, int>()

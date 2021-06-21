@@ -23,7 +23,8 @@ namespace Zenix.Model.Entities
         public float Miktar { get; set; }
         public AşamaTipi AşamaTipi { get; set; }
         public DateTime KayıtTarihi { get; set; } = DateTime.Now;
-
+        public int? YarıMamülId { get; set; }
+        public YarıMamül YarıMamül { get; set; }
 
 
     }

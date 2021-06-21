@@ -44,7 +44,7 @@ namespace Zenix.BLL.Base
         public virtual bool Insert(List<BaseEntity> entities)
         {
 
-            return BaseInsert(entities);
+            return entities.Count == 0 || BaseInsert(entities);
         }
         public bool InsertRange(List<BaseEntity> entity, Expression<Func<TEntity, bool>> filter)
         {

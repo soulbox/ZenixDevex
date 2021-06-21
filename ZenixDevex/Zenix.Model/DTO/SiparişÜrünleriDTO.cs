@@ -13,11 +13,19 @@ using System.Text.RegularExpressions;
 namespace Zenix.Model.DTO
 {
 
-    public interface IStok
+    public interface IStok : IBaseStok
     {
         float Gelen { get; set; }
-        float Stok { get; set; }
+        //float Stok { get; set; }
         float EksikFazla { get; }
+    }
+    public interface IBaseStok
+    {
+        //float MalzemeStok { get; set; }
+
+        float Stok { get; set; }
+        float YarıMamülStok { get; set; }
+
     }
 
     [NotMapped]
@@ -27,7 +35,7 @@ namespace Zenix.Model.DTO
         public float Stok { get; set; }
         public float EksikFazla { get => Gelen - Miktar; }
         public string Ticariİsim { get; set; }
-
+        public float YarıMamülStok { get; set; }
         public string GTIN { get; set; }
         public long MarkaId { get; set; }
         public long? FirmaId { get; set; }
@@ -67,9 +75,9 @@ namespace Zenix.Model.DTO
         public bool Insert { get; set; }
         public bool Update { get; set; }
         public bool Delete { get; set; }
-        public long PaketŞekliId { get ; set ; }
-        public string AmbalajTipi { get ; set ; }
-        public string Renk { get ; set ; }
+        public long PaketŞekliId { get; set; }
+        public string AmbalajTipi { get; set; }
+        public string Renk { get; set; }
     }
     [NotMapped]
     public class SiparişÜrünleriDepo : SiparişÜrünleri, IBaseÜrünTanıtım, IBaseRevizyon

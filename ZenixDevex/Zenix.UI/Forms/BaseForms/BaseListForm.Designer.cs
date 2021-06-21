@@ -127,9 +127,14 @@
             this.btnSigortaları = new DevExpress.XtraBars.BarButtonItem();
             this.btnSmsGönder = new DevExpress.XtraBars.BarButtonItem();
             this.btnAşamalar = new DevExpress.XtraBars.BarSubItem();
+            this.barYarıMamül = new DevExpress.XtraBars.BarEditItem();
+            this.repoYarıMamülLookUp = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
+            this.repositoryItemGridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colYarıMamülAdı = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colId = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.barÜretimMiktar = new DevExpress.XtraBars.BarEditItem();
+            this.repoÜretimMiktar = new DevExpress.XtraEditors.Repository.RepositoryItemCalcEdit();
             this.btnTümAlamalarYapıldı = new DevExpress.XtraBars.BarButtonItem();
-            this.cmbAşamaTipi = new DevExpress.XtraBars.BarEditItem();
-            this.repoComboAşamaTipi = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
             this.btnAşamaOnayla = new DevExpress.XtraBars.BarButtonItem();
             this.btnYeniTicariİsim = new DevExpress.XtraBars.BarButtonItem();
             this.btnYeniSiparişKullan = new DevExpress.XtraBars.BarButtonItem();
@@ -138,11 +143,15 @@
             this.btnYeniİşemri = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.repoComboAşamaTipi = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
             this.repositoryItemImageComboBox1 = new DevExpress.XtraEditors.Repository.RepositoryItemImageComboBox();
             this.ribbonStatusBar1 = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.sagMenu = new DevExpress.XtraBars.PopupMenu(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repoYarıMamülLookUp)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit1View)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repoÜretimMiktar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repoComboAşamaTipi)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemImageComboBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sagMenu)).BeginInit();
@@ -203,22 +212,25 @@
             this.btnSigortaları,
             this.btnSmsGönder,
             this.btnAşamalar,
-            this.cmbAşamaTipi,
             this.btnAşamaOnayla,
             this.btnTümAlamalarYapıldı,
             this.btnYeniTicariİsim,
             this.btnYeniSiparişKullan,
             this.btnYeniRevizyon,
             this.btnYeniSatınAlma,
-            this.btnYeniİşemri});
+            this.btnYeniİşemri,
+            this.barÜretimMiktar,
+            this.barYarıMamül});
             this.ribbonControl.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl.MaxItemId = 73;
+            this.ribbonControl.MaxItemId = 76;
             this.ribbonControl.Name = "ribbonControl";
             this.ribbonControl.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
             this.ribbonControl.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repoComboAşamaTipi,
-            this.repositoryItemImageComboBox1});
+            this.repositoryItemImageComboBox1,
+            this.repoÜretimMiktar,
+            this.repoYarıMamülLookUp});
             this.ribbonControl.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.False;
             this.ribbonControl.ShowDisplayOptionsMenuButton = DevExpress.Utils.DefaultBoolean.False;
             this.ribbonControl.ShowExpandCollapseButton = DevExpress.Utils.DefaultBoolean.False;
@@ -756,41 +768,90 @@
             this.btnAşamalar.ImageOptions.Image = global::Zenix.WinUI.Properties.Resources.hideproduct_16x16;
             this.btnAşamalar.ImageOptions.LargeImage = global::Zenix.WinUI.Properties.Resources.hideproduct_32x32;
             this.btnAşamalar.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.barYarıMamül),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barÜretimMiktar),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnTümAlamalarYapıldı),
-            new DevExpress.XtraBars.LinkPersistInfo(this.cmbAşamaTipi),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnAşamaOnayla)});
             this.btnAşamalar.Name = "btnAşamalar";
             this.btnAşamalar.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             // 
+            // barYarıMamül
+            // 
+            this.barYarıMamül.Caption = "Yarı Mamül";
+            this.barYarıMamül.Edit = this.repoYarıMamülLookUp;
+            this.barYarıMamül.Id = 75;
+            this.barYarıMamül.ImageOptions.Image = global::Zenix.WinUI.Properties.Resources.highlightactiveelements_16x161;
+            this.barYarıMamül.ImageOptions.LargeImage = global::Zenix.WinUI.Properties.Resources.highlightactiveelements_32x321;
+            this.barYarıMamül.Name = "barYarıMamül";
+            // 
+            // repoYarıMamülLookUp
+            // 
+            this.repoYarıMamülLookUp.AutoHeight = false;
+            this.repoYarıMamülLookUp.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repoYarıMamülLookUp.DisplayMember = "YarıMamülAdı";
+            this.repoYarıMamülLookUp.Name = "repoYarıMamülLookUp";
+            this.repoYarıMamülLookUp.NullText = "Yok";
+            this.repoYarıMamülLookUp.PopupView = this.repositoryItemGridLookUpEdit1View;
+            // 
+            // repositoryItemGridLookUpEdit1View
+            // 
+            this.repositoryItemGridLookUpEdit1View.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colYarıMamülAdı,
+            this.colId});
+            this.repositoryItemGridLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.repositoryItemGridLookUpEdit1View.Name = "repositoryItemGridLookUpEdit1View";
+            this.repositoryItemGridLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.repositoryItemGridLookUpEdit1View.OptionsView.ShowGroupPanel = false;
+            // 
+            // colYarıMamülAdı
+            // 
+            this.colYarıMamülAdı.Caption = "Yarı Mamül";
+            this.colYarıMamülAdı.FieldName = "YarıMamülAdı";
+            this.colYarıMamülAdı.Name = "colYarıMamülAdı";
+            this.colYarıMamülAdı.Visible = true;
+            this.colYarıMamülAdı.VisibleIndex = 0;
+            // 
+            // colId
+            // 
+            this.colId.Caption = "Id";
+            this.colId.FieldName = "Id";
+            this.colId.Name = "colId";
+            // 
+            // barÜretimMiktar
+            // 
+            this.barÜretimMiktar.Caption = "Miktar";
+            this.barÜretimMiktar.CaptionToEditorIndent = 25;
+            this.barÜretimMiktar.Edit = this.repoÜretimMiktar;
+            this.barÜretimMiktar.EditWidth = 200;
+            this.barÜretimMiktar.Id = 74;
+            this.barÜretimMiktar.ImageOptions.Image = global::Zenix.WinUI.Properties.Resources.calculatesheet_16x16;
+            this.barÜretimMiktar.ImageOptions.LargeImage = global::Zenix.WinUI.Properties.Resources.calculatesheet_32x32;
+            this.barÜretimMiktar.Name = "barÜretimMiktar";
+            // 
+            // repoÜretimMiktar
+            // 
+            this.repoÜretimMiktar.AutoHeight = false;
+            this.repoÜretimMiktar.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repoÜretimMiktar.DisplayFormat.FormatString = "{0:n0}";
+            this.repoÜretimMiktar.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.repoÜretimMiktar.EditFormat.FormatString = "{0:n0}";
+            this.repoÜretimMiktar.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.repoÜretimMiktar.Mask.EditMask = "d";
+            this.repoÜretimMiktar.Name = "repoÜretimMiktar";
+            // 
             // btnTümAlamalarYapıldı
             // 
-            this.btnTümAlamalarYapıldı.Caption = "Tüm Aşamalar Yapıldı";
+            this.btnTümAlamalarYapıldı.Caption = "Tam Üretim";
             this.btnTümAlamalarYapıldı.Id = 67;
             this.btnTümAlamalarYapıldı.ImageOptions.Image = global::Zenix.WinUI.Properties.Resources.showproduct_16x162;
             this.btnTümAlamalarYapıldı.ImageOptions.LargeImage = global::Zenix.WinUI.Properties.Resources.showproduct_32x322;
             this.btnTümAlamalarYapıldı.Name = "btnTümAlamalarYapıldı";
             // 
-            // cmbAşamaTipi
-            // 
-            this.cmbAşamaTipi.Caption = "Aşama Tipi";
-            this.cmbAşamaTipi.Edit = this.repoComboAşamaTipi;
-            this.cmbAşamaTipi.EditWidth = 150;
-            this.cmbAşamaTipi.Id = 64;
-            this.cmbAşamaTipi.ImageOptions.Image = global::Zenix.WinUI.Properties.Resources.selectall_16x16;
-            this.cmbAşamaTipi.ImageOptions.LargeImage = global::Zenix.WinUI.Properties.Resources.selectall_32x32;
-            this.cmbAşamaTipi.Name = "cmbAşamaTipi";
-            // 
-            // repoComboAşamaTipi
-            // 
-            this.repoComboAşamaTipi.AutoHeight = false;
-            this.repoComboAşamaTipi.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repoComboAşamaTipi.Name = "repoComboAşamaTipi";
-            this.repoComboAşamaTipi.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            // 
             // btnAşamaOnayla
             // 
-            this.btnAşamaOnayla.Caption = "Aşama Onayla";
+            this.btnAşamaOnayla.Caption = "Üretim Onayla";
             this.btnAşamaOnayla.Id = 65;
             this.btnAşamaOnayla.ImageOptions.Image = global::Zenix.WinUI.Properties.Resources.apply_16x163;
             this.btnAşamaOnayla.ImageOptions.LargeImage = global::Zenix.WinUI.Properties.Resources.apply_32x323;
@@ -870,6 +931,14 @@
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
             this.ribbonPageGroup1.Text = "ribbonPageGroup1";
             // 
+            // repoComboAşamaTipi
+            // 
+            this.repoComboAşamaTipi.AutoHeight = false;
+            this.repoComboAşamaTipi.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repoComboAşamaTipi.Name = "repoComboAşamaTipi";
+            this.repoComboAşamaTipi.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
+            // 
             // repositoryItemImageComboBox1
             // 
             this.repositoryItemImageComboBox1.AutoHeight = false;
@@ -942,6 +1011,9 @@
             this.ShowInTaskbar = false;
             this.StatusBar = this.ribbonStatusBar1;
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repoYarıMamülLookUp)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit1View)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repoÜretimMiktar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repoComboAşamaTipi)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemImageComboBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sagMenu)).EndInit();
@@ -1008,12 +1080,18 @@
         private DevExpress.XtraBars.BarButtonItem btnAşamaOnayla;
         protected DevExpress.XtraBars.BarSubItem btnAşamalar;
         private DevExpress.XtraEditors.Repository.RepositoryItemImageComboBox repositoryItemImageComboBox1;
-        protected DevExpress.XtraBars.BarEditItem cmbAşamaTipi;
         protected DevExpress.XtraBars.BarButtonItem btnTümAlamalarYapıldı;
         protected DevExpress.XtraBars.BarButtonItem btnYeniTicariİsim;
         protected DevExpress.XtraBars.BarButtonItem btnYeniSiparişKullan;
         public DevExpress.XtraBars.BarButtonItem btnYeniRevizyon;
         public DevExpress.XtraBars.BarButtonItem btnYeniSatınAlma;
         public DevExpress.XtraBars.BarButtonItem btnYeniİşemri;
+        protected DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit repoYarıMamülLookUp;
+        private DevExpress.XtraGrid.Views.Grid.GridView repositoryItemGridLookUpEdit1View;
+        private DevExpress.XtraGrid.Columns.GridColumn colYarıMamülAdı;
+        private DevExpress.XtraGrid.Columns.GridColumn colId;
+        protected DevExpress.XtraBars.BarEditItem barÜretimMiktar;
+        private DevExpress.XtraEditors.Repository.RepositoryItemCalcEdit repoÜretimMiktar;
+        protected DevExpress.XtraBars.BarEditItem barYarıMamül;
     }
 }
