@@ -36,7 +36,7 @@ namespace Zenix.Model.Entities
         [NotMapped]
         public string BaseRevKod { get; set; }
         [NotMapped]
-        public int RevNo { get => string.IsNullOrEmpty(BaseRevKod) ? 1 : Convert.ToInt32(Regex.Match(BaseRevKod, @"\d+").Value); }
+        public int RevNo { get => GetRevNo(BaseRevKod); }
         [NotMapped]
         public string RevKodu { get => $"{RevizyonTarihi:ddMMyyyy}-{RevNo:00}"; }
         public static string GetRevKodu(string kod,DateTime revtarih) 
@@ -44,5 +44,8 @@ namespace Zenix.Model.Entities
         int getrevno = string.IsNullOrEmpty(kod) ? 1 : Convert.ToInt32(Regex.Match(kod, @"\d+").Value);
             return $"{revtarih:ddMMyyyy}-{getrevno:00}";
         }
+        public  static int GetRevNo(string baserevkod)
+            => string.IsNullOrEmpty(baserevkod) ? 1 : Convert.ToInt32(Regex.Match(baserevkod, @"\d+").Value);
+
     }
 }

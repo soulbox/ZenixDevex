@@ -49,7 +49,8 @@ namespace Zenix.Common.Enums
         Üretim = 21,
         [Description("YarıMamül Grup  Kartı")]
         YarıMamülGrup = 22,
-        [Description("YarıMamül   Kartı")]
+        [Description("YarıMamül Kartı")]
         YarıMamül = 23,
+
     }
 }

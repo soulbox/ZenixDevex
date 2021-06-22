@@ -11,14 +11,15 @@ namespace Zenix.Model.DTO
 {
     [NotMapped]
 
-    public class MalzemeDepoL : Depo, Iİşemri, IBaseRevizyon
+    public class MalzemeDepoL : Depo, Iİşemri, IBaseRevizyon,IYarıMamülAdı
     {
         public string MamülAdı { get; set; }
         public string SatınAlma { get; set; }
         public string KayıtDurum { get; set; }
         public DateTime SatınAlmaTarihi { get; set; }
         public string SiparişNo { get; set; }
-        public string işemriNo { get => $"{işemriTarih:ddMM}{ŞarjNo:00}{işemriTarih:yy}"; }
+
+        public string işemriNo { get => $"{işemriTarih:ddMMyy}-{ Revizyon.GetRevNo(BaseRevKod):00}/{ŞarjNo:00}"; }
         public long ReçeteId { get; set; }
         public long KullaniciId { get; set; }
         public int ŞarjMiktarı { get; set; }
@@ -39,5 +40,6 @@ namespace Zenix.Model.DTO
         public string RevKodu => BaseRevizyon.GetRevKodu(BaseRevKod, RevizyonTarihi);
 
         public DateTime RevizyonTarihi { get; set; }
+        public string YarıMamülAdı { get ; set ; }
     }
 }

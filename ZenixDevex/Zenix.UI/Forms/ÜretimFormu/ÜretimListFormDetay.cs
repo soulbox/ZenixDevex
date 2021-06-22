@@ -201,21 +201,27 @@ namespace Zenix.WinUI.Forms.ÜretimFormu
                 //işemrinin  yarımamül Reçete Listesi
                 var reçetelist = reçetebll.ReçeteList(x => x.ReçeteId == entity.ReçeteId, entity.ŞarjMiktarı);
                 var mamülidler = reçetelist.Select(a => a.MamülId).ToList();
-                var check = reçetelist.FirstOrDefault(x => x.YarıMamülId == Yarımamül.Id && x.ihtiyaç < istenenmiktar);
+                var check = reçetelist.FirstOrDefault(x => x.YarıMamülId == Yarımamül.Id && x.Stok < istenenmiktar);
                 var isŞarj = Yarımamül.YarıMamülAdı.Contains("Şarj");
-                if (check != null)
+                if (!isŞarj &&  check != null)
                 {
+                    Msg.HataMesajı($@"{(string.IsNullOrEmpty(check.YarıMamülAdı) ? default : $"Yarımamül:{check.YarıMamülAdı}")}
+Ürün:{check.MamülAdı }
+Stok:{check.Stok}
+ihtiyaç:{check.ihtiyaç}
+Girilen Miktar:{istenenmiktar}
 
-                    Msg.HataMesajı($"Yarı Mamül:{Yarımamül.YarıMamülAdı}\nGirilen Miktar:{istenenmiktar}\nİhtiyaç:{check.ihtiyaç}\nGirilen Miktar İhtiyaçtan büyük olamaz!");
+Yetersiz Stok!");
                     return;
                 }
 
                 //işemrinin reçetesindeki malzemelerin deposundaki liste
                 //var list = depobll.MalzemeDepoList(null);
+                //var mamülDepoStok = depobll. MalzemeDepoList(x =>  mamülidler.Contains(x.MamülId));
                 var depodakiler = depobll.MalzemeDepoList(x => x.İşemriId == entity.Id && mamülidler.Contains(x.MamülId));
                 var üretimdekiler = üretimbll.ÜretimList(x => x.İşemriId == entity.Id);
 
-                (List<Depo> depo, Üretim üretim) KayıtGetir(long mamülid, DepoTipi depoTipi, float ihtiyaç, Çarpan girişçıkış, bool isürün = false)
+                (List<Depo> depo, Üretim üretim) KayıtGetir(long mamülid, DepoTipi depoTipi, float ihtiyaç, float stok)
                 {
                     //depodaki ürün yada mamülün toplam miktarı
                     List<Depo> resultdepo = new List<Depo>();
@@ -233,52 +239,54 @@ namespace Zenix.WinUI.Forms.ÜretimFormu
                     var yarımamülmiktarMutlak = Math.Abs(üretimdekimiktar);
                     var kod = depobll.YeniKodVer();
                     var KalanDepo = ihtiyaç - üretimMiktarMutlak;
-                    var üretim = istenenmiktar < KalanDepo ? new Üretim
+                    var depoId = IslemTuru.EntityInsert.IdOlustur(null);
+
+                    //üretim ekle       (şarjdeğil ve yarımamül)                      (şarj ise)
+                    var üretim = (!isŞarj & stok > 0 & istenenmiktar <= stok) | (isŞarj & ihtiyaç > 0 & DepoMiktarMutlak < ihtiyaç) ? new Üretim
                     {
-                        Id = IslemTuru.EntityInsert.IdOlustur(null),
+                        Id = depoId,
                         Kod = kod,
-                        Miktar = istenenmiktar,
+                        Miktar = isŞarj ? KalanDepo : istenenmiktar,
                         AşamaTipi = AşamaTipi.YarıMamül,
                         MamülId = mamülid,
                         İşemriId = entity.Id,
                         YarıMamülId = Yarımamül.Id,
-                        KayıtTarihi = DateTime.Now,
                     } : null;
-                    var depo = DepoMiktarMutlak < ihtiyaç & isŞarj ? new Depo
-                    {
-                        Id = IslemTuru.EntityInsert.IdOlustur(null),
-                        Kod = kod,
 
-                        DepoMiktar = (int)girişçıkış * KalanDepo,
+                    //depo yada Şarj düş
+                    var depo = DepoMiktarMutlak < ihtiyaç ? new Depo
+                    {
+                        Id = depoId,
+                        Kod = kod,
+                        DepoMiktar = -1 * (isŞarj ? KalanDepo : istenenmiktar),
                         DepoTipi = depoTipi,
                         MamülId = mamülid,
                         İşemriId = entity.Id,
-                        KayıtTarihi = DateTime.Now,
                     } : null;
-                    var yarımamül = istenenmiktar < KalanDepo & !isŞarj ? new Depo
+
+                    //yarımamül ekle
+                    var yarımamül = stok > 0 & istenenmiktar <= stok & !isŞarj ? new Depo
                     {
-                        Id = IslemTuru.EntityInsert.IdOlustur(null),
+                        Id = depoId + 1,
                         Kod = kod,
                         DepoMiktar = istenenmiktar,
                         DepoTipi = depoTipi,
                         MamülId = mamülid,
                         İşemriId = entity.Id,
                         YarıMamülId = Yarımamül.Id,
-                        KayıtTarihi = DateTime.Now,
                     } : null;
-
-                    if (yarımamül != null)
-                        resultdepo.Add(yarımamül);
                     if (depo != null)
                         resultdepo.Add(depo);
-                    if (isürün && depo != null && yarımamül != null)
-                        depo.ÜrünId = entity.ÜrünId;
+                    if (yarımamül != null)
+                        resultdepo.Add(yarımamül);
+
+
                     return (resultdepo, üretim);
 
                 }
                 var AksiyonListesi = reçetelist
                     .Where(x => x.YarıMamülId == Yarımamül.Id)
-                    .Select(x => KayıtGetir(x.MamülId, DepoTipi.ÜKullanıldı,  x.ihtiyaç , Çarpan.çıkış)).ToList();
+                    .Select(x => KayıtGetir(x.MamülId, DepoTipi.ÜKullanıldı, x.ihtiyaç, x.Stok)).ToList();
                 var düşülecekMalzemeler = AksiyonListesi.Where(x => x.depo != null)
                                     .SelectMany(x => x.depo).Cast<BaseEntity>().ToList();
                 var üretimdüşülecekmalzemeler = AksiyonListesi.Where(x => x.üretim != null)

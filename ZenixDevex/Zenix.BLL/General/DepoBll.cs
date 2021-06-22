@@ -24,9 +24,8 @@ namespace Zenix.BLL.General
             return base.List(filter);
         }
 
-        public List<MalzemeDepoL> MalzemeDepoList(Expression<Func<Depo, bool>> filter)
-        {
-            var list = BaseList(filter, x => new MalzemeDepoL
+        IQueryable<MalzemeDepoL> GetQuery(Expression<Func<Depo, bool>> filter)
+            => BaseList(filter, x => new MalzemeDepoL
             {
                 Id = x.Id,
                 Kod = x.Kod,
@@ -50,11 +49,14 @@ namespace Zenix.BLL.General
                 DepoTipi = x.DepoTipi,
                 SiparişId = x.SiparişId,
                 SiparişNo = x.Sipariş.Kod,
-                YarıMamülId = x.YarıMamülId
+                YarıMamülId = x.YarıMamülId,
+                YarıMamülAdı = x.YarıMamülId == null ? default : x.YarıMamül.YarıMamülGrup.YarıMamülAdı,
 
 
-            }).Where(x => x.YarıMamülId == null)
-                .ToList();
+            });
+        public List<MalzemeDepoL> MalzemeDepoList(Expression<Func<Depo, bool>> filter)
+        {
+            var list = GetQuery(filter).ToList();
             list.ForEach(x =>
             {
                 x.KayıtDurum = x.SatınalmaId != null ? x.SatınAlma : x.İşemriId != null ? $"İşemriNo:{x.işemriNo}" : x.SiparişId != null ? $"Sipariş No:{x.SiparişNo}" : "";
@@ -62,6 +64,16 @@ namespace Zenix.BLL.General
             return list;
 
         }
-        public float StokVer(long mamülid) => BaseList(x => x.MamülId == mamülid, x => x.DepoMiktar).DefaultIfEmpty(0).Sum();
+        public List<MalzemeDepoL> YarıMamülDepoList(Expression<Func<Depo, bool>> filter)
+        {
+            var list = GetQuery(filter).GroupBy(x => x.Kod).Select(X => X.FirstOrDefault()).ToList();
+            list.ForEach(x =>
+            {
+                x.KayıtDurum = x.SatınalmaId != null ? x.SatınAlma : x.İşemriId != null ? $"İşemriNo:{x.işemriNo }" : x.SiparişId != null ? $"Sipariş No:{x.SiparişNo}" : "";
+            });
+            return list;
+
+        }
+        public float StokVer(long mamülid) => BaseList(x => x.MamülId == mamülid && x.YarıMamülId == null, x => x.DepoMiktar).DefaultIfEmpty(0).Sum();
     }
 }

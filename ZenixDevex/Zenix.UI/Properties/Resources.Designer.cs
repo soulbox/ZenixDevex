@@ -713,6 +713,26 @@ namespace Zenix.WinUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap chartsshowlegend_16x16 {
+            get {
+                object obj = ResourceManager.GetObject("chartsshowlegend_16x16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap chartsshowlegend_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("chartsshowlegend_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap chat_settings_16px {
             get {
                 object obj = ResourceManager.GetObject("chat_settings_16px", resourceCulture);
@@ -2753,6 +2773,16 @@ namespace Zenix.WinUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap usergroup_16x163 {
+            get {
+                object obj = ResourceManager.GetObject("usergroup_16x163", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap usergroup_32x32 {
             get {
                 object obj = ResourceManager.GetObject("usergroup_32x32", resourceCulture);
@@ -2776,6 +2806,16 @@ namespace Zenix.WinUI.Properties {
         public static System.Drawing.Bitmap usergroup_32x322 {
             get {
                 object obj = ResourceManager.GetObject("usergroup_32x322", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap usergroup_32x323 {
+            get {
+                object obj = ResourceManager.GetObject("usergroup_32x323", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -425,8 +425,6 @@
             this.colAşamaTipi2.StatusBarAciklama = null;
             this.colAşamaTipi2.StatusBarKisayol = null;
             this.colAşamaTipi2.StatusBarKisayolAciklama = null;
-            this.colAşamaTipi2.Visible = true;
-            this.colAşamaTipi2.VisibleIndex = 4;
             // 
             // colYarıMamül
             // 
@@ -451,7 +449,7 @@
             this.colStok.StatusBarKisayol = null;
             this.colStok.StatusBarKisayolAciklama = null;
             this.colStok.Visible = true;
-            this.colStok.VisibleIndex = 5;
+            this.colStok.VisibleIndex = 4;
             // 
             // colYarıMamülStok
             // 
@@ -463,7 +461,7 @@
             this.colYarıMamülStok.StatusBarKisayol = null;
             this.colYarıMamülStok.StatusBarKisayolAciklama = null;
             this.colYarıMamülStok.Visible = true;
-            this.colYarıMamülStok.VisibleIndex = 6;
+            this.colYarıMamülStok.VisibleIndex = 5;
             // 
             // repoCheck
             // 

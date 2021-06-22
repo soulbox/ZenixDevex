@@ -164,7 +164,7 @@ namespace Zenix.WinUI.Forms.DepoFormu
         }
         protected override void Listele()
         {
-            var depolist = ((DepoBll)Bll).MalzemeDepoList(x => x.Mamül.MalzemeTipi != Common.Enums.MalzemeTipi.Ürün);
+            var depolist = ((DepoBll)Bll).MalzemeDepoList(x => x.YarıMamülId==null && x.Mamül.MalzemeTipi != Common.Enums.MalzemeTipi.Ürün);
             Tablo.GridControl.DataSource = depolist;
             using (var satınalmabll = new SatınAlmaMalzemelerBll())
             {

@@ -130,6 +130,8 @@ namespace Zenix.WinUI.MainForm
                                 PathEngine.ClearConfigFiles();
                             else if (e.Item == btnYarıMamülGrup)
                                 ShowListForms<YarıMamülGrupListForm>.ShowListForm(KartTuru.YarıMamülGrup);
+                            else if (e.Item == btnYarıMamülDepo)
+                                ShowListForms<YarıMamülDepoListForm>.ShowListForm(KartTuru.Depo);
                             //else if (e.Item == btnYarıMamül)
                             //    ShowListForms<YarıMamülGrupListForm>.ShowListForm(KartTuru.YarıMamülGrup);
 
@@ -147,8 +149,11 @@ namespace Zenix.WinUI.MainForm
 
                 //ShowListForms<EkDosyalarListForm>.ShowListForm(KartTuru.Ekdosyalar, (long)2020101119013144500, "araba1"," kadir aygün");
                 Thread.Sleep(1000);
-                btnMusteri.PerformClick();
-                UpdateCheck.InstallUpdateSyncWithInfo();
+                btnÜretim.PerformClick();
+                btnYarıMamülDepo.PerformClick();
+                btnMalzemeDepo.PerformClick();
+
+                //UpdateCheck.InstallUpdateSyncWithInfo();
             };
             xtraTabbedMdiManager.PageAdded += (sender, e) => { imgBackGround.SendToBack(); };
             xtraTabbedMdiManager.PageRemoved += (sender, e) =>

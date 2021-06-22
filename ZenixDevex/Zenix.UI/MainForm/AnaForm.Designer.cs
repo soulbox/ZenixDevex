@@ -70,6 +70,8 @@
             this.btnMuhasebe = new DevExpress.XtraBars.BarButtonItem();
             this.btnPlanlama = new DevExpress.XtraBars.BarButtonItem();
             this.btnYarıMamülDepo = new DevExpress.XtraBars.BarButtonItem();
+            this.btnPersonel = new DevExpress.XtraBars.BarButtonItem();
+            this.btnPersonelRapor = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -81,6 +83,8 @@
             this.ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage3 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPage7 = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup7 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonMüş = new DevExpress.XtraBars.Ribbon.RibbonPage();
@@ -137,9 +141,11 @@
             this.btnYarıMamül,
             this.btnMuhasebe,
             this.btnPlanlama,
-            this.btnYarıMamülDepo});
+            this.btnYarıMamülDepo,
+            this.btnPersonel,
+            this.btnPersonelRapor});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 58;
+            this.ribbon.MaxItemId = 60;
             this.ribbon.Name = "ribbon";
             this.ribbon.OptionsAnimation.PageCategoryShowAnimation = DevExpress.Utils.DefaultBoolean.True;
             this.ribbon.OptionsTouch.ShowTouchUISelectorInSearchMenu = false;
@@ -150,6 +156,7 @@
             this.ribbonPage4,
             this.ribbonPage5,
             this.ribbonPage6,
+            this.ribbonPage7,
             this.ribbonPage3,
             this.ribbonPage2,
             this.ribbonMüş});
@@ -483,6 +490,22 @@
             this.btnYarıMamülDepo.ImageOptions.LargeImage = global::Zenix.WinUI.Properties.Resources.warehouse_32px;
             this.btnYarıMamülDepo.Name = "btnYarıMamülDepo";
             // 
+            // btnPersonel
+            // 
+            this.btnPersonel.Caption = "Personeller";
+            this.btnPersonel.Id = 58;
+            this.btnPersonel.ImageOptions.Image = global::Zenix.WinUI.Properties.Resources.usergroup_16x163;
+            this.btnPersonel.ImageOptions.LargeImage = global::Zenix.WinUI.Properties.Resources.usergroup_32x323;
+            this.btnPersonel.Name = "btnPersonel";
+            // 
+            // btnPersonelRapor
+            // 
+            this.btnPersonelRapor.Caption = "Personel Hareketleri";
+            this.btnPersonelRapor.Id = 59;
+            this.btnPersonelRapor.ImageOptions.Image = global::Zenix.WinUI.Properties.Resources.chartsshowlegend_16x16;
+            this.btnPersonelRapor.ImageOptions.LargeImage = global::Zenix.WinUI.Properties.Resources.chartsshowlegend_32x32;
+            this.btnPersonelRapor.Name = "btnPersonelRapor";
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -572,6 +595,20 @@
             this.ribbonPageGroup5.ItemLinks.Add(this.btnAmbalajMaddeTipi);
             this.ribbonPageGroup5.Name = "ribbonPageGroup5";
             this.ribbonPageGroup5.Text = "ribbonPageGroup5";
+            // 
+            // ribbonPage7
+            // 
+            this.ribbonPage7.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.ribbonPageGroup3});
+            this.ribbonPage7.ImageOptions.Image = global::Zenix.WinUI.Properties.Resources.üstmenüsafbeyaz;
+            this.ribbonPage7.Name = "ribbonPage7";
+            this.ribbonPage7.Text = "Personel";
+            // 
+            // ribbonPageGroup3
+            // 
+            this.ribbonPageGroup3.ItemLinks.Add(this.btnPersonel);
+            this.ribbonPageGroup3.ItemLinks.Add(this.btnPersonelRapor);
+            this.ribbonPageGroup3.Name = "ribbonPageGroup3";
             // 
             // ribbonPage2
             // 
@@ -712,5 +749,9 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup5;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage2;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup7;
+        private DevExpress.XtraBars.BarButtonItem btnPersonel;
+        private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage7;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup3;
+        private DevExpress.XtraBars.BarButtonItem btnPersonelRapor;
     }
 }
