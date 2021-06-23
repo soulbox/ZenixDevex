@@ -176,10 +176,6 @@ namespace Zenix.WinUI.Forms.İşemriFormu
 
 
         }
-        protected override void AşamaOnayla()
-        {
 
-
-        }
     }
 }

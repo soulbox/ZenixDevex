@@ -23,6 +23,7 @@ using Zenix.WinUI.myUserControls.Grid;
 using DevExpress.XtraGrid.Columns;
 using DevExpress.XtraEditors.Repository;
 using Zenix.WinUI.MainForm;
+using System.Reflection;
 
 namespace Zenix.WinUI.myUserControls.UserControl.Base
 {
@@ -160,12 +161,21 @@ namespace Zenix.WinUI.myUserControls.UserControl.Base
             if (insert.Any())
                 if (!((IBaseHareketGenelBLL)Bll).Insert(insert))
                 {
+
+
                     Msg.HataMesajı($"{baseTablo.ViewCaption} Tablosundaki Haraketler Eklenemedi");
                     return false;
                 }
             if (update.Any())
                 if (!((IBaseHareketGenelBLL)Bll).Update(update))
                 {
+                    //update.ForEach(x =>
+                    //{
+                    //    var prop = x.GetType().GetProperties()
+                    //    .Where(a =>  a.PropertyType.IsGenericType && a.PropertyType.GetGenericTypeDefinition()==typeof(Nullable<>))
+                    //    //.Select(a=>new { a,def= a.PropertyType.GetGenericTypeDefinition()}).
+                    //    .ToList();
+                    //});
                     Msg.HataMesajı($"{baseTablo.ViewCaption} Tablosundaki Haraketler Güncellenemedi");
                     return false;
 

@@ -81,10 +81,10 @@
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage6 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPage3 = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage7 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPage3 = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup7 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonMüş = new DevExpress.XtraBars.Ribbon.RibbonPage();
@@ -152,10 +152,10 @@
             this.ribbon.OptionsTouch.TouchUI = DevExpress.Utils.DefaultBoolean.False;
             this.ribbon.PageAnimationLength = 100;
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
-            this.ribbonPage1,
             this.ribbonPage4,
-            this.ribbonPage5,
             this.ribbonPage6,
+            this.ribbonPage1,
+            this.ribbonPage5,
             this.ribbonPage7,
             this.ribbonPage3,
             this.ribbonPage2,
@@ -578,6 +578,20 @@
             this.ribbonPageGroup6.Name = "ribbonPageGroup6";
             this.ribbonPageGroup6.Text = "Malzeme Yönetimi";
             // 
+            // ribbonPage7
+            // 
+            this.ribbonPage7.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.ribbonPageGroup3});
+            this.ribbonPage7.ImageOptions.Image = global::Zenix.WinUI.Properties.Resources.üstmenüsafbeyaz;
+            this.ribbonPage7.Name = "ribbonPage7";
+            this.ribbonPage7.Text = "İdari";
+            // 
+            // ribbonPageGroup3
+            // 
+            this.ribbonPageGroup3.ItemLinks.Add(this.btnPersonel);
+            this.ribbonPageGroup3.ItemLinks.Add(this.btnPersonelRapor);
+            this.ribbonPageGroup3.Name = "ribbonPageGroup3";
+            // 
             // ribbonPage3
             // 
             this.ribbonPage3.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -595,20 +609,6 @@
             this.ribbonPageGroup5.ItemLinks.Add(this.btnAmbalajMaddeTipi);
             this.ribbonPageGroup5.Name = "ribbonPageGroup5";
             this.ribbonPageGroup5.Text = "ribbonPageGroup5";
-            // 
-            // ribbonPage7
-            // 
-            this.ribbonPage7.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroup3});
-            this.ribbonPage7.ImageOptions.Image = global::Zenix.WinUI.Properties.Resources.üstmenüsafbeyaz;
-            this.ribbonPage7.Name = "ribbonPage7";
-            this.ribbonPage7.Text = "Personel";
-            // 
-            // ribbonPageGroup3
-            // 
-            this.ribbonPageGroup3.ItemLinks.Add(this.btnPersonel);
-            this.ribbonPageGroup3.ItemLinks.Add(this.btnPersonelRapor);
-            this.ribbonPageGroup3.Name = "ribbonPageGroup3";
             // 
             // ribbonPage2
             // 

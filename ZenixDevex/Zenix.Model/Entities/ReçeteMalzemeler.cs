@@ -34,7 +34,10 @@ namespace Zenix.Model.Entities
         public FazTipi FazTipi { get; set; }
         public AşamaTipi AşamaTipi { get; set; }
         public BirimTipi ReçeteBirimi { get; set; }
-        public int? YarıMamülId { get; set; }
+        int? yarımamülid=null;
+        public int? YarıMamülId { get => yarımamülid.Value == 0 ? default : yarımamülid; set => yarımamülid = value; }
+        //public int? YarıMamülId { get  ; set ; }
+
         public YarıMamül YarıMamül { get; set; }
     }
 }

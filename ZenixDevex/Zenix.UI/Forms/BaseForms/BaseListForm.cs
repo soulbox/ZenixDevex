@@ -157,7 +157,9 @@ namespace Zenix.WinUI.Forms.BaseForms
                         FormCaptionAyarla();
                     }
                     else if (e.Item == btnAşamaOnayla)
-                        AşamaOnayla();
+                        YarıMamülÜret();
+                    else if (e.Item == btnYarıMamüldenÜretim)
+                        YarıMamüldenÜretim();
                     else if (e.Item == btnTümAlamalarYapıldı)
                         TümAşamalarYapıldı();
                     else if (e.Item == btnYeniTicariİsim)
@@ -343,7 +345,9 @@ namespace Zenix.WinUI.Forms.BaseForms
         protected virtual void Tablo_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e) { }
 
         protected virtual void SutunGizleGoster() { }
-        protected virtual void AşamaOnayla() { }
+        protected virtual void YarıMamülÜret() { }
+        protected virtual void YarıMamüldenÜretim() { }
+
         protected virtual void TümAşamalarYapıldı() { }
         protected virtual void YeniTicariİsim() { }
         protected virtual void YeniSiparişKullan() { }

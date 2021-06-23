@@ -917,6 +917,12 @@
     <None Include="Resources\usergroup_16x163.png" />
     <None Include="Resources\chartsshowlegend_32x32.png" />
     <None Include="Resources\chartsshowlegend_16x16.png" />
+    <None Include="Resources\reset2_32x32.png" />
+    <None Include="Resources\reset2_16x16.png" />
+    <None Include="Resources\changeview_32x32.png" />
+    <None Include="Resources\changeview_16x16.png" />
+    <None Include="Resources\reset_32x321.png" />
+    <None Include="Resources\reset_16x161.png" />
     <Content Include="Resources\warehouse_42px.png" />
     <Content Include="zenix.ico" />
     <None Include="Resources\abacus_16px.png" />

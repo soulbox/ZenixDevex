@@ -16,7 +16,8 @@ namespace Zenix.Common.Function
     public static class MailEngine
     {
         const string mymail = "zenixsolutioninfo@gmail.com";
-        const string mypass = "63792958";
+        //standart Şifre
+        const string mypass = "xfckynpicfffccvu";
         const string myhost = "smtp.gmail.com";
         const int myport = 587;
         const string Description = "Zenix ERP Modülü";

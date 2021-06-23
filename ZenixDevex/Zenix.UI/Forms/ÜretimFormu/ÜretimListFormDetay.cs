@@ -184,7 +184,7 @@ namespace Zenix.WinUI.Forms.ÜretimFormu
 
 
         }
-        protected override void AşamaOnayla()
+        protected override void YarıMamülÜret()
         {
             var Yarımamül = (YarıMamülL)barYarıMamül.EditValue;
             var entity = Tablo.GetRow<İşemriL>();
@@ -192,8 +192,6 @@ namespace Zenix.WinUI.Forms.ÜretimFormu
             var istenenmiktar = barÜretimMiktar.EditValue.ConvertTo<float>();
 
             if (Yarımamül.isNull(entity)) return;
-
-            using (var işemribll = new İşemriBll())
             using (var depobll = new DepoBll())
             using (var reçetebll = new ReçeteMalzemelerBll())
             using (var üretimbll = new ÜretimBll())
@@ -203,7 +201,7 @@ namespace Zenix.WinUI.Forms.ÜretimFormu
                 var mamülidler = reçetelist.Select(a => a.MamülId).ToList();
                 var check = reçetelist.FirstOrDefault(x => x.YarıMamülId == Yarımamül.Id && x.Stok < istenenmiktar);
                 var isŞarj = Yarımamül.YarıMamülAdı.Contains("Şarj");
-                if (!isŞarj &&  check != null)
+                if (!isŞarj && check != null)
                 {
                     Msg.HataMesajı($@"{(string.IsNullOrEmpty(check.YarıMamülAdı) ? default : $"Yarımamül:{check.YarıMamülAdı}")}
 Ürün:{check.MamülAdı }
@@ -302,6 +300,21 @@ Yetersiz Stok!");
                     tablo.RowFocus("Id", entity.Id);
 
                 }
+            }
+        }
+        protected override void YarıMamüldenÜretim()
+        {
+            var Yarımamül = (YarıMamülL)barYarıMamül.EditValue;
+            var entity = Tablo.GetRow<İşemriL>();
+
+            var istenenmiktar = barÜretimMiktar.EditValue.ConvertTo<float>();
+            using (var işemribll = new İşemriBll())
+            using (var depobll = new DepoBll())
+            using (var reçetebll = new ReçeteMalzemelerBll())
+            using (var üretimbll = new ÜretimBll())
+            {
+            
+            
             }
         }
     }
