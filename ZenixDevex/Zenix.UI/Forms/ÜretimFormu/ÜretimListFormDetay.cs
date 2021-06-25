@@ -188,8 +188,16 @@ namespace Zenix.WinUI.Forms.ÜretimFormu
         {
             var Yarımamül = (YarıMamülL)barYarıMamül.EditValue;
             var entity = Tablo.GetRow<İşemriL>();
+            var isŞarj = Yarımamül.YarıMamülAdı.Contains("Şarj");
 
             var istenenmiktar = barÜretimMiktar.EditValue.ConvertTo<float>();
+
+
+            var üretilenler = TabloÜretim.DataController.ListSource.Cast<ÜretimL>().ToList();
+            if (!isŞarj && !üretilenler.Any(x => x.YarıMamülAdı.Contains("Şarj")))
+            {
+                Msg.HataMesajı("Önce Şarj Yapılmalı"); return;
+            }
 
             if (Yarımamül.isNull(entity)) return;
             using (var depobll = new DepoBll())
@@ -200,7 +208,6 @@ namespace Zenix.WinUI.Forms.ÜretimFormu
                 var reçetelist = reçetebll.ReçeteList(x => x.ReçeteId == entity.ReçeteId, entity.ŞarjMiktarı);
                 var mamülidler = reçetelist.Select(a => a.MamülId).ToList();
                 var check = reçetelist.FirstOrDefault(x => x.YarıMamülId == Yarımamül.Id && x.Stok < istenenmiktar);
-                var isŞarj = Yarımamül.YarıMamülAdı.Contains("Şarj");
                 if (!isŞarj && check != null)
                 {
                     Msg.HataMesajı($@"{(string.IsNullOrEmpty(check.YarıMamülAdı) ? default : $"Yarımamül:{check.YarıMamülAdı}")}
@@ -306,15 +313,53 @@ Yetersiz Stok!");
         {
             var Yarımamül = (YarıMamülL)barYarıMamül.EditValue;
             var entity = Tablo.GetRow<İşemriL>();
+            var sourcemalzemeler = ReçeteTablo.DataController.ListSource.Cast<ReçeteMalzemeleriL>().ToList();
+            var minYMStok = sourcemalzemeler.Where(a => a.YarıMamülStok > 0)
+                .Select(x => x.YarıMamülStok).DefaultIfEmpty(0).Min();
+            var minYMStokEntity = sourcemalzemeler.FirstOrDefault(x => x.YarıMamülStok > 0 & x.YarıMamülStok == minYMStok);
 
-            var istenenmiktar = barÜretimMiktar.EditValue.ConvertTo<float>();
+            float istenenmiktar = 0;
+
+
+
+
+
+            var girilenmiktar = barÜretimMiktar.EditValue.ConvertTo<float>();
+
+            if (minYMStokEntity != null && Msg.EvetSeciliEvetHayir($@"Reçetedeki Minimum Yarımamül stoğuna göre Üretim Yapılacak. Onaylıyormusunuz?
+Ürün:{entity.ReçeteAdı}
+Yarı Mamül:{minYMStokEntity.YarıMamülAdı}
+Stok:{minYMStok:n0}", "Onay") == DialogResult.Yes)
+                istenenmiktar = minYMStok;
+            else if (girilenmiktar > 0 && Msg.EvetSeciliEvetHayirIptal($"Girilen Miktar Kadar Üretilicek Onaylıyormusunuz?\nÜrün:{entity.ReçeteAdı}\nGirilen Miktar:{girilenmiktar}", "Onay") == DialogResult.Yes)
+            {
+                istenenmiktar = girilenmiktar;
+                if (sourcemalzemeler.Any(x => x.YarıMamülStok < istenenmiktar))
+                {
+                    Msg.HataMesajı("Yetersiz Yarı Mamül Stok!.");
+                    return;
+                }
+                if (sourcemalzemeler.Any(x => x.YarıMamülId == null && x.Stok < istenenmiktar))
+                {
+                    Msg.HataMesajı("Yetersiz Sarf Stok!.");
+                    return;
+                }
+
+            }
+            else return;
+
+
             using (var işemribll = new İşemriBll())
             using (var depobll = new DepoBll())
             using (var reçetebll = new ReçeteMalzemelerBll())
             using (var üretimbll = new ÜretimBll())
             {
-            
-            
+                var reçetelist = reçetebll.ReçeteList(x => x.ReçeteId == entity.ReçeteId, entity.ŞarjMiktarı);
+                var mamülidler = reçetelist.Select(a => a.MamülId).ToList();
+                var check = reçetelist.FirstOrDefault(x => x.YarıMamülId == Yarımamül.Id && x.Stok < istenenmiktar);
+
+
+
             }
         }
     }
