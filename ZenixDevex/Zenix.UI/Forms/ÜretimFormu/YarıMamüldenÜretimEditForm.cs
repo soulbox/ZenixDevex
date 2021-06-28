@@ -76,11 +76,22 @@ namespace Zenix.WinUI.Forms.ÜretimFormu
             {
                 var depostoklist = depobll.StokVer(yarımamüllist.Select(x => x.MamülId).ToList(), İşemri.Id);
 
-                yarımamüllist = yarımamüllist.Select(x =>
-                  {
-                      x.ÜretimStok = depostoklist.FirstOrDefault(a => a.Item1  == x.MamülId).Item2 ;
-                      return x;
-                  }).ToList();
+                yarımamüllist.ForEach(x =>
+                {
+                    x.ÜretimStok = depostoklist.FirstOrDefault(a => a.Item1 == x.MamülId).Item2;
+
+                    if (x.isÜrün)
+                        x.Stok = depobll.StokVer(x.MamülId);
+                    if (x.isYarıMamül)
+                    {
+                        x.Stok = 0;
+                        x.ÜretimStok = depobll.StokVer(İşemri.Id, x.MamülId, x.YarıMamülId.Value);
+
+
+                    }
+
+
+                });
             }
             Tablo.GridControl.DataSource = yarımamüllist.ToBindingList();
 

@@ -78,9 +78,28 @@ namespace Zenix.BLL.General
         }
         public float StokVer(long mamülid) => BaseList(x => x.MamülId == mamülid && x.YarıMamülId == null, x => x.DepoMiktar).DefaultIfEmpty(0).Sum();
 
-        public List<Tuple<long, float>> StokVer(List<long> mamülid, long işemriId) => BaseList(x => x.YarıMamülId == null && x.İşemriId == işemriId && mamülid.Contains(x.MamülId), x => new { x.MamülId, x.DepoMiktar })
-            .GroupBy(x => x.MamülId)
-            .Select(x => new { x.FirstOrDefault().MamülId, DepoMiktar = x.Sum(a => a.DepoMiktar) })
+        public float StokVer(long mamülid, int yarımamülid)
+            => BaseList(x => x.MamülId == mamülid && x.YarıMamülId == yarımamülid, x => new { x.Kod, x.DepoMiktar })
+            .GroupBy(x => x.Kod)
+            .Select(x => x.FirstOrDefault())
+            .ToList()
+            .Select(x => x.DepoMiktar)
+            .DefaultIfEmpty(0).Sum();
+
+        public float StokVer(long işemriid, long mamülid, int yarımamülid)
+    => BaseList(x => x.İşemriId == işemriid & x.MamülId == mamülid & x.YarıMamülId == yarımamülid, x => new { x.Kod, x.DepoMiktar })
+    .GroupBy(x => x.Kod)
+    .Select(x => x.FirstOrDefault())
+    .ToList()
+    .Select(x => x.DepoMiktar)
+    .DefaultIfEmpty(0).Sum();
+
+
+        public List<Tuple<long, float>> StokVer(List<long> mamülid, long işemriId)
+            => BaseList(x => x.YarıMamülId == null && x.İşemriId == işemriId && mamülid.Contains(x.MamülId),
+                x => new { x.MamülId, x.DepoMiktar, x.YarıMamülId })
+            .GroupBy(x => new { x.MamülId, x.YarıMamülId })
+            .Select(x => new { x.FirstOrDefault().MamülId, DepoMiktar = x.Where(a => a.MamülId == x.Key.MamülId && a.YarıMamülId == x.Key.YarıMamülId).Sum(a => a.DepoMiktar) })
             .ToList()
             .Select(x => Tuple.Create(x.MamülId, x.DepoMiktar))
             .ToList();

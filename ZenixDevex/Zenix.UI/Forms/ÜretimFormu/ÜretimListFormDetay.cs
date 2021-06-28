@@ -122,8 +122,11 @@ namespace Zenix.WinUI.Forms.ÜretimFormu
 
                     var DepoMiktarMutlak = Math.Abs(Depodakimiktar);
                     //Üretimdeki x malzemesinin Miktar toplamı
-                    var üretimdekimiktar = üretimdekiler.Where(a => a.MamülId == mamülid && a.İşemriId == entity.Id)
-                    .Select(a => a.Miktar).DefaultIfEmpty(0).Sum();
+                    var üretimdekimiktar = üretimdekiler
+                    .Where(a => a.MamülId == mamülid && a.İşemriId == entity.Id)
+                    .Select(a => a.Miktar)
+                    .DefaultIfEmpty(0).Sum();
+
                     var üretimMiktarMutlak = Math.Abs(üretimdekimiktar);
                     var üretim = üretimMiktarMutlak < ihtiyaç ? new Üretim
                     {
