@@ -39,6 +39,10 @@ namespace Zenix.Common.Enums
         TamÜretim,
         [Description("Yarı Mamül")]
         YarıMamül,
+        [Description("Üretim")]
+        Üretim,
+        [Description("Yarı Mamülden Üretim")]
+        YarımamülÜretim,
 
     }
 }

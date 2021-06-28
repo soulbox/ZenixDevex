@@ -32,7 +32,7 @@
     <MinimumRequiredVersion>1.0.0.30</MinimumRequiredVersion>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>index.html</WebPage>
-    <ApplicationRevision>34</ApplicationRevision>
+    <ApplicationRevision>35</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>true</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -395,6 +395,12 @@
     </Compile>
     <Compile Include="Forms\ÜlkeFormu\ÜlkeListForm.Designer.cs">
       <DependentUpon>ÜlkeListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ÜretimFormu\YarıMamüldenÜretimEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ÜretimFormu\YarıMamüldenÜretimEditForm.Designer.cs">
+      <DependentUpon>YarıMamüldenÜretimEditForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\ÜretimFormu\ÜretimEditForm.cs">
       <SubType>Form</SubType>
@@ -759,6 +765,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ÜlkeFormu\ÜlkeListForm.resx">
       <DependentUpon>ÜlkeListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ÜretimFormu\YarıMamüldenÜretimEditForm.resx">
+      <DependentUpon>YarıMamüldenÜretimEditForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ÜretimFormu\ÜretimListForm.resx">
       <DependentUpon>ÜretimListForm.cs</DependentUpon>

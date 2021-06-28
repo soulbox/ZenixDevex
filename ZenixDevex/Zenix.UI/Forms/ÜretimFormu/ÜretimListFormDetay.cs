@@ -275,7 +275,7 @@ Yetersiz Stok!");
                         Id = depoId + 1,
                         Kod = kod,
                         DepoMiktar = istenenmiktar,
-                        DepoTipi = depoTipi,
+                        DepoTipi = DepoTipi.Üretildi,
                         MamülId = mamülid,
                         İşemriId = entity.Id,
                         YarıMamülId = Yarımamül.Id,
@@ -311,8 +311,14 @@ Yetersiz Stok!");
         }
         protected override void YarıMamüldenÜretim()
         {
-            var Yarımamül = (YarıMamülL)barYarıMamül.EditValue;
             var entity = Tablo.GetRow<İşemriL>();
+
+            ShowEditForms<YarıMamüldenÜretimEditForm>.ShowDialogEditForm(KartTuru, entity, ReçeteTablo.GetListSource<ReçeteMalzemeleriL>());
+            Listele();
+            Tablo_FocusedRowChanged(null, null);
+            tablo.RowFocus("Id", entity.Id);
+            return;
+            var Yarımamül = (YarıMamülL)barYarıMamül.EditValue;
             var sourcemalzemeler = ReçeteTablo.DataController.ListSource.Cast<ReçeteMalzemeleriL>().ToList();
             var minYMStok = sourcemalzemeler.Where(a => a.YarıMamülStok > 0)
                 .Select(x => x.YarıMamülStok).DefaultIfEmpty(0).Min();

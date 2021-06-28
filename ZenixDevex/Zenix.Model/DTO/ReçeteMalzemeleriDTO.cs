@@ -17,7 +17,7 @@ namespace Zenix.Model.DTO
 
     [NotMapped]
 
-    public class ReçeteMalzemeleriL : ReçeteMalzemeler, IBaseHaraketEntity, IMamül, IPaket,IBaseReçete ,IYarıMamülAdı,IBaseStok
+    public class ReçeteMalzemeleriL : ReçeteMalzemeler, IBaseHaraketEntity, IMamül, IPaket, IBaseReçete, IYarıMamülAdı, IBaseStok
     {
         public string HacimliMalzemeAdı { get; set; }
         public BirimTipi HacimliMalzemeBirimi { get; set; }
@@ -69,10 +69,28 @@ namespace Zenix.Model.DTO
         public bool Insert { get; set; }
         public bool Update { get; set; }
         public bool Delete { get; set; }
-        public long PaketŞekliId { get ; set ; }
-        public string AmbalajTipi { get ; set ; }
-        public string Renk { get ; set ; }
-        public string YarıMamülAdı { get ; set; }
+        public long PaketŞekliId { get; set; }
+        public string AmbalajTipi { get; set; }
+        public string Renk { get; set; }
+        public string YarıMamülAdı { get; set; }
     }
 
+    [NotMapped]
+    public class YarıMamülÜretim : IYarıMamülAdı, IMamülAdı, IBaseStok
+    {
+        public long MamülId { get; set; }
+        public int? YarıMamülId { get; set; }
+        public string YarıMamülAdı { get; set; }
+        public string MamülAdı { get; set; }
+        public string GörünenAd { get => isYarıMamül ? YarıMamülAdı : MamülAdı; }
+        public float Stok { get; set; }
+        public float Miktar { get; set; }
+        public float YarıMamülStok { get; set; }
+        public float ÜretimStok { get; set; }
+        public bool isYarıMamül { get => YarıMamülId.HasValue && YarıMamülId.Value != 0; }
+        public bool isÜrün { get => ÜrünId.HasValue && ÜrünId.Value != 0; }
+
+        public string GrupAdı { get => isÜrün ? "Ürün" : isYarıMamül ? "Yarı Mamül" : "Sarf"; }
+        public long? ÜrünId { get; set; }
+    }
 }

@@ -57,7 +57,7 @@ namespace Zenix.WinUI.Forms.BaseForms
                 {
                     if (e.Item == btnYeni)
                     {
-                        if (!KartTuru.YetkiKontrolu(YetkiTuru.Ekleyebilir )) return ;
+                        if (!KartTuru.YetkiKontrolu(YetkiTuru.Ekleyebilir)) return;
 
                         BaseIslemTuru = IslemTuru.EntityInsert;
                         Yukle();
@@ -66,7 +66,7 @@ namespace Zenix.WinUI.Forms.BaseForms
                         Kaydet(false);
                     else if (e.Item == btnFarkliKaydet)
                     {
-                        if (!KartTuru.YetkiKontrolu(YetkiTuru.Ekleyebilir )) return;
+                        if (!KartTuru.YetkiKontrolu(YetkiTuru.Ekleyebilir)) return;
                         FarkliKaydet();
 
                     }
@@ -74,11 +74,11 @@ namespace Zenix.WinUI.Forms.BaseForms
                         GeriAl();
                     else if (e.Item == btnSil)
                     {
-                        if (!KartTuru.YetkiKontrolu(YetkiTuru.Silebilir )) return;
+                        if (!KartTuru.YetkiKontrolu(YetkiTuru.Silebilir)) return;
 
                         EntityDelete();
                     }
-                    else if (e.Item == btnSmsGonder )
+                    else if (e.Item == btnSmsGonder)
                         SmsGönder();
                     else if (e.Item == btnUygula)
                         FiltreUygula();
@@ -90,7 +90,7 @@ namespace Zenix.WinUI.Forms.BaseForms
                     {
                         Cursor.Current = Cursors.WaitCursor;
                         ŞifreSıfırla();
-                        Cursor.Current = Cursors.Default ;
+                        Cursor.Current = Cursors.Default;
                     }
                     else if (e.Item == btnCikis)
                         Close();
@@ -215,6 +215,8 @@ namespace Zenix.WinUI.Forms.BaseForms
 
 
         }
+        protected void ShowHideButtons(bool visible, params BarItem[] prm)
+            => prm?.Where(x => x != null).ToList().ForEach(x => x.Visibility = visible ? BarItemVisibility.Always : BarItemVisibility.Never);
 
 
         protected virtual void BaseEditForm_FormClosing(object sender, FormClosingEventArgs e)
@@ -258,7 +260,7 @@ namespace Zenix.WinUI.Forms.BaseForms
             ShowItems?.ForEach(x => x.Visibility = BarItemVisibility.Always);
             HideItems?.ForEach(x => x.Visibility = BarItemVisibility.Never);
         }
-        protected void LayoutGizleGoster(bool visible, params BaseLayoutItem[] param) 
+        protected void LayoutGizleGoster(bool visible, params BaseLayoutItem[] param)
         {
             param?.Where(x => x != null).ToList()
                 .ForEach(x => x.Visibility = visible ? DevExpress.XtraLayout.Utils.LayoutVisibility.Always : DevExpress.XtraLayout.Utils.LayoutVisibility.Never);
@@ -278,7 +280,7 @@ namespace Zenix.WinUI.Forms.BaseForms
                 Close();
 
         }
-        protected virtual  bool Kaydet(bool kapanis)
+        protected virtual bool Kaydet(bool kapanis)
         {
 
             bool KayıtIslemi()

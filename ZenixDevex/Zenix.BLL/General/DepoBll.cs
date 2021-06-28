@@ -71,9 +71,19 @@ namespace Zenix.BLL.General
             {
                 x.KayıtDurum = x.SatınalmaId != null ? x.SatınAlma : x.İşemriId != null ? $"İşemriNo:{x.işemriNo }" : x.SiparişId != null ? $"Sipariş No:{x.SiparişNo}" : "";
             });
+
+
             return list;
 
         }
         public float StokVer(long mamülid) => BaseList(x => x.MamülId == mamülid && x.YarıMamülId == null, x => x.DepoMiktar).DefaultIfEmpty(0).Sum();
+
+        public List<Tuple<long, float>> StokVer(List<long> mamülid, long işemriId) => BaseList(x => x.YarıMamülId == null && x.İşemriId == işemriId && mamülid.Contains(x.MamülId), x => new { x.MamülId, x.DepoMiktar })
+            .GroupBy(x => x.MamülId)
+            .Select(x => new { x.FirstOrDefault().MamülId, DepoMiktar = x.Sum(a => a.DepoMiktar) })
+            .ToList()
+            .Select(x => Tuple.Create(x.MamülId, x.DepoMiktar))
+            .ToList();
+
     }
 }

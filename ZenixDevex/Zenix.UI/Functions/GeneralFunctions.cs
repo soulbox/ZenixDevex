@@ -44,6 +44,8 @@ namespace Zenix.WinUI.Functions
         {
             combo.Properties.Items.AddRange(EnumFunction.GetEnumDescriptionList<T>());
         }
+        public static List<T> GetListSource<T>(this GridView tablo)
+            => tablo.DataController.ListSource.Cast<T>().ToList();
         public static void ToData<T>(this ComboBoxEdit combo,Func<DescriptionAttribute,bool> filter) where T : Enum
         {
             var liste = EnumFunction.GetEnumDescriptionList<T>(filter);
@@ -218,6 +220,11 @@ namespace Zenix.WinUI.Functions
         }
 
         public static BindingList<T> ToBindingList<T>(this IEnumerable<BaseEntityHaraket> list)
+        {
+            return new BindingList<T>((IList<T>)list);
+
+        }
+        public static BindingList<T> ToBindingList<T>(this IEnumerable<T> list)
         {
             return new BindingList<T>((IList<T>)list);
 
