@@ -96,24 +96,24 @@ namespace Zenix.Data.Context
 
             DataSource = ".",
             UserID = "sa",
-            Password = "63792958",
+            Password = "",
             InitialCatalog = "ZENIX",
         };
 
         static SqlConnectionStringBuilder Sunucu = new SqlConnectionStringBuilder()
         {
 
-            DataSource = "213.142.144.186",
+            DataSource = "",
             UserID = "ZENIX",
-            Password = "Zenix2021!",
+            Password = "",
             InitialCatalog = "ZENIX",
         };
         static SqlConnectionStringBuilder Simpaş = new SqlConnectionStringBuilder()
         {
 
-            DataSource = "213.14.174.241",
+            DataSource = "",
             UserID = "sa",
-            Password = "63792958",
+            Password = "",
             InitialCatalog = "ZENIX",
         };
 
@@ -131,7 +131,7 @@ namespace Zenix.Data.Context
 
             foreach (SqlConnectionStringBuilder x in datasources.Where(x => x != null).ToList())
             {
-                //if (x.DataSource  != "213.14.174.241") continue;
+                //if (x.DataSource  != "") continue;
                 //x.IntegratedSecurity = true; // windows auth için aktif olması gerek
                 //x.ApplicationIntent = ApplicationIntent.ReadOnly;
                 //x.ConnectTimeout = 10;
